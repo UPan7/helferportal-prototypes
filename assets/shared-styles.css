@@ -1703,7 +1703,6 @@
             margin-top: 64px;
             background: var(--gray-100);
             padding: var(--space-lg);
-            padding-bottom: 60px;
         }
         
         .page-startseite .hero-slider {
@@ -1711,13 +1710,13 @@
             margin: 0 auto;
             position: relative;
             border-radius: var(--radius-xl);
-            overflow: visible;
+            overflow: hidden;
         }
         
         .page-startseite .slide {
             display: none;
             position: relative;
-            min-height: 480px;
+            min-height: 420px;
             background-size: cover;
             background-position: center;
             border-radius: var(--radius-xl);
@@ -1751,7 +1750,6 @@
         
         .page-startseite .slide-content {
             padding: var(--space-3xl);
-            padding-bottom: 100px;
             max-width: 600px;
             color: var(--white);
         }
@@ -1841,19 +1839,21 @@
         }
         
         /* ========================================
-           QUICK ACTIONS (overlay on hero slider)
+           QUICK ACTIONS
            ======================================== */
-        .page-startseite .quick-actions-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translate(-50%, 50%);
-            width: calc(100% - var(--space-xl) * 2);
-            max-width: 1100px;
+        .page-startseite .quick-actions {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            margin-top: calc(-1 * var(--space-xl));
+            position: relative;
+            z-index: 10;
+        }
+        
+        .page-startseite .quick-actions-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: var(--space-md);
-            z-index: 10;
         }
         
         .page-startseite .quick-action-card {
@@ -2604,11 +2604,10 @@
            RESPONSIVE
            ======================================== */
         @media (max-width: 1024px) {
-            .page-startseite .quick-actions-overlay {
+            .page-startseite .quick-actions-grid {
                 grid-template-columns: repeat(2, 1fr);
-                width: calc(100% - var(--space-lg) * 2);
             }
-
+            
             .page-startseite .tabs-container {
                 flex-direction: column;
             }
@@ -2670,10 +2669,12 @@
                 right: var(--space-xl);
             }
             
-            .page-startseite .quick-actions-overlay {
-                grid-template-columns: repeat(2, 1fr);
-                width: calc(100% - var(--space-md) * 2);
-                gap: var(--space-sm);
+            .page-startseite .quick-actions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-startseite .quick-actions {
+                margin-top: calc(-1 * var(--space-md));
             }
             
             .page-startseite .staedte-grid {
