@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns – Helferportal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange-primary: #E65100; --orange-light: #FF7D2E; --orange-lighter: #FFF3E0; --orange-dark: #BF360C;
+            --blue-primary: #1565C0; --blue-light: #42A5F5; --blue-lighter: #E3F2FD; --blue-dark: #0D47A1;
+            --purple-primary: #7B1FA2; --purple-light: #AB47BC; --purple-lighter: #F3E5F5; --purple-dark: #6A1B9A;
+            --green-primary: #2E7D32; --green-light: #4CAF50; --green-lighter: #E8F5E9;
+            --yellow-primary: #F9A825; --yellow-lighter: #FFFDE7;
+            --gray-50: #FAFAFA; --gray-100: #F5F5F5; --gray-200: #EEEEEE; --gray-300: #E0E0E0; --gray-400: #BDBDBD; --gray-500: #9E9E9E; --gray-600: #757575; --gray-700: #616161; --gray-800: #424242; --gray-900: #212121;
+            --white: #FFFFFF; --black: #000000;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05); --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1); --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1); --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --radius-sm: 6px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-full: 9999px;
+            --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px; --space-xl: 32px; --space-2xl: 48px; --space-3xl: 64px;
+            --font-display: 'Plus Jakarta Sans', sans-serif; --font-body: 'DM Sans', sans-serif;
+            --transition-fast: 150ms ease; --transition-normal: 250ms ease; --transition-slow: 350ms ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--gray-900); background: var(--gray-50); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        /* HEADER */
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); height: 64px; }
+        .header-inner { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-lg); height: 100%; display: flex; align-items: center; justify-content: space-between; }
+        .header-left { display: flex; align-items: center; gap: var(--space-xl); }
+        .logo { display: flex; align-items: center; gap: var(--space-sm); text-decoration: none; color: var(--gray-900); }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 800; font-size: 18px; font-family: var(--font-display); }
+        .logo-text { font-family: var(--font-display); font-weight: 700; font-size: 20px; }
+        .logo-text span { color: var(--orange-primary); }
+        .nav-main { display: flex; align-items: center; gap: var(--space-sm); }
+        .nav-btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-sm); font-family: var(--font-body); font-weight: 600; font-size: 14px; cursor: pointer; transition: all var(--transition-fast); border: none; background: var(--gray-100); color: var(--gray-700); text-decoration: none; }
+        .nav-btn:hover { background: var(--gray-200); color: var(--gray-900); }
+        .nav-mehr { position: relative; }
+        .nav-mehr-btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); font-family: var(--font-body); font-weight: 600; font-size: 14px; cursor: pointer; transition: all var(--transition-fast); border: none; background: transparent; color: var(--gray-600); }
+        .nav-mehr-btn:hover, .nav-mehr-btn.active { color: var(--gray-900); }
+        .nav-mehr-btn .dots { display: flex; gap: 3px; }
+        .nav-mehr-btn .dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+        .nav-mehr-btn .chevron { width: 16px; height: 16px; transition: transform var(--transition-fast); }
+        .nav-mehr-btn.active .chevron { transform: rotate(180deg); }
+        .header-right { display: flex; align-items: center; gap: var(--space-md); }
+        .btn-search { width: 40px; height: 40px; border-radius: var(--radius-full); border: none; background: var(--gray-100); color: var(--gray-600); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast); }
+        .btn-search:hover { background: var(--gray-200); color: var(--gray-900); }
+        .btn-login { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); border: 2px solid var(--gray-200); background: var(--white); color: var(--gray-700); font-family: var(--font-body); font-weight: 600; font-size: 14px; cursor: pointer; transition: all var(--transition-fast); text-decoration: none; }
+        .btn-login:hover { border-color: var(--gray-300); background: var(--gray-50); }
+        .mobile-menu-btn { display: none; width: 40px; height: 40px; border: none; background: transparent; cursor: pointer; color: var(--gray-700); }
+        
+        /* MEGA MENU */
+        .mega-menu-overlay { position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); opacity: 0; visibility: hidden; transition: all var(--transition-normal); z-index: 998; }
+        .mega-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mega-menu { position: fixed; top: 64px; left: 0; right: 0; background: var(--white); box-shadow: var(--shadow-2xl); z-index: 999; transform: translateY(-20px); opacity: 0; visibility: hidden; transition: all var(--transition-normal); }
+        .mega-menu.active { transform: translateY(0); opacity: 1; visibility: visible; }
+        .mega-menu-inner { max-width: 1280px; margin: 0 auto; padding: var(--space-xl) var(--space-lg); display: grid; grid-template-columns: 1fr 1.2fr 1fr 280px; gap: var(--space-xl); }
+        .menu-column { padding-right: var(--space-lg); }
+        .menu-column:not(:last-child) { border-right: 1px solid var(--gray-100); }
+        .menu-column-header { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg); padding-bottom: var(--space-sm); border-bottom: 2px solid var(--gray-100); }
+        .menu-column-icon { width: 32px; height: 32px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .menu-column-icon.blue { background: var(--blue-lighter); color: var(--blue-primary); }
+        .menu-column-icon.orange { background: var(--orange-lighter); color: var(--orange-primary); }
+        .menu-column-icon.purple { background: var(--purple-lighter); color: var(--purple-primary); }
+        .menu-column-icon.green { background: var(--green-lighter); color: var(--green-primary); }
+        .menu-column-header h3 { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1.5px; }
+        .menu-items { display: flex; flex-direction: column; gap: var(--space-xs); }
+        .menu-item { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); text-decoration: none; color: var(--gray-700); transition: all var(--transition-fast); }
+        .menu-item:hover { background: var(--gray-50); color: var(--gray-900); }
+        .menu-item:hover .menu-item-icon { transform: scale(1.1); }
+        .menu-item-icon { width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform var(--transition-fast); }
+        .menu-item-icon.blue { background: var(--blue-lighter); color: var(--blue-primary); }
+        .menu-item-icon.orange { background: var(--orange-lighter); color: var(--orange-primary); }
+        .menu-item-icon.purple { background: var(--purple-lighter); color: var(--purple-primary); }
+        .menu-item-icon.green { background: var(--green-lighter); color: var(--green-primary); }
+        .menu-item-content { flex: 1; min-width: 0; }
+        .menu-item-content span { display: block; font-family: var(--font-display); font-weight: 600; font-size: 14px; color: var(--gray-900); }
+        .menu-item-content small { font-size: 12px; color: var(--gray-500); }
+        .menu-item-arrow { width: 16px; height: 16px; color: var(--gray-400); opacity: 0; transform: translateX(-8px); transition: all var(--transition-fast); }
+        .menu-item:hover .menu-item-arrow { opacity: 1; transform: translateX(0); }
+        
+        /* Cities */
+        .cities-column { padding: 0 var(--space-lg); }
+        .cities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
+        .city-card { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/10; cursor: pointer; text-decoration: none; display: block; }
+        .city-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%); z-index: 1; }
+        .city-card:hover .city-card-image { transform: scale(1.1); }
+        .city-card-image { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+        .city-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-sm) var(--space-md); z-index: 2; color: var(--white); }
+        .city-card-name { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+        .city-card-status { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-full); }
+        .city-card-status.active { background: var(--green-primary); }
+        .city-card-status.soon { background: var(--yellow-primary); color: var(--gray-900); }
+        .city-card-status.planned { background: rgba(255,255,255,0.25); }
+        .city-card-status .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--white); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .city-card.featured { grid-column: span 2; aspect-ratio: 2/1; }
+        .city-card.featured .city-card-content { padding: var(--space-md) var(--space-lg); }
+        .city-card.featured .city-card-name { font-size: 18px; margin-bottom: var(--space-xs); }
+        .city-card.featured .city-card-meta { display: flex; align-items: center; gap: var(--space-md); margin-top: var(--space-sm); }
+        .city-card.featured .city-stat { display: flex; align-items: center; gap: 4px; font-size: 12px; opacity: 0.9; }
+        .city-card.featured .city-stat svg { width: 14px; height: 14px; }
+        .all-cities-link { display: flex; align-items: center; justify-content: center; gap: var(--space-sm); margin-top: var(--space-md); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); background: var(--gray-50); color: var(--gray-600); font-weight: 600; font-size: 13px; text-decoration: none; transition: all var(--transition-fast); }
+        .all-cities-link:hover { background: var(--gray-100); color: var(--orange-primary); }
+        .all-cities-link svg { width: 16px; height: 16px; }
+        
+        /* Featured */
+        .menu-featured { background: linear-gradient(135deg, var(--orange-lighter) 0%, var(--blue-lighter) 100%); border-radius: var(--radius-xl); padding: var(--space-xl); display: flex; flex-direction: column; }
+        .menu-featured-badge { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-xs) var(--space-sm); background: var(--white); border-radius: var(--radius-full); font-size: 11px; font-weight: 700; color: var(--orange-primary); text-transform: uppercase; letter-spacing: 0.5px; width: fit-content; margin-bottom: var(--space-md); }
+        .menu-featured h4 { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--gray-900); margin-bottom: var(--space-sm); }
+        .menu-featured p { font-size: 14px; color: var(--gray-600); margin-bottom: var(--space-lg); flex: 1; }
+        .menu-featured-cta { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); background: var(--orange-primary); color: var(--white); border-radius: var(--radius-full); font-weight: 600; font-size: 14px; text-decoration: none; transition: all var(--transition-fast); width: fit-content; }
+        .menu-featured-cta:hover { background: var(--orange-dark); transform: translateY(-2px); }
+        
+        /* Mega Menu Footer */
+        .mega-menu-footer { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+        .mega-menu-footer-inner { max-width: 1280px; margin: 0 auto; padding: var(--space-md) var(--space-lg); display: flex; align-items: center; justify-content: space-between; }
+        .quick-links { display: flex; align-items: center; gap: var(--space-lg); }
+        .quick-link { display: inline-flex; align-items: center; gap: var(--space-xs); font-size: 13px; font-weight: 600; color: var(--gray-600); text-decoration: none; transition: color var(--transition-fast); }
+        .quick-link:hover { color: var(--orange-primary); }
+        .quick-link svg { width: 16px; height: 16px; }
+        .menu-social { display: flex; align-items: center; gap: var(--space-sm); }
+        .social-link { width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--gray-200); display: flex; align-items: center; justify-content: center; color: var(--gray-600); text-decoration: none; transition: all var(--transition-fast); }
+        .social-link:hover { background: var(--orange-primary); color: var(--white); }
+        .social-link svg { width: 16px; height: 16px; }
+        
+        /* HERO */
+        .hero { margin-top: 64px; background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%); padding: var(--space-3xl) var(--space-lg); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1400') center/cover; opacity: 0.2; }
+        .hero-content { position: relative; max-width: 1280px; margin: 0 auto; text-align: center; color: var(--white); }
+        .hero .breadcrumb { display: flex; align-items: center; justify-content: center; gap: var(--space-sm); margin-bottom: var(--space-lg); font-size: 14px; color: rgba(255,255,255,0.7); }
+        .hero .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color var(--transition-fast); }
+        .hero .breadcrumb a:hover { color: var(--white); }
+        .hero .breadcrumb svg { width: 16px; height: 16px; }
+        .hero h1 { font-family: var(--font-display); font-size: 48px; font-weight: 800; margin-bottom: var(--space-md); line-height: 1.1; }
+        .hero p { font-size: 20px; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto; line-height: 1.6; }
+        
+        /* MISSION */
+        .mission-section { max-width: 1280px; margin: var(--space-3xl) auto; padding: 0 var(--space-lg); }
+        .mission-card { background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; }
+        .mission-content { padding: var(--space-3xl); }
+        .mission-badge { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-xs) var(--space-md); background: var(--orange-lighter); color: var(--orange-primary); border-radius: var(--radius-full); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-lg); }
+        .mission-content h2 { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--gray-900); margin-bottom: var(--space-lg); line-height: 1.2; }
+        .mission-content p { font-size: 18px; color: var(--gray-600); line-height: 1.8; margin-bottom: var(--space-lg); }
+        .mission-values { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+        .value-tag { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); background: var(--gray-100); border-radius: var(--radius-full); font-size: 14px; font-weight: 500; color: var(--gray-700); }
+        .value-tag svg { width: 16px; height: 16px; color: var(--green-primary); }
+        .mission-visual { background: linear-gradient(135deg, var(--orange-primary), var(--orange-dark)); display: flex; align-items: center; justify-content: center; padding: var(--space-3xl); position: relative; }
+        .mission-visual::before { content: ''; position: absolute; top: -50%; right: -30%; width: 400px; height: 400px; background: rgba(255,255,255,0.1); border-radius: 50%; }
+        .mission-quote { position: relative; text-align: center; color: var(--white); }
+        .mission-quote-icon { font-size: 64px; opacity: 0.3; margin-bottom: var(--space-md); }
+        .mission-quote blockquote { font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.5; margin-bottom: var(--space-lg); }
+        .mission-quote cite { font-style: normal; font-size: 14px; opacity: 0.8; }
+        
+        /* TIMELINE */
+        .timeline-section { background: var(--gray-100); padding: var(--space-3xl) var(--space-lg); }
+        .timeline-section-inner { max-width: 1280px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: var(--space-2xl); }
+        .section-header h2 { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--orange-primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: var(--space-sm); }
+        .section-header h3 { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--gray-900); }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: 0; bottom: 0; width: 4px; background: var(--gray-300); border-radius: 2px; }
+        .timeline-item { position: relative; padding: var(--space-lg) 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+        .timeline-item::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: var(--white); border: 4px solid var(--orange-primary); border-radius: 50%; z-index: 1; }
+        .timeline-year { text-align: right; font-family: var(--font-display); font-size: 48px; font-weight: 800; color: var(--gray-300); }
+        .timeline-content { background: var(--white); padding: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+        .timeline-content h4 { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--gray-900); margin-bottom: var(--space-sm); }
+        .timeline-content p { font-size: 15px; color: var(--gray-600); line-height: 1.6; }
+        .timeline-item:nth-child(even) .timeline-year { order: 2; text-align: left; }
+        .timeline-item:nth-child(even) .timeline-content { order: 1; }
+        
+        /* TEAM */
+        .team-section { max-width: 1280px; margin: var(--space-3xl) auto; padding: 0 var(--space-lg); }
+        .founder-card { background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); overflow: hidden; display: grid; grid-template-columns: 300px 1fr; gap: 0; }
+        .founder-image { background: linear-gradient(135deg, var(--gray-200), var(--gray-300)); display: flex; align-items: center; justify-content: center; min-height: 400px; }
+        .founder-image-placeholder { width: 180px; height: 180px; background: var(--gray-400); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); }
+        .founder-content { padding: var(--space-2xl); }
+        .founder-badge { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-xs) var(--space-md); background: var(--purple-lighter); color: var(--purple-primary); border-radius: var(--radius-full); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-md); }
+        .founder-content h3 { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: var(--space-xs); }
+        .founder-role { font-size: 16px; color: var(--orange-primary); font-weight: 600; margin-bottom: var(--space-lg); }
+        .founder-content p { font-size: 16px; color: var(--gray-600); line-height: 1.8; margin-bottom: var(--space-lg); }
+        .founder-credentials { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+        .credential-tag { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); background: var(--gray-100); border-radius: var(--radius-full); font-size: 13px; font-weight: 500; color: var(--gray-700); }
+        
+        /* PARTNERS */
+        .partners-section { background: var(--gray-900); padding: var(--space-3xl) var(--space-lg); }
+        .partners-section-inner { max-width: 1280px; margin: 0 auto; }
+        .partners-section .section-header h2 { color: var(--orange-light); }
+        .partners-section .section-header h3 { color: var(--white); }
+        .partners-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); margin-bottom: var(--space-2xl); }
+        .partner-card { background: var(--gray-800); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; transition: all var(--transition-fast); }
+        .partner-card:hover { background: var(--gray-700); transform: translateY(-4px); }
+        .partner-logo { width: 80px; height: 80px; background: var(--gray-700); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); font-size: 32px; }
+        .partner-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--white); margin-bottom: var(--space-xs); }
+        .partner-card p { font-size: 13px; color: var(--gray-400); }
+        .awards-row { display: flex; justify-content: center; align-items: center; gap: var(--space-2xl); padding-top: var(--space-2xl); border-top: 1px solid var(--gray-700); }
+        .award-item { display: flex; align-items: center; gap: var(--space-md); color: var(--gray-400); }
+        .award-icon { width: 48px; height: 48px; background: var(--yellow-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--gray-900); }
+        .award-item span { font-size: 14px; font-weight: 600; }
+        
+        /* CTA */
+        .cta-section { max-width: 900px; margin: var(--space-3xl) auto; padding: 0 var(--space-lg); }
+        .cta-card { background: linear-gradient(135deg, var(--orange-primary), var(--orange-dark)); border-radius: var(--radius-xl); padding: var(--space-3xl); text-align: center; color: var(--white); position: relative; overflow: hidden; }
+        .cta-card::before { content: ''; position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; }
+        .cta-card h2 { font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: var(--space-md); position: relative; }
+        .cta-card p { font-size: 18px; opacity: 0.9; margin-bottom: var(--space-xl); max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
+        .cta-buttons { display: flex; justify-content: center; gap: var(--space-md); position: relative; }
+        .btn-white { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-xl); background: var(--white); color: var(--orange-primary); border-radius: var(--radius-full); font-weight: 700; font-size: 16px; text-decoration: none; transition: all var(--transition-fast); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline-white { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-xl); background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.3); border-radius: var(--radius-full); font-weight: 600; font-size: 16px; text-decoration: none; transition: all var(--transition-fast); }
+        .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
+        
+        /* FOOTER */
+        .footer { background: var(--gray-900); color: var(--white); padding: var(--space-3xl) var(--space-lg) var(--space-xl); }
+        .footer-inner { max-width: 1280px; margin: 0 auto; }
+        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid var(--gray-700); margin-bottom: var(--space-xl); }
+        .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
+        .footer-brand p { color: var(--gray-400); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
+        .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: var(--space-sm); }
+        .footer-col a { color: var(--gray-400); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { color: var(--gray-500); font-size: 13px; }
+        .footer-legal { display: flex; gap: var(--space-lg); }
+        .footer-legal a { color: var(--gray-500); text-decoration: none; font-size: 13px; transition: color var(--transition-fast); }
+        .footer-legal a:hover { color: var(--white); }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .mega-menu-inner { grid-template-columns: 1fr 1fr; }
+            .cities-column { padding: 0; }
+            .menu-featured { grid-column: span 2; }
+            .mission-card { grid-template-columns: 1fr; }
+            .mission-visual { min-height: 300px; }
+            .timeline::before { left: 20px; }
+            .timeline-item { grid-template-columns: 1fr; padding-left: 60px; }
+            .timeline-item::before { left: 20px; }
+            .timeline-year { text-align: left !important; font-size: 32px; order: 0 !important; }
+            .timeline-content { order: 1 !important; }
+            .founder-card { grid-template-columns: 1fr; }
+            .founder-image { min-height: 250px; }
+            .partners-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-main, .btn-search { display: none; }
+            .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+            .mega-menu-inner { grid-template-columns: 1fr; padding: var(--space-md); }
+            .menu-column { padding-right: 0; border-right: none !important; padding-bottom: var(--space-lg); margin-bottom: var(--space-lg); border-bottom: 1px solid var(--gray-100); }
+            .cities-grid { grid-template-columns: 1fr 1fr; }
+            .city-card.featured { grid-column: span 2; }
+            .menu-featured { grid-column: span 1; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .mission-content { padding: var(--space-xl); }
+            .mission-content h2 { font-size: 24px; }
+            .section-header h3 { font-size: 24px; }
+            .founder-content { padding: var(--space-xl); }
+            .founder-content h3 { font-size: 24px; }
+            .partners-grid { grid-template-columns: 1fr 1fr; }
+            .awards-row { flex-direction: column; gap: var(--space-lg); }
+            .cta-card { padding: var(--space-xl); }
+            .cta-card h2 { font-size: 24px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
+            .mega-menu-footer-inner { flex-direction: column; gap: var(--space-md); }
+            .quick-links { flex-wrap: wrap; justify-content: center; }
+        }
+        .icon { width: 20px; height: 20px; }
+        .icon-sm { width: 16px; height: 16px; }
+        .icon-lg { width: 32px; height: 32px; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="https://helferportal.kamanin.at/" class="logo">
+                    <div class="logo-icon">H</div>
+                    <span class="logo-text">Helfer<span>portal</span></span>
+                </a>
+                <nav class="nav-main">
+                    <a href="https://helferportal.kamanin.at/hilfe-finden" class="nav-btn">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        <span>Hilfe finden</span>
+                    </a>
+                    <a href="https://helferportal.kamanin.at/engagieren" class="nav-btn">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span>Engagieren</span>
+                    </a>
+                    <div class="nav-mehr">
+                        <button class="nav-mehr-btn" id="mehrBtn">
+                            <span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>
+                            <span>Mehr</span>
+                            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="btn-search" aria-label="Suche"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+                <a href="https://helferportal.kamanin.at/kontakt" class="btn-login">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Anmelden</span>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Menü"><svg class="icon-lg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mega-menu-overlay" id="megaOverlay"></div>
+
+    <!-- MEGA MENU -->
+    <div class="mega-menu" id="megaMenu">
+        <div class="mega-menu-inner">
+            <!-- FÜR WEN -->
+            <div class="menu-column">
+                <div class="menu-column-header">
+                    <div class="menu-column-icon blue"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+                    <h3>Für wen</h3>
+                </div>
+                <div class="menu-items">
+                    <a href="https://helferportal.kamanin.at/hilfe-finden" class="menu-item">
+                        <div class="menu-item-icon blue"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                        <div class="menu-item-content"><span>Hilfesuchende</span><small>Unterstützung im Alltag</small></div>
+                        <svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://helferportal.kamanin.at/hilfe-finden#angehoerige" class="menu-item">
+                        <div class="menu-item-icon blue"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                        <div class="menu-item-content"><span>Pflegende Angehörige</span><small>Entlastung finden</small></div>
+                        <svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://helferportal.kamanin.at/engagieren" class="menu-item">
+                        <div class="menu-item-icon orange"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+                        <div class="menu-item-content"><span>Engagierte</span><small>Helfen, wenn es passt</small></div>
+                        <svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://helferportal.kamanin.at/kommunen-akteure" class="menu-item">
+                        <div class="menu-item-icon purple"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                        <div class="menu-item-content"><span>Kommunen & Landkreise</span><small>Versorgung digital steuern</small></div>
+                        <svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://helferportal.kamanin.at/kommunen-akteure#organisationen" class="menu-item">
+                        <div class="menu-item-icon purple"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+                        <div class="menu-item-content"><span>Organisationen</span><small>Helferkreise koordinieren</small></div>
+                        <svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- STÄDTE -->
+            <div class="menu-column cities-column">
+                <div class="menu-column-header">
+                    <div class="menu-column-icon green"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <h3>Unsere Städte</h3>
+                </div>
+                <div class="cities-grid">
+                    <a href="#" class="city-card featured">
+                        <img src="https://images.unsplash.com/photo-1595867818082-083862f3d630?w=600" alt="München" class="city-card-image">
+                        <div class="city-card-content">
+                            <span class="city-card-status active"><span class="pulse"></span>Aktiv</span>
+                            <h4 class="city-card-name">München</h4>
+                            <div class="city-card-meta">
+                                <span class="city-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>120+ Helfer</span>
+                                <span class="city-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>500+ geholfen</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="city-card"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400" alt="Dietzenbach" class="city-card-image"><div class="city-card-content"><span class="city-card-status soon">Pilotprojekt</span><h4 class="city-card-name">Dietzenbach</h4></div></a>
+                    <a href="#" class="city-card"><img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400" alt="Frankfurt" class="city-card-image"><div class="city-card-content"><span class="city-card-status soon">Startet bald</span><h4 class="city-card-name">Frankfurt</h4></div></a>
+                    <a href="#" class="city-card"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400" alt="Solingen" class="city-card-image"><div class="city-card-content"><span class="city-card-status planned">In Planung</span><h4 class="city-card-name">Solingen</h4></div></a>
+                    <a href="#" class="city-card"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" alt="Hildburghausen" class="city-card-image"><div class="city-card-content"><span class="city-card-status soon">Startet bald</span><h4 class="city-card-name">Hildburghausen</h4></div></a>
+                </div>
+                <a href="#" class="all-cities-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Alle Standorte ansehen<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <!-- ÜBER UNS -->
+            <div class="menu-column">
+                <div class="menu-column-header">
+                    <div class="menu-column-icon purple"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+                    <h3>Über uns</h3>
+                </div>
+                <div class="menu-items">
+                    <a href="https://helferportal.kamanin.at/ueber-uns" class="menu-item"><div class="menu-item-icon purple"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div class="menu-item-content"><span>Das Konzept</span><small>Vision & Hintergrund</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/ueber-uns#geschichte" class="menu-item"><div class="menu-item-icon orange"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="menu-item-content"><span>Geschichte</span><small>Seit 2015</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/ueber-uns#team" class="menu-item"><div class="menu-item-icon blue"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="menu-item-content"><span>Team & Gründer</span><small>Menschen dahinter</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/ueber-uns#partner" class="menu-item"><div class="menu-item-icon green"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="menu-item-content"><span>Partner & Förderung</span><small>BMBF, DATI & mehr</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+            <!-- FEATURED -->
+            <div class="menu-featured">
+                <span class="menu-featured-badge"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Jetzt starten</span>
+                <h4>Kostenlos registrieren</h4>
+                <p>Egal ob Sie Hilfe suchen oder helfen möchten – die Registrierung ist kostenfrei.</p>
+                <a href="https://helferportal.kamanin.at/kontakt" class="menu-featured-cta">Jetzt starten<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+        <div class="mega-menu-footer">
+            <div class="mega-menu-footer-inner">
+                <div class="quick-links">
+                    <a href="#" class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>FAQ</a>
+                    <a href="https://helferportal.kamanin.at/kontakt" class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Kontakt</a>
+                    <a href="#" class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>So funktioniert's</a>
+                </div>
+                <div class="menu-social">
+                    <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <nav class="breadcrumb">
+                <a href="https://helferportal.kamanin.at/">Startseite</a>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                <span>Über uns</span>
+            </nav>
+            <h1>Gemeinsam für bessere Versorgung</h1>
+            <p>Seit 2015 entwickeln wir digitale Lösungen, die Menschen mit Unterstützungsbedarf und Engagierte zusammenbringen – einfach, sicher und nah.</p>
+        </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="mission-section">
+        <div class="mission-card">
+            <div class="mission-content">
+                <span class="mission-badge">Unsere Mission</span>
+                <h2>Unterstützung passgenau vermitteln – auch ganz spontan im Sozialraum</h2>
+                <p>Gemeinsam mit den Bürgern, der Sozialwirtschaft und den Kommunen sorgen wir dafür, dass Menschen mit Behinderung oder Hilfebedarf, sowie pflegende Angehörige die Unterstützung und Versorgung erhalten, die sie gerade benötigen.</p>
+                <p>Wir übertragen das Prinzip schneller, bedarfsgerechter Vermittlung in den sozialen Bereich – qualitätsgesichert, digital vernetzt und mit klaren rechtlichen Rahmenbedingungen.</p>
+                <div class="mission-values">
+                    <span class="value-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Schnelle Vermittlung</span>
+                    <span class="value-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Qualitätsgesichert</span>
+                    <span class="value-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Datenschutzkonform</span>
+                    <span class="value-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Versicherungsschutz</span>
+                </div>
+            </div>
+            <div class="mission-visual">
+                <div class="mission-quote">
+                    <div class="mission-quote-icon">"</div>
+                    <blockquote>Hilfe beginnt oft informell und spontan – nicht institutionell. Die Plattform soll diese Realität widerspiegeln.</blockquote>
+                    <cite>— Der C2C-Ansatz des Helferportals</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline-section" id="geschichte">
+        <div class="timeline-section-inner">
+            <div class="section-header">
+                <h2>Unsere Geschichte</h2>
+                <h3>Von der Idee zur Plattform</h3>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-year">2015</div><div class="timeline-content"><h4>Gründung</h4><p>Thomas Oeben gründet die Helferportal GmbH & Co. KG mit der Vision, logistische Kompetenz in den sozialen Bereich zu bringen.</p></div></div>
+                <div class="timeline-item"><div class="timeline-year">2017</div><div class="timeline-content"><h4>deinNachbar e.V.</h4><p>Gründung des Vereins deinNachbar e.V. in München als Praxislabor für neue Versorgungskonzepte.</p></div></div>
+                <div class="timeline-item"><div class="timeline-year">2020</div><div class="timeline-content"><h4>Digitalisierung</h4><p>Entwicklung der digitalen Plattform mit App-basierter Verfügbarkeitsabfrage nach dem UBER-Prinzip.</p></div></div>
+                <div class="timeline-item"><div class="timeline-year">2024</div><div class="timeline-content"><h4>DATI-Förderung</h4><p>Start des Pilotprojekts mit der Stadt Dietzenbach, gefördert durch die Deutsche Agentur für Transfer und Innovation.</p></div></div>
+                <div class="timeline-item"><div class="timeline-year">2025</div><div class="timeline-content"><h4>Expansion</h4><p>Ausbau zum integrativen Koordinationsportal mit Kommunikationsmodul und Anbindung weiterer Städte.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team-section" id="team">
+        <div class="section-header">
+            <h2>Das Team</h2>
+            <h3>Menschen hinter Helferportal</h3>
+        </div>
+        <div class="founder-card">
+            <div class="founder-image">
+                <div class="founder-image-placeholder"><svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            </div>
+            <div class="founder-content">
+                <span class="founder-badge">Gründer & Geschäftsführer</span>
+                <h3>Thomas Oeben</h3>
+                <p class="founder-role">Rettungsassistent, Spediteur, Betriebswirt</p>
+                <p>Thomas hat jahrelang logistische Netzwerke für renommierte Logistikkonzerne und die produzierende Industrie aufgebaut und gesteuert. Aufgrund der aufkommenden Versorgungslücke beschloss er, logistische Kompetenz und Digitalisierung in den sozialen Bereich einzubringen.</p>
+                <p>Er entwickelt soziale Versorgungskonzepte und erprobt diese zunächst im Verein deinNachbar e.V., bevor sie von anderen Hilfsorganisationen oder Kommunen übernommen werden.</p>
+                <div class="founder-credentials">
+                    <span class="credential-tag">🚑 Rettungsassistent</span>
+                    <span class="credential-tag">🚛 Logistikexperte</span>
+                    <span class="credential-tag">📊 Betriebswirt</span>
+                    <span class="credential-tag">💡 Sozialunternehmer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="partners-section" id="partner">
+        <div class="partners-section-inner">
+            <div class="section-header">
+                <h2>Partner & Förderung</h2>
+                <h3>Gemeinsam für bessere Versorgung</h3>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-card"><div class="partner-logo">🏛️</div><h4>BMBF</h4><p>Bundesministerium für Bildung und Forschung</p></div>
+                <div class="partner-card"><div class="partner-logo">🔬</div><h4>DATI</h4><p>Deutsche Agentur für Transfer und Innovation</p></div>
+                <div class="partner-card"><div class="partner-logo">🏙️</div><h4>Stadt Dietzenbach</h4><p>Pilotkommune für integratives Koordinationsportal</p></div>
+                <div class="partner-card"><div class="partner-logo">🎓</div><h4>TU Chemnitz</h4><p>Wissenschaftliche Begleitung</p></div>
+            </div>
+            <div class="awards-row">
+                <div class="award-item"><div class="award-icon">🏆</div><span>Mehrfach ausgezeichnetes Konzept</span></div>
+                <div class="award-item"><div class="award-icon">✓</div><span>DSGVO-konform</span></div>
+                <div class="award-item"><div class="award-icon">🇩🇪</div><span>Hosting in Deutschland</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-card">
+            <h2>Werden Sie Teil des Netzwerks</h2>
+            <p>Ob als Hilfesuchender, Engagierter oder kommunaler Partner – gemeinsam schaffen wir bessere Versorgung.</p>
+            <div class="cta-buttons">
+                <a href="https://helferportal.kamanin.at/kontakt" class="btn-white">Kontakt aufnehmen<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="https://helferportal.kamanin.at/" class="btn-outline-white">Zur Startseite</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="https://helferportal.kamanin.at/" class="logo"><div class="logo-icon">H</div><span class="logo-text">Helfer<span>portal</span></span></a>
+                    <p>Die digitale Vermittlungsplattform für Unterstützungs- und Versorgungsbedarfe. Gemeinsam schaffen wir integrative Versorgungsstrukturen.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Für Sie</h4>
+                    <ul>
+                        <li><a href="https://helferportal.kamanin.at/hilfe-finden">Hilfe finden</a></li>
+                        <li><a href="https://helferportal.kamanin.at/engagieren">Engagieren</a></li>
+                        <li><a href="https://helferportal.kamanin.at/kommunen-akteure">Für Kommunen</a></li>
+                        <li><a href="https://helferportal.kamanin.at/kommunen-akteure#organisationen">Für Organisationen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Über uns</h4>
+                    <ul>
+                        <li><a href="https://helferportal.kamanin.at/ueber-uns">Das Konzept</a></li>
+                        <li><a href="https://helferportal.kamanin.at/ueber-uns#geschichte">Geschichte</a></li>
+                        <li><a href="https://helferportal.kamanin.at/ueber-uns#partner">Partner</a></li>
+                        <li><a href="#">Aktuelles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><a href="https://helferportal.kamanin.at/kontakt">Kontakt aufnehmen</a></li>
+                        <li><a href="#">Demo vereinbaren</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Helferportal GmbH & Co. KG. Alle Rechte vorbehalten.</p>
+                <nav class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Nutzungsbedingungen</a></nav>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mehrBtn = document.getElementById('mehrBtn');
+        const megaMenu = document.getElementById('megaMenu');
+        const megaOverlay = document.getElementById('megaOverlay');
+        function openMegaMenu() { mehrBtn.classList.add('active'); megaMenu.classList.add('active'); megaOverlay.classList.add('active'); }
+        function closeMegaMenu() { mehrBtn.classList.remove('active'); megaMenu.classList.remove('active'); megaOverlay.classList.remove('active'); }
+        function toggleMegaMenu() { megaMenu.classList.contains('active') ? closeMegaMenu() : openMegaMenu(); }
+        mehrBtn.addEventListener('click', toggleMegaMenu);
+        megaOverlay.addEventListener('click', closeMegaMenu);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMegaMenu(); });
+        megaMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { setTimeout(closeMegaMenu, 100); }); });
+    </script>
+</body>
+</html>

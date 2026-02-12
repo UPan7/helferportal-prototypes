@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engagieren – Helferportal</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Brand Colors */
+            --orange-primary: #E65100;
+            --orange-light: #FF7D2E;
+            --orange-lighter: #FFF3E0;
+            --orange-dark: #BF360C;
+            
+            --blue-primary: #1565C0;
+            --blue-light: #42A5F5;
+            --blue-lighter: #E3F2FD;
+            --blue-dark: #0D47A1;
+            
+            --purple-primary: #7B1FA2;
+            --purple-light: #AB47BC;
+            --purple-lighter: #F3E5F5;
+            
+            --green-primary: #2E7D32;
+            --green-light: #4CAF50;
+            --green-lighter: #E8F5E9;
+            
+            --yellow-primary: #F9A825;
+            --yellow-light: #FDD835;
+            --yellow-lighter: #FFFDE7;
+            
+            /* Neutrals */
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #EEEEEE;
+            --gray-300: #E0E0E0;
+            --gray-400: #BDBDBD;
+            --gray-500: #9E9E9E;
+            --gray-600: #757575;
+            --gray-700: #616161;
+            --gray-800: #424242;
+            --gray-900: #212121;
+            
+            --white: #FFFFFF;
+            --black: #000000;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+            
+            /* Spacing */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+            
+            /* Typography */
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+            --transition-slow: 350ms ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--gray-900);
+            background: var(--gray-50);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ========================================
+           HEADER
+           ======================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            height: 64px;
+        }
+        
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+            color: var(--gray-900);
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--orange-primary), var(--orange-light));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 18px;
+            font-family: var(--font-display);
+        }
+        
+        .logo-text {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--gray-900);
+        }
+        
+        .logo-text span {
+            color: var(--orange-primary);
+        }
+        
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            border: none;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            text-decoration: none;
+        }
+        
+        .nav-btn:hover {
+            background: var(--gray-200);
+            color: var(--gray-900);
+        }
+        
+        .nav-btn.active {
+            background: var(--orange-primary);
+            color: var(--white);
+        }
+        
+        .nav-btn-text {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            border: none;
+            background: transparent;
+            color: var(--gray-600);
+            text-decoration: none;
+        }
+        
+        .nav-btn-text:hover {
+            color: var(--gray-900);
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+        
+        .btn-search {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--gray-100);
+            color: var(--gray-600);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+        
+        .btn-search:hover {
+            background: var(--gray-200);
+            color: var(--gray-900);
+        }
+        
+        .btn-login {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-full);
+            border: 2px solid var(--gray-200);
+            background: var(--white);
+            color: var(--gray-700);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+        
+        .btn-login:hover {
+            border-color: var(--gray-300);
+            background: var(--gray-50);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: var(--gray-700);
+        }
+        
+        /* ========================================
+           HERO (MINI) - ORANGE VERSION
+           ======================================== */
+        .hero-mini {
+            margin-top: 64px;
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-dark) 100%);
+            padding: var(--space-3xl) var(--space-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-mini::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1400') center/cover;
+            opacity: 0.15;
+        }
+        
+        .hero-mini-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-mini .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .hero-mini .breadcrumb a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        .hero-mini .breadcrumb a:hover {
+            color: var(--white);
+        }
+        
+        .hero-mini .breadcrumb svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .hero-mini h1 {
+            font-family: var(--font-display);
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+        
+        .hero-mini p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ========================================
+           TABS SECTION
+           ======================================== */
+        .tabs-section {
+            max-width: 1280px;
+            margin: calc(-1 * var(--space-xl)) auto var(--space-3xl);
+            padding: 0 var(--space-lg);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .tabs-container {
+            display: flex;
+            gap: var(--space-xl);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            min-height: 550px;
+        }
+        
+        .tabs-nav {
+            width: 280px;
+            flex-shrink: 0;
+            background: var(--gray-50);
+            padding: var(--space-lg);
+            border-right: 1px solid var(--gray-200);
+        }
+        
+        .tabs-nav-header {
+            padding-bottom: var(--space-md);
+            margin-bottom: var(--space-md);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .tabs-nav-header h3 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .tab-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            border: none;
+            background: transparent;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-align: left;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .tab-btn:hover {
+            background: var(--gray-100);
+        }
+        
+        .tab-btn.active {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            border-left: 3px solid var(--orange-primary);
+        }
+        
+        .tab-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .tab-icon.green {
+            background: var(--green-lighter);
+            color: var(--green-primary);
+        }
+        
+        .tab-icon.yellow {
+            background: var(--yellow-lighter);
+            color: var(--yellow-primary);
+        }
+        
+        .tab-icon.blue {
+            background: var(--blue-lighter);
+            color: var(--blue-primary);
+        }
+        
+        .tab-btn-content {
+            flex: 1;
+        }
+        
+        .tab-btn-content span {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--gray-700);
+        }
+        
+        .tab-btn.active .tab-btn-content span {
+            color: var(--gray-900);
+        }
+        
+        .tab-btn-content small {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+        
+        .tabs-content {
+            flex: 1;
+            padding: var(--space-xl);
+        }
+        
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .tab-panel.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-panel-header {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .tab-panel-header h2 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .tab-panel-header p {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        /* Was du tun kannst - Liste */
+        .activities-box {
+            background: var(--orange-lighter);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .activities-box.green {
+            background: var(--green-lighter);
+        }
+        
+        .activities-box.yellow {
+            background: var(--yellow-lighter);
+        }
+        
+        .activities-box.blue {
+            background: var(--blue-lighter);
+        }
+        
+        .activities-box h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--orange-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-md);
+        }
+        
+        .activities-box.green h4 {
+            color: var(--green-primary);
+        }
+        
+        .activities-box.yellow h4 {
+            color: var(--yellow-primary);
+        }
+        
+        .activities-box.blue h4 {
+            color: var(--blue-primary);
+        }
+        
+        .activities-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+        
+        .activity-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--white);
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        
+        .activity-tag svg {
+            width: 16px;
+            height: 16px;
+            color: var(--orange-primary);
+        }
+        
+        .activity-tag.green svg {
+            color: var(--green-primary);
+        }
+        
+        .activity-tag.yellow svg {
+            color: var(--yellow-primary);
+        }
+        
+        .activity-tag.blue svg {
+            color: var(--blue-primary);
+        }
+        
+        /* Varianten Grid (für Eigenständig) */
+        .varianten-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .variante-card {
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            transition: all var(--transition-fast);
+            border: 2px solid transparent;
+        }
+        
+        .variante-card:hover {
+            background: var(--white);
+            border-color: var(--yellow-lighter);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .variante-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+        
+        .variante-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--yellow-lighter);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--yellow-primary);
+        }
+        
+        .variante-card h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--gray-900);
+        }
+        
+        .variante-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        /* Engagement-Formen Grid (für Organisation) */
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .engagement-card {
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .engagement-card:hover {
+            background: var(--white);
+            border-color: var(--blue-lighter);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .engagement-card-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--blue-lighter);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-primary);
+            margin: 0 auto var(--space-md);
+        }
+        
+        .engagement-card h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--gray-900);
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-left: 4px solid var(--yellow-primary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md) var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .info-box p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        .info-box strong {
+            color: var(--gray-900);
+        }
+        
+        .info-box a {
+            color: var(--blue-primary);
+            text-decoration: none;
+        }
+        
+        .info-box a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Was Organisation bietet */
+        .org-benefits {
+            background: var(--blue-lighter);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .org-benefits h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--blue-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-md);
+        }
+        
+        .org-benefits-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-sm);
+        }
+        
+        .org-benefit {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm);
+            background: var(--white);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            color: var(--gray-700);
+        }
+        
+        .org-benefit svg {
+            width: 18px;
+            height: 18px;
+            color: var(--blue-primary);
+            flex-shrink: 0;
+        }
+        
+        /* Vorteile im Panel */
+        .panel-vorteile {
+            display: flex;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            padding: var(--space-lg);
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+        }
+        
+        .panel-vorteil {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            flex: 1;
+        }
+        
+        .panel-vorteil-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--green-lighter);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green-primary);
+            flex-shrink: 0;
+        }
+        
+        .panel-vorteil-content h5 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--gray-900);
+            margin-bottom: 2px;
+        }
+        
+        .panel-vorteil-content p {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+        
+        /* CTA Buttons */
+        .tab-cta {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+            background: var(--orange-primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-primary.green {
+            background: var(--green-primary);
+        }
+        
+        .btn-primary.green:hover {
+            background: #1B5E20;
+        }
+        
+        .btn-primary.blue {
+            background: var(--blue-primary);
+        }
+        
+        .btn-primary.blue:hover {
+            background: var(--blue-dark);
+        }
+        
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border: 2px solid var(--gray-200);
+            background: var(--white);
+            color: var(--gray-700);
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--gray-300);
+            background: var(--gray-50);
+        }
+        
+        /* ========================================
+           GEMEINSAME VORTEILE SECTION
+           ======================================== */
+        .shared-vorteile-section {
+            max-width: 1280px;
+            margin: 0 auto var(--space-3xl);
+            padding: 0 var(--space-lg);
+        }
+        
+        .shared-vorteile-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .shared-vorteile-header h2 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .shared-vorteile-header h3 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gray-900);
+        }
+        
+        .shared-vorteile-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+        }
+        
+        .shared-vorteil-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            border-top: 4px solid var(--orange-primary);
+        }
+        
+        .shared-vorteil-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .shared-vorteil-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto var(--space-md);
+            background: var(--orange-lighter);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange-primary);
+        }
+        
+        .shared-vorteil-card h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--gray-900);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .shared-vorteil-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto var(--space-3xl);
+            padding: 0 var(--space-lg);
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .faq-header h2 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .faq-header h3 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gray-900);
+        }
+        
+        .faq-list {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-lg) var(--space-xl);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--gray-900);
+            transition: all var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            background: var(--gray-50);
+        }
+        
+        .faq-question svg {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--gray-400);
+            transition: transform var(--transition-fast);
+        }
+        
+        .faq-item.open .faq-question svg {
+            transform: rotate(180deg);
+            color: var(--orange-primary);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-normal);
+        }
+        
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        
+        .faq-answer-inner {
+            padding: 0 var(--space-xl) var(--space-lg);
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            max-width: 1280px;
+            margin: 0 auto var(--space-3xl);
+            padding: 0 var(--space-lg);
+        }
+        
+        .cta-card {
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-dark) 100%);
+            border-radius: var(--radius-xl);
+            padding: var(--space-3xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .cta-card::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        
+        .cta-content {
+            position: relative;
+        }
+        
+        .cta-content h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+        
+        .cta-content p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: var(--space-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+        }
+        
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            background: var(--white);
+            color: var(--orange-primary);
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline-white {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+        }
+        
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+        }
+        
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-2xl);
+            padding-bottom: var(--space-2xl);
+            border-bottom: 1px solid var(--gray-700);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .footer-brand .logo-icon {
+            background: linear-gradient(135deg, var(--orange-primary), var(--orange-light));
+        }
+        
+        .footer-brand p {
+            color: var(--gray-400);
+            font-size: 14px;
+            margin-top: var(--space-md);
+            line-height: 1.6;
+        }
+        
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: var(--space-md);
+            color: var(--white);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col li {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .footer-col a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer-col a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-bottom p {
+            color: var(--gray-500);
+            font-size: 13px;
+        }
+        
+        .footer-legal {
+            display: flex;
+            gap: var(--space-lg);
+        }
+        
+        .footer-legal a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer-legal a:hover {
+            color: var(--white);
+        }
+        
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .tabs-container {
+                flex-direction: column;
+            }
+            
+            .tabs-nav {
+                width: 100%;
+                display: flex;
+                overflow-x: auto;
+                padding: var(--space-md);
+                border-right: none;
+                border-bottom: 1px solid var(--gray-200);
+                gap: var(--space-sm);
+            }
+            
+            .tabs-nav-header {
+                display: none;
+            }
+            
+            .tab-btn {
+                flex-shrink: 0;
+                margin-bottom: 0;
+                padding: var(--space-sm) var(--space-md);
+            }
+            
+            .tab-btn.active {
+                border-left: none;
+                border-bottom: 3px solid var(--orange-primary);
+            }
+            
+            .tab-btn-content small {
+                display: none;
+            }
+            
+            .varianten-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .engagement-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .org-benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .panel-vorteile {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+            
+            .shared-vorteile-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-main,
+            .btn-search {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .hero-mini h1 {
+                font-size: 28px;
+            }
+            
+            .hero-mini p {
+                font-size: 16px;
+            }
+            
+            .tab-icon {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .engagement-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .shared-vorteile-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-card {
+                padding: var(--space-xl);
+            }
+            
+            .cta-content h2 {
+                font-size: 24px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--space-md);
+                text-align: center;
+            }
+        }
+        
+        /* ========================================
+           ICONS
+           ======================================== */
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .icon-lg {
+            width: 32px;
+            height: 32px;
+        }
+            
+        /* ========================================
+           MEGA MENU (PATCHED)
+           ======================================== */
+        .nav-mehr { position: relative; }
+        .nav-mehr-btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); font-family: var(--font-body); font-weight: 600; font-size: 14px; cursor: pointer; transition: all var(--transition-fast); border: none; background: transparent; color: var(--gray-600); }
+        .nav-mehr-btn:hover, .nav-mehr-btn.active { color: var(--gray-900); }
+        .nav-mehr-btn .dots { display: flex; gap: 3px; }
+        .nav-mehr-btn .dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+        .nav-mehr-btn .chevron { width: 16px; height: 16px; transition: transform var(--transition-fast); }
+        .nav-mehr-btn.active .chevron { transform: rotate(180deg); }
+        .mega-menu-overlay { position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); opacity: 0; visibility: hidden; transition: all var(--transition-normal); z-index: 998; }
+        .mega-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mega-menu { position: fixed; top: 64px; left: 0; right: 0; background: var(--white); box-shadow: var(--shadow-xl); z-index: 999; transform: translateY(-20px); opacity: 0; visibility: hidden; transition: all var(--transition-normal); }
+        .mega-menu.active { transform: translateY(0); opacity: 1; visibility: visible; }
+        .mega-menu-inner { max-width: 1280px; margin: 0 auto; padding: var(--space-xl) var(--space-lg); display: grid; grid-template-columns: 1fr 1.2fr 1fr 280px; gap: var(--space-xl); }
+        .menu-column { padding-right: var(--space-lg); }
+        .menu-column:not(:last-child) { border-right: 1px solid var(--gray-100); }
+        .menu-column-header { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg); padding-bottom: var(--space-sm); border-bottom: 2px solid var(--gray-100); }
+        .menu-column-icon { width: 32px; height: 32px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .menu-column-icon.blue { background: var(--blue-lighter); color: var(--blue-primary); }
+        .menu-column-icon.orange { background: var(--orange-lighter); color: var(--orange-primary); }
+        .menu-column-icon.purple { background: var(--purple-lighter); color: var(--purple-primary); }
+        .menu-column-icon.green { background: var(--green-lighter); color: var(--green-primary); }
+        .menu-column-header h3 { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1.5px; }
+        .menu-items { display: flex; flex-direction: column; gap: var(--space-xs); }
+        .menu-item { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); text-decoration: none; color: var(--gray-700); transition: all var(--transition-fast); }
+        .menu-item:hover { background: var(--gray-50); color: var(--gray-900); }
+        .menu-item:hover .menu-item-icon { transform: scale(1.1); }
+        .menu-item-icon { width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform var(--transition-fast); }
+        .menu-item-icon.blue { background: var(--blue-lighter); color: var(--blue-primary); }
+        .menu-item-icon.orange { background: var(--orange-lighter); color: var(--orange-primary); }
+        .menu-item-icon.purple { background: var(--purple-lighter); color: var(--purple-primary); }
+        .menu-item-icon.green { background: var(--green-lighter); color: var(--green-primary); }
+        .menu-item-content { flex: 1; min-width: 0; }
+        .menu-item-content span { display: block; font-family: var(--font-display); font-weight: 600; font-size: 14px; color: var(--gray-900); }
+        .menu-item-content small { font-size: 12px; color: var(--gray-500); }
+        .menu-item-arrow { width: 16px; height: 16px; color: var(--gray-400); opacity: 0; transform: translateX(-8px); transition: all var(--transition-fast); }
+        .menu-item:hover .menu-item-arrow { opacity: 1; transform: translateX(0); }
+        .cities-column { padding: 0 var(--space-lg); }
+        .cities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
+        .city-card { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/10; cursor: pointer; text-decoration: none; display: block; }
+        .city-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%); z-index: 1; }
+        .city-card:hover .city-card-image { transform: scale(1.1); }
+        .city-card-image { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+        .city-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-sm) var(--space-md); z-index: 2; color: var(--white); }
+        .city-card-name { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+        .city-card-status { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-full); }
+        .city-card-status.active { background: var(--green-primary); }
+        .city-card-status.soon { background: #F9A825; color: var(--gray-900); }
+        .city-card-status.planned { background: rgba(255,255,255,0.25); }
+        .city-card-status .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--white); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .city-card.featured { grid-column: span 2; aspect-ratio: 2/1; }
+        .city-card.featured .city-card-content { padding: var(--space-md) var(--space-lg); }
+        .city-card.featured .city-card-name { font-size: 18px; margin-bottom: var(--space-xs); }
+        .city-card.featured .city-card-meta { display: flex; align-items: center; gap: var(--space-md); margin-top: var(--space-sm); }
+        .city-card.featured .city-stat { display: flex; align-items: center; gap: 4px; font-size: 12px; opacity: 0.9; }
+        .city-card.featured .city-stat svg { width: 14px; height: 14px; }
+        .all-cities-link { display: flex; align-items: center; justify-content: center; gap: var(--space-sm); margin-top: var(--space-md); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); background: var(--gray-50); color: var(--gray-600); font-weight: 600; font-size: 13px; text-decoration: none; transition: all var(--transition-fast); }
+        .all-cities-link:hover { background: var(--gray-100); color: var(--orange-primary); }
+        .all-cities-link svg { width: 16px; height: 16px; }
+        .menu-featured { background: linear-gradient(135deg, var(--orange-lighter) 0%, var(--blue-lighter) 100%); border-radius: var(--radius-xl); padding: var(--space-xl); display: flex; flex-direction: column; }
+        .menu-featured-badge { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-xs) var(--space-sm); background: var(--white); border-radius: var(--radius-full); font-size: 11px; font-weight: 700; color: var(--orange-primary); text-transform: uppercase; letter-spacing: 0.5px; width: fit-content; margin-bottom: var(--space-md); }
+        .menu-featured h4 { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--gray-900); margin-bottom: var(--space-sm); }
+        .menu-featured p { font-size: 14px; color: var(--gray-600); margin-bottom: var(--space-lg); flex: 1; }
+        .menu-featured-cta { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); background: var(--orange-primary); color: var(--white); border-radius: var(--radius-full); font-weight: 600; font-size: 14px; text-decoration: none; transition: all var(--transition-fast); width: fit-content; }
+        .menu-featured-cta:hover { background: var(--orange-dark); transform: translateY(-2px); }
+        .mega-menu-footer { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+        .mega-menu-footer-inner { max-width: 1280px; margin: 0 auto; padding: var(--space-md) var(--space-lg); display: flex; align-items: center; justify-content: space-between; }
+        .quick-links { display: flex; align-items: center; gap: var(--space-lg); }
+        .quick-link { display: inline-flex; align-items: center; gap: var(--space-xs); font-size: 13px; font-weight: 600; color: var(--gray-600); text-decoration: none; transition: color var(--transition-fast); }
+        .quick-link:hover { color: var(--orange-primary); }
+        .quick-link svg { width: 16px; height: 16px; }
+        .menu-social { display: flex; align-items: center; gap: var(--space-sm); }
+        .social-link { width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--gray-200); display: flex; align-items: center; justify-content: center; color: var(--gray-600); text-decoration: none; transition: all var(--transition-fast); }
+        .social-link:hover { background: var(--orange-primary); color: var(--white); }
+        .social-link svg { width: 16px; height: 16px; }
+        @media (max-width: 1024px) {
+            .mega-menu-inner { grid-template-columns: 1fr 1fr; }
+            .cities-column { padding: 0; }
+            .menu-featured { grid-column: span 2; }
+        }
+        @media (max-width: 768px) {
+            .mega-menu-inner { grid-template-columns: 1fr; padding: var(--space-md); }
+            .menu-column { padding-right: 0; border-right: none !important; padding-bottom: var(--space-lg); margin-bottom: var(--space-lg); border-bottom: 1px solid var(--gray-100); }
+            .cities-grid { grid-template-columns: 1fr 1fr; }
+            .city-card.featured { grid-column: span 2; }
+            .menu-featured { grid-column: span 1; }
+            .mega-menu-footer-inner { flex-direction: column; gap: var(--space-md); }
+            .quick-links { flex-wrap: wrap; justify-content: center; }
+        }
+
+            .icon-sm { width: 16px; height: 16px; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="https://helferportal.kamanin.at/" class="logo">
+                    <div class="logo-icon">H</div>
+                    <span class="logo-text">Helfer<span>portal</span></span>
+                </a>
+                <nav class="nav-main">
+                    <a href="https://helferportal.kamanin.at/hilfe-finden" class="nav-btn">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        <span>Hilfe finden</span>
+                    </a>
+                    <a href="https://helferportal.kamanin.at/engagieren" class="nav-btn active-orange">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span>Engagieren</span>
+                    </a>
+                    <div class="nav-mehr">
+                        <button class="nav-mehr-btn" id="mehrBtn">
+                            <span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>
+                            <span>Mehr</span>
+                            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="btn-search" aria-label="Suche"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+                <a href="https://helferportal.kamanin.at/kontakt" class="btn-login">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Anmelden</span>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Menü"><svg class="icon-lg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mega-menu-overlay" id="megaOverlay"></div>
+    <!-- MEGA MENU v2 -->
+    <div class="mega-menu" id="megaMenu">
+        <div class="mega-menu-inner">
+            <div class="menu-column">
+                <div class="menu-column-header"><div class="menu-column-icon blue"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Für wen</h3></div>
+                <div class="menu-items">
+                    <a href="https://helferportal.kamanin.at/hilfe-finden" class="menu-item"><div class="menu-item-icon blue"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="menu-item-content"><span>Hilfesuchende</span><small>Unterstützung im Alltag</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/hilfe-finden#angehoerige" class="menu-item"><div class="menu-item-icon blue"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="menu-item-content"><span>Pflegende Angehörige</span><small>Entlastung finden</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/engagieren" class="menu-item"><div class="menu-item-icon orange"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="menu-item-content"><span>Engagierte</span><small>Helfen, wenn es passt</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/kommunen-akteure" class="menu-item"><div class="menu-item-icon purple"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="menu-item-content"><span>Kommunen & Landkreise</span><small>Versorgung digital steuern</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/kommunen-akteure#organisationen" class="menu-item"><div class="menu-item-icon purple"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><div class="menu-item-content"><span>Organisationen</span><small>Helferkreise koordinieren</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+            <div class="menu-column cities-column">
+                <div class="menu-column-header"><div class="menu-column-icon green"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Unsere Städte</h3></div>
+                <div class="cities-grid">
+                    <a href="#" class="city-card featured"><img src="https://images.unsplash.com/photo-1595867818082-083862f3d630?w=600" alt="München" class="city-card-image"><div class="city-card-content"><span class="city-card-status active"><span class="pulse"></span>Aktiv</span><h4 class="city-card-name">München</h4><div class="city-card-meta"><span class="city-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>120+ Helfer</span><span class="city-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>500+ geholfen</span></div></div></a>
+                    <a href="#" class="city-card"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400" alt="Dietzenbach" class="city-card-image"><div class="city-card-content"><span class="city-card-status soon">Pilotprojekt</span><h4 class="city-card-name">Dietzenbach</h4></div></a>
+                    <a href="#" class="city-card"><img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400" alt="Frankfurt" class="city-card-image"><div class="city-card-content"><span class="city-card-status soon">Startet bald</span><h4 class="city-card-name">Frankfurt</h4></div></a>
+                    <a href="#" class="city-card"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400" alt="Solingen" class="city-card-image"><div class="city-card-content"><span class="city-card-status planned">In Planung</span><h4 class="city-card-name">Solingen</h4></div></a>
+                    <a href="#" class="city-card"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" alt="Hildburghausen" class="city-card-image"><div class="city-card-content"><span class="city-card-status soon">Startet bald</span><h4 class="city-card-name">Hildburghausen</h4></div></a>
+                </div>
+                <a href="#" class="all-cities-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Alle Standorte<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+            <div class="menu-column">
+                <div class="menu-column-header"><div class="menu-column-icon purple"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div><h3>Über uns</h3></div>
+                <div class="menu-items">
+                    <a href="https://helferportal.kamanin.at/ueber-uns" class="menu-item"><div class="menu-item-icon purple"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div class="menu-item-content"><span>Das Konzept</span><small>Vision & Hintergrund</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/ueber-uns#geschichte" class="menu-item"><div class="menu-item-icon orange"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="menu-item-content"><span>Geschichte</span><small>Seit 2015</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/ueber-uns#team" class="menu-item"><div class="menu-item-icon blue"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="menu-item-content"><span>Team & Gründer</span><small>Menschen dahinter</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://helferportal.kamanin.at/ueber-uns#partner" class="menu-item"><div class="menu-item-icon green"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="menu-item-content"><span>Partner & Förderung</span><small>BMBF, DATI & mehr</small></div><svg class="menu-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+            <div class="menu-featured">
+                <span class="menu-featured-badge"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Jetzt starten</span>
+                <h4>Kostenlos registrieren</h4>
+                <p>Egal ob Sie Hilfe suchen oder helfen möchten – kostenfrei und unverbindlich.</p>
+                <a href="https://helferportal.kamanin.at/kontakt" class="menu-featured-cta">Jetzt starten<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+        <div class="mega-menu-footer"><div class="mega-menu-footer-inner">
+            <div class="quick-links">
+                <a href="#" class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>FAQ</a>
+                <a href="https://helferportal.kamanin.at/kontakt" class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Kontakt</a>
+                <a href="#" class="quick-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>So funktioniert's</a>
+            </div>
+            <div class="menu-social">
+                <a href="#" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                <a href="#" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48" fill="white"/></svg></a>
+            </div>
+        </div></div>
+    </div>
+
+
+    <!-- ========================================
+         HERO (MINI) - ORANGE
+         ======================================== -->
+    <section class="hero-mini">
+        <div class="hero-mini-content">
+            <nav class="breadcrumb">
+                <a href="https://helferportal.kamanin.at/">Startseite</a>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+                <span>Engagieren</span>
+            </nav>
+            <h1>Engagiere Dich, wie es zu Dir passt</h1>
+            <p>Ob spontan, regelmäßig oder im Team – finde den Weg, der zu deinem Leben passt. Sicher, versichert und gut begleitet.</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TABS SECTION
+         ======================================== -->
+    <section class="tabs-section">
+        <div class="tabs-container">
+            <!-- Tabs Navigation -->
+            <nav class="tabs-nav">
+                <div class="tabs-nav-header">
+                    <h3>Dein Engagement</h3>
+                </div>
+                <button class="tab-btn active" data-tab="spontan">
+                    <div class="tab-icon green">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <div class="tab-btn-content">
+                        <span>Spontan & flexibel</span>
+                        <small>Helfen ohne Verpflichtung</small>
+                    </div>
+                </button>
+                <button class="tab-btn" data-tab="eigenstaendig">
+                    <div class="tab-icon yellow">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <div class="tab-btn-content">
+                        <span>Regelmäßig & eigenständig</span>
+                        <small>Ehrenamtlich oder selbständig</small>
+                    </div>
+                </button>
+                <button class="tab-btn" data-tab="organisation">
+                    <div class="tab-icon blue">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="tab-btn-content">
+                        <span>Im Team einer Organisation</span>
+                        <small>Begleitet und versichert</small>
+                    </div>
+                </button>
+            </nav>
+            
+            <!-- Tabs Content -->
+            <div class="tabs-content">
+                <!-- Panel: Spontan & flexibel -->
+                <div class="tab-panel active" data-panel="spontan">
+                    <div class="tab-panel-header">
+                        <h2>Unkompliziert helfen oder Freizeit begleiten</h2>
+                        <p>Du möchtest helfen, wenn du Zeit hast – ohne feste Verpflichtungen? Als Spontanhelfer:in unterstützt du flexibel im Alltag oder bei der Freizeitgestaltung. Du entscheidest bei jeder Anfrage neu.</p>
+                    </div>
+                    
+                    <div class="activities-box green">
+                        <h4>Was du tun kannst</h4>
+                        <div class="activities-list">
+                            <span class="activity-tag green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Spaziergänge
+                            </span>
+                            <span class="activity-tag green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Gespräche
+                            </span>
+                            <span class="activity-tag green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Einkaufshilfe
+                            </span>
+                            <span class="activity-tag green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Begleitung
+                            </span>
+                            <span class="activity-tag green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Gemeinsame Aktivitäten
+                            </span>
+                            <span class="activity-tag green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Digitale Unterstützung
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="panel-vorteile">
+                        <div class="panel-vorteil">
+                            <div class="panel-vorteil-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                </svg>
+                            </div>
+                            <div class="panel-vorteil-content">
+                                <h5>Keine Bindung</h5>
+                                <p>Du entscheidest bei jeder Anfrage neu</p>
+                            </div>
+                        </div>
+                        <div class="panel-vorteil">
+                            <div class="panel-vorteil-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                            </div>
+                            <div class="panel-vorteil-content">
+                                <h5>Anonym zuerst</h5>
+                                <p>Erstkontakt im geschützten Raum</p>
+                            </div>
+                        </div>
+                        <div class="panel-vorteil">
+                            <div class="panel-vorteil-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="panel-vorteil-content">
+                                <h5>Volle Kontrolle</h5>
+                                <p>Nur passende Anfragen</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-cta">
+                        <a href="https://helfen.helferportal.de" class="btn-primary green">
+                            Als Spontanhelfer:in starten
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <button class="btn-secondary">Mehr erfahren</button>
+                    </div>
+                </div>
+                
+                <!-- Panel: Regelmäßig & eigenständig -->
+                <div class="tab-panel" data-panel="eigenstaendig">
+                    <div class="tab-panel-header">
+                        <h2>Qualifizierte Unterstützung – eigenständig und rechtlich geregelt</h2>
+                        <p>Du möchtest regelmäßig unterstützen und hast Erfahrung oder Qualifikation? Als Alltagsbegleiter:in kannst du ehrenamtlich oder selbständig tätig sein – mit klaren Rahmenbedingungen.</p>
+                    </div>
+                    
+                    <div class="varianten-grid">
+                        <div class="variante-card">
+                            <div class="variante-card-header">
+                                <div class="variante-card-icon">
+                                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                    </svg>
+                                </div>
+                                <h4>Ehrenamtlich</h4>
+                            </div>
+                            <p>Ohne Gewerbe, oft mit Aufwandsentschädigung im Rahmen der Übungsleiter- oder Ehrenamtspauschale (bis zu 840€/Jahr steuerfrei).</p>
+                        </div>
+                        <div class="variante-card">
+                            <div class="variante-card-header">
+                                <div class="variante-card-icon">
+                                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                    </svg>
+                                </div>
+                                <h4>Selbständig</h4>
+                            </div>
+                            <p>Mit Gewerbeanmeldung, freie Vergütung, als Neben- oder Haupterwerb möglich. Du bestimmst deine Konditionen selbst.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <p><strong>Voraussetzungen:</strong> Je nach Bundesland können Registrierung, kurze Schulungen oder Qualifikationsnachweise erforderlich sein. Wir begleiten dich dabei. <a href="#">Mehr Infos für Bayern →</a></p>
+                    </div>
+                    
+                    <div class="panel-vorteile">
+                        <div class="panel-vorteil">
+                            <div class="panel-vorteil-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="panel-vorteil-content">
+                                <h5>Rechtssicher</h5>
+                                <p>Klare Rahmenbedingungen</p>
+                            </div>
+                        </div>
+                        <div class="panel-vorteil">
+                            <div class="panel-vorteil-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="panel-vorteil-content">
+                                <h5>Keine Akquise</h5>
+                                <p>Anfragen kommen zu dir</p>
+                            </div>
+                        </div>
+                        <div class="panel-vorteil">
+                            <div class="panel-vorteil-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                    <line x1="1" y1="10" x2="23" y2="10"/>
+                                </svg>
+                            </div>
+                            <div class="panel-vorteil-content">
+                                <h5>Automatisch</h5>
+                                <p>Abrechnung und Dokumentation</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-cta">
+                        <a href="https://helfen.helferportal.de" class="btn-primary">
+                            Als Alltagsbegleiter:in registrieren
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <button class="btn-secondary">Mehr erfahren</button>
+                    </div>
+                </div>
+                
+                <!-- Panel: Im Team einer Organisation -->
+                <div class="tab-panel" data-panel="organisation">
+                    <div class="tab-panel-header">
+                        <h2>Eingebunden, begleitet und abgesichert</h2>
+                        <p>Du möchtest dich engagieren, aber nicht alles allein organisieren? Über eine Organisation erhältst du Begleitung, Schulungen und Versicherungsschutz – und bist Teil eines Teams.</p>
+                    </div>
+                    
+                    <div class="org-benefits">
+                        <h4>Was dir eine Organisation bietet</h4>
+                        <div class="org-benefits-list">
+                            <div class="org-benefit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Feste Ansprechpartner
+                            </div>
+                            <div class="org-benefit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Einführungsgespräch
+                            </div>
+                            <div class="org-benefit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Fachliche Anleitung
+                            </div>
+                            <div class="org-benefit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Versicherungsschutz
+                            </div>
+                            <div class="org-benefit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Schulungen & Weiterbildung
+                            </div>
+                            <div class="org-benefit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Erfahrungsaustausch
+                            </div>
+                            <div class="org-benefit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Automatische Abrechnung
+                            </div>
+                            <div class="org-benefit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Teil eines Teams sein
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="engagement-grid">
+                        <div class="engagement-card">
+                            <div class="engagement-card-icon">
+                                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <h4>Alltagsbegleiter:in</h4>
+                        </div>
+                        <div class="engagement-card">
+                            <div class="engagement-card-icon">
+                                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </div>
+                            <h4>Assistent:in</h4>
+                        </div>
+                        <div class="engagement-card">
+                            <div class="engagement-card-icon">
+                                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                                    <line x1="9" y1="9" x2="9.01" y2="9"/>
+                                    <line x1="15" y1="9" x2="15.01" y2="9"/>
+                                </svg>
+                            </div>
+                            <h4>Betreuer:in</h4>
+                        </div>
+                        <div class="engagement-card">
+                            <div class="engagement-card-icon">
+                                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </div>
+                            <h4>Kommunales Engagement</h4>
+                        </div>
+                        <div class="engagement-card">
+                            <div class="engagement-card-icon">
+                                <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <h4>Katastrophenschutz</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="panel-vorteile">
+                        <div class="panel-vorteil">
+                            <div class="panel-vorteil-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="panel-vorteil-content">
+                                <h5>Versichert</h5>
+                                <p>Haftpflicht-, Unfall- und Dienstreisekaskoversicherung</p>
+                            </div>
+                        </div>
+                        <div class="panel-vorteil">
+                            <div class="panel-vorteil-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="panel-vorteil-content">
+                                <h5>Begleitet</h5>
+                                <p>Fachliche Unterstützung bei Fragen</p>
+                            </div>
+                        </div>
+                        <div class="panel-vorteil">
+                            <div class="panel-vorteil-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                                    <line x1="9" y1="9" x2="9.01" y2="9"/>
+                                    <line x1="15" y1="9" x2="15.01" y2="9"/>
+                                </svg>
+                            </div>
+                            <div class="panel-vorteil-content">
+                                <h5>Gemeinschaft</h5>
+                                <p>Teil eines Teams sein</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-cta">
+                        <a href="https://helfen.helferportal.de" class="btn-primary blue">
+                            Organisation finden
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <button class="btn-secondary">Mehr erfahren</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         GEMEINSAME VORTEILE SECTION
+         ======================================== -->
+    <section class="shared-vorteile-section">
+        <div class="shared-vorteile-header">
+            <h2>Für alle Engagement-Arten</h2>
+            <h3>Gemeinsame Vorteile</h3>
+        </div>
+        
+        <div class="shared-vorteile-grid">
+            <div class="shared-vorteil-card">
+                <div class="shared-vorteil-icon">
+                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </div>
+                <h4>Nur passende Anfragen</h4>
+                <p>Du erhältst nur Anfragen, die zu deinem Profil und deinen Präferenzen passen.</p>
+            </div>
+            <div class="shared-vorteil-card">
+                <div class="shared-vorteil-icon">
+                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                </div>
+                <h4>Du entscheidest</h4>
+                <p>Über Zeit, Umfang und Einsatzort bestimmst du selbst.</p>
+            </div>
+            <div class="shared-vorteil-card">
+                <div class="shared-vorteil-icon">
+                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+                <h4>Anonym zuerst</h4>
+                <p>Der Erstkontakt erfolgt im geschützten Raum per Chat, Video oder Audio.</p>
+            </div>
+            <div class="shared-vorteil-card">
+                <div class="shared-vorteil-icon">
+                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                </div>
+                <h4>Transparent</h4>
+                <p>Einsätze werden klar organisiert und dokumentiert.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FAQ SECTION
+         ======================================== -->
+    <section class="faq-section">
+        <div class="faq-header">
+            <h2>Häufige Fragen</h2>
+            <h3>Alles zum Engagement</h3>
+        </div>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    Muss ich mich langfristig verpflichten?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Nein. Je nach Engagement-Art kannst du spontan helfen oder regelmäßige Einsätze übernehmen. Du entscheidest selbst über Umfang und Dauer. Bei spontaner Hilfe entscheidest du bei jeder einzelnen Anfrage neu – ohne jegliche Verpflichtung.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Bin ich versichert?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Bei Engagement über eine Organisation erhältst du in der Regel vollständigen Versicherungsschutz: Haftpflicht-, Unfall- und Dienstreisekaskoversicherung. Bei Spontanhilfe empfehlen wir, dies individuell zu prüfen – oder dich einer Organisation anzuschließen.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Bekomme ich eine Vergütung?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Das hängt von der Engagement-Art ab. Ehrenamtlich kann es Aufwandsentschädigungen im Rahmen der Übungsleiter- oder Ehrenamtspauschale geben (bis zu 840€/Jahr steuerfrei). Selbständig legst du deine Vergütung selbst fest. Spontane Hilfe ist in der Regel unentgeltlich.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Welche Voraussetzungen muss ich erfüllen?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Je nach Engagement-Art können unterschiedliche Voraussetzungen gelten: Bei spontaner Hilfe gibt es oft keine formalen Anforderungen. Bei organisiertem Engagement kann ein Führungszeugnis, ein Einführungsgespräch oder eine kurze Schulung erforderlich sein. Wir begleiten dich durch den Prozess.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Wie funktioniert die Einsatzplanung?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Du legst dein Profil mit Verfügbarkeiten, Präferenzen und Einsatzradius an. Passende Anfragen werden dir per App, E-Mail oder SMS zugesandt. Per App kannst du zu- oder absagen und mit Hilfesuchenden im geschützten Raum kommunizieren, bevor du dich entscheidest.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CTA SECTION
+         ======================================== -->
+    <section class="cta-section">
+        <div class="cta-card">
+            <div class="cta-content">
+                <h2>Bereit, zu helfen?</h2>
+                <p>Registriere dich kostenlos und finde Einsätze, die zu dir passen – flexibel, sicher und wertgeschätzt.</p>
+                <div class="cta-buttons">
+                    <a href="https://helfen.helferportal.de" class="btn-white">
+                        Jetzt engagieren
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="https://helferportal.kamanin.at/kontakt" class="btn-outline-white">
+                        Beratung anfragen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="https://helferportal.kamanin.at/" class="logo">
+                        <div class="logo-icon">H</div>
+                        <span class="logo-text">Helfer<span>portal</span></span>
+                    </a>
+                    <p>Die digitale Vermittlungsplattform für Unterstützungs- und Versorgungsbedarfe. Gemeinsam schaffen wir integrative Versorgungsstrukturen.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Für Sie</h4>
+                    <ul>
+                        <li><a href="https://helferportal.kamanin.at/hilfe-finden">Hilfe finden</a></li>
+                        <li><a href="https://helferportal.kamanin.at/engagieren">Engagieren</a></li>
+                        <li><a href="https://helferportal.kamanin.at/kommunen-akteure">Für Kommunen</a></li>
+                        <li><a href="#">Für Organisationen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Über uns</h4>
+                    <ul>
+                        <li><a href="https://helferportal.kamanin.at/ueber-uns">Das Konzept</a></li>
+                        <li><a href="#">So funktioniert's</a></li>
+                        <li><a href="#">Unsere Partner</a></li>
+                        <li><a href="#">Aktuelles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><a href="https://helferportal.kamanin.at/kontakt">Kontakt aufnehmen</a></li>
+                        <li><a href="#">Demo vereinbaren</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Helferportal GmbH & Co. KG. Alle Rechte vorbehalten.</p>
+                <nav class="footer-legal">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">Nutzungsbedingungen</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <script>
+        // ========================================
+        // TABS
+        // ========================================
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                // Update buttons
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Update panels
+                tabPanels.forEach(panel => {
+                    panel.classList.remove('active');
+                    if (panel.getAttribute('data-panel') === tabId) {
+                        panel.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // ========================================
+        // FAQ ACCORDION
+        // ========================================
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('open');
+                    }
+                });
+                // Toggle current
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+    <!-- MEGA MENU JS -->
+    <script>
+        const mehrBtn = document.getElementById('mehrBtn');
+        const megaMenu = document.getElementById('megaMenu');
+        const megaOverlay = document.getElementById('megaOverlay');
+        function openMegaMenu() { mehrBtn.classList.add('active'); megaMenu.classList.add('active'); megaOverlay.classList.add('active'); }
+        function closeMegaMenu() { mehrBtn.classList.remove('active'); megaMenu.classList.remove('active'); megaOverlay.classList.remove('active'); }
+        mehrBtn.addEventListener('click', () => { megaMenu.classList.contains('active') ? closeMegaMenu() : openMegaMenu(); });
+        megaOverlay.addEventListener('click', closeMegaMenu);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMegaMenu(); });
+        megaMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => setTimeout(closeMegaMenu, 100)); });
+    </script>
+
+</body>
+</html>
