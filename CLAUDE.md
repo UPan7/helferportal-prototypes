@@ -8,7 +8,7 @@ This project generates **visual HTML prototypes** and **Excel content tables** f
 
 ## Project Structure
 
-The project structure is **deploy-ready** — the root of the repo IS the document root of `https://helferportal.kamanin.at/`. Plesk Git auto-deploys on push.
+The project structure is **deploy-ready** — the root of the repo IS the document root of `https://www.helferportal.kamanin.at/`. Plesk Git auto-deploys on push.
 
 ```
 helferportal-prototypes/          ← Git repo root = document root
@@ -64,7 +64,7 @@ Footer columns:
 
 ### 3. Links Between Pages
 
-**Hosting domain:** `https://helferportal.kamanin.at/`
+**Hosting domain:** `https://www.helferportal.kamanin.at/`
 
 All inter-page links use absolute paths from the root:
 ```html
@@ -246,7 +246,7 @@ Image motifs should match the social/care context of Helferportal.
 
 ## Deployment
 
-**Production URL:** `https://helferportal.kamanin.at/`
+**Production URL:** `https://www.helferportal.kamanin.at/`
 **Hosting:** Plesk with Git auto-deploy (push to GitHub → Plesk pulls automatically)
 **Document root:** The repo root IS the document root. No build step.
 
