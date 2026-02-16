@@ -1619,6 +1619,7 @@
             border: none;
             background: var(--gray-100);
             color: var(--gray-700);
+            text-decoration: none;
         }
         
         .page-startseite .nav-btn:hover {
