@@ -42,7 +42,7 @@ const progressBars = document.querySelectorAll('.progress-bar');
 if (slides.length > 0 && progressBars.length > 0) {
     let currentSlide = 0;
     let slideInterval;
-    const slideDuration = 5000;
+    const slideDuration = 6000;
 
     function showSlide(index) {
         // Update slides
