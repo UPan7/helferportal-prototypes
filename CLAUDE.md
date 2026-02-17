@@ -8,7 +8,7 @@ This project generates **visual HTML prototypes** and **Excel content tables** f
 
 ## Project Structure
 
-The project structure is **deploy-ready** — the root of the repo IS the document root of `https://www.helferportal.kamanin.at/`. Plesk Git auto-deploys on push.
+The project structure is **deploy-ready** — the root of the repo IS the document root of `https://www.helferportal.kamanin.at/`. GitHub Pages auto-deploys on push to `main`.
 
 ```
 helferportal-prototypes/          ← Git repo root = document root
@@ -34,7 +34,7 @@ helferportal-prototypes/          ← Git repo root = document root
     └── brand-guidelines.md
 ```
 
-**Git workflow:** Push to GitHub → Plesk auto-pulls → site is live.
+**Git workflow:** Push to GitHub → GitHub Pages auto-deploys → site is live.
 **Deploy = push.** No build step, no copy step.
 
 ## Core Rules
@@ -247,7 +247,8 @@ Image motifs should match the social/care context of Helferportal.
 ## Deployment
 
 **Production URL:** `https://www.helferportal.kamanin.at/`
-**Hosting:** Plesk with Git auto-deploy (push to GitHub → Plesk pulls automatically)
+**Hosting:** GitHub Pages (branch: `main`, root: `/`)
+**Custom domain:** Configured via `CNAME` file (`www.helferportal.kamanin.at`)
 **Document root:** The repo root IS the document root. No build step.
 
 ```bash
@@ -255,7 +256,7 @@ Image motifs should match the social/care context of Helferportal.
 git add -A
 git commit -m "Add hilfe-finden page"
 git push origin main
-# → Plesk auto-deploys within seconds
+# → GitHub Pages auto-deploys within ~1 minute
 ```
 
 **Local development:** `npx serve .` in the repo root, then open `http://localhost:3000`.
