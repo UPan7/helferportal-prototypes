@@ -1705,6 +1705,7 @@
             font-size: 14px;
             cursor: pointer;
             transition: all var(--transition-fast);
+            text-decoration: none;
         }
         
         .page-startseite .btn-login:hover {
