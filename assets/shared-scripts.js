@@ -81,7 +81,12 @@ if (slides.length > 0 && progressBars.length > 0) {
         // Update slides
         slides.forEach((slide, i) => {
             slide.classList.remove('active');
-            if (i === index) slide.classList.add('active');
+            if (i === index) {
+                slide.classList.add('active');
+                slide.setAttribute('aria-hidden', 'false');
+            } else {
+                slide.setAttribute('aria-hidden', 'true');
+            }
         });
 
         // Update progress bars
@@ -117,6 +122,11 @@ if (slides.length > 0 && progressBars.length > 0) {
             showSlide(index);
             resetSlider();
         });
+    });
+
+    // Set initial aria-hidden on inactive slides
+    slides.forEach((slide, i) => {
+        slide.setAttribute('aria-hidden', i === 0 ? 'false' : 'true');
     });
 
     // Start slider
@@ -414,6 +424,10 @@ if (faqItems.length > 0) {
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         if (question) {
+            // Set initial aria-expanded state
+            const isOpen = item.classList.contains('open') || item.classList.contains('active');
+            question.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
             question.addEventListener('click', () => {
                 const wasOpen = item.classList.contains('open') || item.classList.contains('active');
                 // Close others
@@ -421,15 +435,19 @@ if (faqItems.length > 0) {
                     if (otherItem !== item) {
                         otherItem.classList.remove('open');
                         otherItem.classList.remove('active');
+                        const otherQ = otherItem.querySelector('.faq-question');
+                        if (otherQ) otherQ.setAttribute('aria-expanded', 'false');
                     }
                 });
                 // Toggle current
                 if (wasOpen) {
                     item.classList.remove('open');
                     item.classList.remove('active');
+                    question.setAttribute('aria-expanded', 'false');
                 } else {
                     item.classList.add('open');
                     item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
                 }
             });
         }

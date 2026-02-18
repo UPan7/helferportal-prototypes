@@ -100,6 +100,30 @@
             word-wrap: break-word;
         }
 
+        /* Utility: visually hidden but accessible to screen readers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Utility: tabs-nav-label (replaced h3 in tabs-nav-header) */
+        .tabs-nav-label {
+            margin: 0;
+        }
+
+        /* Utility: highlight-brand (replaces inline style on index.html testimonial) */
+        .highlight-brand {
+            font-weight: 700;
+            color: #00ACC1;
+        }
+
         /* Mobile: enable automatic hyphenation for headings (lang="de" on html tag) */
         @media (max-width: 768px) {
             h1, h2 {
@@ -401,7 +425,7 @@
             border-bottom: 1px solid var(--gray-200);
         }
         
-        .page-engagieren .tabs-nav-header h3 {
+        .page-engagieren .tabs-nav-header .tabs-nav-label {
             font-family: var(--font-display);
             font-size: 14px;
             font-weight: 700;
@@ -547,7 +571,7 @@
             background: var(--blue-lighter);
         }
         
-        .page-engagieren .activities-box h4 {
+        .page-engagieren .activities-box h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -557,15 +581,15 @@
             margin-bottom: var(--space-md);
         }
         
-        .page-engagieren .activities-box.green h4 {
+        .page-engagieren .activities-box.green h3 {
             color: var(--green-primary);
         }
         
-        .page-engagieren .activities-box.yellow h4 {
+        .page-engagieren .activities-box.yellow h3 {
             color: var(--yellow-primary);
         }
         
-        .page-engagieren .activities-box.blue h4 {
+        .page-engagieren .activities-box.blue h3 {
             color: var(--blue-primary);
         }
         
@@ -645,7 +669,7 @@
             color: var(--yellow-primary);
         }
         
-        .page-engagieren .variante-card h4 {
+        .page-engagieren .variante-card h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 18px;
@@ -695,7 +719,7 @@
             margin: 0 auto var(--space-md);
         }
         
-        .page-engagieren .engagement-card h4 {
+        .page-engagieren .engagement-card h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 15px;
@@ -739,7 +763,7 @@
             margin-bottom: var(--space-xl);
         }
         
-        .page-engagieren .org-benefits h4 {
+        .page-engagieren .org-benefits h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -802,7 +826,7 @@
             flex-shrink: 0;
         }
         
-        .page-engagieren .panel-vorteil-content h5 {
+        .page-engagieren .panel-vorteil-content h4 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -948,7 +972,7 @@
             color: var(--orange-primary);
         }
         
-        .page-engagieren .shared-vorteil-card h4 {
+        .page-engagieren .shared-vorteil-card h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 18px;
@@ -1207,7 +1231,7 @@
             line-height: 1.6;
         }
         
-        .page-engagieren .footer-col h4 {
+        .page-engagieren .footer-col h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -2686,7 +2710,7 @@
             gap: var(--space-md);
         }
 
-        .page-startseite .testimonial-author-info h4 {
+        .page-startseite .testimonial-author-info .testimonial-name {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 16px;
@@ -2727,7 +2751,7 @@
             text-align: center;
         }
         
-        .page-startseite .partners-inner h4 {
+        .page-startseite .partners-inner h2 {
             font-family: var(--font-display);
             font-size: 12px;
             font-weight: 600;
@@ -2798,7 +2822,7 @@
             line-height: 1.6;
         }
         
-        .page-startseite .footer-col h4 {
+        .page-startseite .footer-col h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -3528,7 +3552,7 @@
             border-bottom: 1px solid var(--gray-200);
         }
         
-        .page-hilfe-finden .tabs-nav-header h3 {
+        .page-hilfe-finden .tabs-nav-header .tabs-nav-label {
             font-family: var(--font-display);
             font-size: 14px;
             font-weight: 700;
@@ -3649,7 +3673,7 @@
             margin-bottom: var(--space-xl);
         }
         
-        .page-hilfe-finden .possibilities-box h4 {
+        .page-hilfe-finden .possibilities-box h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -3718,7 +3742,7 @@
             margin-bottom: var(--space-md);
         }
         
-        .page-hilfe-finden .bereich-card h4 {
+        .page-hilfe-finden .bereich-card h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 16px;
@@ -3761,7 +3785,7 @@
             flex-shrink: 0;
         }
         
-        .page-hilfe-finden .panel-vorteil-content h5 {
+        .page-hilfe-finden .panel-vorteil-content h4 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -3905,7 +3929,7 @@
             color: var(--purple-primary);
         }
         
-        .page-hilfe-finden .vorteil-card h4 {
+        .page-hilfe-finden .vorteil-card h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 18px;
@@ -4164,7 +4188,7 @@
             line-height: 1.6;
         }
         
-        .page-hilfe-finden .footer-col h4 {
+        .page-hilfe-finden .footer-col h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -4887,7 +4911,7 @@
             color: var(--white);
         }
         
-        .page-fuer-kommunen .stat-card h3 {
+        .page-fuer-kommunen .stat-card .stat-number {
             font-family: var(--font-display);
             font-size: 28px;
             font-weight: 800;
@@ -4966,7 +4990,7 @@
             margin-bottom: var(--space-md);
         }
         
-        .page-fuer-kommunen .problem-card h4 {
+        .page-fuer-kommunen .problem-card h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 18px;
@@ -4987,7 +5011,7 @@
             text-align: center;
         }
         
-        .page-fuer-kommunen .solution-box h4 {
+        .page-fuer-kommunen .solution-box h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 24px;
@@ -5036,7 +5060,7 @@
             border-bottom: 1px solid var(--gray-200);
         }
         
-        .page-fuer-kommunen .tabs-nav-header h3 {
+        .page-fuer-kommunen .tabs-nav-header .tabs-nav-label {
             font-family: var(--font-display);
             font-size: 14px;
             font-weight: 700;
@@ -5190,7 +5214,7 @@
             flex-shrink: 0;
         }
         
-        .page-fuer-kommunen .feature-card h4 {
+        .page-fuer-kommunen .feature-card h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 16px;
@@ -5212,7 +5236,7 @@
             margin-bottom: var(--space-xl);
         }
         
-        .page-fuer-kommunen .use-cases h4 {
+        .page-fuer-kommunen .use-cases h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -5546,7 +5570,7 @@
             line-height: 1.6;
         }
         
-        .page-fuer-kommunen .footer-col h4 {
+        .page-fuer-kommunen .footer-col h3 {
             font-family: var(--font-display);
             font-weight: 700;
             font-size: 14px;
@@ -6031,7 +6055,7 @@
         .page-ueber-uns .founder-image-placeholder { width: 180px; height: 180px; background: var(--gray-400); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); }
         .page-ueber-uns .founder-content { padding: var(--space-2xl); }
         .page-ueber-uns .founder-badge { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-xs) var(--space-md); background: var(--purple-lighter); color: var(--purple-primary); border-radius: var(--radius-full); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-md); }
-        .page-ueber-uns .founder-content h3 { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: var(--space-xs); }
+        .page-ueber-uns .founder-content h4 { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: var(--space-xs); }
         .page-ueber-uns .founder-role { font-size: 16px; color: var(--orange-primary); font-weight: 600; margin-bottom: var(--space-lg); }
         .page-ueber-uns .founder-content p { font-size: 16px; color: var(--gray-600); line-height: 1.8; margin-bottom: var(--space-lg); }
         .page-ueber-uns .founder-credentials { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
@@ -6072,7 +6096,7 @@
         .page-ueber-uns .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
         .page-ueber-uns .footer-brand .logo-img { height: 36px; width: auto; }
         .page-ueber-uns .footer-brand p { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
-        .page-ueber-uns .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
+        .page-ueber-uns .footer-col h3 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
         .page-ueber-uns .footer-col ul { list-style: none; }
         .page-ueber-uns .footer-col li { margin-bottom: var(--space-sm); }
         .page-ueber-uns .footer-col a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
@@ -6114,7 +6138,7 @@
             .page-ueber-uns .mission-content h2 { font-size: 24px; }
             .page-ueber-uns .section-header h3 { font-size: 24px; }
             .page-ueber-uns .founder-content { padding: var(--space-xl); }
-            .page-ueber-uns .founder-content h3 { font-size: 24px; }
+            .page-ueber-uns .founder-content h4 { font-size: 24px; }
             .page-ueber-uns .partners-grid { grid-template-columns: 1fr; }
             .page-ueber-uns .awards-row { flex-direction: column; gap: var(--space-lg); align-items: flex-start; }
             .page-ueber-uns .cta-card { padding: var(--space-xl); }
@@ -6326,9 +6350,9 @@
         .page-kontakt .section-header h3 { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--gray-900); }
         .page-kontakt .faq-list { display: flex; flex-direction: column; gap: var(--space-md); }
         .page-kontakt .faq-item { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
-        .page-kontakt .faq-question { display: flex; align-items: center; justify-content: space-between; padding: var(--space-lg); cursor: pointer; transition: background var(--transition-fast); }
+        .page-kontakt .faq-question { display: flex; align-items: center; justify-content: space-between; padding: var(--space-lg); cursor: pointer; transition: background var(--transition-fast); border: none; background: none; width: 100%; text-align: left; font: inherit; }
         .page-kontakt .faq-question:hover { background: var(--gray-50); }
-        .page-kontakt .faq-question h4 { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--gray-900); }
+        .page-kontakt .faq-question h3 { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--gray-900); }
         .page-kontakt .faq-question .faq-toggle { width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--gray-100); display: flex; align-items: center; justify-content: center; color: var(--gray-600); transition: all var(--transition-fast); flex-shrink: 0; }
         .page-kontakt .faq-item.active .faq-toggle { background: var(--orange-primary); color: var(--white); transform: rotate(180deg); }
         .page-kontakt .faq-answer { padding: 0 var(--space-lg) var(--space-lg); display: none; }
@@ -6342,7 +6366,7 @@
         .page-kontakt .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
         .page-kontakt .footer-brand .logo-img { height: 36px; width: auto; }
         .page-kontakt .footer-brand p { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
-        .page-kontakt .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
+        .page-kontakt .footer-col h3 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
         .page-kontakt .footer-col ul { list-style: none; }
         .page-kontakt .footer-col li { margin-bottom: var(--space-sm); }
         .page-kontakt .footer-col a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
@@ -6621,7 +6645,7 @@
         .page-muenchen .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
         .page-muenchen .footer-brand .logo-img { height: 36px; width: auto; }
         .page-muenchen .footer-brand p { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
-        .page-muenchen .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
+        .page-muenchen .footer-col h3 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
         .page-muenchen .footer-col ul { list-style: none; }
         .page-muenchen .footer-col li { margin-bottom: var(--space-sm); }
         .page-muenchen .footer-col a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
