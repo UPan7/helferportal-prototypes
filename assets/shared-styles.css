@@ -1143,7 +1143,7 @@
            FOOTER
            ======================================== */
         .page-engagieren .footer {
-            background: var(--gray-900);
+            background: var(--blue-light);
             color: var(--white);
             padding: 56px var(--space-lg) var(--space-xl);
         }
@@ -1158,7 +1158,7 @@
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: var(--space-2xl);
             padding-bottom: var(--space-2xl);
-            border-bottom: 1px solid var(--gray-700);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
             margin-bottom: var(--space-xl);
         }
         
@@ -1172,7 +1172,7 @@
         }
 
         .page-engagieren .footer-brand p {
-            color: var(--gray-400);
+            color: rgba(255,255,255,0.8);
             font-size: 14px;
             margin-top: var(--space-md);
             line-height: 1.6;
@@ -1195,7 +1195,7 @@
         }
         
         .page-engagieren .footer-col a {
-            color: var(--gray-400);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             font-size: 14px;
             transition: color var(--transition-fast);
@@ -1212,7 +1212,7 @@
         }
         
         .page-engagieren .footer-bottom p {
-            color: var(--gray-500);
+            color: rgba(255,255,255,0.65);
             font-size: 13px;
         }
         
@@ -1222,7 +1222,7 @@
         }
         
         .page-engagieren .footer-legal a {
-            color: var(--gray-500);
+            color: rgba(255,255,255,0.65);
             text-decoration: none;
             font-size: 13px;
             transition: color var(--transition-fast);
@@ -2221,6 +2221,107 @@
         }
         
         /* ========================================
+           VIDEO SECTION
+           ======================================== */
+        .page-startseite .video-section {
+            padding: var(--space-3xl) var(--space-lg);
+            background: var(--white);
+        }
+
+        .page-startseite .video-section-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .page-startseite .video-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .page-startseite .video-header h2 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .page-startseite .video-header h3 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gray-900);
+        }
+
+        .page-startseite .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            cursor: pointer;
+        }
+
+        .page-startseite .video-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .page-startseite .video-container:hover .video-thumbnail {
+            transform: scale(1.03);
+        }
+
+        .page-startseite .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange-primary);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .page-startseite .video-play-btn svg {
+            width: 32px;
+            height: 32px;
+            margin-left: 4px;
+        }
+
+        .page-startseite .video-play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--white);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .page-startseite .video-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.15);
+            transition: background var(--transition-fast);
+            z-index: 1;
+        }
+
+        .page-startseite .video-container:hover::after {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        /* ========================================
            STÄDTE SECTION (NEU)
            ======================================== */
         .page-startseite .staedte-section {
@@ -2352,7 +2453,7 @@
         
         .page-startseite .steps-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: var(--space-xl);
         }
         
@@ -2546,7 +2647,7 @@
            FOOTER
            ======================================== */
         .page-startseite .footer {
-            background: var(--gray-900);
+            background: var(--blue-light);
             color: var(--white);
             padding: 56px var(--space-lg) var(--space-xl);
         }
@@ -2561,7 +2662,7 @@
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: var(--space-2xl);
             padding-bottom: var(--space-2xl);
-            border-bottom: 1px solid var(--gray-700);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
             margin-bottom: var(--space-xl);
         }
         
@@ -2575,7 +2676,7 @@
         }
 
         .page-startseite .footer-brand p {
-            color: var(--gray-400);
+            color: rgba(255,255,255,0.8);
             font-size: 14px;
             margin-top: var(--space-md);
             line-height: 1.6;
@@ -2598,7 +2699,7 @@
         }
         
         .page-startseite .footer-col a {
-            color: var(--gray-400);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             font-size: 14px;
             transition: color var(--transition-fast);
@@ -2615,7 +2716,7 @@
         }
         
         .page-startseite .footer-bottom p {
-            color: var(--gray-500);
+            color: rgba(255,255,255,0.65);
             font-size: 13px;
         }
         
@@ -2625,7 +2726,7 @@
         }
         
         .page-startseite .footer-legal a {
-            color: var(--gray-500);
+            color: rgba(255,255,255,0.65);
             text-decoration: none;
             font-size: 13px;
             transition: color var(--transition-fast);
@@ -2671,7 +2772,7 @@
             }
             
             .page-startseite .steps-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .page-startseite .footer-top {
@@ -2715,7 +2816,17 @@
             .page-startseite .staedte-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
+            .page-startseite .video-play-btn {
+                width: 60px;
+                height: 60px;
+            }
+
+            .page-startseite .video-play-btn svg {
+                width: 24px;
+                height: 24px;
+            }
+
             .page-startseite .steps-grid {
                 grid-template-columns: 1fr;
             }
@@ -3819,7 +3930,7 @@
            FOOTER
            ======================================== */
         .page-hilfe-finden .footer {
-            background: var(--gray-900);
+            background: var(--blue-light);
             color: var(--white);
             padding: 56px var(--space-lg) var(--space-xl);
         }
@@ -3834,7 +3945,7 @@
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: var(--space-2xl);
             padding-bottom: var(--space-2xl);
-            border-bottom: 1px solid var(--gray-700);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
             margin-bottom: var(--space-xl);
         }
         
@@ -3848,7 +3959,7 @@
         }
 
         .page-hilfe-finden .footer-brand p {
-            color: var(--gray-400);
+            color: rgba(255,255,255,0.8);
             font-size: 14px;
             margin-top: var(--space-md);
             line-height: 1.6;
@@ -3871,7 +3982,7 @@
         }
         
         .page-hilfe-finden .footer-col a {
-            color: var(--gray-400);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             font-size: 14px;
             transition: color var(--transition-fast);
@@ -3888,7 +3999,7 @@
         }
         
         .page-hilfe-finden .footer-bottom p {
-            color: var(--gray-500);
+            color: rgba(255,255,255,0.65);
             font-size: 13px;
         }
         
@@ -3898,7 +4009,7 @@
         }
         
         .page-hilfe-finden .footer-legal a {
-            color: var(--gray-500);
+            color: rgba(255,255,255,0.65);
             text-decoration: none;
             font-size: 13px;
             transition: color var(--transition-fast);
@@ -5166,7 +5277,7 @@
            FOOTER
            ======================================== */
         .page-fuer-kommunen .footer {
-            background: var(--gray-900);
+            background: var(--blue-light);
             color: var(--white);
             padding: 56px var(--space-lg) var(--space-xl);
         }
@@ -5181,7 +5292,7 @@
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: var(--space-2xl);
             padding-bottom: var(--space-2xl);
-            border-bottom: 1px solid var(--gray-700);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
             margin-bottom: var(--space-xl);
         }
         
@@ -5195,7 +5306,7 @@
         }
 
         .page-fuer-kommunen .footer-brand p {
-            color: var(--gray-400);
+            color: rgba(255,255,255,0.8);
             font-size: 14px;
             margin-top: var(--space-md);
             line-height: 1.6;
@@ -5218,7 +5329,7 @@
         }
         
         .page-fuer-kommunen .footer-col a {
-            color: var(--gray-400);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             font-size: 14px;
             transition: color var(--transition-fast);
@@ -5235,7 +5346,7 @@
         }
         
         .page-fuer-kommunen .footer-bottom p {
-            color: var(--gray-500);
+            color: rgba(255,255,255,0.65);
             font-size: 13px;
         }
         
@@ -5245,7 +5356,7 @@
         }
         
         .page-fuer-kommunen .footer-legal a {
-            color: var(--gray-500);
+            color: rgba(255,255,255,0.65);
             text-decoration: none;
             font-size: 13px;
             transition: color var(--transition-fast);
@@ -5696,21 +5807,21 @@
         .page-ueber-uns .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
         
         /* FOOTER */
-        .page-ueber-uns .footer { background: var(--gray-900); color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
+        .page-ueber-uns .footer { background: var(--blue-light); color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
         .page-ueber-uns .footer-inner { max-width: 1280px; margin: 0 auto; }
-        .page-ueber-uns .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid var(--gray-700); margin-bottom: var(--space-xl); }
+        .page-ueber-uns .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: var(--space-xl); }
         .page-ueber-uns .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
         .page-ueber-uns .footer-brand .logo-img { height: 36px; width: auto; }
-        .page-ueber-uns .footer-brand p { color: var(--gray-400); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
+        .page-ueber-uns .footer-brand p { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
         .page-ueber-uns .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
         .page-ueber-uns .footer-col ul { list-style: none; }
         .page-ueber-uns .footer-col li { margin-bottom: var(--space-sm); }
-        .page-ueber-uns .footer-col a { color: var(--gray-400); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
+        .page-ueber-uns .footer-col a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
         .page-ueber-uns .footer-col a:hover { color: var(--white); }
         .page-ueber-uns .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
-        .page-ueber-uns .footer-bottom p { color: var(--gray-500); font-size: 13px; }
+        .page-ueber-uns .footer-bottom p { color: rgba(255,255,255,0.65); font-size: 13px; }
         .page-ueber-uns .footer-legal { display: flex; gap: var(--space-lg); }
-        .page-ueber-uns .footer-legal a { color: var(--gray-500); text-decoration: none; font-size: 13px; transition: color var(--transition-fast); }
+        .page-ueber-uns .footer-legal a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; transition: color var(--transition-fast); }
         .page-ueber-uns .footer-legal a:hover { color: var(--white); }
         
         /* RESPONSIVE */
@@ -5966,21 +6077,21 @@
         .page-kontakt .faq-answer p { font-size: 15px; color: var(--gray-600); line-height: 1.7; }
         
         /* FOOTER */
-        .page-kontakt .footer { background: var(--gray-900); color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
+        .page-kontakt .footer { background: var(--blue-light); color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
         .page-kontakt .footer-inner { max-width: 1280px; margin: 0 auto; }
-        .page-kontakt .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid var(--gray-700); margin-bottom: var(--space-xl); }
+        .page-kontakt .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: var(--space-xl); }
         .page-kontakt .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
         .page-kontakt .footer-brand .logo-img { height: 36px; width: auto; }
-        .page-kontakt .footer-brand p { color: var(--gray-400); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
+        .page-kontakt .footer-brand p { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
         .page-kontakt .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
         .page-kontakt .footer-col ul { list-style: none; }
         .page-kontakt .footer-col li { margin-bottom: var(--space-sm); }
-        .page-kontakt .footer-col a { color: var(--gray-400); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
+        .page-kontakt .footer-col a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
         .page-kontakt .footer-col a:hover { color: var(--white); }
         .page-kontakt .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
-        .page-kontakt .footer-bottom p { color: var(--gray-500); font-size: 13px; }
+        .page-kontakt .footer-bottom p { color: rgba(255,255,255,0.65); font-size: 13px; }
         .page-kontakt .footer-legal { display: flex; gap: var(--space-lg); }
-        .page-kontakt .footer-legal a { color: var(--gray-500); text-decoration: none; font-size: 13px; transition: color var(--transition-fast); }
+        .page-kontakt .footer-legal a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; transition: color var(--transition-fast); }
         .page-kontakt .footer-legal a:hover { color: var(--white); }
         
         /* RESPONSIVE */
@@ -6074,7 +6185,7 @@
         .page-muenchen .menu-column-icon.blue { background: var(--blue-lighter); color: var(--blue-primary); }
         .page-muenchen .menu-column-icon.orange { background: var(--orange-lighter); color: var(--orange-primary); }
         .page-muenchen .menu-column-icon.purple { background: var(--purple-lighter); color: var(--purple-primary); }
-        .page-muenchen .menu-column-icon.green { background: var(--green-lighter); color: var(--green-primary); }
+        .page-muenchen .menu-column-icon.green { background: #E8EEF8; color: #0B286D; }
         .page-muenchen .menu-column-header h3 { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1.5px; }
         .page-muenchen .menu-items { display: flex; flex-direction: column; gap: var(--space-xs); }
         .page-muenchen .menu-item { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); text-decoration: none; color: var(--gray-700); transition: all var(--transition-fast); }
@@ -6084,7 +6195,7 @@
         .page-muenchen .menu-item-icon.blue { background: var(--blue-lighter); color: var(--blue-primary); }
         .page-muenchen .menu-item-icon.orange { background: var(--orange-lighter); color: var(--orange-primary); }
         .page-muenchen .menu-item-icon.purple { background: var(--purple-lighter); color: var(--purple-primary); }
-        .page-muenchen .menu-item-icon.green { background: var(--green-lighter); color: var(--green-primary); }
+        .page-muenchen .menu-item-icon.green { background: #E8EEF8; color: #0B286D; }
         .page-muenchen .menu-item-content { flex: 1; min-width: 0; }
         .page-muenchen .menu-item-content span { display: block; font-family: var(--font-display); font-weight: 600; font-size: 14px; color: var(--gray-900); }
         .page-muenchen .menu-item-content small { font-size: 12px; color: var(--gray-500); }
@@ -6099,7 +6210,7 @@
         .page-muenchen .city-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-sm) var(--space-md); z-index: 2; color: var(--white); }
         .page-muenchen .city-card-name { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: 2px; }
         .page-muenchen .city-card-status { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-full); }
-        .page-muenchen .city-card-status.active { background: var(--green-primary); }
+        .page-muenchen .city-card-status.active { background: #0B286D; }
         .page-muenchen .city-card-status.soon { background: var(--yellow-primary); color: var(--gray-900); }
         .page-muenchen .city-card-status.planned { background: rgba(255,255,255,0.25); }
         .page-muenchen .city-card-status .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--white); animation: pulse 1.5s infinite; }
@@ -6134,23 +6245,23 @@
         .page-muenchen .hero-city { margin-top: 64px; position: relative; min-height: 500px; display: flex; align-items: center; overflow: hidden; }
         .page-muenchen .hero-city-bg { position: absolute; inset: 0; }
         .page-muenchen .hero-city-bg img { width: 100%; height: 100%; object-fit: cover; }
-        .page-muenchen .hero-city-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(46,125,50,0.9) 0%, rgba(27,94,32,0.85) 100%); }
+        .page-muenchen .hero-city-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11,40,109,0.9) 0%, rgba(7,29,79,0.85) 100%); }
         .page-muenchen .hero-city-content { position: relative; max-width: 1280px; margin: 0 auto; padding: var(--space-3xl) var(--space-lg); color: var(--white); width: 100%; }
         .page-muenchen .hero-city .breadcrumb { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg); font-size: 14px; color: rgba(255,255,255,0.7); }
         .page-muenchen .hero-city .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color var(--transition-fast); }
         .page-muenchen .hero-city .breadcrumb a:hover { color: var(--white); }
         .page-muenchen .hero-city .breadcrumb svg { width: 16px; height: 16px; }
         .page-muenchen .hero-city-badge { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: var(--radius-full); font-size: 14px; font-weight: 600; margin-bottom: var(--space-lg); }
-        .page-muenchen .hero-city-badge .pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--green-light); animation: pulse 1.5s infinite; }
+        .page-muenchen .hero-city-badge .pulse { width: 10px; height: 10px; border-radius: 50%; background: #2563EB; animation: pulse 1.5s infinite; }
         .page-muenchen .hero-city h1 { font-family: var(--font-display); font-size: 56px; font-weight: 800; margin-bottom: var(--space-md); line-height: 1.1; }
-        .page-muenchen .hero-city h1 .city-name { color: var(--green-light); }
+        .page-muenchen .hero-city h1 .city-name { color: #2563EB; }
         .page-muenchen .hero-city p { font-size: 20px; color: rgba(255,255,255,0.9); max-width: 600px; margin-bottom: var(--space-xl); line-height: 1.6; }
         .page-muenchen .hero-city-stats { display: flex; gap: var(--space-xl); margin-bottom: var(--space-xl); }
         .page-muenchen .hero-stat { text-align: center; padding: var(--space-md) var(--space-lg); background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: var(--radius-lg); }
         .page-muenchen .hero-stat-number { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: var(--white); }
         .page-muenchen .hero-stat-label { font-size: 14px; color: rgba(255,255,255,0.8); }
         .page-muenchen .hero-city-actions { display: flex; gap: var(--space-md); }
-        .page-muenchen .btn-hero-primary { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-xl); background: var(--white); color: var(--green-primary); border-radius: var(--radius-full); font-weight: 700; font-size: 16px; text-decoration: none; transition: all var(--transition-fast); }
+        .page-muenchen .btn-hero-primary { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-xl); background: var(--white); color: #0B286D; border-radius: var(--radius-full); font-weight: 700; font-size: 16px; text-decoration: none; transition: all var(--transition-fast); }
         .page-muenchen .btn-hero-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-xl); }
         .page-muenchen .btn-hero-secondary { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-xl); background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.3); border-radius: var(--radius-full); font-weight: 600; font-size: 16px; text-decoration: none; transition: all var(--transition-fast); }
         .page-muenchen .btn-hero-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
@@ -6159,17 +6270,17 @@
         .page-muenchen .support-section { padding: var(--space-3xl) var(--space-lg); background: var(--white); }
         .page-muenchen .support-section-inner { max-width: 1280px; margin: 0 auto; }
         .page-muenchen .section-header { text-align: center; margin-bottom: var(--space-2xl); }
-        .page-muenchen .section-header h2 { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--green-primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: var(--space-sm); }
+        .page-muenchen .section-header h2 { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: #0B286D; text-transform: uppercase; letter-spacing: 2px; margin-bottom: var(--space-sm); }
         .page-muenchen .section-header h3 { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: var(--gray-900); }
         .page-muenchen .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
         .page-muenchen .support-card { background: var(--gray-50); border-radius: var(--radius-xl); padding: var(--space-xl); transition: all var(--transition-fast); border: 2px solid transparent; }
-        .page-muenchen .support-card:hover { background: var(--white); border-color: var(--green-primary); box-shadow: var(--shadow-lg); }
-        .page-muenchen .support-card-icon { width: 56px; height: 56px; border-radius: var(--radius-lg); background: var(--green-lighter); color: var(--green-primary); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-md); }
+        .page-muenchen .support-card:hover { background: var(--white); border-color: #0B286D; box-shadow: var(--shadow-lg); }
+        .page-muenchen .support-card-icon { width: 56px; height: 56px; border-radius: var(--radius-lg); background: #E8EEF8; color: #0B286D; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-md); }
         .page-muenchen .support-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--gray-900); margin-bottom: var(--space-sm); }
         .page-muenchen .support-card p { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
         .page-muenchen .support-card ul { list-style: none; margin-top: var(--space-md); }
         .page-muenchen .support-card li { display: flex; align-items: center; gap: var(--space-sm); font-size: 14px; color: var(--gray-700); padding: var(--space-xs) 0; }
-        .page-muenchen .support-card li svg { width: 16px; height: 16px; color: var(--green-primary); flex-shrink: 0; }
+        .page-muenchen .support-card li svg { width: 16px; height: 16px; color: #0B286D; flex-shrink: 0; }
         
         /* HOW IT WORKS - серый фон */
         .page-muenchen .how-section { padding: var(--space-3xl) var(--space-lg); background: var(--gray-50); }
@@ -6178,7 +6289,7 @@
         .page-muenchen .how-step { text-align: center; position: relative; }
         .page-muenchen .how-step::after { content: ''; position: absolute; top: 40px; left: calc(50% + 60px); width: calc(100% - 120px); height: 2px; background: var(--gray-300); }
         .page-muenchen .how-step:last-child::after { display: none; }
-        .page-muenchen .how-step-number { width: 80px; height: 80px; margin: 0 auto var(--space-lg); background: var(--white); border: 3px solid var(--green-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--green-primary); position: relative; z-index: 1; }
+        .page-muenchen .how-step-number { width: 80px; height: 80px; margin: 0 auto var(--space-lg); background: var(--white); border: 3px solid #0B286D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 32px; font-weight: 800; color: #0B286D; position: relative; z-index: 1; }
         .page-muenchen .how-step h4 { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--gray-900); margin-bottom: var(--space-sm); }
         .page-muenchen .how-step p { font-size: 15px; color: var(--gray-600); line-height: 1.6; }
         
@@ -6189,16 +6300,16 @@
         .page-muenchen .partner-card { background: var(--gray-50); border-radius: var(--radius-xl); padding: var(--space-xl); transition: all var(--transition-fast); }
         .page-muenchen .partner-card:hover { background: var(--white); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
         .page-muenchen .partner-card-header { display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md); }
-        .page-muenchen .partner-logo { width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--green-lighter); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+        .page-muenchen .partner-logo { width: 64px; height: 64px; border-radius: var(--radius-lg); background: #E8EEF8; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
         .page-muenchen .partner-card-header h4 { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--gray-900); }
         .page-muenchen .partner-card-header small { display: block; font-size: 13px; color: var(--gray-500); margin-top: 2px; }
         .page-muenchen .partner-card p { font-size: 15px; color: var(--gray-600); line-height: 1.7; }
-        .page-muenchen .partner-link { display: inline-flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-md); color: var(--green-primary); font-weight: 600; font-size: 14px; text-decoration: none; transition: gap var(--transition-fast); }
+        .page-muenchen .partner-link { display: inline-flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-md); color: #0B286D; font-weight: 600; font-size: 14px; text-decoration: none; transition: gap var(--transition-fast); }
         .page-muenchen .partner-link:hover { gap: var(--space-sm); }
         .page-muenchen .partner-link svg { width: 16px; height: 16px; }
         
         /* TESTIMONIAL */
-        .page-muenchen .testimonial-section { padding: var(--space-3xl) var(--space-lg); background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%); }
+        .page-muenchen .testimonial-section { padding: var(--space-3xl) var(--space-lg); background: linear-gradient(135deg, #0B286D 0%, #071D4F 100%); }
         .page-muenchen .testimonial-section-inner { max-width: 900px; margin: 0 auto; text-align: center; color: var(--white); }
         .page-muenchen .testimonial-quote-icon { font-size: 64px; opacity: 0.3; margin-bottom: var(--space-lg); }
         .page-muenchen .testimonial-text { font-family: var(--font-display); font-size: 28px; font-weight: 600; line-height: 1.5; margin-bottom: var(--space-xl); }
@@ -6233,27 +6344,27 @@
         .page-muenchen .faq-question:hover { background: var(--gray-100); }
         .page-muenchen .faq-question h4 { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--gray-900); }
         .page-muenchen .faq-toggle { width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--white); display: flex; align-items: center; justify-content: center; color: var(--gray-600); transition: all var(--transition-fast); flex-shrink: 0; }
-        .page-muenchen .faq-item.active .faq-toggle { background: var(--green-primary); color: var(--white); transform: rotate(180deg); }
+        .page-muenchen .faq-item.active .faq-toggle { background: #0B286D; color: var(--white); transform: rotate(180deg); }
         .page-muenchen .faq-answer { padding: 0 var(--space-lg) var(--space-lg); display: none; }
         .page-muenchen .faq-item.active .faq-answer { display: block; }
         .page-muenchen .faq-answer p { font-size: 15px; color: var(--gray-600); line-height: 1.7; }
         
         /* FOOTER */
-        .page-muenchen .footer { background: var(--gray-900); color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
+        .page-muenchen .footer { background: var(--blue-light); color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
         .page-muenchen .footer-inner { max-width: 1280px; margin: 0 auto; }
-        .page-muenchen .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid var(--gray-700); margin-bottom: var(--space-xl); }
+        .page-muenchen .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: var(--space-xl); }
         .page-muenchen .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
         .page-muenchen .footer-brand .logo-img { height: 36px; width: auto; }
-        .page-muenchen .footer-brand p { color: var(--gray-400); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
+        .page-muenchen .footer-brand p { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: var(--space-md); line-height: 1.6; }
         .page-muenchen .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 14px; margin-bottom: var(--space-md); color: var(--white); }
         .page-muenchen .footer-col ul { list-style: none; }
         .page-muenchen .footer-col li { margin-bottom: var(--space-sm); }
-        .page-muenchen .footer-col a { color: var(--gray-400); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
+        .page-muenchen .footer-col a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; transition: color var(--transition-fast); }
         .page-muenchen .footer-col a:hover { color: var(--white); }
         .page-muenchen .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
-        .page-muenchen .footer-bottom p { color: var(--gray-500); font-size: 13px; }
+        .page-muenchen .footer-bottom p { color: rgba(255,255,255,0.65); font-size: 13px; }
         .page-muenchen .footer-legal { display: flex; gap: var(--space-lg); }
-        .page-muenchen .footer-legal a { color: var(--gray-500); text-decoration: none; font-size: 13px; transition: color var(--transition-fast); }
+        .page-muenchen .footer-legal a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; transition: color var(--transition-fast); }
         .page-muenchen .footer-legal a:hover { color: var(--white); }
         
         /* RESPONSIVE */
