@@ -6525,4 +6525,231 @@
         transition: none;
     }
 }
-    
+
+/* ================================================================
+   GLOBAL: Mobile Menu (all pages, ≤768px)
+   ================================================================ */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    background: var(--white);
+    transform: translateY(-100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--space-lg) var(--space-xl);
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+}
+
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+/* Header row: logo + close button */
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    flex-shrink: 0;
+    margin-bottom: var(--space-lg);
+}
+
+.mobile-menu-header .logo-img {
+    height: 32px;
+    width: auto;
+}
+
+.mobile-menu-close {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--gray-100);
+    border-radius: var(--radius-md);
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.mobile-menu-close:hover {
+    background: var(--gray-200);
+}
+
+/* Two CTA cards: Hilfe finden (blue) + Engagieren (orange) */
+.mobile-menu-cta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.mobile-cta-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xl) var(--space-md);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.mobile-cta-card:active {
+    transform: scale(0.97);
+}
+
+.mobile-cta-card.blue {
+    background: var(--blue-primary);
+    box-shadow: 0 4px 16px rgba(35, 103, 154, 0.3);
+}
+
+.mobile-cta-card.orange {
+    background: var(--orange-primary);
+    box-shadow: 0 4px 16px rgba(236, 99, 3, 0.3);
+}
+
+/* Navigation links list */
+.mobile-menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--space-lg);
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--white);
+    text-decoration: none;
+    color: var(--gray-800);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.15s;
+}
+
+.mobile-nav-link:active {
+    background: var(--gray-50);
+}
+
+.mobile-nav-link svg {
+    color: var(--gray-400);
+}
+
+/* München city link */
+.mobile-city-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--gray-800);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: var(--space-lg);
+}
+
+.mobile-city-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green-primary);
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.mobile-city-status {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Footer CTA */
+.mobile-menu-footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: var(--space-lg);
+}
+
+.mobile-start-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-md) var(--space-xl);
+    background: var(--gray-900);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.mobile-start-btn:active {
+    background: var(--gray-800);
+}
+
+.mobile-start-hint {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top: var(--space-sm);
+}
+
+/* Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1999;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s, visibility 0.35s;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hide mobile menu on desktop */
+@media (min-width: 769px) {
+    .mobile-menu,
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+}
+

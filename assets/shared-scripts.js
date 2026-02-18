@@ -34,6 +34,39 @@ if (mehrBtn && megaMenu && megaOverlay) {
 }
 
 // ========================================
+// MOBILE MENU (all pages, ≤768px)
+// ========================================
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+
+if (mobileMenu && mobileMenuBtn) {
+    function openMobileMenu() {
+        mobileMenu.classList.add('active');
+        if (mobileMenuOverlay) mobileMenuOverlay.classList.add('active');
+        document.body.classList.add('mobile-menu-open');
+    }
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
+        document.body.classList.remove('mobile-menu-open');
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+    if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMobileMenu();
+    });
+
+    // Close on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setTimeout(closeMobileMenu, 100));
+    });
+}
+
+// ========================================
 // HERO SLIDER (index.html)
 // ========================================
 const slides = document.querySelectorAll('.slide');
