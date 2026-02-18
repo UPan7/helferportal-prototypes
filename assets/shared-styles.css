@@ -1940,6 +1940,10 @@
         .page-startseite .quick-action-card.purple:hover {
             border-color: var(--purple-primary);
         }
+
+        .page-startseite .quick-action-card:not(.blue):not(.orange):not(.purple):hover {
+            border-color: var(--gray-400);
+        }
         
         .page-startseite .quick-action-icon {
             width: 48px;
