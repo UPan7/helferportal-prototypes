@@ -158,6 +158,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ========================================
+// SCROLL-REVEAL ANIMATIONS (all pages)
+// ========================================
+const revealElements = document.querySelectorAll('.reveal, .reveal-children');
+
+if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+}
+
+// ========================================
 // FAQ ACCORDION (hilfe-finden, engagieren, fuer-kommunen, kontakt, muenchen)
 // Supports both 'open' and 'active' class toggling
 // ========================================
