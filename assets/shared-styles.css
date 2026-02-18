@@ -2839,16 +2839,26 @@
             }
             
             .page-startseite .slide-title {
-                font-size: 28px;
+                font-size: 26px;
+                margin-bottom: var(--space-sm);
             }
 
             .page-startseite .slide-content {
-                padding: var(--space-xl);
+                padding: var(--space-lg);
+                padding-top: var(--space-3xl);
                 grid-template-columns: 1fr;
-                row-gap: var(--space-md);
+                row-gap: var(--space-sm);
+            }
+
+            .page-startseite .slide-tag {
+                font-size: 10px;
+                padding: 4px var(--space-sm);
+                margin-bottom: var(--space-sm);
             }
 
             .page-startseite .slide-text {
+                font-size: 14px;
+                line-height: 1.5;
                 margin-bottom: var(--space-sm);
             }
 
@@ -2856,19 +2866,39 @@
                 grid-column: 1;
                 grid-row: auto;
                 justify-self: start;
+                padding: var(--space-xs) var(--space-md);
+                font-size: 13px;
             }
-            
+
             .page-startseite .slider-progress {
-                left: var(--space-xl);
-                right: var(--space-xl);
-            }
-            
-            .page-startseite .quick-actions-grid {
-                grid-template-columns: 1fr;
+                left: var(--space-lg);
+                right: var(--space-lg);
+                top: var(--space-md);
             }
             
             .page-startseite .quick-actions {
                 margin-top: calc(-1 * var(--space-md));
+                padding: 0;
+            }
+
+            .page-startseite .quick-actions-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: var(--space-md);
+                padding: 0 var(--space-lg) var(--space-sm);
+                scrollbar-width: none;
+            }
+
+            .page-startseite .quick-actions-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .page-startseite .quick-action-card {
+                flex: 0 0 75%;
+                scroll-snap-align: start;
+                min-width: 0;
             }
             
             .page-startseite .staedte-grid {
@@ -6530,28 +6560,36 @@
    GLOBAL: Mobile Menu (all pages, ≤768px)
    ================================================================ */
 .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2000;
-    background: var(--white);
-    transform: translateY(-100%);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    display: flex;
-    flex-direction: column;
-    padding: 0 var(--space-lg) var(--space-xl);
+    display: none;
 }
 
-.mobile-menu.active {
-    transform: translateY(0);
-}
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2000;
+        background: var(--white);
+        transform: translateY(-100%);
+        visibility: hidden;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 var(--space-lg) var(--space-xl);
+    }
 
-body.mobile-menu-open {
-    overflow: hidden;
+    .mobile-menu.active {
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    body.mobile-menu-open {
+        overflow: hidden;
+    }
 }
 
 /* Header row: logo + close button */
@@ -6731,25 +6769,24 @@ body.mobile-menu-open {
 
 /* Overlay */
 .mobile-menu-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1999;
-    background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.35s, visibility 0.35s;
+    display: none;
 }
 
-.mobile-menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Hide mobile menu on desktop */
-@media (min-width: 769px) {
-    .mobile-menu,
+@media (max-width: 768px) {
     .mobile-menu-overlay {
-        display: none !important;
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1999;
+        background: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s, visibility 0.35s;
+    }
+
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
