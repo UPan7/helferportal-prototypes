@@ -6905,3 +6905,308 @@
     }
 }
 
+
+/* ================================================================
+   MOBILE TAB PICKER (global, all pages with tabs)
+   Replaces horizontal scroll with "active tab + Noch X" pattern
+   Active at ≤768px only
+   ================================================================ */
+
+/* Hidden by default on all screen sizes */
+.tabs-mobile-picker { display: none; }
+.tabs-picker-overlay { display: none; }
+.tabs-picker-modal { display: none; }
+
+@media (max-width: 768px) {
+
+    /* --- Picker bar (active tab pill + "Noch X" button) --- */
+    .tabs-mobile-picker {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        padding: var(--space-md);
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    /* Hide original tab nav when picker is active */
+    .tabs-nav.has-mobile-picker {
+        display: none !important;
+    }
+
+    /* Active tab pill */
+    .tabs-mobile-active {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        padding: var(--space-sm) var(--space-md);
+        border-radius: var(--radius-full);
+        background: var(--gray-100);
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--gray-800);
+        flex-shrink: 1;
+        min-width: 0;
+    }
+
+    .tabs-mobile-active .tab-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .tabs-mobile-active .tab-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tabs-mobile-active-label {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* "Noch X" button */
+    .tabs-mobile-more {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+        padding: var(--space-sm) var(--space-md);
+        border-radius: var(--radius-full);
+        border: 1.5px solid var(--gray-300);
+        background: var(--white);
+        cursor: pointer;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--gray-600);
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: all var(--transition-fast);
+    }
+
+    .tabs-mobile-more:active {
+        background: var(--gray-50);
+        border-color: var(--gray-400);
+    }
+
+    .tabs-mobile-more-chevron {
+        width: 16px;
+        height: 16px;
+        transition: transform var(--transition-fast);
+    }
+
+    /* --- Bottom-sheet overlay --- */
+    .tabs-picker-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1999;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .tabs-picker-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* --- Bottom-sheet modal --- */
+    .tabs-picker-modal {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2000;
+        background: var(--white);
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        max-height: 70vh;
+        transform: translateY(100%);
+        visibility: hidden;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s;
+        box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .tabs-picker-modal.active {
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    /* Drag handle indicator */
+    .tabs-picker-handle {
+        width: 36px;
+        height: 4px;
+        background: var(--gray-300);
+        border-radius: var(--radius-full);
+        margin: var(--space-sm) auto var(--space-md);
+    }
+
+    /* Scrollable tab list */
+    .tabs-picker-list {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 var(--space-lg);
+        gap: var(--space-xs);
+    }
+
+    /* Individual tab item */
+    .tabs-picker-item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+        padding: var(--space-md);
+        border-radius: var(--radius-lg);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        text-align: left;
+        width: 100%;
+        transition: background var(--transition-fast);
+        font-family: var(--font-body);
+    }
+
+    .tabs-picker-item:active {
+        background: var(--gray-50);
+    }
+
+    .tabs-picker-item .tab-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .tabs-picker-item-label {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--gray-800);
+    }
+
+    .tabs-picker-item-desc {
+        font-size: 13px;
+        color: var(--gray-500);
+        margin-top: 2px;
+    }
+
+    /* Active item highlight */
+    .tabs-picker-item.active {
+        background: var(--gray-100);
+    }
+
+    .tabs-picker-item.active .tabs-picker-item-label {
+        font-weight: 700;
+    }
+
+    /* Checkmark on active item */
+    .tabs-picker-item .check-icon {
+        display: none;
+        margin-left: auto;
+        width: 20px;
+        height: 20px;
+        color: var(--gray-600);
+        flex-shrink: 0;
+    }
+
+    .tabs-picker-item.active .check-icon {
+        display: block;
+    }
+
+    /* Footer with "Schließen" button */
+    .tabs-picker-footer {
+        padding: var(--space-md) var(--space-lg) var(--space-xl);
+    }
+
+    .tabs-picker-close-btn {
+        display: block;
+        width: 100%;
+        padding: var(--space-md);
+        border: 1.5px solid var(--gray-300);
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--gray-700);
+        cursor: pointer;
+        text-align: center;
+        transition: background var(--transition-fast);
+    }
+
+    .tabs-picker-close-btn:active {
+        background: var(--gray-50);
+    }
+
+    /* Body scroll lock */
+    body.tabs-picker-open {
+        overflow: hidden;
+    }
+}
+
+/* --- Page-specific active pill colors --- */
+
+/* Startseite: per-tab color via data-color attribute */
+.page-startseite .tabs-mobile-active[data-color="blue"] {
+    background: var(--blue-primary); color: var(--white);
+}
+.page-startseite .tabs-mobile-active[data-color="blue"] .tab-icon {
+    background: rgba(255,255,255,0.2); color: var(--white);
+}
+.page-startseite .tabs-mobile-active[data-color="orange"] {
+    background: var(--orange-primary); color: var(--white);
+}
+.page-startseite .tabs-mobile-active[data-color="orange"] .tab-icon {
+    background: rgba(255,255,255,0.2); color: var(--white);
+}
+.page-startseite .tabs-mobile-active[data-color="purple"] {
+    background: var(--purple-primary); color: var(--white);
+}
+.page-startseite .tabs-mobile-active[data-color="purple"] .tab-icon {
+    background: rgba(255,255,255,0.2); color: var(--white);
+}
+
+/* Engagieren: always orange */
+.page-engagieren .tabs-mobile-active {
+    background: var(--orange-primary); color: var(--white);
+}
+.page-engagieren .tabs-mobile-active .tab-icon {
+    background: rgba(255,255,255,0.2); color: var(--white);
+}
+
+/* Hilfe-finden: always blue */
+.page-hilfe-finden .tabs-mobile-active {
+    background: var(--blue-primary); color: var(--white);
+}
+.page-hilfe-finden .tabs-mobile-active .tab-icon {
+    background: rgba(255,255,255,0.2); color: var(--white);
+}
+
+/* Für Kommunen: always purple */
+.page-fuer-kommunen .tabs-mobile-active {
+    background: var(--purple-primary); color: var(--white);
+}
+.page-fuer-kommunen .tabs-mobile-active .tab-icon {
+    background: rgba(255,255,255,0.2); color: var(--white);
+}
+
+/* Active item checkmark colors per page */
+.page-startseite .tabs-picker-item.active .check-icon { color: var(--blue-primary); }
+.page-engagieren .tabs-picker-item.active .check-icon { color: var(--orange-primary); }
+.page-hilfe-finden .tabs-picker-item.active .check-icon { color: var(--blue-primary); }
+.page-fuer-kommunen .tabs-picker-item.active .check-icon { color: var(--purple-primary); }
+

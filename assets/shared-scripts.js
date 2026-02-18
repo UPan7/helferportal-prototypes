@@ -151,6 +151,220 @@ if (tabButtons.length > 0) {
 }
 
 // ========================================
+// MOBILE TAB PICKER (all pages with tabs)
+// "Active tab + Noch X" → bottom-sheet popup
+// Replaces horizontal scroll at ≤768px
+// ========================================
+(function() {
+    const tabsNav = document.querySelector('.tabs-nav');
+    if (!tabsNav) return;
+
+    const tabsContainer = tabsNav.closest('.tabs-container');
+    if (!tabsContainer) return;
+
+    const allTabBtns = Array.from(tabsNav.querySelectorAll('.tab-btn'));
+    if (allTabBtns.length < 2) return;
+
+    const body = document.body;
+    const isStartseite = body.classList.contains('page-startseite');
+
+    // Helpers
+    function getTabColor(btn) {
+        if (btn.classList.contains('blue')) return 'blue';
+        if (btn.classList.contains('orange')) return 'orange';
+        if (btn.classList.contains('purple')) return 'purple';
+        return 'blue';
+    }
+
+    function getTabLabel(btn) {
+        const cw = btn.querySelector('.tab-btn-content');
+        if (cw) return cw.querySelector('span').textContent.trim();
+        return btn.querySelector('span').textContent.trim();
+    }
+
+    function getTabSubtitle(btn) {
+        const small = btn.querySelector('.tab-btn-content small');
+        return small ? small.textContent.trim() : '';
+    }
+
+    function cloneIcon(btn) {
+        const icon = btn.querySelector('.tab-icon');
+        return icon ? icon.cloneNode(true) : null;
+    }
+
+    // --- Build picker bar ---
+    const pickerBar = document.createElement('div');
+    pickerBar.className = 'tabs-mobile-picker';
+
+    const activePill = document.createElement('button');
+    activePill.className = 'tabs-mobile-active';
+    activePill.type = 'button';
+
+    const activeLabel = document.createElement('span');
+    activeLabel.className = 'tabs-mobile-active-label';
+    activePill.appendChild(activeLabel);
+
+    const moreBtn = document.createElement('button');
+    moreBtn.className = 'tabs-mobile-more';
+    moreBtn.type = 'button';
+
+    const moreLabel = document.createElement('span');
+    moreLabel.textContent = 'Noch ' + (allTabBtns.length - 1);
+
+    const chevronSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    chevronSvg.setAttribute('viewBox', '0 0 24 24');
+    chevronSvg.setAttribute('fill', 'none');
+    chevronSvg.setAttribute('stroke', 'currentColor');
+    chevronSvg.setAttribute('stroke-width', '2.5');
+    chevronSvg.classList.add('tabs-mobile-more-chevron');
+    const chevronPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    chevronPath.setAttribute('d', 'M6 9l6 6 6-6');
+    chevronSvg.appendChild(chevronPath);
+
+    moreBtn.appendChild(moreLabel);
+    moreBtn.appendChild(chevronSvg);
+
+    pickerBar.appendChild(activePill);
+    pickerBar.appendChild(moreBtn);
+
+    tabsContainer.insertBefore(pickerBar, tabsNav);
+    tabsNav.classList.add('has-mobile-picker');
+
+    // --- Build bottom-sheet popup ---
+    const overlay = document.createElement('div');
+    overlay.className = 'tabs-picker-overlay';
+
+    const modal = document.createElement('div');
+    modal.className = 'tabs-picker-modal';
+
+    // Handle
+    const handle = document.createElement('div');
+    handle.className = 'tabs-picker-handle';
+    modal.appendChild(handle);
+
+    // List
+    const list = document.createElement('div');
+    list.className = 'tabs-picker-list';
+
+    allTabBtns.forEach(function(btn, idx) {
+        const item = document.createElement('button');
+        item.className = 'tabs-picker-item';
+        item.type = 'button';
+        item.dataset.tab = btn.dataset.tab;
+
+        const iconClone = cloneIcon(btn);
+        if (iconClone) item.appendChild(iconClone);
+
+        const textWrap = document.createElement('div');
+        const labelEl = document.createElement('div');
+        labelEl.className = 'tabs-picker-item-label';
+        labelEl.textContent = getTabLabel(btn);
+        textWrap.appendChild(labelEl);
+
+        const subtitle = getTabSubtitle(btn);
+        if (subtitle) {
+            const descEl = document.createElement('div');
+            descEl.className = 'tabs-picker-item-desc';
+            descEl.textContent = subtitle;
+            textWrap.appendChild(descEl);
+        }
+        item.appendChild(textWrap);
+
+        // Checkmark SVG
+        const check = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        check.setAttribute('viewBox', '0 0 24 24');
+        check.setAttribute('fill', 'none');
+        check.setAttribute('stroke', 'currentColor');
+        check.setAttribute('stroke-width', '2.5');
+        check.classList.add('check-icon');
+        const checkPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        checkPath.setAttribute('d', 'M20 6L9 17l-5-5');
+        check.appendChild(checkPath);
+        item.appendChild(check);
+
+        if (btn.classList.contains('active')) item.classList.add('active');
+
+        list.appendChild(item);
+    });
+
+    modal.appendChild(list);
+
+    // Footer
+    const footer = document.createElement('div');
+    footer.className = 'tabs-picker-footer';
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'tabs-picker-close-btn';
+    closeBtn.type = 'button';
+    closeBtn.textContent = 'Schließen';
+    footer.appendChild(closeBtn);
+    modal.appendChild(footer);
+
+    document.body.appendChild(overlay);
+    document.body.appendChild(modal);
+
+    // --- Update active pill ---
+    function updateActivePill() {
+        const activeBtn = tabsNav.querySelector('.tab-btn.active');
+        if (!activeBtn) return;
+
+        activeLabel.textContent = getTabLabel(activeBtn);
+
+        const existingIcon = activePill.querySelector('.tab-icon');
+        if (existingIcon) existingIcon.remove();
+        const iconClone = cloneIcon(activeBtn);
+        if (iconClone) activePill.insertBefore(iconClone, activeLabel);
+
+        if (isStartseite) {
+            activePill.dataset.color = getTabColor(activeBtn);
+        }
+
+        list.querySelectorAll('.tabs-picker-item').forEach(function(item) {
+            item.classList.toggle('active', item.dataset.tab === activeBtn.dataset.tab);
+        });
+    }
+
+    updateActivePill();
+
+    // --- Open / close popup ---
+    function openPicker() {
+        overlay.classList.add('active');
+        modal.classList.add('active');
+        body.classList.add('tabs-picker-open');
+    }
+
+    function closePicker() {
+        overlay.classList.remove('active');
+        modal.classList.remove('active');
+        body.classList.remove('tabs-picker-open');
+    }
+
+    activePill.addEventListener('click', openPicker);
+    moreBtn.addEventListener('click', openPicker);
+    overlay.addEventListener('click', closePicker);
+    closeBtn.addEventListener('click', closePicker);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closePicker();
+    });
+
+    // --- Tab selection from popup ---
+    list.querySelectorAll('.tabs-picker-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            const tabId = item.dataset.tab;
+            const originalBtn = tabsNav.querySelector('.tab-btn[data-tab="' + tabId + '"]');
+            if (originalBtn) originalBtn.click();
+            updateActivePill();
+            closePicker();
+        });
+    });
+
+    // --- MutationObserver: sync pill when tabs change programmatically ---
+    var observer = new MutationObserver(function() { updateActivePill(); });
+    allTabBtns.forEach(function(btn) {
+        observer.observe(btn, { attributes: true, attributeFilter: ['class'] });
+    });
+})();
+
+// ========================================
 // HEADER BUTTONS (index.html)
 // ========================================
 const navButtons = document.querySelectorAll('.nav-btn[data-action]');
