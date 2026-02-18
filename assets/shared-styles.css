@@ -102,7 +102,7 @@
 
         /* Mobile: enable automatic hyphenation for headings (lang="de" on html tag) */
         @media (max-width: 768px) {
-            h1, h2, h3, h4 {
+            h1, h2 {
                 hyphens: auto;
                 -webkit-hyphens: auto;
             }
@@ -1386,6 +1386,22 @@
 
             .page-engagieren .section-header h3 {
                 font-size: 22px;
+            }
+
+            .page-engagieren .tab-cta {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .page-engagieren .tab-cta .btn-primary,
+            .page-engagieren .tab-cta .btn-secondary {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .page-engagieren .tabs-content {
+                padding: var(--space-md);
             }
         }
 
@@ -2980,6 +2996,22 @@
             .page-startseite .about-title {
                 font-size: 24px;
             }
+
+            .page-startseite .tab-cta {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .page-startseite .tab-cta .btn-primary,
+            .page-startseite .tab-cta .btn-secondary {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .page-startseite .tabs-content {
+                padding: var(--space-md);
+            }
         }
 
         /* ========================================
@@ -4272,6 +4304,22 @@
 
             .page-hilfe-finden .section-header h3 {
                 font-size: 22px;
+            }
+
+            .page-hilfe-finden .tab-cta {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .page-hilfe-finden .tab-cta .btn-primary,
+            .page-hilfe-finden .tab-cta .btn-secondary {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .page-hilfe-finden .tabs-content {
+                padding: var(--space-md);
             }
         }
 
@@ -5661,6 +5709,10 @@
                 text-align: center;
                 justify-content: center;
             }
+
+            .page-fuer-kommunen .tabs-content {
+                padding: var(--space-md);
+            }
         }
 
         /* ========================================
@@ -5962,7 +6014,7 @@
         .page-ueber-uns .partners-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); margin-bottom: var(--space-2xl); }
         .page-ueber-uns .partner-card { background: var(--gray-800); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; transition: all var(--transition-fast); }
         .page-ueber-uns .partner-card:hover { background: var(--gray-700); transform: translateY(-3px); }
-        .page-ueber-uns .partner-logo { width: 80px; height: 80px; background: var(--gray-700); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); font-size: 32px; }
+        .page-ueber-uns .partner-logo { width: 80px; height: 80px; background: var(--orange-lighter); color: var(--orange-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); font-size: 32px; }
         .page-ueber-uns .partner-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--white); margin-bottom: var(--space-xs); }
         .page-ueber-uns .partner-card p { font-size: 13px; color: var(--gray-400); }
         .page-ueber-uns .awards-row { display: flex; justify-content: center; align-items: center; gap: var(--space-2xl); padding-top: var(--space-2xl); border-top: 1px solid var(--gray-700); }
@@ -6032,8 +6084,8 @@
             .page-ueber-uns .section-header h3 { font-size: 24px; }
             .page-ueber-uns .founder-content { padding: var(--space-xl); }
             .page-ueber-uns .founder-content h3 { font-size: 24px; }
-            .page-ueber-uns .partners-grid { grid-template-columns: 1fr 1fr; }
-            .page-ueber-uns .awards-row { flex-direction: column; gap: var(--space-lg); }
+            .page-ueber-uns .partners-grid { grid-template-columns: 1fr; }
+            .page-ueber-uns .awards-row { flex-direction: column; gap: var(--space-lg); align-items: flex-start; }
             .page-ueber-uns .cta-card { padding: var(--space-xl); }
             .page-ueber-uns .cta-card h2 { font-size: 24px; }
             .page-ueber-uns .cta-buttons { flex-direction: column; align-items: center; }
@@ -6287,6 +6339,9 @@
             .page-kontakt .hero p { font-size: 16px; }
             .page-kontakt .form-row { grid-template-columns: 1fr; }
             .page-kontakt .quick-contact-row { grid-template-columns: 1fr; }
+            .page-kontakt .quick-contact-card { padding: var(--space-md); }
+            .page-kontakt .info-card { padding: var(--space-lg); }
+            .page-kontakt .contact-info-card { gap: var(--space-md); }
             .page-kontakt .section-header h3 { font-size: 24px; }
             .page-kontakt .footer-top { grid-template-columns: 1fr; }
             .page-kontakt .footer-bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
