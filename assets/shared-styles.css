@@ -1144,7 +1144,7 @@
            FOOTER
            ======================================== */
         .page-engagieren .footer {
-            background: var(--blue-light);
+            background: #53585a;
             color: var(--white);
             padding: 56px var(--space-lg) var(--space-xl);
         }
@@ -2656,7 +2656,7 @@
            FOOTER
            ======================================== */
         .page-startseite .footer {
-            background: var(--blue-light);
+            background: #53585a;
             color: var(--white);
             padding: 56px var(--space-lg) var(--space-xl);
         }
@@ -3940,7 +3940,7 @@
            FOOTER
            ======================================== */
         .page-hilfe-finden .footer {
-            background: var(--blue-light);
+            background: #53585a;
             color: var(--white);
             padding: 56px var(--space-lg) var(--space-xl);
         }
@@ -5288,7 +5288,7 @@
            FOOTER
            ======================================== */
         .page-fuer-kommunen .footer {
-            background: var(--blue-light);
+            background: #53585a;
             color: var(--white);
             padding: 56px var(--space-lg) var(--space-xl);
         }
@@ -5818,7 +5818,7 @@
         .page-ueber-uns .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
         
         /* FOOTER */
-        .page-ueber-uns .footer { background: var(--blue-light); color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
+        .page-ueber-uns .footer { background: #53585a; color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
         .page-ueber-uns .footer-inner { max-width: 1280px; margin: 0 auto; }
         .page-ueber-uns .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: var(--space-xl); }
         .page-ueber-uns .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
@@ -6088,7 +6088,7 @@
         .page-kontakt .faq-answer p { font-size: 15px; color: var(--gray-600); line-height: 1.7; }
         
         /* FOOTER */
-        .page-kontakt .footer { background: var(--blue-light); color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
+        .page-kontakt .footer { background: #53585a; color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
         .page-kontakt .footer-inner { max-width: 1280px; margin: 0 auto; }
         .page-kontakt .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: var(--space-xl); }
         .page-kontakt .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
@@ -6364,7 +6364,7 @@
         .page-muenchen .faq-answer p { font-size: 15px; color: var(--gray-600); line-height: 1.7; }
         
         /* FOOTER */
-        .page-muenchen .footer { background: var(--blue-light); color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
+        .page-muenchen .footer { background: #53585a; color: var(--white); padding: 56px var(--space-lg) var(--space-xl); }
         .page-muenchen .footer-inner { max-width: 1280px; margin: 0 auto; }
         .page-muenchen .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: var(--space-xl); }
         .page-muenchen .footer-brand .logo-icon { background: linear-gradient(135deg, var(--orange-primary), var(--orange-light)); }
