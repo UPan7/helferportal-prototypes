@@ -1305,8 +1305,9 @@
         }
         
         @media (max-width: 768px) {
-            .nav-main,
-            .page-engagieren .btn-search {
+            .page-engagieren .nav-main,
+            .page-engagieren .btn-search,
+            .page-engagieren .btn-login {
                 display: none;
             }
             
@@ -2827,8 +2828,9 @@
         }
         
         @media (max-width: 768px) {
-            .nav-main,
-            .page-startseite .btn-search {
+            .page-startseite .nav-main,
+            .page-startseite .btn-search,
+            .page-startseite .btn-login {
                 display: none;
             }
             
@@ -2896,9 +2898,10 @@
             }
 
             .page-startseite .quick-action-card {
-                flex: 0 0 75%;
+                flex: 0 0 auto;
+                width: 200px;
                 scroll-snap-align: start;
-                min-width: 0;
+                padding: var(--space-md);
             }
             
             .page-startseite .staedte-grid {
@@ -4172,8 +4175,9 @@
         }
         
         @media (max-width: 768px) {
-            .nav-main,
-            .page-hilfe-finden .btn-search {
+            .page-hilfe-finden .nav-main,
+            .page-hilfe-finden .btn-search,
+            .page-hilfe-finden .btn-login {
                 display: none;
             }
             
@@ -5541,8 +5545,9 @@
         }
         
         @media (max-width: 768px) {
-            .nav-main,
-            .page-fuer-kommunen .btn-search {
+            .page-fuer-kommunen .nav-main,
+            .page-fuer-kommunen .btn-search,
+            .page-fuer-kommunen .btn-login {
                 display: none;
             }
             
@@ -5948,7 +5953,7 @@
             .page-ueber-uns .footer-top { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
-            .page-ueber-uns .nav-main, .page-ueber-uns .btn-search { display: none; }
+            .page-ueber-uns .nav-main, .page-ueber-uns .btn-search, .page-ueber-uns .btn-login { display: none; }
             .page-ueber-uns .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
             .page-ueber-uns .mega-menu-inner { grid-template-columns: 1fr; padding: var(--space-md); }
             .page-ueber-uns .menu-column { padding-right: 0; border-right: none !important; padding-bottom: var(--space-lg); margin-bottom: var(--space-lg); border-bottom: 1px solid var(--gray-100); }
@@ -6209,7 +6214,7 @@
             .page-kontakt .footer-top { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
-            .page-kontakt .nav-main, .page-kontakt .btn-search { display: none; }
+            .page-kontakt .nav-main, .page-kontakt .btn-search, .page-kontakt .btn-login { display: none; }
             .page-kontakt .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
             .page-kontakt .mega-menu-inner { grid-template-columns: 1fr; padding: var(--space-md); }
             .page-kontakt .menu-column { padding-right: 0; border-right: none !important; padding-bottom: var(--space-lg); margin-bottom: var(--space-lg); border-bottom: 1px solid var(--gray-100); }
@@ -6491,7 +6496,7 @@
             .page-muenchen .footer-top { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
-            .page-muenchen .nav-main, .page-muenchen .btn-search { display: none; }
+            .page-muenchen .nav-main, .page-muenchen .btn-search, .page-muenchen .btn-login { display: none; }
             .page-muenchen .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
             .page-muenchen .mega-menu-inner { grid-template-columns: 1fr; padding: var(--space-md); }
             .page-muenchen .menu-column { padding-right: 0; border-right: none !important; padding-bottom: var(--space-lg); margin-bottom: var(--space-lg); border-bottom: 1px solid var(--gray-100); }
@@ -6514,47 +6519,6 @@
             .page-muenchen .quick-links { flex-wrap: wrap; justify-content: center; }
         }
 
-/* ================================================================
-   GLOBAL: Scroll-Reveal Animations (all pages)
-   ================================================================ */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-children > * {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.reveal-children.visible > * {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-children.visible > *:nth-child(1) { transition-delay: 0ms; }
-.reveal-children.visible > *:nth-child(2) { transition-delay: 80ms; }
-.reveal-children.visible > *:nth-child(3) { transition-delay: 160ms; }
-.reveal-children.visible > *:nth-child(4) { transition-delay: 240ms; }
-.reveal-children.visible > *:nth-child(5) { transition-delay: 320ms; }
-.reveal-children.visible > *:nth-child(6) { transition-delay: 400ms; }
-
-@media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .reveal-children > * {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
 
 /* ================================================================
    GLOBAL: Mobile Menu (all pages, ≤768px)
