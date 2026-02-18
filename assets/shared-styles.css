@@ -1776,6 +1776,8 @@
         }
         
         .page-startseite .slide-content {
+            position: relative;
+            z-index: 1;
             padding: var(--space-3xl);
             max-width: 600px;
             color: var(--white);
@@ -6261,7 +6263,7 @@
         .page-muenchen .hero-city .breadcrumb a:hover { color: var(--white); }
         .page-muenchen .hero-city .breadcrumb svg { width: 16px; height: 16px; }
         .page-muenchen .hero-city-badge { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: var(--radius-full); font-size: 14px; font-weight: 600; margin-bottom: var(--space-lg); }
-        .page-muenchen .hero-city-badge .pulse { width: 10px; height: 10px; border-radius: 50%; background: #2563EB; animation: pulse 1.5s infinite; }
+        .page-muenchen .hero-city-badge .pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--green-primary); animation: pulse 1.5s infinite; }
         .page-muenchen .hero-city h1 { font-family: var(--font-display); font-size: 56px; font-weight: 800; margin-bottom: var(--space-md); line-height: 1.1; }
         .page-muenchen .hero-city h1 .city-name { color: #2563EB; }
         .page-muenchen .hero-city p { font-size: 20px; color: rgba(255,255,255,0.9); max-width: 600px; margin-bottom: var(--space-xl); line-height: 1.6; }
@@ -6294,7 +6296,7 @@
         /* HOW IT WORKS - серый фон */
         .page-muenchen .how-section { padding: var(--space-3xl) var(--space-lg); background: var(--gray-50); }
         .page-muenchen .how-section-inner { max-width: 1280px; margin: 0 auto; }
-        .page-muenchen .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
+        .page-muenchen .how-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-xl); }
         .page-muenchen .how-step { text-align: center; position: relative; }
         .page-muenchen .how-step::after { content: ''; position: absolute; top: 40px; left: calc(50% + 60px); width: calc(100% - 120px); height: 2px; background: var(--gray-300); }
         .page-muenchen .how-step:last-child::after { display: none; }
@@ -6317,16 +6319,19 @@
         .page-muenchen .partner-link:hover { gap: var(--space-sm); }
         .page-muenchen .partner-link svg { width: 16px; height: 16px; }
         
-        /* TESTIMONIAL */
-        .page-muenchen .testimonial-section { padding: var(--space-3xl) var(--space-lg); background: linear-gradient(135deg, #0B286D 0%, #071D4F 100%); }
-        .page-muenchen .testimonial-section-inner { max-width: 900px; margin: 0 auto; text-align: center; color: var(--white); }
-        .page-muenchen .testimonial-quote-icon { font-size: 64px; opacity: 0.3; margin-bottom: var(--space-lg); }
-        .page-muenchen .testimonial-text { font-family: var(--font-display); font-size: 28px; font-weight: 600; line-height: 1.5; margin-bottom: var(--space-xl); }
-        .page-muenchen .testimonial-author { display: flex; align-items: center; justify-content: center; gap: var(--space-md); }
-        .page-muenchen .testimonial-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.3); }
-        .page-muenchen .testimonial-info { text-align: left; }
-        .page-muenchen .testimonial-name { font-family: var(--font-display); font-weight: 700; font-size: 18px; }
-        .page-muenchen .testimonial-role { font-size: 14px; opacity: 0.8; }
+        /* TESTIMONIAL (unified with Startseite design) */
+        .page-muenchen .testimonial-section { background: #0B286D; padding: var(--space-3xl) var(--space-lg); }
+        .page-muenchen .testimonial-card { max-width: 1280px; margin: 0 auto; background: transparent; border-radius: var(--radius-xl); padding: var(--space-xl); display: flex; gap: var(--space-2xl); align-items: center; }
+        .page-muenchen .testimonial-image { width: 120px; height: 120px; border-radius: var(--radius-full); overflow: hidden; flex-shrink: 0; border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        .page-muenchen .testimonial-image img { width: 100%; height: 100%; object-fit: cover; }
+        .page-muenchen .testimonial-content { flex: 1; }
+        .page-muenchen .testimonial-quote { font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1.6; color: var(--white); margin-bottom: var(--space-lg); }
+        .page-muenchen .testimonial-quote::before { content: '\201C'; font-size: 48px; color: rgba(255,255,255,0.3); font-family: Georgia, serif; line-height: 0; vertical-align: -20px; margin-right: var(--space-sm); }
+        .page-muenchen .testimonial-author { display: flex; align-items: center; gap: var(--space-md); }
+        .page-muenchen .testimonial-author-info h4 { font-family: var(--font-display); font-weight: 700; font-size: 16px; margin-bottom: 2px; color: var(--white); }
+        .page-muenchen .testimonial-author-info span { font-size: 14px; color: rgba(255,255,255,0.7); }
+        .page-muenchen .testimonial-logo { margin-left: auto; background: rgba(255,255,255,0.15); padding: var(--space-md) var(--space-lg); border-radius: var(--radius-md); }
+        .page-muenchen .testimonial-logo img { height: 32px; width: auto; filter: brightness(0) invert(1); }
         
         /* CTA SECTION */
         .page-muenchen .cta-section { padding: var(--space-3xl) var(--space-lg); background: var(--gray-100); }
@@ -6383,7 +6388,7 @@
             .page-muenchen .menu-featured { grid-column: span 2; }
             .page-muenchen .hero-city h1 { font-size: 40px; }
             .page-muenchen .hero-city-stats { flex-wrap: wrap; }
-            .page-muenchen .how-steps { grid-template-columns: repeat(2, 1fr); }
+            .page-muenchen .how-steps { grid-template-columns: repeat(3, 1fr); }
             .page-muenchen .how-step::after { display: none; }
             .page-muenchen .partners-grid { grid-template-columns: 1fr; }
             .page-muenchen .support-grid { grid-template-columns: repeat(2, 1fr); }
@@ -6405,7 +6410,9 @@
             .page-muenchen .section-header h3 { font-size: 28px; }
             .page-muenchen .how-steps { grid-template-columns: 1fr; }
             .page-muenchen .support-grid { grid-template-columns: 1fr; }
-            .page-muenchen .testimonial-text { font-size: 20px; }
+            .page-muenchen .testimonial-card { flex-direction: column; text-align: center; padding: var(--space-xl); }
+            .page-muenchen .testimonial-author { flex-direction: column; }
+            .page-muenchen .testimonial-logo { margin-left: 0; }
             .page-muenchen .footer-top { grid-template-columns: 1fr; }
             .page-muenchen .footer-bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
             .page-muenchen .mega-menu-footer-inner { flex-direction: column; gap: var(--space-md); }
