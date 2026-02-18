@@ -411,9 +411,14 @@
         }
         
         .page-engagieren .tab-btn.active {
-            background: var(--white);
+            background: var(--orange-primary);
             box-shadow: var(--shadow-md);
-            border-left: 3px solid var(--orange-primary);
+            border-radius: var(--radius-lg);
+        }
+
+        .page-engagieren .tab-btn.active .tab-icon {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
         }
         
         .page-engagieren .tab-icon {
@@ -454,7 +459,11 @@
         }
         
         .page-engagieren .tab-btn.active .tab-btn-content span {
-            color: var(--gray-900);
+            color: var(--white);
+        }
+
+        .page-engagieren .tab-btn.active .tab-btn-content small {
+            color: rgba(255,255,255,0.7);
         }
         
         .page-engagieren .tab-btn-content small {
@@ -1262,8 +1271,7 @@
             }
             
             .page-engagieren .tab-btn.active {
-                border-left: none;
-                border-bottom: 3px solid var(--orange-primary);
+                border-radius: var(--radius-md);
             }
             
             .page-engagieren .tab-btn-content small {
@@ -2043,20 +2051,32 @@
         }
         
         .page-startseite .tab-btn.active {
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
+            border-radius: var(--radius-lg);
         }
-        
+
         .page-startseite .tab-btn.active.blue {
-            border-left: 3px solid var(--blue-primary);
+            background: var(--blue-primary);
         }
-        
+        .page-startseite .tab-btn.active.blue .tab-icon {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
+        }
+
         .page-startseite .tab-btn.active.orange {
-            border-left: 3px solid var(--orange-primary);
+            background: var(--orange-primary);
         }
-        
+        .page-startseite .tab-btn.active.orange .tab-icon {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
+        }
+
         .page-startseite .tab-btn.active.purple {
-            border-left: 3px solid var(--purple-primary);
+            background: var(--purple-primary);
+        }
+        .page-startseite .tab-btn.active.purple .tab-icon {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
         }
         
         .page-startseite .tab-icon {
@@ -2092,7 +2112,7 @@
         }
         
         .page-startseite .tab-btn.active span {
-            color: var(--gray-900);
+            color: var(--white);
         }
         
         .page-startseite .tabs-content {
@@ -3402,9 +3422,14 @@
         }
         
         .page-hilfe-finden .tab-btn.active {
-            background: var(--white);
+            background: var(--blue-primary);
             box-shadow: var(--shadow-md);
-            border-left: 3px solid var(--blue-primary);
+            border-radius: var(--radius-lg);
+        }
+
+        .page-hilfe-finden .tab-btn.active .tab-icon {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
         }
         
         .page-hilfe-finden .tab-icon {
@@ -3432,7 +3457,11 @@
         }
         
         .page-hilfe-finden .tab-btn.active .tab-btn-content span {
-            color: var(--gray-900);
+            color: var(--white);
+        }
+
+        .page-hilfe-finden .tab-btn.active .tab-btn-content small {
+            color: rgba(255,255,255,0.7);
         }
         
         .page-hilfe-finden .tab-btn-content small {
@@ -4083,8 +4112,7 @@
             }
             
             .page-hilfe-finden .tab-btn.active {
-                border-left: none;
-                border-bottom: 3px solid var(--blue-primary);
+                border-radius: var(--radius-md);
             }
             
             .page-hilfe-finden .tab-btn-content small {
@@ -4876,9 +4904,14 @@
         }
         
         .page-fuer-kommunen .tab-btn.active {
-            background: var(--white);
+            background: var(--purple-primary);
             box-shadow: var(--shadow-md);
-            border-left: 3px solid var(--purple-primary);
+            border-radius: var(--radius-lg);
+        }
+
+        .page-fuer-kommunen .tab-btn.active .tab-icon {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
         }
         
         .page-fuer-kommunen .tab-icon {
@@ -4906,7 +4939,11 @@
         }
         
         .page-fuer-kommunen .tab-btn.active .tab-btn-content span {
-            color: var(--gray-900);
+            color: var(--white);
+        }
+
+        .page-fuer-kommunen .tab-btn.active .tab-btn-content small {
+            color: rgba(255,255,255,0.7);
         }
         
         .page-fuer-kommunen .tab-btn-content small {
@@ -5449,8 +5486,7 @@
             }
             
             .page-fuer-kommunen .tab-btn.active {
-                border-left: none;
-                border-bottom: 3px solid var(--purple-primary);
+                border-radius: var(--radius-md);
             }
             
             .page-fuer-kommunen .tab-btn-content small {
