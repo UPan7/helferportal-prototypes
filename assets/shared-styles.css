@@ -1989,7 +1989,32 @@
         .page-startseite .quick-action-card:not(.blue):not(.orange):not(.purple):hover {
             border-color: var(--gray-400);
         }
-        
+
+        /* First card (blue) — highlighted with filled background */
+        .page-startseite .quick-action-card.blue {
+            background: var(--blue-primary);
+            border-color: var(--blue-primary);
+            color: var(--white);
+        }
+
+        .page-startseite .quick-action-card.blue .quick-action-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .page-startseite .quick-action-card.blue .quick-action-content h3 {
+            color: var(--white);
+        }
+
+        .page-startseite .quick-action-card.blue .quick-action-content p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .page-startseite .quick-action-card.blue:hover {
+            background: var(--blue-dark);
+            border-color: var(--blue-dark);
+        }
+
         .page-startseite .quick-action-icon {
             width: 48px;
             height: 48px;
@@ -2893,7 +2918,9 @@
                 padding: var(--space-lg);
                 padding-top: var(--space-3xl);
                 grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr auto;
                 row-gap: var(--space-sm);
+                height: 100%;
             }
 
             .page-startseite .slide-tag {
@@ -2905,15 +2932,18 @@
             .page-startseite .slide-text {
                 font-size: 14px;
                 line-height: 1.5;
-                margin-bottom: var(--space-sm);
+                margin-bottom: 0;
+                align-self: start;
             }
 
             .page-startseite .slide-btn {
                 grid-column: 1;
-                grid-row: auto;
+                grid-row: 4;
                 justify-self: start;
+                align-self: end;
                 padding: var(--space-xs) var(--space-md);
                 font-size: 13px;
+                margin-top: var(--space-md);
             }
 
             .page-startseite .slider-progress {
@@ -2924,6 +2954,7 @@
             
             .page-startseite .quick-actions {
                 margin-top: calc(-1 * var(--space-md));
+                margin-bottom: var(--space-xl);
                 padding: 0;
             }
 
