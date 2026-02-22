@@ -464,3 +464,30 @@ if (contactForm) {
         alert('Vielen Dank für Ihre Nachricht! Wir melden uns in Kürze bei Ihnen.');
     });
 }
+
+// ========================================
+// INFO TABS (index.html — "Gut zu wissen")
+// Uses data-info-tab on pills and data-info-panel on panels
+// ========================================
+const infoTabPills = document.querySelectorAll('.info-tab-pill');
+const infoTabPanels = document.querySelectorAll('.info-tab-panel');
+
+if (infoTabPills.length > 0) {
+    infoTabPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            const tabId = pill.getAttribute('data-info-tab');
+
+            // Update pills
+            infoTabPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            // Update panels
+            infoTabPanels.forEach(panel => {
+                panel.classList.remove('active');
+                if (panel.getAttribute('data-info-panel') === tabId) {
+                    panel.classList.add('active');
+                }
+            });
+        });
+    });
+}

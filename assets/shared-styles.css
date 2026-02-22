@@ -909,6 +909,111 @@
         }
         
         /* ========================================
+           SCHULUNGEN & FORTBILDUNGEN
+           ======================================== */
+        .page-engagieren .schulungen-section {
+            max-width: 1280px;
+            margin: 0 auto var(--space-3xl);
+            padding: var(--space-3xl) var(--space-lg);
+            background: var(--gray-50);
+            border-radius: var(--radius-xl);
+        }
+
+        .page-engagieren .schulungen-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .page-engagieren .schulungen-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .page-engagieren .schulungen-overline {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--orange-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .page-engagieren .schulungen-header h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--gray-900);
+            line-height: 1.2;
+            margin-bottom: var(--space-sm);
+        }
+
+        .page-engagieren .schulungen-header p {
+            font-size: 16px;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .page-engagieren .schulungen-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .page-engagieren .schulung-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            border-top: 3px solid var(--orange-primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: all var(--transition-fast);
+        }
+
+        .page-engagieren .schulung-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .page-engagieren .schulung-card-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(230, 81, 0, 0.1);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-md);
+            color: var(--orange-primary);
+        }
+
+        .page-engagieren .schulung-card-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .page-engagieren .schulung-card h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--space-sm);
+        }
+
+        .page-engagieren .schulung-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .page-engagieren .schulungen-cta {
+            text-align: center;
+        }
+
+        /* ========================================
            GEMEINSAME VORTEILE SECTION
            ======================================== */
         .page-engagieren .shared-vorteile-section {
@@ -1341,7 +1446,11 @@
             .page-engagieren .shared-vorteile-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
+            .page-engagieren .schulungen-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .page-engagieren .footer-top {
                 grid-template-columns: 1fr 1fr;
             }
@@ -1380,7 +1489,15 @@
             .page-engagieren .shared-vorteile-grid {
                 grid-template-columns: 1fr;
             }
-            
+
+            .page-engagieren .schulungen-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-engagieren .schulungen-header h2 {
+                font-size: 24px;
+            }
+
             .page-engagieren .cta-card {
                 padding: var(--space-xl);
             }
@@ -1808,22 +1925,23 @@
             margin-top: 64px;
             background: var(--gray-100);
             padding: var(--space-lg);
+            padding-bottom: 56px; /* extra space for quick-action cards overlap */
         }
-        
+
         .page-startseite .hero-slider {
             max-width: 1280px;
             margin: 0 auto;
             position: relative;
             border-radius: var(--radius-xl);
             overflow: hidden;
-            min-height: 400px;
+            min-height: 380px;
         }
 
         .page-startseite .slide {
             position: absolute;
             inset: 0;
             opacity: 0;
-            min-height: 400px;
+            min-height: 380px;
             background-size: cover;
             background-position: center;
             border-radius: var(--radius-xl);
@@ -1837,6 +1955,11 @@
             z-index: 1;
         }
         
+        .page-startseite .slide-0 {
+            background: linear-gradient(135deg, rgba(11,40,109,0.7) 0%, rgba(21,71,133,0.75) 100%),
+                        url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400') center/cover;
+        }
+
         .page-startseite .slide-1 {
             background: linear-gradient(135deg, rgba(21, 101, 192, 0.65) 0%, rgba(13, 71, 161, 0.72) 100%),
                         url('https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=1400') center/cover;
@@ -1855,18 +1978,19 @@
         .page-startseite .slide-content {
             position: relative;
             z-index: 1;
-            padding: var(--space-3xl);
-            max-width: 800px;
+            padding: var(--space-2xl) var(--space-3xl) var(--space-3xl);
+            max-width: 100%;
             color: var(--white);
             display: grid;
             grid-template-columns: 1fr auto;
             grid-template-rows: auto auto auto;
             align-items: end;
-            column-gap: var(--space-xl);
+            column-gap: var(--space-3xl);
+            height: 100%;
         }
         
         .page-startseite .slide-tag {
-            grid-column: 1 / -1;
+            grid-column: 1;
             display: inline-block;
             width: fit-content;
             padding: var(--space-xs) var(--space-md);
@@ -1876,49 +2000,56 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-sm);
         }
         
         .page-startseite .slide-title {
-            grid-column: 1 / -1;
+            grid-column: 1;
             font-family: var(--font-display);
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 800;
             line-height: 1.15;
             margin-bottom: var(--space-md);
             text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            max-width: 560px;
         }
 
         .page-startseite .slide-text {
             grid-column: 1;
-            font-size: 18px;
-            opacity: 1;
+            font-size: 17px;
+            opacity: 0.92;
             margin-bottom: 0;
-            line-height: 1.6;
+            line-height: 1.55;
             text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            max-width: 520px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         
         .page-startseite .slide-btn {
             grid-column: 2;
-            grid-row: 3;
+            grid-row: 2 / 4;
             align-self: center;
             display: inline-flex;
             align-items: center;
-            gap: var(--space-xs);
-            padding: var(--space-sm) var(--space-lg);
+            gap: var(--space-sm);
+            padding: 14px 28px;
             background: var(--white);
             color: var(--gray-900);
-            border-radius: var(--radius-full);
+            border-radius: var(--radius-md);
             font-weight: 700;
-            font-size: 14px;
+            font-size: 15px;
             text-decoration: none;
             transition: all var(--transition-fast);
             white-space: nowrap;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
-        
+
         .page-startseite .slide-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
         }
         
         .page-startseite .slider-progress {
@@ -1966,8 +2097,8 @@
         .page-startseite .quick-actions {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 var(--space-lg);
-            margin-top: calc(-1 * var(--space-xl));
+            padding: 0 var(--space-2xl);
+            margin-top: -80px;
             position: relative;
             z-index: 10;
         }
@@ -2248,6 +2379,11 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+
+        .page-startseite .tab-panel[data-panel="kommunen"] .tab-options {
+            grid-template-columns: repeat(2, 1fr);
             margin-bottom: var(--space-xl);
         }
         
@@ -2751,6 +2887,13 @@
             text-align: center;
         }
         
+        .page-startseite .partners-subtitle {
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--gray-500);
+            margin-bottom: var(--space-lg);
+        }
+
         .page-startseite .partners-inner h2 {
             font-family: var(--font-display);
             font-size: 12px;
@@ -2783,6 +2926,304 @@
             opacity: 1;
         }
         
+        /* ========================================
+           GUT ZU WISSEN — INFO TABS
+           ======================================== */
+        .page-startseite .info-tabs-section {
+            background: var(--gray-50);
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        .page-startseite .info-tabs-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-startseite .info-tabs-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .page-startseite .info-tabs-overline {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .page-startseite .info-tabs-header h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--gray-900);
+            line-height: 1.2;
+        }
+
+        /* Tab Pills Navigation */
+        .page-startseite .info-tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-xl);
+        }
+
+        .page-startseite .info-tab-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-full);
+            background: var(--white);
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .page-startseite .info-tab-pill .icon-sm {
+            width: 18px;
+            height: 18px;
+        }
+
+        .page-startseite .info-tab-pill:hover {
+            border-color: var(--gray-400);
+            color: var(--gray-800);
+        }
+
+        .page-startseite .info-tab-pill.active.blue {
+            background: var(--blue-primary);
+            border-color: var(--blue-primary);
+            color: var(--white);
+        }
+
+        .page-startseite .info-tab-pill.active.orange {
+            background: var(--orange-primary);
+            border-color: var(--orange-primary);
+            color: var(--white);
+        }
+
+        /* Tab Panel Content */
+        .page-startseite .info-tabs-content {
+            position: relative;
+        }
+
+        .page-startseite .info-tab-panel {
+            display: none;
+            animation: infoTabFadeIn 0.3s ease;
+        }
+
+        .page-startseite .info-tab-panel.active {
+            display: block;
+        }
+
+        @keyframes infoTabFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page-startseite .info-tab-panel h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--space-md);
+        }
+
+        .page-startseite .info-tab-lead {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+        }
+
+        /* Trust Features (Sicherheit Tab) */
+        .page-startseite .trust-features {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .page-startseite .trust-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            padding: var(--space-md) var(--space-lg);
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            border-left: 3px solid var(--blue-primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .page-startseite .trust-feature-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-startseite .trust-feature-icon.blue svg {
+            width: 22px;
+            height: 22px;
+            color: var(--blue-primary);
+        }
+
+        .page-startseite .trust-feature-text h4 {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 2px;
+        }
+
+        .page-startseite .trust-feature-text p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        /* Kosten Tab */
+        .page-startseite .kosten-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .page-startseite .kosten-pill {
+            padding: var(--space-md) var(--space-lg);
+            border: 2px solid var(--blue-primary);
+            border-radius: var(--radius-lg);
+            background: var(--white);
+            text-align: center;
+            transition: all var(--transition-fast);
+        }
+
+        .page-startseite .kosten-pill:hover {
+            background: rgba(21, 101, 192, 0.04);
+            transform: translateY(-1px);
+        }
+
+        .page-startseite .kosten-pill-amount {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--blue-primary);
+            margin-bottom: 4px;
+        }
+
+        .page-startseite .kosten-pill-label {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .page-startseite .kosten-note {
+            font-size: 14px;
+            color: var(--gray-500);
+            text-align: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .page-startseite .kosten-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-lg);
+            background: rgba(21, 101, 192, 0.08);
+            border-radius: var(--radius-full);
+            color: var(--blue-primary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .page-startseite .kosten-badge .icon-sm {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* Vernetzen Tab */
+        .page-startseite .vernetzen-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+
+        .page-startseite .vernetzen-card {
+            padding: var(--space-lg);
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: all var(--transition-fast);
+        }
+
+        .page-startseite .vernetzen-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .page-startseite .vernetzen-card-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-lg);
+        }
+
+        .page-startseite .vernetzen-card-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .page-startseite .vernetzen-card.blue .vernetzen-card-icon {
+            background: rgba(21, 101, 192, 0.1);
+            color: var(--blue-primary);
+        }
+
+        .page-startseite .vernetzen-card.purple .vernetzen-card-icon {
+            background: rgba(123, 31, 162, 0.1);
+            color: var(--purple-primary);
+        }
+
+        .page-startseite .vernetzen-card.orange .vernetzen-card-icon {
+            background: rgba(230, 81, 0, 0.1);
+            color: var(--orange-primary);
+        }
+
+        .page-startseite .vernetzen-card h4 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--space-xs);
+        }
+
+        .page-startseite .vernetzen-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .page-startseite .info-tabs-cta {
+            display: flex;
+            margin: var(--space-xl) auto 0;
+            width: fit-content;
+        }
+
         /* ========================================
            FOOTER
            ======================================== */
@@ -2933,9 +3374,14 @@
                 justify-content: center;
             }
             
+            .page-startseite .hero {
+                padding-bottom: var(--space-lg); /* reset desktop overlap padding */
+            }
+
             .page-startseite .slide-title {
                 font-size: 26px;
                 margin-bottom: var(--space-sm);
+                max-width: 100%;
             }
 
             .page-startseite .slide-content {
@@ -2944,6 +3390,7 @@
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto 1fr auto;
                 row-gap: var(--space-sm);
+                column-gap: 0;
                 height: 100%;
             }
 
@@ -2958,6 +3405,8 @@
                 line-height: 1.5;
                 margin-bottom: 0;
                 align-self: start;
+                max-width: 100%;
+                -webkit-line-clamp: 3; /* allow 3 lines on mobile */
             }
 
             .page-startseite .slide-btn {
@@ -2968,6 +3417,8 @@
                 padding: var(--space-xs) var(--space-md);
                 font-size: 13px;
                 margin-top: var(--space-md);
+                border-radius: var(--radius-full);
+                box-shadow: none;
             }
 
             .page-startseite .slider-progress {
@@ -2975,7 +3426,7 @@
                 right: var(--space-lg);
                 top: var(--space-md);
             }
-            
+
             .page-startseite .quick-actions {
                 margin-top: calc(-1 * var(--space-md));
                 margin-bottom: var(--space-xl);
@@ -3034,10 +3485,40 @@
                 margin-left: 0;
             }
             
+            /* Info Tabs — mobile */
+            .page-startseite .info-tabs-section {
+                padding: var(--space-2xl) var(--space-md);
+            }
+
+            .page-startseite .info-tabs-header h2 {
+                font-size: 24px;
+            }
+
+            .page-startseite .info-tabs-nav {
+                flex-wrap: wrap;
+            }
+
+            .page-startseite .info-tab-pill {
+                padding: var(--space-xs) var(--space-md);
+                font-size: 13px;
+            }
+
+            .page-startseite .kosten-options {
+                grid-template-columns: 1fr;
+            }
+
+            .page-startseite .vernetzen-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .page-startseite .tab-panel[data-panel="kommunen"] .tab-options {
+                grid-template-columns: 1fr;
+            }
+
             .page-startseite .footer-top {
                 grid-template-columns: 1fr;
             }
-            
+
             .page-startseite .footer-bottom {
                 flex-direction: column;
                 gap: var(--space-md);
@@ -6542,10 +7023,7 @@
         .page-muenchen .hero-city h1 { font-family: var(--font-display); font-size: 56px; font-weight: 800; margin-bottom: var(--space-md); line-height: 1.1; }
         .page-muenchen .hero-city h1 .city-name { color: #2563EB; }
         .page-muenchen .hero-city p { font-size: 20px; color: rgba(255,255,255,0.9); max-width: 600px; margin-bottom: var(--space-xl); line-height: 1.6; }
-        .page-muenchen .hero-city-stats { display: flex; gap: var(--space-xl); margin-bottom: var(--space-xl); }
-        .page-muenchen .hero-stat { text-align: center; padding: var(--space-md) var(--space-lg); background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: var(--radius-lg); }
-        .page-muenchen .hero-stat-number { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: var(--white); }
-        .page-muenchen .hero-stat-label { font-size: 14px; color: rgba(255,255,255,0.8); }
+        .page-muenchen .hero-city-tagline { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: var(--space-xl); padding: var(--space-sm) var(--space-lg); background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: var(--radius-full); display: inline-block; }
         .page-muenchen .hero-city-actions { display: flex; gap: var(--space-md); }
         .page-muenchen .btn-hero-primary { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-xl); background: var(--white); color: #0B286D; border-radius: var(--radius-full); font-weight: 700; font-size: 16px; text-decoration: none; transition: all var(--transition-fast); }
         .page-muenchen .btn-hero-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-xl); }
@@ -6662,7 +7140,6 @@
             .page-muenchen .cities-column { padding: 0; }
             .page-muenchen .menu-featured { grid-column: span 2; }
             .page-muenchen .hero-city h1 { font-size: 40px; }
-            .page-muenchen .hero-city-stats { flex-wrap: wrap; }
             .page-muenchen .how-steps { grid-template-columns: repeat(3, 1fr); }
             .page-muenchen .how-step::after { display: none; }
             .page-muenchen .partners-grid { grid-template-columns: 1fr; }
@@ -6678,9 +7155,7 @@
             .page-muenchen .hero-city { min-height: auto; }
             .page-muenchen .hero-city h1 { font-size: 24px; line-height: 1.3; }
             .page-muenchen .hero-city p { font-size: 16px; }
-            .page-muenchen .hero-city-stats { gap: var(--space-md); }
-            .page-muenchen .hero-stat { padding: var(--space-sm) var(--space-md); }
-            .page-muenchen .hero-stat-number { font-size: 24px; }
+            .page-muenchen .hero-city-tagline { font-size: 15px; padding: var(--space-xs) var(--space-md); }
             .page-muenchen .hero-city-actions { flex-direction: column; }
             .page-muenchen .section-header h3 { font-size: 28px; }
             .page-muenchen .how-steps { grid-template-columns: 1fr; }
