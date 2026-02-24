@@ -567,7 +567,7 @@
     </section>
 
     <!-- ========================================
-         VIDEO SECTION
+         VIDEO SECTION — 4 Videos Grid
          ======================================== -->
     <section class="video-section" id="video-section" data-block="video-section" data-block-id="b4">
         <div class="video-section-inner">
@@ -575,16 +575,63 @@
                 <h2 data-field="video-overline" data-field-type="text">Das Helferportal in Aktion</h2>
                 <h3 data-field="video-heading" data-field-type="text">Sehen Sie, wie einfach es funktioniert</h3>
             </div>
-            <div class="video-container" data-field="video-embed" data-field-type="video">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
-                     alt="Video-Vorschau: So funktioniert das Helferportal"
-                     class="video-thumbnail"
-                     data-field="video-thumbnail" data-field-type="image">
-                <button class="video-play-btn" aria-label="Video abspielen">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-                        <polygon points="5 3 19 12 5 21 5 3"/>
-                    </svg>
-                </button>
+            <div class="video-grid">
+                <!-- Featured: Vorstellung Helferportal -->
+                <div class="video-card featured" data-field="video-vorstellung" data-field-type="video">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
+                         alt="Video: Vorstellung Helferportal"
+                         class="video-thumbnail">
+                    <div class="video-card-overlay">
+                        <button class="video-play-btn" aria-label="Video abspielen: Vorstellung Helferportal">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </button>
+                        <span class="video-card-label">Vorstellung Helferportal</span>
+                    </div>
+                </div>
+                <!-- Video für Helfer (orange) -->
+                <div class="video-card orange" data-field="video-helfer" data-field-type="video">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600"
+                         alt="Video: Für Helfer"
+                         class="video-thumbnail">
+                    <div class="video-card-overlay">
+                        <button class="video-play-btn" aria-label="Video abspielen: Für Helfer">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </button>
+                        <span class="video-card-label">Video für Helfer</span>
+                    </div>
+                </div>
+                <!-- Video für Hilfesuchende (blue) -->
+                <div class="video-card blue" data-field="video-hilfesuchende" data-field-type="video">
+                    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600"
+                         alt="Video: Für Hilfesuchende"
+                         class="video-thumbnail">
+                    <div class="video-card-overlay">
+                        <button class="video-play-btn" aria-label="Video abspielen: Für Hilfesuchende">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </button>
+                        <span class="video-card-label">Video für Hilfesuchende</span>
+                    </div>
+                </div>
+                <!-- So funktioniert's -->
+                <div class="video-card" data-field="video-funktioniert" data-field-type="video">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600"
+                         alt="Video: So funktioniert's"
+                         class="video-thumbnail">
+                    <div class="video-card-overlay">
+                        <button class="video-play-btn" aria-label="Video abspielen: So funktioniert's">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </button>
+                        <span class="video-card-label">So funktioniert's</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
