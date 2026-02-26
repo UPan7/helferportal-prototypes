@@ -1,0 +1,9 @@
+{
+  "pages": [
+    {
+      "id": "startseite",
+      "title": "Startseite",
+      "file": "startseite.json"
+    }
+  ]
+}

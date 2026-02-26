@@ -1300,9 +1300,54 @@ function enterApp(online) {
         connectionBadge.className = 'connection-badge local';
         connectionLabel.textContent = 'Offline-Modus';
         sidebarFooter.style.display = 'none';
+        loadLocalPages();
     }
 
     updateSaveStatus('saved');
+}
+
+// Load pages from local content/ folder via manifest.json
+async function loadLocalPages() {
+    try {
+        const res = await fetch('/content/manifest.json');
+        if (!res.ok) throw new Error('manifest.json nicht gefunden');
+        const manifest = await res.json();
+
+        pageSelect.innerHTML = '<option value="">Seite wählen...</option>';
+        for (const page of manifest.pages) {
+            const opt = document.createElement('option');
+            opt.value = page.file;
+            opt.textContent = page.title;
+            pageSelect.appendChild(opt);
+        }
+
+        // Auto-load first page if only one exists
+        if (manifest.pages.length === 1) {
+            await loadLocalPage(manifest.pages[0].file);
+            pageSelect.value = manifest.pages[0].file;
+        }
+    } catch (err) {
+        console.warn('Manifest nicht geladen:', err.message);
+    }
+}
+
+async function loadLocalPage(filename) {
+    try {
+        const res = await fetch('/content/' + filename);
+        if (!res.ok) throw new Error('Datei nicht gefunden: ' + filename);
+        contentData = await res.json();
+        currentPageId = contentData.page?.id || filename.replace('.json', '');
+        fileName = filename;
+
+        renderEditor();
+        renderBlockList();
+        updateToolbar();
+        updateSaveStatus('saved');
+        hasUnsavedChanges = false;
+        btnSave.disabled = false;
+    } catch (err) {
+        showToast('error', 'Fehler: ' + err.message);
+    }
 }
 
 // ============================================================
@@ -1568,15 +1613,19 @@ function downloadJSON() {
 // ============================================================
 
 pageSelect.addEventListener('change', async () => {
-    const pageId = pageSelect.value;
-    if (!pageId) return;
+    const val = pageSelect.value;
+    if (!val) return;
 
     if (hasUnsavedChanges && !confirm('Ungespeicherte Änderungen verwerfen?')) {
-        pageSelect.value = currentPageId || '';
+        pageSelect.value = currentPageId || fileName || '';
         return;
     }
 
-    await loadPage(pageId);
+    if (isOnline) {
+        await loadPage(val);
+    } else {
+        await loadLocalPage(val);
+    }
 });
 
 // ============================================================
@@ -2005,12 +2054,43 @@ function showToast(type, message) {
 //  HELPERS
 // ============================================================
 
+// German display names for block types
+const BLOCK_LABELS = {
+    'hero-slider': 'Hero Slider',
+    'quick-actions': 'Quick Actions',
+    'tabs-section': 'Tabs Sektion',
+    'video-section': 'Video Sektion',
+    'staedte-section': 'Städte Sektion',
+    'how-it-works': 'So funktioniert\u2019s',
+    'info-tabs': 'Gut zu wissen',
+    'testimonial': 'Referenzen',
+    'partners': 'Partner',
+    'faq-section': 'FAQ',
+    'kontakt-form': 'Kontaktformular',
+    'vorteile-section': 'Vorteile',
+    'about-section': 'Über uns',
+    'kostenfrei-section': 'Kostenfrei',
+};
+
+// German display names for common field name parts
+const FIELD_LABELS = {
+    'slide': 'Slide', 'tag': 'Tag', 'title': 'Titel', 'text': 'Text',
+    'btn': 'Button', 'image': 'Bild', 'qa': 'Quick Action',
+    'tabs': 'Tabs', 'tab': 'Tab', 'hilfe': 'Hilfe', 'angehoerige': 'Angehörige',
+    'engagierte': 'Engagierte', 'kommunen': 'Kommunen', 'orga': 'Organisationen',
+    'dienst': 'Dienstleister', 'subtitle': 'Untertitel', 'overline': 'Überzeile',
+    'staedte': 'Städte', 'stadt': 'Stadt', 'steps': 'Schritte', 'step': 'Schritt',
+    'info': 'Info', 'testimonial': 'Referenz', 'partners': 'Partner',
+    'quote': 'Zitat', 'name': 'Name', 'role': 'Rolle', 'video': 'Video',
+    'heading': 'Überschrift', 'src': 'Quelle',
+};
+
 function formatBlockType(type) {
-    return type.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    return BLOCK_LABELS[type] || type.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
 function formatFieldId(id) {
-    return id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    return id.split('-').map(w => FIELD_LABELS[w] || w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
 function escapeHtml(str) {
