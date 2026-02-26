@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helferportal — Content Editor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --orange: #E65100;
+            --blue: #1565C0;
+            --purple: #7B1FA2;
+            --green: #2E7D32;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-400: #94a3b8;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --white: #ffffff;
+            --radius: 8px;
+            --shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--gray-100);
+            color: var(--gray-800);
+            line-height: 1.5;
+        }
+
+        /* Header */
+        .header {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.1);
+        }
+
+        .btn-secondary {
+            background: var(--gray-200);
+            color: var(--gray-800);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-400);
+            color: var(--white);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* File controls */
+        .file-controls {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .file-controls label {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .file-controls input[type="file"] {
+            font-size: 14px;
+        }
+
+        .status {
+            margin-left: auto;
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        .status.loaded {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        /* Block card */
+        .block-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .block-header {
+            background: var(--orange);
+            color: var(--white);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .block-header:hover {
+            filter: brightness(1.05);
+        }
+
+        .block-header h2 {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .block-header .block-id {
+            font-size: 12px;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .block-header .toggle {
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+
+        .block-card.collapsed .block-header .toggle {
+            transform: rotate(-90deg);
+        }
+
+        .block-card.collapsed .block-body {
+            display: none;
+        }
+
+        .block-body {
+            padding: 16px 20px;
+        }
+
+        /* Field */
+        .field {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .field:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .field-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .field-label label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .field-type {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: var(--gray-100);
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .field input[type="text"],
+        .field textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-family: inherit;
+            line-height: 1.5;
+            transition: border-color 0.15s;
+        }
+
+        .field input[type="text"]:focus,
+        .field textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+        }
+
+        .field textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .field-row .sub-field label {
+            font-size: 12px;
+            color: var(--gray-600);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .field-row .sub-field input {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            font-size: 13px;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--gray-400);
+        }
+
+        .empty-state h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--gray-600);
+        }
+
+        .empty-state p {
+            font-size: 15px;
+        }
+
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            gap: 24px;
+            padding: 12px 0;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .stats-bar strong {
+            color: var(--gray-900);
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Helferportal — Content Editor</h1>
+    <div class="header-actions">
+        <button class="btn btn-secondary" id="btnCollapseAll">Alle zuklappen</button>
+        <button class="btn btn-primary" id="btnDownload" disabled>JSON herunterladen</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="file-controls">
+        <label>JSON-Datei laden:</label>
+        <input type="file" id="fileInput" accept=".json">
+        <span class="status" id="status">Keine Datei geladen</span>
+    </div>
+
+    <div id="editor">
+        <div class="empty-state">
+            <h2>Keine Datei geladen</h2>
+            <p>Laden Sie eine JSON-Datei (z.B. startseite.json), um den Inhalt zu bearbeiten.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+// --- State ---
+let contentData = null;
+let fileName = '';
+
+// --- DOM refs ---
+const fileInput = document.getElementById('fileInput');
+const editor = document.getElementById('editor');
+const btnDownload = document.getElementById('btnDownload');
+const btnCollapseAll = document.getElementById('btnCollapseAll');
+const status = document.getElementById('status');
+
+// --- Load JSON file ---
+fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    fileName = file.name;
+
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+        try {
+            contentData = JSON.parse(ev.target.result);
+            renderEditor();
+            btnDownload.disabled = false;
+            status.textContent = `${fileName} geladen`;
+            status.classList.add('loaded');
+        } catch (err) {
+            alert('Fehler beim Laden der JSON-Datei: ' + err.message);
+        }
+    };
+    reader.readAsText(file);
+});
+
+// --- Render editor form ---
+function renderEditor() {
+    if (!contentData || !contentData.blocks) {
+        editor.innerHTML = '<div class="empty-state"><h2>Keine Blöcke gefunden</h2></div>';
+        return;
+    }
+
+    const totalFields = contentData.blocks.reduce((s, b) => s + b.fields.length, 0);
+
+    let html = `
+        <div class="stats-bar">
+            <span>Seite: <strong>${contentData.page.title || contentData.page.id}</strong></span>
+            <span>Blöcke: <strong>${contentData.blocks.length}</strong></span>
+            <span>Felder: <strong>${totalFields}</strong></span>
+        </div>
+    `;
+
+    for (const block of contentData.blocks) {
+        html += `
+            <div class="block-card" data-block-id="${block.id}">
+                <div class="block-header" onclick="toggleBlock(this)">
+                    <h2>${formatBlockType(block.type)} <span class="block-id">(${block.id})</span></h2>
+                    <span class="toggle">&#9660;</span>
+                </div>
+                <div class="block-body">
+                    ${block.fields.map(field => renderField(block.id, field)).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    editor.innerHTML = html;
+}
+
+// --- Render a single field ---
+function renderField(blockId, field) {
+    const inputId = `field-${blockId}-${field.id}`;
+
+    switch (field.type) {
+        case 'textarea':
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label for="${inputId}">${formatFieldId(field.id)}</label>
+                        <span class="field-type">${field.type}</span>
+                    </div>
+                    <textarea id="${inputId}" data-field-id="${field.id}" data-block-id="${blockId}"
+                              onchange="updateField(this)">${escapeHtml(field.value || '')}</textarea>
+                </div>
+            `;
+
+        case 'image':
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label>${formatFieldId(field.id)}</label>
+                        <span class="field-type">${field.type}</span>
+                    </div>
+                    <div class="field-row">
+                        <div class="sub-field">
+                            <label for="${inputId}-src">Bild-URL</label>
+                            <input type="text" id="${inputId}-src" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value"
+                                   value="${escapeHtml(field.value || '')}" onchange="updateField(this)">
+                        </div>
+                        <div class="sub-field">
+                            <label for="${inputId}-alt">Alt-Text</label>
+                            <input type="text" id="${inputId}-alt" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="alt"
+                                   value="${escapeHtml(field.alt || '')}" onchange="updateField(this)">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+        case 'link':
+        case 'button':
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label>${formatFieldId(field.id)}</label>
+                        <span class="field-type">${field.type}</span>
+                    </div>
+                    <div class="field-row">
+                        <div class="sub-field">
+                            <label for="${inputId}-text">Text</label>
+                            <input type="text" id="${inputId}-text" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value"
+                                   value="${escapeHtml(field.value || '')}" onchange="updateField(this)">
+                        </div>
+                        <div class="sub-field">
+                            <label for="${inputId}-href">Link (href)</label>
+                            <input type="text" id="${inputId}-href" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="href"
+                                   value="${escapeHtml(field.href || '')}" onchange="updateField(this)">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+        case 'video':
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label>${formatFieldId(field.id)}</label>
+                        <span class="field-type">${field.type}</span>
+                    </div>
+                    <div class="field-row">
+                        <div class="sub-field">
+                            <label for="${inputId}-label">Label</label>
+                            <input type="text" id="${inputId}-label" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value"
+                                   value="${escapeHtml(field.value || '')}" onchange="updateField(this)">
+                        </div>
+                        <div class="sub-field">
+                            <label for="${inputId}-thumb">Thumbnail URL</label>
+                            <input type="text" id="${inputId}-thumb" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="thumbnail"
+                                   value="${escapeHtml(field.thumbnail || '')}" onchange="updateField(this)">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+        default: // text
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label for="${inputId}">${formatFieldId(field.id)}</label>
+                        <span class="field-type">${field.type}</span>
+                    </div>
+                    <input type="text" id="${inputId}" data-field-id="${field.id}" data-block-id="${blockId}"
+                           value="${escapeHtml(field.value || '')}" onchange="updateField(this)">
+                </div>
+            `;
+    }
+}
+
+// --- Update field in contentData ---
+function updateField(inputEl) {
+    const fieldId = inputEl.dataset.fieldId;
+    const blockId = inputEl.dataset.blockId;
+    const prop = inputEl.dataset.prop || 'value';
+
+    for (const block of contentData.blocks) {
+        if (block.id !== blockId) continue;
+        for (const field of block.fields) {
+            if (field.id !== fieldId) continue;
+            field[prop] = inputEl.value;
+            return;
+        }
+    }
+}
+
+// --- Toggle block collapse ---
+function toggleBlock(headerEl) {
+    headerEl.parentElement.classList.toggle('collapsed');
+}
+
+// --- Collapse all ---
+btnCollapseAll.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.block-card');
+    const allCollapsed = [...cards].every(c => c.classList.contains('collapsed'));
+    cards.forEach(c => {
+        if (allCollapsed) {
+            c.classList.remove('collapsed');
+        } else {
+            c.classList.add('collapsed');
+        }
+    });
+    btnCollapseAll.textContent = allCollapsed ? 'Alle zuklappen' : 'Alle aufklappen';
+});
+
+// --- Download JSON ---
+btnDownload.addEventListener('click', () => {
+    if (!contentData) return;
+
+    // Update meta timestamp
+    contentData._meta.lastEdited = new Date().toISOString();
+
+    const blob = new Blob([JSON.stringify(contentData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName || 'content.json';
+    a.click();
+    URL.revokeObjectURL(url);
+});
+
+// --- Helpers ---
+function formatBlockType(type) {
+    return type.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
+function formatFieldId(id) {
+    return id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+</script>
+
+</body>
+</html>
