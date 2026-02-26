@@ -6,6 +6,9 @@
   "scripts": {
     "extract": "node extract.js",
     "build": "node build.js",
+    "deploy": "node deploy.js",
+    "deploy:local": "node deploy.js --local",
+    "deploy:startseite": "node deploy.js --page startseite",
     "extract:startseite": "node extract.js ../index.html ../content/startseite.json",
     "build:startseite": "node build.js ../content/startseite.json ../index.html"
   },

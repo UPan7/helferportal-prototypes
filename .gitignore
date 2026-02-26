@@ -15,6 +15,10 @@ desktop.ini
 # Node (for local dev server)
 node_modules/
 
+# Environment variables (secrets)
+.env
+tools/.env
+
 # Temp files
 *.tmp
 *.bak
