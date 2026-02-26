@@ -681,6 +681,48 @@
             padding: 20px 24px;
         }
 
+        /* Compact grid for short text fields */
+        .fields-compact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 16px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--surface-bg);
+        }
+
+        .fields-compact-grid:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .field-compact label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .field-compact input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 13px;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--surface);
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .field-compact input:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(21,101,192,0.08);
+        }
+
         /* Field */
         .field {
             margin-bottom: 20px;
@@ -1696,9 +1738,11 @@ function renderEditor() {
 
     let html = '';
 
-    for (const block of contentData.blocks) {
+    for (let i = 0; i < contentData.blocks.length; i++) {
+        const block = contentData.blocks[i];
+        const collapsed = i > 0 ? ' collapsed' : '';
         html += `
-            <div class="block-card" data-block-id="${block.id}">
+            <div class="block-card${collapsed}" data-block-id="${block.id}">
                 <div class="block-header" onclick="toggleBlock(this)">
                     <div class="block-header-left">
                         <span class="block-num">${block.id.replace('b', '')}</span>
@@ -1712,13 +1756,56 @@ function renderEditor() {
                     </div>
                 </div>
                 <div class="block-body">
-                    ${block.fields.map(field => renderField(block.id, field)).join('')}
+                    ${renderBlockFields(block.id, block.fields)}
                 </div>
             </div>
         `;
     }
 
     editor.innerHTML = html;
+}
+
+// Smart field layout: group consecutive 'text' fields into a compact grid
+function renderBlockFields(blockId, fields) {
+    let html = '';
+    let i = 0;
+
+    while (i < fields.length) {
+        const field = fields[i];
+
+        // Check if this is a short text field (not a title/subtitle/heading that should be full-width)
+        if (field.type === 'text' && !isWideTextField(field.id)) {
+            // Collect consecutive short text fields
+            const group = [field];
+            while (i + 1 < fields.length
+                   && fields[i + 1].type === 'text'
+                   && !isWideTextField(fields[i + 1].id)) {
+                i++;
+                group.push(fields[i]);
+            }
+
+            if (group.length >= 2) {
+                // Render as compact grid
+                html += '<div class="fields-compact-grid">';
+                for (const f of group) {
+                    html += renderFieldCompact(blockId, f);
+                }
+                html += '</div>';
+            } else {
+                html += renderField(blockId, group[0]);
+            }
+        } else {
+            html += renderField(blockId, field);
+        }
+        i++;
+    }
+
+    return html;
+}
+
+// Fields that should always be full-width even if type=text
+function isWideTextField(fieldId) {
+    return /title|subtitle|heading|overline|quote/.test(fieldId);
 }
 
 function renderField(blockId, field) {
@@ -1822,6 +1909,18 @@ function renderField(blockId, field) {
                 </div>
             `;
     }
+}
+
+// Compact field renderer for short text fields in grid
+function renderFieldCompact(blockId, field) {
+    const inputId = `field-${blockId}-${field.id}`;
+    return `
+        <div class="field-compact">
+            <label for="${inputId}">${formatFieldId(field.id)}</label>
+            <input type="text" id="${inputId}" data-field-id="${field.id}" data-block-id="${blockId}"
+                   value="${escapeHtml(field.value || '')}" oninput="onFieldChange(this)">
+        </div>
+    `;
 }
 
 // ============================================================
