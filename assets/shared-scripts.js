@@ -73,9 +73,10 @@ const slides = document.querySelectorAll('.slide');
 const progressBars = document.querySelectorAll('.progress-bar');
 
 if (slides.length > 0 && progressBars.length > 0) {
+    const isPreview = window.__CMS_PREVIEW__ || false;
     let currentSlide = 0;
     let slideInterval;
-    const slideDuration = 6000;
+    const slideDuration = isPreview ? 0 : 6000; // Disable autoplay in CMS preview
 
     function showSlide(index) {
         // Update slides
@@ -491,3 +492,16 @@ if (infoTabPills.length > 0) {
         });
     });
 }
+
+// ========================================
+// PREVIEW BRIDGE LOADER
+// Dynamically loads preview-bridge.js which
+// self-activates only inside an iframe (CMS).
+// Zero overhead in production.
+// ========================================
+(function() {
+    const bridgeScript = document.createElement('script');
+    bridgeScript.src = '/assets/preview-bridge.js';
+    bridgeScript.defer = true;
+    document.head.appendChild(bridgeScript);
+})();

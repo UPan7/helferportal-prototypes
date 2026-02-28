@@ -28,20 +28,20 @@ CREATE TRIGGER pages_updated_at
 -- 3. Enable Row Level Security
 ALTER TABLE pages ENABLE ROW LEVEL SECURITY;
 
--- 4. Allow authenticated users to read/write
-CREATE POLICY "Authenticated users can read pages"
+-- 4. Allow anon + authenticated users to read/write
+CREATE POLICY "Anyone can read pages"
   ON pages FOR SELECT
-  TO authenticated
+  TO anon, authenticated
   USING (true);
 
-CREATE POLICY "Authenticated users can update pages"
+CREATE POLICY "Anyone can update pages"
   ON pages FOR UPDATE
-  TO authenticated
+  TO anon, authenticated
   USING (true);
 
-CREATE POLICY "Authenticated users can insert pages"
+CREATE POLICY "Anyone can insert pages"
   ON pages FOR INSERT
-  TO authenticated
+  TO anon, authenticated
   WITH CHECK (true);
 
 -- 5. Create storage bucket for images
@@ -49,10 +49,10 @@ INSERT INTO storage.buckets (id, name, public)
 VALUES ('images', 'images', true)
 ON CONFLICT (id) DO NOTHING;
 
--- 6. Allow authenticated users to upload images
-CREATE POLICY "Authenticated users can upload images"
+-- 6. Allow anon + authenticated users to upload images
+CREATE POLICY "Anyone can upload images"
   ON storage.objects FOR INSERT
-  TO authenticated
+  TO anon, authenticated
   WITH CHECK (bucket_id = 'images');
 
 CREATE POLICY "Anyone can view images"
