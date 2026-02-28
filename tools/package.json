@@ -1,0 +1,18 @@
+{
+  "name": "helferportal-content-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Extract, edit, and rebuild content for Helferportal prototypes",
+  "scripts": {
+    "extract": "node extract.js",
+    "build": "node build.js",
+    "deploy": "node deploy.js",
+    "deploy:local": "node deploy.js --local",
+    "deploy:startseite": "node deploy.js --page startseite",
+    "extract:startseite": "node extract.js ../index.html ../content/startseite.json",
+    "build:startseite": "node build.js ../content/startseite.json ../index.html"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  }
+}

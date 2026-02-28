@@ -1,0 +1,2934 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helferportal — Content Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --orange: #E65100;
+            --orange-light: #FF6D00;
+            --orange-bg: #FFF3E0;
+            --blue: #1565C0;
+            --blue-bg: #E3F2FD;
+            --purple: #7B1FA2;
+            --green: #2E7D32;
+            --green-bg: #E8F5E9;
+            --red: #C62828;
+            --red-bg: #FFEBEE;
+
+            --sidebar-bg: #0c1222;
+            --sidebar-hover: #162032;
+            --sidebar-active: #1a2744;
+            --sidebar-border: #1e3050;
+            --sidebar-text: #8b9cc0;
+            --sidebar-text-bright: #d1daf0;
+
+            --surface: #ffffff;
+            --surface-raised: #f8fafc;
+            --surface-bg: #f1f4f9;
+            --border: #e2e8f0;
+            --border-focus: #1565C0;
+            --text: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+
+            --radius-sm: 6px;
+            --radius: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+            --transition: 0.18s ease;
+
+            --sidebar-width: 280px;
+            --toolbar-height: 56px;
+        }
+
+        body {
+            font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+            background: var(--surface-bg);
+            color: var(--text);
+            line-height: 1.55;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, label, .label {
+            font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        /* ========= OVERLAYS (Config + Login) ========= */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0c1222 0%, #162847 50%, #1a1a2e 100%);
+        }
+
+        .overlay.hidden { display: none; }
+
+        .overlay-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            animation: fadeUp 0.4s ease;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .overlay-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .overlay-logo .logo-mark {
+            width: 36px;
+            height: 36px;
+            background: var(--orange);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay-logo .logo-mark svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            fill: none;
+        }
+
+        .overlay-logo span {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .overlay-card h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .overlay-card .subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-family: inherit;
+            background: var(--surface);
+            color: var(--text);
+            transition: border-color var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(21,101,192,0.1);
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group .hint {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: pointer;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-primary:hover { background: var(--orange-light); }
+        .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .btn-secondary {
+            background: var(--surface-raised);
+            color: var(--text);
+            border: 1.5px solid var(--border);
+        }
+
+        .btn-secondary:hover { background: var(--surface-bg); }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 6px 10px;
+        }
+
+        .btn-ghost:hover { color: var(--text); background: var(--surface-bg); }
+
+        .btn-icon {
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all var(--transition);
+        }
+
+        .btn-icon:hover { background: var(--surface-bg); color: var(--text); }
+
+        .btn-icon svg { width: 18px; height: 18px; }
+
+        .alert {
+            padding: 10px 14px;
+            border-radius: var(--radius);
+            font-size: 13px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .alert.error { background: var(--red-bg); color: var(--red); display: block; }
+        .alert.success { background: var(--green-bg); color: var(--green); display: block; }
+
+        /* ========= APP LAYOUT ========= */
+        .app {
+            display: none;
+            height: 100vh;
+        }
+
+        .app.active { display: flex; }
+
+        /* ========= SIDEBAR ========= */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--sidebar-bg);
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--sidebar-border);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--sidebar-border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-header .logo-mark {
+            width: 30px;
+            height: 30px;
+            background: var(--orange);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .sidebar-header .logo-mark svg {
+            width: 16px;
+            height: 16px;
+            stroke: white;
+            fill: none;
+        }
+
+        .sidebar-header span {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--sidebar-text-bright);
+            white-space: nowrap;
+        }
+
+        /* Page Selector */
+        .sidebar-section {
+            padding: 12px 16px;
+        }
+
+        .sidebar-section-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--sidebar-text);
+            margin-bottom: 8px;
+            padding: 0 4px;
+        }
+
+        .page-select {
+            width: 100%;
+            padding: 8px 12px;
+            background: var(--sidebar-hover);
+            border: 1px solid var(--sidebar-border);
+            border-radius: var(--radius-sm);
+            color: var(--sidebar-text-bright);
+            font-size: 13px;
+            font-family: inherit;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b9cc0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            padding-right: 30px;
+        }
+
+        .page-select:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        /* Block List */
+        .block-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 4px 12px;
+        }
+
+        .block-list::-webkit-scrollbar { width: 4px; }
+        .block-list::-webkit-scrollbar-track { background: transparent; }
+        .block-list::-webkit-scrollbar-thumb { background: var(--sidebar-border); border-radius: 2px; }
+
+        .block-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 12px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--transition);
+            margin-bottom: 2px;
+            user-select: none;
+        }
+
+        .block-item:hover {
+            background: var(--sidebar-hover);
+        }
+
+        .block-item.active {
+            background: var(--sidebar-active);
+        }
+
+        .block-item.active .block-item-label {
+            color: var(--sidebar-text-bright);
+        }
+
+        .block-item.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 3px;
+            border-radius: 0 3px 3px 0;
+            background: var(--orange);
+        }
+
+        .block-item { position: relative; }
+
+        .block-item-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: var(--sidebar-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--sidebar-text);
+            flex-shrink: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .block-item.active .block-item-num {
+            background: var(--orange);
+            color: white;
+        }
+
+        .block-item-info { flex: 1; min-width: 0; }
+
+        .block-item-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--sidebar-text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: color var(--transition);
+        }
+
+        .block-item-count {
+            font-size: 10px;
+            color: var(--sidebar-text);
+            opacity: 0.6;
+        }
+
+        /* Sidebar Footer */
+        .sidebar-footer {
+            padding: 12px 16px;
+            border-top: 1px solid var(--sidebar-border);
+        }
+
+        .sidebar-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+        }
+
+        .sidebar-user-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--sidebar-hover);
+            border: 1.5px solid var(--sidebar-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sidebar-text);
+            flex-shrink: 0;
+        }
+
+        .sidebar-user-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .sidebar-user-name {
+            font-size: 12px;
+            color: var(--sidebar-text-bright);
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .sidebar-user-role {
+            font-size: 10px;
+            color: var(--sidebar-text);
+        }
+
+        .btn-logout {
+            background: transparent;
+            border: 1px solid var(--sidebar-border);
+            color: var(--sidebar-text);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .btn-logout:hover {
+            background: var(--sidebar-hover);
+            color: var(--sidebar-text-bright);
+            border-color: var(--sidebar-text);
+        }
+
+        /* ========= MAIN AREA ========= */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-width: 0;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            height: var(--toolbar-height);
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .toolbar-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .toolbar-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .save-status .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+        }
+
+        .save-status .dot.unsaved { background: var(--orange); }
+        .save-status .dot.saving {
+            background: var(--blue);
+            animation: pulse 1s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .draft-indicator { color: var(--text-muted); font-size: 11px; }
+
+        .draft-banner {
+            background: var(--orange-bg);
+            border-bottom: 1px solid #f0c27a;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--text);
+        }
+        .draft-banner .btn-sm {
+            padding: 4px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+        .draft-banner .btn-sm:not(.secondary) {
+            background: var(--orange);
+            color: white;
+        }
+        .draft-banner .btn-sm.secondary {
+            background: var(--border);
+            color: var(--text-secondary);
+        }
+
+        .btn-save {
+            padding: 8px 20px;
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: pointer;
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-save:hover { background: var(--orange-light); }
+        .btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .btn-save svg { width: 15px; height: 15px; stroke: white; fill: none; }
+
+        /* ========= EDITOR CONTENT AREA ========= */
+        .editor-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-height: 0;
+        }
+
+        /* ========= PREVIEW PANEL ========= */
+        .preview-panel {
+            display: none;
+            flex-direction: column;
+            background: var(--surface-bg);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            min-height: 180px;
+        }
+
+        .preview-panel.active {
+            display: flex;
+        }
+
+        .preview-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 12px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .preview-panel-header .preview-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .preview-panel-header .preview-label svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .preview-url {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-family: 'DM Sans', monospace;
+            background: var(--surface-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .preview-iframe-wrap {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            background: white;
+        }
+
+        .preview-iframe-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            background: white;
+        }
+
+        /* ========= RESIZE HANDLE ========= */
+        .resize-handle {
+            display: none;
+            height: 6px;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            cursor: row-resize;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .resize-handle.active {
+            display: block;
+        }
+
+        .resize-handle::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 3px;
+            border-radius: 2px;
+            background: var(--border);
+            transition: background var(--transition);
+        }
+
+        .resize-handle:hover::after {
+            background: var(--text-muted);
+        }
+
+        /* ========= EDITOR SCROLL ========= */
+        .editor-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 28px;
+            min-height: 0;
+        }
+
+        .editor-scroll::-webkit-scrollbar { width: 6px; }
+        .editor-scroll::-webkit-scrollbar-track { background: transparent; }
+        .editor-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        .editor-scroll::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+        /* ========= PREVIEW TOGGLE ========= */
+        .preview-toggle {
+            display: flex;
+            align-items: center;
+            background: var(--surface-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .preview-toggle button {
+            padding: 6px 14px;
+            border: none;
+            border-radius: calc(var(--radius-lg) - 3px);
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: pointer;
+            background: transparent;
+            color: var(--text-muted);
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .preview-toggle button:hover {
+            color: var(--text-secondary);
+            background: rgba(0,0,0,0.04);
+        }
+
+        .preview-toggle button.active {
+            background: var(--blue);
+            color: white;
+            box-shadow: 0 1px 3px rgba(21,101,192,0.3);
+        }
+
+        .preview-toggle button.active svg {
+            stroke: white;
+        }
+
+        .preview-toggle button svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        /* Preview mode states */
+        .editor-content[data-preview-mode="editor"] .preview-panel,
+        .editor-content[data-preview-mode="editor"] .resize-handle { display: none; }
+        .editor-content[data-preview-mode="editor"] .editor-scroll { flex: 1; }
+
+        .editor-content[data-preview-mode="split"] .preview-panel { display: flex; height: 45%; flex: none; }
+        .editor-content[data-preview-mode="split"] .resize-handle { display: block; }
+        .editor-content[data-preview-mode="split"] .editor-scroll { flex: 1; }
+
+        .editor-content[data-preview-mode="preview"] .preview-panel { display: flex; flex: 1; }
+        .editor-content[data-preview-mode="preview"] .resize-handle { display: none; }
+        .editor-content[data-preview-mode="preview"] .editor-scroll { display: none; }
+
+        /* Block Card */
+        .block-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            margin-bottom: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            scroll-margin-top: 20px;
+        }
+
+        .block-card.collapsed { opacity: 0.85; }
+        .block-card.collapsed:hover { opacity: 1; }
+
+        .block-header {
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            border-bottom: 1px solid transparent;
+            border-left: 3px solid var(--orange);
+            transition: all var(--transition);
+        }
+
+        .block-header:hover {
+            background: var(--surface-raised);
+        }
+
+        .block-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .block-num {
+            width: 30px;
+            height: 30px;
+            border-radius: var(--radius);
+            background: var(--orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            flex-shrink: 0;
+        }
+
+        .block-header h2 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .block-header .block-type {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-left: 8px;
+        }
+
+        .block-header .field-count {
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 2px 8px;
+            background: var(--surface-bg);
+            border-radius: 999px;
+            font-weight: 500;
+        }
+
+        .block-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+        }
+
+        .block-toggle svg { width: 16px; height: 16px; }
+
+        .block-card.collapsed .block-toggle { transform: rotate(-90deg); }
+        .block-card.collapsed .block-body { display: none; }
+        .block-card:not(.collapsed) .block-header { border-bottom-color: var(--border); background: var(--surface-raised); }
+
+        .block-body {
+            padding: 24px 24px;
+        }
+
+        /* Compact grid for short text fields */
+        .fields-compact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 16px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .fields-compact-grid:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .field-compact label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .field-compact input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 13px;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--surface-raised);
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .field-compact input:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(21,101,192,0.08);
+            background: var(--surface);
+        }
+
+        /* Field */
+        .field {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .field:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .field-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .field-label label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .field-type-badge {
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .field-type-badge.text { background: var(--blue-bg); color: var(--blue); }
+        .field-type-badge.textarea { background: #F3E5F5; color: var(--purple); }
+        .field-type-badge.image { background: var(--green-bg); color: var(--green); }
+        .field-type-badge.button, .field-type-badge.link { background: var(--orange-bg); color: var(--orange); }
+        .field-type-badge.video { background: #E8EAF6; color: #283593; }
+
+        .field input[type="text"],
+        .field textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.55;
+            color: var(--text);
+            background: var(--surface-raised);
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .field input[type="text"]:focus,
+        .field textarea:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(21,101,192,0.08);
+            background: var(--surface);
+        }
+
+        .field textarea {
+            min-height: 88px;
+            resize: vertical;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .field-row .sub-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .field-row input {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 13px;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--surface-raised);
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .field-row input:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(21,101,192,0.08);
+            background: var(--surface);
+        }
+
+        /* Image Upload Zone */
+        .image-upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            text-align: center;
+            transition: all var(--transition);
+            cursor: pointer;
+            position: relative;
+            margin-top: 8px;
+        }
+
+        .image-upload-zone:hover,
+        .image-upload-zone.dragover {
+            border-color: var(--orange);
+            background: var(--orange-bg);
+        }
+
+        .image-upload-zone input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .image-upload-zone .upload-icon {
+            width: 28px;
+            height: 28px;
+            margin: 0 auto 6px;
+            color: var(--text-muted);
+        }
+
+        .image-upload-zone .upload-text {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .image-upload-zone .upload-text strong {
+            color: var(--orange);
+        }
+
+        .image-preview {
+            margin-top: 8px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            max-height: 120px;
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 100%;
+            max-height: 120px;
+            object-fit: cover;
+            display: block;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+            opacity: 0.4;
+        }
+
+        .empty-state h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state p {
+            font-size: 14px;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        /* File fallback mode */
+        .file-fallback {
+            padding: 12px 16px;
+            border-top: 1px solid var(--sidebar-border);
+        }
+
+        .file-fallback-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sidebar-text);
+            margin-bottom: 8px;
+        }
+
+        .file-fallback-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .btn-file {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            background: var(--sidebar-hover);
+            border: 1px solid var(--sidebar-border);
+            border-radius: var(--radius-sm);
+            color: var(--sidebar-text);
+            font-size: 12px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-align: left;
+            width: 100%;
+        }
+
+        .btn-file:hover {
+            background: var(--sidebar-active);
+            color: var(--sidebar-text-bright);
+        }
+
+        .btn-file svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            font-size: 13px;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            z-index: 2000;
+            animation: toastIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast.success { background: var(--green); color: white; }
+        .toast.error { background: var(--red); color: white; }
+        .toast.info { background: var(--blue); color: white; }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Settings modal */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 900;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-backdrop.active { display: flex; }
+
+        .modal {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .modal h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .modal .modal-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-actions .btn {
+            min-width: 100px;
+            justify-content: center;
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Connection badge */
+        .connection-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 8px 16px;
+        }
+
+        .connection-badge.online { background: rgba(46,125,50,0.15); color: #2E7D32; }
+        .connection-badge.offline { background: rgba(198,40,40,0.15); color: #C62828; }
+        .connection-badge.local { background: rgba(21,101,192,0.15); color: #1565C0; }
+
+        .connection-badge .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== CONFIG OVERLAY ===== -->
+<div class="overlay hidden" id="configOverlay">
+    <div class="overlay-card">
+        <div class="overlay-logo">
+            <div class="logo-mark">
+                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>Helferportal CMS</span>
+        </div>
+        <h2>Verbindung einrichten</h2>
+        <p class="subtitle">Geben Sie Ihre Supabase-Zugangsdaten ein, oder arbeiten Sie offline mit JSON-Dateien.</p>
+
+        <div id="configAlert" class="alert"></div>
+
+        <div class="form-group">
+            <label>Supabase Projekt-URL</label>
+            <input type="text" id="configUrl" placeholder="https://xxxxx.supabase.co">
+            <div class="hint">Dashboard &rarr; Settings &rarr; API &rarr; Project URL</div>
+        </div>
+        <div class="form-group">
+            <label>Anon Key (public)</label>
+            <input type="text" id="configKey" placeholder="eyJhbG...">
+            <div class="hint">Dashboard &rarr; Settings &rarr; API &rarr; anon / public</div>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <button class="btn btn-primary" id="btnConfigSave" style="flex: 1;">Verbinden</button>
+        </div>
+        <div id="devOfflineMode" style="display:none; text-align: center; margin-top: 12px;">
+            <button class="btn btn-ghost" id="btnOfflineMode" style="font-size: 13px; color: var(--text-muted);">Offline-Modus (ohne Supabase)</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== LOGIN OVERLAY ===== -->
+<div class="overlay hidden" id="loginOverlay">
+    <div class="overlay-card">
+        <div class="overlay-logo">
+            <div class="logo-mark">
+                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>Helferportal CMS</span>
+        </div>
+        <h2>Anmelden</h2>
+        <p class="subtitle">Bitte melden Sie sich an.</p>
+
+        <div id="loginAlert" class="alert"></div>
+
+        <div class="form-group">
+            <label>E-Mail</label>
+            <input type="email" id="loginEmail" placeholder="name@beispiel.de">
+        </div>
+        <div class="form-group">
+            <label>Passwort</label>
+            <input type="password" id="loginPassword" placeholder="Ihr Passwort">
+        </div>
+
+        <button class="btn btn-primary" id="btnLogin" style="margin-top: 8px;">
+            Anmelden
+        </button>
+
+        <div id="devBackToConfig" style="display:none; text-align: center; margin-top: 12px;">
+            <button class="btn btn-ghost" id="btnBackToConfig" style="font-size: 13px; color: var(--text-muted);">Verbindung ändern</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SETUP OVERLAY ===== -->
+<div class="overlay hidden" id="setupOverlay">
+    <div class="overlay-card" style="max-width: 560px;">
+        <div class="overlay-logo">
+            <div class="logo-mark">
+                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>Helferportal CMS</span>
+        </div>
+        <h2>Datenbank einrichten</h2>
+        <p class="subtitle">Die Tabelle <code>pages</code> existiert noch nicht. Führen Sie das Setup-SQL in Ihrem Supabase-Projekt aus.</p>
+
+        <div id="setupAlert" class="alert"></div>
+
+        <div style="position: relative;">
+            <pre id="setupSql" style="background: var(--sidebar-bg, #1a2332); color: #e2e8f0; padding: 16px; border-radius: 8px; font-size: 12px; line-height: 1.5; max-height: 260px; overflow: auto; white-space: pre; margin: 12px 0;"></pre>
+            <button id="btnCopySql" style="position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,.15); border: none; color: #e2e8f0; padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;">Kopieren</button>
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-top: 8px;">
+            <a id="btnOpenSqlEditor" href="#" target="_blank" class="btn btn-primary" style="flex: 1; text-align: center; text-decoration: none;">
+                SQL Editor öffnen
+            </a>
+            <button class="btn btn-primary" id="btnVerifySetup" style="flex: 1; background: var(--green-primary, #2E7D32);">
+                Verbindung prüfen
+            </button>
+        </div>
+
+        <div style="text-align: center; margin-top: 12px;">
+            <button class="btn btn-ghost" id="btnSetupBack" style="font-size: 13px; color: var(--text-muted);">Zurück</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MAIN APP ===== -->
+<div class="app" id="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-mark">
+                <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>Helferportal CMS</span>
+        </div>
+
+        <div id="connectionBadge" class="connection-badge local">
+            <span class="dot"></span>
+            <span id="connectionLabel">Offline</span>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-label">Seite</div>
+            <select class="page-select" id="pageSelect">
+                <option value="">Seite wählen...</option>
+            </select>
+        </div>
+
+        <div class="sidebar-section" style="padding-bottom: 4px;">
+            <div class="sidebar-section-label">Blöcke</div>
+        </div>
+
+        <nav class="block-list" id="blockList">
+            <!-- Block items rendered dynamically -->
+        </nav>
+
+        <!-- File fallback (always visible) -->
+        <div class="file-fallback">
+            <div class="file-fallback-label">Datei</div>
+            <div class="file-fallback-buttons">
+                <label class="btn-file">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    JSON laden
+                    <input type="file" id="fileInput" accept=".json" style="display:none;">
+                </label>
+                <button class="btn-file" id="btnDownload">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    JSON herunterladen
+                </button>
+            </div>
+        </div>
+
+        <div class="sidebar-footer" id="sidebarFooter" style="display: none;">
+            <div class="sidebar-user">
+                <div class="sidebar-user-avatar" id="userAvatar">?</div>
+                <div class="sidebar-user-info">
+                    <div class="sidebar-user-name" id="userName">—</div>
+                    <div class="sidebar-user-role">Editor</div>
+                </div>
+                <button class="btn-logout" id="btnLogout">Logout</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <h1 class="toolbar-title" id="toolbarTitle">Content Editor</h1>
+                <span class="toolbar-meta" id="toolbarMeta"></span>
+            </div>
+            <div class="toolbar-right">
+                <div class="preview-toggle" id="previewToggle">
+                    <button data-mode="editor" class="active" title="Nur Editor">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        Editor
+                    </button>
+                    <button data-mode="split" title="Editor + Vorschau">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+                        Split
+                    </button>
+                    <button data-mode="preview" title="Nur Vorschau">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        Vorschau
+                    </button>
+                </div>
+                <div class="save-status" id="saveStatus">
+                    <span class="dot"></span>
+                    <span id="saveLabel">Gespeichert</span>
+                    <span class="draft-indicator" id="draftIndicator" style="display:none">· Entwurf lokal</span>
+                </div>
+                <button class="btn-save" id="btnSave" disabled>
+                    <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2 2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                    Speichern
+                </button>
+                <button class="btn-icon" id="btnSettings" title="Einstellungen">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="editor-content" id="editorContent" data-preview-mode="editor">
+            <div class="draft-banner" id="draftBanner" style="display:none">
+                <span>Lokaler Entwurf gefunden (<time id="draftTime"></time>). Wiederherstellen?</span>
+                <button class="btn-sm" id="btnDraftRestore">Wiederherstellen</button>
+                <button class="btn-sm secondary" id="btnDraftIgnore">Ignorieren</button>
+            </div>
+            <!-- Preview Panel -->
+            <div class="preview-panel" id="previewPanel">
+                <div class="preview-panel-header">
+                    <span class="preview-label">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        Vorschau
+                    </span>
+                    <span class="preview-url" id="previewUrl">—</span>
+                </div>
+                <div class="preview-iframe-wrap">
+                    <iframe id="previewFrame" src="about:blank"></iframe>
+                </div>
+            </div>
+
+            <!-- Resize Handle -->
+            <div class="resize-handle" id="resizeHandle"></div>
+
+            <!-- Editor Scroll -->
+            <div class="editor-scroll" id="editorScroll">
+                <div id="editor">
+                    <div class="empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        <h2>Keine Seite geladen</h2>
+                        <p>Wählen Sie eine Seite in der Seitenleiste, oder laden Sie eine JSON-Datei.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SETTINGS MODAL ===== -->
+<div class="modal-backdrop" id="settingsModal">
+    <div class="modal">
+        <h3>Einstellungen</h3>
+        <p class="modal-subtitle">Supabase-Verbindung und Editor-Optionen</p>
+
+        <div class="form-group">
+            <label>Supabase Projekt-URL</label>
+            <input type="text" id="settingsUrl" placeholder="https://xxxxx.supabase.co">
+        </div>
+        <div class="form-group">
+            <label>Anon Key</label>
+            <input type="text" id="settingsKey" placeholder="eyJhbG...">
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn btn-secondary" id="btnSettingsCancel">Abbrechen</button>
+            <button class="btn btn-primary" id="btnSettingsSave" style="width: auto;">Speichern</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+// ============================================================
+//  HELFERPORTAL CMS — Main Application
+// ============================================================
+
+// --- Production Supabase credentials (anon key is public by design) ---
+const SUPABASE_URL = 'https://gbnxeuxwgkkxurnunjfw.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdibnhldXh3Z2treHVybnVuamZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIxNDE4NzgsImV4cCI6MjA4NzcxNzg3OH0.ppLw9uxe_4Hp330z_z1d1i8vQ5cvTzTid0Bjt7AZe9c';
+
+// Dev mode: ?dev=1 shows config/setup overlays and offline mode
+const IS_DEV = new URLSearchParams(window.location.search).has('dev');
+
+// --- State ---
+let sbClient = null;
+let currentUser = null;
+let contentData = null;
+let currentPageId = null;
+let hasUnsavedChanges = false;
+let isOnline = false;
+let draftTimer = null;
+let fileName = '';
+
+// --- DOM refs ---
+const $ = id => document.getElementById(id);
+
+const configOverlay  = $('configOverlay');
+const loginOverlay   = $('loginOverlay');
+const app            = $('app');
+const editor         = $('editor');
+const editorScroll   = $('editorScroll');
+const pageSelect     = $('pageSelect');
+const blockList      = $('blockList');
+const toolbarTitle   = $('toolbarTitle');
+const toolbarMeta    = $('toolbarMeta');
+const saveStatus     = $('saveStatus');
+const btnSave        = $('btnSave');
+const btnDownload    = $('btnDownload');
+const fileInput      = $('fileInput');
+const connectionBadge = $('connectionBadge');
+const connectionLabel = $('connectionLabel');
+const sidebarFooter  = $('sidebarFooter');
+const draftBanner    = $('draftBanner');
+const draftTime      = $('draftTime');
+const draftIndicator = $('draftIndicator');
+
+// ============================================================
+//  CONFIG & INITIALIZATION
+// ============================================================
+
+function getConfig() {
+    try {
+        return JSON.parse(localStorage.getItem('hp_cms_config') || 'null');
+    } catch { return null; }
+}
+
+function saveConfig(url, key) {
+    localStorage.setItem('hp_cms_config', JSON.stringify({ url, key }));
+}
+
+function clearConfig() {
+    localStorage.removeItem('hp_cms_config');
+}
+
+async function initApp() {
+    if (IS_DEV) {
+        // Dev mode: show dev-only UI elements immediately
+        $('devBackToConfig').style.display = '';
+        $('devOfflineMode').style.display = '';
+
+        // Dev mode: keep original config overlay flow
+        const config = getConfig();
+        if (!config) { showOverlay('config'); return; }
+        try {
+            sbClient = window.supabase.createClient(config.url, config.key);
+            const { error: tableErr } = await sbClient.from('pages').select('id').limit(1);
+            if (tableErr && isTableMissingError(tableErr)) {
+                showSetupOverlay(config.url);
+                return;
+            }
+            try {
+                const { data: { session } } = await sbClient.auth.getSession();
+                if (session) currentUser = session.user;
+            } catch (e) { /* anon ok in dev */ }
+            enterApp(true);
+        } catch (err) {
+            showOverlay('config');
+            showAlert('configAlert', 'error', 'Verbindung fehlgeschlagen: ' + err.message);
+        }
+        return;
+    }
+
+    // --- Production mode ---
+    try {
+        sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Check for existing session (Supabase stores in localStorage)
+        const { data: { session } } = await sbClient.auth.getSession();
+        if (session) {
+            currentUser = session.user;
+            enterApp(true);
+            return;
+        }
+
+        // No session → show login overlay
+        showOverlay('login');
+    } catch (err) {
+        console.error('Supabase init error:', err);
+        showOverlay('login');
+        showAlert('loginAlert', 'error', 'Verbindungsfehler. Bitte versuchen Sie es erneut.');
+    }
+}
+
+function enterApp(online) {
+    isOnline = online;
+    configOverlay.classList.add('hidden');
+    loginOverlay.classList.add('hidden');
+    $('setupOverlay').classList.add('hidden');
+    app.classList.add('active');
+
+    if (online) {
+        connectionBadge.className = 'connection-badge online';
+        connectionLabel.textContent = 'Supabase verbunden';
+        if (currentUser) {
+            sidebarFooter.style.display = '';
+            $('userAvatar').textContent = (currentUser.email || '?')[0].toUpperCase();
+            $('userName').textContent = currentUser.email || '—';
+        } else {
+            sidebarFooter.style.display = 'none';
+        }
+        loadPageList();
+    } else {
+        connectionBadge.className = 'connection-badge local';
+        connectionLabel.textContent = 'Offline-Modus';
+        sidebarFooter.style.display = 'none';
+        loadLocalPages();
+    }
+
+    updateSaveStatus('saved');
+}
+
+// Load pages from local content/ folder via manifest.json
+async function loadLocalPages() {
+    try {
+        const res = await fetch('/content/manifest.json');
+        if (!res.ok) throw new Error('manifest.json nicht gefunden');
+        const manifest = await res.json();
+
+        pageSelect.innerHTML = '<option value="">Seite wählen...</option>';
+        for (const page of manifest.pages) {
+            const opt = document.createElement('option');
+            opt.value = page.file;
+            opt.textContent = page.title;
+            pageSelect.appendChild(opt);
+        }
+
+        // Auto-load first page if only one exists
+        if (manifest.pages.length === 1) {
+            await loadLocalPage(manifest.pages[0].file);
+            pageSelect.value = manifest.pages[0].file;
+        }
+    } catch (err) {
+        console.warn('Manifest nicht geladen:', err.message);
+    }
+}
+
+async function loadLocalPage(filename) {
+    try {
+        const res = await fetch('/content/' + filename);
+        if (!res.ok) throw new Error('Datei nicht gefunden: ' + filename);
+        contentData = await res.json();
+        currentPageId = contentData.page?.id || filename.replace('.json', '');
+        fileName = filename;
+
+        renderEditor();
+        renderBlockList();
+        updateToolbar();
+        updateSaveStatus('saved');
+        hasUnsavedChanges = false;
+        btnSave.disabled = false;
+
+        // Update preview iframe if visible
+        if (previewMode !== 'editor') {
+            previewPageUrl = null; // force reload
+            loadPreviewIfNeeded();
+        }
+
+        checkDraft();
+    } catch (err) {
+        showToast('error', 'Fehler: ' + err.message);
+    }
+}
+
+// ============================================================
+//  OVERLAYS
+// ============================================================
+
+function showOverlay(which) {
+    configOverlay.classList.toggle('hidden', which !== 'config');
+    loginOverlay.classList.toggle('hidden', which !== 'login');
+    $('setupOverlay').classList.toggle('hidden', which !== 'setup');
+    app.classList.remove('active');
+}
+
+function showAlert(id, type, message) {
+    const el = $(id);
+    el.className = 'alert ' + type;
+    el.textContent = message;
+}
+
+function clearAlert(id) {
+    const el = $(id);
+    el.className = 'alert';
+    el.textContent = '';
+}
+
+// Config overlay
+$('btnConfigSave').addEventListener('click', async () => {
+    const url = $('configUrl').value.trim();
+    const key = $('configKey').value.trim();
+
+    if (!url || !key) {
+        showAlert('configAlert', 'error', 'Bitte beide Felder ausfüllen.');
+        return;
+    }
+
+    $('btnConfigSave').disabled = true;
+    $('btnConfigSave').innerHTML = '<span class="spinner"></span> Verbinde...';
+    clearAlert('configAlert');
+
+    try {
+        const testClient = window.supabase.createClient(url, key);
+        // Test connection by trying to query pages
+        const { error } = await testClient.from('pages').select('id').limit(1);
+
+        saveConfig(url, key);
+        sbClient = testClient;
+
+        if (error && isTableMissingError(error)) {
+            // Connection works, but table doesn't exist yet — show setup
+            showSetupOverlay(url);
+        } else if (error) {
+            throw error;
+        } else {
+            // Skip login — go straight to app with anon key
+            enterApp(true);
+        }
+    } catch (err) {
+        showAlert('configAlert', 'error', 'Verbindung fehlgeschlagen: ' + err.message);
+    } finally {
+        $('btnConfigSave').disabled = false;
+        $('btnConfigSave').textContent = 'Verbinden';
+    }
+});
+
+$('btnOfflineMode').addEventListener('click', () => {
+    enterApp(false);
+});
+
+// Setup overlay — table missing
+const SETUP_SQL = `-- ================================================
+-- SCHRITT 1: Run this in Supabase SQL Editor
+-- ================================================
+
+CREATE TABLE IF NOT EXISTS pages (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  url TEXT NOT NULL DEFAULT '/',
+  content JSONB NOT NULL DEFAULT '{\"blocks\":[]}',
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_by TEXT DEFAULT NULL
+);
+
+CREATE OR REPLACE FUNCTION update_timestamp()
+RETURNS TRIGGER AS $$
+BEGIN NEW.updated_at = NOW(); RETURN NEW; END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS pages_updated_at ON pages;
+CREATE TRIGGER pages_updated_at
+  BEFORE UPDATE ON pages FOR EACH ROW
+  EXECUTE FUNCTION update_timestamp();
+
+ALTER TABLE pages ENABLE ROW LEVEL SECURITY;
+
+-- Add is_published column (cheap future-proofing for draft/unpublished content)
+ALTER TABLE pages ADD COLUMN IF NOT EXISTS is_published boolean DEFAULT true;
+
+-- Pages: public read only published, write = authenticated only
+DROP POLICY IF EXISTS "anon_select" ON pages;
+DROP POLICY IF EXISTS "anon_update" ON pages;
+DROP POLICY IF EXISTS "anon_insert" ON pages;
+DROP POLICY IF EXISTS "public_read" ON pages;
+DROP POLICY IF EXISTS "auth_read" ON pages;
+DROP POLICY IF EXISTS "auth_insert" ON pages;
+DROP POLICY IF EXISTS "auth_update" ON pages;
+DROP POLICY IF EXISTS "auth_delete" ON pages;
+
+CREATE POLICY "public_read" ON pages FOR SELECT TO public USING (is_published = true);
+CREATE POLICY "auth_read" ON pages FOR SELECT TO authenticated USING (true);
+CREATE POLICY "auth_insert" ON pages FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "auth_update" ON pages FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "auth_delete" ON pages FOR DELETE TO authenticated USING (true);
+
+-- ================================================
+-- SCHRITT 2: Storage-Policies (Bildupload)
+-- WICHTIG: Erstellen Sie zuerst den Bucket manuell!
+--   Dashboard → Storage → New Bucket
+--   Name: images / Public: ON
+-- ================================================
+
+DROP POLICY IF EXISTS "anon_upload" ON storage.objects;
+DROP POLICY IF EXISTS "anon_update" ON storage.objects;
+DROP POLICY IF EXISTS "anon_delete" ON storage.objects;
+DROP POLICY IF EXISTS "public_view" ON storage.objects;
+DROP POLICY IF EXISTS "auth_upload" ON storage.objects;
+DROP POLICY IF EXISTS "auth_update_storage" ON storage.objects;
+DROP POLICY IF EXISTS "auth_delete_storage" ON storage.objects;
+
+CREATE POLICY "public_view" ON storage.objects FOR SELECT
+  TO public USING (bucket_id = 'images');
+CREATE POLICY "auth_upload" ON storage.objects FOR INSERT
+  TO authenticated WITH CHECK (bucket_id = 'images');
+CREATE POLICY "auth_update_storage" ON storage.objects FOR UPDATE
+  TO authenticated USING (bucket_id = 'images') WITH CHECK (bucket_id = 'images');
+CREATE POLICY "auth_delete_storage" ON storage.objects FOR DELETE
+  TO authenticated USING (bucket_id = 'images');`;
+
+function isTableMissingError(error) {
+    const msg = (error.message || '').toLowerCase();
+    return msg.includes('schema cache') || msg.includes('relation') && msg.includes('does not exist');
+}
+
+function showSetupOverlay(supabaseUrl) {
+    $('setupSql').textContent = SETUP_SQL;
+    // Build link to SQL Editor
+    const projectRef = (supabaseUrl || '').match(/https:\/\/([^.]+)\./)?.[1] || '';
+    const editorUrl = projectRef
+        ? 'https://supabase.com/dashboard/project/' + projectRef + '/sql/new'
+        : 'https://supabase.com/dashboard';
+    $('btnOpenSqlEditor').href = editorUrl;
+    showOverlay('setup');
+}
+
+$('btnCopySql').addEventListener('click', () => {
+    navigator.clipboard.writeText(SETUP_SQL).then(() => {
+        $('btnCopySql').textContent = 'Kopiert!';
+        setTimeout(() => { $('btnCopySql').textContent = 'Kopieren'; }, 2000);
+    });
+});
+
+$('btnVerifySetup').addEventListener('click', async () => {
+    $('btnVerifySetup').disabled = true;
+    $('btnVerifySetup').innerHTML = '<span class="spinner"></span> Prüfe...';
+    clearAlert('setupAlert');
+
+    try {
+        const { error } = await sbClient.from('pages').select('id').limit(1);
+        if (error && isTableMissingError(error)) {
+            showAlert('setupAlert', 'error', 'Tabelle noch nicht gefunden. Bitte SQL im SQL Editor ausführen.');
+        } else if (error) {
+            showAlert('setupAlert', 'error', error.message);
+        } else {
+            showAlert('setupAlert', 'success', 'Tabelle gefunden! Editor wird geladen...');
+            setTimeout(() => { enterApp(true); }, 1000);
+        }
+    } catch (err) {
+        showAlert('setupAlert', 'error', err.message);
+    } finally {
+        $('btnVerifySetup').disabled = false;
+        $('btnVerifySetup').textContent = 'Verbindung prüfen';
+    }
+});
+
+$('btnSetupBack').addEventListener('click', () => {
+    showOverlay('config');
+});
+
+// Login overlay
+$('btnLogin').addEventListener('click', async () => {
+    const email = $('loginEmail').value.trim();
+    const password = $('loginPassword').value.trim();
+
+    if (!email || !password) {
+        showAlert('loginAlert', 'error', 'Bitte E-Mail und Passwort eingeben.');
+        return;
+    }
+
+    $('btnLogin').disabled = true;
+    $('btnLogin').innerHTML = '<span class="spinner"></span> Anmelden...';
+    clearAlert('loginAlert');
+
+    try {
+        const { data, error } = await sbClient.auth.signInWithPassword({ email, password });
+        if (error) throw error;
+        currentUser = data.user;
+        enterApp(true);
+    } catch (err) {
+        showAlert('loginAlert', 'error', 'Anmeldung fehlgeschlagen: ' + err.message);
+    } finally {
+        $('btnLogin').disabled = false;
+        $('btnLogin').textContent = 'Anmelden';
+    }
+});
+
+$('btnBackToConfig').addEventListener('click', () => {
+    clearConfig();
+    showOverlay('config');
+});
+
+// Login on Enter key
+$('loginPassword').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') $('btnLogin').click();
+});
+
+$('configKey').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') $('btnConfigSave').click();
+});
+
+// Logout
+$('btnLogout').addEventListener('click', async () => {
+    if (hasUnsavedChanges && !confirm('Sie haben ungespeicherte Änderungen. Trotzdem abmelden?')) return;
+    if (sbClient) await sbClient.auth.signOut();
+    currentUser = null;
+    contentData = null;
+    currentPageId = null;
+    hasUnsavedChanges = false;
+    app.classList.remove('active');
+
+    if (IS_DEV) {
+        showOverlay('config');
+    } else {
+        showOverlay('login');
+    }
+});
+
+// ============================================================
+//  SUPABASE DATA OPERATIONS
+// ============================================================
+
+async function loadPageList() {
+    if (!sbClient || !isOnline) return;
+
+    try {
+        const { data, error } = await sbClient.from('pages').select('id, title, url, updated_at').order('id');
+        if (error) throw error;
+
+        if (data.length > 0) {
+            pageSelect.innerHTML = '<option value="">Seite wählen...</option>';
+            for (const page of data) {
+                const opt = document.createElement('option');
+                opt.value = page.id;
+                opt.textContent = page.title;
+                pageSelect.appendChild(opt);
+            }
+        } else {
+            // Table empty — fall back to local manifest so user can load + save to Supabase
+            await loadLocalPages();
+        }
+    } catch (err) {
+        showToast('error', 'Fehler beim Laden der Seiten: ' + err.message);
+    }
+}
+
+async function loadPage(pageId) {
+    if (!sbClient || !isOnline || !pageId) return;
+
+    try {
+        const { data, error } = await sbClient.from('pages').select('*').eq('id', pageId).single();
+        if (error) throw error;
+
+        contentData = data.content;
+        currentPageId = pageId;
+        fileName = pageId + '.json';
+
+        renderEditor();
+        renderBlockList();
+        updateToolbar();
+        updateSaveStatus('saved');
+        hasUnsavedChanges = false;
+        btnSave.disabled = false;
+
+        // Update preview iframe if visible
+        if (previewMode !== 'editor') {
+            previewPageUrl = null; // force reload
+            loadPreviewIfNeeded();
+        }
+
+        checkDraft();
+    } catch (err) {
+        showToast('error', 'Fehler beim Laden: ' + err.message);
+    }
+}
+
+async function savePage() {
+    if (!contentData) return;
+
+    if (isOnline && sbClient && currentPageId) {
+        updateSaveStatus('saving');
+        btnSave.disabled = true;
+
+        try {
+            contentData._meta.lastEdited = new Date().toISOString();
+            contentData._meta.editedBy = currentUser?.email || 'offline';
+
+            // Promote pending images: tmp/ → final path
+            for (const [fieldId, { tmpPath, ext }] of pendingUploads) {
+                const finalPath = `${currentPageId}/${fieldId}.${ext}`;
+                await sbClient.storage.from('images').remove([finalPath]);
+                const { error: moveErr } = await sbClient.storage.from('images').move(tmpPath, finalPath);
+                if (!moveErr) {
+                    const finalUrl = sbClient.storage.from('images').getPublicUrl(finalPath).data.publicUrl;
+                    for (const block of contentData.blocks) {
+                        for (const field of block.fields) {
+                            if (field.id === fieldId) { field.value = finalUrl; break; }
+                        }
+                    }
+                }
+            }
+
+            const { error } = await sbClient.from('pages').upsert({
+                id: currentPageId,
+                title: contentData.page?.title || currentPageId,
+                url: contentData.page?.url || '/',
+                content: contentData,
+                updated_at: new Date().toISOString(),
+                updated_by: currentUser?.email || 'anon'
+            }, { onConflict: 'id' });
+
+            if (error) throw error;
+
+            pendingUploads.clear();
+            clearDraft();
+            hasUnsavedChanges = false;
+            updateSaveStatus('saved');
+            showToast('success', 'Gespeichert!');
+        } catch (err) {
+            updateSaveStatus('unsaved');
+            showToast('error', 'Speichern fehlgeschlagen: ' + err.message);
+        } finally {
+            btnSave.disabled = false;
+        }
+    } else {
+        // Offline: download JSON
+        downloadJSON();
+        clearDraft();
+    }
+}
+
+// Tracks images uploaded but not yet promoted to final path (cleared on successful save)
+const pendingUploads = new Map(); // fieldId → { tmpPath, ext }
+
+async function uploadImage(file, fieldId) {
+    if (!isOnline || !sbClient) {
+        showToast('error', 'Bildupload nur im Online-Modus verfügbar.');
+        return null;
+    }
+
+    const ext = file.name.split('.').pop().toLowerCase();
+    const safeName = `tmp/${currentPageId || 'page'}/${fieldId}.${ext}`;
+
+    try {
+        const { data, error } = await sbClient.storage
+            .from('images')
+            .upload(safeName, file, { cacheControl: '3600', upsert: true });
+
+        if (error) throw error;
+
+        pendingUploads.set(fieldId, { tmpPath: safeName, ext });
+        const { data: urlData } = sbClient.storage.from('images').getPublicUrl(safeName);
+        return urlData.publicUrl;
+    } catch (err) {
+        if (err.message && err.message.includes('row-level security')) {
+            showToast('error', 'Upload blockiert (RLS). Bitte prüfen: 1) Bucket "images" existiert (Dashboard → Storage), 2) SQL-Policies ausgeführt (Setup-SQL im Einstellungen-Dialog).');
+        } else {
+            showToast('error', 'Upload fehlgeschlagen: ' + err.message);
+        }
+        return null;
+    }
+}
+
+// ============================================================
+//  FILE OPERATIONS (offline fallback)
+// ============================================================
+
+fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    fileName = file.name;
+
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+        try {
+            contentData = JSON.parse(ev.target.result);
+            currentPageId = contentData.page?.id || fileName.replace('.json', '');
+            renderEditor();
+            renderBlockList();
+            updateToolbar();
+            updateSaveStatus('saved');
+            hasUnsavedChanges = false;
+            btnSave.disabled = false;
+            showToast('success', `${fileName} geladen`);
+            // Update preview iframe if visible
+            if (previewMode !== 'editor') {
+                previewPageUrl = null;
+                loadPreviewIfNeeded();
+            }
+        } catch (err) {
+            showToast('error', 'JSON-Fehler: ' + err.message);
+        }
+    };
+    reader.readAsText(file);
+    fileInput.value = '';
+});
+
+btnDownload.addEventListener('click', downloadJSON);
+
+function downloadJSON() {
+    if (!contentData) return;
+    contentData._meta.lastEdited = new Date().toISOString();
+    const blob = new Blob([JSON.stringify(contentData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName || 'content.json';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// ============================================================
+//  PAGE SELECTOR
+// ============================================================
+
+pageSelect.addEventListener('change', async () => {
+    const val = pageSelect.value;
+    if (!val) return;
+
+    if (hasUnsavedChanges && !confirm('Ungespeicherte Änderungen verwerfen?')) {
+        pageSelect.value = currentPageId || fileName || '';
+        return;
+    }
+
+    if (isOnline) {
+        await loadPage(val);
+    } else {
+        await loadLocalPage(val);
+    }
+});
+
+// ============================================================
+//  SIDEBAR BLOCK LIST
+// ============================================================
+
+function renderBlockList() {
+    if (!contentData || !contentData.blocks) {
+        blockList.innerHTML = '';
+        return;
+    }
+
+    blockList.innerHTML = contentData.blocks.map((block, i) => `
+        <div class="block-item${i === 0 ? ' active' : ''}" data-block-id="${block.id}" onclick="scrollToBlock('${block.id}', this)">
+            <span class="block-item-num">${block.id.replace('b', '')}</span>
+            <div class="block-item-info">
+                <div class="block-item-label">${formatBlockType(block.type)}</div>
+                <div class="block-item-count">${block.fields.length} Felder</div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function scrollToBlock(blockId, clickedItem) {
+    const card = editor.querySelector(`.block-card[data-block-id="${blockId}"]`);
+    if (card) {
+        // Expand if collapsed
+        card.classList.remove('collapsed');
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Update active state
+    blockList.querySelectorAll('.block-item').forEach(el => el.classList.remove('active'));
+    if (clickedItem) clickedItem.classList.add('active');
+}
+
+// Track scroll position to highlight active block in sidebar
+editorScroll.addEventListener('scroll', () => {
+    const cards = editor.querySelectorAll('.block-card');
+    let activeId = null;
+
+    for (const card of cards) {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < 200) activeId = card.dataset.blockId;
+    }
+
+    if (activeId) {
+        blockList.querySelectorAll('.block-item').forEach(el => {
+            el.classList.toggle('active', el.dataset.blockId === activeId);
+        });
+    }
+});
+
+// ============================================================
+//  EDITOR RENDERING
+// ============================================================
+
+function renderEditor() {
+    if (!contentData || !contentData.blocks) {
+        editor.innerHTML = `
+            <div class="empty-state">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <h2>Keine Blöcke gefunden</h2>
+                <p>Die geladene JSON-Datei enthält keine Inhaltsblöcke.</p>
+            </div>`;
+        return;
+    }
+
+    let html = '';
+
+    for (let i = 0; i < contentData.blocks.length; i++) {
+        const block = contentData.blocks[i];
+        const collapsed = i > 0 ? ' collapsed' : '';
+        html += `
+            <div class="block-card${collapsed}" data-block-id="${block.id}">
+                <div class="block-header" onclick="toggleBlock(this)">
+                    <div class="block-header-left">
+                        <span class="block-num">${block.id.replace('b', '')}</span>
+                        <h2>${formatBlockType(block.type)} <span class="block-type">${block.id}</span></h2>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <span class="field-count">${block.fields.length} Felder</span>
+                        <span class="block-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="block-body">
+                    ${renderBlockFields(block.id, block.fields)}
+                </div>
+            </div>
+        `;
+    }
+
+    editor.innerHTML = html;
+}
+
+// Smart field layout: group consecutive 'text' fields into a compact grid
+function renderBlockFields(blockId, fields) {
+    let html = '';
+    let i = 0;
+
+    while (i < fields.length) {
+        const field = fields[i];
+
+        // Check if this is a short text field (not a title/subtitle/heading that should be full-width)
+        if (field.type === 'text' && !isWideTextField(field.id)) {
+            // Collect consecutive short text fields
+            const group = [field];
+            while (i + 1 < fields.length
+                   && fields[i + 1].type === 'text'
+                   && !isWideTextField(fields[i + 1].id)) {
+                i++;
+                group.push(fields[i]);
+            }
+
+            if (group.length >= 2) {
+                // Render as compact grid
+                html += '<div class="fields-compact-grid">';
+                for (const f of group) {
+                    html += renderFieldCompact(blockId, f);
+                }
+                html += '</div>';
+            } else {
+                html += renderField(blockId, group[0]);
+            }
+        } else {
+            html += renderField(blockId, field);
+        }
+        i++;
+    }
+
+    return html;
+}
+
+// Fields that should always be full-width even if type=text
+function isWideTextField(fieldId) {
+    return /title|subtitle|heading|overline|quote/.test(fieldId);
+}
+
+function renderField(blockId, field) {
+    const inputId = `field-${blockId}-${field.id}`;
+
+    switch (field.type) {
+        case 'textarea':
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label for="${inputId}">${formatFieldId(field.id)}</label>
+                        <span class="field-type-badge textarea">${field.type}</span>
+                    </div>
+                    <textarea id="${inputId}" data-field-id="${field.id}" data-block-id="${blockId}"
+                              oninput="onFieldChange(this)">${escapeHtml(field.value || '')}</textarea>
+                </div>
+            `;
+
+        case 'image':
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label>${formatFieldId(field.id)}</label>
+                        <span class="field-type-badge image">${field.type}</span>
+                    </div>
+                    <div class="field-row">
+                        <div>
+                            <span class="sub-label">Bild-URL</span>
+                            <input type="text" id="${inputId}-src" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value"
+                                   value="${escapeHtml(field.value || '')}" oninput="onFieldChange(this)">
+                        </div>
+                        <div>
+                            <span class="sub-label">Alt-Text</span>
+                            <input type="text" id="${inputId}-alt" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="alt"
+                                   value="${escapeHtml(field.alt || '')}" oninput="onFieldChange(this)">
+                        </div>
+                    </div>
+                    ${field.value ? `<div class="image-preview"><img src="${escapeHtml(field.value)}" alt="" onerror="this.parentElement.style.display='none'"></div>` : ''}
+                    <div class="image-upload-zone" data-field-id="${field.id}" data-block-id="${blockId}">
+                        <input type="file" accept="image/*" onchange="handleImageUpload(event, '${blockId}', '${field.id}', '${inputId}-src')">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        <div class="upload-text"><strong>Bild hochladen</strong> oder hierher ziehen</div>
+                    </div>
+                </div>
+            `;
+
+        case 'link':
+        case 'button':
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label>${formatFieldId(field.id)}</label>
+                        <span class="field-type-badge ${field.type}">${field.type}</span>
+                    </div>
+                    <div class="field-row">
+                        <div>
+                            <span class="sub-label">Text</span>
+                            <input type="text" id="${inputId}-text" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value"
+                                   value="${escapeHtml(field.value || '')}" oninput="onFieldChange(this)">
+                        </div>
+                        <div>
+                            <span class="sub-label">Link (href)</span>
+                            <input type="text" id="${inputId}-href" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="href"
+                                   value="${escapeHtml(field.href || '')}" oninput="onFieldChange(this)">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+        case 'video':
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label>${formatFieldId(field.id)}</label>
+                        <span class="field-type-badge video">${field.type}</span>
+                    </div>
+                    <div class="field-row">
+                        <div>
+                            <span class="sub-label">Label</span>
+                            <input type="text" id="${inputId}-label" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value"
+                                   value="${escapeHtml(field.value || '')}" oninput="onFieldChange(this)">
+                        </div>
+                        <div>
+                            <span class="sub-label">Thumbnail URL</span>
+                            <input type="text" id="${inputId}-thumb" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="thumbnail"
+                                   value="${escapeHtml(field.thumbnail || '')}" oninput="onFieldChange(this)">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+        default: // text
+            return `
+                <div class="field">
+                    <div class="field-label">
+                        <label for="${inputId}">${formatFieldId(field.id)}</label>
+                        <span class="field-type-badge text">${field.type}</span>
+                    </div>
+                    <input type="text" id="${inputId}" data-field-id="${field.id}" data-block-id="${blockId}"
+                           value="${escapeHtml(field.value || '')}" oninput="onFieldChange(this)">
+                </div>
+            `;
+    }
+}
+
+// Compact field renderer for short text fields in grid
+function renderFieldCompact(blockId, field) {
+    const inputId = `field-${blockId}-${field.id}`;
+    return `
+        <div class="field-compact">
+            <label for="${inputId}">${formatFieldId(field.id)}</label>
+            <input type="text" id="${inputId}" data-field-id="${field.id}" data-block-id="${blockId}"
+                   value="${escapeHtml(field.value || '')}" oninput="onFieldChange(this)">
+        </div>
+    `;
+}
+
+// ============================================================
+//  FIELD UPDATES
+// ============================================================
+
+function onFieldChange(inputEl) {
+    const fieldId = inputEl.dataset.fieldId;
+    const blockId = inputEl.dataset.blockId;
+    const prop = inputEl.dataset.prop || 'value';
+
+    for (const block of contentData.blocks) {
+        if (block.id !== blockId) continue;
+        for (const field of block.fields) {
+            if (field.id !== fieldId) continue;
+            field[prop] = inputEl.value;
+            hasUnsavedChanges = true;
+            updateSaveStatus('unsaved');
+            // Dispatch to live preview
+            sendPreviewUpdate(fieldId, prop, inputEl.value);
+            // Debounced draft save
+            clearTimeout(draftTimer);
+            draftTimer = setTimeout(saveDraft, 1500);
+            return;
+        }
+    }
+}
+
+// ============================================================
+//  IMAGE UPLOAD
+// ============================================================
+
+async function handleImageUpload(event, blockId, fieldId, srcInputId) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const zone = event.target.closest('.image-upload-zone');
+    const originalHtml = zone.innerHTML;
+    zone.innerHTML = '<div class="spinner" style="border-color: rgba(230,81,0,0.2); border-top-color: #E65100; margin: 12px auto;"></div><div class="upload-text">Wird hochgeladen...</div>';
+
+    const publicUrl = await uploadImage(file, fieldId);
+
+    if (publicUrl) {
+        // Update field data
+        for (const block of contentData.blocks) {
+            if (block.id !== blockId) continue;
+            for (const field of block.fields) {
+                if (field.id !== fieldId) continue;
+                field.value = publicUrl;
+                break;
+            }
+        }
+
+        // Update URL input
+        const srcInput = document.getElementById(srcInputId);
+        if (srcInput) srcInput.value = publicUrl;
+
+        // Show preview
+        const fieldEl = zone.closest('.field');
+        let preview = fieldEl.querySelector('.image-preview');
+        if (!preview) {
+            preview = document.createElement('div');
+            preview.className = 'image-preview';
+            fieldEl.insertBefore(preview, zone);
+        }
+        preview.innerHTML = `<img src="${escapeHtml(publicUrl)}" alt="">`;
+        preview.style.display = '';
+
+        hasUnsavedChanges = true;
+        updateSaveStatus('unsaved');
+        // Debounced draft save
+        clearTimeout(draftTimer);
+        draftTimer = setTimeout(saveDraft, 1500);
+        showToast('success', 'Bild hochgeladen');
+    }
+
+    // Restore upload zone
+    zone.innerHTML = originalHtml;
+}
+
+// Drag & drop support on image upload zones
+document.addEventListener('dragover', (e) => {
+    const zone = e.target.closest('.image-upload-zone');
+    if (zone) {
+        e.preventDefault();
+        zone.classList.add('dragover');
+    }
+});
+
+document.addEventListener('dragleave', (e) => {
+    const zone = e.target.closest('.image-upload-zone');
+    if (zone) zone.classList.remove('dragover');
+});
+
+document.addEventListener('drop', async (e) => {
+    const zone = e.target.closest('.image-upload-zone');
+    if (!zone) return;
+    e.preventDefault();
+    zone.classList.remove('dragover');
+
+    const file = e.dataTransfer.files[0];
+    if (!file || !file.type.startsWith('image/')) return;
+
+    const blockId = zone.dataset.blockId;
+    const fieldId = zone.dataset.fieldId;
+    const srcInputId = `field-${blockId}-${fieldId}-src`;
+
+    // Simulate the upload
+    const fakeEvent = { target: { files: [file], closest: () => zone } };
+    await handleImageUpload(fakeEvent, blockId, fieldId, srcInputId);
+});
+
+// ============================================================
+//  BLOCK TOGGLE
+// ============================================================
+
+function toggleBlock(headerEl) {
+    headerEl.closest('.block-card').classList.toggle('collapsed');
+}
+
+// ============================================================
+//  SAVE
+// ============================================================
+
+btnSave.addEventListener('click', savePage);
+
+// Keyboard shortcut: Ctrl+S
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+        if (contentData) savePage();
+    }
+});
+
+// Warn before leaving with unsaved changes
+window.addEventListener('beforeunload', (e) => {
+    if (hasUnsavedChanges) {
+        e.preventDefault();
+        e.returnValue = '';
+    }
+});
+
+// ============================================================
+//  TOOLBAR & STATUS
+// ============================================================
+
+function updateToolbar() {
+    if (!contentData) return;
+    const page = contentData.page || {};
+    const totalFields = contentData.blocks ? contentData.blocks.reduce((s, b) => s + b.fields.length, 0) : 0;
+    toolbarTitle.textContent = page.title || page.id || 'Content Editor';
+    toolbarMeta.textContent = `${contentData.blocks?.length || 0} Blöcke · ${totalFields} Felder`;
+}
+
+function updateSaveStatus(state) {
+    const dot = saveStatus.querySelector('.dot');
+    const label = $('saveLabel');
+
+    switch (state) {
+        case 'saved':
+            dot.className = 'dot';
+            label.textContent = 'Gespeichert';
+            break;
+        case 'unsaved':
+            dot.className = 'dot unsaved';
+            label.textContent = 'Ungespeichert';
+            break;
+        case 'saving':
+            dot.className = 'dot saving';
+            label.textContent = 'Speichert...';
+            break;
+    }
+}
+
+// ============================================================
+//  LOCAL DRAFT (autosave to localStorage)
+// ============================================================
+
+function saveDraft() {
+    if (!contentData || !currentPageId) return;
+    try {
+        localStorage.setItem(`draft:${currentPageId}`, JSON.stringify({
+            content: contentData,
+            savedAt: new Date().toISOString()
+        }));
+        draftIndicator.style.display = '';
+    } catch (e) { /* quota exceeded — silently ignore */ }
+}
+
+function loadDraft() {
+    if (!currentPageId) return null;
+    try {
+        const raw = localStorage.getItem(`draft:${currentPageId}`);
+        if (!raw) return null;
+        const draft = JSON.parse(raw);
+        if (!draft?.content || !draft?.savedAt) throw new Error('bad draft');
+        return draft;
+    } catch (e) {
+        localStorage.removeItem(`draft:${currentPageId}`);
+        return null;
+    }
+}
+
+function clearDraft() {
+    if (!currentPageId) return;
+    localStorage.removeItem(`draft:${currentPageId}`);
+    draftIndicator.style.display = 'none';
+}
+
+function checkDraft() {
+    const draft = loadDraft();
+    if (!draft) { draftBanner.style.display = 'none'; return; }
+
+    const remoteTime = contentData?._meta?.lastEdited || contentData?._meta?.updatedAt || '';
+    const remoteMs = remoteTime ? Date.parse(remoteTime) : 0;
+    const draftMs = Date.parse(draft.savedAt) || 0;
+    if (remoteMs && draftMs <= remoteMs) {
+        // Draft is older than remote — discard silently
+        clearDraft();
+        return;
+    }
+
+    // Show banner
+    draftTime.textContent = new Date(draft.savedAt).toLocaleString('de-DE');
+    draftBanner.style.display = '';
+}
+
+$('btnDraftRestore').addEventListener('click', () => {
+    const draft = loadDraft();
+    if (!draft) return;
+    contentData = draft.content;
+    // Update _meta.lastEdited so future checkDraft() sees restore time
+    if (contentData._meta) contentData._meta.lastEdited = draft.savedAt;
+    renderEditor();
+    renderBlockList();
+    updateToolbar();
+    hasUnsavedChanges = true;
+    updateSaveStatus('unsaved');
+    draftBanner.style.display = 'none';
+    // Full preview sync via hp-cms-init (not just loadPreviewIfNeeded)
+    if (previewMode !== 'editor' && previewReady) sendPreviewInit();
+    showToast('success', 'Entwurf wiederhergestellt');
+});
+
+$('btnDraftIgnore').addEventListener('click', () => {
+    clearDraft();
+    draftBanner.style.display = 'none';
+});
+
+// ============================================================
+//  SETTINGS MODAL
+// ============================================================
+
+$('btnSettings').addEventListener('click', () => {
+    const config = getConfig();
+    $('settingsUrl').value = config?.url || '';
+    $('settingsKey').value = config?.key || '';
+    $('settingsModal').classList.add('active');
+});
+
+$('btnSettingsCancel').addEventListener('click', () => {
+    $('settingsModal').classList.remove('active');
+});
+
+$('btnSettingsSave').addEventListener('click', () => {
+    const url = $('settingsUrl').value.trim();
+    const key = $('settingsKey').value.trim();
+
+    if (url && key) {
+        saveConfig(url, key);
+        showToast('success', 'Einstellungen gespeichert. Seite wird neu geladen...');
+        setTimeout(() => location.reload(), 1000);
+    } else if (!url && !key) {
+        clearConfig();
+        showToast('info', 'Supabase-Konfiguration entfernt.');
+        $('settingsModal').classList.remove('active');
+    } else {
+        showToast('error', 'Bitte beide Felder ausfüllen oder beide leeren.');
+    }
+});
+
+// Close modal on backdrop click
+$('settingsModal').addEventListener('click', (e) => {
+    if (e.target === $('settingsModal')) $('settingsModal').classList.remove('active');
+});
+
+// ============================================================
+//  TOAST NOTIFICATIONS
+// ============================================================
+
+function showToast(type, message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast ' + type;
+
+    const icons = {
+        success: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>',
+        error: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+        info: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>'
+    };
+
+    toast.innerHTML = (icons[type] || '') + ' ' + escapeHtml(message);
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(12px)';
+        toast.style.transition = '0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+// ============================================================
+//  HELPERS
+// ============================================================
+
+// German display names for block types
+const BLOCK_LABELS = {
+    'hero-slider': 'Hero Slider',
+    'quick-actions': 'Quick Actions',
+    'tabs-section': 'Tabs Sektion',
+    'video-section': 'Video Sektion',
+    'staedte-section': 'Städte Sektion',
+    'how-it-works': 'So funktioniert\u2019s',
+    'info-tabs': 'Gut zu wissen',
+    'testimonial': 'Referenzen',
+    'partners': 'Partner',
+    'faq-section': 'FAQ',
+    'kontakt-form': 'Kontaktformular',
+    'vorteile-section': 'Vorteile',
+    'about-section': 'Über uns',
+    'kostenfrei-section': 'Kostenfrei',
+};
+
+// German display names for common field name parts
+const FIELD_LABELS = {
+    'slide': 'Slide', 'tag': 'Tag', 'title': 'Titel', 'text': 'Text',
+    'btn': 'Button', 'image': 'Bild', 'qa': 'Quick Action',
+    'tabs': 'Tabs', 'tab': 'Tab', 'hilfe': 'Hilfe', 'angehoerige': 'Angehörige',
+    'engagierte': 'Engagierte', 'kommunen': 'Kommunen', 'orga': 'Organisationen',
+    'dienst': 'Dienstleister', 'subtitle': 'Untertitel', 'overline': 'Überzeile',
+    'staedte': 'Städte', 'stadt': 'Stadt', 'steps': 'Schritte', 'step': 'Schritt',
+    'info': 'Info', 'testimonial': 'Referenz', 'partners': 'Partner',
+    'quote': 'Zitat', 'name': 'Name', 'role': 'Rolle', 'video': 'Video',
+    'heading': 'Überschrift', 'src': 'Quelle',
+};
+
+function formatBlockType(type) {
+    return BLOCK_LABELS[type] || type.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
+function formatFieldId(id) {
+    return id.split('-').map(w => FIELD_LABELS[w] || w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
+function escapeHtml(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// ============================================================
+//  LIVE PREVIEW
+// ============================================================
+
+const previewFrame    = $('previewFrame');
+const previewPanel    = $('previewPanel');
+const previewUrl      = $('previewUrl');
+const editorContent   = $('editorContent');
+const resizeHandle    = $('resizeHandle');
+const previewToggle   = $('previewToggle');
+
+let previewMode = 'editor'; // 'editor' | 'split' | 'preview'
+let previewReady = false;
+let previewPageUrl = null;
+
+// --- Toggle ---
+previewToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-mode]');
+    if (!btn) return;
+    setPreviewMode(btn.dataset.mode);
+});
+
+function setPreviewMode(mode) {
+    previewMode = mode;
+    editorContent.dataset.previewMode = mode;
+
+    // Update toggle buttons
+    previewToggle.querySelectorAll('button').forEach(b => {
+        b.classList.toggle('active', b.dataset.mode === mode);
+    });
+
+    // Load iframe if switching to split/preview for the first time
+    if ((mode === 'split' || mode === 'preview') && contentData) {
+        loadPreviewIfNeeded();
+    }
+}
+
+function loadPreviewIfNeeded() {
+    const pageUrl = contentData?.page?.url || '/';
+    // Always reload when called (cache-bust with timestamp)
+    previewPageUrl = pageUrl;
+    previewReady = false;
+    previewFrame.src = pageUrl + (pageUrl.includes('?') ? '&' : '?') + '_t=' + Date.now();
+    previewUrl.textContent = pageUrl;
+}
+
+// --- Resize handle (drag to resize preview panel height) ---
+let isResizing = false;
+let startY = 0;
+let startHeight = 0;
+
+resizeHandle.addEventListener('mousedown', (e) => {
+    isResizing = true;
+    startY = e.clientY;
+    startHeight = previewPanel.offsetHeight;
+    document.body.style.cursor = 'row-resize';
+    document.body.style.userSelect = 'none';
+    // Prevent iframe from capturing mouse events during resize
+    previewFrame.style.pointerEvents = 'none';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isResizing) return;
+    const delta = e.clientY - startY;
+    const newHeight = Math.max(180, Math.min(startHeight + delta, window.innerHeight - 200));
+    previewPanel.style.height = newHeight + 'px';
+    previewPanel.style.flex = 'none';
+});
+
+document.addEventListener('mouseup', () => {
+    if (!isResizing) return;
+    isResizing = false;
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+    previewFrame.style.pointerEvents = '';
+});
+
+// --- postMessage: receive ready signal from bridge ---
+window.addEventListener('message', (e) => {
+    if (e.origin !== location.origin) return;
+    if (e.data && e.data.type === 'hp-cms-ready') {
+        previewReady = true;
+        sendPreviewInit();
+    }
+});
+
+// --- Send full init sync ---
+function sendPreviewInit() {
+    if (!previewReady || !contentData) return;
+    previewFrame.contentWindow.postMessage({
+        type: 'hp-cms-init',
+        content: contentData
+    }, location.origin);
+}
+
+// --- Debounced field update dispatch (per-field timers) ---
+const previewUpdateTimers = {};
+
+function sendPreviewUpdate(fieldId, prop, value) {
+    if (!previewReady) return;
+    const key = fieldId + ':' + prop;
+    clearTimeout(previewUpdateTimers[key]);
+    previewUpdateTimers[key] = setTimeout(() => {
+        previewFrame.contentWindow.postMessage({
+            type: 'hp-cms-update',
+            fieldId: fieldId,
+            prop: prop,
+            value: value
+        }, location.origin);
+        delete previewUpdateTimers[key];
+    }, 150);
+}
+
+// --- Highlight/unhighlight on field focus/blur ---
+function sendPreviewHighlight(fieldId) {
+    if (!previewReady) return;
+    previewFrame.contentWindow.postMessage({
+        type: 'hp-cms-highlight',
+        fieldId: fieldId
+    }, location.origin);
+}
+
+function sendPreviewUnhighlight() {
+    if (!previewReady) return;
+    previewFrame.contentWindow.postMessage({
+        type: 'hp-cms-unhighlight'
+    }, location.origin);
+}
+
+// Attach focus/blur listeners to editor fields (via event delegation)
+editorScroll.addEventListener('focusin', (e) => {
+    const input = e.target.closest('[data-field-id]');
+    if (input) sendPreviewHighlight(input.dataset.fieldId);
+});
+
+editorScroll.addEventListener('focusout', (e) => {
+    const input = e.target.closest('[data-field-id]');
+    if (input) sendPreviewUnhighlight();
+});
+
+// ============================================================
+//  BOOT
+// ============================================================
+
+initApp();
+
+</script>
+</body>
+</html>
