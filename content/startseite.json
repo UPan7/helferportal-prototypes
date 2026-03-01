@@ -2,7 +2,8 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "index.html",
-    "extracted": "2026-02-26T23:20:40.300Z"
+    "extracted": "2026-02-26T23:20:40.300Z",
+    "schema_version": "2.0"
   },
   "page": {
     "id": "startseite",
@@ -17,110 +18,126 @@
         {
           "id": "slide-0-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1400",
-          "alt": "Menschen helfen einander"
+          "value": { "src": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1400", "alt": "Menschen helfen einander" },
+          "level": "basic"
         },
         {
           "id": "slide-0-tag",
           "type": "text",
-          "value": "Das Helferportal"
+          "value": "Das Helferportal",
+          "level": "advanced"
         },
         {
           "id": "slide-0-title",
           "type": "text",
-          "value": "Die Plattform für Hilfe und Engagement"
+          "value": "Die Plattform für Hilfe und Engagement",
+          "level": "basic"
         },
         {
           "id": "slide-0-text",
           "type": "textarea",
-          "value": "Wir verbinden Hilfesuchende, Engagierte und Kommunen — für bessere Versorgung in Ihrer Region."
+          "value": "Wir verbinden Hilfesuchende, Engagierte und Kommunen — für bessere Versorgung in Ihrer Region.",
+          "level": "basic"
         },
         {
           "id": "slide-0-btn",
           "type": "button",
           "href": "#video-section",
-          "value": "Video ansehen"
+          "value": "Video ansehen",
+          "level": "basic"
         },
         {
           "id": "slide-1-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1400",
-          "alt": "Hilfesuchende Person"
+          "value": { "src": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1400", "alt": "Hilfesuchende Person" },
+          "level": "basic"
         },
         {
           "id": "slide-1-tag",
           "type": "text",
-          "value": "Für Hilfesuchende"
+          "value": "Für Hilfesuchende",
+          "level": "advanced"
         },
         {
           "id": "slide-1-title",
           "type": "text",
-          "value": "Unterstützung im Alltag finden"
+          "value": "Unterstützung im Alltag finden",
+          "level": "basic"
         },
         {
           "id": "slide-1-text",
           "type": "textarea",
-          "value": "Begleitung, Besuchsdienste oder Alltagshilfe — direkt in Ihrer Nähe, sicher und unkompliziert."
+          "value": "Begleitung, Besuchsdienste oder Alltagshilfe — direkt in Ihrer Nähe, sicher und unkompliziert.",
+          "level": "basic"
         },
         {
           "id": "slide-1-btn",
           "type": "button",
           "href": "https://www.helferportal.kamanin.at/hilfe-finden",
-          "value": "Hilfe finden"
+          "value": "Hilfe finden",
+          "level": "basic"
         },
         {
           "id": "slide-2-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1400",
-          "alt": "Engagierte Helfer"
+          "value": { "src": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1400", "alt": "Engagierte Helfer" },
+          "level": "basic"
         },
         {
           "id": "slide-2-tag",
           "type": "text",
-          "value": "Für Engagierte"
+          "value": "Für Engagierte",
+          "level": "advanced"
         },
         {
           "id": "slide-2-title",
           "type": "text",
-          "value": "Helfen, wenn es passt"
+          "value": "Helfen, wenn es passt",
+          "level": "basic"
         },
         {
           "id": "slide-2-text",
           "type": "textarea",
-          "value": "Flexibel engagieren — mit Versicherung, Begleitung und Wertschätzung."
+          "value": "Flexibel engagieren — mit Versicherung, Begleitung und Wertschätzung.",
+          "level": "basic"
         },
         {
           "id": "slide-2-btn",
           "type": "button",
           "href": "https://www.helferportal.kamanin.at/engagieren",
-          "value": "Jetzt engagieren"
+          "value": "Jetzt engagieren",
+          "level": "basic"
         },
         {
           "id": "slide-3-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1400",
-          "alt": "Kommune und Organisation"
+          "value": { "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1400", "alt": "Kommune und Organisation" },
+          "level": "basic"
         },
         {
           "id": "slide-3-tag",
           "type": "text",
-          "value": "Für Kommunen & Organisationen"
+          "value": "Für Kommunen & Organisationen",
+          "level": "advanced"
         },
         {
           "id": "slide-3-title",
           "type": "text",
-          "value": "Versorgungsnetze digital steuern"
+          "value": "Versorgungsnetze digital steuern",
+          "level": "basic"
         },
         {
           "id": "slide-3-text",
           "type": "textarea",
-          "value": "Helferkreise koordinieren, Bedarfe steuern und Fachkräfte entlasten — auf einer Plattform."
+          "value": "Helferkreise koordinieren, Bedarfe steuern und Fachkräfte entlasten — auf einer Plattform.",
+          "level": "basic"
         },
         {
           "id": "slide-3-btn",
           "type": "button",
           "href": "https://www.helferportal.kamanin.at/fuer-kommunen",
-          "value": "Mehr erfahren"
+          "value": "Mehr erfahren",
+          "level": "basic"
         }
       ]
     },
@@ -129,68 +146,76 @@
       "type": "quick-actions",
       "fields": [
         {
-          "id": "qa-1",
-          "type": "link",
-          "href": "https://www.helferportal.kamanin.at/hilfe-finden",
-          "value": ""
-        },
-        {
           "id": "qa-1-title",
           "type": "text",
-          "value": "Unterstützung finden"
+          "value": "Unterstützung finden",
+          "level": "basic"
         },
         {
           "id": "qa-1-text",
           "type": "text",
-          "value": "Passende Hilfe in Ihrer Nähe"
+          "value": "Passende Hilfe in Ihrer Nähe",
+          "level": "basic"
         },
         {
-          "id": "qa-2",
-          "type": "link",
-          "href": "https://www.helferportal.kamanin.at/engagieren",
-          "value": ""
+          "id": "qa-1-href",
+          "type": "text",
+          "value": "https://www.helferportal.kamanin.at/hilfe-finden",
+          "level": "basic"
         },
         {
           "id": "qa-2-title",
           "type": "text",
-          "value": "Jetzt engagieren"
+          "value": "Jetzt engagieren",
+          "level": "basic"
         },
         {
           "id": "qa-2-text",
           "type": "text",
-          "value": "Helfen, wenn es passt"
+          "value": "Helfen, wenn es passt",
+          "level": "basic"
         },
         {
-          "id": "qa-3",
-          "type": "link",
-          "href": "https://www.helferportal.kamanin.at/fuer-kommunen",
-          "value": ""
+          "id": "qa-2-href",
+          "type": "text",
+          "value": "https://www.helferportal.kamanin.at/engagieren",
+          "level": "basic"
         },
         {
           "id": "qa-3-title",
           "type": "text",
-          "value": "Für Kommunen"
+          "value": "Für Kommunen",
+          "level": "basic"
         },
         {
           "id": "qa-3-text",
           "type": "text",
-          "value": "Versorgungsstrukturen digital"
+          "value": "Versorgungsstrukturen digital",
+          "level": "basic"
         },
         {
-          "id": "qa-4",
-          "type": "link",
-          "href": "https://www.helferportal.kamanin.at/ueber-uns",
-          "value": ""
+          "id": "qa-3-href",
+          "type": "text",
+          "value": "https://www.helferportal.kamanin.at/fuer-kommunen",
+          "level": "basic"
         },
         {
           "id": "qa-4-title",
           "type": "text",
-          "value": "So funktioniert's"
+          "value": "So funktioniert's",
+          "level": "basic"
         },
         {
           "id": "qa-4-text",
           "type": "text",
-          "value": "In 5 einfachen Schritten"
+          "value": "In 5 einfachen Schritten",
+          "level": "basic"
+        },
+        {
+          "id": "qa-4-href",
+          "type": "text",
+          "value": "https://www.helferportal.kamanin.at/ueber-uns",
+          "level": "basic"
         }
       ]
     },
@@ -201,72 +226,242 @@
         {
           "id": "tabs-title",
           "type": "text",
-          "value": "Helferportal für alle"
+          "value": "Helferportal für alle",
+          "level": "basic"
         },
         {
           "id": "tabs-subtitle",
           "type": "text",
-          "value": "Finden Sie, was zu Ihnen passt"
+          "value": "Finden Sie, was zu Ihnen passt",
+          "level": "basic"
+        },
+        {
+          "id": "tab-hilfe-name",
+          "type": "text",
+          "value": "Hilfesuchende",
+          "level": "basic"
         },
         {
           "id": "tab-hilfe-title",
           "type": "text",
-          "value": "Unterstützung im Alltag finden"
+          "value": "Unterstützung im Alltag finden",
+          "level": "basic"
         },
         {
           "id": "tab-hilfe-text",
           "type": "textarea",
-          "value": "Sie benötigen Hilfe bei alltäglichen Aufgaben? Finden Sie passende Unterstützung – direkt in Ihrer Nähe, sicher und unkompliziert."
+          "value": "Sie benötigen Hilfe bei alltäglichen Aufgaben? Finden Sie passende Unterstützung – direkt in Ihrer Nähe, sicher und unkompliziert.",
+          "level": "basic"
+        },
+        {
+          "id": "tab-hilfe-cards",
+          "type": "textarea",
+          "value": "Begleitdienste | Zu Arztterminen, Behördengängen oder Ausflügen – mit zuverlässiger Begleitung.\nBesuchsdienste | Gesellschaft, Vorlesen, Plaudern oder gemeinsame Spaziergänge.\nAlltagshilfe | Einkäufe, kleine Handreichungen im Haushalt oder technische Unterstützung.",
+          "level": "advanced"
+        },
+        {
+          "id": "tab-hilfe-btn-1",
+          "type": "button",
+          "value": "Hilfe finden",
+          "href": "https://www.helferportal.kamanin.at/hilfe-finden",
+          "level": "basic"
+        },
+        {
+          "id": "tab-hilfe-btn-2",
+          "type": "button",
+          "value": "Mehr erfahren",
+          "href": "https://www.helferportal.kamanin.at/hilfe-finden",
+          "level": "basic"
+        },
+        {
+          "id": "tab-angehoerige-name",
+          "type": "text",
+          "value": "Pflegende Angehörige",
+          "level": "basic"
         },
         {
           "id": "tab-angehoerige-title",
           "type": "text",
-          "value": "Entlastung für pflegende Angehörige"
+          "value": "Entlastung für pflegende Angehörige",
+          "level": "basic"
         },
         {
           "id": "tab-angehoerige-text",
           "type": "textarea",
-          "value": "Sie pflegen einen nahestehenden Menschen? Wir helfen Ihnen, Unterstützung zu organisieren – damit Sie auch Zeit für sich selbst haben."
+          "value": "Sie pflegen einen nahestehenden Menschen? Wir helfen Ihnen, Unterstützung zu organisieren – damit Sie auch Zeit für sich selbst haben.",
+          "level": "basic"
+        },
+        {
+          "id": "tab-angehoerige-cards",
+          "type": "textarea",
+          "value": "Verhinderungspflege | Zuverlässige Vertretung, wenn Sie mal eine Auszeit brauchen.\nEntlastungsleistungen | Unterstützung im Alltag, abrechenbar über den Entlastungsbetrag.\nBeratung & Vermittlung | Schnelle Hilfe bei der Suche nach passenden Angeboten.",
+          "level": "advanced"
+        },
+        {
+          "id": "tab-angehoerige-btn-1",
+          "type": "button",
+          "value": "Entlastung finden",
+          "href": "https://www.helferportal.kamanin.at/hilfe-finden",
+          "level": "basic"
+        },
+        {
+          "id": "tab-angehoerige-btn-2",
+          "type": "button",
+          "value": "Mehr erfahren",
+          "href": "https://www.helferportal.kamanin.at/hilfe-finden",
+          "level": "basic"
+        },
+        {
+          "id": "tab-engagierte-name",
+          "type": "text",
+          "value": "Engagierte",
+          "level": "basic"
         },
         {
           "id": "tab-engagierte-title",
           "type": "text",
-          "value": "Helfen, wenn es passt"
+          "value": "Helfen, wenn es passt",
+          "level": "basic"
         },
         {
           "id": "tab-engagierte-text",
           "type": "textarea",
-          "value": "Sie wollen sich engagieren? Wählen Sie die Einsatzart, die zu Ihrem Leben passt – ob spontan, regelmäßig oder über eine Organisation."
+          "value": "Sie wollen sich engagieren? Wählen Sie die Einsatzart, die zu Ihrem Leben passt – ob spontan, regelmäßig oder über eine Organisation.",
+          "level": "basic"
+        },
+        {
+          "id": "tab-engagierte-cards",
+          "type": "textarea",
+          "value": "Spontan & flexibel | Helfen Sie, wenn Sie Zeit haben – ohne feste Verpflichtung.\nRegelmäßig & eigenständig | Bauen Sie eine Beziehung auf mit regelmäßigen Einsätzen.\nIm Team einer Organisation | Engagieren Sie sich mit Rückhalt, Schulungen und Versicherung.",
+          "level": "advanced"
+        },
+        {
+          "id": "tab-engagierte-btn-1",
+          "type": "button",
+          "value": "Jetzt engagieren",
+          "href": "https://www.helferportal.kamanin.at/engagieren",
+          "level": "basic"
+        },
+        {
+          "id": "tab-engagierte-btn-2",
+          "type": "button",
+          "value": "Mehr erfahren",
+          "href": "https://www.helferportal.kamanin.at/engagieren",
+          "level": "basic"
+        },
+        {
+          "id": "tab-kommunen-name",
+          "type": "text",
+          "value": "Kommunen",
+          "level": "basic"
         },
         {
           "id": "tab-kommunen-title",
           "type": "text",
-          "value": "Versorgungsstrukturen digital steuern"
+          "value": "Versorgungsstrukturen digital steuern",
+          "level": "basic"
         },
         {
           "id": "tab-kommunen-text",
           "type": "textarea",
-          "value": "Schließen Sie Versorgungslücken, fördern Sie Ehrenamt und schaffen Sie Transparenz über Bedarfe und Angebote in Ihrer Kommune."
+          "value": "Schließen Sie Versorgungslücken, fördern Sie Ehrenamt und schaffen Sie Transparenz über Bedarfe und Angebote in Ihrer Kommune.",
+          "level": "basic"
+        },
+        {
+          "id": "tab-kommunen-cards",
+          "type": "textarea",
+          "value": "Netzwerke aufbauen | Sektorenübergreifende Versorgungsnetze digital koordinieren.\nEhrenamt fördern | Bürgerschaftliches Engagement modern und effizient einbinden.\nMonitoring & Planung | Daten für bedarfsgerechte Sozialplanung und Steuerung.\nBeratungs- & Koordinationsstellen | Pflegestützpunkte, Seniorenberatung und Quartiersmanagement effizient in das digitale Versorgungsnetz einbinden.",
+          "level": "advanced"
+        },
+        {
+          "id": "tab-kommunen-btn-1",
+          "type": "button",
+          "value": "Demo vereinbaren",
+          "href": "https://www.helferportal.kamanin.at/kontakt",
+          "level": "basic"
+        },
+        {
+          "id": "tab-kommunen-btn-2",
+          "type": "button",
+          "value": "Kontakt aufnehmen",
+          "href": "https://www.helferportal.kamanin.at/kontakt",
+          "level": "basic"
+        },
+        {
+          "id": "tab-orga-name",
+          "type": "text",
+          "value": "Organisationen",
+          "level": "basic"
         },
         {
           "id": "tab-orga-title",
           "type": "text",
-          "value": "Helferkreise effizient koordinieren"
+          "value": "Helferkreise effizient koordinieren",
+          "level": "basic"
         },
         {
           "id": "tab-orga-text",
           "type": "textarea",
-          "value": "Reduzieren Sie Verwaltungsaufwand, gewinnen Sie neue Engagierte und koordinieren Sie Einsätze digital – alles in einem System."
+          "value": "Reduzieren Sie Verwaltungsaufwand, gewinnen Sie neue Engagierte und koordinieren Sie Einsätze digital – alles in einem System.",
+          "level": "basic"
+        },
+        {
+          "id": "tab-orga-cards",
+          "type": "textarea",
+          "value": "Digitale Koordination | Verfügbarkeitsabfragen, Einsatzplanung und Kommunikation.\nAdministration & Abrechnung | Zeiterfassung, Budgetverwaltung und automatische Abrechnung.\nNeue Engagierte | Zugang zu motivierten Helfern durch zentrale Plattform.",
+          "level": "advanced"
+        },
+        {
+          "id": "tab-orga-btn-1",
+          "type": "button",
+          "value": "Demo vereinbaren",
+          "href": "https://www.helferportal.kamanin.at/kontakt",
+          "level": "basic"
+        },
+        {
+          "id": "tab-orga-btn-2",
+          "type": "button",
+          "value": "Kontakt aufnehmen",
+          "href": "https://www.helferportal.kamanin.at/kontakt",
+          "level": "basic"
+        },
+        {
+          "id": "tab-dienst-name",
+          "type": "text",
+          "value": "Gesundheitsdienstleister",
+          "level": "basic"
         },
         {
           "id": "tab-dienst-title",
           "type": "text",
-          "value": "Terminfinder für Gesundheitsdienstleister"
+          "value": "Terminfinder für Gesundheitsdienstleister",
+          "level": "basic"
         },
         {
           "id": "tab-dienst-text",
           "type": "textarea",
-          "value": "Erhalten Sie passende Terminanfragen digital, verbessern Sie Ihre Auslastung und sparen Sie Zeit bei der Terminvereinbarung."
+          "value": "Erhalten Sie passende Terminanfragen digital, verbessern Sie Ihre Auslastung und sparen Sie Zeit bei der Terminvereinbarung.",
+          "level": "basic"
+        },
+        {
+          "id": "tab-dienst-cards",
+          "type": "textarea",
+          "value": "Digitale Terminanfragen | Anfragen online erhalten und effizient bearbeiten.\nBessere Auslastung | Freie Kapazitäten sichtbar machen und Leerlauf reduzieren.\nNetzwerk-Sichtbarkeit | Als Partner im kommunalen Versorgungsnetz sichtbar sein.",
+          "level": "advanced"
+        },
+        {
+          "id": "tab-dienst-btn-1",
+          "type": "button",
+          "value": "Kostenlos registrieren",
+          "href": "https://helfen.helferportal.de",
+          "level": "basic"
+        },
+        {
+          "id": "tab-dienst-btn-2",
+          "type": "button",
+          "value": "Mehr erfahren",
+          "href": "https://www.helferportal.kamanin.at/kontakt",
+          "level": "basic"
         }
       ]
     },
@@ -277,40 +472,86 @@
         {
           "id": "video-overline",
           "type": "text",
-          "value": "Das Helferportal in Aktion"
+          "value": "Das Helferportal in Aktion",
+          "level": "basic"
         },
         {
           "id": "video-heading",
           "type": "text",
-          "value": "Sehen Sie, wie einfach es funktioniert"
+          "value": "Sehen Sie, wie einfach es funktioniert",
+          "level": "basic"
         },
         {
-          "id": "video-vorstellung",
-          "type": "video",
+          "id": "video-vorstellung-title",
+          "type": "text",
           "value": "Vorstellung Helferportal",
-          "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200",
-          "alt": "Video: Vorstellung Helferportal"
+          "level": "basic"
         },
         {
-          "id": "video-helfer",
-          "type": "video",
+          "id": "video-vorstellung-thumbnail",
+          "type": "image",
+          "value": { "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200", "alt": "Video: Vorstellung Helferportal" },
+          "level": "basic"
+        },
+        {
+          "id": "video-vorstellung-file",
+          "type": "text",
+          "value": "vorstellung.mp4",
+          "level": "advanced"
+        },
+        {
+          "id": "video-helfer-title",
+          "type": "text",
           "value": "Video für Helfer",
-          "thumbnail": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600",
-          "alt": "Video: Für Helfer"
+          "level": "basic"
         },
         {
-          "id": "video-hilfesuchende",
-          "type": "video",
+          "id": "video-helfer-thumbnail",
+          "type": "image",
+          "value": { "src": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600", "alt": "Video: Für Helfer" },
+          "level": "basic"
+        },
+        {
+          "id": "video-helfer-file",
+          "type": "text",
+          "value": "helfer.mp4",
+          "level": "advanced"
+        },
+        {
+          "id": "video-hilfesuchende-title",
+          "type": "text",
           "value": "Video für Hilfesuchende",
-          "thumbnail": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600",
-          "alt": "Video: Für Hilfesuchende"
+          "level": "basic"
         },
         {
-          "id": "video-funktioniert",
-          "type": "video",
+          "id": "video-hilfesuchende-thumbnail",
+          "type": "image",
+          "value": { "src": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600", "alt": "Video: Für Hilfesuchende" },
+          "level": "basic"
+        },
+        {
+          "id": "video-hilfesuchende-file",
+          "type": "text",
+          "value": "hilfesuchende.mp4",
+          "level": "advanced"
+        },
+        {
+          "id": "video-funktioniert-title",
+          "type": "text",
           "value": "So funktioniert's",
-          "thumbnail": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600",
-          "alt": "Video: So funktioniert's"
+          "level": "basic"
+        },
+        {
+          "id": "video-funktioniert-thumbnail",
+          "type": "image",
+          "value": { "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600", "alt": "Video: So funktioniert's" },
+          "level": "basic"
+        },
+        {
+          "id": "video-funktioniert-file",
+          "type": "text",
+          "value": "funktioniert.mp4",
+          "level": "advanced"
         }
       ]
     },
@@ -321,122 +562,134 @@
         {
           "id": "staedte-title",
           "type": "text",
-          "value": "Unsere Städte"
+          "value": "Unsere Städte",
+          "level": "basic"
         },
         {
           "id": "staedte-subtitle",
           "type": "text",
-          "value": "Wo wir bereits aktiv sind"
-        },
-        {
-          "id": "stadt-1",
-          "type": "link",
-          "href": "https://www.helferportal.kamanin.at/muenchen",
-          "value": ""
+          "value": "Wo wir bereits aktiv sind",
+          "level": "basic"
         },
         {
           "id": "stadt-1-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1595867818082-083862f3d630?w=400",
-          "alt": "München"
+          "value": { "src": "https://images.unsplash.com/photo-1595867818082-083862f3d630?w=400", "alt": "München" },
+          "level": "basic"
         },
         {
           "id": "stadt-1-name",
           "type": "text",
-          "value": "München"
+          "value": "München",
+          "level": "basic"
         },
         {
           "id": "stadt-1-status",
           "type": "text",
-          "value": "Aktiv"
+          "value": "Aktiv",
+          "level": "basic"
         },
         {
-          "id": "stadt-2",
-          "type": "link",
-          "href": "#",
-          "value": ""
+          "id": "stadt-1-href",
+          "type": "text",
+          "value": "https://www.helferportal.kamanin.at/muenchen",
+          "level": "advanced"
         },
         {
           "id": "stadt-2-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400",
-          "alt": "Frankfurt"
+          "value": { "src": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400", "alt": "Frankfurt" },
+          "level": "basic"
         },
         {
           "id": "stadt-2-name",
           "type": "text",
-          "value": "Frankfurt"
+          "value": "Frankfurt",
+          "level": "basic"
         },
         {
           "id": "stadt-2-status",
           "type": "text",
-          "value": "Startet bald"
+          "value": "Startet bald",
+          "level": "basic"
         },
         {
-          "id": "stadt-3",
-          "type": "link",
-          "href": "#",
-          "value": ""
+          "id": "stadt-2-href",
+          "type": "text",
+          "value": "#",
+          "level": "advanced"
         },
         {
           "id": "stadt-3-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400",
-          "alt": "Dietzenbach"
+          "value": { "src": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400", "alt": "Dietzenbach" },
+          "level": "basic"
         },
         {
           "id": "stadt-3-name",
           "type": "text",
-          "value": "Dietzenbach"
+          "value": "Dietzenbach",
+          "level": "basic"
         },
         {
           "id": "stadt-3-status",
           "type": "text",
-          "value": "In Planung"
+          "value": "In Planung",
+          "level": "basic"
         },
         {
-          "id": "stadt-4",
-          "type": "link",
-          "href": "#",
-          "value": ""
+          "id": "stadt-3-href",
+          "type": "text",
+          "value": "#",
+          "level": "advanced"
         },
         {
           "id": "stadt-4-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400",
-          "alt": "Solingen"
+          "value": { "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400", "alt": "Solingen" },
+          "level": "basic"
         },
         {
           "id": "stadt-4-name",
           "type": "text",
-          "value": "Solingen"
+          "value": "Solingen",
+          "level": "basic"
         },
         {
           "id": "stadt-4-status",
           "type": "text",
-          "value": "In Planung"
+          "value": "In Planung",
+          "level": "basic"
         },
         {
-          "id": "stadt-5",
-          "type": "link",
-          "href": "#",
-          "value": ""
+          "id": "stadt-4-href",
+          "type": "text",
+          "value": "#",
+          "level": "advanced"
         },
         {
           "id": "stadt-5-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?w=400",
-          "alt": "Hildburghausen"
+          "value": { "src": "https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?w=400", "alt": "Hildburghausen" },
+          "level": "basic"
         },
         {
           "id": "stadt-5-name",
           "type": "text",
-          "value": "Hildburghausen"
+          "value": "Hildburghausen",
+          "level": "basic"
         },
         {
           "id": "stadt-5-status",
           "type": "text",
-          "value": "Startet bald"
+          "value": "Startet bald",
+          "level": "basic"
+        },
+        {
+          "id": "stadt-5-href",
+          "type": "text",
+          "value": "#",
+          "level": "advanced"
         }
       ]
     },
@@ -447,78 +700,74 @@
         {
           "id": "steps-overline",
           "type": "text",
-          "value": "In wenigen Schritten"
+          "value": "In wenigen Schritten",
+          "level": "basic"
         },
         {
           "id": "steps-title",
           "type": "text",
-          "value": "So funktioniert's"
+          "value": "So funktioniert's",
+          "level": "basic"
         },
         {
           "id": "step-1-title",
           "type": "text",
-          "value": "Registrieren"
+          "value": "Registrieren",
+          "level": "basic"
         },
         {
           "id": "step-1-text",
           "type": "textarea",
-          "value": "Erstellen Sie Ihr Profil – kostenlos und in wenigen Minuten."
+          "value": "Erstellen Sie Ihr Profil – kostenlos und in wenigen Minuten.",
+          "level": "basic"
         },
         {
           "id": "step-2-title",
           "type": "text",
-          "value": "Bedarf angeben"
+          "value": "Bedarf angeben",
+          "level": "basic"
         },
         {
           "id": "step-2-text",
           "type": "textarea",
-          "value": "Beschreiben Sie, welche Unterstützung Sie suchen oder anbieten."
+          "value": "Beschreiben Sie, welche Unterstützung Sie suchen oder anbieten.",
+          "level": "basic"
         },
         {
           "id": "step-3-title",
           "type": "text",
-          "value": "Matching"
+          "value": "Matching",
+          "level": "basic"
         },
         {
           "id": "step-3-text",
           "type": "textarea",
-          "value": "Wir finden passende Helfer oder Hilfesuchende in Ihrer Nähe."
+          "value": "Wir finden passende Helfer oder Hilfesuchende in Ihrer Nähe.",
+          "level": "basic"
         },
         {
           "id": "step-4-title",
           "type": "text",
-          "value": "Kennenlernen"
+          "value": "Kennenlernen",
+          "level": "basic"
         },
         {
           "id": "step-4-text",
           "type": "textarea",
-          "value": "Treffen Sie sich per Video oder Chat – anonym und in geschütztem Rahmen."
+          "value": "Treffen Sie sich per Video oder Chat – anonym und in geschütztem Rahmen.",
+          "level": "basic"
         },
         {
           "id": "step-5-title",
           "type": "text",
-          "value": "Loslegen"
+          "value": "Loslegen",
+          "level": "basic"
         },
         {
           "id": "step-5-text",
           "type": "textarea",
-          "value": "Vereinbaren Sie den ersten Termin – sicher und unkompliziert."
-        }
-      ]
-    },
-    {
-      "id": "b7",
-      "type": "info-tabs",
-      "fields": [
-        {
-          "id": "info-overline",
-          "type": "text",
-          "value": "GUT ZU WISSEN"
-        },
-        {
-          "id": "info-title",
-          "type": "text",
-          "value": "Transparent, sicher und kostenfrei"
+          "value": "Vereinbaren Sie den ersten Termin – sicher und unkompliziert.",
+          "level": "basic"
         }
       ]
     },
@@ -529,23 +778,32 @@
         {
           "id": "testimonial-image",
           "type": "image",
-          "value": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200",
-          "alt": "Alia Tagba"
+          "value": { "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200", "alt": "Alia Tagba" },
+          "level": "advanced"
         },
         {
           "id": "testimonial-quote",
           "type": "textarea",
-          "value": "Das Helferportal ist für uns zu einem unverzichtbaren Werkzeug geworden, um Hilfebedarfe in kürzester Zeit auszuschreiben und online die Verfügbarkeit von passenden Helfern abzufragen. Das ermöglicht uns, effizient und schnell Hilfebedarfe zu stillen."
+          "value": "Das Helferportal ist für uns zu einem unverzichtbaren Werkzeug geworden, um Hilfebedarfe in kürzester Zeit auszuschreiben und online die Verfügbarkeit von passenden Helfern abzufragen. Das ermöglicht uns, effizient und schnell Hilfebedarfe zu stillen.",
+          "level": "basic"
         },
         {
           "id": "testimonial-name",
           "type": "text",
-          "value": "Alia Tagba"
+          "value": "Alia Tagba",
+          "level": "basic"
         },
         {
           "id": "testimonial-role",
           "type": "text",
-          "value": "Einsatzkoordinatorin, deinNachbar e.V."
+          "value": "Einsatzkoordinatorin",
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-org",
+          "type": "text",
+          "value": "deinNachbar e.V.",
+          "level": "basic"
         }
       ]
     },
@@ -556,12 +814,74 @@
         {
           "id": "partners-title",
           "type": "text",
-          "value": "Gemeinsam für eine bessere Versorgung"
+          "value": "Gemeinsam für eine bessere Versorgung",
+          "level": "basic"
         },
         {
           "id": "partners-subtitle",
           "type": "text",
-          "value": "Unsere Förder- und Kooperationspartner"
+          "value": "Unsere Förder- und Kooperationspartner",
+          "level": "basic"
+        },
+        {
+          "id": "partner-1-logo",
+          "type": "image",
+          "value": { "src": "", "alt": "Logo BMBF" },
+          "level": "basic"
+        },
+        {
+          "id": "partner-1-name",
+          "type": "text",
+          "value": "BMBF",
+          "level": "basic"
+        },
+        {
+          "id": "partner-2-logo",
+          "type": "image",
+          "value": { "src": "", "alt": "Logo DATI" },
+          "level": "basic"
+        },
+        {
+          "id": "partner-2-name",
+          "type": "text",
+          "value": "DATI",
+          "level": "basic"
+        },
+        {
+          "id": "partner-3-logo",
+          "type": "image",
+          "value": { "src": "", "alt": "Logo Stadt Dietzenbach" },
+          "level": "basic"
+        },
+        {
+          "id": "partner-3-name",
+          "type": "text",
+          "value": "Stadt Dietzenbach",
+          "level": "basic"
+        },
+        {
+          "id": "partner-4-logo",
+          "type": "image",
+          "value": { "src": "", "alt": "Logo Pro Inklusion e.V." },
+          "level": "basic"
+        },
+        {
+          "id": "partner-4-name",
+          "type": "text",
+          "value": "Pro Inklusion e.V.",
+          "level": "basic"
+        },
+        {
+          "id": "partner-5-logo",
+          "type": "image",
+          "value": { "src": "", "alt": "Logo Helmut-Schmidt-Universität" },
+          "level": "basic"
+        },
+        {
+          "id": "partner-5-name",
+          "type": "text",
+          "value": "Helmut-Schmidt-Universität",
+          "level": "basic"
         }
       ]
     }

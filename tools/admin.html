@@ -1264,6 +1264,17 @@
             border-radius: 50%;
             background: currentColor;
         }
+
+        /* Advanced mode toggle (switch style) */
+        .advanced-toggle { display:flex; align-items:center; gap:8px; font-size:13px; color:#64748b; cursor:pointer; user-select:none; }
+        .advanced-toggle input { position:absolute; opacity:0; width:1px; height:1px; pointer-events:none; }
+        .advanced-switch { position:relative; width:36px; height:20px; background:#cbd5e1; border-radius:10px; transition:background .2s; flex-shrink:0; }
+        .advanced-switch::after { content:''; position:absolute; top:2px; left:2px; width:16px; height:16px; background:#fff; border-radius:50%; transition:transform .2s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+        .advanced-toggle input:checked + .advanced-switch { background:#E65100; }
+        .advanced-toggle input:checked + .advanced-switch::after { transform:translateX(16px); }
+        .advanced-badge { font-size:11px; color:#E65100; background:#fff7ed; border:1px solid #fed7aa; border-radius:10px; padding:1px 8px; white-space:nowrap; }
+        .field-advanced { background:#fffbeb; border-left:3px solid #fbbf24; padding-left:12px; margin-left:-15px; padding-right:0; }
+        .advanced-section-note { font-size:11px; color:#92400e; background:#fef3c7; padding:6px 12px; border-radius:6px; margin-bottom:8px; }
     </style>
 </head>
 <body>
@@ -1451,6 +1462,11 @@
                         Vorschau
                     </button>
                 </div>
+                <label class="advanced-toggle" title="Erweiterte Felder anzeigen">
+                    <input type="checkbox" id="advancedMode" onchange="toggleAdvancedMode(this.checked)">
+                    <span class="advanced-switch"></span>
+                    Erweiterte Felder
+                </label>
                 <div class="save-status" id="saveStatus">
                     <span class="dot"></span>
                     <span id="saveLabel">Gespeichert</span>
@@ -1547,6 +1563,7 @@ let hasUnsavedChanges = false;
 let isOnline = false;
 let draftTimer = null;
 let fileName = '';
+let advancedMode = localStorage.getItem('hp_cms_advanced') === '1';
 
 // --- DOM refs ---
 const $ = id => document.getElementById(id);
@@ -1570,6 +1587,66 @@ const sidebarFooter  = $('sidebarFooter');
 const draftBanner    = $('draftBanner');
 const draftTime      = $('draftTime');
 const draftIndicator = $('draftIndicator');
+
+// ============================================================
+//  CONTENT NORMALIZATION
+// ============================================================
+
+// Merge missing fields & backfill missing `level` from reference JSON.
+// Supabase may hold data saved before new fields were added.
+// Idempotent: returns false when data already matches reference.
+async function normalizeContent(data, pageId) {
+    if (!data?.blocks) return false;
+
+    // Fetch reference JSON
+    let ref = null;
+    try {
+        const res = await fetch('/content/' + pageId + '.json');
+        if (res.ok) ref = await res.json();
+    } catch (e) {
+        console.warn('Referenz nicht verfügbar:', e.message);
+    }
+
+    let changed = false;
+
+    if (ref?.blocks) {
+        for (const refBlock of ref.blocks) {
+            let block = data.blocks.find(b => b.id === refBlock.id);
+
+            // Add missing block entirely
+            if (!block) {
+                data.blocks.push(JSON.parse(JSON.stringify(refBlock)));
+                changed = true;
+                continue;
+            }
+
+            // Add missing fields (preserve existing values)
+            const existingIds = new Set(block.fields.map(f => f.id));
+            for (const refField of refBlock.fields) {
+                if (!existingIds.has(refField.id)) {
+                    block.fields.push(JSON.parse(JSON.stringify(refField)));
+                    changed = true;
+                }
+            }
+
+            // Backfill missing level on existing fields
+            for (const field of block.fields) {
+                if (field.level == null) {
+                    const rf = refBlock.fields.find(f => f.id === field.id);
+                    field.level = rf?.level || 'basic';
+                    changed = true;
+                }
+            }
+        }
+    } else {
+        // Fallback: only backfill level as 'basic'
+        for (const block of data.blocks)
+            for (const field of block.fields)
+                if (field.level == null) { field.level = 'basic'; changed = true; }
+    }
+
+    return changed;
+}
 
 // ============================================================
 //  CONFIG & INITIALIZATION
@@ -1699,11 +1776,19 @@ async function loadLocalPage(filename) {
         currentPageId = contentData.page?.id || filename.replace('.json', '');
         fileName = filename;
 
+        const migrated = await normalizeContent(contentData, currentPageId);
+
         renderEditor();
         renderBlockList();
         updateToolbar();
-        updateSaveStatus('saved');
-        hasUnsavedChanges = false;
+        if (migrated) {
+            hasUnsavedChanges = true;
+            updateSaveStatus('unsaved');
+            showToast('info', 'Feld-Level aus Referenz ergänzt — bitte speichern');
+        } else {
+            updateSaveStatus('saved');
+            hasUnsavedChanges = false;
+        }
         btnSave.disabled = false;
 
         // Update preview iframe if visible
@@ -2000,11 +2085,19 @@ async function loadPage(pageId) {
         currentPageId = pageId;
         fileName = pageId + '.json';
 
+        const migrated = await normalizeContent(contentData, currentPageId);
+
         renderEditor();
         renderBlockList();
         updateToolbar();
-        updateSaveStatus('saved');
-        hasUnsavedChanges = false;
+        if (migrated) {
+            hasUnsavedChanges = true;
+            updateSaveStatus('unsaved');
+            showToast('info', 'Feld-Level aus Referenz ergänzt — bitte speichern');
+        } else {
+            updateSaveStatus('saved');
+            hasUnsavedChanges = false;
+        }
         btnSave.disabled = false;
 
         // Update preview iframe if visible
@@ -2116,15 +2209,24 @@ fileInput.addEventListener('change', (e) => {
     fileName = file.name;
 
     const reader = new FileReader();
-    reader.onload = (ev) => {
+    reader.onload = async (ev) => {
         try {
             contentData = JSON.parse(ev.target.result);
             currentPageId = contentData.page?.id || fileName.replace('.json', '');
+
+            const migrated = await normalizeContent(contentData, currentPageId);
+
             renderEditor();
             renderBlockList();
             updateToolbar();
-            updateSaveStatus('saved');
-            hasUnsavedChanges = false;
+            if (migrated) {
+                hasUnsavedChanges = true;
+                updateSaveStatus('unsaved');
+                showToast('info', 'Feld-Level aus Referenz ergänzt — bitte speichern');
+            } else {
+                updateSaveStatus('saved');
+                hasUnsavedChanges = false;
+            }
             btnSave.disabled = false;
             showToast('success', `${fileName} geladen`);
             // Update preview iframe if visible
@@ -2253,6 +2355,12 @@ function renderEditor() {
                         <h2>${formatBlockType(block.type)} <span class="block-type">${block.id}</span></h2>
                     </div>
                     <div style="display:flex;align-items:center;gap:10px;">
+                        ${(() => {
+                            const advCount = block.fields.filter(f => f.level === 'advanced').length;
+                            return advCount > 0 && !advancedMode
+                                ? `<span class="advanced-badge">+${advCount} erweitert</span>`
+                                : '';
+                        })()}
                         <span class="field-count">${block.fields.length} Felder</span>
                         <span class="block-toggle">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
@@ -2269,17 +2377,37 @@ function renderEditor() {
     editor.innerHTML = html;
 }
 
-// Smart field layout: group consecutive 'text' fields into a compact grid
+function toggleAdvancedMode(enabled) {
+    advancedMode = enabled;
+    localStorage.setItem('hp_cms_advanced', enabled ? '1' : '0');
+    renderEditor();
+}
+
 function renderBlockFields(blockId, fields) {
+    const showAdvanced = advancedMode;
+    const basicFields = fields.filter(f => f.level !== 'advanced');
+    const advancedFields = fields.filter(f => f.level === 'advanced');
+
+    let html = '';
+
+    // Render basic fields
+    html += renderFieldGroup(blockId, basicFields);
+
+    // Render advanced fields (if visible)
+    if (showAdvanced && advancedFields.length > 0) {
+        html += '<div class="advanced-section-note">Erweiterte Felder — Änderungen können Layout beeinflussen</div>';
+        html += renderFieldGroup(blockId, advancedFields);
+    }
+
+    return html;
+}
+
+function renderFieldGroup(blockId, fields) {
     let html = '';
     let i = 0;
-
     while (i < fields.length) {
         const field = fields[i];
-
-        // Check if this is a short text field (not a title/subtitle/heading that should be full-width)
         if (field.type === 'text' && !isWideTextField(field.id)) {
-            // Collect consecutive short text fields
             const group = [field];
             while (i + 1 < fields.length
                    && fields[i + 1].type === 'text'
@@ -2287,9 +2415,7 @@ function renderBlockFields(blockId, fields) {
                 i++;
                 group.push(fields[i]);
             }
-
             if (group.length >= 2) {
-                // Render as compact grid
                 html += '<div class="fields-compact-grid">';
                 for (const f of group) {
                     html += renderFieldCompact(blockId, f);
@@ -2303,7 +2429,6 @@ function renderBlockFields(blockId, fields) {
         }
         i++;
     }
-
     return html;
 }
 
@@ -2316,45 +2441,51 @@ function renderField(blockId, field) {
     const inputId = `field-${blockId}-${field.id}`;
 
     switch (field.type) {
-        case 'textarea':
+        case 'textarea': {
+            const isCardsMatrix = field.id.endsWith('-cards');
             return `
-                <div class="field">
+                <div class="field${field.level === 'advanced' ? ' field-advanced' : ''}">
                     <div class="field-label">
                         <label for="${inputId}">${formatFieldId(field.id)}</label>
                         <span class="field-type-badge textarea">${field.type}</span>
                     </div>
                     <textarea id="${inputId}" data-field-id="${field.id}" data-block-id="${blockId}"
-                              oninput="onFieldChange(this)">${escapeHtml(field.value || '')}</textarea>
+                              oninput="onFieldChange(this)"${isCardsMatrix ? ' placeholder="Titel | Beschreibung\nTitel | Beschreibung" rows="5"' : ''}>${escapeHtml(field.value || '')}</textarea>
+                    ${isCardsMatrix ? '<div style="font-size:11px; color:#94a3b8; margin-top:2px;">Eine Karte pro Zeile. Format: Titel | Beschreibung</div>' : ''}
                 </div>
             `;
+        }
 
-        case 'image':
+        case 'image': {
+            const imgSrc = typeof field.value === 'string' ? field.value : field.value?.src || '';
+            const imgAlt = typeof field.value === 'string' ? (field.alt || '') : field.value?.alt || '';
+            const showAdvFields = advancedMode;
             return `
-                <div class="field">
+                <div class="field${field.level === 'advanced' ? ' field-advanced' : ''}">
                     <div class="field-label">
                         <label>${formatFieldId(field.id)}</label>
                         <span class="field-type-badge image">${field.type}</span>
                     </div>
-                    <div class="field-row">
-                        <div>
-                            <span class="sub-label">Bild-URL</span>
-                            <input type="text" id="${inputId}-src" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value"
-                                   value="${escapeHtml(field.value || '')}" oninput="onFieldChange(this)">
-                        </div>
-                        <div>
-                            <span class="sub-label">Alt-Text</span>
-                            <input type="text" id="${inputId}-alt" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="alt"
-                                   value="${escapeHtml(field.alt || '')}" oninput="onFieldChange(this)">
-                        </div>
-                    </div>
-                    ${field.value ? `<div class="image-preview"><img src="${escapeHtml(field.value)}" alt="" onerror="this.parentElement.style.display='none'"></div>` : ''}
                     <div class="image-upload-zone" data-field-id="${field.id}" data-block-id="${blockId}">
                         <input type="file" accept="image/*" onchange="handleImageUpload(event, '${blockId}', '${field.id}', '${inputId}-src')">
                         <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                         <div class="upload-text"><strong>Bild hochladen</strong> oder hierher ziehen</div>
                     </div>
+                    ${imgSrc ? `<div class="image-preview"><img src="${escapeHtml(imgSrc)}" alt="" onerror="this.parentElement.style.display='none'"></div>` : ''}
+                    <div style="margin-top:6px;">
+                        <span class="sub-label" style="color:#94a3b8; font-size:11px;">oder Bild-URL eingeben</span>
+                        <input type="text" id="${inputId}-src" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value.src"
+                               value="${escapeHtml(imgSrc)}" oninput="onFieldChange(this)" style="opacity:0.7; font-size:12px;">
+                    </div>
+                    ${showAdvFields ? `
+                    <div style="margin-top:4px;">
+                        <span class="sub-label">Alternativtext (Bildbeschreibung)</span>
+                        <input type="text" id="${inputId}-alt" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value.alt"
+                               value="${escapeHtml(imgAlt)}" oninput="onFieldChange(this)" placeholder="Wird automatisch generiert wenn leer">
+                    </div>` : ''}
                 </div>
             `;
+        }
 
         case 'link':
         case 'button':
@@ -2379,37 +2510,15 @@ function renderField(blockId, field) {
                 </div>
             `;
 
-        case 'video':
-            return `
-                <div class="field">
-                    <div class="field-label">
-                        <label>${formatFieldId(field.id)}</label>
-                        <span class="field-type-badge video">${field.type}</span>
-                    </div>
-                    <div class="field-row">
-                        <div>
-                            <span class="sub-label">Label</span>
-                            <input type="text" id="${inputId}-label" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="value"
-                                   value="${escapeHtml(field.value || '')}" oninput="onFieldChange(this)">
-                        </div>
-                        <div>
-                            <span class="sub-label">Thumbnail URL</span>
-                            <input type="text" id="${inputId}-thumb" data-field-id="${field.id}" data-block-id="${blockId}" data-prop="thumbnail"
-                                   value="${escapeHtml(field.thumbnail || '')}" oninput="onFieldChange(this)">
-                        </div>
-                    </div>
-                </div>
-            `;
-
         default: // text
             return `
-                <div class="field">
+                <div class="field${field.level === 'advanced' ? ' field-advanced' : ''}">
                     <div class="field-label">
                         <label for="${inputId}">${formatFieldId(field.id)}</label>
                         <span class="field-type-badge text">${field.type}</span>
                     </div>
                     <input type="text" id="${inputId}" data-field-id="${field.id}" data-block-id="${blockId}"
-                           value="${escapeHtml(field.value || '')}" oninput="onFieldChange(this)">
+                           value="${escapeHtml(typeof field.value === 'object' ? JSON.stringify(field.value) : field.value || '')}" oninput="onFieldChange(this)">
                 </div>
             `;
     }
@@ -2440,12 +2549,29 @@ function onFieldChange(inputEl) {
         if (block.id !== blockId) continue;
         for (const field of block.fields) {
             if (field.id !== fieldId) continue;
-            field[prop] = inputEl.value;
+
+            // Handle nested props like "value.src", "value.alt"
+            if (prop === 'value.src') {
+                if (typeof field.value === 'string') {
+                    field.value = { src: inputEl.value, alt: '' };
+                } else {
+                    field.value = { ...field.value, src: inputEl.value };
+                }
+                sendPreviewUpdate(fieldId, 'value', field.value.src);
+            } else if (prop === 'value.alt') {
+                if (typeof field.value === 'string') {
+                    field.value = { src: field.value, alt: inputEl.value };
+                } else {
+                    field.value = { ...field.value, alt: inputEl.value };
+                }
+                sendPreviewUpdate(fieldId, 'alt', inputEl.value);
+            } else {
+                field[prop] = inputEl.value;
+                sendPreviewUpdate(fieldId, prop, inputEl.value);
+            }
+
             hasUnsavedChanges = true;
             updateSaveStatus('unsaved');
-            // Dispatch to live preview
-            sendPreviewUpdate(fieldId, prop, inputEl.value);
-            // Debounced draft save
             clearTimeout(draftTimer);
             draftTimer = setTimeout(saveDraft, 1500);
             return;
@@ -2473,7 +2599,8 @@ async function handleImageUpload(event, blockId, fieldId, srcInputId) {
             if (block.id !== blockId) continue;
             for (const field of block.fields) {
                 if (field.id !== fieldId) continue;
-                field.value = publicUrl;
+                const existingAlt = typeof field.value === 'string' ? (field.alt || '') : field.value?.alt || '';
+                field.value = { src: publicUrl, alt: existingAlt };
                 break;
             }
         }
@@ -2652,12 +2779,13 @@ function checkDraft() {
     draftBanner.style.display = '';
 }
 
-$('btnDraftRestore').addEventListener('click', () => {
+$('btnDraftRestore').addEventListener('click', async () => {
     const draft = loadDraft();
     if (!draft) return;
     contentData = draft.content;
     // Update _meta.lastEdited so future checkDraft() sees restore time
     if (contentData._meta) contentData._meta.lastEdited = draft.savedAt;
+    await normalizeContent(contentData, currentPageId);
     renderEditor();
     renderBlockList();
     updateToolbar();
@@ -2926,6 +3054,10 @@ editorScroll.addEventListener('focusout', (e) => {
 // ============================================================
 //  BOOT
 // ============================================================
+
+// Initialize advanced mode toggle
+const advancedCheckbox = document.getElementById('advancedMode');
+if (advancedCheckbox) advancedCheckbox.checked = advancedMode;
 
 initApp();
 
