@@ -1265,13 +1265,14 @@
             background: currentColor;
         }
 
-        /* Advanced mode toggle */
-        .advanced-toggle { display:flex; align-items:center; gap:6px; font-size:13px; color:#64748b; cursor:pointer; user-select:none; }
-        .advanced-toggle input { accent-color:#E65100; }
-        .btn-advanced-toggle { background:none; border:1px solid #e2e8f0; border-radius:6px; padding:2px 8px; font-size:11px; color:#94a3b8; cursor:pointer; transition:all .15s; }
-        .btn-advanced-toggle:hover { border-color:#E65100; color:#E65100; }
-        .btn-advanced-toggle.active { background:#fff7ed; border-color:#E65100; color:#E65100; }
-        .advanced-badge { font-size:11px; color:#94a3b8; margin-left:4px; }
+        /* Advanced mode toggle (switch style) */
+        .advanced-toggle { display:flex; align-items:center; gap:8px; font-size:13px; color:#64748b; cursor:pointer; user-select:none; }
+        .advanced-toggle input { position:absolute; opacity:0; width:1px; height:1px; pointer-events:none; }
+        .advanced-switch { position:relative; width:36px; height:20px; background:#cbd5e1; border-radius:10px; transition:background .2s; flex-shrink:0; }
+        .advanced-switch::after { content:''; position:absolute; top:2px; left:2px; width:16px; height:16px; background:#fff; border-radius:50%; transition:transform .2s; box-shadow:0 1px 2px rgba(0,0,0,.15); }
+        .advanced-toggle input:checked + .advanced-switch { background:#E65100; }
+        .advanced-toggle input:checked + .advanced-switch::after { transform:translateX(16px); }
+        .advanced-badge { font-size:11px; color:#E65100; background:#fff7ed; border:1px solid #fed7aa; border-radius:10px; padding:1px 8px; white-space:nowrap; }
         .field-advanced { background:#fffbeb; border-left:3px solid #fbbf24; padding-left:12px; margin-left:-15px; padding-right:0; }
         .advanced-section-note { font-size:11px; color:#92400e; background:#fef3c7; padding:6px 12px; border-radius:6px; margin-bottom:8px; }
     </style>
@@ -1462,7 +1463,9 @@
                     </button>
                 </div>
                 <label class="advanced-toggle" title="Erweiterte Felder anzeigen">
-                    <input type="checkbox" id="advancedMode" onchange="toggleAdvancedMode(this.checked)"> Erweitert
+                    <input type="checkbox" id="advancedMode" onchange="toggleAdvancedMode(this.checked)">
+                    <span class="advanced-switch"></span>
+                    Erweiterte Felder
                 </label>
                 <div class="save-status" id="saveStatus">
                     <span class="dot"></span>
@@ -1561,7 +1564,6 @@ let isOnline = false;
 let draftTimer = null;
 let fileName = '';
 let advancedMode = localStorage.getItem('hp_cms_advanced') === '1';
-const blockAdvanced = {}; // per-block overrides
 
 // --- DOM refs ---
 const $ = id => document.getElementById(id);
@@ -1585,6 +1587,66 @@ const sidebarFooter  = $('sidebarFooter');
 const draftBanner    = $('draftBanner');
 const draftTime      = $('draftTime');
 const draftIndicator = $('draftIndicator');
+
+// ============================================================
+//  CONTENT NORMALIZATION
+// ============================================================
+
+// Merge missing fields & backfill missing `level` from reference JSON.
+// Supabase may hold data saved before new fields were added.
+// Idempotent: returns false when data already matches reference.
+async function normalizeContent(data, pageId) {
+    if (!data?.blocks) return false;
+
+    // Fetch reference JSON
+    let ref = null;
+    try {
+        const res = await fetch('/content/' + pageId + '.json');
+        if (res.ok) ref = await res.json();
+    } catch (e) {
+        console.warn('Referenz nicht verfügbar:', e.message);
+    }
+
+    let changed = false;
+
+    if (ref?.blocks) {
+        for (const refBlock of ref.blocks) {
+            let block = data.blocks.find(b => b.id === refBlock.id);
+
+            // Add missing block entirely
+            if (!block) {
+                data.blocks.push(JSON.parse(JSON.stringify(refBlock)));
+                changed = true;
+                continue;
+            }
+
+            // Add missing fields (preserve existing values)
+            const existingIds = new Set(block.fields.map(f => f.id));
+            for (const refField of refBlock.fields) {
+                if (!existingIds.has(refField.id)) {
+                    block.fields.push(JSON.parse(JSON.stringify(refField)));
+                    changed = true;
+                }
+            }
+
+            // Backfill missing level on existing fields
+            for (const field of block.fields) {
+                if (field.level == null) {
+                    const rf = refBlock.fields.find(f => f.id === field.id);
+                    field.level = rf?.level || 'basic';
+                    changed = true;
+                }
+            }
+        }
+    } else {
+        // Fallback: only backfill level as 'basic'
+        for (const block of data.blocks)
+            for (const field of block.fields)
+                if (field.level == null) { field.level = 'basic'; changed = true; }
+    }
+
+    return changed;
+}
 
 // ============================================================
 //  CONFIG & INITIALIZATION
@@ -1714,11 +1776,19 @@ async function loadLocalPage(filename) {
         currentPageId = contentData.page?.id || filename.replace('.json', '');
         fileName = filename;
 
+        const migrated = await normalizeContent(contentData, currentPageId);
+
         renderEditor();
         renderBlockList();
         updateToolbar();
-        updateSaveStatus('saved');
-        hasUnsavedChanges = false;
+        if (migrated) {
+            hasUnsavedChanges = true;
+            updateSaveStatus('unsaved');
+            showToast('info', 'Feld-Level aus Referenz ergänzt — bitte speichern');
+        } else {
+            updateSaveStatus('saved');
+            hasUnsavedChanges = false;
+        }
         btnSave.disabled = false;
 
         // Update preview iframe if visible
@@ -2015,11 +2085,19 @@ async function loadPage(pageId) {
         currentPageId = pageId;
         fileName = pageId + '.json';
 
+        const migrated = await normalizeContent(contentData, currentPageId);
+
         renderEditor();
         renderBlockList();
         updateToolbar();
-        updateSaveStatus('saved');
-        hasUnsavedChanges = false;
+        if (migrated) {
+            hasUnsavedChanges = true;
+            updateSaveStatus('unsaved');
+            showToast('info', 'Feld-Level aus Referenz ergänzt — bitte speichern');
+        } else {
+            updateSaveStatus('saved');
+            hasUnsavedChanges = false;
+        }
         btnSave.disabled = false;
 
         // Update preview iframe if visible
@@ -2131,15 +2209,24 @@ fileInput.addEventListener('change', (e) => {
     fileName = file.name;
 
     const reader = new FileReader();
-    reader.onload = (ev) => {
+    reader.onload = async (ev) => {
         try {
             contentData = JSON.parse(ev.target.result);
             currentPageId = contentData.page?.id || fileName.replace('.json', '');
+
+            const migrated = await normalizeContent(contentData, currentPageId);
+
             renderEditor();
             renderBlockList();
             updateToolbar();
-            updateSaveStatus('saved');
-            hasUnsavedChanges = false;
+            if (migrated) {
+                hasUnsavedChanges = true;
+                updateSaveStatus('unsaved');
+                showToast('info', 'Feld-Level aus Referenz ergänzt — bitte speichern');
+            } else {
+                updateSaveStatus('saved');
+                hasUnsavedChanges = false;
+            }
             btnSave.disabled = false;
             showToast('success', `${fileName} geladen`);
             // Update preview iframe if visible
@@ -2270,15 +2357,10 @@ function renderEditor() {
                     <div style="display:flex;align-items:center;gap:10px;">
                         ${(() => {
                             const advCount = block.fields.filter(f => f.level === 'advanced').length;
-                            const shown = advancedMode || blockAdvanced[block.id];
-                            return advCount > 0 && !shown
-                                ? `<span class="advanced-badge">${advCount} erweitert</span>`
+                            return advCount > 0 && !advancedMode
+                                ? `<span class="advanced-badge">+${advCount} erweitert</span>`
                                 : '';
                         })()}
-                        ${block.fields.some(f => f.level === 'advanced') ?
-                            `<button class="btn-advanced-toggle ${advancedMode || blockAdvanced[block.id] ? 'active' : ''}"
-                                     onclick="event.stopPropagation(); toggleBlockAdvanced('${block.id}')"
-                                     title="Erweiterte Felder">⚙</button>` : ''}
                         <span class="field-count">${block.fields.length} Felder</span>
                         <span class="block-toggle">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
@@ -2301,14 +2383,8 @@ function toggleAdvancedMode(enabled) {
     renderEditor();
 }
 
-function toggleBlockAdvanced(blockId) {
-    blockAdvanced[blockId] = !blockAdvanced[blockId];
-    localStorage.setItem('hp_cms_adv_' + blockId, blockAdvanced[blockId] ? '1' : '0');
-    renderEditor();
-}
-
 function renderBlockFields(blockId, fields) {
-    const showAdvanced = advancedMode || blockAdvanced[blockId];
+    const showAdvanced = advancedMode;
     const basicFields = fields.filter(f => f.level !== 'advanced');
     const advancedFields = fields.filter(f => f.level === 'advanced');
 
@@ -2383,7 +2459,7 @@ function renderField(blockId, field) {
         case 'image': {
             const imgSrc = typeof field.value === 'string' ? field.value : field.value?.src || '';
             const imgAlt = typeof field.value === 'string' ? (field.alt || '') : field.value?.alt || '';
-            const showAdvFields = advancedMode || blockAdvanced[blockId];
+            const showAdvFields = advancedMode;
             return `
                 <div class="field${field.level === 'advanced' ? ' field-advanced' : ''}">
                     <div class="field-label">
@@ -2703,12 +2779,13 @@ function checkDraft() {
     draftBanner.style.display = '';
 }
 
-$('btnDraftRestore').addEventListener('click', () => {
+$('btnDraftRestore').addEventListener('click', async () => {
     const draft = loadDraft();
     if (!draft) return;
     contentData = draft.content;
     // Update _meta.lastEdited so future checkDraft() sees restore time
     if (contentData._meta) contentData._meta.lastEdited = draft.savedAt;
+    await normalizeContent(contentData, currentPageId);
     renderEditor();
     renderBlockList();
     updateToolbar();
@@ -2981,14 +3058,6 @@ editorScroll.addEventListener('focusout', (e) => {
 // Initialize advanced mode toggle
 const advancedCheckbox = document.getElementById('advancedMode');
 if (advancedCheckbox) advancedCheckbox.checked = advancedMode;
-
-// Load per-block advanced states from localStorage
-for (let i = 1; i <= 20; i++) {
-    const key = 'b' + i;
-    if (localStorage.getItem('hp_cms_adv_' + key) === '1') {
-        blockAdvanced[key] = true;
-    }
-}
 
 initApp();
 
