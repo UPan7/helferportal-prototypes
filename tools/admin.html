@@ -1679,12 +1679,6 @@
 const SUPABASE_URL = 'https://gbnxeuxwgkkxurnunjfw.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdibnhldXh3Z2treHVybnVuamZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIxNDE4NzgsImV4cCI6MjA4NzcxNzg3OH0.ppLw9uxe_4Hp330z_z1d1i8vQ5cvTzTid0Bjt7AZe9c';
 
-// --- GitHub PAT for publish (fine-grained: actions:write on UPan7/helferportal-prototypes only) ---
-// Create at: github.com → Settings → Developer settings → Fine-grained tokens
-const GITHUB_PAT = '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';  // ← PASTE YOUR TOKEN HERE
-const GITHUB_REPO = 'UPan7/helferportal-prototypes';
-const GITHUB_WORKFLOW = 'deploy-content.yml';
-
 // Dev mode: ?dev=1 shows config/setup overlays and offline mode
 const IS_DEV = new URLSearchParams(window.location.search).has('dev');
 
@@ -3016,22 +3010,19 @@ window.addEventListener('beforeunload', (e) => {
 });
 
 // ============================================================
-//  PUBLISH TO LIVE SITE
+//  PUBLISH TO LIVE SITE (via Supabase Edge Function proxy)
 // ============================================================
 
 const btnPublish = document.getElementById('btnPublish');
 
 function updatePublishButton() {
-    btnPublish.disabled = !GITHUB_PAT || !currentPageId;
+    btnPublish.disabled = !currentPageId || !sbClient;
 }
 
 btnPublish.addEventListener('click', publishToLive);
 
 async function publishToLive() {
-    if (!currentPageId || !GITHUB_PAT) {
-        showToast('error', 'GitHub-Token nicht konfiguriert (GITHUB_PAT in admin.html)');
-        return;
-    }
+    if (!currentPageId || !sbClient) return;
 
     if (!confirm('Seite \u201e' + (contentData?.page?.title || currentPageId) + '\u201c ver\u00f6ffentlichen?\n\u00c4nderungen werden in ca. 1\u20132 Minuten auf der Website sichtbar.')) return;
 
@@ -3042,26 +3033,25 @@ async function publishToLive() {
     try {
         if (hasUnsavedChanges) await savePage();
 
-        const res = await fetch(
-            `https://api.github.com/repos/${GITHUB_REPO}/actions/workflows/${GITHUB_WORKFLOW}/dispatches`,
-            {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'Bearer ' + GITHUB_PAT,
-                    'Accept': 'application/vnd.github.v3+json'
-                },
-                body: JSON.stringify({
-                    ref: 'main',
-                    inputs: { page_id: currentPageId }
-                })
-            }
-        );
+        const { data: { session } } = await sbClient.auth.getSession();
+        if (!session) throw new Error('Nicht angemeldet');
 
-        if (res.status === 204 || res.ok) {
+        const res = await fetch(SUPABASE_URL + '/functions/v1/publish', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Bearer ' + session.access_token,
+                'Content-Type': 'application/json',
+                'apikey': SUPABASE_ANON_KEY
+            },
+            body: JSON.stringify({ page_id: currentPageId })
+        });
+
+        const result = await res.json();
+
+        if (res.ok && result.ok) {
             showToast('success', 'Ver\u00f6ffentlichung gestartet \u2014 in ca. 1\u20132 Min auf der Website sichtbar!');
         } else {
-            const body = await res.text();
-            throw new Error('GitHub API ' + res.status + ': ' + body);
+            throw new Error(result.error || 'Unbekannter Fehler (' + res.status + ')');
         }
     } catch (err) {
         console.error('Publish error:', err);
