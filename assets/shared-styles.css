@@ -2600,6 +2600,34 @@ body[class*="page-"] {
     border-color: var(--blue-dark);
 }
 
+/* Startseite tabs section: no negative overlap margin, proper header */
+.page-startseite .tabs-section {
+    margin-top: var(--space-3xl);
+}
+
+.page-startseite .tabs-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.page-startseite .tabs-header h2 {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-sm);
+}
+
+.page-startseite .tabs-header h3 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.2;
+}
+
 .page-startseite .quick-action-icon {
     width: 48px;
     height: 48px;
