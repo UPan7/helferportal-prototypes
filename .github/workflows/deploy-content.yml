@@ -1,0 +1,51 @@
+name: Deploy Content
+
+on:
+  workflow_dispatch:
+    inputs:
+      page_id:
+        description: 'Page to deploy (blank = all pages)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: cd tools && npm ci
+
+      - name: Deploy content from Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          cd tools
+          if [ -n "${{ inputs.page_id }}" ]; then
+            echo "Deploying page: ${{ inputs.page_id }}"
+            node deploy.js --page "${{ inputs.page_id }}"
+          else
+            echo "Deploying all pages"
+            node deploy.js
+          fi
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "Helferportal CMS"
+          git config user.email "cms@helferportal.kamanin.at"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No content changes to deploy"
+          else
+            git commit -m "Content update: ${{ inputs.page_id || 'all pages' }}"
+            git push
+          fi
