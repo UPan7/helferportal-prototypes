@@ -1,16 +1,14 @@
 {
+  "_meta": {
+    "generator": "helferportal-content-tools/extract.js",
+    "source": "muenchen.html",
+    "extracted": "2026-03-02T14:14:17.841Z",
+    "schema_version": "2.0"
+  },
   "page": {
     "id": "muenchen",
-    "url": "/muenchen.html",
-    "title": "München – Helferportal"
-  },
-  "_meta": {
-    "source": "muenchen.html",
-    "editedBy": "reg@kamanin.at",
-    "extracted": "2026-03-02T13:59:01.578Z",
-    "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-02T13:59:32.140Z",
-    "schema_version": "2.0"
+    "title": "München – Helferportal",
+    "url": "/muenchen.html"
   },
   "blocks": [
     {
@@ -20,43 +18,49 @@
         {
           "id": "hero-image",
           "type": "image",
-          "level": "advanced",
           "value": {
-            "alt": "München Skyline",
-            "src": "https://images.unsplash.com/photo-1595867818082-083862f3d630?w=1600"
-          }
+            "src": "https://images.unsplash.com/photo-1595867818082-083862f3d630?w=1600",
+            "alt": "München Skyline"
+          },
+          "level": "advanced"
         },
         {
           "id": "hero-stats",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Aktiv seit 2017"
+          "value": "Aktiv seit 2017",
+          "level": "advanced"
         },
         {
           "id": "hero-title",
           "type": "text",
-          "level": "basic",
-          "value": "Helferportal in München"
+          "value": "Helferportal in München",
+          "level": "basic"
         },
         {
           "id": "hero-subtitle",
           "type": "textarea",
-          "level": "basic",
-          "value": "Unterstützung und Engagement vor Ort. Hier wurde das Helferportal geboren – und hier verbinden wir täglich Menschen, die Hilfe brauchen, mit denen, die helfen möchten."
+          "value": "Unterstützung und Engagement vor Ort. Hier wurde das Helferportal geboren – und hier verbinden wir täglich Menschen, die Hilfe brauchen, mit denen, die helfen möchten.",
+          "level": "basic"
+        },
+        {
+          "id": "hero-tagline",
+          "type": "text",
+          "value": "Die Pionierstadt — hier wurde das Helferportal geboren.",
+          "level": "basic"
         },
         {
           "id": "hero-btn-1",
-          "href": "/hilfe-finden.html",
           "type": "button",
-          "level": "basic",
-          "value": "Hilfe finden in München"
+          "href": "/hilfe-finden.html",
+          "value": "Hilfe finden in München",
+          "level": "basic"
         },
         {
           "id": "hero-btn-2",
-          "href": "/engagieren.html",
           "type": "button",
-          "level": "basic",
-          "value": "Helfer:in werden"
+          "href": "/engagieren.html",
+          "value": "Helfer:in werden",
+          "level": "basic"
         }
       ]
     },
@@ -67,50 +71,68 @@
         {
           "id": "cards-overline",
           "type": "text",
-          "level": "basic",
-          "value": "Unterstützungsangebote"
+          "value": "Unterstützungsangebote",
+          "level": "basic"
         },
         {
           "id": "cards-title",
           "type": "text",
-          "level": "basic",
-          "value": "Diese Hilfe gibt es in München"
+          "value": "Diese Hilfe gibt es in München",
+          "level": "basic"
         },
         {
           "id": "card-1-title",
           "type": "text",
-          "level": "basic",
-          "value": "Besuchsdienste"
+          "value": "Besuchsdienste",
+          "level": "basic"
         },
         {
           "id": "card-1-text",
           "type": "text",
-          "level": "basic",
-          "value": "Gesellschaft und Austausch für Menschen, die Unterstützung suchen."
+          "value": "Gesellschaft und Austausch für Menschen, die Unterstützung suchen.",
+          "level": "basic"
+        },
+        {
+          "id": "card-1-items",
+          "type": "textarea",
+          "value": "Vorlesen & Plaudern\nGemeinsame Spaziergänge\nFreizeitgestaltung",
+          "level": "advanced"
         },
         {
           "id": "card-2-title",
           "type": "text",
-          "level": "basic",
-          "value": "Begleitdienste"
+          "value": "Begleitdienste",
+          "level": "basic"
         },
         {
           "id": "card-2-text",
           "type": "text",
-          "level": "basic",
-          "value": "Sichere Begleitung zu Terminen und Aktivitäten."
+          "value": "Sichere Begleitung zu Terminen und Aktivitäten.",
+          "level": "basic"
+        },
+        {
+          "id": "card-2-items",
+          "type": "textarea",
+          "value": "Arzt- & Therapietermine\nBehördengänge\nAusflüge & Veranstaltungen",
+          "level": "advanced"
         },
         {
           "id": "card-3-title",
           "type": "text",
-          "level": "basic",
-          "value": "Alltagshilfe"
+          "value": "Alltagshilfe",
+          "level": "basic"
         },
         {
           "id": "card-3-text",
           "type": "text",
-          "level": "basic",
-          "value": "Praktische Unterstützung im täglichen Leben."
+          "value": "Praktische Unterstützung im täglichen Leben.",
+          "level": "basic"
+        },
+        {
+          "id": "card-3-items",
+          "type": "textarea",
+          "value": "Einkäufe & Besorgungen\nTechnische Hilfe\nSchriftverkehr",
+          "level": "advanced"
         }
       ]
     },
@@ -121,74 +143,74 @@
         {
           "id": "steps-overline",
           "type": "text",
-          "level": "basic",
-          "value": "In München"
+          "value": "In München",
+          "level": "basic"
         },
         {
           "id": "steps-title",
           "type": "text",
-          "level": "basic",
-          "value": "So funktioniert's vor Ort"
+          "value": "So funktioniert's vor Ort",
+          "level": "basic"
         },
         {
           "id": "step-1-title",
           "type": "text",
-          "level": "basic",
-          "value": "Registrieren"
+          "value": "Registrieren",
+          "level": "basic"
         },
         {
           "id": "step-1-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Erstellen Sie kostenlos Ihr Profil – als Hilfesuchende:r oder als Helfer:in in München."
+          "value": "Erstellen Sie kostenlos Ihr Profil – als Hilfesuchende:r oder als Helfer:in in München.",
+          "level": "basic"
         },
         {
           "id": "step-2-title",
           "type": "text",
-          "level": "basic",
-          "value": "Bedarf angeben"
+          "value": "Bedarf angeben",
+          "level": "basic"
         },
         {
           "id": "step-2-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Beschreiben Sie Ihren Unterstützungsbedarf oder Ihre Verfügbarkeit als Helfer:in."
+          "value": "Beschreiben Sie Ihren Unterstützungsbedarf oder Ihre Verfügbarkeit als Helfer:in.",
+          "level": "basic"
         },
         {
           "id": "step-3-title",
           "type": "text",
-          "level": "basic",
-          "value": "Matching"
+          "value": "Matching",
+          "level": "basic"
         },
         {
           "id": "step-3-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Unser System findet passende Helfer:innen in Ihrer Nähe – qualitätsgesichert durch deinNachbar e.V."
+          "value": "Unser System findet passende Helfer:innen in Ihrer Nähe – qualitätsgesichert durch deinNachbar e.V.",
+          "level": "basic"
         },
         {
           "id": "step-4-title",
           "type": "text",
-          "level": "basic",
-          "value": "Kennenlernen"
+          "value": "Kennenlernen",
+          "level": "basic"
         },
         {
           "id": "step-4-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Treffen Sie sich per Video oder Chat – anonym und in geschütztem Rahmen."
+          "value": "Treffen Sie sich per Video oder Chat – anonym und in geschütztem Rahmen.",
+          "level": "basic"
         },
         {
           "id": "step-5-title",
           "type": "text",
-          "level": "basic",
-          "value": "Hilfe erhalten"
+          "value": "Hilfe erhalten",
+          "level": "basic"
         },
         {
           "id": "step-5-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Vereinbaren Sie den ersten Termin – persönlich, sicher und unkompliziert."
+          "value": "Vereinbaren Sie den ersten Termin – persönlich, sicher und unkompliziert.",
+          "level": "basic"
         }
       ]
     },
@@ -199,77 +221,98 @@
         {
           "id": "logos-title",
           "type": "text",
-          "level": "basic",
-          "value": "Lokale Partner"
+          "value": "Lokale Partner",
+          "level": "basic"
         },
         {
           "id": "logos-subtitle",
           "type": "text",
-          "level": "basic",
-          "value": "Gemeinsam für München"
+          "value": "Gemeinsam für München",
+          "level": "basic"
         },
         {
           "id": "logo-1-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "",
-            "src": ""
-          }
+            "src": "",
+            "alt": ""
+          },
+          "level": "basic"
         },
         {
           "id": "logo-1-name",
           "type": "text",
-          "level": "basic",
-          "value": "deinNachbar e.V."
+          "value": "deinNachbar e.V.",
+          "level": "basic"
         },
         {
           "id": "logo-1-text",
           "type": "text",
-          "level": "basic",
-          "value": "Der Verein deinNachbar e.V. ist der Ursprung des Helferportals. Hier werden Versorgungskonzepte entwickelt und erprobt, bevor sie deutschlandweit skaliert werden."
+          "value": "Der Verein deinNachbar e.V. ist der Ursprung des Helferportals. Hier werden Versorgungskonzepte entwickelt und erprobt, bevor sie deutschlandweit skaliert werden.",
+          "level": "basic"
+        },
+        {
+          "id": "logo-1-btn",
+          "type": "button",
+          "href": "https://www.deinnachbar.de",
+          "value": "Mehr erfahren",
+          "level": "basic"
         },
         {
           "id": "logo-2-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "",
-            "src": ""
-          }
+            "src": "",
+            "alt": ""
+          },
+          "level": "basic"
         },
         {
           "id": "logo-2-name",
           "type": "text",
-          "level": "basic",
-          "value": "Landeshauptstadt München"
+          "value": "Landeshauptstadt München",
+          "level": "basic"
         },
         {
           "id": "logo-2-text",
           "type": "text",
-          "level": "basic",
-          "value": "Die Stadt München unterstützt das Helferportal im Rahmen der kommunalen Altenhilfe und fördert bürgerschaftliches Engagement vor Ort."
+          "value": "Die Stadt München unterstützt das Helferportal im Rahmen der kommunalen Altenhilfe und fördert bürgerschaftliches Engagement vor Ort.",
+          "level": "basic"
+        },
+        {
+          "id": "logo-2-btn",
+          "type": "button",
+          "href": "#",
+          "value": "Mehr erfahren",
+          "level": "basic"
         },
         {
           "id": "logo-3-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "",
-            "src": ""
-          }
+            "src": "",
+            "alt": ""
+          },
+          "level": "basic"
         },
         {
           "id": "logo-3-name",
           "type": "text",
-          "level": "basic",
-          "value": "Akademie deinNachbar"
+          "value": "Akademie deinNachbar",
+          "level": "basic"
         },
         {
           "id": "logo-3-text",
           "type": "text",
-          "level": "basic",
-          "value": "Die Akademie bietet Schulungen für Engagierte – von Grundlagen der Begleitung bis zu spezialisierten Kursen. Online und vor Ort in München."
+          "value": "Die Akademie bietet Schulungen für Engagierte – von Grundlagen der Begleitung bis zu spezialisierten Kursen. Online und vor Ort in München.",
+          "level": "basic"
+        },
+        {
+          "id": "logo-3-btn",
+          "type": "button",
+          "href": "https://akademie.deinnachbar.de",
+          "value": "Zu den Kursen",
+          "level": "basic"
         }
       ]
     },
@@ -280,35 +323,35 @@
         {
           "id": "testimonial-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Alia Tagba",
-            "src": "https://i0.wp.com/helferportal.de/wp-content/uploads/2024/08/Alia.png?w=200"
-          }
+            "src": "https://i0.wp.com/helferportal.de/wp-content/uploads/2024/08/Alia.png?w=200",
+            "alt": "Alia Tagba"
+          },
+          "level": "basic"
         },
         {
           "id": "testimonial-quote",
           "type": "textarea",
-          "level": "basic",
-          "value": "Das Helferportal ist für uns zu einem unverzichtbaren Werkzeug geworden, um Hilfebedarfe in kürzester Zeit auszuschreiben und online die Verfügbarkeit von passenden Helfern abzufragen. Das ermöglicht uns, effizient und schnell Hilfebedarfe zu stillen und das soziale Miteinander in München zu stärken."
+          "value": "Das Helferportal ist für uns zu einem unverzichtbaren Werkzeug geworden, um Hilfebedarfe in kürzester Zeit auszuschreiben und online die Verfügbarkeit von passenden Helfern abzufragen. Das ermöglicht uns, effizient und schnell Hilfebedarfe zu stillen und das soziale Miteinander in München zu stärken.",
+          "level": "basic"
         },
         {
           "id": "testimonial-name",
           "type": "text",
-          "level": "basic",
-          "value": "Alia Tagba"
+          "value": "Alia Tagba",
+          "level": "basic"
         },
         {
           "id": "testimonial-role",
           "type": "text",
-          "level": "basic",
-          "value": "Einsatzkoordinatorin, deinNachbar e.V."
+          "value": "Einsatzkoordinatorin, deinNachbar e.V.",
+          "level": "basic"
         },
         {
           "id": "testimonial-org",
           "type": "text",
-          "level": "basic",
-          "value": "deinNachbar e.V."
+          "value": "deinNachbar e.V.",
+          "level": "basic"
         }
       ]
     },
@@ -319,40 +362,40 @@
         {
           "id": "card-1-title",
           "type": "text",
-          "level": "basic",
-          "value": "Hilfe finden in München"
+          "value": "Hilfe finden in München",
+          "level": "basic"
         },
         {
           "id": "card-1-text",
           "type": "text",
-          "level": "basic",
-          "value": "Sie oder Ihre Angehörigen benötigen Unterstützung? Finden Sie passende Helfer:innen in Ihrer Nähe."
+          "value": "Sie oder Ihre Angehörigen benötigen Unterstützung? Finden Sie passende Helfer:innen in Ihrer Nähe.",
+          "level": "basic"
         },
         {
           "id": "card-1-btn",
-          "href": "/hilfe-finden.html",
           "type": "button",
-          "level": "basic",
-          "value": "Unterstützung finden"
+          "href": "/hilfe-finden.html",
+          "value": "Unterstützung finden",
+          "level": "basic"
         },
         {
           "id": "card-2-title",
           "type": "text",
-          "level": "basic",
-          "value": "Helfer:in werden in München"
+          "value": "Helfer:in werden in München",
+          "level": "basic"
         },
         {
           "id": "card-2-text",
           "type": "text",
-          "level": "basic",
-          "value": "Sie möchten Menschen in München unterstützen? Werden Sie Teil unseres Netzwerks – flexibel und versichert."
+          "value": "Sie möchten Menschen in München unterstützen? Werden Sie Teil unseres Netzwerks – flexibel und versichert.",
+          "level": "basic"
         },
         {
           "id": "card-2-btn",
-          "href": "/engagieren.html",
           "type": "button",
-          "level": "basic",
-          "value": "Jetzt engagieren"
+          "href": "/engagieren.html",
+          "value": "Jetzt engagieren",
+          "level": "basic"
         }
       ]
     },
@@ -363,50 +406,50 @@
         {
           "id": "faq-title",
           "type": "text",
-          "level": "basic",
-          "value": "Häufige Fragen"
+          "value": "Häufige Fragen",
+          "level": "basic"
         },
         {
           "id": "faq-subtitle",
           "type": "text",
-          "level": "basic",
-          "value": "Fragen zu München"
+          "value": "Fragen zu München",
+          "level": "basic"
         },
         {
           "id": "faq-1-question",
           "type": "text",
-          "level": "basic",
-          "value": "Wie ist das Helferportal in München entstanden?"
+          "value": "Wie ist das Helferportal in München entstanden?",
+          "level": "basic"
         },
         {
           "id": "faq-1-answer",
           "type": "textarea",
-          "level": "basic",
-          "value": "Das Helferportal wurde 2015 in München gegründet und ist eng mit dem Verein deinNachbar e.V. verbunden. Hier werden neue Versorgungskonzepte entwickelt und erprobt, bevor sie auf andere Städte übertragen werden. München ist somit das \"Praxislabor\" des Helferportals."
+          "value": "Das Helferportal wurde 2015 in München gegründet und ist eng mit dem Verein deinNachbar e.V. verbunden. Hier werden neue Versorgungskonzepte entwickelt und erprobt, bevor sie auf andere Städte übertragen werden. München ist somit das \"Praxislabor\" des Helferportals.",
+          "level": "basic"
         },
         {
           "id": "faq-2-question",
           "type": "text",
-          "level": "basic",
-          "value": "Wer steht hinter dem Helferportal in München?"
+          "value": "Wer steht hinter dem Helferportal in München?",
+          "level": "basic"
         },
         {
           "id": "faq-2-answer",
           "type": "textarea",
-          "level": "basic",
-          "value": "In München koordiniert der Verein deinNachbar e.V. die Einsätze. Der Verein stellt sicher, dass alle Helfer:innen geschult, versichert und fachlich begleitet sind. So können Sie sich auf qualitätsgesicherte Unterstützung verlassen."
+          "value": "In München koordiniert der Verein deinNachbar e.V. die Einsätze. Der Verein stellt sicher, dass alle Helfer:innen geschult, versichert und fachlich begleitet sind. So können Sie sich auf qualitätsgesicherte Unterstützung verlassen.",
+          "level": "basic"
         },
         {
           "id": "faq-3-question",
           "type": "text",
-          "level": "basic",
-          "value": "Welche Schulungen gibt es für Helfer:innen?"
+          "value": "Welche Schulungen gibt es für Helfer:innen?",
+          "level": "basic"
         },
         {
           "id": "faq-3-answer",
           "type": "textarea",
-          "level": "basic",
-          "value": "Über die Akademie von deinNachbar e.V. können Helfer:innen verschiedene Schulungen absolvieren – von Grundlagen der Begleitung bis zu spezialisierten Kursen. Die Schulungen sind sowohl online als auch vor Ort in München verfügbar."
+          "value": "Über die Akademie von deinNachbar e.V. können Helfer:innen verschiedene Schulungen absolvieren – von Grundlagen der Begleitung bis zu spezialisierten Kursen. Die Schulungen sind sowohl online als auch vor Ort in München verfügbar.",
+          "level": "basic"
         }
       ]
     }
