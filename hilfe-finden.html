@@ -166,7 +166,7 @@
     <!-- ========================================
          HERO (MINI)
          ======================================== -->
-    <section class="hero-mini">
+    <section class="hero-mini" data-block="hero" data-block-id="b1">
         <div class="hero-mini-content">
             <nav class="breadcrumb">
                 <a href="/">Startseite</a>
@@ -175,20 +175,20 @@
                 </svg>
                 <span>Hilfe finden</span>
             </nav>
-            <h1>Finde die passende Unterstützung</h1>
-            <p>Ob Freizeit, Alltag oder Pflege – hier findest du Hilfe, die zu dir passt. Sicher, unkompliziert und in deiner Nähe.</p>
+            <h1 data-field="hero-title" data-field-type="text">Finde die passende Unterstützung</h1>
+            <p data-field="hero-subtitle" data-field-type="textarea">Ob Freizeit, Alltag oder Pflege – hier findest du Hilfe, die zu dir passt. Sicher, unkompliziert und in deiner Nähe.</p>
         </div>
     </section>
 
     <!-- ========================================
          TABS SECTION
          ======================================== -->
-    <section class="tabs-section">
+    <section class="tabs-section" data-block="tabs-section" data-block-id="b2">
         <div class="tabs-container">
             <!-- Tabs Navigation -->
             <nav class="tabs-nav">
                 <div class="tabs-nav-header">
-                    <p class="tabs-nav-label">Wähle deinen Bereich</p>
+                    <p class="tabs-nav-label" data-field="tabs-overline" data-field-type="text">Wähle deinen Bereich</p>
                 </div>
                 <button class="tab-btn active" data-tab="freizeit">
                     <div class="tab-icon">
@@ -200,8 +200,7 @@
                         </svg>
                     </div>
                     <div class="tab-btn-content">
-                        <span>Freizeit & Begegnung</span>
-                        <small>Zeit teilen, gemeinsam aktiv</small>
+                        <span data-field="tab-freizeit-name" data-field-type="text">Freizeit & Begegnung</span>
                     </div>
                 </button>
                 <button class="tab-btn" data-tab="alltag">
@@ -212,8 +211,7 @@
                         </svg>
                     </div>
                     <div class="tab-btn-content">
-                        <span>Alltag & Versorgung</span>
-                        <small>Hilfe bei täglichen Aufgaben</small>
+                        <span data-field="tab-alltag-name" data-field-type="text">Alltag & Versorgung</span>
                     </div>
                 </button>
                 <button class="tab-btn" data-tab="angehoerige">
@@ -223,8 +221,7 @@
                         </svg>
                     </div>
                     <div class="tab-btn-content">
-                        <span>Für Angehörige</span>
-                        <small>Entlastung bei der Pflege</small>
+                        <span data-field="tab-angehoerige-name" data-field-type="text">Für Angehörige</span>
                     </div>
                 </button>
             </nav>
@@ -234,11 +231,11 @@
                 <!-- Panel: Freizeit & Begegnung -->
                 <div class="tab-panel active" data-panel="freizeit">
                     <div class="tab-panel-header">
-                        <h2>Gemeinsam Zeit verbringen</h2>
-                        <p>Du suchst Gesellschaft, möchtest gemeinsam etwas unternehmen oder einfach jemanden zum Reden haben? Hier findest du Menschen, die Zeit für dich haben – flexibel, unkompliziert und auf Augenhöhe.</p>
+                        <h2 data-field="tab-freizeit-title" data-field-type="text">Gemeinsam Zeit verbringen</h2>
+                        <p data-field="tab-freizeit-text" data-field-type="textarea">Du suchst Gesellschaft, möchtest gemeinsam etwas unternehmen oder einfach jemanden zum Reden haben? Hier findest du Menschen, die Zeit für dich haben – flexibel, unkompliziert und auf Augenhöhe.</p>
                     </div>
                     
-                    <div class="possibilities-box">
+                    <div class="possibilities-box" data-field="tab-freizeit-cards" data-field-type="textarea">
                         <h3>Was alles möglich ist</h3>
                         <div class="possibilities-list">
                             <span class="possibility-tag">
@@ -276,7 +273,7 @@
                         </div>
                     </div>
                     
-                    <div class="panel-vorteile">
+                    <div class="panel-vorteile" data-field="tab-freizeit-benefits" data-field-type="textarea">
                         <div class="panel-vorteil">
                             <div class="panel-vorteil-icon">
                                 <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -316,26 +313,26 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="tab-cta">
-                        <a href="https://hilfe.helferportal.de" class="btn-primary">
+                        <a href="https://hilfe.helferportal.de" class="btn-primary" data-field="tab-freizeit-btn-1" data-field-type="button">
                             Begleitung finden
                             <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
-                        <button class="btn-secondary">Mehr erfahren</button>
+                        <button class="btn-secondary" data-field="tab-freizeit-btn-2" data-field-type="button">Mehr erfahren</button>
                     </div>
                 </div>
-                
+
                 <!-- Panel: Alltag & Versorgung -->
                 <div class="tab-panel" data-panel="alltag">
                     <div class="tab-panel-header">
-                        <h2>Unterstützung im Alltag</h2>
-                        <p>Du brauchst Hilfe bei alltäglichen Aufgaben? Von Einkäufen über Arztbegleitung bis zu technischer Unterstützung – hier findest du verlässliche Hilfe in deiner Nähe.</p>
+                        <h2 data-field="tab-alltag-title" data-field-type="text">Unterstützung im Alltag</h2>
+                        <p data-field="tab-alltag-text" data-field-type="textarea">Du brauchst Hilfe bei alltäglichen Aufgaben? Von Einkäufen über Arztbegleitung bis zu technischer Unterstützung – hier findest du verlässliche Hilfe in deiner Nähe.</p>
                     </div>
                     
-                    <div class="possibilities-box">
+                    <div class="possibilities-box" data-field="tab-alltag-cards" data-field-type="textarea">
                         <h3>Was alles möglich ist</h3>
                         <div class="possibilities-list">
                             <span class="possibility-tag">
@@ -369,7 +366,7 @@
                         </div>
                     </div>
                     
-                    <div class="panel-vorteile">
+                    <div class="panel-vorteile" data-field="tab-alltag-benefits" data-field-type="textarea">
                         <div class="panel-vorteil">
                             <div class="panel-vorteil-icon">
                                 <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -407,24 +404,24 @@
                     </div>
                     
                     <div class="tab-cta">
-                        <a href="https://hilfe.helferportal.de" class="btn-primary">
+                        <a href="https://hilfe.helferportal.de" class="btn-primary" data-field="tab-alltag-btn-1" data-field-type="button">
                             Hilfe finden
                             <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
-                        <button class="btn-secondary">Mehr erfahren</button>
+                        <button class="btn-secondary" data-field="tab-alltag-btn-2" data-field-type="button">Mehr erfahren</button>
                     </div>
                 </div>
-                
+
                 <!-- Panel: Für Angehörige -->
                 <div class="tab-panel" data-panel="angehoerige">
                     <div class="tab-panel-header">
-                        <h2>Entlastung für pflegende Angehörige</h2>
-                        <p>Du pflegst einen nahestehenden Menschen und brauchst Unterstützung oder eine Auszeit? Wir helfen dir, passende Entlastung zu finden – abrechenbar über die Pflegekasse.</p>
+                        <h2 data-field="tab-angehoerige-title" data-field-type="text">Entlastung für pflegende Angehörige</h2>
+                        <p data-field="tab-angehoerige-text" data-field-type="textarea">Du pflegst einen nahestehenden Menschen und brauchst Unterstützung oder eine Auszeit? Wir helfen dir, passende Entlastung zu finden – abrechenbar über die Pflegekasse.</p>
                     </div>
                     
-                    <div class="bereiche-grid">
+                    <div class="bereiche-grid" data-field="tab-angehoerige-cards" data-field-type="textarea">
                         <div class="bereich-card">
                             <div class="bereich-card-icon">
                                 <svg aria-hidden="true" class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -490,7 +487,7 @@
                         </div>
                     </div>
                     
-                    <div class="panel-vorteile">
+                    <div class="panel-vorteile" data-field="tab-angehoerige-benefits" data-field-type="textarea">
                         <div class="panel-vorteil">
                             <div class="panel-vorteil-icon">
                                 <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -529,13 +526,13 @@
                     </div>
                     
                     <div class="tab-cta">
-                        <a href="https://hilfe.helferportal.de" class="btn-primary">
+                        <a href="https://hilfe.helferportal.de" class="btn-primary" data-field="tab-angehoerige-btn-1" data-field-type="button">
                             Entlastung finden
                             <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
-                        <button class="btn-secondary">Mehr erfahren</button>
+                        <button class="btn-secondary" data-field="tab-angehoerige-btn-2" data-field-type="button">Mehr erfahren</button>
                     </div>
                 </div>
             </div>
@@ -545,10 +542,10 @@
     <!-- ========================================
          VORTEILE SECTION
          ======================================== -->
-    <section class="vorteile-section">
+    <section class="vorteile-section" data-block="vorteile" data-block-id="b3">
         <div class="vorteile-header">
-            <h2>Warum Helferportal?</h2>
-            <h3>Vorteile auf einen Blick</h3>
+            <h2 data-field="vorteile-overline" data-field-type="text">Warum Helferportal?</h2>
+            <h3 data-field="vorteile-title" data-field-type="text">Vorteile auf einen Blick</h3>
         </div>
         
         <div class="vorteile-grid">
@@ -559,8 +556,8 @@
                         <circle cx="12" cy="12" r="3"/>
                     </svg>
                 </div>
-                <h3>Passgenau</h3>
-                <p>Helfer, die zu deinen Bedürfnissen und deiner Situation passen.</p>
+                <h3 data-field="vorteile-1-title" data-field-type="text">Passgenau</h3>
+                <p data-field="vorteile-1-text" data-field-type="text">Helfer, die zu deinen Bedürfnissen und deiner Situation passen.</p>
             </div>
             <div class="vorteil-card">
                 <div class="vorteil-icon">
@@ -568,8 +565,8 @@
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                 </div>
-                <h3>Sicher</h3>
-                <p>Anonymer Erstkontakt, geprüfte Helfer und Versicherungsschutz.</p>
+                <h3 data-field="vorteile-2-title" data-field-type="text">Sicher</h3>
+                <p data-field="vorteile-2-text" data-field-type="text">Anonymer Erstkontakt, geprüfte Helfer und Versicherungsschutz.</p>
             </div>
             <div class="vorteil-card">
                 <div class="vorteil-icon">
@@ -580,8 +577,8 @@
                         <line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
                 </div>
-                <h3>Flexibel</h3>
-                <p>Spontan oder regelmäßig – genau so, wie du es brauchst.</p>
+                <h3 data-field="vorteile-3-title" data-field-type="text">Flexibel</h3>
+                <p data-field="vorteile-3-text" data-field-type="text">Spontan oder regelmäßig – genau so, wie du es brauchst.</p>
             </div>
             <div class="vorteil-card">
                 <div class="vorteil-icon">
@@ -590,8 +587,8 @@
                         <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
                 </div>
-                <h3>Kostenfrei</h3>
-                <p>Nutzung ohne Gebühren – viele Leistungen über Pflegekasse abrechenbar.</p>
+                <h3 data-field="vorteile-4-title" data-field-type="text">Kostenfrei</h3>
+                <p data-field="vorteile-4-text" data-field-type="text">Nutzung ohne Gebühren – viele Leistungen über Pflegekasse abrechenbar.</p>
             </div>
         </div>
     </section>
@@ -599,78 +596,78 @@
     <!-- ========================================
          FAQ SECTION
          ======================================== -->
-    <section class="faq-section">
+    <section class="faq-section" data-block="faq-section" data-block-id="b4">
         <div class="faq-header">
-            <h2>Häufige Fragen</h2>
-            <h3>Alles, was du wissen musst</h3>
+            <h2 data-field="faq-title" data-field-type="text">Häufige Fragen</h2>
+            <h3 data-field="faq-subtitle" data-field-type="text">Alles, was du wissen musst</h3>
         </div>
         
         <div class="faq-list">
             <div class="faq-item">
-                <button class="faq-question">
+                <button class="faq-question" data-field="faq-1-question" data-field-type="text">
                     Wie finde ich den richtigen Helfer?
                     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="6 9 12 15 18 9"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">
+                    <div class="faq-answer-inner" data-field="faq-1-answer" data-field-type="textarea">
                         Du beschreibst deinen Bedarf und wir zeigen dir passende Helfer. Du siehst Profile, Bewertungen und kannst im geschützten Raum Kontakt aufnehmen, bevor du dich entscheidest. Per Chat, Video oder Audio lernst du den Helfer kennen, bevor persönliche Daten ausgetauscht werden.
                     </div>
                 </div>
             </div>
-            
+
             <div class="faq-item">
-                <button class="faq-question">
+                <button class="faq-question" data-field="faq-2-question" data-field-type="text">
                     Was kostet die Nutzung?
                     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="6 9 12 15 18 9"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">
+                    <div class="faq-answer-inner" data-field="faq-2-answer" data-field-type="textarea">
                         Die Nutzung des Helferportals ist kostenfrei. Für Unterstützungsleistungen können je nach Art Kosten anfallen, die oft über die Pflegekasse abrechenbar sind (z.B. Entlastungsbetrag, Verhinderungspflege). Wir unterstützen bei der Abrechnung.
                     </div>
                 </div>
             </div>
-            
+
             <div class="faq-item">
-                <button class="faq-question">
+                <button class="faq-question" data-field="faq-3-question" data-field-type="text">
                     Sind die Helfer versichert?
                     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="6 9 12 15 18 9"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">
+                    <div class="faq-answer-inner" data-field="faq-3-answer" data-field-type="textarea">
                         Helfer, die über Organisationen engagiert sind, haben in der Regel Versicherungsschutz (Haftpflicht-, Unfall- und Dienstreisekaskoversicherung). Bei Spontanhilfe empfehlen wir, dies individuell zu klären. Die Versicherungssituation wird transparent im Profil angezeigt.
                     </div>
                 </div>
             </div>
-            
+
             <div class="faq-item">
-                <button class="faq-question">
+                <button class="faq-question" data-field="faq-4-question" data-field-type="text">
                     Kann ich Leistungen über die Pflegekasse abrechnen?
                     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="6 9 12 15 18 9"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">
+                    <div class="faq-answer-inner" data-field="faq-4-answer" data-field-type="textarea">
                         Ja, viele Leistungen sind über den Entlastungsbetrag (§45b SGB XI) oder Verhinderungspflege abrechenbar. Das Helferportal unterstützt bei der Dokumentation und Abrechnung mit der Pflegekasse. Die automatische Abrechnung ist im System integriert.
                     </div>
                 </div>
             </div>
-            
+
             <div class="faq-item">
-                <button class="faq-question">
+                <button class="faq-question" data-field="faq-5-question" data-field-type="text">
                     Wie schnell bekomme ich Hilfe?
                     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="6 9 12 15 18 9"/>
                     </svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">
+                    <div class="faq-answer-inner" data-field="faq-5-answer" data-field-type="textarea">
                         Das hängt von der Verfügbarkeit in deiner Region ab. Für spontane Bedarfe gibt es oft kurzfristig verfügbare Helfer. Für regelmäßige Unterstützung planen wir gemeinsam. Du siehst die Verfügbarkeit in Echtzeit und erhältst schnell Rückmeldung auf deine Anfrage.
                     </div>
                 </div>
@@ -681,19 +678,19 @@
     <!-- ========================================
          CTA SECTION
          ======================================== -->
-    <section class="cta-section">
+    <section class="cta-section" data-block="cta-section" data-block-id="b5">
         <div class="cta-card">
             <div class="cta-content">
-                <h2>Bereit, Hilfe zu finden?</h2>
-                <p>Registriere dich kostenlos und finde passende Unterstützung in deiner Nähe – sicher, unkompliziert und auf dich zugeschnitten.</p>
+                <h2 data-field="cta-title" data-field-type="text">Bereit, Hilfe zu finden?</h2>
+                <p data-field="cta-text" data-field-type="textarea">Registriere dich kostenlos und finde passende Unterstützung in deiner Nähe – sicher, unkompliziert und auf dich zugeschnitten.</p>
                 <div class="cta-buttons">
-                    <a href="https://hilfe.helferportal.de" class="btn-white">
+                    <a href="https://hilfe.helferportal.de" class="btn-white" data-field="cta-btn-1" data-field-type="button">
                         Jetzt Hilfe finden
                         <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="/kontakt.html" class="btn-outline-white">
+                    <a href="/kontakt.html" class="btn-outline-white" data-field="cta-btn-2" data-field-type="button">
                         Beratung anfragen
                     </a>
                 </div>

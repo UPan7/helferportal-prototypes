@@ -389,9 +389,12 @@ body[class*="page-"] {
 }
 
 /* Centered breadcrumb for centered hero layouts */
-.hero-mini .breadcrumb,
-.hero-content .breadcrumb {
+.hero-mini .breadcrumb {
     justify-content: center;
+}
+/* Left-aligned breadcrumb in split hero (hero-text column) */
+.hero-text .breadcrumb {
+    justify-content: flex-start;
 }
 
 .hero-mini h1 {
@@ -1476,6 +1479,23 @@ body[class*="page-"] {
 
 .partner-card p {
     font-size: 13px; color: var(--gray-400);
+}
+
+.partner-card .partner-logo {
+    opacity: 1; color: var(--gray-400); margin-bottom: var(--space-sm);
+}
+
+.partner-logo img {
+    max-width: 120px; max-height: 48px; object-fit: contain;
+}
+
+.partner-logo img[src=""],
+.partner-logo img:not([src]) {
+    display: none;
+}
+
+.partner-logo img:not([src=""]) ~ svg {
+    display: none;
 }
 
 .faq-section-inner {
@@ -5130,6 +5150,42 @@ body[class*="page-"] {
     font-size: 15px; color: var(--gray-600); line-height: 1.6;
 }
 
+.page-muenchen .partners-section {
+    background: var(--white); border-top: none;
+}
+
+.page-muenchen .partners-section .section-header h2 {
+    color: var(--orange-primary);
+}
+
+.page-muenchen .partners-section .section-header h3 {
+    color: var(--gray-900);
+}
+
+.page-muenchen .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.page-muenchen .partner-card {
+    background: var(--gray-50); text-align: left; border: 1px solid var(--gray-200);
+}
+
+.page-muenchen .partner-card:hover {
+    background: var(--white); box-shadow: var(--shadow-lg); transform: translateY(-3px);
+}
+
+.page-muenchen .partner-card h4 {
+    color: var(--gray-900);
+}
+
+.page-muenchen .partner-card p {
+    color: var(--gray-600);
+}
+
+.page-muenchen .partner-card .partner-logo {
+    opacity: 1; color: var(--gray-500);
+}
+
 .page-muenchen .partner-card-header {
     display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md);
 }
@@ -5143,7 +5199,7 @@ body[class*="page-"] {
 }
 
 .page-muenchen .partner-link {
-    display: inline-flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-md); color: #0B286D; font-weight: 600; font-size: 14px; text-decoration: none; transition: gap var(--transition-fast);
+    display: inline-flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-md); color: var(--orange-primary); font-weight: 600; font-size: 14px; text-decoration: none; transition: gap var(--transition-fast);
 }
 
 .page-muenchen .partner-link:hover {
@@ -5152,6 +5208,10 @@ body[class*="page-"] {
 
 .page-muenchen .partner-link svg {
     width: 16px; height: 16px;
+}
+
+.page-muenchen .cta-section {
+    margin-top: var(--space-3xl);
 }
 
 .page-muenchen .cta-section-inner {
