@@ -615,6 +615,11 @@
 
         .btn-save svg { width: 15px; height: 15px; stroke: white; fill: none; }
 
+        /*
+         * PUBLISH FEATURE (TEMPORARILY DISABLED)
+         * Reason: Deploy pipeline instability with textarea/html handling.
+         * To be re-enabled after pipeline refactor.
+         *
         .btn-publish {
             padding: 8px 16px;
             background: #2E7D32;
@@ -634,6 +639,7 @@
         .btn-publish:disabled { opacity: 0.5; cursor: not-allowed; }
         .btn-publish svg { width: 14px; height: 14px; stroke: white; fill: none; }
         @keyframes spin { to { transform: rotate(360deg); } }
+        */
 
         /* ========= EDITOR CONTENT AREA ========= */
         .editor-content {
@@ -1599,10 +1605,12 @@
                     <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2 2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
                     Speichern
                 </button>
+                <!-- PUBLISH FEATURE (TEMPORARILY DISABLED)
                 <button class="btn-publish" id="btnPublish" disabled title="Änderungen auf der Website veröffentlichen">
                     <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 19V5"/><polyline points="5 12 12 5 19 12"/><line x1="3" y1="21" x2="21" y2="21"/></svg>
                     Veröffentlichen
                 </button>
+                -->
             </div>
         </div>
 
@@ -2070,7 +2078,7 @@ async function loadLocalPage(filename) {
             hasUnsavedChanges = false;
         }
         btnSave.disabled = false;
-        updatePublishButton();
+        // updatePublishButton(); // PUBLISH DISABLED
 
         // Update preview iframe if visible
         if (previewMode !== 'editor') {
@@ -2380,7 +2388,7 @@ async function loadPage(pageId) {
             hasUnsavedChanges = false;
         }
         btnSave.disabled = false;
-        updatePublishButton();
+        // updatePublishButton(); // PUBLISH DISABLED
 
         // Update preview iframe if visible
         if (previewMode !== 'editor') {
@@ -2510,7 +2518,7 @@ fileInput.addEventListener('change', (e) => {
                 hasUnsavedChanges = false;
             }
             btnSave.disabled = false;
-            updatePublishButton();
+            // updatePublishButton(); // PUBLISH DISABLED
             showToast('success', `${fileName} geladen`);
             // Update preview iframe if visible
             if (previewMode !== 'editor') {
@@ -3010,9 +3018,11 @@ window.addEventListener('beforeunload', (e) => {
 });
 
 // ============================================================
-//  PUBLISH TO LIVE SITE (via Supabase Edge Function proxy)
+//  PUBLISH TO LIVE SITE (TEMPORARILY DISABLED)
+//  Reason: Deploy pipeline instability with textarea/html handling.
+//  To be re-enabled after pipeline refactor.
 // ============================================================
-
+/*
 const btnPublish = document.getElementById('btnPublish');
 
 function updatePublishButton() {
@@ -3046,21 +3056,26 @@ async function publishToLive() {
             body: JSON.stringify({ page_id: currentPageId })
         });
 
-        const result = await res.json();
+        let result;
+        const rawText = await res.text();
+        try { result = JSON.parse(rawText); } catch { result = {}; }
 
         if (res.ok && result.ok) {
             showToast('success', 'Ver\u00f6ffentlichung gestartet \u2014 in ca. 1\u20132 Min auf der Website sichtbar!');
         } else {
-            throw new Error(result.error || 'Unbekannter Fehler (' + res.status + ')');
+            const msg = result.error || result.message || result.msg || rawText || ('HTTP ' + res.status);
+            console.error('Publish response:', res.status, rawText);
+            throw new Error(msg);
         }
     } catch (err) {
         console.error('Publish error:', err);
         showToast('error', 'Ver\u00f6ffentlichung fehlgeschlagen: ' + err.message);
     } finally {
         btnPublish.innerHTML = origHTML;
-        updatePublishButton();
+        // updatePublishButton(); // PUBLISH DISABLED
     }
 }
+*/
 
 // ============================================================
 //  TOOLBAR & STATUS

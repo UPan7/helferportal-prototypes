@@ -235,7 +235,24 @@
       "item-{N}-text":      { "type": "textarea", "required": false, "level": "basic",    "repeatable": true }
     },
     "notes": "Catch-all for content blocks. Timeline variant uses item-{N}-year + item-{N}-title + item-{N}-text.",
-    "aliases": { "mission-section": "text-section", "timeline-section": "text-section", "team-section": "text-section" }
+    "aliases": { "mission-section": "text-section", "timeline-section": "text-section" }
+  },
+
+  "team-section": {
+    "label": "Team-Profil",
+    "purpose": "Team member profile cards with photo, badge, role, bio, credentials",
+    "variants": ["single", "grid"],
+    "pages": ["ueber-uns"],
+    "fields": {
+      "section-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "section-text":      { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "item-{N}-image":    { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
+      "item-{N}-badge":    { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "item-{N}-title":    { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "item-{N}-role":     { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "item-{N}-text":     { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true }
+    },
+    "notes": "Profile variant for team/founder cards. Single variant = one featured card. Grid variant = multiple members."
   },
 
   "contact-form": {

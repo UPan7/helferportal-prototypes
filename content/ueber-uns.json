@@ -190,9 +190,27 @@
           "level": "basic"
         },
         {
+          "id": "item-1-image",
+          "type": "image",
+          "value": { "src": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600", "alt": "Thomas Oeben" },
+          "level": "basic"
+        },
+        {
+          "id": "item-1-badge",
+          "type": "text",
+          "value": "Gründer & Geschäftsführer",
+          "level": "basic"
+        },
+        {
           "id": "item-1-title",
           "type": "text",
           "value": "Thomas Oeben",
+          "level": "basic"
+        },
+        {
+          "id": "item-1-role",
+          "type": "text",
+          "value": "Rettungsassistent, Spediteur, Betriebswirt",
           "level": "basic"
         },
         {
