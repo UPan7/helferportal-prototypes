@@ -9,7 +9,7 @@
     "editedBy": "reg@kamanin.at",
     "extracted": "2026-03-01T22:28:39.456Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-02T18:35:01.852Z",
+    "lastEdited": "2026-03-02T18:36:31.413Z",
     "schema_version": "2.0"
   },
   "blocks": [
@@ -21,7 +21,7 @@
           "id": "hero-title",
           "type": "text",
           "level": "basic",
-          "value": "Wir freuen uns auf Sie!!"
+          "value": "Wir freuen uns auf Sie"
         },
         {
           "id": "hero-subtitle",
