@@ -1666,7 +1666,7 @@ let hasUnsavedChanges = false;
 let isOnline = false;
 let draftTimer = null;
 let fileName = '';
-let advancedMode = localStorage.getItem('hp_cms_advanced') === '1';
+let advancedMode = localStorage.getItem('hp_cms_advanced') !== '0';
 let blockRegistry = null;
 
 // --- Block Registry (for entity-based field grouping) ---
@@ -2888,6 +2888,9 @@ async function handleImageUpload(event, blockId, fieldId, srcInputId) {
                 break;
             }
         }
+
+        // Push to live preview iframe
+        sendPreviewUpdate(fieldId, 'value', publicUrl, blockId);
 
         // Update URL input
         const srcInput = document.getElementById(srcInputId);

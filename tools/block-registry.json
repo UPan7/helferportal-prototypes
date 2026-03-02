@@ -13,7 +13,7 @@
     "label": "Hero",
     "purpose": "Page entry section with title, subtitle, optional CTA",
     "variants": ["slider", "mini", "full"],
-    "pages": ["startseite", "hilfe-finden", "engagieren", "fuer-kommunen", "ueber-uns", "kontakt", "stadt-template"],
+    "pages": ["startseite", "hilfe-finden", "engagieren", "fuer-kommunen", "ueber-uns", "kontakt", "stadt-template", "muenchen"],
     "fields": {
       "_slider_variant": {
         "slide-{N}-image":  { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
@@ -25,10 +25,14 @@
       "_mini_full_variant": {
         "hero-title":       { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
         "hero-subtitle":    { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
-        "hero-image":       { "type": "image",    "required": false, "level": "advanced",  "repeatable": false }
+        "hero-image":       { "type": "image",    "required": false, "level": "advanced",  "repeatable": false },
+        "hero-btn-1":       { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
+        "hero-btn-2":       { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
+        "hero-stats":       { "type": "textarea", "required": false, "level": "advanced",  "repeatable": false },
+        "hero-tagline":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false }
       }
     },
-    "aliases": { "hero-slider": "hero" }
+    "aliases": { "hero-slider": "hero", "hero-city": "hero" }
   },
 
   "tabs": {
@@ -67,7 +71,7 @@
     "label": "Karten",
     "purpose": "Grid of N items with icon/image, title, text, optional link",
     "variants": ["action", "feature", "training", "problem"],
-    "pages": ["startseite", "hilfe-finden", "engagieren", "fuer-kommunen"],
+    "pages": ["startseite", "hilfe-finden", "engagieren", "fuer-kommunen", "muenchen"],
     "fields": {
       "cards-overline":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
       "cards-title":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
@@ -77,6 +81,7 @@
       "card-{N}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
       "card-{N}-text":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
       "card-{N}-href":      { "type": "text",     "required": false, "level": "advanced",  "repeatable": true },
+      "card-{N}-items":     { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
       "card-{N}-btn":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true },
       "_quick_actions_variant": {
         "qa-{N}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
@@ -85,7 +90,7 @@
       }
     },
     "notes": "Unifies quick-actions, vorteile, schulungen, problems. Variant determines which optional fields are used.",
-    "aliases": { "quick-actions": "cards", "schulungen-section": "cards", "schulungen": "cards", "problems-section": "cards" }
+    "aliases": { "quick-actions": "cards", "schulungen-section": "cards", "schulungen": "cards", "problems-section": "cards", "support-section": "cards" }
   },
 
   "vorteile": {
@@ -138,7 +143,7 @@
     "label": "So funktioniert's",
     "purpose": "Sequential process / how-it-works",
     "variants": ["numbered", "icon"],
-    "pages": ["startseite"],
+    "pages": ["startseite", "muenchen"],
     "fields": {
       "steps-overline":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
       "steps-title":        { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
@@ -167,7 +172,7 @@
     "label": "FAQ",
     "purpose": "Question & answer accordion",
     "variants": ["simple", "categorized"],
-    "pages": ["hilfe-finden", "engagieren", "fuer-kommunen", "kontakt", "stadt-template"],
+    "pages": ["hilfe-finden", "engagieren", "fuer-kommunen", "kontakt", "stadt-template", "muenchen"],
     "fields": {
       "faq-title":          { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
       "faq-subtitle":       { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
@@ -181,7 +186,7 @@
     "label": "Testimonial",
     "purpose": "Quote with attribution",
     "variants": ["single", "carousel"],
-    "pages": ["startseite"],
+    "pages": ["startseite", "muenchen"],
     "fields": {
       "testimonial-image":  { "type": "image",    "required": false, "level": "basic",     "repeatable": false },
       "testimonial-quote":  { "type": "textarea", "required": true,  "level": "basic",    "repeatable": false },
@@ -195,13 +200,14 @@
     "label": "Partner & Logos",
     "purpose": "Partner/sponsor logo grid",
     "variants": ["with-names", "logos-only"],
-    "pages": ["startseite", "ueber-uns"],
+    "pages": ["startseite", "ueber-uns", "muenchen"],
     "fields": {
       "logos-title":        { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
       "logos-subtitle":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
       "logo-{N}-image":     { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
       "logo-{N}-name":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
       "logo-{N}-text":      { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "logo-{N}-btn":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true },
       "_legacy_partner_variant": {
         "partners-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
         "partners-subtitle":  { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
@@ -209,7 +215,7 @@
         "partner-{N}-name":   { "type": "text",     "required": true,  "level": "basic",    "repeatable": true }
       }
     },
-    "notes": "Startseite uses legacy prefix partner-{N}-* which is accepted as alias.",
+    "notes": "Systematic pattern: each partner = image (logo) + name + optional text. Startseite uses legacy prefix partner-{N}-* which is accepted as alias.",
     "aliases": { "partners": "logos" }
   },
 

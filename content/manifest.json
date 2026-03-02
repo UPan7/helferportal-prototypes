@@ -19,6 +19,21 @@
       "id": "ueber-uns",
       "title": "Über uns",
       "file": "ueber-uns.json"
+    },
+    {
+      "id": "hilfe-finden",
+      "title": "Hilfe finden",
+      "file": "hilfe-finden.json"
+    },
+    {
+      "id": "fuer-kommunen",
+      "title": "Für Kommunen",
+      "file": "fuer-kommunen.json"
+    },
+    {
+      "id": "muenchen",
+      "title": "München",
+      "file": "muenchen.json"
     }
   ]
 }

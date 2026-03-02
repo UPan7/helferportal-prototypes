@@ -220,6 +220,12 @@
           "level": "basic"
         },
         {
+          "id": "logo-1-image",
+          "type": "image",
+          "value": { "src": "", "alt": "BMBF" },
+          "level": "basic"
+        },
+        {
           "id": "logo-1-name",
           "type": "text",
           "value": "BMBF",
@@ -229,6 +235,12 @@
           "id": "logo-1-text",
           "type": "text",
           "value": "Bundesministerium für Bildung und Forschung",
+          "level": "basic"
+        },
+        {
+          "id": "logo-2-image",
+          "type": "image",
+          "value": { "src": "", "alt": "DATI" },
           "level": "basic"
         },
         {
@@ -244,6 +256,12 @@
           "level": "basic"
         },
         {
+          "id": "logo-3-image",
+          "type": "image",
+          "value": { "src": "", "alt": "Stadt Dietzenbach" },
+          "level": "basic"
+        },
+        {
           "id": "logo-3-name",
           "type": "text",
           "value": "Stadt Dietzenbach",
@@ -253,6 +271,12 @@
           "id": "logo-3-text",
           "type": "text",
           "value": "Pilotkommune für integratives Koordinationsportal",
+          "level": "basic"
+        },
+        {
+          "id": "logo-4-image",
+          "type": "image",
+          "value": { "src": "", "alt": "TU Chemnitz" },
           "level": "basic"
         },
         {
