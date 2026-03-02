@@ -50,6 +50,18 @@ const PAGE_MAP = {
   'ueber-uns': {
     html: path.resolve(__dirname, '..', 'ueber-uns.html'),
     json: path.resolve(__dirname, '..', 'content', 'ueber-uns.json')
+  },
+  'hilfe-finden': {
+    html: path.resolve(__dirname, '..', 'hilfe-finden.html'),
+    json: path.resolve(__dirname, '..', 'content', 'hilfe-finden.json')
+  },
+  'fuer-kommunen': {
+    html: path.resolve(__dirname, '..', 'fuer-kommunen.html'),
+    json: path.resolve(__dirname, '..', 'content', 'fuer-kommunen.json')
+  },
+  muenchen: {
+    html: path.resolve(__dirname, '..', 'muenchen.html'),
+    json: path.resolve(__dirname, '..', 'content', 'muenchen.json')
   }
 };
 

@@ -1630,7 +1630,8 @@
         <form class="feedback-form" onsubmit="submitFeedback(event)">
             <div class="form-group">
                 <label for="feedbackMessage">Nachricht *</label>
-                <textarea id="feedbackMessage" placeholder="z.B. Sektion X fehlt, Feld Y soll editierbar sein, Block Z kann entfernt werden…" required></textarea>
+                <textarea id="feedbackMessage" placeholder="z.B. Sektion X fehlt, Feld Y soll editierbar sein, Block Z kann entfernt werden…" required maxlength="2000"></textarea>
+                <div class="hint">max. 2000 Zeichen</div>
             </div>
             <div class="form-group">
                 <label for="feedbackEmail">E-Mail (optional)</label>
@@ -3138,6 +3139,11 @@ function closeFeedbackModal() {
     $('feedbackModal').classList.remove('active');
 }
 
+// SECURITY: Supabase RLS on 'feedback' table MUST be:
+//   - anon role: INSERT only (no SELECT/UPDATE/DELETE)
+//   - authenticated role: SELECT + INSERT
+// Feedback messages are stored unsanitized. Any UI that reads
+// this table MUST escape HTML on render to prevent stored XSS.
 async function submitFeedback(e) {
     e.preventDefault();
     const message = $('feedbackMessage').value.trim();

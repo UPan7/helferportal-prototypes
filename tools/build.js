@@ -29,11 +29,13 @@ const content = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
 const html = fs.readFileSync(htmlPath, 'utf-8');
 const $ = cheerio.load(html, { decodeEntities: false });
 
-// --- Build a lookup: fieldId → field data ---
+// --- Build a lookup: "blockId:fieldId" → field data ---
+// Keyed by block to handle multiple blocks with the same field IDs
+// (e.g. two "cards" blocks on one page both having "card-1-title").
 const fieldMap = new Map();
 for (const block of content.blocks) {
   for (const field of block.fields) {
-    fieldMap.set(field.id, field);
+    fieldMap.set(`${block.id}:${field.id}`, field);
   }
 }
 
@@ -44,7 +46,10 @@ $('[data-field]').each((_, el) => {
   const $el = $(el);
   const fieldId = $el.attr('data-field');
   const fieldType = $el.attr('data-field-type') || 'text';
-  const field = fieldMap.get(fieldId);
+  const blockId = $el.closest('[data-block-id]').attr('data-block-id');
+  const field = blockId
+    ? fieldMap.get(`${blockId}:${fieldId}`)
+    : fieldMap.get(fieldId);  // fallback for unscoped elements
 
   if (!field) return; // field not in JSON, skip
 
@@ -60,7 +65,11 @@ console.log(`  Fields in JSON: ${fieldMap.size}, Fields in HTML: ${$('[data-fiel
 
 // Report any fields in JSON that weren't found in HTML
 const htmlFields = new Set();
-$('[data-field]').each((_, el) => htmlFields.add($(el).attr('data-field')));
+$('[data-field]').each((_, el) => {
+  const fId = $(el).attr('data-field');
+  const bId = $(el).closest('[data-block-id]').attr('data-block-id');
+  htmlFields.add(bId ? `${bId}:${fId}` : fId);
+});
 const missing = [...fieldMap.keys()].filter(id => !htmlFields.has(id));
 if (missing.length > 0) {
   console.warn(`  ⚠ ${missing.length} fields in JSON not found in HTML: ${missing.join(', ')}`);
