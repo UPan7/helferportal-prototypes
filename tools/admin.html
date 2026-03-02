@@ -1134,14 +1134,16 @@
 
         .image-preview {
             margin-top: 8px;
+            margin-bottom: 8px;
             border-radius: var(--radius-sm);
             overflow: hidden;
             max-height: 120px;
+            display: block;
         }
 
         .image-preview img {
             width: 100%;
-            height: 100%;
+            height: auto;
             max-height: 120px;
             object-fit: cover;
             display: block;
@@ -1904,11 +1906,12 @@ async function normalizeContent(data, pageId) {
             block.fields = block.fields.filter(f => refIds.has(f.id));
             if (block.fields.length < before) changed = true;
 
-            // Backfill missing level on existing fields
+            // Sync field level from reference (backfill missing + correct mismatched)
             for (const field of block.fields) {
-                if (field.level == null) {
-                    const rf = refBlock.fields.find(f => f.id === field.id);
-                    field.level = rf?.level || 'basic';
+                const rf = refBlock.fields.find(f => f.id === field.id);
+                const refLevel = rf?.level || 'basic';
+                if (field.level == null || field.level !== refLevel) {
+                    field.level = refLevel;
                     changed = true;
                 }
             }

@@ -25,7 +25,7 @@
       "_mini_full_variant": {
         "hero-title":       { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
         "hero-subtitle":    { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
-        "hero-image":       { "type": "image",    "required": false, "level": "advanced",  "repeatable": false },
+        "hero-image":       { "type": "image",    "required": false, "level": "basic",     "repeatable": false },
         "hero-btn-1":       { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
         "hero-btn-2":       { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
         "hero-stats":       { "type": "textarea", "required": false, "level": "advanced",  "repeatable": false },

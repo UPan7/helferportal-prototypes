@@ -16,16 +16,16 @@
       "type": "hero",
       "fields": [
         {
+          "id": "hero-image",
+          "type": "image",
+          "value": { "src": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1400", "alt": "Hero Hintergrund" },
+          "level": "basic"
+        },
+        {
           "id": "hero-title",
           "type": "text",
           "value": "Gemeinsam für bessere Versorgung",
           "level": "basic"
-        },
-        {
-          "id": "hero-image",
-          "type": "image",
-          "value": { "src": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1400", "alt": "Hero Hintergrund" },
-          "level": "advanced"
         },
         {
           "id": "hero-subtitle",
