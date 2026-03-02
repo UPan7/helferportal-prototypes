@@ -1,14 +1,16 @@
 {
-  "_meta": {
-    "generator": "helferportal-content-tools/extract.js",
-    "source": "fuer-kommunen.html",
-    "extracted": "2026-03-02T13:27:59.932Z",
-    "schema_version": "2.0"
-  },
   "page": {
     "id": "fuer-kommunen",
-    "title": "Für Kommunen & soziale Akteure – Helferportal",
-    "url": "/fuer-kommunen.html"
+    "url": "/fuer-kommunen.html",
+    "title": "Für Kommunen & soziale Akteure – Helferportal"
+  },
+  "_meta": {
+    "source": "fuer-kommunen.html",
+    "editedBy": "reg@kamanin.at",
+    "extracted": "2026-03-02T13:27:59.932Z",
+    "generator": "helferportal-content-tools/extract.js",
+    "lastEdited": "2026-03-02T13:36:32.935Z",
+    "schema_version": "2.0"
   },
   "blocks": [
     {
@@ -18,34 +20,34 @@
         {
           "id": "hero-title",
           "type": "text",
-          "value": "Versorgungsstrukturen digital steuern",
-          "level": "basic"
+          "level": "basic",
+          "value": "Versorgungsstrukturen digital steuern"
         },
         {
           "id": "hero-subtitle",
           "type": "textarea",
-          "value": "Unterstützung, Versorgung, Engagement & Katastrophenschutz digital vernetzen und koordinieren – für Kommunen, Landkreise und soziale Organisationen.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Unterstützung, Versorgung, Engagement & Katastrophenschutz digital vernetzen und koordinieren – für Kommunen, Landkreise und soziale Organisationen."
         },
         {
           "id": "hero-btn-1",
-          "type": "button",
           "href": "/kontakt.html",
-          "value": "Kooperation anfragen",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Kooperation anfragen"
         },
         {
           "id": "hero-btn-2",
-          "type": "button",
           "href": "#",
-          "value": "Demo vereinbaren",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Demo vereinbaren"
         },
         {
           "id": "hero-stats",
           "type": "textarea",
-          "value": "500+\nEngagierte im Netzwerk\n5\nStädte & Regionen\nSeit 2015\nPraxiserprobt\nDSGVO\nDatenschutzkonform",
-          "level": "advanced"
+          "level": "advanced",
+          "value": "500+\nEngagierte im Netzwerk\n5\nStädte & Regionen\nSeit 2015\nPraxiserprobt\nDSGVO\nDatenschutzkonform"
         }
       ]
     },
@@ -56,62 +58,62 @@
         {
           "id": "cards-overline",
           "type": "text",
-          "value": "Warum Helferportal?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Warum Helferportal?"
         },
         {
           "id": "cards-title",
           "type": "text",
-          "value": "Herausforderungen in Kommunen",
-          "level": "basic"
+          "level": "basic",
+          "value": "Herausforderungen in Kommunen"
         },
         {
           "id": "card-1-title",
           "type": "text",
-          "value": "Vielfältige Angebote, geringe Vernetzung",
-          "level": "basic"
+          "level": "basic",
+          "value": "Vielfältige Angebote, geringe Vernetzung"
         },
         {
           "id": "card-1-text",
           "type": "text",
-          "value": "Akteure arbeiten isoliert, keine gemeinsame digitale Grundlage. Hilfesuchende müssen aufwendig recherchieren und verschiedene Stellen kontaktieren.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Akteure arbeiten isoliert, keine gemeinsame digitale Grundlage. Hilfesuchende müssen aufwendig recherchieren und verschiedene Stellen kontaktieren."
         },
         {
           "id": "card-2-title",
           "type": "text",
-          "value": "Hoher Koordinationsaufwand",
-          "level": "basic"
+          "level": "basic",
+          "value": "Hoher Koordinationsaufwand"
         },
         {
           "id": "card-2-text",
           "type": "text",
-          "value": "Beratungsstellen und Fachkräfte verbringen viel Zeit mit Vermittlung. Endlose Telefonate sind nötig, um passende Hilfe zu finden.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Beratungsstellen und Fachkräfte verbringen viel Zeit mit Vermittlung. Endlose Telefonate sind nötig, um passende Hilfe zu finden."
         },
         {
           "id": "card-3-title",
           "type": "text",
-          "value": "Engagement schwer steuerbar",
-          "level": "basic"
+          "level": "basic",
+          "value": "Engagement schwer steuerbar"
         },
         {
           "id": "card-3-text",
           "type": "text",
-          "value": "Ehrenamtliche sind vorhanden, aber nicht effizient einsetzbar. Moderne Strukturen für bürgerschaftliches Engagement fehlen.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Ehrenamtliche sind vorhanden, aber nicht effizient einsetzbar. Moderne Strukturen für bürgerschaftliches Engagement fehlen."
         },
         {
           "id": "card-4-title",
           "type": "text",
-          "value": "Das Helferportal setzt bei der Struktur an",
-          "level": "basic"
+          "level": "basic",
+          "value": "Das Helferportal setzt bei der Struktur an"
         },
         {
           "id": "card-4-text",
           "type": "text",
-          "value": "Wir vernetzen die an der Versorgung beteiligten Akteure und schaffen die Transparenz über tatsächlich verfügbare Angebote – digital, effizient und bedarfsgerecht.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Wir vernetzen die an der Versorgung beteiligten Akteure und schaffen die Transparenz über tatsächlich verfügbare Angebote – digital, effizient und bedarfsgerecht."
         }
       ]
     },
@@ -122,84 +124,84 @@
         {
           "id": "tabs-overline",
           "type": "text",
-          "value": "Ihre Zielgruppe",
-          "level": "basic"
+          "level": "basic",
+          "value": "Ihre Zielgruppe"
         },
         {
           "id": "tab-kommunen-name",
           "type": "text",
-          "value": "Für Kommunen",
-          "level": "basic"
+          "level": "basic",
+          "value": "Für Kommunen"
         },
         {
           "id": "tab-organisationen-name",
           "type": "text",
-          "value": "Für Organisationen",
-          "level": "basic"
+          "level": "basic",
+          "value": "Für Organisationen"
         },
         {
           "id": "tab-kommunen-title",
           "type": "text",
-          "value": "Sektorenübergreifende Versorgungsstrukturen digital aufbauen",
-          "level": "basic"
+          "level": "basic",
+          "value": "Sektorenübergreifende Versorgungsstrukturen digital aufbauen"
         },
         {
           "id": "tab-kommunen-text",
           "type": "textarea",
-          "value": "Kommunen nutzen das Helferportal als digitale Infrastruktur, um alle an der Versorgung beteiligten Akteure zusammenzuführen und zu koordinieren – von Ehrenamtlichen über Hilfsorganisationen bis zu Gesundheitsdienstleistern.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Kommunen nutzen das Helferportal als digitale Infrastruktur, um alle an der Versorgung beteiligten Akteure zusammenzuführen und zu koordinieren – von Ehrenamtlichen über Hilfsorganisationen bis zu Gesundheitsdienstleistern."
         },
         {
           "id": "tab-kommunen-cards",
           "type": "textarea",
-          "value": "Alle Akteure anbinden | Ehrenamtliche, Hilfsorganisationen, Gesundheitsdienstleister auf einer Plattform vernetzen.\nBeratungsstellen einbinden | Pflegestützpunkte, Fachstellen, Quartiersmanagement aktiv einbeziehen.\nBedarfe digital erfassen | Unterstützungsbedarfe auch für Dritte hinterlegen und nachverfolgen.\nTransparenz & Monitoring | Datenbasierte Sozial- und Pflegeplanung ermöglichen.\nKatastrophenschutz | Spontanhelfer koordinieren, Reservepools verwalten, Großveranstaltungen absichern.",
-          "level": "advanced"
+          "level": "advanced",
+          "value": "Alle Akteure anbinden | Ehrenamtliche, Hilfsorganisationen, Gesundheitsdienstleister auf einer Plattform vernetzen.\nBeratungsstellen einbinden | Pflegestützpunkte, Fachstellen, Quartiersmanagement aktiv einbeziehen.\nBedarfe digital erfassen | Unterstützungsbedarfe auch für Dritte hinterlegen und nachverfolgen.\nTransparenz & Monitoring | Datenbasierte Sozial- und Pflegeplanung ermöglichen.\nKatastrophenschutz | Spontanhelfer koordinieren, Reservepools verwalten, Großveranstaltungen absichern."
         },
         {
           "id": "tab-kommunen-btn-1",
-          "type": "button",
           "href": "/kontakt.html",
-          "value": "Kooperation anfragen",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Kooperation anfragen"
         },
         {
           "id": "tab-kommunen-btn-2",
-          "type": "button",
           "href": "",
-          "value": "Kontakt aufnehmen",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Kontakt aufnehmen"
         },
         {
           "id": "tab-organisationen-title",
           "type": "text",
-          "value": "Engagierte, Einsätze und Angebote effizient koordinieren",
-          "level": "basic"
+          "level": "basic",
+          "value": "Engagierte, Einsätze und Angebote effizient koordinieren"
         },
         {
           "id": "tab-organisationen-text",
           "type": "textarea",
-          "value": "Hilfsorganisationen, Helferkreise und Nachbarschaftshilfen nutzen das Helferportal zur operativen Steuerung ihres Engagements – digital, passgenau und entlastend für Koordinator:innen.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Hilfsorganisationen, Helferkreise und Nachbarschaftshilfen nutzen das Helferportal zur operativen Steuerung ihres Engagements – digital, passgenau und entlastend für Koordinator:innen."
         },
         {
           "id": "tab-organisationen-cards",
           "type": "textarea",
-          "value": "Digitale Koordination | Engagierte erfassen, Verfügbarkeiten abfragen, Einsätze planen – alles in einem System.\nPassgenaue Vermittlung | Matching nach Bedarf, Kompetenz, Zeit und Ort – automatisch und effizient.\nEntlastung für Koordinator:innen | Weniger Verwaltungsaufwand, mehr Zeit für Menschen und fachliche Begleitung.\nAdministration & Abrechnung | Zeiterfassung, Dokumentation, automatische Abrechnung mit Pflegekassen.\nNeue Engagierte gewinnen | Zugang zu motivierten Helfern durch zentrale Plattform und gemeinsame Kampagnen.",
-          "level": "advanced"
+          "level": "advanced",
+          "value": "Digitale Koordination | Engagierte erfassen, Verfügbarkeiten abfragen, Einsätze planen – alles in einem System.\nPassgenaue Vermittlung | Matching nach Bedarf, Kompetenz, Zeit und Ort – automatisch und effizient.\nEntlastung für Koordinator:innen | Weniger Verwaltungsaufwand, mehr Zeit für Menschen und fachliche Begleitung.\nAdministration & Abrechnung | Zeiterfassung, Dokumentation, automatische Abrechnung mit Pflegekassen.\nNeue Engagierte gewinnen | Zugang zu motivierten Helfern durch zentrale Plattform und gemeinsame Kampagnen."
         },
         {
           "id": "tab-organisationen-btn-1",
-          "type": "button",
           "href": "/kontakt.html",
-          "value": "Zusammenarbeit anfragen",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Zusammenarbeit anfragen"
         },
         {
           "id": "tab-organisationen-btn-2",
-          "type": "button",
           "href": "",
-          "value": "Kontakt aufnehmen",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Kontakt aufnehmen"
         }
       ]
     },
@@ -210,28 +212,28 @@
         {
           "id": "cta-title",
           "type": "text",
-          "value": "Starten Sie die Zusammenarbeit",
-          "level": "basic"
+          "level": "basic",
+          "value": "Starten Sie die Zusammenarbeit"
         },
         {
           "id": "cta-text",
           "type": "textarea",
-          "value": "Wir begleiten Sie persönlich beim Einstieg und klären die passende Nutzung für Ihre Kommune oder Organisation. Vereinbaren Sie ein unverbindliches Erstgespräch.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Wir begleiten Sie persönlich beim Einstieg und klären die passende Nutzung für Ihre Kommune oder Organisation. Vereinbaren Sie ein unverbindliches Erstgespräch."
         },
         {
           "id": "cta-btn-1",
-          "type": "button",
           "href": "/kontakt.html",
-          "value": "Demo vereinbaren",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Demo vereinbaren"
         },
         {
           "id": "cta-btn-2",
-          "type": "button",
           "href": "#",
-          "value": "PDF-Broschüre herunterladen",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "PDF-Broschüre herunterladen"
         }
       ]
     },
@@ -242,74 +244,74 @@
         {
           "id": "faq-title",
           "type": "text",
-          "value": "Häufige Fragen",
-          "level": "basic"
+          "level": "basic",
+          "value": "Häufige Fragen"
         },
         {
           "id": "faq-subtitle",
           "type": "text",
-          "value": "Für Kommunen & Organisationen",
-          "level": "basic"
+          "level": "basic",
+          "value": "Für Kommunen & Organisationen"
         },
         {
           "id": "faq-1-question",
           "type": "text",
-          "value": "Welche Kosten entstehen für Kommunen?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Welche Kosten entstehen für Kommunen?"
         },
         {
           "id": "faq-1-answer",
           "type": "textarea",
-          "value": "Die Konditionen werden individuell vereinbart. Wir bieten verschiedene Kooperationsmodelle an, die zur Größe und den Anforderungen Ihrer Kommune passen. Während der Projektlaufzeit ist die Nutzung für viele Funktionen kostenfrei möglich.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Die Konditionen werden individuell vereinbart. Wir bieten verschiedene Kooperationsmodelle an, die zur Größe und den Anforderungen Ihrer Kommune passen. Während der Projektlaufzeit ist die Nutzung für viele Funktionen kostenfrei möglich."
         },
         {
           "id": "faq-2-question",
           "type": "text",
-          "value": "Wie werden Datenschutz und Sicherheit gewährleistet?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Wie werden Datenschutz und Sicherheit gewährleistet?"
         },
         {
           "id": "faq-2-answer",
           "type": "textarea",
-          "value": "Das Helferportal ist DSGVO-konform und erfüllt alle Anforderungen an Datenschutz und IT-Sicherheit. Daten werden in Deutschland gehostet. Ein integriertes Personen-Ident-Verfahren gewährleistet die Identität der Nutzer.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Das Helferportal ist DSGVO-konform und erfüllt alle Anforderungen an Datenschutz und IT-Sicherheit. Daten werden in Deutschland gehostet. Ein integriertes Personen-Ident-Verfahren gewährleistet die Identität der Nutzer."
         },
         {
           "id": "faq-3-question",
           "type": "text",
-          "value": "Können bestehende Strukturen eingebunden werden?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Können bestehende Strukturen eingebunden werden?"
         },
         {
           "id": "faq-3-answer",
           "type": "textarea",
-          "value": "Ja, das Portal ist modular aufgebaut. Bestehende Helferkreise, Organisationen und Prozesse können integriert werden. Schnittstellen zu Buchhaltungs- und Bankprogrammen sind vorhanden.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Ja, das Portal ist modular aufgebaut. Bestehende Helferkreise, Organisationen und Prozesse können integriert werden. Schnittstellen zu Buchhaltungs- und Bankprogrammen sind vorhanden."
         },
         {
           "id": "faq-4-question",
           "type": "text",
-          "value": "Wie lange dauert die Einführung?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Wie lange dauert die Einführung?"
         },
         {
           "id": "faq-4-answer",
           "type": "textarea",
-          "value": "Das hängt vom Umfang ab. Für erste Pilotprojekte rechnen wir mit wenigen Wochen, für umfassende Implementierungen mit mehreren Monaten. Wir begleiten Sie durch den gesamten Prozess und bieten Schulungen für Ihre Mitarbeiter an.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Das hängt vom Umfang ab. Für erste Pilotprojekte rechnen wir mit wenigen Wochen, für umfassende Implementierungen mit mehreren Monaten. Wir begleiten Sie durch den gesamten Prozess und bieten Schulungen für Ihre Mitarbeiter an."
         },
         {
           "id": "faq-5-question",
           "type": "text",
-          "value": "Welche technischen Voraussetzungen gibt es?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Welche technischen Voraussetzungen gibt es?"
         },
         {
           "id": "faq-5-answer",
           "type": "textarea",
-          "value": "Das Helferportal ist cloudbasiert und erfordert keine lokale Installation. Sie benötigen lediglich einen Internetzugang und einen aktuellen Webbrowser. Mobile Apps für iOS und Android sind verfügbar.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Das Helferportal ist cloudbasiert und erfordert keine lokale Installation. Sie benötigen lediglich einen Internetzugang und einen aktuellen Webbrowser. Mobile Apps für iOS und Android sind verfügbar."
         }
       ]
     }
