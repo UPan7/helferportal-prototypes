@@ -66,6 +66,7 @@ $('[data-field]').each((_, el) => {
   htmlFields.get(fieldId).push({
     tag: el.tagName,
     type: $(el).attr('data-field-type') || null,
+    blockId: $(el).closest('[data-block-id]').attr('data-block-id') || null,
   });
 });
 
@@ -73,12 +74,48 @@ $('[data-field]').each((_, el) => {
 const errors = [];
 const warnings = [];
 
-// --- Check 1: Duplicate data-field IDs in HTML ---
+// --- Check 1: Duplicate data-field IDs WITHIN the same block ---
+// Cross-block duplicates are allowed (e.g. two "cards" blocks both having "card-1-title").
+// Intra-block duplicates are errors (build/apply cannot distinguish them).
 for (const [fieldId, elements] of htmlFields) {
   if (elements.length > 1) {
-    errors.push(`DUPLICATE data-field="${fieldId}" appears ${elements.length} times in HTML`);
+    // Group by blockId to distinguish intra-block vs cross-block dupes
+    const perBlock = {};
+    for (const el of elements) {
+      const bk = el.blockId || '_unscoped_';
+      perBlock[bk] = (perBlock[bk] || 0) + 1;
+    }
+    const intraBlockDupes = Object.entries(perBlock).filter(([, c]) => c > 1);
+    if (intraBlockDupes.length > 0) {
+      for (const [bk, count] of intraBlockDupes) {
+        errors.push(`DUPLICATE data-field="${fieldId}" appears ${count} times WITHIN block ${bk}`);
+      }
+    }
+    // Cross-block dupes: info-level note (not error, not warning)
+    const blockCount = Object.keys(perBlock).length;
+    if (blockCount > 1 && intraBlockDupes.length === 0) {
+      // Silently accepted — build.js scopes by data-block-id
+    }
   }
 }
+
+// --- Check 1b: Every block section must have data-block-id ---
+$('[data-block]').each((_, el) => {
+  const blockType = $(el).attr('data-block');
+  const blockId = $(el).attr('data-block-id');
+  if (!blockId) {
+    errors.push(`MISSING data-block-id on <${el.tagName.toLowerCase()} data-block="${blockType}">`);
+  }
+});
+
+// --- Check 1c: Fields outside any block (missing block scope) ---
+$('[data-field]').each((_, el) => {
+  const fieldId = $(el).attr('data-field');
+  const blockId = $(el).closest('[data-block-id]').attr('data-block-id');
+  if (!blockId) {
+    warnings.push(`UNSCOPED: data-field="${fieldId}" is not inside any [data-block-id] element`);
+  }
+});
 
 // --- Check 2: Duplicate block IDs ---
 const blockIdCounts = {};
