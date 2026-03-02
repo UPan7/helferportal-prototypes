@@ -1,0 +1,266 @@
+{
+  "_meta": {
+    "version": "1.1",
+    "description": "Block Registry v1 — canonical block types for Helferportal CMS",
+    "maxBlockTypes": 15,
+    "maxVariantsPerBlock": 4,
+    "fieldNaming": "{prefix}-{N}-{property} (1-indexed, except legacy slide-0)",
+    "imageFormat": "{ src: string, alt: string }",
+    "generated": "2026-03-01"
+  },
+
+  "hero": {
+    "label": "Hero",
+    "purpose": "Page entry section with title, subtitle, optional CTA",
+    "variants": ["slider", "mini", "full"],
+    "pages": ["startseite", "hilfe-finden", "engagieren", "fuer-kommunen", "ueber-uns", "kontakt", "stadt-template"],
+    "fields": {
+      "_slider_variant": {
+        "slide-{N}-image":  { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
+        "slide-{N}-tag":    { "type": "text",     "required": false, "level": "advanced",  "repeatable": true },
+        "slide-{N}-title":  { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+        "slide-{N}-text":   { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true },
+        "slide-{N}-btn":    { "type": "button",   "required": true,  "level": "basic",    "repeatable": true }
+      },
+      "_mini_full_variant": {
+        "hero-title":       { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+        "hero-subtitle":    { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+        "hero-image":       { "type": "image",    "required": false, "level": "advanced",  "repeatable": false }
+      }
+    },
+    "aliases": { "hero-slider": "hero" }
+  },
+
+  "tabs": {
+    "label": "Tabs Sektion",
+    "purpose": "Tabbed content panels, typically audience-segmented",
+    "variants": ["audience", "content", "info-tabs"],
+    "pages": ["startseite", "hilfe-finden", "engagieren", "fuer-kommunen"],
+    "fields": {
+      "tabs-overline":      { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "tabs-title":         { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "tab-{key}-name":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "tab-{key}-title":    { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "tab-{key}-text":     { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true },
+      "tab-{key}-cards":    { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
+      "tab-{key}-benefits": { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
+      "tab-{key}-info":     { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
+      "tab-{key}-roles":    { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
+      "tab-{key}-btn-1":    { "type": "button",   "required": true,  "level": "basic",    "repeatable": true },
+      "tab-{key}-btn-2":    { "type": "button",   "required": false, "level": "basic",    "repeatable": true },
+      "_info_tabs_variant": {
+        "info-overline":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+        "info-title":           { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+        "info-{key}-name":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+        "info-{key}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+        "info-{key}-text":      { "type": "textarea", "required": false, "level": "basic",    "repeatable": true },
+        "info-{key}-cards":     { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
+        "info-{key}-note":      { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+        "info-{key}-btn":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true }
+      }
+    },
+    "notes": "{key} is a semantic slug (hilfe, engagierte, kommunen), not a number. Cards use pipe-delimited 'Title | Description' per line.",
+    "aliases": { "tabs-section": "tabs", "info-tabs": "tabs" }
+  },
+
+  "cards": {
+    "label": "Karten",
+    "purpose": "Grid of N items with icon/image, title, text, optional link",
+    "variants": ["action", "feature", "training", "problem"],
+    "pages": ["startseite", "hilfe-finden", "engagieren", "fuer-kommunen"],
+    "fields": {
+      "cards-overline":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "cards-title":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "cards-text":         { "type": "textarea", "required": false, "level": "basic",    "repeatable": false },
+      "cards-btn":          { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
+      "card-{N}-icon":      { "type": "text",     "required": false, "level": "advanced",  "repeatable": true },
+      "card-{N}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "card-{N}-text":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "card-{N}-href":      { "type": "text",     "required": false, "level": "advanced",  "repeatable": true },
+      "card-{N}-btn":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true },
+      "_quick_actions_variant": {
+        "qa-{N}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+        "qa-{N}-text":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+        "qa-{N}-href":      { "type": "text",     "required": false, "level": "advanced",  "repeatable": true }
+      }
+    },
+    "notes": "Unifies quick-actions, vorteile, schulungen, problems. Variant determines which optional fields are used.",
+    "aliases": { "quick-actions": "cards", "schulungen-section": "cards", "schulungen": "cards", "problems-section": "cards" }
+  },
+
+  "vorteile": {
+    "label": "Vorteile",
+    "purpose": "Feature advantages grid with icon, title, text",
+    "variants": ["grid"],
+    "pages": ["engagieren", "hilfe-finden"],
+    "fields": {
+      "vorteile-overline":    { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "vorteile-title":       { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "vorteile-{N}-title":   { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "vorteile-{N}-text":    { "type": "text",     "required": true,  "level": "basic",    "repeatable": true }
+    },
+    "aliases": { "vorteile-section": "vorteile", "shared-vorteile-section": "vorteile" }
+  },
+
+  "video": {
+    "label": "Video Sektion",
+    "purpose": "Video showcase grid with thumbnails",
+    "variants": ["grid"],
+    "pages": ["startseite"],
+    "fields": {
+      "video-overline":          { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "video-heading":           { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "video-{key}-title":       { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "video-{key}-thumbnail":   { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
+      "video-{key}-file":        { "type": "text",     "required": false, "level": "basic",     "repeatable": true }
+    },
+    "notes": "{key} is a semantic slug (vorstellung, helfer). File field is CMS-internal reference.",
+    "aliases": { "video-section": "video" }
+  },
+
+  "cities": {
+    "label": "Städte Sektion",
+    "purpose": "City/location cards with status indicators",
+    "variants": ["grid", "featured"],
+    "pages": ["startseite", "stadt-template"],
+    "fields": {
+      "staedte-title":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "staedte-subtitle":   { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "stadt-{N}-image":    { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
+      "stadt-{N}-name":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "stadt-{N}-status":   { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "stadt-{N}-href":     { "type": "text",     "required": false, "level": "advanced",  "repeatable": true }
+    },
+    "aliases": { "staedte-section": "cities" }
+  },
+
+  "steps": {
+    "label": "So funktioniert's",
+    "purpose": "Sequential process / how-it-works",
+    "variants": ["numbered", "icon"],
+    "pages": ["startseite"],
+    "fields": {
+      "steps-overline":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "steps-title":        { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "step-{N}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "step-{N}-text":      { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true },
+      "step-{N}-icon":      { "type": "text",     "required": false, "level": "advanced",  "repeatable": true }
+    },
+    "aliases": { "how-it-works": "steps" }
+  },
+
+  "accordion": {
+    "label": "Gut zu wissen",
+    "purpose": "Expandable info sections (trust signals, key facts)",
+    "variants": ["info", "simple"],
+    "pages": ["startseite"],
+    "fields": {
+      "info-overline":      { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "info-title":         { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "info-{N}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "info-{N}-text":      { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true }
+    },
+    "aliases": {}
+  },
+
+  "faq": {
+    "label": "FAQ",
+    "purpose": "Question & answer accordion",
+    "variants": ["simple", "categorized"],
+    "pages": ["hilfe-finden", "engagieren", "fuer-kommunen", "kontakt", "stadt-template"],
+    "fields": {
+      "faq-title":          { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "faq-subtitle":       { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "faq-{N}-question":   { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "faq-{N}-answer":     { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true }
+    },
+    "aliases": { "faq-section": "faq" }
+  },
+
+  "testimonial": {
+    "label": "Testimonial",
+    "purpose": "Quote with attribution",
+    "variants": ["single", "carousel"],
+    "pages": ["startseite"],
+    "fields": {
+      "testimonial-image":  { "type": "image",    "required": false, "level": "basic",     "repeatable": false },
+      "testimonial-quote":  { "type": "textarea", "required": true,  "level": "basic",    "repeatable": false },
+      "testimonial-name":   { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "testimonial-role":   { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "testimonial-org":    { "type": "text",     "required": false, "level": "basic",    "repeatable": false }
+    }
+  },
+
+  "logos": {
+    "label": "Partner & Logos",
+    "purpose": "Partner/sponsor logo grid",
+    "variants": ["with-names", "logos-only"],
+    "pages": ["startseite", "ueber-uns"],
+    "fields": {
+      "logos-title":        { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "logos-subtitle":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "logo-{N}-image":     { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
+      "logo-{N}-name":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "logo-{N}-text":      { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "_legacy_partner_variant": {
+        "partners-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+        "partners-subtitle":  { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+        "partner-{N}-logo":   { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
+        "partner-{N}-name":   { "type": "text",     "required": true,  "level": "basic",    "repeatable": true }
+      }
+    },
+    "notes": "Startseite uses legacy prefix partner-{N}-* which is accepted as alias.",
+    "aliases": { "partners": "logos" }
+  },
+
+  "text-section": {
+    "label": "Textabschnitt",
+    "purpose": "Freeform content block (mission, about, timeline, team profile)",
+    "variants": ["centered", "split", "timeline", "profile"],
+    "pages": ["ueber-uns"],
+    "fields": {
+      "section-overline":   { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "section-title":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "section-text":       { "type": "textarea", "required": true,  "level": "basic",    "repeatable": false },
+      "section-image":      { "type": "image",    "required": false, "level": "basic",    "repeatable": false },
+      "section-btn":        { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
+      "item-{N}-year":      { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "item-{N}-title":     { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "item-{N}-text":      { "type": "textarea", "required": false, "level": "basic",    "repeatable": true }
+    },
+    "notes": "Catch-all for content blocks. Timeline variant uses item-{N}-year + item-{N}-title + item-{N}-text.",
+    "aliases": { "mission-section": "text-section", "timeline-section": "text-section", "team-section": "text-section" }
+  },
+
+  "contact-form": {
+    "label": "Kontaktformular",
+    "purpose": "Contact/inquiry form with info cards",
+    "variants": ["full", "compact"],
+    "pages": ["kontakt"],
+    "fields": {
+      "contact-title":           { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "contact-text":            { "type": "textarea", "required": false, "level": "basic",    "repeatable": false },
+      "contact-btn":             { "type": "button",   "required": true,  "level": "basic",    "repeatable": false },
+      "contact-info-{N}-title":  { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "contact-info-{N}-text":   { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "contact-info-{N}-href":   { "type": "text",     "required": false, "level": "advanced",  "repeatable": true }
+    },
+    "notes": "Form inputs (name, email, message) are HTML structure, not CMS fields. Only labels and sidebar info are editable.",
+    "aliases": { "contact-section": "contact-form" }
+  },
+
+  "cta-banner": {
+    "label": "Call-to-Action",
+    "purpose": "Call-to-action section, typically at page bottom",
+    "variants": ["simple", "with-image"],
+    "pages": ["hilfe-finden", "engagieren", "fuer-kommunen", "ueber-uns"],
+    "fields": {
+      "cta-title":          { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "cta-text":           { "type": "textarea", "required": false, "level": "basic",    "repeatable": false },
+      "cta-btn-1":          { "type": "button",   "required": true,  "level": "basic",    "repeatable": false },
+      "cta-btn-2":          { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
+      "cta-image":          { "type": "image",    "required": false, "level": "advanced",  "repeatable": false }
+    },
+    "aliases": { "cta-section": "cta-banner", "cta-download-section": "cta-banner" }
+  }
+}

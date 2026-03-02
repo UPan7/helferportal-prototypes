@@ -11,6 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
+const { applyField } = require('./lib/field-ops');
 
 // --- CLI args ---
 const [,, jsonInputPath, htmlTargetPath] = process.argv;
@@ -47,49 +48,10 @@ $('[data-field]').each((_, el) => {
 
   if (!field) return; // field not in JSON, skip
 
-  switch (fieldType) {
-    case 'image':
-      if (field.value) $el.attr('src', field.value);
-      if (field.alt) $el.attr('alt', field.alt);
-      updated++;
-      break;
-
-    case 'link':
-    case 'button':
-      if (field.href !== undefined) $el.attr('href', field.href);
-      if (field.value !== undefined) setTextOnly($, $el, field.value);
-      updated++;
-      break;
-
-    case 'video':
-      // Update video card label + thumbnail
-      const $thumb = $el.find('.video-thumbnail');
-      const $label = $el.find('.video-card-label');
-      if (field.value) $label.text(field.value);
-      if (field.thumbnail) $thumb.attr('src', field.thumbnail);
-      if (field.alt) $thumb.attr('alt', field.alt);
-      updated++;
-      break;
-
-    case 'textarea':
-      $el.text(field.value);
-      updated++;
-      break;
-
-    case 'html':
-      $el.html(field.value);
-      updated++;
-      break;
-
-    default: // 'text'
-      $el.text(field.value);
-      updated++;
-      break;
-  }
+  if (applyField($, $el, fieldType, field)) updated++;
 });
 
 // --- Write output ---
-// Use $.html() to get the full document, preserving original structure
 const output = $.html();
 fs.writeFileSync(htmlPath, output, 'utf-8');
 
@@ -102,22 +64,4 @@ $('[data-field]').each((_, el) => htmlFields.add($(el).attr('data-field')));
 const missing = [...fieldMap.keys()].filter(id => !htmlFields.has(id));
 if (missing.length > 0) {
   console.warn(`  ⚠ ${missing.length} fields in JSON not found in HTML: ${missing.join(', ')}`);
-}
-
-// --- Helpers ---
-
-/**
- * Replace only the direct text content of an element, preserving child elements (SVGs, icons).
- */
-function setTextOnly($, $el, newText) {
-  $el.contents().each((_, node) => {
-    if (node.type === 'text') {
-      // Replace the first non-whitespace text node
-      const currentText = $(node).text().trim();
-      if (currentText.length > 0) {
-        $(node).replaceWith(newText + '\n                        ');
-        return false; // break after first replacement
-      }
-    }
-  });
 }

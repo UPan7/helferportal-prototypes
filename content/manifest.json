@@ -4,6 +4,21 @@
       "id": "startseite",
       "title": "Startseite",
       "file": "startseite.json"
+    },
+    {
+      "id": "engagieren",
+      "title": "Engagieren",
+      "file": "engagieren.json"
+    },
+    {
+      "id": "kontakt",
+      "title": "Kontakt",
+      "file": "kontakt.json"
+    },
+    {
+      "id": "ueber-uns",
+      "title": "Über uns",
+      "file": "ueber-uns.json"
     }
   ]
 }

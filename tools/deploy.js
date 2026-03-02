@@ -38,12 +38,19 @@ const PAGE_MAP = {
   startseite: {
     html: path.resolve(__dirname, '..', 'index.html'),
     json: path.resolve(__dirname, '..', 'content', 'startseite.json')
+  },
+  engagieren: {
+    html: path.resolve(__dirname, '..', 'engagieren.html'),
+    json: path.resolve(__dirname, '..', 'content', 'engagieren.json')
+  },
+  kontakt: {
+    html: path.resolve(__dirname, '..', 'kontakt.html'),
+    json: path.resolve(__dirname, '..', 'content', 'kontakt.json')
+  },
+  'ueber-uns': {
+    html: path.resolve(__dirname, '..', 'ueber-uns.html'),
+    json: path.resolve(__dirname, '..', 'content', 'ueber-uns.json')
   }
-  // Add more pages as they get annotated:
-  // 'hilfe-finden': {
-  //   html: path.resolve(__dirname, '..', 'hilfe-finden.html'),
-  //   json: path.resolve(__dirname, '..', 'content', 'hilfe-finden.json')
-  // }
 };
 
 // --- CLI args ---
@@ -132,6 +139,7 @@ async function main() {
 
   // Build HTML from JSON
   const cheerio = require('cheerio');
+  const { applyField } = require('./lib/field-ops');
 
   for (const pageId of pagesToBuild) {
     const mapping = PAGE_MAP[pageId];
@@ -153,11 +161,12 @@ async function main() {
     const html = fs.readFileSync(mapping.html, 'utf-8');
     const $ = cheerio.load(html, { decodeEntities: false });
 
-    // Build field lookup
+    // Build field lookup keyed by "blockId:fieldId" to handle
+    // multiple blocks sharing the same field IDs (e.g. section-title)
     const fieldMap = new Map();
     for (const block of content.blocks) {
       for (const field of block.fields) {
-        fieldMap.set(field.id, field);
+        fieldMap.set(`${block.id}:${field.id}`, field);
       }
     }
 
@@ -168,58 +177,13 @@ async function main() {
       const $el = $(el);
       const fieldId = $el.attr('data-field');
       const fieldType = $el.attr('data-field-type') || 'text';
-      const field = fieldMap.get(fieldId);
+      const blockId = $el.closest('[data-block-id]').attr('data-block-id');
+      const field = blockId
+        ? fieldMap.get(`${blockId}:${fieldId}`)
+        : fieldMap.get(fieldId);  // fallback for unscoped elements
       if (!field) return;
 
-      switch (fieldType) {
-        case 'image':
-          if (field.value) $el.attr('src', field.value);
-          if (field.alt) $el.attr('alt', field.alt);
-          updated++;
-          break;
-
-        case 'link':
-        case 'button':
-          if (field.href !== undefined) $el.attr('href', field.href);
-          if (field.value !== undefined) {
-            // Replace only text nodes, preserve child elements (SVGs)
-            $el.contents().each((_, node) => {
-              if (node.type === 'text') {
-                const currentText = $(node).text().trim();
-                if (currentText.length > 0) {
-                  $(node).replaceWith(field.value + '\n                        ');
-                  return false;
-                }
-              }
-            });
-          }
-          updated++;
-          break;
-
-        case 'video':
-          const $thumb = $el.find('.video-thumbnail');
-          const $label = $el.find('.video-card-label');
-          if (field.value) $label.text(field.value);
-          if (field.thumbnail) $thumb.attr('src', field.thumbnail);
-          if (field.alt) $thumb.attr('alt', field.alt);
-          updated++;
-          break;
-
-        case 'textarea':
-          $el.text(field.value);
-          updated++;
-          break;
-
-        case 'html':
-          $el.html(field.value);
-          updated++;
-          break;
-
-        default:
-          $el.text(field.value);
-          updated++;
-          break;
-      }
+      if (applyField($, $el, fieldType, field)) updated++;
     });
 
     fs.writeFileSync(mapping.html, $.html(), 'utf-8');
