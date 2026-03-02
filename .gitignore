@@ -22,4 +22,6 @@ tools/.env
 # Temp files
 *.tmp
 *.bak
+*.backup
 ~$*
+nul

@@ -1,0 +1,168 @@
+{
+  "_meta": {
+    "generator": "helferportal-content-tools/extract.js",
+    "source": "kontakt.html",
+    "extracted": "2026-03-01T22:28:39.456Z",
+    "schema_version": "2.0"
+  },
+  "page": {
+    "id": "kontakt",
+    "title": "Kontakt – Helferportal",
+    "url": "/kontakt.html"
+  },
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "hero",
+      "fields": [
+        {
+          "id": "hero-title",
+          "type": "text",
+          "value": "Wir freuen uns auf Sie",
+          "level": "basic"
+        },
+        {
+          "id": "hero-subtitle",
+          "type": "text",
+          "value": "Haben Sie Fragen zum Helferportal? Möchten Sie als Kommune oder Organisation kooperieren? Wir sind für Sie da.",
+          "level": "basic"
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "type": "contact-section",
+      "fields": [
+        {
+          "id": "contact-title",
+          "type": "text",
+          "value": "Nachricht senden",
+          "level": "basic"
+        },
+        {
+          "id": "contact-btn",
+          "type": "button",
+          "href": "",
+          "value": "Nachricht senden",
+          "level": "basic"
+        },
+        {
+          "id": "contact-info-1-title",
+          "type": "text",
+          "value": "Direkter Kontakt",
+          "level": "basic"
+        },
+        {
+          "id": "contact-info-1-text",
+          "type": "text",
+          "value": "Für allgemeine Anfragen erreichen Sie uns per E-Mail. Wir antworten in der Regel innerhalb von 24 Stunden.",
+          "level": "basic"
+        },
+        {
+          "id": "contact-info-1-href",
+          "type": "link",
+          "href": "mailto:info@helferportal.de",
+          "value": "info@helferportal.de",
+          "level": "advanced"
+        },
+        {
+          "id": "contact-info-2-title",
+          "type": "text",
+          "value": "Für Kommunen & Organisationen",
+          "level": "basic"
+        },
+        {
+          "id": "contact-info-2-text",
+          "type": "text",
+          "value": "Sie möchten das Helferportal in Ihrer Kommune oder Organisation einsetzen? Vereinbaren Sie einen unverbindlichen Demo-Termin.",
+          "level": "basic"
+        },
+        {
+          "id": "contact-info-2-href",
+          "type": "link",
+          "href": "mailto:kooperation@helferportal.de",
+          "value": "kooperation@helferportal.de",
+          "level": "advanced"
+        },
+        {
+          "id": "contact-info-3-title",
+          "type": "text",
+          "value": "Unser Standort",
+          "level": "basic"
+        },
+        {
+          "id": "contact-info-3-text",
+          "type": "text",
+          "value": "Helferportal GmbH & Co. KGMünchen, Deutschland",
+          "level": "basic"
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "type": "faq-section",
+      "fields": [
+        {
+          "id": "faq-title",
+          "type": "text",
+          "value": "Häufige Fragen",
+          "level": "basic"
+        },
+        {
+          "id": "faq-subtitle",
+          "type": "text",
+          "value": "Schnelle Antworten",
+          "level": "basic"
+        },
+        {
+          "id": "faq-1-question",
+          "type": "text",
+          "value": "Ist die Nutzung des Helferportals wirklich kostenlos?",
+          "level": "basic"
+        },
+        {
+          "id": "faq-1-answer",
+          "type": "textarea",
+          "value": "Ja, die Nutzung des Helferportals ist für Hilfesuchende und Engagierte vollständig kostenfrei. Es gibt die Möglichkeit, einen freiwilligen Solidaritätsbeitrag zu leisten, der jedoch keinen Einfluss auf die Leistungen hat.",
+          "level": "basic"
+        },
+        {
+          "id": "faq-2-question",
+          "type": "text",
+          "value": "Wie schnell erhalte ich eine Antwort auf meine Anfrage?",
+          "level": "basic"
+        },
+        {
+          "id": "faq-2-answer",
+          "type": "textarea",
+          "value": "Wir bemühen uns, alle Anfragen innerhalb von 24 Stunden zu beantworten. Bei dringenden Anliegen können Sie uns auch telefonisch erreichen.",
+          "level": "basic"
+        },
+        {
+          "id": "faq-3-question",
+          "type": "text",
+          "value": "Wie kann meine Kommune das Helferportal nutzen?",
+          "level": "basic"
+        },
+        {
+          "id": "faq-3-answer",
+          "type": "textarea",
+          "value": "Kommunen und Landkreise können das Helferportal als digitales Koordinationsportal für ihre Versorgungsstrukturen einsetzen. Kontaktieren Sie uns für eine unverbindliche Demo und individuelle Beratung.",
+          "level": "basic"
+        },
+        {
+          "id": "faq-4-question",
+          "type": "text",
+          "value": "Sind meine Daten sicher?",
+          "level": "basic"
+        },
+        {
+          "id": "faq-4-answer",
+          "type": "textarea",
+          "value": "Ja, der Schutz Ihrer Daten hat für uns höchste Priorität. Wir sind DSGVO-konform, hosten alle Daten in Deutschland und verwenden modernste Verschlüsselungstechnologien.",
+          "level": "basic"
+        }
+      ]
+    }
+  ]
+}

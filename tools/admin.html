@@ -421,6 +421,16 @@
             opacity: 0.6;
         }
 
+        .sidebar-adv-badge {
+            font-size: 9px;
+            color: #fb923c;
+            background: rgba(251,146,60,0.12);
+            border: 1px solid rgba(251,146,60,0.25);
+            border-radius: 8px;
+            padding: 0 5px;
+            font-weight: 600;
+        }
+
         /* Sidebar Footer */
         .sidebar-footer {
             padding: 12px 16px;
@@ -888,15 +898,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px 16px;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 12px;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
         .fields-compact-grid:last-child {
             margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
         }
 
         .field-compact label {
@@ -928,15 +936,45 @@
 
         /* Field */
         .field {
-            margin-bottom: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 16px;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
         .field:last-child {
             margin-bottom: 0;
+        }
+
+        /* Entity group — dividers between groups, not between fields */
+        .entity-group {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .entity-group:last-child {
             padding-bottom: 0;
+            margin-bottom: 0;
             border-bottom: none;
+        }
+
+        .entity-group-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .entity-adv-hint {
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 11px;
+            text-transform: none;
+            letter-spacing: 0;
         }
 
         .field-label {
@@ -1230,6 +1268,65 @@
             justify-content: center;
         }
 
+        /* Feedback button in toolbar */
+        .btn-feedback {
+            background: none;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: inherit;
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all var(--transition);
+        }
+        .btn-feedback:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+        .btn-feedback svg { width: 14px; height: 14px; }
+
+        /* Feedback modal — reuses existing .modal-backdrop / .modal */
+        .feedback-form .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-family: inherit;
+            background: var(--surface);
+            color: var(--text);
+            resize: vertical;
+            min-height: 100px;
+            transition: border-color var(--transition);
+        }
+        .feedback-form .form-group textarea:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(21,101,192,0.1);
+        }
+        .feedback-form .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+        .feedback-page-slug {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .feedback-page-slug code {
+            background: var(--bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
         /* Spinner */
         .spinner {
             width: 16px;
@@ -1467,6 +1564,12 @@
                     <span class="advanced-switch"></span>
                     Erweiterte Felder
                 </label>
+                <button class="btn-feedback" id="btnFeedback" onclick="openFeedbackModal()" title="Feedback senden">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    Feedback
+                </button>
                 <div class="save-status" id="saveStatus">
                     <span class="dot"></span>
                     <span id="saveLabel">Gespeichert</span>
@@ -1475,9 +1578,6 @@
                 <button class="btn-save" id="btnSave" disabled>
                     <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2 2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
                     Speichern
-                </button>
-                <button class="btn-icon" id="btnSettings" title="Einstellungen">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                 </button>
             </div>
         </div>
@@ -1520,27 +1620,30 @@
 </div>
 
 <!-- ===== SETTINGS MODAL ===== -->
-<div class="modal-backdrop" id="settingsModal">
+
+<!-- Feedback modal -->
+<div class="modal-backdrop" id="feedbackModal">
     <div class="modal">
-        <h3>Einstellungen</h3>
-        <p class="modal-subtitle">Supabase-Verbindung und Editor-Optionen</p>
-
-        <div class="form-group">
-            <label>Supabase Projekt-URL</label>
-            <input type="text" id="settingsUrl" placeholder="https://xxxxx.supabase.co">
-        </div>
-        <div class="form-group">
-            <label>Anon Key</label>
-            <input type="text" id="settingsKey" placeholder="eyJhbG...">
-        </div>
-
-        <div class="modal-actions">
-            <button class="btn btn-secondary" id="btnSettingsCancel">Abbrechen</button>
-            <button class="btn btn-primary" id="btnSettingsSave" style="width: auto;">Speichern</button>
-        </div>
+        <h3>Feedback senden</h3>
+        <p class="modal-subtitle">Was fehlt, was soll geändert oder entfernt werden?</p>
+        <div class="feedback-page-slug" id="feedbackPageSlug"></div>
+        <form class="feedback-form" onsubmit="submitFeedback(event)">
+            <div class="form-group">
+                <label for="feedbackMessage">Nachricht *</label>
+                <textarea id="feedbackMessage" placeholder="z.B. Sektion X fehlt, Feld Y soll editierbar sein, Block Z kann entfernt werden…" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="feedbackEmail">E-Mail (optional)</label>
+                <input type="email" id="feedbackEmail" placeholder="Für Rückfragen">
+                <div class="hint">Nur falls wir Rückfragen haben.</div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn" onclick="closeFeedbackModal()">Abbrechen</button>
+                <button type="submit" class="btn btn-primary" id="btnFeedbackSubmit">Absenden</button>
+            </div>
+        </form>
     </div>
 </div>
-
 
 <script>
 // ============================================================
@@ -1564,6 +1667,139 @@ let isOnline = false;
 let draftTimer = null;
 let fileName = '';
 let advancedMode = localStorage.getItem('hp_cms_advanced') === '1';
+let blockRegistry = null;
+
+// --- Block Registry (for entity-based field grouping) ---
+async function loadRegistry() {
+    try {
+        const url = new URL('./block-registry.json', location.href);
+        const res = await fetch(url);
+        if (res.ok) blockRegistry = await res.json();
+    } catch (e) { console.warn('Registry nicht verfügbar:', e.message); }
+}
+
+function resolveFieldEntity(blockType, fieldId) {
+    if (!blockRegistry) return { entity: '_header_', repeatable: false };
+
+    // Find block def by type or alias
+    let blockDef = blockRegistry[blockType];
+    if (!blockDef) {
+        for (const [, def] of Object.entries(blockRegistry)) {
+            if (def.aliases && Object.keys(def.aliases).includes(blockType)) {
+                blockDef = def;
+                break;
+            }
+        }
+    }
+    if (!blockDef?.fields) return { entity: '_header_', repeatable: false };
+
+    // Flatten variant field maps
+    const allPatterns = {};
+    for (const [key, val] of Object.entries(blockDef.fields)) {
+        if (key.startsWith('_')) {
+            Object.assign(allPatterns, val);
+        } else {
+            allPatterns[key] = val;
+        }
+    }
+
+    // Sort patterns: most specific first (fewer placeholders, longer strings)
+    const sorted = Object.entries(allPatterns).sort(([a], [b]) => {
+        const aP = (a.match(/\{[^}]+\}/g) || []).length;
+        const bP = (b.match(/\{[^}]+\}/g) || []).length;
+        if (aP !== bP) return aP - bP;
+        return b.length - a.length;
+    });
+
+    for (const [pattern, meta] of sorted) {
+        if (!meta.repeatable) {
+            if (fieldId === pattern) return { entity: '_header_', repeatable: false };
+        } else {
+            const regex = new RegExp('^' + pattern.replace(/\{[^}]+\}/g, '(.+)') + '$');
+            const match = fieldId.match(regex);
+            if (match) return { entity: match.slice(1).join('-'), repeatable: true };
+        }
+    }
+    return { entity: '_header_', repeatable: false };
+}
+
+function groupByEntity(blockType, fields) {
+    const headerFields = [];
+    const footerFields = [];
+    const entityMap = new Map();
+    const entityOrder = [];
+
+    for (const field of fields) {
+        const { entity, repeatable } = resolveFieldEntity(blockType, field.id);
+        if (!repeatable) {
+            // Non-repeatable buttons → footer (rendered after entity groups)
+            if (field.type === 'button') {
+                footerFields.push(field);
+            } else {
+                headerFields.push(field);
+            }
+        } else {
+            if (!entityMap.has(entity)) {
+                entityMap.set(entity, []);
+                entityOrder.push(entity);
+            }
+            entityMap.get(entity).push(field);
+        }
+    }
+
+    const groups = [];
+    if (headerFields.length > 0) groups.push({ key: '_header_', fields: headerFields });
+    for (const key of entityOrder) {
+        groups.push({ key, fields: entityMap.get(key) });
+    }
+    if (footerFields.length > 0) groups.push({ key: '_footer_', fields: footerFields });
+    return groups;
+}
+
+function getEntityLabel(blockType, entityKey, fields) {
+    if (entityKey === '_header_' || entityKey === '_footer_') return '';
+
+    // Resolve canonical type
+    let blockDef = blockRegistry ? blockRegistry[blockType] : null;
+    if (!blockDef && blockRegistry) {
+        for (const [, def] of Object.entries(blockRegistry)) {
+            if (def.aliases && Object.keys(def.aliases).includes(blockType)) {
+                blockDef = def;
+                break;
+            }
+        }
+    }
+
+    let canonType = blockType;
+    if (blockDef && blockRegistry) {
+        for (const [typeName, def] of Object.entries(blockRegistry)) {
+            if (def === blockDef && !typeName.startsWith('_')) { canonType = typeName; break; }
+        }
+    }
+
+    const labelMap = {
+        'cards': 'Karte', 'steps': 'Schritt', 'cities': 'Stadt',
+        'logos': 'Partner', 'hero': 'Slide', 'video': 'Video',
+        'faq': 'FAQ', 'contact-form': 'Info', 'text-section': 'Element',
+        'tabs': 'Tab', 'vorteile': 'Vorteil'
+    };
+    const prefix = labelMap[canonType] || entityKey;
+
+    // For numbered entities (entity key is a digit): use "Label N"
+    if (/^\d+$/.test(entityKey)) {
+        // If group has a -name field, use its value as label
+        const nameField = fields.find(f => f.id.endsWith('-name'));
+        if (nameField && nameField.value) return prefix + ' ' + entityKey + ': ' + nameField.value;
+        return prefix + ' ' + entityKey;
+    }
+
+    // For keyed entities (tabs, info-tabs): find *-name field value
+    const nameField = fields.find(f => f.id.endsWith('-name'));
+    if (nameField && nameField.value) return prefix + ': ' + nameField.value;
+
+    // Fallback: capitalize key
+    return prefix + ': ' + entityKey.charAt(0).toUpperCase() + entityKey.slice(1);
+}
 
 // --- DOM refs ---
 const $ = id => document.getElementById(id);
@@ -1629,6 +1865,12 @@ async function normalizeContent(data, pageId) {
                 }
             }
 
+            // Remove fields not present in reference
+            const refIds = new Set(refBlock.fields.map(f => f.id));
+            const before = block.fields.length;
+            block.fields = block.fields.filter(f => refIds.has(f.id));
+            if (block.fields.length < before) changed = true;
+
             // Backfill missing level on existing fields
             for (const field of block.fields) {
                 if (field.level == null) {
@@ -1637,6 +1879,16 @@ async function normalizeContent(data, pageId) {
                     changed = true;
                 }
             }
+
+            // Reorder fields to match reference JSON order (document order)
+            const refFieldIds = refBlock.fields.map(f => f.id);
+            const origOrder = block.fields.map(f => f.id).join(',');
+            block.fields.sort((a, b) => {
+                const ai = refFieldIds.indexOf(a.id);
+                const bi = refFieldIds.indexOf(b.id);
+                return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+            });
+            if (block.fields.map(f => f.id).join(',') !== origOrder) changed = true;
         }
     } else {
         // Fallback: only backfill level as 'basic'
@@ -1715,16 +1967,19 @@ async function initApp() {
     }
 }
 
-function enterApp(online) {
+async function enterApp(online) {
     isOnline = online;
     configOverlay.classList.add('hidden');
     loginOverlay.classList.add('hidden');
     $('setupOverlay').classList.add('hidden');
     app.classList.add('active');
 
+    // Load block registry before first render
+    await loadRegistry();
+
     if (online) {
         connectionBadge.className = 'connection-badge online';
-        connectionLabel.textContent = 'Supabase verbunden';
+        connectionLabel.textContent = 'Database verbunden';
         if (currentUser) {
             sidebarFooter.style.display = '';
             $('userAvatar').textContent = (currentUser.email || '?')[0].toUpperCase();
@@ -2286,15 +2541,17 @@ function renderBlockList() {
         return;
     }
 
-    blockList.innerHTML = contentData.blocks.map((block, i) => `
+    blockList.innerHTML = contentData.blocks.map((block, i) => {
+        const advCount = block.fields.filter(f => f.level === 'advanced').length;
+        return `
         <div class="block-item${i === 0 ? ' active' : ''}" data-block-id="${block.id}" onclick="scrollToBlock('${block.id}', this)">
             <span class="block-item-num">${block.id.replace('b', '')}</span>
             <div class="block-item-info">
                 <div class="block-item-label">${formatBlockType(block.type)}</div>
-                <div class="block-item-count">${block.fields.length} Felder</div>
+                <div class="block-item-count">${advCount > 0 ? `<span class="sidebar-adv-badge">+${advCount}</span> ` : ''}${block.fields.length} Felder</div>
             </div>
         </div>
-    `).join('');
+    `}).join('');
 }
 
 function scrollToBlock(blockId, clickedItem) {
@@ -2346,7 +2603,7 @@ function renderEditor() {
 
     for (let i = 0; i < contentData.blocks.length; i++) {
         const block = contentData.blocks[i];
-        const collapsed = i > 0 ? ' collapsed' : '';
+        const collapsed = ' collapsed';
         html += `
             <div class="block-card${collapsed}" data-block-id="${block.id}">
                 <div class="block-header" onclick="toggleBlock(this)">
@@ -2357,7 +2614,7 @@ function renderEditor() {
                     <div style="display:flex;align-items:center;gap:10px;">
                         ${(() => {
                             const advCount = block.fields.filter(f => f.level === 'advanced').length;
-                            return advCount > 0 && !advancedMode
+                            return advCount > 0
                                 ? `<span class="advanced-badge">+${advCount} erweitert</span>`
                                 : '';
                         })()}
@@ -2368,7 +2625,7 @@ function renderEditor() {
                     </div>
                 </div>
                 <div class="block-body">
-                    ${renderBlockFields(block.id, block.fields)}
+                    ${renderBlockFields(block.id, block.type, block.fields)}
                 </div>
             </div>
         `;
@@ -2383,26 +2640,50 @@ function toggleAdvancedMode(enabled) {
     renderEditor();
 }
 
-function renderBlockFields(blockId, fields) {
-    const showAdvanced = advancedMode;
-    const basicFields = fields.filter(f => f.level !== 'advanced');
-    const advancedFields = fields.filter(f => f.level === 'advanced');
+function renderBlockFields(blockId, blockType, fields) {
+    if (!blockRegistry) {
+        // Fallback: flat rendering without entity grouping
+        return renderFieldGroupFlat(blockId, fields);
+    }
 
+    // Entity-based grouping
+    const groups = groupByEntity(blockType, fields);
     let html = '';
 
-    // Render basic fields
-    html += renderFieldGroup(blockId, basicFields);
+    for (const group of groups) {
+        // Sort header/footer only — entity groups preserve document order
+        if (group.key === '_header_' || group.key === '_footer_') {
+            group.fields.sort((a, b) => {
+                const aAdv = a.level === 'advanced' ? 1 : 0;
+                const bAdv = b.level === 'advanced' ? 1 : 0;
+                return aAdv - bAdv;
+            });
+        }
 
-    // Render advanced fields (if visible)
-    if (showAdvanced && advancedFields.length > 0) {
-        html += '<div class="advanced-section-note">Erweiterte Felder — Änderungen können Layout beeinflussen</div>';
-        html += renderFieldGroup(blockId, advancedFields);
+        // Filter by advanced mode
+        const visibleFields = advancedMode
+            ? group.fields
+            : group.fields.filter(f => f.level !== 'advanced');
+        if (visibleFields.length === 0) continue;
+
+        // Check if group has hidden advanced fields
+        const hiddenAdvCount = group.fields.length - visibleFields.length;
+
+        const label = getEntityLabel(blockType, group.key, group.fields);
+        html += '<div class="entity-group">';
+        if (label) {
+            html += `<div class="entity-group-label">${escapeHtml(label)}`;
+            if (hiddenAdvCount > 0) html += ` <span class="entity-adv-hint">+${hiddenAdvCount} erweitert</span>`;
+            html += '</div>';
+        }
+        html += renderFieldGroupFlat(blockId, visibleFields);
+        html += '</div>';
     }
 
     return html;
 }
 
-function renderFieldGroup(blockId, fields) {
+function renderFieldGroupFlat(blockId, fields) {
     let html = '';
     let i = 0;
     while (i < fields.length) {
@@ -2510,7 +2791,8 @@ function renderField(blockId, field) {
                 </div>
             `;
 
-        default: // text
+        default: { // text
+            const isFileField = field.id.endsWith('-file');
             return `
                 <div class="field${field.level === 'advanced' ? ' field-advanced' : ''}">
                     <div class="field-label">
@@ -2518,9 +2800,11 @@ function renderField(blockId, field) {
                         <span class="field-type-badge text">${field.type}</span>
                     </div>
                     <input type="text" id="${inputId}" data-field-id="${field.id}" data-block-id="${blockId}"
-                           value="${escapeHtml(typeof field.value === 'object' ? JSON.stringify(field.value) : field.value || '')}" oninput="onFieldChange(this)">
+                           value="${escapeHtml(typeof field.value === 'object' ? JSON.stringify(field.value) : field.value || '')}" oninput="onFieldChange(this)"${isFileField ? ' placeholder="Dateiname (z.B. video.mp4)"' : ''}>
+                    ${isFileField ? '<div style="font-size:11px; color:#94a3b8; margin-top:2px;">Dateiname oder Pfad zur Mediendatei</div>' : ''}
                 </div>
             `;
+        }
     }
 }
 
@@ -2557,17 +2841,17 @@ function onFieldChange(inputEl) {
                 } else {
                     field.value = { ...field.value, src: inputEl.value };
                 }
-                sendPreviewUpdate(fieldId, 'value', field.value.src);
+                sendPreviewUpdate(fieldId, 'value', field.value.src, blockId);
             } else if (prop === 'value.alt') {
                 if (typeof field.value === 'string') {
                     field.value = { src: field.value, alt: inputEl.value };
                 } else {
                     field.value = { ...field.value, alt: inputEl.value };
                 }
-                sendPreviewUpdate(fieldId, 'alt', inputEl.value);
+                sendPreviewUpdate(fieldId, 'alt', inputEl.value, blockId);
             } else {
                 field[prop] = inputEl.value;
-                sendPreviewUpdate(fieldId, prop, inputEl.value);
+                sendPreviewUpdate(fieldId, prop, inputEl.value, blockId);
             }
 
             hasUnsavedChanges = true;
@@ -2802,42 +3086,6 @@ $('btnDraftIgnore').addEventListener('click', () => {
     draftBanner.style.display = 'none';
 });
 
-// ============================================================
-//  SETTINGS MODAL
-// ============================================================
-
-$('btnSettings').addEventListener('click', () => {
-    const config = getConfig();
-    $('settingsUrl').value = config?.url || '';
-    $('settingsKey').value = config?.key || '';
-    $('settingsModal').classList.add('active');
-});
-
-$('btnSettingsCancel').addEventListener('click', () => {
-    $('settingsModal').classList.remove('active');
-});
-
-$('btnSettingsSave').addEventListener('click', () => {
-    const url = $('settingsUrl').value.trim();
-    const key = $('settingsKey').value.trim();
-
-    if (url && key) {
-        saveConfig(url, key);
-        showToast('success', 'Einstellungen gespeichert. Seite wird neu geladen...');
-        setTimeout(() => location.reload(), 1000);
-    } else if (!url && !key) {
-        clearConfig();
-        showToast('info', 'Supabase-Konfiguration entfernt.');
-        $('settingsModal').classList.remove('active');
-    } else {
-        showToast('error', 'Bitte beide Felder ausfüllen oder beide leeren.');
-    }
-});
-
-// Close modal on backdrop click
-$('settingsModal').addEventListener('click', (e) => {
-    if (e.target === $('settingsModal')) $('settingsModal').classList.remove('active');
-});
 
 // ============================================================
 //  TOAST NOTIFICATIONS
@@ -2865,6 +3113,60 @@ function showToast(type, message) {
 }
 
 // ============================================================
+//  FEEDBACK
+// ============================================================
+
+function openFeedbackModal() {
+    const slugEl = $('feedbackPageSlug');
+    if (currentPageId) {
+        slugEl.innerHTML = 'Seite: <code>' + escapeHtml(currentPageId) + '</code>';
+    } else {
+        slugEl.textContent = '';
+    }
+    $('feedbackMessage').value = '';
+    $('feedbackEmail').value = '';
+    $('btnFeedbackSubmit').disabled = false;
+    $('btnFeedbackSubmit').textContent = 'Absenden';
+    $('feedbackModal').classList.add('active');
+    $('feedbackMessage').focus();
+}
+
+function closeFeedbackModal() {
+    $('feedbackModal').classList.remove('active');
+}
+
+async function submitFeedback(e) {
+    e.preventDefault();
+    const message = $('feedbackMessage').value.trim();
+    if (!message) return;
+
+    const email = $('feedbackEmail').value.trim() || null;
+    const btn = $('btnFeedbackSubmit');
+    btn.disabled = true;
+    btn.textContent = 'Senden\u2026';
+
+    try {
+        if (!sbClient) throw new Error('Nicht verbunden');
+
+        const { error } = await sbClient.from('feedback').insert({
+            page_slug: currentPageId || null,
+            message,
+            email
+        });
+
+        if (error) throw error;
+
+        closeFeedbackModal();
+        showToast('success', 'Feedback gesendet \u2014 vielen Dank!');
+    } catch (err) {
+        console.error('Feedback error:', err);
+        showToast('error', 'Feedback konnte nicht gesendet werden.');
+        btn.disabled = false;
+        btn.textContent = 'Absenden';
+    }
+}
+
+// ============================================================
 //  HELPERS
 // ============================================================
 
@@ -2881,9 +3183,14 @@ const BLOCK_LABELS = {
     'partners': 'Partner',
     'faq-section': 'FAQ',
     'kontakt-form': 'Kontaktformular',
+    'contact-section': 'Kontaktformular',
     'vorteile-section': 'Vorteile',
     'about-section': 'Über uns',
     'kostenfrei-section': 'Kostenfrei',
+    'mission-section': 'Mission',
+    'timeline-section': 'Zeitstrahl',
+    'team-section': 'Team',
+    'cta-section': 'Call-to-Action',
 };
 
 // German display names for common field name parts
@@ -2897,6 +3204,10 @@ const FIELD_LABELS = {
     'info': 'Info', 'testimonial': 'Referenz', 'partners': 'Partner',
     'quote': 'Zitat', 'name': 'Name', 'role': 'Rolle', 'video': 'Video',
     'heading': 'Überschrift', 'src': 'Quelle',
+    'eigenstaendig': 'Eigenständig', 'benefits': 'Vorteile', 'roles': 'Rollen',
+    'cards': 'Karten', 'vorteile': 'Vorteile', 'faq': 'FAQ', 'cta': 'CTA',
+    'contact': 'Kontakt', 'href': 'Link', 'question': 'Frage', 'answer': 'Antwort',
+    'section': 'Sektion', 'item': 'Eintrag', 'logo': 'Logo', 'logos': 'Logos', 'partner': 'Partner', 'year': 'Jahr',
 };
 
 function formatBlockType(type) {
@@ -3009,7 +3320,7 @@ function sendPreviewInit() {
 // --- Debounced field update dispatch (per-field timers) ---
 const previewUpdateTimers = {};
 
-function sendPreviewUpdate(fieldId, prop, value) {
+function sendPreviewUpdate(fieldId, prop, value, blockId) {
     if (!previewReady) return;
     const key = fieldId + ':' + prop;
     clearTimeout(previewUpdateTimers[key]);
@@ -3017,6 +3328,7 @@ function sendPreviewUpdate(fieldId, prop, value) {
         previewFrame.contentWindow.postMessage({
             type: 'hp-cms-update',
             fieldId: fieldId,
+            blockId: blockId || null,
             prop: prop,
             value: value
         }, location.origin);
@@ -3025,11 +3337,12 @@ function sendPreviewUpdate(fieldId, prop, value) {
 }
 
 // --- Highlight/unhighlight on field focus/blur ---
-function sendPreviewHighlight(fieldId) {
+function sendPreviewHighlight(fieldId, blockId) {
     if (!previewReady) return;
     previewFrame.contentWindow.postMessage({
         type: 'hp-cms-highlight',
-        fieldId: fieldId
+        fieldId: fieldId,
+        blockId: blockId || null
     }, location.origin);
 }
 
@@ -3043,7 +3356,7 @@ function sendPreviewUnhighlight() {
 // Attach focus/blur listeners to editor fields (via event delegation)
 editorScroll.addEventListener('focusin', (e) => {
     const input = e.target.closest('[data-field-id]');
-    if (input) sendPreviewHighlight(input.dataset.fieldId);
+    if (input) sendPreviewHighlight(input.dataset.fieldId, input.dataset.blockId);
 });
 
 editorScroll.addEventListener('focusout', (e) => {

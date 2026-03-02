@@ -40,17 +40,22 @@ helferportal-prototypes/          ← Git repo root = document root
 ## Core Rules
 
 ### 1. Shared Styles & Scripts
+
 All pages link to the SAME CSS and JS files via root-relative paths:
+
 ```html
 <link rel="stylesheet" href="/assets/shared-styles.css" />
 <script src="/assets/shared-scripts.js" defer></script>
 ```
+
 **Never inline CSS or JS in page files** (except for page-specific `<title>` and meta). The Startseite (index.html) currently has everything inline — extract it.
 
 ### 2. Consistent Header & Footer
+
 Every page has an identical `<header>` and `<footer>`. When updating navigation, update ALL pages.
 
 Header navigation:
+
 - Logo → index.html
 - "Hilfe finden" → hilfe-finden.html
 - "Engagieren" → engagieren.html
@@ -58,6 +63,7 @@ Header navigation:
 - "Anmelden" → kontakt.html
 
 Footer columns:
+
 - "Für Sie": Hilfe finden, Engagieren, Für Kommunen, Für Organisationen
 - "Über uns": Das Konzept, So funktioniert's, Unsere Partner, Aktuelles
 - "Kontakt": Kontakt aufnehmen, Demo vereinbaren, FAQ
@@ -67,6 +73,7 @@ Footer columns:
 **Hosting domain:** `https://www.helferportal.kamanin.at/`
 
 All inter-page links use absolute paths from the root:
+
 ```html
 <!-- Navigation and internal links -->
 <a href="/hilfe-finden.html">Hilfe finden</a>
@@ -74,10 +81,12 @@ All inter-page links use absolute paths from the root:
 <a href="/fuer-kommunen.html">Für Kommunen</a>
 <a href="/ueber-uns.html">Über uns</a>
 <a href="/kontakt.html">Anmelden</a>
-<a href="/">Startseite</a>  <!-- Logo link -->
+<a href="/">Startseite</a>
+<!-- Logo link -->
 ```
 
 External app links (to the actual Helferportal platform):
+
 ```html
 <a href="https://hilfe.helferportal.de">Jetzt Unterstützung finden</a>
 <a href="https://helfen.helferportal.de">Jetzt registrieren</a>
@@ -86,6 +95,7 @@ External app links (to the actual Helferportal platform):
 **Important:** Use root-relative paths (`/hilfe-finden.html`), NOT relative (`hilfe-finden.html`) and NOT full domain URLs. This way the links work both locally (via live-server) and on the hosted domain without changes.
 
 When deploying, the file structure maps directly:
+
 ```
 / → pages/index.html
 /hilfe-finden.html → pages/hilfe-finden.html
@@ -94,61 +104,72 @@ When deploying, the file structure maps directly:
 ```
 
 ### 4. data-block and data-field Attributes
+
 Every `<section>` that represents a content block MUST have:
+
 ```html
-<section class="hero" data-block="hero-slider" data-block-id="b1">
+<section class="hero" data-block="hero-slider" data-block-id="b1"></section>
 ```
+
 Key content elements SHOULD have:
+
 ```html
 <h1 data-field="slide-1-heading" data-field-type="text">...</h1>
 <p data-field="slide-1-subheading" data-field-type="textarea">...</p>
 <img data-field="slide-1-image" data-field-type="image" src="..." />
 ```
+
 These attributes enable future automated parsing by the Content Editor.
 
 ### 5. Block Numbering
+
 Blocks are numbered sequentially per page: b1, b2, b3... The `data-block` value is the semantic type (e.g., `hero-slider`, `tabs-section`, `faq-section`). The `data-block-id` is the page-local sequential ID.
 
 ## Design System
 
 ### Brand Colors
+
 ```css
---orange-primary: #E65100;   /* Helpers / Volunteers */
---blue-primary: #1565C0;     /* Help seekers */
---purple-primary: #7B1FA2;   /* B2B (Kommunen, Organisationen, Dienstleister) */
---green-primary: #2E7D32;    /* Accent (cost-free, positive) */
+--orange-primary: #e65100; /* Helpers / Volunteers */
+--blue-primary: #1565c0; /* Help seekers */
+--purple-primary: #7b1fa2; /* B2B (Kommunen, Organisationen, Dienstleister) */
+--green-primary: #2e7d32; /* Accent (cost-free, positive) */
 ```
 
 ### Color Logic (critical)
+
 - **Orange** = Engagierte / Helfer
 - **Blue** = Hilfesuchende / Pflegende Angehörige
 - **Purple** = Kommunen, Organisationen, Gesundheitsdienstleister (B2B)
 - **Green** = Positive accents (kostenfrei, Checkmarks, Sicherheit)
 
 ### Typography
+
 - **Display font**: Plus Jakarta Sans (headings, labels, navigation)
 - **Body font**: DM Sans (paragraphs, descriptions, form fields)
 
 ### Component Patterns
+
 Reuse these across all pages:
 
-| Component | CSS Class | Used On |
-|-----------|-----------|---------|
-| Hero Slider | `.hero`, `.hero-slider`, `.slide` | Startseite |
-| Mini Hero | `.hero-mini` | Subpages |
-| Tabs Section | `.tabs-section`, `.tabs-nav`, `.tab-panel` | Startseite, Hilfe finden, Engagieren, Kommunen |
-| Quick Actions | `.quick-actions`, `.quick-action-card` | Startseite |
-| Steps/How It Works | `.how-it-works`, `.step-card` | Startseite, subpages |
-| FAQ Accordion | `.faq-section`, `.faq-item` | All pages |
-| Testimonial | `.testimonial-section` | Startseite |
-| Partners Logo Row | `.partners-section` | Startseite, Über uns |
-| Cities Grid | `.staedte-section`, `.stadt-card` | Startseite |
-| About Section | `.about-section` | Startseite |
-| Cost-Free Info | `.kostenfrei-section` | Startseite |
-| Advantages Grid | `.vorteile-section` | Hilfe finden, Engagieren |
-| Contact Form | `.kontakt-form` | Kontakt |
+| Component          | CSS Class                                  | Used On                                        |
+| ------------------ | ------------------------------------------ | ---------------------------------------------- |
+| Hero Slider        | `.hero`, `.hero-slider`, `.slide`          | Startseite                                     |
+| Mini Hero          | `.hero-mini`                               | Subpages                                       |
+| Tabs Section       | `.tabs-section`, `.tabs-nav`, `.tab-panel` | Startseite, Hilfe finden, Engagieren, Kommunen |
+| Quick Actions      | `.quick-actions`, `.quick-action-card`     | Startseite                                     |
+| Steps/How It Works | `.how-it-works`, `.step-card`              | Startseite, subpages                           |
+| FAQ Accordion      | `.faq-section`, `.faq-item`                | All pages                                      |
+| Testimonial        | `.testimonial-section`                     | Startseite                                     |
+| Partners Logo Row  | `.partners-section`                        | Startseite, Über uns                           |
+| Cities Grid        | `.staedte-section`, `.stadt-card`          | Startseite                                     |
+| About Section      | `.about-section`                           | Startseite                                     |
+| Cost-Free Info     | `.kostenfrei-section`                      | Startseite                                     |
+| Advantages Grid    | `.vorteile-section`                        | Hilfe finden, Engagieren                       |
+| Contact Form       | `.kontakt-form`                            | Kontakt                                        |
 
 ### Buttons
+
 ```html
 <button class="btn-primary blue">Hilfe finden</button>
 <button class="btn-primary orange">Jetzt engagieren</button>
@@ -159,6 +180,7 @@ Reuse these across all pages:
 ## Excel Content Table Format
 
 ### Structure per page (one .xlsx file per page)
+
 - **Row 1**: Header row (dark background, white text)
 - **Rows 2-4**: Page meta (Seite, URL, Block-Typ)
 - **Block headers**: `═══ BLOCK N: NAME ═══` — orange background, white text, bold
@@ -166,22 +188,26 @@ Reuse these across all pages:
 - **Content rows**: one row per content field
 
 ### Columns (A-F)
-| Column | Header | Purpose |
-|--------|--------|---------|
-| A | Content-Typ (Element / Rolle) | What this element is (Tag, Heading, Button, etc.) |
-| B | Beschreibung / Ausprägung | Description for the editor/developer |
-| C | Titel (sichtbarer Content) | Short visible text (headings, button labels, names) |
-| D | Text (sichtbarer Content) | Long visible text (paragraphs, descriptions) |
-| E | Dateiname / Bild | Image filename or reference |
-| F | Kommentar / Verlinkung | Links, icons, developer notes |
+
+| Column | Header                        | Purpose                                             |
+| ------ | ----------------------------- | --------------------------------------------------- |
+| A      | Content-Typ (Element / Rolle) | What this element is (Tag, Heading, Button, etc.)   |
+| B      | Beschreibung / Ausprägung     | Description for the editor/developer                |
+| C      | Titel (sichtbarer Content)    | Short visible text (headings, button labels, names) |
+| D      | Text (sichtbarer Content)     | Long visible text (paragraphs, descriptions)        |
+| E      | Dateiname / Bild              | Image filename or reference                         |
+| F      | Kommentar / Verlinkung        | Links, icons, developer notes                       |
 
 ### Critical Rule: No Merged Cells for Editable Content
+
 Tab names, option titles, and other editable content must be in individual cells, NOT merged rows. Sub-headers (like `Tab 1: Hilfesuchende`) are visual separators only — the actual editable tab name goes in a separate `Tab-Name` row.
 
 ### Column Widths
+
 A=35, B=40, C=50, D=70, E=25, F=50
 
 ### Styling
+
 - Header row: Font Calibri 11 bold white, Fill #2D3748
 - Block headers: Font Calibri 12 bold white, Fill #E65100 (orange)
 - Sub-headers (slides/tabs): Font Calibri 11 bold, Fill matches color logic (blue=#E3F2FD, orange=#FFF3E0, purple=#F3E5F5)
@@ -192,18 +218,20 @@ A=35, B=40, C=50, D=70, E=25, F=50
 
 ### Pages to generate:
 
-| # | Page | URL | Content Source | Status |
-|---|------|-----|---------------|--------|
-| 1 | Startseite | / | Sheet: 1_Startseite (10 blocks) | ✅ Done |
-| 2 | Hilfe finden | /hilfe-finden | Sheet: 2_Hilfe_finden (4 blocks) | Pending |
-| 3 | Engagieren | /engagieren | Sheet: 3_Engagieren (4 blocks) | Pending |
-| 4 | Für Kommunen & soziale Akteure | /fuer-kommunen | Sheet: 4_Kommunen_Akteure (5 blocks) | Pending |
-| 5 | Über uns | /ueber-uns | Sheet: 5_Ueber_uns (4 blocks) | Pending |
-| 6 | Anmelden / Kontakt | /kontakt | Sheet: 6_Anmelden_Kontakt (3 blocks) | Pending |
-| 7 | Stadtseite (Template) | /stadt/[name] | Sheet: 7_Stadtseite_Template | Pending |
+| #   | Page                           | URL            | Content Source                       | Status  |
+| --- | ------------------------------ | -------------- | ------------------------------------ | ------- |
+| 1   | Startseite                     | /              | Sheet: 1_Startseite (10 blocks)      | ✅ Done |
+| 2   | Hilfe finden                   | /hilfe-finden  | Sheet: 2_Hilfe_finden (4 blocks)     | Pending |
+| 3   | Engagieren                     | /engagieren    | Sheet: 3_Engagieren (4 blocks)       | Pending |
+| 4   | Für Kommunen & soziale Akteure | /fuer-kommunen | Sheet: 4_Kommunen_Akteure (5 blocks) | Pending |
+| 5   | Über uns                       | /ueber-uns     | Sheet: 5_Ueber_uns (4 blocks)        | Pending |
+| 6   | Anmelden / Kontakt             | /kontakt       | Sheet: 6_Anmelden_Kontakt (3 blocks) | Pending |
+| 7   | Stadtseite (Template)          | /stadt/[name]  | Sheet: 7_Stadtseite_Template         | Pending |
 
 ### Subpage Pattern
+
 All subpages (2-7) follow the same pattern:
+
 1. **Mini Hero** (compact, no slider — just H1 + subheading + optional gradient)
 2. **Content blocks** (tabs, cards, text sections — varies per page)
 3. **FAQ** (page-specific questions)
@@ -222,6 +250,7 @@ All subpages (2-7) follow the same pattern:
 ## Workflow: Updating Content
 
 When the client provides updated text:
+
 1. Update the Excel file in `content/`
 2. Update the corresponding HTML in `pages/`
 3. Ensure consistency between Excel and HTML
@@ -229,16 +258,24 @@ When the client provides updated text:
 ## Image Strategy
 
 Use Unsplash placeholder images with descriptive URLs:
+
 ```html
 <!-- Good: descriptive, appropriate size -->
-<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Alia Tagba" />
+<img
+  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400"
+  alt="Alia Tagba"
+/>
 
 <!-- For hero backgrounds: use w=1400 -->
-background: url("https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=1400") center/cover;
+background:
+url("https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=1400")
+center/cover;
 ```
+
 Image motifs should match the social/care context of Helferportal.
 
 ## Language Rules
+
 - **All visible content**: German (formal "Sie" for B2B/help seekers, informal "du" for Engagierte pages)
 - **Code comments**: English
 - **File names**: German-friendly but URL-safe (hilfe-finden.html, not hilfe_finden.html)
@@ -273,3 +310,7 @@ git push origin main
 - [ ] Matching Excel file exists in content/
 - [ ] Excel has no merged cells in editable content rows
 - [ ] Block numbering in Excel matches HTML
+
+## Rules
+
+- At the end of every session, when asked to wrap up, update the Session Log section below following the standard format.

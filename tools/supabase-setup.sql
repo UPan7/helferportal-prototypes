@@ -59,3 +59,29 @@ CREATE POLICY "Anyone can view images"
   ON storage.objects FOR SELECT
   TO public
   USING (bucket_id = 'images');
+
+-- ============================================================
+--  7. Feedback table — MVP user feedback from admin editor
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS public.feedback (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  page_slug TEXT,                  -- which page the user was editing (nullable)
+  message TEXT NOT NULL,           -- feedback message
+  email TEXT,                      -- optional contact email
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- RLS: anyone can insert feedback (matches pages policy pattern)
+ALTER TABLE public.feedback ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Anyone can insert feedback"
+  ON public.feedback FOR INSERT
+  TO anon, authenticated
+  WITH CHECK (true);
+
+-- Only service_role can read feedback (for admin dashboard later)
+CREATE POLICY "Service role can read feedback"
+  ON public.feedback FOR SELECT
+  TO service_role
+  USING (true);

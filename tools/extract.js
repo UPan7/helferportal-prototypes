@@ -52,8 +52,10 @@ $('[data-block]').each((_, blockEl) => {
 
     switch (fieldType) {
       case 'image':
-        field.value = $field.attr('src') || '';
-        field.alt = $field.attr('alt') || '';
+        field.value = {
+          src: $field.attr('src') || '',
+          alt: $field.attr('alt') || ''
+        };
         break;
 
       case 'link':
@@ -73,7 +75,11 @@ $('[data-block]').each((_, blockEl) => {
         break;
 
       case 'textarea':
-        field.value = $field.text().trim();
+        if ($field.children().length > 0) {
+          field.value = extractStructuredText($, $field);
+        } else {
+          field.value = $field.text().trim();
+        }
         break;
 
       case 'html':
@@ -91,12 +97,54 @@ $('[data-block]').each((_, blockEl) => {
   blocks.push(block);
 });
 
+// --- Assign levels from block-registry ---
+const registryPath = path.resolve(__dirname, 'block-registry.json');
+let registry = null;
+try { registry = JSON.parse(fs.readFileSync(registryPath, 'utf-8')); } catch (e) { /* optional */ }
+
+if (registry) {
+  for (const block of blocks) {
+    // Resolve block definition (direct or alias)
+    let blockDef = registry[block.type];
+    if (!blockDef) {
+      for (const [, def] of Object.entries(registry)) {
+        if (def.aliases && Object.keys(def.aliases).includes(block.type)) {
+          blockDef = def; break;
+        }
+      }
+    }
+    if (!blockDef?.fields) continue;
+
+    // Flatten variant field maps
+    const allPatterns = {};
+    for (const [key, val] of Object.entries(blockDef.fields)) {
+      if (key.startsWith('_')) Object.assign(allPatterns, val);
+      else allPatterns[key] = val;
+    }
+
+    for (const field of block.fields) {
+      // Try exact match first, then regex match
+      if (allPatterns[field.id]) {
+        field.level = allPatterns[field.id].level || 'basic';
+      } else {
+        for (const [pattern, meta] of Object.entries(allPatterns)) {
+          if (!meta.repeatable) continue;
+          const regex = new RegExp('^' + pattern.replace(/\{[^}]+\}/g, '(.+)') + '$');
+          if (regex.test(field.id)) { field.level = meta.level || 'basic'; break; }
+        }
+      }
+      if (!field.level) field.level = 'basic'; // Default fallback
+    }
+  }
+}
+
 // --- Build output ---
 const output = {
   _meta: {
     generator: 'helferportal-content-tools/extract.js',
     source: path.basename(inputPath),
-    extracted: new Date().toISOString()
+    extracted: new Date().toISOString(),
+    schema_version: '2.0'
   },
   page: {
     id: pageId,
@@ -130,4 +178,43 @@ function getTextOnly($, $el) {
     }
   });
   return text.trim();
+}
+
+/**
+ * Extract structured text from card-like containers.
+ * Finds h3/h4 + p pairs → pipe-delimited "Title | Description".
+ * Falls back to cleaned text per child element.
+ * Recurses into wrapper divs (tags-grid, benefits-list, etc.).
+ */
+function extractStructuredText($, $el) {
+  const items = [];
+  $el.children().each((_, child) => {
+    const $child = $(child);
+    const title = $child.find('h3, h4').first().text().trim();
+    const desc  = $child.find('p').first().text().trim();
+    if (title) {
+      items.push(desc ? `${title} | ${desc}` : title);
+    } else {
+      const text = getTextOnly($, $child);
+      if (text) {
+        items.push(text);
+      } else if ($child.children().length > 0) {
+        // Recurse into wrapper containers (e.g., tags-grid → spans, benefits-list → divs)
+        $child.children().each((_, grandchild) => {
+          const $gc = $(grandchild);
+          const gcTitle = $gc.find('h3, h4').first().text().trim();
+          const gcDesc  = $gc.find('p').first().text().trim();
+          if (gcTitle) {
+            items.push(gcDesc ? `${gcTitle} | ${gcDesc}` : gcTitle);
+          } else {
+            const gcText = getTextOnly($, $gc);
+            if (gcText) items.push(gcText);
+          }
+        });
+      }
+    }
+  });
+  return items.length > 0
+    ? items.join('\n')
+    : $el.text().replace(/\s+/g, ' ').trim();
 }
