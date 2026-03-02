@@ -22,6 +22,12 @@
           "level": "basic"
         },
         {
+          "id": "hero-image",
+          "type": "image",
+          "value": { "src": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1400", "alt": "Hero Hintergrund" },
+          "level": "advanced"
+        },
+        {
           "id": "hero-subtitle",
           "type": "text",
           "value": "Seit 2015 entwickeln wir digitale Lösungen, die Menschen mit Unterstützungsbedarf und Engagierte zusammenbringen – einfach, sicher und nah.",

@@ -22,6 +22,12 @@
           "level": "basic"
         },
         {
+          "id": "hero-image",
+          "type": "image",
+          "value": { "src": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1400", "alt": "Hero Hintergrund" },
+          "level": "advanced"
+        },
+        {
           "id": "hero-subtitle",
           "type": "textarea",
           "value": "Ob spontan, regelmäßig oder im Team – finde den Weg, der zu deinem Leben passt. Sicher, versichert und gut begleitet.",

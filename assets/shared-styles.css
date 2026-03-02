@@ -346,16 +346,17 @@ body[class*="page-"] {
     overflow: hidden;
 }
 
-.hero-mini::before {
-    content: '';
+/* Hero background image (CMS-editable, replaces ::before background) */
+.hero-bg-image {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1400') center/cover;
-    opacity: 0.15;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
+
+.hero-mini .hero-bg-image { opacity: 0.15; }
 
 .hero-mini-content {
     position: relative;
@@ -3946,16 +3947,7 @@ body[class*="page-"] {
     overflow: hidden;
 }
 
-.page-fuer-kommunen .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400') center/cover;
-    opacity: 0.15;
-}
+.page-fuer-kommunen .hero .hero-bg-image { opacity: 0.15; }
 
 .page-fuer-kommunen .hero-content {
     position: relative;
@@ -4461,9 +4453,7 @@ body[class*="page-"] {
     margin-top: 64px; background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%); padding: var(--space-3xl) var(--space-lg); position: relative; overflow: hidden;
 }
 
-.page-ueber-uns .hero::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1400') center/cover; opacity: 0.2;
-}
+.page-ueber-uns .hero .hero-bg-image { opacity: 0.2; }
 
 .page-ueber-uns .hero-content {
     position: relative; max-width: 1280px; margin: 0 auto; text-align: center; color: var(--white);
@@ -4785,6 +4775,8 @@ body[class*="page-"] {
 .page-kontakt .hero {
     margin-top: 64px; background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-dark) 100%); padding: var(--space-3xl) var(--space-lg); position: relative; overflow: hidden;
 }
+
+.page-kontakt .hero .hero-bg-image { opacity: 0.15; }
 
 .page-kontakt .hero::before {
     content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: rgba(255,255,255,0.1); border-radius: 50%;

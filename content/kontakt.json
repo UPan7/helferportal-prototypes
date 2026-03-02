@@ -22,6 +22,12 @@
           "level": "basic"
         },
         {
+          "id": "hero-image",
+          "type": "image",
+          "value": { "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1400", "alt": "Hero Hintergrund" },
+          "level": "advanced"
+        },
+        {
           "id": "hero-subtitle",
           "type": "text",
           "value": "Haben Sie Fragen zum Helferportal? Möchten Sie als Kommune oder Organisation kooperieren? Wir sind für Sie da.",
