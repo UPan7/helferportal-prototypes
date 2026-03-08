@@ -2,9 +2,9 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "ueber-uns.html",
-    "extracted": "2026-03-08T14:05:55.793Z",
+    "extracted": "2026-03-08T14:16:02.124Z",
     "schema_version": "2.0",
-    "lastEdited": "2026-03-08T14:06:02.915Z"
+    "lastEdited": "2026-03-08T14:16:11.705Z"
   },
   "page": {
     "id": "ueber-uns",
@@ -188,6 +188,15 @@
           "id": "section-text",
           "type": "text",
           "value": "Menschen hinter Helferportal",
+          "level": "basic"
+        },
+        {
+          "id": "item-1-image",
+          "type": "image",
+          "value": {
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/ueber-uns/item-1-image.jpg",
+            "alt": "Thomas Oeben"
+          },
           "level": "basic"
         },
         {
