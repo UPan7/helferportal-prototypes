@@ -64,14 +64,11 @@ function applyField($, $el, fieldType, field) {
     }
 
     case 'textarea':
-      // Safety: if element has child HTML elements, skip text replacement
-      // to prevent destroying structured markup (e.g. tab-option cards).
-      // Only plain-text containers (no child elements) are safe to overwrite.
       if ($el.children().length > 0) {
-        console.warn(`  ⚠ Skipping textarea field "${field.id}" — element has ${$el.children().length} child HTML elements. Use "html" type or individual fields instead.`);
-        return false;
+        applyStructuredText($, $el, field.value);
+      } else {
+        $el.text(field.value);
       }
-      $el.text(field.value);
       return true;
 
     case 'html':
@@ -100,4 +97,80 @@ function setTextOnly($, $el, newText) {
   });
 }
 
-module.exports = { resolveImage, applyField, setTextOnly };
+/**
+ * Apply pipe-delimited text to a structured HTML container,
+ * updating child elements in-place without destroying HTML structure.
+ *
+ * Reverses extractStructuredText() from extract.js.
+ * Handles patterns:
+ *   - Card: div > h3/h4 + p  →  "Title | Description"
+ *   - List: li > svg + text  →  "Item text"
+ *   - Nested cards with wrappers (feature-card-header, etc.)
+ *
+ * If more lines than children: clones last child as template.
+ * If fewer lines than children: removes excess children.
+ */
+function applyStructuredText($, $el, text) {
+  const lines = text.split('\n').filter(l => l.trim());
+  const $children = $el.children();
+
+  if ($children.length === 0 || lines.length === 0) {
+    return;
+  }
+
+  // Detect pattern from first child
+  const $first = $($children[0]);
+  const hasTitle = $first.find('h3, h4').length > 0;
+  const isListItem = $first.is('li');
+  const pCount = $first.find('p').length;
+
+  // Multi-<p> pattern (e.g. stat-cards: p.stat-number + p description)
+  // Each child consumes pCount lines instead of 1
+  if (!hasTitle && !isListItem && pCount > 1
+      && lines.length === $children.length * pCount) {
+    $children.each((i, child) => {
+      const $ps = $(child).find('p');
+      $ps.each((j, p) => {
+        $(p).text(lines[i * pCount + j].trim());
+      });
+    });
+    return;
+  }
+
+  // Standard patterns: 1 line per child ("Title | Desc" or plain text)
+  const $templateChild = $($children[$children.length - 1]);
+
+  lines.forEach((line, i) => {
+    let $child;
+    if (i < $children.length) {
+      $child = $($children[i]);
+    } else {
+      // Clone last child as template and append
+      $child = $templateChild.clone();
+      $el.append($child);
+    }
+
+    const parts = line.split(' | ');
+    const title = parts[0].trim();
+    const desc = parts.length > 1 ? parts.slice(1).join(' | ').trim() : '';
+
+    if (hasTitle) {
+      $child.find('h3, h4').first().text(title);
+      if (pCount > 0) $child.find('p').first().text(desc || title);
+    } else if (isListItem) {
+      // List items: preserve SVG, update only text nodes
+      setTextOnly($, $child, title);
+    } else {
+      // Generic: update text only, preserve child elements
+      setTextOnly($, $child, title);
+    }
+  });
+
+  // Remove excess children (if fewer lines than original children)
+  const currentChildren = $el.children();
+  for (let i = currentChildren.length - 1; i >= lines.length; i--) {
+    $(currentChildren[i]).remove();
+  }
+}
+
+module.exports = { resolveImage, applyField, setTextOnly, applyStructuredText };

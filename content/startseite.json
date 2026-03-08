@@ -2,9 +2,9 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "index.html",
-    "extracted": "2026-03-08T12:35:26.163Z",
+    "extracted": "2026-03-08T12:54:08.849Z",
     "schema_version": "2.0",
-    "lastEdited": "2026-03-08T12:35:36.956Z"
+    "lastEdited": "2026-03-08T12:59:27.473Z"
   },
   "page": {
     "id": "startseite",
@@ -249,6 +249,12 @@
           "level": "basic"
         },
         {
+          "id": "tab-hilfe-cards",
+          "type": "textarea",
+          "value": "Begleitdienste | Begleitung zu Arztterminen, Behörden oder Ausflügen.\nBesuchsdienste | Gesellschaft leisten, vorlesen oder gemeinsam spazieren gehen.\nAlltagshilfe | Unterstützung beim Einkaufen, im Haushalt oder bei technischen Fragen.\nDienstleistungen | Professionelle Angebote wie Pflege, Therapie, Kinderbetreuung oder Nachhilfe.",
+          "level": "advanced"
+        },
+        {
           "id": "tab-hilfe-btn-1",
           "type": "button",
           "href": "",
@@ -273,6 +279,12 @@
           "type": "textarea",
           "value": "Sie pflegen einen nahestehenden Menschen? Im Helferportal finden Sie passende Unterstützung, Pflegeangebote und Pflegeberatung – damit Sie im Alltag spürbar entlastet werden.",
           "level": "basic"
+        },
+        {
+          "id": "tab-angehoerige-cards",
+          "type": "textarea",
+          "value": "Verhinderungspflege | Damit Ihr Angehöriger gut versorgt ist, wenn Sie einmal verhindert sind.\nEntlastungsleistungen | Unterstützung im Alltag – über den Entlastungsbetrag der Pflegekasse nutzbar.\nPflegeberatung | Beratung zu Leistungen, Anträgen und passenden Unterstützungsangeboten.",
+          "level": "advanced"
         },
         {
           "id": "tab-angehoerige-btn-1",
@@ -301,6 +313,12 @@
           "level": "basic"
         },
         {
+          "id": "tab-engagierte-cards",
+          "type": "textarea",
+          "value": "Spontan & flexibel | Freizeit begleiten oder im Alltag helfen – ohne feste Verpflichtung.\nRegelmäßig & eigenständig | Unterstützen Sie Menschen regelmäßig und eigenverantwortlich.\nÜber eine Organisation | Mit fachlicher Unterstützung, Schulungen und Versicherungsschutz.",
+          "level": "advanced"
+        },
+        {
           "id": "tab-engagierte-btn-1",
           "type": "button",
           "href": "",
@@ -325,6 +343,12 @@
           "type": "textarea",
           "value": "Schließen Sie Versorgungslücken, fördern Sie bürgerschaftliches Engagement und schaffen Sie Transparenz über Bedarfe und Angebote in Ihrer Kommune.",
           "level": "basic"
+        },
+        {
+          "id": "tab-kommunen-cards",
+          "type": "textarea",
+          "value": "Versorgungsnetzwerke koordinieren | Unterstützungs- und Versorgungsangebote sektorenübergreifend digital verbinden und steuern.\nEhrenamt organisieren | Bürgerschaftliches Engagement sichtbar machen, gezielt einsetzen und effizient koordinieren.\nMonitoring & Planung | Daten nutzen, um Bedarfe zu erkennen und Sozial- und Versorgungsplanung fundiert zu steuern.\nBeratungs- & Koordinationsstellen einbinden | Pflegestützpunkte, Seniorenberatung und Quartiersmanagement können Bedarfe für Ratsuchende erfassen, koordinieren und nachverfolgen.",
+          "level": "advanced"
         },
         {
           "id": "tab-kommunen-btn-1",
@@ -353,6 +377,12 @@
           "level": "basic"
         },
         {
+          "id": "tab-orga-cards",
+          "type": "textarea",
+          "value": "Digitale Koordination | Verfügbarkeiten abfragen, Einsätze planen und Kommunikation zentral organisieren.\nAdministration & Abrechnung | Zeiterfassung, Budgetverwaltung und Abrechnung einfach digital abwickeln.\nNeue Engagierte gewinnen | Zugang zu motivierten Helferinnen und Helfern über die zentrale Plattform.\nEigener Organisationsbereich | Organisationen steuern ihre Engagierten im Helferportal in einem eigenen, geschützten Bereich – unabhängig und dennoch Teil eines gemeinsamen Netzwerks.",
+          "level": "advanced"
+        },
+        {
           "id": "tab-orga-btn-1",
           "type": "button",
           "href": "",
@@ -377,6 +407,12 @@
           "type": "textarea",
           "value": "Erhalten Sie passende Terminanfragen digital, verbessern Sie Ihre Auslastung und sparen Sie Zeit bei der Terminvereinbarung.",
           "level": "basic"
+        },
+        {
+          "id": "tab-dienst-cards",
+          "type": "textarea",
+          "value": "Digitale Terminanfragen | Anfragen online erhalten und effizient bearbeiten.\nBessere Auslastung | Freie Kapazitäten sichtbar machen und Leerlauf reduzieren.\nNetzwerk-Sichtbarkeit | Als Partner im kommunalen Versorgungsnetz sichtbar sein.",
+          "level": "advanced"
         },
         {
           "id": "tab-dienst-btn-1",
