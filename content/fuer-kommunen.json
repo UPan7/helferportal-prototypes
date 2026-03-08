@@ -2,9 +2,9 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "fuer-kommunen.html",
-    "extracted": "2026-03-08T13:44:02.724Z",
+    "extracted": "2026-03-08T14:05:53.587Z",
     "schema_version": "2.0",
-    "lastEdited": "2026-03-08T13:44:14.890Z"
+    "lastEdited": "2026-03-08T14:06:03.128Z"
   },
   "page": {
     "id": "fuer-kommunen",
@@ -64,6 +64,12 @@
           "id": "cards-title",
           "type": "text",
           "value": "Herausforderungen in Kommunen",
+          "level": "basic"
+        },
+        {
+          "id": "challenges-intro",
+          "type": "textarea",
+          "value": "Viele Angebote für Unterstützung und Versorgung existieren bereits – doch sie arbeiten häufig nebeneinander und sind kaum miteinander vernetzt. Eine gemeinsame digitale Grundlage fehlt oft.",
           "level": "basic"
         },
         {
@@ -185,7 +191,7 @@
         {
           "id": "tab-organisationen-cards",
           "type": "textarea",
-          "value": "Digitale Koordination | Engagierte erfassen, Verfügbarkeiten abfragen, Einsätze planen – alles in einem System.\nPassgenaue Vermittlung | Matching nach Bedarf, Kompetenz, Zeit und Ort – automatisch und effizient.\nEntlastung für Koordinator:innen | Weniger Verwaltungsaufwand, mehr Zeit für Menschen und fachliche Begleitung.\nAdministration & Abrechnung | Zeiterfassung, Dokumentation, automatische Abrechnung mit Pflegekassen.\nNeue Engagierte gewinnen | Zugang zu motivierten Helfern durch zentrale Plattform und gemeinsame Kampagnen.",
+          "value": "Digitale Koordination | Engagierte und Klienten erfassen, Unterstützungsbedarfe einstellen und Verfügbarkeit passender Engagierter abfragen, digitale Zeiterfassung.\nPassgenaue Vermittlung | Matching nach Tätigkeiten, zeitlicher Verfügbarkeit, Einsatzgebiet, Qualifikationen und Eigenschaften, automatisch und effizient.\nEntlastung für Koordinatorinnen | Weniger Verwaltungsaufwand durch digitalisierte Prozesse, mehr Zeit für Menschen und fachliche Begleitung.\nAdministration und Abrechnung | Zeiterfassung, automatische Abrechnungh, Schnittstellen zur Buchhaltung und Bankprogramm, Auswertungen.\nNeue Engagierte gewinnen | Stärkung des bürgerschaftlichen Engagements durch passgenaue Einsatzmöglichkeiten.",
           "level": "advanced"
         },
         {

@@ -2,9 +2,9 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "index.html",
-    "extracted": "2026-03-08T13:44:00.401Z",
+    "extracted": "2026-03-08T14:05:51.318Z",
     "schema_version": "2.0",
-    "lastEdited": "2026-03-08T13:44:14.132Z"
+    "lastEdited": "2026-03-08T14:06:02.472Z"
   },
   "page": {
     "id": "startseite",
@@ -902,7 +902,7 @@
         {
           "id": "info-kosten-cards",
           "type": "textarea",
-          "value": "9,90 €/Monat\nEmpfohlener Beitrag\n18,80 €/Monat\nFür mich + eine hilfesuchende Person\nIndividuell\nIndividueller Betrag\n0 €\nAktuell kein Beitrag möglich",
+          "value": "9,90 €/Monat\nEmpfohlener Beitrag\n18,80 €/Monat\nFür mich + eine hilfesuchende Person\nIndividuell\nIndividueller Betrag\n0 €\nAktuell kein Beitrag möglich\n0 €\nAktuell kein Beitrag möglich\n0 €\nAktuell kein Beitrag möglich\n0 €\nAktuell kein Beitrag möglich\n0 €\nAktuell kein Beitrag möglich",
           "level": "advanced"
         },
         {
