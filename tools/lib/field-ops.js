@@ -107,12 +107,13 @@ function setTextOnly($, $el, newText) {
  *
  * Reverses extractStructuredText() from extract.js.
  * Handles patterns:
+ *   - Title + wrapper: h3/h4 + div{spans} → line 0 = title, lines 1..N = items inside wrapper
  *   - Card: div > h3/h4 + p  →  "Title | Description"
  *   - List: li > svg + text  →  "Item text"
- *   - Nested cards with wrappers (feature-card-header, etc.)
+ *   - Multi-<p>: each child has N <p>s, consuming N lines
  *
- * If more lines than children: clones last child as template.
- * If fewer lines than children: removes excess children.
+ * If more lines/items than children: clones last child as template.
+ * If fewer lines/items than children: removes excess children.
  */
 function applyStructuredText($, $el, text) {
   const lines = text.split('\n').filter(l => l.trim());
@@ -128,8 +129,42 @@ function applyStructuredText($, $el, text) {
   const isListItem = $first.is('li');
   const pCount = $first.find('p').length;
 
-  // Multi-<p> pattern (e.g. stat-cards: p.stat-number + p description)
-  // Each child consumes pCount lines instead of 1
+  // --- Pattern: Title + wrapper container ---
+  // Structure: $el > [h3/h4, div.wrapper{span, span, ...}]
+  // extractStructuredText reads h3 text + each span text → N+1 lines
+  // We must NOT clone the wrapper div — instead, clone/remove spans inside it.
+  if ($first.is('h3, h4, h5') && $children.length >= 2) {
+    const $wrapper = $($children[1]);
+    const $items = $wrapper.children();
+    if ($items.length > 0) {
+      // Line 0 → title text
+      $first.text(lines[0].trim());
+
+      // Lines 1..N → items inside wrapper
+      const itemLines = lines.slice(1);
+      const $templateItem = $($items[$items.length - 1]);
+
+      itemLines.forEach((line, i) => {
+        let $item;
+        if (i < $items.length) {
+          $item = $($items[i]);
+        } else {
+          $item = $templateItem.clone();
+          $wrapper.append($item);
+        }
+        setTextOnly($, $item, line.trim());
+      });
+
+      // Remove excess items
+      const currentItems = $wrapper.children();
+      for (let i = currentItems.length - 1; i >= itemLines.length; i--) {
+        $(currentItems[i]).remove();
+      }
+      return;
+    }
+  }
+
+  // --- Pattern: Multi-<p> (e.g. stat-cards: p.stat-number + p description) ---
   if (!hasTitle && !isListItem && pCount > 1
       && lines.length === $children.length * pCount) {
     $children.each((i, child) => {
@@ -141,7 +176,7 @@ function applyStructuredText($, $el, text) {
     return;
   }
 
-  // Standard patterns: 1 line per child ("Title | Desc" or plain text)
+  // --- Standard patterns: 1 line per child ("Title | Desc" or plain text) ---
   const $templateChild = $($children[$children.length - 1]);
 
   lines.forEach((line, i) => {
@@ -149,7 +184,6 @@ function applyStructuredText($, $el, text) {
     if (i < $children.length) {
       $child = $($children[i]);
     } else {
-      // Clone last child as template and append
       $child = $templateChild.clone();
       $el.append($child);
     }
@@ -162,15 +196,13 @@ function applyStructuredText($, $el, text) {
       $child.find('h3, h4').first().text(title);
       if (pCount > 0) $child.find('p').first().text(desc || title);
     } else if (isListItem) {
-      // List items: preserve SVG, update only text nodes
       setTextOnly($, $child, title);
     } else {
-      // Generic: update text only, preserve child elements
       setTextOnly($, $child, title);
     }
   });
 
-  // Remove excess children (if fewer lines than original children)
+  // Remove excess children
   const currentChildren = $el.children();
   for (let i = currentChildren.length - 1; i >= lines.length; i--) {
     $(currentChildren[i]).remove();

@@ -1292,42 +1292,179 @@
         }
         .btn-feedback svg { width: 14px; height: 14px; }
 
-        /* Feedback modal — reuses existing .modal-backdrop / .modal */
-        .feedback-form .form-group textarea {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1.5px solid var(--border);
-            border-radius: var(--radius);
-            font-size: 14px;
-            font-family: inherit;
+        /* ===== Chat Panel ===== */
+        .chat-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 380px;
+            max-width: 100vw;
             background: var(--surface);
+            border-left: 1px solid var(--border);
+            box-shadow: -4px 0 24px rgba(0,0,0,0.1);
+            z-index: 950;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .chat-panel.open { transform: translateX(0); }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface-raised);
+            flex-shrink: 0;
+        }
+        .chat-title {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .chat-title svg { width: 18px; height: 18px; color: var(--orange); }
+        .chat-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: var(--text-muted);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition);
+        }
+        .chat-close:hover { background: var(--surface-bg); color: var(--text); }
+        .chat-close svg { width: 18px; height: 18px; }
+
+        /* Messages area */
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .chat-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            text-align: center;
+            color: var(--text-muted);
+            gap: 8px;
+            padding: 40px 20px;
+        }
+        .chat-empty svg { width: 40px; height: 40px; opacity: 0.3; }
+        .chat-empty p { font-size: 14px; margin: 0; }
+        .chat-empty .hint { font-size: 12px; }
+
+        /* Message bubble */
+        .chat-msg {
+            max-width: 92%;
+            align-self: flex-end;
+            background: var(--orange-bg);
+            border-radius: var(--radius-lg) var(--radius-lg) var(--radius-sm) var(--radius-lg);
+            padding: 10px 14px;
+        }
+        .chat-msg-text {
+            font-size: 13px;
+            line-height: 1.5;
             color: var(--text);
-            resize: vertical;
-            min-height: 100px;
-            transition: border-color var(--transition);
+            white-space: pre-wrap;
+            word-break: break-word;
         }
-        .feedback-form .form-group textarea:focus {
-            outline: none;
-            border-color: var(--border-focus);
-            box-shadow: 0 0 0 3px rgba(21,101,192,0.1);
-        }
-        .feedback-form .form-group textarea::placeholder {
-            color: var(--text-muted);
-        }
-        .feedback-page-slug {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
+        .chat-msg-meta {
             display: flex;
             align-items: center;
             gap: 6px;
-        }
-        .feedback-page-slug code {
-            background: var(--bg);
-            padding: 2px 8px;
-            border-radius: 4px;
+            margin-top: 6px;
             font-size: 11px;
+            color: var(--text-muted);
         }
+        .chat-msg-page {
+            background: var(--surface-bg);
+            border-radius: 3px;
+            padding: 1px 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Date separator */
+        .chat-date-sep {
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 8px 0;
+            font-weight: 600;
+        }
+
+        /* Input area */
+        .chat-input-area {
+            border-top: 1px solid var(--border);
+            padding: 12px 16px;
+            background: var(--surface-raised);
+            flex-shrink: 0;
+        }
+        .chat-page-ctx {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .chat-page-ctx:empty { display: none; margin: 0; }
+        .chat-form {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+        }
+        .chat-form textarea {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 13px;
+            font-family: inherit;
+            background: var(--surface);
+            color: var(--text);
+            resize: none;
+            min-height: 38px;
+            max-height: 120px;
+            line-height: 1.4;
+            transition: border-color var(--transition);
+        }
+        .chat-form textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(230,81,0,0.1);
+        }
+        .chat-form textarea::placeholder { color: var(--text-muted); }
+        .chat-send {
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            width: 38px;
+            height: 38px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all var(--transition);
+        }
+        .chat-send:hover { filter: brightness(1.1); }
+        .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+        .chat-send svg { width: 16px; height: 16px; }
 
         /* Spinner */
         .spinner {
@@ -1566,7 +1703,7 @@
                     <span class="advanced-switch"></span>
                     Erweiterte Felder
                 </label>
-                <button class="btn-feedback" id="btnFeedback" onclick="openFeedbackModal()" title="Feedback senden">
+                <button class="btn-feedback" id="btnFeedback" onclick="toggleChatPanel()" title="Feedback senden">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                     </svg>
@@ -1623,27 +1760,32 @@
 
 <!-- ===== SETTINGS MODAL ===== -->
 
-<!-- Feedback modal -->
-<div class="modal-backdrop" id="feedbackModal">
-    <div class="modal">
-        <h3>Feedback senden</h3>
-        <p class="modal-subtitle">Was fehlt, was soll geändert oder entfernt werden?</p>
-        <div class="feedback-page-slug" id="feedbackPageSlug"></div>
-        <form class="feedback-form" onsubmit="submitFeedback(event)">
-            <div class="form-group">
-                <label for="feedbackMessage">Nachricht *</label>
-                <textarea id="feedbackMessage" placeholder="z.B. Sektion X fehlt, Feld Y soll editierbar sein, Block Z kann entfernt werden…" required maxlength="2000"></textarea>
-                <div class="hint">max. 2000 Zeichen</div>
-            </div>
-            <div class="form-group">
-                <label for="feedbackEmail">E-Mail (optional)</label>
-                <input type="email" id="feedbackEmail" placeholder="Für Rückfragen">
-                <div class="hint">Nur falls wir Rückfragen haben.</div>
-            </div>
-            <div class="modal-actions">
-                <button type="button" class="btn" onclick="closeFeedbackModal()">Abbrechen</button>
-                <button type="submit" class="btn btn-primary" id="btnFeedbackSubmit">Absenden</button>
-            </div>
+<!-- Chat Panel (feedback) -->
+<div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+        <div class="chat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Feedback
+        </div>
+        <button class="chat-close" onclick="closeChatPanel()" title="Schließen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input-area">
+        <div class="chat-page-ctx" id="chatPageCtx"></div>
+        <form class="chat-form" onsubmit="sendChatMessage(event)">
+            <textarea id="chatInput" placeholder="Feedback schreiben…" rows="1" maxlength="2000"></textarea>
+            <button type="submit" class="chat-send" id="chatSendBtn" title="Senden">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"/>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+            </button>
         </form>
     </div>
 </div>
@@ -2084,6 +2226,7 @@ async function loadLocalPage(filename) {
         contentData = await res.json();
         currentPageId = contentData.page?.id || filename.replace('.json', '');
         fileName = filename;
+        if (chatOpen) updateChatPageCtx();
 
         const migrated = await normalizeContent(contentData, currentPageId);
         afterPageLoad(migrated);
@@ -2373,6 +2516,7 @@ async function loadPage(pageId) {
         contentData = data.content;
         currentPageId = pageId;
         fileName = pageId + '.json';
+        if (chatOpen) updateChatPageCtx();
 
         const migrated = await normalizeContent(contentData, currentPageId);
         afterPageLoad(migrated);
@@ -2482,6 +2626,7 @@ fileInput.addEventListener('change', (e) => {
         try {
             contentData = JSON.parse(ev.target.result);
             currentPageId = contentData.page?.id || fileName.replace('.json', '');
+            if (chatOpen) updateChatPageCtx();
 
             const migrated = await normalizeContent(contentData, currentPageId);
             afterPageLoad(migrated);
@@ -3113,63 +3258,164 @@ function showToast(type, message) {
 }
 
 // ============================================================
-//  FEEDBACK
+//  FEEDBACK CHAT PANEL
 // ============================================================
+// SECURITY: Supabase RLS on 'feedback' table:
+//   - authenticated: INSERT (own user_id), SELECT (own rows)
+//   - anon: INSERT only (user_id IS NULL)
+//   - service_role: SELECT all
+// Messages stored unsanitized — escapeHtml() on render.
 
-function openFeedbackModal() {
-    const slugEl = $('feedbackPageSlug');
+let chatOpen = false;
+let chatMsgs = [];
+
+function toggleChatPanel() {
+    chatOpen ? closeChatPanel() : openChatPanel();
+}
+
+async function openChatPanel() {
+    chatOpen = true;
+    updateChatPageCtx();
+    $('chatPanel').classList.add('open');
+    $('chatInput').focus();
+    await loadChatHistory();
+}
+
+function closeChatPanel() {
+    chatOpen = false;
+    $('chatPanel').classList.remove('open');
+}
+
+function updateChatPageCtx() {
+    const el = $('chatPageCtx');
     if (currentPageId) {
-        slugEl.innerHTML = 'Seite: <code>' + escapeHtml(currentPageId) + '</code>';
+        el.innerHTML = 'Seite: <strong>' + escapeHtml(currentPageId) + '</strong>';
     } else {
-        slugEl.textContent = '';
+        el.textContent = '';
     }
-    $('feedbackMessage').value = '';
-    $('feedbackEmail').value = '';
-    $('btnFeedbackSubmit').disabled = false;
-    $('btnFeedbackSubmit').textContent = 'Absenden';
-    $('feedbackModal').classList.add('active');
-    $('feedbackMessage').focus();
 }
 
-function closeFeedbackModal() {
-    $('feedbackModal').classList.remove('active');
+async function loadChatHistory() {
+    if (!sbClient || !currentUser) {
+        renderChatMessages([]);
+        return;
+    }
+    try {
+        const { data, error } = await sbClient
+            .from('feedback')
+            .select('id, message, page_slug, created_at')
+            .eq('user_id', currentUser.id)
+            .order('created_at', { ascending: true });
+        if (error) throw error;
+        chatMsgs = data || [];
+        renderChatMessages(chatMsgs);
+    } catch (err) {
+        console.error('Chat history error:', err);
+        $('chatMessages').innerHTML =
+            '<div class="chat-empty" style="display:flex"><p>Verlauf konnte nicht geladen werden.</p></div>';
+    }
 }
 
-// SECURITY: Supabase RLS on 'feedback' table MUST be:
-//   - anon role: INSERT only (no SELECT/UPDATE/DELETE)
-//   - authenticated role: SELECT + INSERT
-// Feedback messages are stored unsanitized. Any UI that reads
-// this table MUST escape HTML on render to prevent stored XSS.
-async function submitFeedback(e) {
+function renderChatMessages(messages) {
+    const container = $('chatMessages');
+
+    if (!messages.length) {
+        container.innerHTML =
+            '<div class="chat-empty">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
+            '<p>Noch kein Feedback gesendet.</p>' +
+            '<p class="hint">Schreiben Sie uns was fehlt, ge\u00e4ndert oder entfernt werden soll.</p>' +
+            '</div>';
+        return;
+    }
+
+    let html = '';
+    let lastDate = '';
+
+    for (const msg of messages) {
+        const dt = new Date(msg.created_at);
+        const dateStr = dt.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+        if (dateStr !== lastDate) {
+            html += '<div class="chat-date-sep">' + escapeHtml(dateStr) + '</div>';
+            lastDate = dateStr;
+        }
+
+        const timeStr = dt.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+
+        html += '<div class="chat-msg">';
+        html += '<div class="chat-msg-text">' + escapeHtml(msg.message) + '</div>';
+        html += '<div class="chat-msg-meta">';
+        html += '<span>' + timeStr + '</span>';
+        if (msg.page_slug) {
+            html += '<span class="chat-msg-page">' + escapeHtml(msg.page_slug) + '</span>';
+        }
+        html += '</div></div>';
+    }
+
+    container.innerHTML = html;
+    container.scrollTop = container.scrollHeight;
+}
+
+async function sendChatMessage(e) {
     e.preventDefault();
-    const message = $('feedbackMessage').value.trim();
+    const input = $('chatInput');
+    const message = input.value.trim();
     if (!message) return;
 
-    const email = $('feedbackEmail').value.trim() || null;
-    const btn = $('btnFeedbackSubmit');
+    const btn = $('chatSendBtn');
     btn.disabled = true;
-    btn.textContent = 'Senden\u2026';
 
     try {
         if (!sbClient) throw new Error('Nicht verbunden');
 
-        const { error } = await sbClient.from('feedback').insert({
-            page_slug: currentPageId || null,
+        const row = {
             message,
-            email
-        });
+            page_slug: currentPageId || null,
+            user_id: currentUser?.id || null,
+            user_email: currentUser?.email || null
+        };
+        const { data, error } = await sbClient
+            .from('feedback')
+            .insert(row)
+            .select()
+            .single();
 
         if (error) throw error;
 
-        closeFeedbackModal();
-        showToast('success', 'Feedback gesendet \u2014 vielen Dank!');
+        chatMsgs.push(data);
+        renderChatMessages(chatMsgs);
+        input.value = '';
+        input.style.height = 'auto';
+        showToast('success', 'Feedback gesendet!');
     } catch (err) {
-        console.error('Feedback error:', err);
+        console.error('Send feedback error:', err);
         showToast('error', 'Feedback konnte nicht gesendet werden.');
+    } finally {
         btn.disabled = false;
-        btn.textContent = 'Absenden';
     }
 }
+
+// Auto-resize textarea + Enter to send
+(function initChatInput() {
+    const el = document.getElementById('chatInput');
+    if (!el) return;
+    el.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+    });
+    el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            this.closest('form').requestSubmit();
+        }
+    });
+})();
+
+// Escape to close
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && chatOpen) closeChatPanel();
+});
 
 // ============================================================
 //  HELPERS

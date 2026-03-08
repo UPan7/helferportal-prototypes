@@ -2,9 +2,8 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "hilfe-finden.html",
-    "extracted": "2026-03-08T14:05:52.062Z",
-    "schema_version": "2.0",
-    "lastEdited": "2026-03-08T14:21:22.155Z"
+    "extracted": "2026-03-08T21:05:57.567Z",
+    "schema_version": "2.0"
   },
   "page": {
     "id": "hilfe-finden",
@@ -73,7 +72,7 @@
         {
           "id": "tab-freizeit-cards",
           "type": "textarea",
-          "value": "Was alles möglich ist\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen",
+          "value": "Was alles möglich ist\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen",
           "level": "advanced"
         },
         {
@@ -111,7 +110,7 @@
         {
           "id": "tab-alltag-cards",
           "type": "textarea",
-          "value": "Was alles möglich ist\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen",
+          "value": "Was alles möglich ist\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen",
           "level": "advanced"
         },
         {
