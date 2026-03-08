@@ -2,12 +2,12 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "fuer-kommunen.html",
-    "extracted": "2026-03-02T13:27:59.932Z",
+    "extracted": "2026-03-08T11:58:57.468Z",
     "schema_version": "2.0"
   },
   "page": {
     "id": "fuer-kommunen",
-    "title": "Für Kommunen & soziale Akteure – Helferportal",
+    "title": "Für die öffentliche Hand und soziale Akteure – Helferportal",
     "url": "/fuer-kommunen.html"
   },
   "blocks": [
@@ -18,19 +18,22 @@
         {
           "id": "hero-image",
           "type": "image",
-          "value": { "src": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400", "alt": "Hero Hintergrund" },
+          "value": {
+            "src": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400",
+            "alt": "Hero Hintergrund"
+          },
           "level": "basic"
         },
         {
           "id": "hero-title",
           "type": "text",
-          "value": "Versorgungsstrukturen digital steuern",
+          "value": "Versorgungsstrukturen und Helferkreise digital steuern",
           "level": "basic"
         },
         {
           "id": "hero-subtitle",
           "type": "textarea",
-          "value": "Unterstützung, Versorgung, Engagement & Katastrophenschutz digital vernetzen und koordinieren – für Kommunen, Landkreise und soziale Organisationen.",
+          "value": "Unterstützung, Versorgung, Engagement und Katastrophenschutz digital koordinieren, für Kommunen, Landkreise und soziale Organisationen.",
           "level": "basic"
         },
         {
@@ -68,43 +71,49 @@
         {
           "id": "cards-title",
           "type": "text",
-          "value": "Herausforderungen in Kommunen",
+          "value": "Herausforderungen der öffentlichen Hand",
+          "level": "basic"
+        },
+        {
+          "id": "cards-text",
+          "type": "textarea",
+          "value": "Viele Angebote für Unterstützung und Versorgung existieren bereits – doch sie arbeiten häufig nebeneinander und sind kaum miteinander vernetzt. Eine gemeinsame digitale Grundlage fehlt oft.",
           "level": "basic"
         },
         {
           "id": "card-1-title",
           "type": "text",
-          "value": "Vielfältige Angebote, geringe Vernetzung",
+          "value": "Insellösungen statt Vernetzung",
           "level": "basic"
         },
         {
           "id": "card-1-text",
           "type": "text",
-          "value": "Akteure arbeiten isoliert, keine gemeinsame digitale Grundlage. Hilfesuchende müssen aufwendig recherchieren und verschiedene Stellen kontaktieren.",
+          "value": "Viele Angebote für Unterstützung und Versorgung arbeiten nebeneinander und sind kaum miteinander vernetzt. Eine gemeinsame digitale Grundlage fehlt häufig.",
           "level": "basic"
         },
         {
           "id": "card-2-title",
           "type": "text",
-          "value": "Hoher Koordinationsaufwand",
+          "value": "Aufwendige Suche und hoher Koordinationsaufwand",
           "level": "basic"
         },
         {
           "id": "card-2-text",
           "type": "text",
-          "value": "Beratungsstellen und Fachkräfte verbringen viel Zeit mit Vermittlung. Endlose Telefonate sind nötig, um passende Hilfe zu finden.",
+          "value": "Hilfesuchende sowie Beratungs- und Koordinationsstellen müssen oft zahlreiche Anbieter kontaktieren, um jemanden mit freien Kapazitäten zu finden.",
           "level": "basic"
         },
         {
           "id": "card-3-title",
           "type": "text",
-          "value": "Engagement schwer steuerbar",
+          "value": "Keine systematische Steuerung von Bedarfen",
           "level": "basic"
         },
         {
           "id": "card-3-text",
           "type": "text",
-          "value": "Ehrenamtliche sind vorhanden, aber nicht effizient einsetzbar. Moderne Strukturen für bürgerschaftliches Engagement fehlen.",
+          "value": "Unterstützungsbedarfe werden selten zentral erfasst und können daher nur schwer koordiniert und effizient vermittelt werden.",
           "level": "basic"
         },
         {
@@ -116,7 +125,7 @@
         {
           "id": "card-4-text",
           "type": "text",
-          "value": "Wir vernetzen die an der Versorgung beteiligten Akteure und schaffen die Transparenz über tatsächlich verfügbare Angebote – digital, effizient und bedarfsgerecht.",
+          "value": "Wir vernetzen alle an der Versorgung beteiligten Akteure und schaffen die Transparenz über tatsächlich verfügbare Angebote, digital, effizient, bedarfsgerecht und ressourcenschonend.",
           "level": "basic"
         }
       ]
@@ -128,31 +137,31 @@
         {
           "id": "tabs-overline",
           "type": "text",
-          "value": "Ihre Zielgruppe",
+          "value": "Bereiche",
           "level": "basic"
         },
         {
           "id": "tab-kommunen-name",
           "type": "text",
-          "value": "Für Kommunen",
+          "value": "Für die öffentliche Hand",
           "level": "basic"
         },
         {
           "id": "tab-organisationen-name",
           "type": "text",
-          "value": "Für Organisationen",
+          "value": "Für soziale Akteure",
           "level": "basic"
         },
         {
           "id": "tab-kommunen-title",
           "type": "text",
-          "value": "Sektorenübergreifende Versorgungsstrukturen digital aufbauen",
+          "value": "Sektorenübergreifende Versorgungsstrukturen digital vernetzen und steuern",
           "level": "basic"
         },
         {
           "id": "tab-kommunen-text",
           "type": "textarea",
-          "value": "Kommunen nutzen das Helferportal als digitale Infrastruktur, um alle an der Versorgung beteiligten Akteure zusammenzuführen und zu koordinieren – von Ehrenamtlichen über Hilfsorganisationen bis zu Gesundheitsdienstleistern.",
+          "value": "Kommunen nutzen das Helferportal, um Ehrenamtliche, Organisationen und Dienstleister digital zu vernetzen und Unterstützungs- sowie Versorgungsbedarfe zu koordinieren. Gleichzeitig wird bürgerschaftliches Engagement gestärkt, da sich Bürgerinnen und Bürger flexibel nach ihren Möglichkeiten und Wünschen einbringen können.\nBeratungs- und Koordinationsstellen sowie Quartiersmanagement erhalten Zugang zum Portal und können Unterstützungs- oder Versorgungsbedarfe für Dritte digital erfassen, koordinieren und nachverfolgen.",
           "level": "basic"
         },
         {
@@ -184,13 +193,13 @@
         {
           "id": "tab-organisationen-text",
           "type": "textarea",
-          "value": "Hilfsorganisationen, Helferkreise und Nachbarschaftshilfen nutzen das Helferportal zur operativen Steuerung ihres Engagements – digital, passgenau und entlastend für Koordinator:innen.",
+          "value": "Hilfsorganisationen, Helferkreise und Nachbarschaftshilfen nutzen das Helferportal, um Engagement digital zu koordinieren und Koordinatorinnen spürbar zu entlasten.",
           "level": "basic"
         },
         {
           "id": "tab-organisationen-cards",
           "type": "textarea",
-          "value": "Digitale Koordination | Engagierte erfassen, Verfügbarkeiten abfragen, Einsätze planen – alles in einem System.\nPassgenaue Vermittlung | Matching nach Bedarf, Kompetenz, Zeit und Ort – automatisch und effizient.\nEntlastung für Koordinator:innen | Weniger Verwaltungsaufwand, mehr Zeit für Menschen und fachliche Begleitung.\nAdministration & Abrechnung | Zeiterfassung, Dokumentation, automatische Abrechnung mit Pflegekassen.\nNeue Engagierte gewinnen | Zugang zu motivierten Helfern durch zentrale Plattform und gemeinsame Kampagnen.",
+          "value": "Digitale Koordination | Engagierte und Klienten erfassen, Unterstützungsbedarfe einstellen und Verfügbarkeit passender Engagierter abfragen, digitale Zeiterfassung.\nEntlastung für Koordinatorinnen | Weniger Verwaltungsaufwand durch digitalisierte Prozesse, mehr Zeit für Menschen und fachliche Begleitung.\nNeue Engagierte gewinnen | Stärkung des bürgerschaftlichen Engagements durch passgenaue Einsatzmöglichkeiten.\nPassgenaue Vermittlung | Matching nach Tätigkeiten, zeitlicher Verfügbarkeit, Einsatzgebiet, Qualifikationen und Eigenschaften, automatisch und effizient.\nAdministration und Abrechnung | Zeiterfassung, automatische Abrechnung, Schnittstellen zur Buchhaltung und Bankprogramm, Auswertungen.",
           "level": "advanced"
         },
         {
@@ -254,7 +263,7 @@
         {
           "id": "faq-subtitle",
           "type": "text",
-          "value": "Für Kommunen & Organisationen",
+          "value": "Für die öffentliche Hand und soziale Akteure",
           "level": "basic"
         },
         {

@@ -1,14 +1,16 @@
 {
-  "_meta": {
-    "generator": "helferportal-content-tools/extract.js",
-    "source": "hilfe-finden.html",
-    "extracted": "2026-03-02T11:54:30.970Z",
-    "schema_version": "2.0"
-  },
   "page": {
     "id": "hilfe-finden",
-    "title": "Hilfe finden – Helferportal",
-    "url": "/hilfe-finden.html"
+    "url": "/hilfe-finden.html",
+    "title": "Hilfe finden – Helferportal"
+  },
+  "_meta": {
+    "source": "hilfe-finden.html",
+    "editedBy": "thomas.oeben@helferportal.de",
+    "extracted": "2026-03-02T11:54:30.970Z",
+    "generator": "helferportal-content-tools/extract.js",
+    "lastEdited": "2026-03-07T15:57:37.508Z",
+    "schema_version": "2.0"
   },
   "blocks": [
     {
@@ -18,20 +20,23 @@
         {
           "id": "hero-image",
           "type": "image",
-          "value": { "src": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1400", "alt": "Hero Hintergrund" },
-          "level": "basic"
+          "level": "basic",
+          "value": {
+            "alt": "Hero Hintergrund",
+            "src": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1400"
+          }
         },
         {
           "id": "hero-title",
           "type": "text",
-          "value": "Finde die passende Unterstützung",
-          "level": "basic"
+          "level": "basic",
+          "value": "Finde die passende Unterstützung"
         },
         {
           "id": "hero-subtitle",
           "type": "textarea",
-          "value": "Ob Freizeit, Alltag oder Pflege – hier findest du Hilfe, die zu dir passt. Sicher, unkompliziert und in deiner Nähe.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Ob Freizeit, Alltag oder Pflege – hier findest du Hilfe, die zu dir passt. Sicher, unkompliziert und in deiner Nähe."
         }
       ]
     },
@@ -42,140 +47,140 @@
         {
           "id": "tabs-overline",
           "type": "text",
-          "value": "Wähle deinen Bereich",
-          "level": "basic"
+          "level": "basic",
+          "value": "Wähle deinen Bereich"
         },
         {
           "id": "tab-freizeit-name",
           "type": "text",
-          "value": "Freizeit & Begegnung",
-          "level": "basic"
+          "level": "basic",
+          "value": "Freizeit & Begegnung"
         },
         {
           "id": "tab-alltag-name",
           "type": "text",
-          "value": "Alltag & Versorgung",
-          "level": "basic"
+          "level": "basic",
+          "value": "Alltag & Versorgung"
         },
         {
           "id": "tab-angehoerige-name",
           "type": "text",
-          "value": "Für Angehörige",
-          "level": "basic"
+          "level": "basic",
+          "value": "Für Angehörige"
         },
         {
           "id": "tab-freizeit-title",
           "type": "text",
-          "value": "Gemeinsam Zeit verbringen",
-          "level": "basic"
+          "level": "basic",
+          "value": "Gemeinsam Zeit verbringen"
         },
         {
           "id": "tab-freizeit-text",
           "type": "textarea",
-          "value": "Du suchst Gesellschaft, möchtest gemeinsam etwas unternehmen oder einfach jemanden zum Reden haben? Hier findest du Menschen, die Zeit für dich haben – flexibel, unkompliziert und auf Augenhöhe.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Du suchst Gesellschaft, möchtest gemeinsam etwas unternehmen oder einfach jemanden zum Reden haben? Hier findest du Menschen, die Zeit für dich haben – flexibel, unkompliziert und auf Augenhöhe."
         },
         {
           "id": "tab-freizeit-cards",
           "type": "textarea",
-          "value": "Was alles möglich ist\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen",
-          "level": "advanced"
+          "level": "advanced",
+          "value": "Was alles möglich ist\nSpaziergänge\nAusflüge\nGesellschaftsspiele\nGespräche\nGemeinsames Kochen\nSport & Bewegung\nKulturveranstaltungen\nVorlesen"
         },
         {
           "id": "tab-freizeit-benefits",
           "type": "textarea",
-          "value": "Flexibel | Spontan oder regelmäßig – wie es dir passt\nAnonym | Erstkontakt im geschützten Raum\nKostenfrei | Keine versteckten Gebühren",
-          "level": "advanced"
+          "level": "advanced",
+          "value": "Flexibel | Spontan oder regelmäßig – wie es dir passt\nAnonym | Erstkontakt im geschützten Raum\nKostenfrei | Keine versteckten Gebühren"
         },
         {
           "id": "tab-freizeit-btn-1",
-          "type": "button",
           "href": "https://hilfe.helferportal.de",
-          "value": "Begleitung finden",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Begleitung finden"
         },
         {
           "id": "tab-freizeit-btn-2",
-          "type": "button",
           "href": "",
-          "value": "Mehr erfahren",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Mehr erfahren"
         },
         {
           "id": "tab-alltag-title",
           "type": "text",
-          "value": "Unterstützung im Alltag",
-          "level": "basic"
+          "level": "basic",
+          "value": "Unterstützung im Alltag"
         },
         {
           "id": "tab-alltag-text",
           "type": "textarea",
-          "value": "Du brauchst Hilfe bei alltäglichen Aufgaben? Von Einkäufen über Arztbegleitung bis zu technischer Unterstützung – hier findest du verlässliche Hilfe in deiner Nähe.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Du brauchst Hilfe bei alltäglichen Aufgaben? Von Einkäufen über Arztbegleitung bis zu technischer Unterstützung – hier findest du verlässliche Hilfe in deiner Nähe."
         },
         {
           "id": "tab-alltag-cards",
           "type": "textarea",
-          "value": "Was alles möglich ist\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen",
-          "level": "advanced"
+          "level": "advanced",
+          "value": "Was alles möglich ist\nEinkäufe erledigen\nBegleitung zu Terminen\nBehördengänge\nHaushaltshilfe\nPC & Handy Hilfe\nSchriftverkehr\nKleine Reparaturen"
         },
         {
           "id": "tab-alltag-benefits",
           "type": "textarea",
-          "value": "Passgenau | Helfer, die zu deinen Bedürfnissen passen\nSicher | Profile & Bewertungen einsehbar\nSchnell | Verfügbarkeit in Echtzeit abfragen",
-          "level": "advanced"
+          "level": "advanced",
+          "value": "Passgenau | Helfer, die zu deinen Bedürfnissen passen\nSicher | Profile & Bewertungen einsehbar\nSchnell | Verfügbarkeit in Echtzeit abfragen"
         },
         {
           "id": "tab-alltag-btn-1",
-          "type": "button",
           "href": "https://hilfe.helferportal.de",
-          "value": "Hilfe finden",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Hilfe finden"
         },
         {
           "id": "tab-alltag-btn-2",
-          "type": "button",
           "href": "",
-          "value": "Mehr erfahren",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Mehr erfahren"
         },
         {
           "id": "tab-angehoerige-title",
           "type": "text",
-          "value": "Entlastung für pflegende Angehörige",
-          "level": "basic"
+          "level": "basic",
+          "value": "Entlastung für pflegende Angehörige"
         },
         {
           "id": "tab-angehoerige-text",
           "type": "textarea",
-          "value": "Du pflegst einen nahestehenden Menschen und brauchst Unterstützung oder eine Auszeit? Wir helfen dir, passende Entlastung zu finden – abrechenbar über die Pflegekasse.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Du pflegst einen nahestehenden Menschen und brauchst Unterstützung oder eine Auszeit? Wir helfen dir, passende Entlastung zu finden – abrechenbar über die Pflegekasse."
         },
         {
           "id": "tab-angehoerige-cards",
           "type": "textarea",
-          "value": "Verhinderungspflege | Vertretung, wenn du mal weg musst oder eine Auszeit brauchst.\nEntlastungsleistungen | Unterstützung im Alltag, abrechenbar über den Entlastungsbetrag.\nBetreuung | Stundenweise oder regelmäßige Betreuung für deinen Angehörigen.\nHauswirtschaft | Hilfe im Haushalt: Reinigung, Wäsche, Kochen.\nBegleitung | Zu Arztterminen, Therapie oder gemeinsamen Aktivitäten.\nBeratung | Infos zu Leistungen, Ansprüchen und Möglichkeiten.",
-          "level": "advanced"
+          "level": "advanced",
+          "value": "Verhinderungspflege | Vertretung, wenn du mal weg musst oder eine Auszeit brauchst.\nEntlastungsleistungen | Unterstützung im Alltag, abrechenbar über den Entlastungsbetrag.\nBetreuung | Stundenweise oder regelmäßige Betreuung für deinen Angehörigen.\nHauswirtschaft | Hilfe im Haushalt: Reinigung, Wäsche, Kochen.\nBegleitung | Zu Arztterminen, Therapie oder gemeinsamen Aktivitäten.\nBeratung | Infos zu Leistungen, Ansprüchen und Möglichkeiten."
         },
         {
           "id": "tab-angehoerige-benefits",
           "type": "textarea",
-          "value": "Passgenau | Helfer, die zu eurer Situation passen\nAbrechenbar | Viele Leistungen über die Pflegekasse\nSicher | Geprüfte Helfer mit Versicherungsschutz",
-          "level": "advanced"
+          "level": "advanced",
+          "value": "Passgenau | Helfer, die zu eurer Situation passen\nAbrechenbar | Viele Leistungen über die Pflegekasse\nSicher | Geprüfte Helfer mit Versicherungsschutz"
         },
         {
           "id": "tab-angehoerige-btn-1",
-          "type": "button",
           "href": "https://hilfe.helferportal.de",
-          "value": "Entlastung finden",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Entlastung finden"
         },
         {
           "id": "tab-angehoerige-btn-2",
-          "type": "button",
           "href": "",
-          "value": "Mehr erfahren",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Mehr erfahren"
         }
       ]
     },
@@ -186,62 +191,62 @@
         {
           "id": "vorteile-overline",
           "type": "text",
-          "value": "Warum Helferportal?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Warum Helferportal?"
         },
         {
           "id": "vorteile-title",
           "type": "text",
-          "value": "Vorteile auf einen Blick",
-          "level": "basic"
+          "level": "basic",
+          "value": "Vorteile auf einen Blick"
         },
         {
           "id": "vorteile-1-title",
           "type": "text",
-          "value": "Passgenau",
-          "level": "basic"
+          "level": "basic",
+          "value": "Passgenau"
         },
         {
           "id": "vorteile-1-text",
           "type": "text",
-          "value": "Helfer, die zu deinen Bedürfnissen und deiner Situation passen.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Helfer, die zu deinen Bedürfnissen und deiner Situation passen."
         },
         {
           "id": "vorteile-2-title",
           "type": "text",
-          "value": "Sicher",
-          "level": "basic"
+          "level": "basic",
+          "value": "Sicher"
         },
         {
           "id": "vorteile-2-text",
           "type": "text",
-          "value": "Anonymer Erstkontakt, geprüfte Helfer und Versicherungsschutz.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Anonymer Erstkontakt, geprüfte Helfer und Versicherungsschutz."
         },
         {
           "id": "vorteile-3-title",
           "type": "text",
-          "value": "Flexibel",
-          "level": "basic"
+          "level": "basic",
+          "value": "Flexibel"
         },
         {
           "id": "vorteile-3-text",
           "type": "text",
-          "value": "Spontan oder regelmäßig – genau so, wie du es brauchst.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Spontan oder regelmäßig – genau so, wie du es brauchst."
         },
         {
           "id": "vorteile-4-title",
           "type": "text",
-          "value": "Kostenfrei",
-          "level": "basic"
+          "level": "basic",
+          "value": "Kostenfrei"
         },
         {
           "id": "vorteile-4-text",
           "type": "text",
-          "value": "Nutzung ohne Gebühren – viele Leistungen über Pflegekasse abrechenbar.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Nutzung ohne Gebühren – viele Leistungen über Pflegekasse abrechenbar."
         }
       ]
     },
@@ -252,74 +257,74 @@
         {
           "id": "faq-title",
           "type": "text",
-          "value": "Häufige Fragen",
-          "level": "basic"
+          "level": "basic",
+          "value": "Häufige Fragen"
         },
         {
           "id": "faq-subtitle",
           "type": "text",
-          "value": "Alles, was du wissen musst",
-          "level": "basic"
+          "level": "basic",
+          "value": "Alles, was du wissen musst"
         },
         {
           "id": "faq-1-question",
           "type": "text",
-          "value": "Wie finde ich den richtigen Helfer?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Wie finde ich den richtigen Helfer?"
         },
         {
           "id": "faq-1-answer",
           "type": "textarea",
-          "value": "Du beschreibst deinen Bedarf und wir zeigen dir passende Helfer. Du siehst Profile, Bewertungen und kannst im geschützten Raum Kontakt aufnehmen, bevor du dich entscheidest. Per Chat, Video oder Audio lernst du den Helfer kennen, bevor persönliche Daten ausgetauscht werden.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Du beschreibst deinen Bedarf und wir zeigen dir passende Helfer. Du siehst Profile, Bewertungen und kannst im geschützten Raum Kontakt aufnehmen, bevor du dich entscheidest. Per Chat, Video oder Audio lernst du den Helfer kennen, bevor persönliche Daten ausgetauscht werden."
         },
         {
           "id": "faq-2-question",
           "type": "text",
-          "value": "Was kostet die Nutzung?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Was kostet die Nutzung?"
         },
         {
           "id": "faq-2-answer",
           "type": "textarea",
-          "value": "Die Nutzung des Helferportals ist kostenfrei. Für Unterstützungsleistungen können je nach Art Kosten anfallen, die oft über die Pflegekasse abrechenbar sind (z.B. Entlastungsbetrag, Verhinderungspflege). Wir unterstützen bei der Abrechnung.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Die Nutzung des Helferportals ist kostenfrei. Für Unterstützungsleistungen können je nach Art Kosten anfallen, die oft über die Pflegekasse abrechenbar sind (z.B. Entlastungsbetrag, Verhinderungspflege). Wir unterstützen bei der Abrechnung."
         },
         {
           "id": "faq-3-question",
           "type": "text",
-          "value": "Sind die Helfer versichert?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Sind die Helfer versichert?"
         },
         {
           "id": "faq-3-answer",
           "type": "textarea",
-          "value": "Helfer, die über Organisationen engagiert sind, haben in der Regel Versicherungsschutz (Haftpflicht-, Unfall- und Dienstreisekaskoversicherung). Bei Spontanhilfe empfehlen wir, dies individuell zu klären. Die Versicherungssituation wird transparent im Profil angezeigt.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Helfer, die über Organisationen engagiert sind, haben in der Regel Versicherungsschutz (Haftpflicht-, Unfall- und Dienstreisekaskoversicherung). Bei Spontanhilfe empfehlen wir, dies individuell zu klären. Die Versicherungssituation wird transparent im Profil angezeigt."
         },
         {
           "id": "faq-4-question",
           "type": "text",
-          "value": "Kann ich Leistungen über die Pflegekasse abrechnen?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Kann ich Leistungen über die Pflegekasse abrechnen?"
         },
         {
           "id": "faq-4-answer",
           "type": "textarea",
-          "value": "Ja, viele Leistungen sind über den Entlastungsbetrag (§45b SGB XI) oder Verhinderungspflege abrechenbar. Das Helferportal unterstützt bei der Dokumentation und Abrechnung mit der Pflegekasse. Die automatische Abrechnung ist im System integriert.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Ja, viele Leistungen sind über den Entlastungsbetrag (§45b SGB XI) oder Verhinderungspflege abrechenbar. Das Helferportal unterstützt bei der Dokumentation und Abrechnung mit der Pflegekasse. Die automatische Abrechnung ist im System integriert."
         },
         {
           "id": "faq-5-question",
           "type": "text",
-          "value": "Wie schnell bekomme ich Hilfe?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Wie schnell bekomme ich Hilfe?"
         },
         {
           "id": "faq-5-answer",
           "type": "textarea",
-          "value": "Das hängt von der Verfügbarkeit in deiner Region ab. Für spontane Bedarfe gibt es oft kurzfristig verfügbare Helfer. Für regelmäßige Unterstützung planen wir gemeinsam. Du siehst die Verfügbarkeit in Echtzeit und erhältst schnell Rückmeldung auf deine Anfrage.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Das hängt von der Verfügbarkeit in deiner Region ab. Für spontane Bedarfe gibt es oft kurzfristig verfügbare Helfer. Für regelmäßige Unterstützung planen wir gemeinsam. Du siehst die Verfügbarkeit in Echtzeit und erhältst schnell Rückmeldung auf deine Anfrage."
         }
       ]
     },
@@ -330,28 +335,28 @@
         {
           "id": "cta-title",
           "type": "text",
-          "value": "Bereit, Hilfe zu finden?",
-          "level": "basic"
+          "level": "basic",
+          "value": "Bereit, Hilfe zu finden?"
         },
         {
           "id": "cta-text",
           "type": "textarea",
-          "value": "Registriere dich kostenlos und finde passende Unterstützung in deiner Nähe – sicher, unkompliziert und auf dich zugeschnitten.",
-          "level": "basic"
+          "level": "basic",
+          "value": "Registriere dich kostenlos und finde passende Unterstützung in deiner Nähe – sicher, unkompliziert und auf dich zugeschnitten."
         },
         {
           "id": "cta-btn-1",
-          "type": "button",
           "href": "https://hilfe.helferportal.de",
-          "value": "Jetzt Hilfe finden",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Jetzt Hilfe finden"
         },
         {
           "id": "cta-btn-2",
-          "type": "button",
           "href": "/kontakt.html",
-          "value": "Beratung anfragen",
-          "level": "basic"
+          "type": "button",
+          "level": "basic",
+          "value": "Beratung anfragen"
         }
       ]
     }
