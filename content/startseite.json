@@ -2,9 +2,9 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "index.html",
-    "extracted": "2026-03-08T14:16:01.385Z",
+    "extracted": "2026-03-08T14:21:11.060Z",
     "schema_version": "2.0",
-    "lastEdited": "2026-03-08T14:16:11.053Z"
+    "lastEdited": "2026-03-08T14:21:21.618Z"
   },
   "page": {
     "id": "startseite",
@@ -954,7 +954,7 @@
         {
           "id": "testimonial-1-quote",
           "type": "textarea",
-          "value": "Das Helferportal ist für uns zu einem unverzichtbaren Werkzeug geworden, um Hilfebedarfe in kürzester Zeit auszuschreiben und online die Verfügbarkeit von passenden Helfern abzufragen. Das ermöglicht uns, effizient und schnell Hilfebedarfe zu stillen.",
+          "value": "Das Helferportal ist für uns unverzichtbar – Hilfebedarfe ausschreiben, Verfügbarkeiten abfragen und passende Helfer finden, alles effizient und schnell.",
           "level": "basic"
         },
         {
