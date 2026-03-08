@@ -1416,6 +1416,10 @@ body[class*="page-"] {
     border-radius: var(--radius-md);
 }
 
+.testimonial-logo .highlight-brand {
+    color: var(--white);
+}
+
 .testimonial-logo img {
     height: 32px;
     width: auto;
