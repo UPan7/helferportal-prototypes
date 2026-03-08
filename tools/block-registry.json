@@ -212,7 +212,8 @@
         "partners-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
         "partners-subtitle":  { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
         "partner-{N}-logo":   { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
-        "partner-{N}-name":   { "type": "text",     "required": true,  "level": "basic",    "repeatable": true }
+        "partner-{N}-name":   { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+        "partner-{N}-text":   { "type": "textarea", "required": false, "level": "basic",    "repeatable": true }
       }
     },
     "notes": "Systematic pattern: each partner = image (logo) + name + optional text. Startseite uses legacy prefix partner-{N}-* which is accepted as alias.",
