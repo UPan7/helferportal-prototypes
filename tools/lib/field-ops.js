@@ -64,6 +64,13 @@ function applyField($, $el, fieldType, field) {
     }
 
     case 'textarea':
+      // Safety: if element has child HTML elements, skip text replacement
+      // to prevent destroying structured markup (e.g. tab-option cards).
+      // Only plain-text containers (no child elements) are safe to overwrite.
+      if ($el.children().length > 0) {
+        console.warn(`  ⚠ Skipping textarea field "${field.id}" — element has ${$el.children().length} child HTML elements. Use "html" type or individual fields instead.`);
+        return false;
+      }
       $el.text(field.value);
       return true;
 
