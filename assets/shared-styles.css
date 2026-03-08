@@ -20,7 +20,7 @@
     --blue-dark: #154785;
 
     --purple-primary: #7B1FA2;
-    --purple-light: #154785;
+    --purple-light: #CE93D8;
     --purple-lighter: #E8EEF7;
     --purple-dark: #081E52;
 
@@ -719,19 +719,17 @@ body[class*="page-"] {
     transition: transform var(--transition-fast);
 }
 
-.faq-item.open .faq-question svg {
+.faq-item.active .faq-question svg {
     transform: rotate(180deg);
     color: var(--orange-primary);
 }
 
 .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-normal);
+    display: none;
 }
 
-.faq-item.open .faq-answer {
-    max-height: 300px;
+.faq-item.active .faq-answer {
+    display: block;
 }
 
 /* ========================================
@@ -1319,6 +1317,51 @@ body[class*="page-"] {
     background: var(--purple-dark);
 }
 
+/* White button variants (used in CTA sections) */
+.btn-white {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    background: var(--white);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-white:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-white.orange { color: var(--orange-primary); }
+.btn-white.blue { color: var(--blue-primary); }
+.btn-white.purple { color: var(--purple-primary); }
+
+.btn-outline-white {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.btn-outline-white:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.5);
+}
+
 /* ========================================
            TESTIMONIAL
            ======================================== */
@@ -1543,10 +1586,6 @@ body[class*="page-"] {
 
 .faq-item.active .faq-toggle {
     background: var(--orange-primary); color: var(--white); transform: rotate(180deg);
-}
-
-.faq-item.active .faq-answer {
-    display: block;
 }
 
 .faq-answer p {
@@ -2243,48 +2282,6 @@ body[class*="page-"] {
     display: flex;
     gap: var(--space-md);
     justify-content: center;
-}
-
-.page-engagieren .btn-white {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-xl);
-    background: var(--white);
-    color: var(--orange-primary);
-    border-radius: var(--radius-full);
-    font-weight: 700;
-    font-size: 16px;
-    text-decoration: none;
-    transition: all var(--transition-fast);
-    border: none;
-    cursor: pointer;
-}
-
-.page-engagieren .btn-white:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-lg);
-}
-
-.page-engagieren .btn-outline-white {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-xl);
-    background: transparent;
-    color: var(--white);
-    border: 2px solid rgba(255,255,255,0.3);
-    border-radius: var(--radius-full);
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    transition: all var(--transition-fast);
-    cursor: pointer;
-}
-
-.page-engagieren .btn-outline-white:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.5);
 }
 
 /* ========================================
@@ -3870,48 +3867,6 @@ body[class*="page-"] {
     justify-content: center;
 }
 
-.page-hilfe-finden .btn-white {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-xl);
-    background: var(--white);
-    color: var(--blue-primary);
-    border-radius: var(--radius-full);
-    font-weight: 700;
-    font-size: 16px;
-    text-decoration: none;
-    transition: all var(--transition-fast);
-    border: none;
-    cursor: pointer;
-}
-
-.page-hilfe-finden .btn-white:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-lg);
-}
-
-.page-hilfe-finden .btn-outline-white {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-xl);
-    background: transparent;
-    color: var(--white);
-    border: 2px solid rgba(255,255,255,0.3);
-    border-radius: var(--radius-full);
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    transition: all var(--transition-fast);
-    cursor: pointer;
-}
-
-.page-hilfe-finden .btn-outline-white:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.5);
-}
-
 /* ========================================
            RESPONSIVE
            ======================================== */
@@ -4002,48 +3957,6 @@ body[class*="page-"] {
 .page-fuer-kommunen .hero-cta {
     display: flex;
     gap: var(--space-md);
-}
-
-.page-fuer-kommunen .btn-white {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-xl);
-    background: var(--white);
-    color: var(--purple-primary);
-    border-radius: var(--radius-full);
-    font-weight: 700;
-    font-size: 16px;
-    text-decoration: none;
-    transition: all var(--transition-fast);
-    border: none;
-    cursor: pointer;
-}
-
-.page-fuer-kommunen .btn-white:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-lg);
-}
-
-.page-fuer-kommunen .btn-outline-white {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-xl);
-    background: transparent;
-    color: var(--white);
-    border: 2px solid rgba(255,255,255,0.3);
-    border-radius: var(--radius-full);
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    transition: all var(--transition-fast);
-    cursor: pointer;
-}
-
-.page-fuer-kommunen .btn-outline-white:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.5);
 }
 
 .page-fuer-kommunen .hero-visual {
@@ -4684,22 +4597,6 @@ body[class*="page-"] {
 
 .page-ueber-uns .cta-buttons {
     display: flex; justify-content: center; gap: var(--space-md); position: relative;
-}
-
-.page-ueber-uns .btn-white {
-    display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-xl); background: var(--white); color: var(--orange-primary); border-radius: var(--radius-full); font-weight: 700; font-size: 16px; text-decoration: none; transition: all var(--transition-fast);
-}
-
-.page-ueber-uns .btn-white:hover {
-    transform: translateY(-1px); box-shadow: var(--shadow-lg);
-}
-
-.page-ueber-uns .btn-outline-white {
-    display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-xl); background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.3); border-radius: var(--radius-full); font-weight: 600; font-size: 16px; text-decoration: none; transition: all var(--transition-fast);
-}
-
-.page-ueber-uns .btn-outline-white:hover {
-    background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5);
 }
 
 /* RESPONSIVE */

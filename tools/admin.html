@@ -1782,6 +1782,44 @@ function groupByEntity(blockType, fields) {
         }
     }
 
+    // Scaffold missing repeatable fields from registry
+    if (blockRegistry && entityOrder.length > 0) {
+        let blockDef = blockRegistry[blockType];
+        if (!blockDef) {
+            for (const [, def] of Object.entries(blockRegistry)) {
+                if (def.aliases && Object.keys(def.aliases).includes(blockType)) {
+                    blockDef = def; break;
+                }
+            }
+        }
+        if (blockDef?.fields) {
+            const patterns = {};
+            for (const [key, val] of Object.entries(blockDef.fields)) {
+                if (key.startsWith('_')) {
+                    for (const [pk, pv] of Object.entries(val)) {
+                        if (pv.repeatable) patterns[pk] = pv;
+                    }
+                } else if (val.repeatable) {
+                    patterns[key] = val;
+                }
+            }
+            for (const entity of entityOrder) {
+                const entityFields = entityMap.get(entity);
+                const existingIds = new Set(entityFields.map(f => f.id));
+                for (const [pattern, meta] of Object.entries(patterns)) {
+                    const fieldId = pattern.replace(/\{[^}]+\}/g, entity);
+                    if (!existingIds.has(fieldId)) {
+                        const stub = { id: fieldId, type: meta.type, value: '', level: meta.level || 'basic' };
+                        if (meta.type === 'link' || meta.type === 'button') stub.href = '';
+                        if (meta.type === 'image') stub.value = { src: '', alt: '' };
+                        entityFields.push(stub);
+                        fields.push(stub); // Also add to contentData so onFieldChange can find it
+                    }
+                }
+            }
+        }
+    }
+
     const groups = [];
     if (headerFields.length > 0) groups.push({ key: '_header_', fields: headerFields });
     for (const key of entityOrder) {

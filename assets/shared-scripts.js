@@ -73,10 +73,9 @@ const slides = document.querySelectorAll('.slide');
 const progressBars = document.querySelectorAll('.progress-bar');
 
 if (slides.length > 0 && progressBars.length > 0) {
-    const isPreview = window.__CMS_PREVIEW__ || false;
     let currentSlide = 0;
     let slideInterval;
-    const slideDuration = isPreview ? 0 : 6000; // Disable autoplay in CMS preview
+    const slideDuration = 6000;
 
     function showSlide(index) {
         // Update slides
@@ -109,6 +108,8 @@ if (slides.length > 0 && progressBars.length > 0) {
     }
 
     function startSlider() {
+        // Disable autoplay in CMS preview (bridge sets flag async)
+        if (window.__CMS_PREVIEW__) return;
         slideInterval = setInterval(nextSlide, slideDuration);
     }
 
@@ -135,31 +136,29 @@ if (slides.length > 0 && progressBars.length > 0) {
 }
 
 // ========================================
-// TABS (index, hilfe-finden, engagieren, fuer-kommunen)
-// Uses data-tab on buttons and data-panel on panels
+// TAB GROUP HELPER — shared init for all tab-like components
 // ========================================
-const tabButtons = document.querySelectorAll('.tab-btn');
-const tabPanels = document.querySelectorAll('.tab-panel');
-
-if (tabButtons.length > 0) {
-    tabButtons.forEach(button => {
+function initTabGroup(btnSelector, panelSelector, btnDataAttr, panelDataAttr) {
+    const buttons = document.querySelectorAll(btnSelector);
+    const panels = document.querySelectorAll(panelSelector);
+    if (buttons.length === 0) return;
+    buttons.forEach(button => {
         button.addEventListener('click', () => {
-            const tabId = button.getAttribute('data-tab');
-
-            // Update buttons
-            tabButtons.forEach(btn => btn.classList.remove('active'));
+            const tabId = button.getAttribute(btnDataAttr);
+            buttons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-
-            // Update panels
-            tabPanels.forEach(panel => {
+            panels.forEach(panel => {
                 panel.classList.remove('active');
-                if (panel.getAttribute('data-panel') === tabId) {
+                if (panel.getAttribute(panelDataAttr) === tabId) {
                     panel.classList.add('active');
                 }
             });
         });
     });
 }
+
+// TABS (index, hilfe-finden, engagieren, fuer-kommunen)
+initTabGroup('.tab-btn', '.tab-panel', 'data-tab', 'data-panel');
 
 // ========================================
 // MOBILE TAB PICKER (all pages with tabs)
@@ -376,33 +375,6 @@ if (tabButtons.length > 0) {
 })();
 
 // ========================================
-// HEADER BUTTONS (index.html)
-// ========================================
-const navButtons = document.querySelectorAll('.nav-btn[data-action]');
-
-if (navButtons.length > 0) {
-    navButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const action = button.getAttribute('data-action');
-
-            if (action === 'hilfe') {
-                // Scroll to tabs and activate "Hilfesuchende"
-                document.querySelector('.tabs-section').scrollIntoView({ behavior: 'smooth' });
-                setTimeout(() => {
-                    document.querySelector('[data-tab="hilfesuchende"]').click();
-                }, 500);
-            } else if (action === 'engagieren') {
-                // Scroll to tabs and activate "Engagierte"
-                document.querySelector('.tabs-section').scrollIntoView({ behavior: 'smooth' });
-                setTimeout(() => {
-                    document.querySelector('[data-tab="engagierte"]').click();
-                }, 500);
-            }
-        });
-    });
-}
-
-// ========================================
 // SMOOTH SCROLL FOR ANCHOR LINKS
 // ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -416,8 +388,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ========================================
-// FAQ ACCORDION (hilfe-finden, engagieren, fuer-kommunen, kontakt, muenchen)
-// Supports both 'open' and 'active' class toggling
+// FAQ ACCORDION (all subpages)
+// Single class system: .faq-item.active
 // ========================================
 const faqItems = document.querySelectorAll('.faq-item');
 
@@ -425,31 +397,21 @@ if (faqItems.length > 0) {
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         if (question) {
-            // Set initial aria-expanded state
-            const isOpen = item.classList.contains('open') || item.classList.contains('active');
-            question.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            question.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
 
             question.addEventListener('click', () => {
-                const wasOpen = item.classList.contains('open') || item.classList.contains('active');
+                const wasActive = item.classList.contains('active');
                 // Close others
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('open');
-                        otherItem.classList.remove('active');
-                        const otherQ = otherItem.querySelector('.faq-question');
+                faqItems.forEach(other => {
+                    if (other !== item) {
+                        other.classList.remove('active');
+                        const otherQ = other.querySelector('.faq-question');
                         if (otherQ) otherQ.setAttribute('aria-expanded', 'false');
                     }
                 });
                 // Toggle current
-                if (wasOpen) {
-                    item.classList.remove('open');
-                    item.classList.remove('active');
-                    question.setAttribute('aria-expanded', 'false');
-                } else {
-                    item.classList.add('open');
-                    item.classList.add('active');
-                    question.setAttribute('aria-expanded', 'true');
-                }
+                item.classList.toggle('active', !wasActive);
+                question.setAttribute('aria-expanded', !wasActive ? 'true' : 'false');
             });
         }
     });
@@ -466,32 +428,8 @@ if (contactForm) {
     });
 }
 
-// ========================================
 // INFO TABS (index.html — "Gut zu wissen")
-// Uses data-info-tab on pills and data-info-panel on panels
-// ========================================
-const infoTabPills = document.querySelectorAll('.info-tab-pill');
-const infoTabPanels = document.querySelectorAll('.info-tab-panel');
-
-if (infoTabPills.length > 0) {
-    infoTabPills.forEach(pill => {
-        pill.addEventListener('click', () => {
-            const tabId = pill.getAttribute('data-info-tab');
-
-            // Update pills
-            infoTabPills.forEach(p => p.classList.remove('active'));
-            pill.classList.add('active');
-
-            // Update panels
-            infoTabPanels.forEach(panel => {
-                panel.classList.remove('active');
-                if (panel.getAttribute('data-info-panel') === tabId) {
-                    panel.classList.add('active');
-                }
-            });
-        });
-    });
-}
+initTabGroup('.info-tab-pill', '.info-tab-panel', 'data-info-tab', 'data-info-panel');
 
 // ========================================
 // PREVIEW BRIDGE LOADER
