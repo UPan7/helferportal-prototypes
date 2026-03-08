@@ -4,9 +4,13 @@
  *
  * Flow: content/*.json → Supabase REST API (PATCH)
  *
+ * Before writing, checks if Supabase has newer edits than our local copy.
+ * If so, skips the page unless --force is used.
+ *
  * Usage:
- *   node sync-to-supabase.js                     # Sync all pages
- *   node sync-to-supabase.js --page fuer-kommunen # Sync one page
+ *   node sync-to-supabase.js                      # Sync all pages (with conflict check)
+ *   node sync-to-supabase.js --page fuer-kommunen  # Sync one page
+ *   node sync-to-supabase.js --page fuer-kommunen --force  # Overwrite even if Supabase is newer
  *
  * Environment variables (or .env file):
  *   SUPABASE_URL=https://xxxxx.supabase.co
@@ -43,12 +47,33 @@ const PAGE_IDS = [
 const args = process.argv.slice(2);
 const pageArgIdx = args.indexOf('--page');
 const targetPage = pageArgIdx >= 0 ? args[pageArgIdx + 1] : null;
+const forceOverwrite = args.includes('--force');
+
+// --- Helpers ---
+function supabaseHeaders(key) {
+  return {
+    'apikey': key,
+    'Authorization': `Bearer ${key}`,
+    'Content-Type': 'application/json'
+  };
+}
+
+async function fetchSupabasePage(url, key, pageId) {
+  const res = await fetch(
+    `${url}/rest/v1/pages?id=eq.${pageId}&select=updated_at,content`,
+    { headers: supabaseHeaders(key) }
+  );
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+  const rows = await res.json();
+  return rows.length > 0 ? rows[0] : null;
+}
 
 // --- Main ---
 async function main() {
   console.log('');
   console.log('  Helferportal Sync → Supabase');
   console.log('  ============================');
+  if (forceOverwrite) console.log('  Mode: --force (skip conflict checks)');
   console.log('');
 
   const url = process.env.SUPABASE_URL;
@@ -61,20 +86,54 @@ async function main() {
   }
 
   const pagesToSync = targetPage ? [targetPage] : PAGE_IDS;
+  let synced = 0;
+  let skipped = 0;
 
   for (const pageId of pagesToSync) {
     const jsonPath = path.join(CONTENT_DIR, `${pageId}.json`);
 
     if (!fs.existsSync(jsonPath)) {
       console.warn(`  ⚠ JSON file missing: ${pageId}.json (skipping)`);
+      skipped++;
       continue;
     }
 
+    const content = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+    const localEditedAt = content._meta?.lastEdited || content._meta?.extracted;
+
+    // --- Conflict check ---
+    if (!forceOverwrite) {
+      try {
+        const remote = await fetchSupabasePage(url, key, pageId);
+
+        if (remote) {
+          const remoteEditedAt = remote.content?._meta?.lastEdited;
+          // Compare: if Supabase was edited AFTER our local version was created
+          if (remoteEditedAt && localEditedAt) {
+            const remoteTime = new Date(remoteEditedAt).getTime();
+            const localTime = new Date(localEditedAt).getTime();
+
+            if (remoteTime > localTime) {
+              const remoteBy = remote.content?._meta?.editedBy || 'unknown';
+              console.log(`  ⚠ CONFLICT: "${pageId}"`);
+              console.log(`    Supabase edited: ${remoteEditedAt} (by ${remoteBy})`);
+              console.log(`    Local version:   ${localEditedAt}`);
+              console.log(`    → Skipping to protect remote changes. Use --force to overwrite.`);
+              console.log('');
+              skipped++;
+              continue;
+            }
+          }
+        }
+      } catch (err) {
+        console.warn(`  ⚠ Could not check remote state for "${pageId}": ${err.message}`);
+        console.warn(`    → Proceeding with sync anyway.`);
+      }
+    }
+
+    // --- Sync ---
     console.log(`  Syncing "${pageId}" to Supabase...`);
 
-    const content = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
-
-    // Update meta
     content._meta = content._meta || {};
     content._meta.lastEdited = new Date().toISOString();
 
@@ -83,12 +142,7 @@ async function main() {
         `${url}/rest/v1/pages?id=eq.${pageId}`,
         {
           method: 'PATCH',
-          headers: {
-            'apikey': key,
-            'Authorization': `Bearer ${key}`,
-            'Content-Type': 'application/json',
-            'Prefer': 'return=minimal'
-          },
+          headers: { ...supabaseHeaders(key), 'Prefer': 'return=minimal' },
           body: JSON.stringify({
             content: content,
             title: content.page?.title || pageId,
@@ -103,14 +157,18 @@ async function main() {
         throw new Error(`HTTP ${response.status}: ${text}`);
       }
 
+      // Update local JSON with new lastEdited timestamp
+      fs.writeFileSync(jsonPath, JSON.stringify(content, null, 2), 'utf-8');
+
       console.log(`    ✓ Updated "${pageId}" in Supabase`);
+      synced++;
     } catch (err) {
       console.error(`    ✗ Failed to sync "${pageId}": ${err.message}`);
     }
   }
 
   console.log('');
-  console.log('  ✓ Sync complete!');
+  console.log(`  Done: ${synced} synced, ${skipped} skipped`);
   console.log('');
 }
 

@@ -13,8 +13,14 @@ Annotated HTML ──extract.js──▸ JSON ──▸ Supabase (online)
                                       admin.html (editor UI)
                                             │
                                             ▼
-Supabase / local JSON ──deploy.js──▸ Updated HTML ──▸ GitHub Pages
+Supabase ──deploy.js──▸ JSON ──▸ HTML ──▸ GitHub Pages
+                                 │
+                                 ▼
+                    sync-to-supabase.js ──▸ Supabase
+                    (reverse sync, conflict-safe)
 ```
+
+**Source of truth**: Supabase (for content). HTML (for structure/layout).
 
 ## Components
 
@@ -41,6 +47,8 @@ Two-panel SPA (sidebar + editor) with three entry stages: Config → Login → A
 | **extract.js** | `node extract.js <html> <json>` | Parse annotated HTML → JSON (reads `data-block` / `data-field` attributes) |
 | **build.js** | `node build.js <json> <html>` | Apply JSON content back into HTML (inverse of extract) |
 | **deploy.js** | `node deploy.js [--local] [--page <id>]` | Full pipeline: Supabase → JSON → HTML. `--local` skips Supabase pull |
+| **sync-to-supabase.js** | `node sync-to-supabase.js [--page <id>] [--force]` | Reverse sync: JSON → Supabase. Checks for conflicts before overwriting. `--force` skips check |
+| **validate.js** | `node validate.js <page> [--strict]` | Checks HTML/JSON field consistency. Detects orphans and ghosts |
 
 **Dependency:** `cheerio` (server-side DOM manipulation).
 
@@ -74,7 +82,13 @@ pages (
 | File | Purpose |
 |------|---------|
 | `manifest.json` | Page registry for offline auto-discovery |
-| `startseite.json` | Extracted content: 9 blocks, 94 fields |
+| `startseite.json` | 9 blocks, ~277 fields |
+| `hilfe-finden.json` | 5 blocks, ~89 fields |
+| `engagieren.json` | 6 blocks, ~99 fields |
+| `fuer-kommunen.json` | 5 blocks, ~46 fields |
+| `ueber-uns.json` | 6 blocks, ~80 fields |
+| `kontakt.json` | 3 blocks, ~36 fields |
+| `muenchen.json` | 7 blocks, ~128 fields |
 
 ## JSON Content Structure
 

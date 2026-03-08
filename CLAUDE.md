@@ -20,18 +20,40 @@ helferportal-prototypes/          ← Git repo root = document root
 ├── fuer-kommunen.html
 ├── ueber-uns.html
 ├── kontakt.html
-├── stadt-template.html
+├── muenchen.html
 ├── assets/
 │   ├── shared-styles.css         ← all CSS
 │   ├── shared-scripts.js         ← all JS
+│   ├── preview-bridge.js         ← live preview bridge (CMS iframe only)
 │   └── images/                   ← local images (if any)
-├── content/                      ← Excel tables (not served, for reference)
-│   ├── 1_Startseite.xlsx
-│   ├── 2_Hilfe_finden.xlsx
-│   └── ...
+├── content/                      ← JSON content files (synced with Supabase)
+│   ├── manifest.json             ← page registry for CMS offline mode
+│   ├── startseite.json
+│   ├── hilfe-finden.json
+│   ├── engagieren.json
+│   ├── fuer-kommunen.json
+│   ├── ueber-uns.json
+│   ├── kontakt.json
+│   └── muenchen.json
+├── tools/
+│   ├── admin.html                ← CMS editor (browser-based)
+│   ├── extract.js                ← HTML → JSON extractor
+│   ├── build.js                  ← JSON → HTML builder
+│   ├── deploy.js                 ← Supabase → JSON → HTML pipeline
+│   ├── sync-to-supabase.js       ← JSON → Supabase (reverse sync, conflict-safe)
+│   ├── validate.js               ← HTML/JSON integrity checker
+│   ├── block-registry.json       ← canonical block type definitions
+│   ├── lib/field-ops.js          ← shared field application logic
+│   ├── package.json              ← Node deps (cheerio only)
+│   └── .env                      ← Supabase credentials (gitignored)
+├── docs/
+│   ├── PROJECT_CONTEXT.md        ← canonical reference for developers/LLMs
+│   ├── CMS-OVERVIEW.md           ← CMS architecture overview
+│   └── DEVELOPMENT-PLAN.md       ← development roadmap
 └── reference/                    ← source materials (not served)
-    ├── Helferportal_Content_Tabelle.xlsx
-    └── brand-guidelines.md
+    ├── feedback_rows.csv         ← client feedback items
+    ├── pages_rows.csv            ← Supabase pages table dump
+    └── intake/                   ← original content intake files
 ```
 
 **Git workflow:** Push to GitHub → GitHub Pages auto-deploys → site is live.
@@ -64,7 +86,7 @@ Header navigation:
 
 Footer columns:
 
-- "Für Sie": Hilfe finden, Engagieren, Für Kommunen, Für Organisationen
+- "Für Sie": Hilfe finden, Engagieren, Für die öffentliche Hand, Für Organisationen
 - "Über uns": Das Konzept, So funktioniert's, Unsere Partner, Aktuelles
 - "Kontakt": Kontakt aufnehmen, Demo vereinbaren, FAQ
 
@@ -78,7 +100,7 @@ All inter-page links use absolute paths from the root:
 <!-- Navigation and internal links -->
 <a href="/hilfe-finden.html">Hilfe finden</a>
 <a href="/engagieren.html">Engagieren</a>
-<a href="/fuer-kommunen.html">Für Kommunen</a>
+<a href="/fuer-kommunen.html">Für die öffentliche Hand</a>
 <a href="/ueber-uns.html">Über uns</a>
 <a href="/kontakt.html">Anmelden</a>
 <a href="/">Startseite</a>
@@ -218,15 +240,15 @@ A=35, B=40, C=50, D=70, E=25, F=50
 
 ### Pages to generate:
 
-| #   | Page                           | URL            | Content Source                       | Status  |
-| --- | ------------------------------ | -------------- | ------------------------------------ | ------- |
-| 1   | Startseite                     | /              | Sheet: 1_Startseite (10 blocks)      | ✅ Done |
-| 2   | Hilfe finden                   | /hilfe-finden  | Sheet: 2_Hilfe_finden (4 blocks)     | Pending |
-| 3   | Engagieren                     | /engagieren    | Sheet: 3_Engagieren (4 blocks)       | Pending |
-| 4   | Für Kommunen & soziale Akteure | /fuer-kommunen | Sheet: 4_Kommunen_Akteure (5 blocks) | Pending |
-| 5   | Über uns                       | /ueber-uns     | Sheet: 5_Ueber_uns (4 blocks)        | Pending |
-| 6   | Anmelden / Kontakt             | /kontakt       | Sheet: 6_Anmelden_Kontakt (3 blocks) | Pending |
-| 7   | Stadtseite (Template)          | /stadt/[name]  | Sheet: 7_Stadtseite_Template         | Pending |
+| #   | Page                                       | URL            | Blocks | Status  |
+| --- | ------------------------------------------ | -------------- | ------ | ------- |
+| 1   | Startseite                                 | /              | 9      | ✅ Done |
+| 2   | Hilfe finden                               | /hilfe-finden  | 5      | ✅ Done |
+| 3   | Engagieren                                 | /engagieren    | 6      | ✅ Done |
+| 4   | Für die öffentliche Hand & soziale Akteure  | /fuer-kommunen | 5      | ✅ Done |
+| 5   | Über uns                                   | /ueber-uns     | 6      | ✅ Done |
+| 6   | Anmelden / Kontakt                         | /kontakt       | 3      | ✅ Done |
+| 7   | München (Stadtseite)                       | /muenchen      | 7      | ✅ Done |
 
 ### Subpage Pattern
 
@@ -247,13 +269,51 @@ All subpages (2-7) follow the same pattern:
 6. Verify all inter-page links work
 7. `git add -A && git commit -m "Add [page name]" && git push`
 
-## Workflow: Updating Content
+## Content Pipeline & Source of Truth
 
-When the client provides updated text:
+**Supabase is the single source of truth for content.** All content changes flow through the CMS (admin.html → Supabase). Structural HTML changes (nav, footer, new sections) are done locally and don't conflict.
 
-1. Update the Excel file in `content/`
-2. Update the corresponding HTML in `pages/`
-3. Ensure consistency between Excel and HTML
+### Content tools (run from `tools/` directory)
+
+```bash
+node deploy.js                           # Pull Supabase → JSON → HTML (all pages)
+node deploy.js --page fuer-kommunen      # Pull one page
+node deploy.js --local                   # Build from local JSON (no Supabase)
+
+node extract.js ../page.html ../content/page.json   # HTML → JSON
+node build.js ../content/page.json ../page.html      # JSON → HTML
+
+node sync-to-supabase.js --page fuer-kommunen        # Push JSON → Supabase (with conflict check)
+node sync-to-supabase.js --page fuer-kommunen --force # Push without conflict check
+
+node validate.js startseite              # Check HTML/JSON consistency
+```
+
+### Workflow: Before starting local work
+
+Always pull the latest content from Supabase first:
+```bash
+cd tools && node deploy.js
+```
+
+### Workflow: Updating content text
+
+**Preferred**: Edit via CMS (admin.html) → Save → content is in Supabase.
+Then pull: `node deploy.js` → push to GitHub.
+
+**If editing locally** (e.g., applying client feedback):
+1. `node deploy.js` — pull latest from Supabase
+2. Edit HTML
+3. `node extract.js ../page.html ../content/page.json` — regenerate JSON
+4. `node sync-to-supabase.js --page {id}` — push to Supabase (checks for conflicts)
+5. `git push` — deploy to GitHub Pages
+
+### Workflow: Structural HTML changes (nav, footer, CSS)
+
+These elements have no `data-field` attributes → they don't conflict with Supabase content.
+1. Edit HTML directly
+2. `git push` — deploy to GitHub Pages
+No Supabase sync needed.
 
 ## Image Strategy
 
@@ -302,15 +362,17 @@ git push origin main
 
 - [ ] Links to shared-styles.css and shared-scripts.js
 - [ ] Header and footer match all other pages
-- [ ] All inter-page links are relative and correct
+- [ ] All inter-page links are root-relative and correct
 - [ ] Every `<section>` has `data-block` and `data-block-id`
-- [ ] Key text elements have `data-field` attributes
+- [ ] Key text elements have `data-field` and `data-field-type` attributes
 - [ ] Color logic matches audience (blue/orange/purple)
 - [ ] Responsive behavior works (1024px, 768px breakpoints)
-- [ ] Matching Excel file exists in content/
-- [ ] Excel has no merged cells in editable content rows
-- [ ] Block numbering in Excel matches HTML
+- [ ] Matching JSON file exists in content/
+- [ ] `node validate.js {page}` passes with 0 errors
 
 ## Rules
 
+- **Documentation auto-update**: When making changes that affect project structure, workflows, tool scripts, page inventory, or navigation — update CLAUDE.md and relevant docs/ files in the same commit. Do not defer documentation updates to a separate step.
+- **Supabase = source of truth**: Never overwrite Supabase content without checking for conflicts first. Use `sync-to-supabase.js` (has built-in conflict detection). Always `node deploy.js` before starting local work.
+- **deploy.js textarea caution**: `field-ops.js` textarea handler (`$el.text()`) destroys nested HTML structure (SVGs, child elements). If a page has structured HTML inside textarea-typed elements, apply text changes manually instead of running deploy.js on that page.
 - At the end of every session, when asked to wrap up, update the Session Log section below following the standard format.

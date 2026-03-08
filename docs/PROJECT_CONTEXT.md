@@ -1,7 +1,7 @@
 # Helferportal CMS — Project Context
 
 > Canonical reference for developers and LLMs continuing work on this project.
-> Last updated: 2026-03-02 | Registry v1.1 | Content schema v2.0
+> Last updated: 2026-03-08 | Registry v1.1 | Content schema v2.0
 
 ---
 
@@ -73,25 +73,28 @@ helferportal-prototypes/          ← Git root = document root (GitHub Pages)
 │   ├── block-registry.json       ← Canonical block type definitions
 │   ├── lib/field-ops.js          ← Shared field application logic
 │   ├── package.json              ← Node deps (cheerio only)
-│   ├── CMS-OVERVIEW.md           ← CMS architecture overview
-│   ├── DEVELOPMENT-PLAN.md       ← Development plan and decisions
+│   ├── sync-to-supabase.js       ← JSON → Supabase (reverse sync, conflict-safe)
 │   ├── fix-header-footer.js      ← One-time migration: header/footer standardization
 │   ├── fix-links.js              ← One-time migration: link normalization
 │   └── refactor-css.js           ← One-time migration: CSS consolidation
 │
-├── reference/                    ← Source materials (not served)
-│   ├── Design_Brief_*.xlsx       ← Design briefs
-│   ├── Webseiteninhalte*.pptx    ← Content overview slides
-│   └── intake/                   ← Content intake forms
+├── docs/
+│   ├── PROJECT_CONTEXT.md        ← This file
+│   ├── CMS-OVERVIEW.md           ← CMS architecture overview
+│   └── DEVELOPMENT-PLAN.md       ← Development plan and decisions
 │
-└── docs/
-    └── PROJECT_CONTEXT.md        ← This file
+├── reference/                    ← Source materials (not served)
+│   ├── feedback_rows.csv         ← Client feedback items
+│   ├── pages_rows.csv            ← Supabase pages table dump
+│   ├── Design_Brief_*.xlsx       ← Design briefs
+│   └── intake/                   ← Content intake forms
 ```
 
 ### Single source of truth principles
 
-- **HTML pages** are the visual source of truth — they contain all DOM structure and annotations
-- **JSON files** are the content source of truth — they hold every field value, type, and level
+- **Supabase** is the content source of truth — all text/content edits flow through the CMS
+- **HTML pages** are the visual/structural source of truth — they contain DOM structure and annotations
+- **JSON files** are the local content cache — synced with Supabase via deploy.js (pull) and sync-to-supabase.js (push)
 - **Block registry** is the schema source of truth — it defines what block types and field patterns are valid
 - **shared-styles.css** is the sole CSS file — no inline styles, no per-page CSS files
 
@@ -133,6 +136,12 @@ helferportal-prototypes/          ← Git root = document root (GitHub Pages)
                      │ Supa→JSON │
                      │  →HTML    │
                      └───────────┘
+
+                     ┌──────────────────┐
+                     │sync-to-supabase  │
+                     │ JSON→Supabase    │──────────────────►  Supabase
+                     │ (conflict-safe)  │                     (pages table)
+                     └──────────────────┘
 ```
 
 ### HTML annotations
@@ -240,6 +249,23 @@ node tools/deploy.js --local            # Build from local JSON only (no Supabas
 - Contains a hardcoded `PAGE_MAP` mapping all 7 pages to their HTML/JSON paths
 - Fetches from Supabase REST API using service_role key (from `.env` or environment)
 - Writes JSON files, then runs the same build logic as `build.js` inline
+
+### Reverse Sync (`tools/sync-to-supabase.js`)
+
+**Direction**: Local JSON → Supabase (with conflict detection)
+
+```bash
+node tools/sync-to-supabase.js                       # Sync all pages (with conflict check)
+node tools/sync-to-supabase.js --page fuer-kommunen   # Sync one page
+node tools/sync-to-supabase.js --page fuer-kommunen --force  # Skip conflict check
+```
+
+How it works:
+1. Read `content/{page}.json`
+2. **Conflict check**: GET current `_meta.lastEdited` from Supabase, compare with local
+3. If Supabase is newer → skip page (warn), unless `--force`
+4. PATCH to Supabase REST API: `content`, `title`, `url`, `updated_by`
+5. Update local JSON `_meta.lastEdited` to match
 
 ### Shared field-ops (`tools/lib/field-ops.js`)
 
@@ -541,6 +567,11 @@ node build.js ../content/muenchen.json ../muenchen.html
 node deploy.js                           # Full pipeline (requires .env)
 node deploy.js --page startseite         # Single page
 node deploy.js --local                   # Local JSON only (no Supabase)
+
+# Reverse sync: JSON → Supabase (with conflict check)
+node sync-to-supabase.js                 # All pages
+node sync-to-supabase.js --page fuer-kommunen  # One page
+node sync-to-supabase.js --page fuer-kommunen --force  # Skip conflict check
 ```
 
 ### Validate all pages (batch)
@@ -603,6 +634,12 @@ Running `build.js` reformats HTML through Cheerio's serializer (boolean attribut
 `deploy.js` contains an inline copy of `build.js`'s field application loop (lines 176–202). Changes to build logic must be applied in both files.
 
 **Future**: Extract shared build function or have deploy.js call build.js as a subprocess.
+
+### Textarea field handler destroys nested HTML
+
+`field-ops.js` line ~67: `case 'textarea': $el.text(field.value)` replaces the entire element content with plain text. This destroys any nested HTML (SVG icons, child elements like `<h3>`, `<p>` inside feature cards). Affects `deploy.js` and `build.js` when applying content to elements with complex inner structure.
+
+**Workaround**: For pages with structured HTML inside textarea-typed elements (e.g., fuer-kommunen feature cards), apply text changes manually instead of running deploy.js.
 
 ### No automated tests
 

@@ -1,16 +1,15 @@
 {
+  "_meta": {
+    "generator": "helferportal-content-tools/extract.js",
+    "source": "index.html",
+    "extracted": "2026-03-08T12:27:30.038Z",
+    "schema_version": "2.0",
+    "lastEdited": "2026-03-08T12:27:42.870Z"
+  },
   "page": {
     "id": "startseite",
-    "url": "/",
-    "title": "Helferportal – Unterstützung finden, Engagement ermöglichen"
-  },
-  "_meta": {
-    "source": "index.html",
-    "editedBy": "thomas.oeben@helferportal.de",
-    "extracted": "2026-03-01T21:50:22.102Z",
-    "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-07T13:25:33.711Z",
-    "schema_version": "2.0"
+    "title": "Helferportal – Unterstützung finden, Engagement ermöglichen",
+    "url": "/"
   },
   "blocks": [
     {
@@ -20,138 +19,138 @@
         {
           "id": "slide-0-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Menschen helfen einander",
-            "src": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1400"
-          }
+            "src": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1400",
+            "alt": "Menschen helfen einander"
+          },
+          "level": "basic"
         },
         {
           "id": "slide-0-tag",
           "type": "text",
-          "level": "advanced",
-          "value": "Das Helferportal"
+          "value": "Das Helferportal",
+          "level": "advanced"
         },
         {
           "id": "slide-0-title",
           "type": "text",
-          "level": "basic",
-          "value": "Unterstützung finden, Hilfe anbieten, Engagement verbinden."
+          "value": "Unterstützung finden, Hilfe anbieten, Engagement verbinden.",
+          "level": "basic"
         },
         {
           "id": "slide-0-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Das Helferportal verbindet Menschen, Organisationen und Dienstleister, damit Hilfe schneller dort ankommt, wo sie gebraucht wird."
+          "value": "Das Helferportal verbindet Menschen, Organisationen und Dienstleister, damit Hilfe schneller dort ankommt, wo sie gebraucht wird.",
+          "level": "basic"
         },
         {
           "id": "slide-0-btn",
-          "href": "#video-section",
           "type": "button",
-          "level": "basic",
-          "value": "Video ansehen"
+          "href": "#video-section",
+          "value": "Video ansehen",
+          "level": "basic"
         },
         {
           "id": "slide-1-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Hilfesuchende Person",
-            "src": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1400"
-          }
+            "src": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1400",
+            "alt": "Hilfesuchende Person"
+          },
+          "level": "basic"
         },
         {
           "id": "slide-1-tag",
           "type": "text",
-          "level": "advanced",
-          "value": "Für Hilfesuchende"
+          "value": "Für Hilfesuchende",
+          "level": "advanced"
         },
         {
           "id": "slide-1-title",
           "type": "text",
-          "level": "basic",
-          "value": "Unterstützung im Alltag und Gesundheitsangebote finden"
+          "value": "Unterstützung im Alltag und Gesundheitsangebote finden",
+          "level": "basic"
         },
         {
           "id": "slide-1-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Begleitung, Besuchsdienste, hauswirtschaftliche Unterstützung und Pflegeangebote — in Ihrer Nähe, sicher und unkompliziert."
+          "value": "Begleitung, Besuchsdienste, hauswirtschaftliche Unterstützung und Pflegeangebote — in Ihrer Nähe, sicher und unkompliziert.",
+          "level": "basic"
         },
         {
           "id": "slide-1-btn",
-          "href": "/hilfe-finden.html",
           "type": "button",
-          "level": "basic",
-          "value": "Hilfe finden"
+          "href": "/hilfe-finden.html",
+          "value": "Hilfe finden",
+          "level": "basic"
         },
         {
           "id": "slide-2-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Engagierte Helfer",
-            "src": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1400"
-          }
+            "src": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1400",
+            "alt": "Engagierte Helfer"
+          },
+          "level": "basic"
         },
         {
           "id": "slide-2-tag",
           "type": "text",
-          "level": "advanced",
-          "value": "Für Engagierte"
+          "value": "Für Engagierte",
+          "level": "advanced"
         },
         {
           "id": "slide-2-title",
           "type": "text",
-          "level": "basic",
-          "value": "Helfen, wie es zu Ihrem Alltag passt."
+          "value": "Helfen, wie es zu Ihrem Alltag passt.",
+          "level": "basic"
         },
         {
           "id": "slide-2-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Ob spontan, eigenständig oder über eine Organisation:\nIm Helferportal finden Sie den Weg, der zu Ihrem Engagement passt."
+          "value": "Ob spontan, eigenständig oder über eine Organisation:\nIm Helferportal finden Sie den Weg, der zu Ihrem Engagement passt.",
+          "level": "basic"
         },
         {
           "id": "slide-2-btn",
-          "href": "/engagieren.html",
           "type": "button",
-          "level": "basic",
-          "value": "Jetzt engagieren"
+          "href": "/engagieren.html",
+          "value": "Jetzt engagieren",
+          "level": "basic"
         },
         {
           "id": "slide-3-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Kommune und Organisation",
-            "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1400"
-          }
+            "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1400",
+            "alt": "Kommune und Organisation"
+          },
+          "level": "basic"
         },
         {
           "id": "slide-3-tag",
           "type": "text",
-          "level": "advanced",
-          "value": "Für öffentliche Hand und soziale Akteure."
+          "value": "Für öffentliche Hand und soziale Akteure.",
+          "level": "advanced"
         },
         {
           "id": "slide-3-title",
           "type": "text",
-          "level": "basic",
-          "value": "Versorgungsnetzwerke und Helferkreise digital steuern."
+          "value": "Versorgungsnetzwerke und Helferkreise digital steuern.",
+          "level": "basic"
         },
         {
           "id": "slide-3-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Koordinieren Sie Helferkreise, Organisationen und Dienstleister digital – übersichtlich auf einer Plattform."
+          "value": "Koordinieren Sie Helferkreise, Organisationen und Dienstleister digital – übersichtlich auf einer Plattform.",
+          "level": "basic"
         },
         {
           "id": "slide-3-btn",
-          "href": "/fuer-kommunen.html",
           "type": "button",
-          "level": "basic",
-          "value": "Mehr erfahren"
+          "href": "/fuer-kommunen.html",
+          "value": "Mehr erfahren",
+          "level": "basic"
         }
       ]
     },
@@ -162,74 +161,26 @@
         {
           "id": "qa-1-href",
           "type": "text",
-          "level": "advanced",
-          "value": "Unterstützung finden"
-        },
-        {
-          "id": "qa-1-title",
-          "type": "text",
-          "level": "basic",
-          "value": "Unterstützung finden"
-        },
-        {
-          "id": "qa-1-text",
-          "type": "text",
-          "level": "basic",
-          "value": "Passende Hilfe in Ihrer Nähe."
+          "value": "Unterstützung finden",
+          "level": "advanced"
         },
         {
           "id": "qa-2-href",
           "type": "text",
-          "level": "advanced",
-          "value": "Unterstützung anbieten"
-        },
-        {
-          "id": "qa-2-title",
-          "type": "text",
-          "level": "basic",
-          "value": "Angebot einstellen"
-        },
-        {
-          "id": "qa-2-text",
-          "type": "text",
-          "level": "basic",
-          "value": "Als Helfer engagieren oder Leistungen einstellen."
+          "value": "Unterstützung anbieten",
+          "level": "advanced"
         },
         {
           "id": "qa-3-href",
           "type": "text",
-          "level": "advanced",
-          "value": "Für Kommunen"
-        },
-        {
-          "id": "qa-3-title",
-          "type": "text",
-          "level": "basic",
-          "value": "Für Kommunen"
-        },
-        {
-          "id": "qa-3-text",
-          "type": "text",
-          "level": "basic",
-          "value": "Versorgungsstrukturen digital steuern."
+          "value": "Für die öffentliche Hand",
+          "level": "advanced"
         },
         {
           "id": "qa-4-href",
           "type": "text",
-          "level": "advanced",
-          "value": "So funktioniert's"
-        },
-        {
-          "id": "qa-4-title",
-          "type": "text",
-          "level": "basic",
-          "value": "So funktioniert's"
-        },
-        {
-          "id": "qa-4-text",
-          "type": "text",
-          "level": "basic",
-          "value": "In 5 Schritten zur passenden Unterstützung."
+          "value": "So funktioniert's",
+          "level": "advanced"
         }
       ]
     },
@@ -240,242 +191,242 @@
         {
           "id": "tabs-title",
           "type": "text",
-          "level": "basic",
-          "value": "Helferportal für alle."
+          "value": "Helferportal für alle.",
+          "level": "basic"
         },
         {
           "id": "tabs-subtitle",
           "type": "text",
-          "level": "basic",
-          "value": "Menschen verbinden, Unterstützung finden und gemeinsam helfen."
+          "value": "Menschen verbinden, Unterstützung finden und gemeinsam helfen.",
+          "level": "basic"
         },
         {
           "id": "tab-hilfe-name",
           "type": "text",
-          "level": "basic",
-          "value": "Hilfesuchende"
+          "value": "Hilfesuchende",
+          "level": "basic"
         },
         {
           "id": "tab-angehoerige-name",
           "type": "text",
-          "level": "basic",
-          "value": "Pflegende Angehörige"
+          "value": "Pflegende Angehörige",
+          "level": "basic"
         },
         {
           "id": "tab-engagierte-name",
           "type": "text",
-          "level": "basic",
-          "value": "Engagierte"
+          "value": "Engagierte",
+          "level": "basic"
         },
         {
           "id": "tab-kommunen-name",
           "type": "text",
-          "level": "basic",
-          "value": "Öffentliche Hand und soziale Akteure"
+          "value": "Öffentliche Hand und soziale Akteure",
+          "level": "basic"
         },
         {
           "id": "tab-orga-name",
           "type": "text",
-          "level": "basic",
-          "value": "Soziale Akteure"
+          "value": "Soziale Akteure",
+          "level": "basic"
         },
         {
           "id": "tab-dienst-name",
           "type": "text",
-          "level": "basic",
-          "value": "Gesundheitsdienstleister"
+          "value": "Gesundheitsdienstleister",
+          "level": "basic"
         },
         {
           "id": "tab-hilfe-title",
           "type": "text",
-          "level": "basic",
-          "value": "Unterstützung im Alltag und Gesundheitsangebote finden."
+          "value": "Unterstützung im Alltag und Gesundheitsangebote finden.",
+          "level": "basic"
         },
         {
           "id": "tab-hilfe-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Finden Sie Unterstützung im Alltag oder passende Angebote und Dienstleistungen – direkt in Ihrer Nähe."
+          "value": "Finden Sie Unterstützung im Alltag oder passende Angebote und Dienstleistungen – direkt in Ihrer Nähe.",
+          "level": "basic"
         },
         {
           "id": "tab-hilfe-cards",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Begleitdienste | Begleitung zu Arztterminen, Behörden oder Ausflügen.\nBesuchsdienste | Gesellschaft leisten, vorlesen oder gemeinsam spazieren gehen.\nAlltagshilfe | Unterstützung beim Einkaufen, im Haushalt oder bei technischen Fragen.\nDienstleistungen | Professionelle Angebote wie Pflege, Therapie, Kinderbetreuung oder Nachhilfe."
+          "value": "Begleitdienste | Begleitung zu Arztterminen, Behörden oder Ausflügen.\nBesuchsdienste | Gesellschaft leisten, vorlesen oder gemeinsam spazieren gehen.\nAlltagshilfe | Unterstützung beim Einkaufen, im Haushalt oder bei technischen Fragen.\nDienstleistungen | Professionelle Angebote wie Pflege, Therapie, Kinderbetreuung oder Nachhilfe.",
+          "level": "advanced"
         },
         {
           "id": "tab-hilfe-btn-1",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Hilfe finden"
+          "href": "",
+          "value": "Hilfe finden",
+          "level": "basic"
         },
         {
           "id": "tab-hilfe-btn-2",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Mehr erfahren"
+          "href": "",
+          "value": "Mehr erfahren",
+          "level": "basic"
         },
         {
           "id": "tab-angehoerige-title",
           "type": "text",
-          "level": "basic",
-          "value": "Entlastung für pflegende Angehörige"
+          "value": "Entlastung für pflegende Angehörige",
+          "level": "basic"
         },
         {
           "id": "tab-angehoerige-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Sie pflegen einen nahestehenden Menschen? Im Helferportal finden Sie passende Unterstützung, Pflegeangebote und Pflegeberatung – damit Sie im Alltag spürbar entlastet werden."
+          "value": "Sie pflegen einen nahestehenden Menschen? Im Helferportal finden Sie passende Unterstützung, Pflegeangebote und Pflegeberatung – damit Sie im Alltag spürbar entlastet werden.",
+          "level": "basic"
         },
         {
           "id": "tab-angehoerige-cards",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Verhinderungspflege | Damit Ihr Angehöriger gut versorgt ist, wenn Sie einmal verhindert sind.\nEntlastungsleistungen | Unterstützung im Alltag – über den Entlastungsbetrag der Pflegekasse nutzbar.\nPflegeberatung | Beratung zu Leistungen, Anträgen und passenden Unterstützungsangeboten."
+          "value": "Verhinderungspflege | Damit Ihr Angehöriger gut versorgt ist, wenn Sie einmal verhindert sind.\nEntlastungsleistungen | Unterstützung im Alltag – über den Entlastungsbetrag der Pflegekasse nutzbar.\nPflegeberatung | Beratung zu Leistungen, Anträgen und passenden Unterstützungsangeboten.",
+          "level": "advanced"
         },
         {
           "id": "tab-angehoerige-btn-1",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Entlastung finden"
+          "href": "",
+          "value": "Entlastung finden",
+          "level": "basic"
         },
         {
           "id": "tab-angehoerige-btn-2",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Mehr erfahren"
+          "href": "",
+          "value": "Mehr erfahren",
+          "level": "basic"
         },
         {
           "id": "tab-engagierte-title",
           "type": "text",
-          "level": "basic",
-          "value": "Helfen, wie es zu Ihrem Alltag passt."
+          "value": "Helfen, wie es zu Ihrem Alltag passt.",
+          "level": "basic"
         },
         {
           "id": "tab-engagierte-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Sie wollen sich engagieren? Wählen Sie die Einsatzart, die zu Ihrem Leben passt – ob spontan, regelmäßig oder über eine Organisation."
+          "value": "Sie wollen sich engagieren? Wählen Sie die Einsatzart, die zu Ihrem Leben passt – ob spontan, regelmäßig oder über eine Organisation.",
+          "level": "basic"
         },
         {
           "id": "tab-engagierte-cards",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Spontan & flexibel | Freizeit begleiten oder im Alltag helfen – ohne feste Verpflichtung.\nRegelmäßig & eigenständig | Unterstützen Sie Menschen regelmäßig und eigenverantwortlich.\nÜber eine Organisation |  Mit fachlicher Unterstützung, Schulungen und Versicehrungsschutz."
+          "value": "Spontan & flexibel | Freizeit begleiten oder im Alltag helfen – ohne feste Verpflichtung.\nRegelmäßig & eigenständig | Unterstützen Sie Menschen regelmäßig und eigenverantwortlich.\nÜber eine Organisation |  Mit fachlicher Unterstützung, Schulungen und Versicehrungsschutz.",
+          "level": "advanced"
         },
         {
           "id": "tab-engagierte-btn-1",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Jetzt engagieren"
+          "href": "",
+          "value": "Jetzt engagieren",
+          "level": "basic"
         },
         {
           "id": "tab-engagierte-btn-2",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Mehr erfahren"
+          "href": "",
+          "value": "Mehr erfahren",
+          "level": "basic"
         },
         {
           "id": "tab-kommunen-title",
           "type": "text",
-          "level": "basic",
-          "value": "Versorgungsstrukturen und Helferkreise digital steuern"
+          "value": "Versorgungsstrukturen und Helferkreise digital steuern",
+          "level": "basic"
         },
         {
           "id": "tab-kommunen-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Schließen Sie Versorgungslücken, fördern Sie bürgerschaftliches Engagement und schaffen Sie Transparenz über Bedarfe und Angebote in Ihrer Kommune."
+          "value": "Schließen Sie Versorgungslücken, fördern Sie bürgerschaftliches Engagement und schaffen Sie Transparenz über Bedarfe und Angebote in Ihrer Kommune.",
+          "level": "basic"
         },
         {
           "id": "tab-kommunen-cards",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Versorgungsnetzwerke koordinieren | Unterstützungs- und Versorgungsangebote sektorenübergreifend digital verbinden und steuern.\nEhrenamt organisieren | Bürgerschaftliches Engagement sichtbar machen, gezielt einsetzen und effizient koordinieren.\nMonitoring & Planung | Daten nutzen, um Bedarfe zu erkennen und Sozial- und Versorgungsplanung fundiert zu steuern.\nBeratungs- & Koordinationsstellen einbinden | Pflegestützpunkte, Seniorenberatung und Quartiersmanagement können Bedarfe für Ratsuchende erfassen, koordinieren und nachverfolgen."
+          "value": "Versorgungsnetzwerke koordinieren | Unterstützungs- und Versorgungsangebote sektorenübergreifend digital verbinden und steuern.\nEhrenamt organisieren | Bürgerschaftliches Engagement sichtbar machen, gezielt einsetzen und effizient koordinieren.\nMonitoring & Planung | Daten nutzen, um Bedarfe zu erkennen und Sozial- und Versorgungsplanung fundiert zu steuern.\nBeratungs- & Koordinationsstellen einbinden | Pflegestützpunkte, Seniorenberatung und Quartiersmanagement können Bedarfe für Ratsuchende erfassen, koordinieren und nachverfolgen.",
+          "level": "advanced"
         },
         {
           "id": "tab-kommunen-btn-1",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Demo vereinbaren"
+          "href": "",
+          "value": "Demo vereinbaren",
+          "level": "basic"
         },
         {
           "id": "tab-kommunen-btn-2",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Kontakt aufnehmen"
+          "href": "",
+          "value": "Kontakt aufnehmen",
+          "level": "basic"
         },
         {
           "id": "tab-orga-title",
           "type": "text",
-          "level": "basic",
-          "value": "Helferkreise effizient koordinieren."
+          "value": "Helferkreise effizient koordinieren.",
+          "level": "basic"
         },
         {
           "id": "tab-orga-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Reduzieren Sie Verwaltungsaufwand, gewinnen Sie neue Engagierte und koordinieren Sie Einsätze digital – alles in einem System."
+          "value": "Reduzieren Sie Verwaltungsaufwand, gewinnen Sie neue Engagierte und koordinieren Sie Einsätze digital – alles in einem System.",
+          "level": "basic"
         },
         {
           "id": "tab-orga-cards",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Digitale Koordination | Verfügbarkeiten abfragen, Einsätze planen und Kommunikation zentral organisieren.\nAdministration & Abrechnung | Zeiterfassung, Budgetverwaltung und Abrechnung einfach digital abwickeln.\nNeue Engagierte gewinnen | Zugang zu motivierten Helferinnen und Helfern über die zentrale Plattform.\nEigener Organisationsbereich | Organisationen steuern ihre Engagierten im Helferportal in einem eigenen, geschützten Bereich – unabhängig und dennoch Teil eines gemeinsamen Netzwerks."
+          "value": "Digitale Koordination | Verfügbarkeiten abfragen, Einsätze planen und Kommunikation zentral organisieren.\nAdministration & Abrechnung | Zeiterfassung, Budgetverwaltung und Abrechnung einfach digital abwickeln.\nNeue Engagierte gewinnen | Zugang zu motivierten Helferinnen und Helfern über die zentrale Plattform.\nEigener Organisationsbereich | Organisationen steuern ihre Engagierten im Helferportal in einem eigenen, geschützten Bereich – unabhängig und dennoch Teil eines gemeinsamen Netzwerks.",
+          "level": "advanced"
         },
         {
           "id": "tab-orga-btn-1",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Demo vereinbaren"
+          "href": "",
+          "value": "Demo vereinbaren",
+          "level": "basic"
         },
         {
           "id": "tab-orga-btn-2",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Kontakt aufnehmen"
+          "href": "",
+          "value": "Kontakt aufnehmen",
+          "level": "basic"
         },
         {
           "id": "tab-dienst-title",
           "type": "text",
-          "level": "basic",
-          "value": "Terminfinder für Gesundheitsdienstleister."
+          "value": "Terminfinder für Gesundheitsdienstleister.",
+          "level": "basic"
         },
         {
           "id": "tab-dienst-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Erhalten Sie passende Terminanfragen digital, verbessern Sie Ihre Auslastung und sparen Sie Zeit bei der Terminvereinbarung."
+          "value": "Erhalten Sie passende Terminanfragen digital, verbessern Sie Ihre Auslastung und sparen Sie Zeit bei der Terminvereinbarung.",
+          "level": "basic"
         },
         {
           "id": "tab-dienst-cards",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Digitale Terminanfragen | Anfragen online erhalten und effizient bearbeiten.\nBessere Auslastung | Freie Kapazitäten sichtbar machen und Leerlauf reduzieren.\nNetzwerk-Sichtbarkeit | Als Partner im kommunalen Versorgungsnetz sichtbar sein."
+          "value": "Digitale Terminanfragen | Anfragen online erhalten und effizient bearbeiten.\nBessere Auslastung | Freie Kapazitäten sichtbar machen und Leerlauf reduzieren.\nNetzwerk-Sichtbarkeit | Als Partner im kommunalen Versorgungsnetz sichtbar sein.",
+          "level": "advanced"
         },
         {
           "id": "tab-dienst-btn-1",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Kostenlos registrieren"
+          "href": "",
+          "value": "Kostenlos registrieren",
+          "level": "basic"
         },
         {
           "id": "tab-dienst-btn-2",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Mehr erfahren"
+          "href": "",
+          "value": "Mehr erfahren",
+          "level": "basic"
         }
       ]
     },
@@ -486,74 +437,74 @@
         {
           "id": "video-overline",
           "type": "text",
-          "level": "basic",
-          "value": ""
+          "value": "",
+          "level": "basic"
         },
         {
           "id": "video-heading",
           "type": "text",
-          "level": "basic",
-          "value": "Einblicke in das Helferportal"
+          "value": "Einblicke in das Helferportal",
+          "level": "basic"
         },
         {
           "id": "video-vorstellung-thumbnail",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Video: Vorstellung Helferportal",
-            "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
-          }
+            "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200",
+            "alt": "Video: Vorstellung Helferportal"
+          },
+          "level": "basic"
         },
         {
           "id": "video-vorstellung-title",
           "type": "text",
-          "level": "basic",
-          "value": "Vorstellung Helferportal"
+          "value": "Vorstellung Helferportal",
+          "level": "basic"
         },
         {
           "id": "video-helfer-thumbnail",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Video: Für Helfer",
-            "src": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600"
-          }
+            "src": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600",
+            "alt": "Video: Für Helfer"
+          },
+          "level": "basic"
         },
         {
           "id": "video-helfer-title",
           "type": "text",
-          "level": "basic",
-          "value": "Video für Helfer"
+          "value": "Video für Helfer",
+          "level": "basic"
         },
         {
           "id": "video-hilfesuchende-thumbnail",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Video: Für Hilfesuchende",
-            "src": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600"
-          }
+            "src": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600",
+            "alt": "Video: Für Hilfesuchende"
+          },
+          "level": "basic"
         },
         {
           "id": "video-hilfesuchende-title",
           "type": "text",
-          "level": "basic",
-          "value": "Video für Hilfesuchende"
+          "value": "Video für Hilfesuchende",
+          "level": "basic"
         },
         {
           "id": "video-funktioniert-thumbnail",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Video: So funktioniert's",
-            "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600"
-          }
+            "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600",
+            "alt": "Video: So funktioniert's"
+          },
+          "level": "basic"
         },
         {
           "id": "video-funktioniert-title",
           "type": "text",
-          "level": "basic",
-          "value": "So funktioniert's"
+          "value": "So funktioniert's",
+          "level": "basic"
         }
       ]
     },
@@ -564,149 +515,56 @@
         {
           "id": "staedte-title",
           "type": "text",
-          "level": "basic",
-          "value": "Unsere Städte"
+          "value": "Unsere Städte",
+          "level": "basic"
         },
         {
           "id": "staedte-subtitle",
           "type": "text",
-          "level": "basic",
-          "value": "Wo wir bereits aktiv sind"
+          "value": "Wo wir bereits aktiv sind",
+          "level": "basic"
         },
         {
           "id": "stadt-1-href",
           "type": "text",
-          "level": "advanced",
-          "value": "München\n                        Aktiv\n                    \n                \n                Aktiv"
-        },
-        {
-          "id": "stadt-1-image",
-          "type": "image",
-          "level": "basic",
-          "value": {
-            "alt": "München",
-            "src": "https://images.unsplash.com/photo-1595867818082-083862f3d630?w=400"
-          }
-        },
-        {
-          "id": "stadt-1-name",
-          "type": "text",
-          "level": "basic",
-          "value": "München"
-        },
-        {
-          "id": "stadt-1-status",
-          "type": "text",
-          "level": "basic",
-          "value": "Aktiv"
+          "value": "München\n                        Aktiv\n                    \n                \n                Aktiv",
+          "level": "advanced"
         },
         {
           "id": "stadt-2-href",
           "type": "text",
-          "level": "advanced",
-          "value": "Wiesbaden                      Startet bald"
-        },
-        {
-          "id": "stadt-2-image",
-          "type": "image",
-          "level": "basic",
-          "value": {
-            "alt": "Wiesbaden",
-            "src": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400"
-          }
-        },
-        {
-          "id": "stadt-2-name",
-          "type": "text",
-          "level": "basic",
-          "value": "Wiesbaden"
-        },
-        {
-          "id": "stadt-2-status",
-          "type": "text",
-          "level": "basic",
-          "value": "Startet bald"
+          "value": "Wiesbaden                      Startet bald",
+          "level": "advanced"
         },
         {
           "id": "stadt-3-href",
           "type": "text",
-          "level": "advanced",
-          "value": "Dietzenbach"
-        },
-        {
-          "id": "stadt-3-image",
-          "type": "image",
-          "level": "basic",
-          "value": {
-            "alt": "Dietzenbach",
-            "src": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400"
-          }
-        },
-        {
-          "id": "stadt-3-name",
-          "type": "text",
-          "level": "basic",
-          "value": "Dietzenbach"
-        },
-        {
-          "id": "stadt-3-status",
-          "type": "text",
-          "level": "basic",
-          "value": ""
+          "value": "Dietzenbach",
+          "level": "advanced"
         },
         {
           "id": "stadt-4-href",
           "type": "text",
-          "level": "advanced",
-          "value": "Solingen\n                        In Planung"
-        },
-        {
-          "id": "stadt-4-image",
-          "type": "image",
-          "level": "basic",
-          "value": {
-            "alt": "Solingen",
-            "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400"
-          }
-        },
-        {
-          "id": "stadt-4-name",
-          "type": "text",
-          "level": "basic",
-          "value": "Solingen"
-        },
-        {
-          "id": "stadt-4-status",
-          "type": "text",
-          "level": "basic",
-          "value": "In Planung"
+          "value": "Solingen\n                        In Planung",
+          "level": "advanced"
         },
         {
           "id": "stadt-5-href",
           "type": "text",
-          "level": "advanced",
-          "value": "Hildburghausen"
+          "value": "Hildburghausen",
+          "level": "advanced"
         },
         {
-          "id": "stadt-5-image",
-          "type": "image",
-          "level": "basic",
-          "value": {
-            "alt": "Hildburghausen",
-            "src": "https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?w=400"
-          }
-        },
-        {
-          "id": "stadt-5-name",
+          "id": "stadt-6-href",
           "type": "text",
-          "level": "basic",
-          "value": "Hildburghausen"
+          "value": "Usingen",
+          "level": "advanced"
         },
         {
-          "id": "stadt-5-status",
+          "id": "stadt-7-href",
           "type": "text",
-          "level": "basic",
-          "value": ""
+          "value": "Stuttgart",
+          "level": "advanced"
         }
       ]
     },
@@ -717,74 +575,74 @@
         {
           "id": "steps-overline",
           "type": "text",
-          "level": "basic",
-          "value": "In wenigen Schritten"
+          "value": "In wenigen Schritten",
+          "level": "basic"
         },
         {
           "id": "steps-title",
           "type": "text",
-          "level": "basic",
-          "value": "So funktioniert's"
+          "value": "So funktioniert's",
+          "level": "basic"
         },
         {
           "id": "step-1-title",
           "type": "text",
-          "level": "basic",
-          "value": "Registrieren"
+          "value": "Registrieren",
+          "level": "basic"
         },
         {
           "id": "step-1-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Erstellen Sie Ihr Profil – kostenlos und in wenigen Minuten."
+          "value": "Erstellen Sie Ihr Profil – kostenlos und in wenigen Minuten.",
+          "level": "basic"
         },
         {
           "id": "step-2-title",
           "type": "text",
-          "level": "basic",
-          "value": "Bedarf angeben"
+          "value": "Bedarf angeben",
+          "level": "basic"
         },
         {
           "id": "step-2-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Beschreiben Sie, welche Unterstützung oder welches Angebot Sie suchen oder anbieten."
+          "value": "Beschreiben Sie, welche Unterstützung oder welches Angebot Sie suchen oder anbieten.",
+          "level": "basic"
         },
         {
           "id": "step-3-title",
           "type": "text",
-          "level": "basic",
-          "value": "Matching"
+          "value": "Matching",
+          "level": "basic"
         },
         {
           "id": "step-3-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Wir finden passende Helfer oder Hilfesuchende in Ihrer Nähe."
+          "value": "Wir finden passende Helfer oder Hilfesuchende in Ihrer Nähe.",
+          "level": "basic"
         },
         {
           "id": "step-4-title",
           "type": "text",
-          "level": "basic",
-          "value": "Kennenlernen"
+          "value": "Kennenlernen",
+          "level": "basic"
         },
         {
           "id": "step-4-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Treffen Sie sich per Video oder Chat – anonym und in geschütztem Rahmen."
+          "value": "Treffen Sie sich per Video oder Chat – anonym und in geschütztem Rahmen.",
+          "level": "basic"
         },
         {
           "id": "step-5-title",
           "type": "text",
-          "level": "basic",
-          "value": "Loslegen"
+          "value": "Loslegen",
+          "level": "basic"
         },
         {
           "id": "step-5-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Vereinbaren Sie den ersten Termin – sicher und unkompliziert."
+          "value": "Vereinbaren Sie den ersten Termin – sicher und unkompliziert.",
+          "level": "basic"
         }
       ]
     },
@@ -795,93 +653,93 @@
         {
           "id": "info-overline",
           "type": "text",
-          "level": "basic",
-          "value": "GUT ZU WISSEN"
+          "value": "GUT ZU WISSEN",
+          "level": "basic"
         },
         {
           "id": "info-title",
           "type": "text",
-          "level": "basic",
-          "value": "Transparent, sicher und kostenfrei"
+          "value": "Transparent, sicher und kostenfrei",
+          "level": "basic"
         },
         {
           "id": "info-sicherheit-name",
           "type": "text",
-          "level": "basic",
-          "value": "Sicherheit"
+          "value": "Sicherheit",
+          "level": "basic"
         },
         {
           "id": "info-kosten-name",
           "type": "text",
-          "level": "basic",
-          "value": "Kosten"
+          "value": "Kosten",
+          "level": "basic"
         },
         {
           "id": "info-vernetzen-name",
           "type": "text",
-          "level": "basic",
-          "value": "Vernetzen"
+          "value": "Vernetzen",
+          "level": "basic"
         },
         {
           "id": "info-sicherheit-title",
           "type": "text",
-          "level": "basic",
-          "value": "Sicherheit und Qualität stehen bei uns an erster Stelle."
+          "value": "Sicherheit und Qualität stehen bei uns an erster Stelle.",
+          "level": "basic"
         },
         {
           "id": "info-sicherheit-cards",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Verifizierung & Freischaltung | Jeder Nutzer wird vor der Aktivierung geprüft.\nOrganisationszugehörigkeit | Engagierte können ihre Zugehörigkeit zu anerkannten Organisationen anzeigen.\nFührungszeugnis & Qualifikationen | Optional einsehbar: erweitertes Führungszeugnis und Qualifikationsnachweise.\nDSGVO-konforme Kommunikation | Anonymisierter Erstkontakt ohne Weitergabe persönlicher Kontaktdaten.\nTransparente Dokumentation | Einsätze und Vereinbarungen werden nachvollziehbar festgehalten."
+          "value": "Verifizierung & Freischaltung | Jeder Nutzer wird vor der Aktivierung geprüft.\nOrganisationszugehörigkeit | Engagierte können ihre Zugehörigkeit zu anerkannten Organisationen anzeigen.\nFührungszeugnis & Qualifikationen | Optional einsehbar: erweitertes Führungszeugnis und Qualifikationsnachweise.\nDSGVO-konforme Kommunikation | Anonymisierter Erstkontakt ohne Weitergabe persönlicher Kontaktdaten.\nTransparente Dokumentation | Einsätze und Vereinbarungen werden nachvollziehbar festgehalten.",
+          "level": "advanced"
         },
         {
           "id": "info-kosten-title",
           "type": "text",
-          "level": "basic",
-          "value": "Kostenfrei für alle — mit optionalem Solidaritätsbeitrag"
+          "value": "Kostenfrei für alle — mit optionalem Solidaritätsbeitrag",
+          "level": "basic"
         },
         {
           "id": "info-kosten-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Die Nutzung des Helferportals ist für alle Nutzerinnen und Nutzer kostenfrei.\nDa sich viele Menschen mit Behinderung oder Pflegebedarf zusätzliche Kosten nicht leisten können, haben wir einen freiwilligen Solidaritätsbeitrag eingeführt. Wer möchte, kann damit den Betrieb und die Weiterentwicklung des Portals unterstützen – und dazu beitragen, dass Unterstützung für alle zugänglich bleibt. Auf Wunsch können Sie auch einen Beitrag für eine andere hilfesuchende Person übernehmen."
+          "value": "Die Nutzung des Helferportals ist für alle Nutzerinnen und Nutzer kostenfrei.\nDa sich viele Menschen mit Behinderung oder Pflegebedarf zusätzliche Kosten nicht leisten können, haben wir einen freiwilligen Solidaritätsbeitrag eingeführt. Wer möchte, kann damit den Betrieb und die Weiterentwicklung des Portals unterstützen – und dazu beitragen, dass Unterstützung für alle zugänglich bleibt. Auf Wunsch können Sie auch einen Beitrag für eine andere hilfesuchende Person übernehmen.",
+          "level": "basic"
         },
         {
           "id": "info-kosten-cards",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Als Orientierung empfehlen wir einen Solidaritätsbeitrag von 7,90 € pro Monat für Hilfesuchende und gewerbliche Anbieter.\nSie können zwischen folgenden Möglichkeiten wählen:\n\n- Ich zahle den empfohlenen Solidaritätsbeitrag von 7,90 € pro Monat.\n- Ich zahle 15,80 € pro Monat und ermögliche damit zusätzlich einer hilfesuchenden Person den Zugang.\n- Ich zahle einen individuellen Beitrag.\n- Ich kann aktuell keinen Beitrag leisten – die Nutzung bleibt für mich kostenfrei."
+          "value": "Als Orientierung empfehlen wir einen Solidaritätsbeitrag von 7,90 € pro Monat für Hilfesuchende und gewerbliche Anbieter.\nSie können zwischen folgenden Möglichkeiten wählen:\n\n- Ich zahle den empfohlenen Solidaritätsbeitrag von 7,90 € pro Monat.\n- Ich zahle 15,80 € pro Monat und ermögliche damit zusätzlich einer hilfesuchenden Person den Zugang.\n- Ich zahle einen individuellen Beitrag.\n- Ich kann aktuell keinen Beitrag leisten – die Nutzung bleibt für mich kostenfrei.",
+          "level": "advanced"
         },
         {
           "id": "info-kosten-note",
           "type": "text",
-          "level": "basic",
-          "value": "Alle Optionen sind gleichwertig. Umfang und Qualität der Leistungen bleiben davon unberührt."
+          "value": "Alle Optionen sind gleichwertig. Umfang und Qualität der Leistungen bleiben davon unberührt.",
+          "level": "basic"
         },
         {
           "id": "info-vernetzen-title",
           "type": "text",
-          "level": "basic",
-          "value": "Empfehlen Sie das Helferportal weiter."
+          "value": "Empfehlen Sie das Helferportal weiter.",
+          "level": "basic"
         },
         {
           "id": "info-vernetzen-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Empfehlen Sie das Helferportal in Ihrem Netzwerk weiter – gemeinsam können wir die Versorgung in Ihrer Region verbessern."
+          "value": "Empfehlen Sie das Helferportal in Ihrem Netzwerk weiter – gemeinsam können wir die Versorgung in Ihrer Region verbessern.",
+          "level": "basic"
         },
         {
           "id": "info-vernetzen-cards",
           "type": "textarea",
-          "level": "advanced",
-          "value": "Pflegende Angehörige | Integrieren Sie Ihr persönliches Netzwerk und organisieren Sie Unterstützung schnell und unkompliziert.\nUnternehmen | Fördern Sie gegenseitige Unterstützung unter Mitarbeitenden als sozial engagierter Arbeitgeber.\nEngagierte | Laden Sie Freunde und Bekannte ein, sich zu engagieren oder Unterstützung anzubieten.\nGemeinschaft stärken | Stellen Sie Freizeitangebote oder Unterstützungsbedarfe ein und fördern Sie Begegnung im Alltag."
+          "value": "Pflegende Angehörige | Integrieren Sie Ihr persönliches Netzwerk und organisieren Sie Unterstützung schnell und unkompliziert.\nUnternehmen | Fördern Sie gegenseitige Unterstützung unter Mitarbeitenden als sozial engagierter Arbeitgeber.\nEngagierte | Laden Sie Freunde und Bekannte ein, sich zu engagieren oder Unterstützung anzubieten.\nGemeinschaft stärken | Stellen Sie Freizeitangebote oder Unterstützungsbedarfe ein und fördern Sie Begegnung im Alltag.",
+          "level": "advanced"
         },
         {
           "id": "info-vernetzen-btn",
-          "href": "/kontakt.html",
           "type": "button",
-          "level": "basic",
-          "value": "Jetzt teilen & vernetzen"
+          "href": "/kontakt.html",
+          "value": "Jetzt teilen & vernetzen",
+          "level": "basic"
         }
       ]
     },
@@ -890,37 +748,103 @@
       "type": "testimonial",
       "fields": [
         {
-          "id": "testimonial-image",
+          "id": "testimonial-1-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Alia Tagba",
-            "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200"
-          }
+            "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200",
+            "alt": "Alia Tagba"
+          },
+          "level": "basic"
         },
         {
-          "id": "testimonial-quote",
+          "id": "testimonial-1-quote",
           "type": "textarea",
-          "level": "basic",
-          "value": "Das Helferportal ist für uns zu einem unverzichtbaren Werkzeug geworden, um Hilfebedarfe in kürzester Zeit auszuschreiben und online die Verfügbarkeit von passenden Helfern abzufragen. Das ermöglicht uns, effizient und schnell Hilfebedarfe zu stillen."
+          "value": "Das Helferportal ist für uns zu einem unverzichtbaren Werkzeug geworden, um Hilfebedarfe in kürzester Zeit auszuschreiben und online die Verfügbarkeit von passenden Helfern abzufragen. Das ermöglicht uns, effizient und schnell Hilfebedarfe zu stillen.",
+          "level": "basic"
         },
         {
-          "id": "testimonial-name",
+          "id": "testimonial-1-name",
           "type": "text",
-          "level": "basic",
-          "value": "Alia Tagba"
+          "value": "Alia Tagba",
+          "level": "basic"
         },
         {
-          "id": "testimonial-role",
+          "id": "testimonial-1-role",
           "type": "text",
-          "level": "basic",
-          "value": "Einsatzkoordinatorin, deinNachbar e.V."
+          "value": "Einsatzkoordinatorin, deinNachbar e.V.",
+          "level": "basic"
         },
         {
-          "id": "testimonial-org",
+          "id": "testimonial-1-org",
           "type": "text",
-          "level": "basic",
-          "value": "deinNachbar e.V."
+          "value": "deinNachbar e.V.",
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-2-image",
+          "type": "image",
+          "value": {
+            "src": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200",
+            "alt": "Platzhalter"
+          },
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-2-quote",
+          "type": "textarea",
+          "value": "Weitere Referenz — Text wird ergänzt.",
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-2-name",
+          "type": "text",
+          "value": "Name",
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-2-role",
+          "type": "text",
+          "value": "Rolle, Organisation",
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-2-org",
+          "type": "text",
+          "value": "Organisation",
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-3-image",
+          "type": "image",
+          "value": {
+            "src": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200",
+            "alt": "Platzhalter"
+          },
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-3-quote",
+          "type": "textarea",
+          "value": "Weitere Referenz — Text wird ergänzt.",
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-3-name",
+          "type": "text",
+          "value": "Name",
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-3-role",
+          "type": "text",
+          "value": "Rolle, Organisation",
+          "level": "basic"
+        },
+        {
+          "id": "testimonial-3-org",
+          "type": "text",
+          "value": "Organisation",
+          "level": "basic"
         }
       ]
     },
@@ -931,86 +855,119 @@
         {
           "id": "partners-title",
           "type": "text",
-          "level": "basic",
-          "value": "Gemeinsam für eine bessere Versorgung"
+          "value": "Gemeinsam für eine bessere Versorgung",
+          "level": "basic"
         },
         {
           "id": "partners-subtitle",
           "type": "text",
-          "level": "basic",
-          "value": "Unsere Förder- und Kooperationspartner"
+          "value": "Unsere Förder- und Kooperationspartner",
+          "level": "basic"
         },
         {
           "id": "partner-1-logo",
           "type": "image",
-          "level": "basic",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-1-logo.jpg"
+          "value": {
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-1-logo.jpg",
+            "alt": ""
+          },
+          "level": "basic"
         },
         {
           "id": "partner-1-name",
           "type": "text",
-          "level": "basic",
-          "value": "BMBF"
+          "value": "BMBF",
+          "level": "basic"
+        },
+        {
+          "id": "partner-1-text",
+          "type": "textarea",
+          "value": "",
+          "level": "basic"
         },
         {
           "id": "partner-2-logo",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "",
-            "src": ""
-          }
+            "src": "",
+            "alt": ""
+          },
+          "level": "basic"
         },
         {
           "id": "partner-2-name",
           "type": "text",
-          "level": "basic",
-          "value": "DATI"
+          "value": "DATI",
+          "level": "basic"
+        },
+        {
+          "id": "partner-2-text",
+          "type": "textarea",
+          "value": "",
+          "level": "basic"
         },
         {
           "id": "partner-3-logo",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "",
-            "src": ""
-          }
+            "src": "",
+            "alt": ""
+          },
+          "level": "basic"
         },
         {
           "id": "partner-3-name",
           "type": "text",
-          "level": "basic",
-          "value": "Stadt Dietzenbach"
+          "value": "Stadt Dietzenbach",
+          "level": "basic"
+        },
+        {
+          "id": "partner-3-text",
+          "type": "textarea",
+          "value": "",
+          "level": "basic"
         },
         {
           "id": "partner-4-logo",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "",
-            "src": ""
-          }
+            "src": "",
+            "alt": ""
+          },
+          "level": "basic"
         },
         {
           "id": "partner-4-name",
           "type": "text",
-          "level": "basic",
-          "value": "Pro Inklusion e.V."
+          "value": "Pro Inklusion e.V.",
+          "level": "basic"
+        },
+        {
+          "id": "partner-4-text",
+          "type": "textarea",
+          "value": "",
+          "level": "basic"
         },
         {
           "id": "partner-5-logo",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "",
-            "src": ""
-          }
+            "src": "",
+            "alt": ""
+          },
+          "level": "basic"
         },
         {
           "id": "partner-5-name",
           "type": "text",
-          "level": "basic",
-          "value": "Helmut-Schmidt-Universität"
+          "value": "Helmut-Schmidt-Universität",
+          "level": "basic"
+        },
+        {
+          "id": "partner-5-text",
+          "type": "textarea",
+          "value": "",
+          "level": "basic"
         }
       ]
     }
