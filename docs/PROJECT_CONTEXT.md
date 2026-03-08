@@ -71,7 +71,11 @@ helferportal-prototypes/          ← Git root = document root (GitHub Pages)
 │   ├── deploy.js                 ← Supabase → JSON → HTML deploy pipeline
 │   ├── validate.js               ← HTML/JSON integrity checker
 │   ├── block-registry.json       ← Canonical block type definitions
-│   ├── lib/field-ops.js          ← Shared field application logic
+│   ├── test-roundtrip.js         ← Round-trip test (extract→build→validate)
+│   ├── lib/
+│   │   ├── config.js             ← Shared config (.env, PAGE_IDS, Supabase config)
+│   │   ├── registry.js           ← Block type alias resolution
+│   │   └── field-ops.js          ← Shared field application logic
 │   ├── package.json              ← Node deps (cheerio only)
 │   ├── sync-to-supabase.js       ← JSON → Supabase (reverse sync, conflict-safe)
 │   ├── fix-header-footer.js      ← One-time migration: header/footer standardization
@@ -246,7 +250,7 @@ node tools/deploy.js --page startseite  # Pull + build one page
 node tools/deploy.js --local            # Build from local JSON only (no Supabase)
 ```
 
-- Contains a hardcoded `PAGE_MAP` mapping all 7 pages to their HTML/JSON paths
+- Uses shared `lib/config.js` for PAGE_MAP, .env loading, and Supabase config
 - Fetches from Supabase REST API using service_role key (from `.env` or environment)
 - Writes JSON files, then runs the same build logic as `build.js` inline
 
@@ -267,15 +271,36 @@ How it works:
 4. PATCH to Supabase REST API: `content`, `title`, `url`, `updated_by`
 5. Update local JSON `_meta.lastEdited` to match
 
+### Shared config (`tools/lib/config.js`)
+
+Centralizes configuration used by `deploy.js`, `sync-to-supabase.js`, and `test-roundtrip.js`:
+
+| Export | Purpose |
+|--------|---------|
+| `loadEnv()` | Parse `tools/.env` into `process.env` |
+| `PAGE_IDS` | Array of all 7 page identifiers |
+| `getPageMap()` | Build `{ pageId: { html, json } }` mapping (startseite → index.html) |
+| `getSupabaseConfig()` | Validate and return `{ url, key }` from env vars |
+| `CONTENT_DIR`, `ROOT_DIR`, `TOOLS_DIR` | Resolved path constants |
+
+### Shared registry (`tools/lib/registry.js`)
+
+Block type alias resolution used by `extract.js` and `admin.html`:
+
+| Export | Purpose |
+|--------|---------|
+| `resolveBlockDef(blockType, registry)` | Look up block definition by type or alias. Returns `null` if not found. |
+
 ### Shared field-ops (`tools/lib/field-ops.js`)
 
-Three exported functions used by `build.js` and `deploy.js`:
+Four exported functions used by `build.js` and `deploy.js`:
 
 | Function | Purpose |
 |----------|---------|
 | `resolveImage(field)` | Normalize image to `{ src, alt }` — handles nested (`field.value.src`) and legacy flat (`field.value` as string) formats |
 | `applyField($, $el, fieldType, field)` | Apply a field value to a Cheerio element based on type (text/textarea/image/button/link/video/html) |
 | `setTextOnly($, $el, newText)` | Replace only the first non-empty text node, preserving SVG/icon children |
+| `applyStructuredText($, $el, text)` | Apply pipe-delimited text to structured containers (cards, lists), preserving HTML structure |
 
 ### Admin editor (`tools/admin.html`)
 
@@ -572,6 +597,10 @@ node deploy.js --local                   # Local JSON only (no Supabase)
 node sync-to-supabase.js                 # All pages
 node sync-to-supabase.js --page fuer-kommunen  # One page
 node sync-to-supabase.js --page fuer-kommunen --force  # Skip conflict check
+
+# Round-trip test: extract→build→validate all pages
+node test-roundtrip.js                   # All pages
+node test-roundtrip.js startseite        # One page
 ```
 
 ### Validate all pages (batch)
@@ -609,11 +638,9 @@ Expected: `Result: PASS (0 errors, 0 warnings)` for each page.
 
 ## 9. Known Issues & Tech Debt Radar
 
-### PAGE_MAP hardcoding
+### PAGE_MAP centralization
 
-`deploy.js` lines 37–66 hardcode all 7 page mappings. A `content/manifest.json` exists but is not consumed by deploy.js.
-
-**Future**: Read `manifest.json` + derive HTML paths by convention to avoid manual sync.
+`deploy.js` and `sync-to-supabase.js` now use `lib/config.js` for page registry. Adding a new page requires updating `PAGE_IDS` in `config.js` only.
 
 ### Validate warnings behavior
 
@@ -631,19 +658,19 @@ Running `build.js` reformats HTML through Cheerio's serializer (boolean attribut
 
 ### Build logic duplication
 
-`deploy.js` contains an inline copy of `build.js`'s field application loop (lines 176–202). Changes to build logic must be applied in both files.
+`deploy.js` contains an inline copy of `build.js`'s field application loop. Both use `lib/field-ops.js` for the actual field application, but the iteration/lookup code is duplicated.
 
 **Future**: Extract shared build function or have deploy.js call build.js as a subprocess.
 
-### Textarea field handler destroys nested HTML
+### Textarea field handler (FIXED)
 
-`field-ops.js` line ~67: `case 'textarea': $el.text(field.value)` replaces the entire element content with plain text. This destroys any nested HTML (SVG icons, child elements like `<h3>`, `<p>` inside feature cards). Affects `deploy.js` and `build.js` when applying content to elements with complex inner structure.
+`field-ops.js` textarea handler now uses `applyStructuredText()` for elements with children, preserving nested HTML structure (SVGs, cards, lists). Plain-text textarea fields still use `.text()`.
 
-**Workaround**: For pages with structured HTML inside textarea-typed elements (e.g., fuer-kommunen feature cards), apply text changes manually instead of running deploy.js.
+### Automated tests
 
-### No automated tests
-
-The pipeline has no unit or integration tests. Validation is manual via `validate.js`.
+- `test-roundtrip.js` — extract→build→validate round-trip for all 7 pages
+- Pre-commit hook runs `validate.js` on all pages when HTML/JSON files are staged
+- Run: `cd tools && node test-roundtrip.js`
 
 ### Image upload preview gap
 

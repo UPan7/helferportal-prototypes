@@ -16,54 +16,10 @@
 
 const fs = require('fs');
 const path = require('path');
+const { loadEnv, getPageMap, getSupabaseConfig } = require('./lib/config');
 
-// --- Try to load .env ---
-const envPath = path.resolve(__dirname, '.env');
-if (fs.existsSync(envPath)) {
-  const envContent = fs.readFileSync(envPath, 'utf-8');
-  for (const line of envContent.split('\n')) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith('#')) continue;
-    const eqIdx = trimmed.indexOf('=');
-    if (eqIdx > 0) {
-      const key = trimmed.slice(0, eqIdx).trim();
-      const val = trimmed.slice(eqIdx + 1).trim().replace(/^["']|["']$/g, '');
-      if (!process.env[key]) process.env[key] = val;
-    }
-  }
-}
-
-// --- Page registry: maps page ID → HTML file + JSON file ---
-const PAGE_MAP = {
-  startseite: {
-    html: path.resolve(__dirname, '..', 'index.html'),
-    json: path.resolve(__dirname, '..', 'content', 'startseite.json')
-  },
-  engagieren: {
-    html: path.resolve(__dirname, '..', 'engagieren.html'),
-    json: path.resolve(__dirname, '..', 'content', 'engagieren.json')
-  },
-  kontakt: {
-    html: path.resolve(__dirname, '..', 'kontakt.html'),
-    json: path.resolve(__dirname, '..', 'content', 'kontakt.json')
-  },
-  'ueber-uns': {
-    html: path.resolve(__dirname, '..', 'ueber-uns.html'),
-    json: path.resolve(__dirname, '..', 'content', 'ueber-uns.json')
-  },
-  'hilfe-finden': {
-    html: path.resolve(__dirname, '..', 'hilfe-finden.html'),
-    json: path.resolve(__dirname, '..', 'content', 'hilfe-finden.json')
-  },
-  'fuer-kommunen': {
-    html: path.resolve(__dirname, '..', 'fuer-kommunen.html'),
-    json: path.resolve(__dirname, '..', 'content', 'fuer-kommunen.json')
-  },
-  muenchen: {
-    html: path.resolve(__dirname, '..', 'muenchen.html'),
-    json: path.resolve(__dirname, '..', 'content', 'muenchen.json')
-  }
-};
+loadEnv();
+const PAGE_MAP = getPageMap();
 
 // --- CLI args ---
 const args = process.argv.slice(2);
@@ -82,15 +38,7 @@ async function main() {
 
   if (!isLocal) {
     // Pull from Supabase
-    const url = process.env.SUPABASE_URL;
-    const key = process.env.SUPABASE_SERVICE_KEY;
-
-    if (!url || !key) {
-      console.error('  ✗ Missing SUPABASE_URL or SUPABASE_SERVICE_KEY');
-      console.error('    Set them as environment variables or in tools/.env');
-      console.error('    Or use --local to build from existing JSON files.');
-      process.exit(1);
-    }
+    const { url, key } = getSupabaseConfig();
 
     console.log(`  Mode: Supabase → JSON → HTML`);
     console.log(`  URL:  ${url}`);

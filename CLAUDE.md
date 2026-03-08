@@ -42,8 +42,12 @@ helferportal-prototypes/          ← Git repo root = document root
 │   ├── deploy.js                 ← Supabase → JSON → HTML pipeline
 │   ├── sync-to-supabase.js       ← JSON → Supabase (reverse sync, conflict-safe)
 │   ├── validate.js               ← HTML/JSON integrity checker
+│   ├── test-roundtrip.js         ← round-trip test (extract→build→validate)
 │   ├── block-registry.json       ← canonical block type definitions
-│   ├── lib/field-ops.js          ← shared field application logic
+│   ├── lib/
+│   │   ├── config.js             ← shared config (.env, PAGE_IDS, Supabase)
+│   │   ├── registry.js           ← block type alias resolution
+│   │   └── field-ops.js          ← shared field application logic
 │   ├── package.json              ← Node deps (cheerio only)
 │   └── .env                      ← Supabase credentials (gitignored)
 ├── docs/
@@ -287,6 +291,9 @@ node sync-to-supabase.js --page fuer-kommunen        # Push JSON → Supabase (w
 node sync-to-supabase.js --page fuer-kommunen --force # Push without conflict check
 
 node validate.js startseite              # Check HTML/JSON consistency
+
+node test-roundtrip.js                   # Round-trip test all pages
+node test-roundtrip.js startseite        # Round-trip test one page
 ```
 
 ### Workflow: Before starting local work
@@ -374,5 +381,5 @@ git push origin main
 
 - **Documentation auto-update**: When making changes that affect project structure, workflows, tool scripts, page inventory, or navigation — update CLAUDE.md and relevant docs/ files in the same commit. Do not defer documentation updates to a separate step.
 - **Supabase = source of truth**: Never overwrite Supabase content without checking for conflicts first. Use `sync-to-supabase.js` (has built-in conflict detection). Always `node deploy.js` before starting local work.
-- **deploy.js textarea caution**: `field-ops.js` textarea handler (`$el.text()`) destroys nested HTML structure (SVGs, child elements). If a page has structured HTML inside textarea-typed elements, apply text changes manually instead of running deploy.js on that page.
+- **deploy.js textarea handler**: `field-ops.js` textarea handler now uses `applyStructuredText()` for elements with children, preserving nested HTML structure. Plain-text textarea fields still use `.text()`. Round-trip tested across all 7 pages.
 - At the end of every session, when asked to wrap up, update the Session Log section below following the standard format.

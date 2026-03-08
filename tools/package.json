@@ -12,8 +12,11 @@
     "extract:startseite": "node extract.js ../index.html ../content/startseite.json",
     "build:startseite": "node build.js ../content/startseite.json ../index.html",
     "validate": "node validate.js",
+    "validate:all": "node validate.js startseite && node validate.js engagieren && node validate.js kontakt && node validate.js ueber-uns && node validate.js hilfe-finden && node validate.js fuer-kommunen && node validate.js muenchen",
     "validate:startseite": "node validate.js startseite",
-    "validate:startseite:strict": "node validate.js startseite --strict"
+    "validate:startseite:strict": "node validate.js startseite --strict",
+    "test": "node test-roundtrip.js",
+    "precommit": "node validate.js startseite && node validate.js engagieren && node validate.js kontakt && node validate.js ueber-uns && node validate.js hilfe-finden && node validate.js fuer-kommunen && node validate.js muenchen"
   },
   "dependencies": {
     "cheerio": "^1.0.0"

@@ -11,6 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
+const { resolveBlockDef } = require('./lib/registry');
 
 // --- CLI args ---
 const [,, inputPath, outputPath] = process.argv;
@@ -105,14 +106,7 @@ try { registry = JSON.parse(fs.readFileSync(registryPath, 'utf-8')); } catch (e)
 if (registry) {
   for (const block of blocks) {
     // Resolve block definition (direct or alias)
-    let blockDef = registry[block.type];
-    if (!blockDef) {
-      for (const [, def] of Object.entries(registry)) {
-        if (def.aliases && Object.keys(def.aliases).includes(block.type)) {
-          blockDef = def; break;
-        }
-      }
-    }
+    const blockDef = resolveBlockDef(block.type, registry);
     if (!blockDef?.fields) continue;
 
     // Flatten variant field maps
