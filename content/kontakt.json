@@ -2,9 +2,8 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "kontakt.html",
-    "extracted": "2026-03-08T14:05:54.350Z",
-    "schema_version": "2.0",
-    "lastEdited": "2026-03-08T14:21:21.928Z"
+    "extracted": "2026-03-08T20:19:19.082Z",
+    "schema_version": "2.0"
   },
   "page": {
     "id": "kontakt",
@@ -94,7 +93,7 @@
         {
           "id": "contact-info-3-text",
           "type": "text",
-          "value": "Helferportal GmbH & Co. KGMünchen, Deutschland\n                        München, Deutschland",
+          "value": "Helferportal GmbH & Co. KGMünchen, Deutschland\n                        München, Deutschland\n                        München, Deutschland",
           "level": "basic"
         }
       ]
