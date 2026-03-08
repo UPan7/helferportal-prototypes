@@ -2,9 +2,9 @@
   "_meta": {
     "generator": "helferportal-content-tools/extract.js",
     "source": "engagieren.html",
-    "extracted": "2026-03-08T12:27:30.793Z",
+    "extracted": "2026-03-08T13:44:01.927Z",
     "schema_version": "2.0",
-    "lastEdited": "2026-03-08T12:27:43.549Z"
+    "lastEdited": "2026-03-08T13:44:14.564Z"
   },
   "page": {
     "id": "engagieren",
@@ -17,24 +17,15 @@
       "type": "hero",
       "fields": [
         {
-          "id": "hero-image",
-          "type": "image",
-          "value": {
-            "src": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1400",
-            "alt": "Hero Hintergrund"
-          },
-          "level": "basic"
-        },
-        {
           "id": "hero-title",
           "type": "text",
-          "value": "Engagieren Sie sich, wie es zu Ihrem Alltag passt.",
+          "value": "Engagiere Dich, wie es zu Dir passt",
           "level": "basic"
         },
         {
           "id": "hero-subtitle",
           "type": "textarea",
-          "value": "Ob spontan, regelmäßig oder über eine Organisation – im Helferportal finden Sie die passende Form des Engagements.",
+          "value": "Ob spontan, regelmäßig oder im Team – finde den Weg, der zu deinem Leben passt. Sicher, versichert und gut begleitet.",
           "level": "basic"
         }
       ]
@@ -46,7 +37,7 @@
         {
           "id": "tabs-overline",
           "type": "text",
-          "value": "Ihr Engagement",
+          "value": "Dein Engagement",
           "level": "basic"
         },
         {
@@ -64,38 +55,38 @@
         {
           "id": "tab-organisation-name",
           "type": "text",
-          "value": "Über eine Organisation engagieren",
+          "value": "Im Team einer Organisation",
           "level": "basic"
         },
         {
           "id": "tab-spontan-title",
           "type": "text",
-          "value": "Möchten Sie unkompliziert helfen oder Menschen in ihrer Freizeit begleiten?",
+          "value": "Unkompliziert helfen oder Freizeit begleiten",
           "level": "basic"
         },
         {
           "id": "tab-spontan-text",
           "type": "textarea",
-          "value": "Als Spontanhelfer:in unterstützen Sie Menschen flexibel im Alltag oder begleiten sie bei der Freizeitgestaltung, und entscheiden bei jeder Anfrage neu.",
+          "value": "Du möchtest helfen, wenn du Zeit hast – ohne feste Verpflichtungen? Als Spontanhelfer:in unterstützt du flexibel im Alltag oder bei der Freizeitgestaltung. Du entscheidest bei jeder Anfrage neu.",
           "level": "basic"
         },
         {
           "id": "tab-spontan-cards",
           "type": "textarea",
-          "value": "So können Sie helfen:\nSpaziergänge begleiten\nGespräche führen\nBeim Einkaufen unterstützen\nZu Terminen begleiten\nGemeinsame Aktivitäten unternehmen\nBei digitalen Fragen helfen",
+          "value": "Was du tun kannst\nSpaziergänge\nGespräche\nEinkaufshilfe\nBegleitung\nGemeinsame Aktivitäten\nDigitale Unterstützung",
           "level": "advanced"
         },
         {
           "id": "tab-spontan-benefits",
           "type": "textarea",
-          "value": "Keine Bindung | Sie entscheiden bei jeder Anfrage neu.\nAnonymer Erstkontakt | Das Kennenlernen erfolgt zunächst im geschützten Raum.\nVolle Kontrolle | Sie erhalten nur Anfragen, die zu Ihrem Profil passen.",
+          "value": "Keine Bindung | Du entscheidest bei jeder Anfrage neu\nAnonym zuerst | Erstkontakt im geschützten Raum\nVolle Kontrolle | Nur passende Anfragen",
           "level": "advanced"
         },
         {
           "id": "tab-spontan-btn-1",
           "type": "button",
           "href": "https://helfen.helferportal.de",
-          "value": "Als Spontanhelfer starten",
+          "value": "Als Spontanhelfer:in starten",
           "level": "basic"
         },
         {
@@ -114,32 +105,32 @@
         {
           "id": "tab-eigenstaendig-text",
           "type": "textarea",
-          "value": "Möchten Sie regelmäßig unterstützen und haben eine Qualifikation als Nachbarschaftshelfer oder Alltagsbegleiter als Einzelperson?\nDann können Sie ehrenamtlich oder selbständig tätig sein, mit klar geregelten Rahmenbedingungen.",
+          "value": "Du möchtest regelmäßig unterstützen und hast Erfahrung oder Qualifikation? Als Alltagsbegleiter:in kannst du ehrenamtlich oder selbständig tätig sein – mit klaren Rahmenbedingungen.",
           "level": "basic"
         },
         {
           "id": "tab-eigenstaendig-cards",
           "type": "textarea",
-          "value": "Ehrenamtlich | Ohne Gewerbeanmeldung, häufig mit Aufwandsentschädigung im Rahmen der Übungsleiterpauschale (bis zu 3.300 € pro Jahr steuerfrei).\nSelbständig | Mit Gewerbeanmeldung, Vergütung im Rahmen der gesetzlichen Bestimmungen frei vereinbar, als Neben- oder Haupterwerb möglich. Sie bestimmen Ihre Konditionen selbst.",
+          "value": "Ehrenamtlich | Ohne Gewerbe, oft mit Aufwandsentschädigung im Rahmen der Übungsleiter- oder Ehrenamtspauschale (bis zu 840€/Jahr steuerfrei).\nSelbständig | Mit Gewerbeanmeldung, freie Vergütung, als Neben- oder Haupterwerb möglich. Du bestimmst deine Konditionen selbst.",
           "level": "advanced"
         },
         {
           "id": "tab-eigenstaendig-info",
           "type": "textarea",
-          "value": "Je nach Bundesland können Registrierung, kurze Schulungen oder Qualifikationsnachweise erforderlich sein.",
+          "value": "Je nach Bundesland können Registrierung, kurze Schulungen oder Qualifikationsnachweise erforderlich sein. Wir begleiten dich dabei.",
           "level": "advanced"
         },
         {
           "id": "tab-eigenstaendig-benefits",
           "type": "textarea",
-          "value": "Rechtssicher | Klare rechtliche Rahmenbedingungen.\nKeine Akquise | Passende Anfragen kommen direkt zu Ihnen.",
+          "value": "Rechtssicher | Klare Rahmenbedingungen\nKeine Akquise | Anfragen kommen zu dir\nAutomatisch | Abrechnung und Dokumentation",
           "level": "advanced"
         },
         {
           "id": "tab-eigenstaendig-btn-1",
           "type": "button",
           "href": "https://helfen.helferportal.de",
-          "value": "Als Alltagsbegleiter registrieren",
+          "value": "Als Alltagsbegleiter:in registrieren",
           "level": "basic"
         },
         {
@@ -158,25 +149,25 @@
         {
           "id": "tab-organisation-text",
           "type": "textarea",
-          "value": "Möchten Sie sich engagieren, aber Verantwortung nicht allein tragen?\nÜber eine Organisation sind Fachkräfte im Hintergrund für Sie da. Sie erhalten Begleitung, Schulungen und Versicherungsschutz, und werden Teil einer sorgenden Gemeinschaft.",
+          "value": "Du möchtest dich engagieren, aber nicht alles allein organisieren? Über eine Organisation erhältst du Begleitung, Schulungen und Versicherungsschutz – und bist Teil eines Teams.",
           "level": "basic"
         },
         {
           "id": "tab-organisation-benefits",
           "type": "textarea",
-          "value": "Was Ihnen eine Organisation bietet\nTeil einer sorgenden Gemeinschaft sein\nFachliche Unterstützung\nSchulungen und Weiterbildung\nAustausch mit anderen Engagierten\nVersicherungsschutz\nUnterstützung bei Abrechnung und Organisation",
+          "value": "Was dir eine Organisation bietet\nFeste Ansprechpartner\nEinführungsgespräch\nFachliche Anleitung\nVersicherungsschutz\nSchulungen & Weiterbildung\nErfahrungsaustausch\nAutomatische Abrechnung\nTeil eines Teams sein",
           "level": "advanced"
         },
         {
           "id": "tab-organisation-roles",
           "type": "textarea",
-          "value": "Alltagsbegleiter\nAssistent\nKommunales Engagement\nKatastrophenschutz",
+          "value": "Alltagsbegleiter:in\nAssistent:in\nBetreuer:in\nKommunales Engagement\nKatastrophenschutz",
           "level": "advanced"
         },
         {
           "id": "tab-organisation-cards",
           "type": "textarea",
-          "value": "Versichert | Haftpflicht-, Unfall- und Dienstreisekaskoversicherung.\nBegleitet | Fachkräfte unterstützen Sie bei Fragen und übernehmen, wenn Situationen zu schwierig werden.\nGemeinschaft | Teil einer sorgenden Gemeinschaft.",
+          "value": "Versichert | Haftpflicht-, Unfall- und Dienstreisekaskoversicherung\nBegleitet | Fachliche Unterstützung bei Fragen\nGemeinschaft | Teil eines Teams sein",
           "level": "advanced"
         },
         {
@@ -208,13 +199,13 @@
         {
           "id": "cards-title",
           "type": "text",
-          "value": "Gut vorbereitet für Ihr Engagement",
+          "value": "Gut vorbereitet für Dein Engagement",
           "level": "basic"
         },
         {
           "id": "cards-text",
           "type": "textarea",
-          "value": "Der Verein deinNachbar e.V. bietet Ihnen umfassende Qualifizierungsmöglichkeiten, damit Sie sicher und kompetent helfen können.",
+          "value": "Der Verein deinNachbar e.V. bietet Dir umfassende Qualifizierungsmöglichkeiten — damit Du sicher und kompetent helfen kannst.",
           "level": "basic"
         },
         {
@@ -226,7 +217,7 @@
         {
           "id": "card-1-text",
           "type": "text",
-          "value": "Live über Zoom mit erfahrenen Dozentinnen, interaktiv, praxisnah und in kleinen Gruppen.",
+          "value": "Präsenzunterricht über Zoom mit erfahrenen Dozenten. Interaktiv, praxisnah und in kleinen Gruppen.",
           "level": "basic"
         },
         {
@@ -238,7 +229,7 @@
         {
           "id": "card-2-text",
           "type": "text",
-          "value": "Flexibles Einzelstudium über unsere digitale Lernplattform. Lernen Sie in Ihrem Tempo, wann und wo es Ihnen passt.",
+          "value": "Flexibles Einzelstudium über unsere digitale Lernplattform. Lerne in Deinem Tempo — wann und wo es Dir passt.",
           "level": "basic"
         },
         {
@@ -287,31 +278,31 @@
         {
           "id": "vorteile-1-text",
           "type": "text",
-          "value": "Sie erhalten nur Anfragen, die zu Ihrem Profil und Ihren Präferenzen passen.",
+          "value": "Du erhältst nur Anfragen, die zu deinem Profil und deinen Präferenzen passen.",
           "level": "basic"
         },
         {
           "id": "vorteile-2-title",
           "type": "text",
-          "value": "Sie entscheiden",
+          "value": "Du entscheidest",
           "level": "basic"
         },
         {
           "id": "vorteile-2-text",
           "type": "text",
-          "value": "Über Zeit, Umfang und Einsatzort bestimmen Sie selbst.",
+          "value": "Über Zeit, Umfang und Einsatzort bestimmst du selbst.",
           "level": "basic"
         },
         {
           "id": "vorteile-3-title",
           "type": "text",
-          "value": "Anonymisierter Erstkontakt",
+          "value": "Anonym zuerst",
           "level": "basic"
         },
         {
           "id": "vorteile-3-text",
           "type": "text",
-          "value": "Der Erstkontakt erfolgt im geschützten Raum per Chat, Video oder Audio, ohne Weitergabe persönlicher Kontaktdaten.",
+          "value": "Der Erstkontakt erfolgt im geschützten Raum per Chat, Video oder Audio.",
           "level": "basic"
         },
         {
@@ -353,7 +344,7 @@
         {
           "id": "faq-1-answer",
           "type": "textarea",
-          "value": "Nein. Je nach Engagement-Art können Sie spontan helfen oder regelmäßige Einsätze übernehmen. Sie entscheiden selbst über Umfang und Dauer. Bei spontaner Hilfe entscheiden Sie bei jeder einzelnen Anfrage neu – ohne jegliche Verpflichtung.",
+          "value": "Nein. Je nach Engagement-Art kannst du spontan helfen oder regelmäßige Einsätze übernehmen. Du entscheidest selbst über Umfang und Dauer. Bei spontaner Hilfe entscheidest du bei jeder einzelnen Anfrage neu – ohne jegliche Verpflichtung.",
           "level": "basic"
         },
         {
@@ -365,7 +356,7 @@
         {
           "id": "faq-2-answer",
           "type": "textarea",
-          "value": "Bei Engagement über eine Organisation erhalten Sie in der Regel vollständigen Versicherungsschutz: Haftpflicht-, Unfall- und Dienstreisekaskoversicherung. Bei Spontanhilfe empfehlen wir Rücksprache mit Ihrer Haftpflicht- und Unfallversicherung zu halten. Neuere Policen beinhalten in der Regel bürgerschaftliches Engagement.",
+          "value": "Bei Engagement über eine Organisation erhältst du in der Regel vollständigen Versicherungsschutz: Haftpflicht-, Unfall- und Dienstreisekaskoversicherung. Bei Spontanhilfe empfehlen wir, dies individuell zu prüfen – oder dich einer Organisation anzuschließen.",
           "level": "basic"
         },
         {
@@ -377,7 +368,7 @@
         {
           "id": "faq-3-answer",
           "type": "textarea",
-          "value": "Das hängt von der Engagement-Art ab. Ehrenamtlich kann es Aufwandsentschädigungen im Rahmen der Übungsleiter- oder Ehrenamtspauschale geben (bis zu 3.300 € / 840€ pro Jahr steuerfrei). Selbständig entscheiden über die Höhe Ihrer Vergütung innerhalb des gesetzlich vorgegebenen Rahmens. Spontane Hilfe ist in der Regel unentgeltlich.",
+          "value": "Das hängt von der Engagement-Art ab. Ehrenamtlich kann es Aufwandsentschädigungen im Rahmen der Übungsleiter- oder Ehrenamtspauschale geben (bis zu 840€/Jahr steuerfrei). Selbständig legst du deine Vergütung selbst fest. Spontane Hilfe ist in der Regel unentgeltlich.",
           "level": "basic"
         },
         {
@@ -389,7 +380,7 @@
         {
           "id": "faq-4-answer",
           "type": "textarea",
-          "value": "Je nach Engagement-Art können unterschiedliche Voraussetzungen gelten: Bei spontaner Hilfe gibt es oft keine formalen Anforderungen. Bei organisiertem Engagement kann ein Führungszeugnis, ein Einführungsgespräch oder eine kurze Schulung erforderlich sein. Wir begleiten Sie durch den Prozess.",
+          "value": "Je nach Engagement-Art können unterschiedliche Voraussetzungen gelten: Bei spontaner Hilfe gibt es oft keine formalen Anforderungen. Bei organisiertem Engagement kann ein Führungszeugnis, ein Einführungsgespräch oder eine kurze Schulung erforderlich sein. Wir begleiten dich durch den Prozess.",
           "level": "basic"
         },
         {
@@ -401,7 +392,7 @@
         {
           "id": "faq-5-answer",
           "type": "textarea",
-          "value": "Sie legen Ihr Profil mit angebotenen Tätigkeiten Verfügbarkeiten, Präferenzen und Einsatzradius an. Passende Anfragen werden Ihnen per App, E-Mail oder SMS zugesandt. Per App können Sie zu- oder absagen und mit Hilfesuchenden im geschützten Raum kommunizieren, bevor Sie sich entscheiden.",
+          "value": "Du legst dein Profil mit Verfügbarkeiten, Präferenzen und Einsatzradius an. Passende Anfragen werden dir per App, E-Mail oder SMS zugesandt. Per App kannst du zu- oder absagen und mit Hilfesuchenden im geschützten Raum kommunizieren, bevor du dich entscheidest.",
           "level": "basic"
         }
       ]
@@ -419,7 +410,7 @@
         {
           "id": "cta-text",
           "type": "textarea",
-          "value": "Registrieren Sie sich kostenlos und finden Sie Einsätze, die zu Ihnen passen. Flexibel, sicher und wertgeschätzt.",
+          "value": "Registriere dich kostenlos und finde Einsätze, die zu dir passen – flexibel, sicher und wertgeschätzt.",
           "level": "basic"
         },
         {

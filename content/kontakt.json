@@ -1,16 +1,15 @@
 {
+  "_meta": {
+    "generator": "helferportal-content-tools/extract.js",
+    "source": "kontakt.html",
+    "extracted": "2026-03-08T13:44:03.440Z",
+    "schema_version": "2.0",
+    "lastEdited": "2026-03-08T13:44:14.706Z"
+  },
   "page": {
     "id": "kontakt",
-    "url": "/kontakt.html",
-    "title": "Kontakt – Helferportal"
-  },
-  "_meta": {
-    "source": "kontakt.html",
-    "editedBy": "reg@kamanin.at",
-    "extracted": "2026-03-01T22:28:39.456Z",
-    "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-02T20:30:53.296Z",
-    "schema_version": "2.0"
+    "title": "Kontakt – Helferportal",
+    "url": "/kontakt.html"
   },
   "blocks": [
     {
@@ -20,14 +19,14 @@
         {
           "id": "hero-title",
           "type": "text",
-          "level": "basic",
-          "value": "Wir freuen uns auf Sie"
+          "value": "Wir freuen uns auf Sie",
+          "level": "basic"
         },
         {
           "id": "hero-subtitle",
           "type": "text",
-          "level": "basic",
-          "value": "Haben Sie Fragen zum Helferportal? Möchten Sie als Kommune oder Organisation kooperieren? Wir sind für Sie da."
+          "value": "Haben Sie Fragen zum Helferportal? Möchten Sie als Kommune oder Organisation kooperieren? Wir sind für Sie da.",
+          "level": "basic"
         }
       ]
     },
@@ -38,65 +37,65 @@
         {
           "id": "contact-title",
           "type": "text",
-          "level": "basic",
-          "value": "Nachricht senden"
+          "value": "Nachricht senden",
+          "level": "basic"
         },
         {
           "id": "contact-btn",
-          "href": "",
           "type": "button",
-          "level": "basic",
-          "value": "Nachricht senden"
+          "href": "",
+          "value": "Nachricht senden",
+          "level": "basic"
         },
         {
           "id": "contact-info-1-title",
           "type": "text",
-          "level": "basic",
-          "value": "Direkter Kontakt"
+          "value": "Direkter Kontakt",
+          "level": "basic"
         },
         {
           "id": "contact-info-1-text",
           "type": "text",
-          "level": "basic",
-          "value": "Für allgemeine Anfragen erreichen Sie uns per E-Mail. Wir antworten in der Regel innerhalb von 24 Stunden."
+          "value": "Für allgemeine Anfragen erreichen Sie uns per E-Mail. Wir antworten in der Regel innerhalb von 24 Stunden.",
+          "level": "basic"
         },
         {
           "id": "contact-info-1-href",
-          "href": "mailto:info@helferportal.de",
           "type": "link",
-          "level": "advanced",
-          "value": "info@helferportal.de"
+          "href": "mailto:info@helferportal.de",
+          "value": "info@helferportal.de",
+          "level": "advanced"
         },
         {
           "id": "contact-info-2-title",
           "type": "text",
-          "level": "basic",
-          "value": "Für Kommunen & Organisationen"
+          "value": "Für Kommunen & Organisationen",
+          "level": "basic"
         },
         {
           "id": "contact-info-2-text",
           "type": "text",
-          "level": "basic",
-          "value": "Sie möchten das Helferportal in Ihrer Kommune oder Organisation einsetzen? Vereinbaren Sie einen unverbindlichen Demo-Termin."
+          "value": "Sie möchten das Helferportal in Ihrer Kommune oder Organisation einsetzen? Vereinbaren Sie einen unverbindlichen Demo-Termin.",
+          "level": "basic"
         },
         {
           "id": "contact-info-2-href",
-          "href": "mailto:kooperation@helferportal.de",
           "type": "link",
-          "level": "advanced",
-          "value": "kooperation@helferportal.de"
+          "href": "mailto:kooperation@helferportal.de",
+          "value": "kooperation@helferportal.de",
+          "level": "advanced"
         },
         {
           "id": "contact-info-3-title",
           "type": "text",
-          "level": "basic",
-          "value": "Unser Standort"
+          "value": "Unser Standort",
+          "level": "basic"
         },
         {
           "id": "contact-info-3-text",
           "type": "text",
-          "level": "basic",
-          "value": "Helferportal GmbH & Co. KGMünchen, Deutschland"
+          "value": "Helferportal GmbH & Co. KGMünchen, Deutschland",
+          "level": "basic"
         }
       ]
     },
@@ -107,62 +106,62 @@
         {
           "id": "faq-title",
           "type": "text",
-          "level": "basic",
-          "value": "Häufige Fragen"
+          "value": "Häufige Fragen",
+          "level": "basic"
         },
         {
           "id": "faq-subtitle",
           "type": "text",
-          "level": "basic",
-          "value": "Schnelle Antworten"
+          "value": "Schnelle Antworten",
+          "level": "basic"
         },
         {
           "id": "faq-1-question",
           "type": "text",
-          "level": "basic",
-          "value": "Ist die Nutzung des Helferportals wirklich kostenlos?"
+          "value": "Ist die Nutzung des Helferportals wirklich kostenlos?",
+          "level": "basic"
         },
         {
           "id": "faq-1-answer",
           "type": "textarea",
-          "level": "basic",
-          "value": "Ja, die Nutzung des Helferportals ist für Hilfesuchende und Engagierte vollständig kostenfrei. Es gibt die Möglichkeit, einen freiwilligen Solidaritätsbeitrag zu leisten, der jedoch keinen Einfluss auf die Leistungen hat."
+          "value": "Ja, die Nutzung des Helferportals ist für Hilfesuchende und Engagierte vollständig kostenfrei. Es gibt die Möglichkeit, einen freiwilligen Solidaritätsbeitrag zu leisten, der jedoch keinen Einfluss auf die Leistungen hat.",
+          "level": "basic"
         },
         {
           "id": "faq-2-question",
           "type": "text",
-          "level": "basic",
-          "value": "Wie schnell erhalte ich eine Antwort auf meine Anfrage?"
+          "value": "Wie schnell erhalte ich eine Antwort auf meine Anfrage?",
+          "level": "basic"
         },
         {
           "id": "faq-2-answer",
           "type": "textarea",
-          "level": "basic",
-          "value": "Wir bemühen uns, alle Anfragen innerhalb von 24 Stunden zu beantworten. Bei dringenden Anliegen können Sie uns auch telefonisch erreichen."
+          "value": "Wir bemühen uns, alle Anfragen innerhalb von 24 Stunden zu beantworten. Bei dringenden Anliegen können Sie uns auch telefonisch erreichen.",
+          "level": "basic"
         },
         {
           "id": "faq-3-question",
           "type": "text",
-          "level": "basic",
-          "value": "Wie kann meine Kommune das Helferportal nutzen?"
+          "value": "Wie kann meine Kommune das Helferportal nutzen?",
+          "level": "basic"
         },
         {
           "id": "faq-3-answer",
           "type": "textarea",
-          "level": "basic",
-          "value": "Kommunen und Landkreise können das Helferportal als digitales Koordinationsportal für ihre Versorgungsstrukturen einsetzen. Kontaktieren Sie uns für eine unverbindliche Demo und individuelle Beratung."
+          "value": "Kommunen und Landkreise können das Helferportal als digitales Koordinationsportal für ihre Versorgungsstrukturen einsetzen. Kontaktieren Sie uns für eine unverbindliche Demo und individuelle Beratung.",
+          "level": "basic"
         },
         {
           "id": "faq-4-question",
           "type": "text",
-          "level": "basic",
-          "value": "Sind meine Daten sicher?"
+          "value": "Sind meine Daten sicher?",
+          "level": "basic"
         },
         {
           "id": "faq-4-answer",
           "type": "textarea",
-          "level": "basic",
-          "value": "Ja, der Schutz Ihrer Daten hat für uns höchste Priorität. Wir sind DSGVO-konform, hosten alle Daten in Deutschland und verwenden modernste Verschlüsselungstechnologien."
+          "value": "Ja, der Schutz Ihrer Daten hat für uns höchste Priorität. Wir sind DSGVO-konform, hosten alle Daten in Deutschland und verwenden modernste Verschlüsselungstechnologien.",
+          "level": "basic"
         }
       ]
     }

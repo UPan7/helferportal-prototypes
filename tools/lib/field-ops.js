@@ -76,7 +76,11 @@ function applyField($, $el, fieldType, field) {
       return true;
 
     default: // 'text'
-      $el.text(field.value);
+      if ($el.children().length > 0) {
+        setTextOnly($, $el, field.value);
+      } else {
+        $el.text(field.value);
+      }
       return true;
   }
 }

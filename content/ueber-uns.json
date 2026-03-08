@@ -1,16 +1,15 @@
 {
+  "_meta": {
+    "generator": "helferportal-content-tools/extract.js",
+    "source": "ueber-uns.html",
+    "extracted": "2026-03-08T13:44:04.944Z",
+    "schema_version": "2.0",
+    "lastEdited": "2026-03-08T13:44:14.764Z"
+  },
   "page": {
     "id": "ueber-uns",
-    "url": "/ueber-uns.html",
-    "title": "Über uns – Helferportal"
-  },
-  "_meta": {
-    "source": "ueber-uns.html",
-    "editedBy": "thomas.oeben@helferportal.de",
-    "extracted": "2026-03-02T09:06:53.228Z",
-    "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-07T14:53:50.493Z",
-    "schema_version": "2.0"
+    "title": "Über uns – Helferportal",
+    "url": "/ueber-uns.html"
   },
   "blocks": [
     {
@@ -18,25 +17,16 @@
       "type": "hero",
       "fields": [
         {
-          "id": "hero-image",
-          "type": "image",
-          "level": "basic",
-          "value": {
-            "alt": "Hero Hintergrund",
-            "src": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1400"
-          }
-        },
-        {
           "id": "hero-title",
           "type": "text",
-          "level": "basic",
-          "value": "Gemeinsam für bessere Versorgung"
+          "value": "Gemeinsam für bessere Versorgung",
+          "level": "basic"
         },
         {
           "id": "hero-subtitle",
           "type": "text",
-          "level": "basic",
-          "value": "Seit 2015 entwickeln wir digitale Lösungen, die Menschen mit Unterstützungsbedarf und Engagierte zusammenbringen – einfach, sicher und nah."
+          "value": "Seit 2015 entwickeln wir digitale Lösungen, die Menschen mit Unterstützungsbedarf und Engagierte zusammenbringen – einfach, sicher und nah.",
+          "level": "basic"
         }
       ]
     },
@@ -47,32 +37,32 @@
         {
           "id": "section-overline",
           "type": "text",
-          "level": "basic",
-          "value": "Unsere Mission"
+          "value": "Unsere Mission",
+          "level": "basic"
         },
         {
           "id": "section-title",
           "type": "text",
-          "level": "basic",
-          "value": "Unterstützung passgenau vermitteln – auch ganz spontan im Sozialraum"
+          "value": "Unterstützung passgenau vermitteln – auch ganz spontan im Sozialraum",
+          "level": "basic"
         },
         {
           "id": "section-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Gemeinsam mit den Bürgern, der Sozialwirtschaft und den Kommunen sorgen wir dafür, dass Menschen mit Behinderung oder Hilfebedarf, sowie pflegende Angehörige die Unterstützung und Versorgung erhalten, die sie gerade benötigen.\nWir übertragen das Prinzip schneller, bedarfsgerechter Vermittlung in den sozialen Bereich – qualitätsgesichert, digital vernetzt und mit klaren rechtlichen Rahmenbedingungen."
+          "value": "Gemeinsam mit den Bürgern, der Sozialwirtschaft und den Kommunen sorgen wir dafür, dass Menschen mit Behinderung oder Hilfebedarf, sowie pflegende Angehörige die Unterstützung und Versorgung erhalten, die sie gerade benötigen.\nWir übertragen das Prinzip schneller, bedarfsgerechter Vermittlung in den sozialen Bereich – qualitätsgesichert, digital vernetzt und mit klaren rechtlichen Rahmenbedingungen.",
+          "level": "basic"
         },
         {
           "id": "item-1-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Hilfe beginnt oft informell und spontan – nicht institutionell. Die Plattform soll diese Realität widerspiegeln."
+          "value": "Hilfe beginnt oft informell und spontan – nicht institutionell. Die Plattform soll diese Realität widerspiegeln.",
+          "level": "basic"
         },
         {
           "id": "item-1-title",
           "type": "text",
-          "level": "basic",
-          "value": "— Der C2C-Ansatz des Helferportals"
+          "value": "— Der C2C-Ansatz des Helferportals",
+          "level": "basic"
         }
       ]
     },
@@ -83,104 +73,104 @@
         {
           "id": "section-title",
           "type": "text",
-          "level": "basic",
-          "value": "Unsere Geschichte"
+          "value": "Unsere Geschichte",
+          "level": "basic"
         },
         {
           "id": "section-text",
           "type": "text",
-          "level": "basic",
-          "value": "Von der Idee zur Plattform"
+          "value": "Von der Idee zur Plattform",
+          "level": "basic"
         },
         {
           "id": "item-1-year",
           "type": "text",
-          "level": "basic",
-          "value": "2015"
+          "value": "2015",
+          "level": "basic"
         },
         {
           "id": "item-1-title",
           "type": "text",
-          "level": "basic",
-          "value": "Gründung"
+          "value": "Gründung",
+          "level": "basic"
         },
         {
           "id": "item-1-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Thomas Oeben gründet die Helferportal GmbH & Co. KG mit der Vision, logistische Kompetenz in den sozialen Bereich zu bringen."
+          "value": "Thomas Oeben gründet die Helferportal GmbH & Co. KG mit der Vision, logistische Kompetenz in den sozialen Bereich zu bringen.",
+          "level": "basic"
         },
         {
           "id": "item-2-year",
           "type": "text",
-          "level": "basic",
-          "value": "2017"
+          "value": "2017",
+          "level": "basic"
         },
         {
           "id": "item-2-title",
           "type": "text",
-          "level": "basic",
-          "value": "deinNachbar e.V."
+          "value": "deinNachbar e.V.",
+          "level": "basic"
         },
         {
           "id": "item-2-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Gründung des Vereins deinNachbar e.V. in München als Praxislabor für neue Versorgungskonzepte."
+          "value": "Gründung des Vereins deinNachbar e.V. in München als Praxislabor für neue Versorgungskonzepte.",
+          "level": "basic"
         },
         {
           "id": "item-3-year",
           "type": "text",
-          "level": "basic",
-          "value": "2020"
+          "value": "2020",
+          "level": "basic"
         },
         {
           "id": "item-3-title",
           "type": "text",
-          "level": "basic",
-          "value": "Digitalisierung"
+          "value": "Digitalisierung",
+          "level": "basic"
         },
         {
           "id": "item-3-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Entwicklung der digitalen Plattform mit App-basierter Verfügbarkeitsabfrage nach dem UBER-Prinzip."
+          "value": "Entwicklung der digitalen Plattform mit App-basierter Verfügbarkeitsabfrage nach dem UBER-Prinzip.",
+          "level": "basic"
         },
         {
           "id": "item-4-year",
           "type": "text",
-          "level": "basic",
-          "value": "2024"
+          "value": "2024",
+          "level": "basic"
         },
         {
           "id": "item-4-title",
           "type": "text",
-          "level": "basic",
-          "value": "DATI-Förderung"
+          "value": "DATI-Förderung",
+          "level": "basic"
         },
         {
           "id": "item-4-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Start des Pilotprojekts mit der Stadt Dietzenbach, gefördert durch die Deutsche Agentur für Transfer und Innovation."
+          "value": "Start des Pilotprojekts mit der Stadt Dietzenbach, gefördert durch die Deutsche Agentur für Transfer und Innovation.",
+          "level": "basic"
         },
         {
           "id": "item-5-year",
           "type": "text",
-          "level": "basic",
-          "value": "2025"
+          "value": "2025",
+          "level": "basic"
         },
         {
           "id": "item-5-title",
           "type": "text",
-          "level": "basic",
-          "value": "Expansion"
+          "value": "Expansion",
+          "level": "basic"
         },
         {
           "id": "item-5-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Ausbau zum integrativen Koordinationsportal mit Kommunikationsmodul und Anbindung weiterer Städte."
+          "value": "Ausbau zum integrativen Koordinationsportal mit Kommunikationsmodul und Anbindung weiterer Städte.",
+          "level": "basic"
         }
       ]
     },
@@ -191,44 +181,26 @@
         {
           "id": "section-title",
           "type": "text",
-          "level": "basic",
-          "value": "Das Team"
+          "value": "Das Team",
+          "level": "basic"
         },
         {
           "id": "section-text",
           "type": "text",
-          "level": "basic",
-          "value": "Menschen hinter Helferportal"
-        },
-        {
-          "id": "item-1-image",
-          "type": "image",
-          "level": "basic",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/ueber-uns/item-1-image.jpg"
-        },
-        {
-          "id": "item-1-badge",
-          "type": "text",
-          "level": "basic",
-          "value": "Gründer & Geschäftsführer"
+          "value": "Menschen hinter Helferportal",
+          "level": "basic"
         },
         {
           "id": "item-1-title",
           "type": "text",
-          "level": "basic",
-          "value": "Thomas Oeben"
-        },
-        {
-          "id": "item-1-role",
-          "type": "text",
-          "level": "basic",
-          "value": "Rettungsassistent, Spediteur, Betriebswirt"
+          "value": "Thomas Oeben",
+          "level": "basic"
         },
         {
           "id": "item-1-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Thomas hat jahrelang logistische Netzwerke für renommierte Logistikkonzerne und die produzierende Industrie aufgebaut und gesteuert. Aufgrund der aufkommenden Versorgungslücke beschloss er, logistische Kompetenz und Digitalisierung in den sozialen Bereich einzubringen.\nEr entwickelt soziale Versorgungskonzepte und erprobt diese zunächst im Verein deinNachbar e.V., bevor sie von anderen Hilfsorganisationen oder Kommunen übernommen werden."
+          "value": "Thomas hat jahrelang logistische Netzwerke für renommierte Logistikkonzerne und die produzierende Industrie aufgebaut und gesteuert. Aufgrund der aufkommenden Versorgungslücke beschloss er, logistische Kompetenz und Digitalisierung in den sozialen Bereich einzubringen.\nEr entwickelt soziale Versorgungskonzepte und erprobt diese zunächst im Verein deinNachbar e.V., bevor sie von anderen Hilfsorganisationen oder Kommunen übernommen werden.",
+          "level": "basic"
         }
       ]
     },
@@ -239,98 +211,98 @@
         {
           "id": "logos-title",
           "type": "text",
-          "level": "basic",
-          "value": "Partner & Förderung"
+          "value": "Partner & Förderung",
+          "level": "basic"
         },
         {
           "id": "logos-subtitle",
           "type": "text",
-          "level": "basic",
-          "value": "Gemeinsam für bessere Versorgung"
+          "value": "Gemeinsam für bessere Versorgung",
+          "level": "basic"
         },
         {
           "id": "logo-1-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "BMBF",
-            "src": ""
-          }
+            "src": "",
+            "alt": "BMBF"
+          },
+          "level": "basic"
         },
         {
           "id": "logo-1-name",
           "type": "text",
-          "level": "basic",
-          "value": "BMBF"
+          "value": "BMBF",
+          "level": "basic"
         },
         {
           "id": "logo-1-text",
           "type": "text",
-          "level": "basic",
-          "value": "Bundesministerium für Bildung und Forschung"
+          "value": "Bundesministerium für Bildung und Forschung",
+          "level": "basic"
         },
         {
           "id": "logo-2-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "DATI",
-            "src": ""
-          }
+            "src": "",
+            "alt": "DATI"
+          },
+          "level": "basic"
         },
         {
           "id": "logo-2-name",
           "type": "text",
-          "level": "basic",
-          "value": "DATI"
+          "value": "DATI",
+          "level": "basic"
         },
         {
           "id": "logo-2-text",
           "type": "text",
-          "level": "basic",
-          "value": "Deutsche Agentur für Transfer und Innovation"
+          "value": "Deutsche Agentur für Transfer und Innovation",
+          "level": "basic"
         },
         {
           "id": "logo-3-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "Stadt Dietzenbach",
-            "src": ""
-          }
+            "src": "",
+            "alt": "Stadt Dietzenbach"
+          },
+          "level": "basic"
         },
         {
           "id": "logo-3-name",
           "type": "text",
-          "level": "basic",
-          "value": "Stadt Dietzenbach"
+          "value": "Stadt Dietzenbach",
+          "level": "basic"
         },
         {
           "id": "logo-3-text",
           "type": "text",
-          "level": "basic",
-          "value": "Pilotkommune für integratives Koordinationsportal"
+          "value": "Pilotkommune für integratives Koordinationsportal",
+          "level": "basic"
         },
         {
           "id": "logo-4-image",
           "type": "image",
-          "level": "basic",
           "value": {
-            "alt": "TU Chemnitz",
-            "src": ""
-          }
+            "src": "",
+            "alt": "TU Chemnitz"
+          },
+          "level": "basic"
         },
         {
           "id": "logo-4-name",
           "type": "text",
-          "level": "basic",
-          "value": "TU Chemnitz"
+          "value": "TU Chemnitz",
+          "level": "basic"
         },
         {
           "id": "logo-4-text",
           "type": "text",
-          "level": "basic",
-          "value": "Wissenschaftliche Begleitung"
+          "value": "Wissenschaftliche Begleitung",
+          "level": "basic"
         }
       ]
     },
@@ -341,28 +313,28 @@
         {
           "id": "cta-title",
           "type": "text",
-          "level": "basic",
-          "value": "Werden Sie Teil des Netzwerks"
+          "value": "Werden Sie Teil des Netzwerks",
+          "level": "basic"
         },
         {
           "id": "cta-text",
           "type": "textarea",
-          "level": "basic",
-          "value": "Ob als Hilfesuchender, Engagierter oder kommunaler Partner – gemeinsam schaffen wir bessere Versorgung."
+          "value": "Ob als Hilfesuchender, Engagierter oder kommunaler Partner – gemeinsam schaffen wir bessere Versorgung.",
+          "level": "basic"
         },
         {
           "id": "cta-btn-1",
-          "href": "/kontakt.html",
           "type": "button",
-          "level": "basic",
-          "value": "Kontakt aufnehmen"
+          "href": "/kontakt.html",
+          "value": "Kontakt aufnehmen",
+          "level": "basic"
         },
         {
           "id": "cta-btn-2",
-          "href": "/",
           "type": "button",
-          "level": "basic",
-          "value": "Zur Startseite"
+          "href": "/",
+          "value": "Zur Startseite",
+          "level": "basic"
         }
       ]
     }
