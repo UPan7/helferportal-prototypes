@@ -4186,6 +4186,21 @@ body[class*="page-"] {
     gap: var(--space-sm);
 }
 
+/* Vorteile Grid (Warum-Sektionen) */
+.page-fuer-kommunen .vorteile-grid {
+    margin-bottom: var(--space-xl);
+}
+
+.page-fuer-kommunen .vorteile-grid > h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--purple-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-md);
+}
+
 .page-fuer-kommunen .use-case-tag {
     display: inline-flex;
     align-items: center;

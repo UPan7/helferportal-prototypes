@@ -249,7 +249,7 @@ A=35, B=40, C=50, D=70, E=25, F=50
 | 1   | Startseite                                 | /              | 9      | ✅ Done |
 | 2   | Hilfe finden                               | /hilfe-finden  | 5      | ✅ Done |
 | 3   | Engagieren                                 | /engagieren    | 6      | ✅ Done |
-| 4   | Für die öffentliche Hand & soziale Akteure  | /fuer-kommunen | 5      | ✅ Done |
+| 4   | Für die öffentliche Hand & soziale Akteure | /fuer-kommunen | 5      | ✅ Done |
 | 5   | Über uns                                   | /ueber-uns     | 6      | ✅ Done |
 | 6   | Anmelden / Kontakt                         | /kontakt       | 3      | ✅ Done |
 | 7   | München (Stadtseite)                       | /muenchen      | 7      | ✅ Done |
@@ -299,6 +299,7 @@ node test-roundtrip.js startseite        # Round-trip test one page
 ### Workflow: Before starting local work
 
 Always pull the latest content from Supabase first:
+
 ```bash
 cd tools && node deploy.js
 ```
@@ -309,6 +310,7 @@ cd tools && node deploy.js
 Then pull: `node deploy.js` → push to GitHub.
 
 **If editing locally** (e.g., applying client feedback):
+
 1. `node deploy.js` — pull latest from Supabase
 2. Edit HTML
 3. `node extract.js ../page.html ../content/page.json` — regenerate JSON
@@ -318,9 +320,10 @@ Then pull: `node deploy.js` → push to GitHub.
 ### Workflow: Structural HTML changes (nav, footer, CSS)
 
 These elements have no `data-field` attributes → they don't conflict with Supabase content.
+
 1. Edit HTML directly
 2. `git push` — deploy to GitHub Pages
-No Supabase sync needed.
+   No Supabase sync needed.
 
 ## Image Strategy
 
@@ -383,3 +386,10 @@ git push origin main
 - **Supabase = source of truth**: Never overwrite Supabase content without checking for conflicts first. Use `sync-to-supabase.js` (has built-in conflict detection). Always `node deploy.js` before starting local work.
 - **deploy.js textarea handler**: `field-ops.js` textarea handler now uses `applyStructuredText()` for elements with children, preserving nested HTML structure. Plain-text textarea fields still use `.text()`. Round-trip tested across all 7 pages.
 - At the end of every session, when asked to wrap up, update the Session Log section below following the standard format.
+
+## Workflow Rules
+
+- **Plan mode**: Use for any non-trivial task (3+ steps or architectural decisions). If something goes sideways, STOP and re-plan — don't keep pushing.
+- **Verify before done**: Always run `node validate.js {page}` + `node test-roundtrip.js` after changes. For content pipeline changes, verify idempotency: deploy → extract → diff should produce no changes.
+- **Autonomous bug fixing**: When given a bug report, just fix it. Point at logs/errors, then resolve. Zero context switching required from the user.
+- **Lessons learned**: After corrections from the user, update `MEMORY.md` with the pattern to prevent repeating the same mistake.

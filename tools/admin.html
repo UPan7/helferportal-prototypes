@@ -1902,20 +1902,33 @@ function groupByEntity(blockType, fields) {
     if (blockRegistry && entityOrder.length > 0) {
         const blockDef = resolveBlockDef(blockType);
         if (blockDef?.fields) {
-            const patterns = {};
+            // Separate top-level patterns from variant-group patterns
+            const topPatterns = {};
+            const variantGroups = {}; // { groupName: { pattern: meta } }
             for (const [key, val] of Object.entries(blockDef.fields)) {
                 if (key.startsWith('_')) {
+                    variantGroups[key] = {};
                     for (const [pk, pv] of Object.entries(val)) {
-                        if (pv.repeatable) patterns[pk] = pv;
+                        if (pv.repeatable) variantGroups[key][pk] = pv;
                     }
                 } else if (val.repeatable) {
-                    patterns[key] = val;
+                    topPatterns[key] = val;
                 }
             }
             for (const entity of entityOrder) {
                 const entityFields = entityMap.get(entity);
                 const existingIds = new Set(entityFields.map(f => f.id));
-                for (const [pattern, meta] of Object.entries(patterns)) {
+                // Always scaffold top-level patterns
+                const toScaffold = { ...topPatterns };
+                // Only scaffold variant-group patterns if at least one field from that group exists
+                for (const [, groupPatterns] of Object.entries(variantGroups)) {
+                    const groupActive = Object.keys(groupPatterns).some(p => {
+                        const fid = p.replace(/\{[^}]+\}/g, entity);
+                        return existingIds.has(fid);
+                    });
+                    if (groupActive) Object.assign(toScaffold, groupPatterns);
+                }
+                for (const [pattern, meta] of Object.entries(toScaffold)) {
                     const fieldId = pattern.replace(/\{[^}]+\}/g, entity);
                     if (!existingIds.has(fieldId)) {
                         const stub = { id: fieldId, type: meta.type, value: '', level: meta.level || 'basic' };

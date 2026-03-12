@@ -47,11 +47,14 @@
       "tab-{key}-title":    { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
       "tab-{key}-text":     { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true },
       "tab-{key}-cards":    { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
-      "tab-{key}-benefits": { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
-      "tab-{key}-info":     { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
-      "tab-{key}-roles":    { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
+      "tab-{key}-vorteile": { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
       "tab-{key}-btn-1":    { "type": "button",   "required": true,  "level": "basic",    "repeatable": true },
       "tab-{key}-btn-2":    { "type": "button",   "required": false, "level": "basic",    "repeatable": true },
+      "_audience_variant": {
+        "tab-{key}-benefits": { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
+        "tab-{key}-info":     { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
+        "tab-{key}-roles":    { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true }
+      },
       "_info_tabs_variant": {
         "info-overline":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
         "info-title":           { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
