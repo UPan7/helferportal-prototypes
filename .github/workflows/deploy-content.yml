@@ -1,16 +1,12 @@
-# TEMPORARILY DISABLED
-# Publish from CMS paused due to pipeline issues.
-# Keep file for future reactivation.
-
 name: Deploy Content
 
-# on:
-#   workflow_dispatch:
-#     inputs:
-#       page_id:
-#         description: 'Page to deploy (blank = all pages)'
-#         required: false
-#         default: ''
+on:
+  workflow_dispatch:
+    inputs:
+      page_id:
+        description: 'Page to deploy (blank = all pages)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
