@@ -3,7 +3,7 @@
     "editedBy": "thomas.oeben@helferportal.de",
     "extracted": "2026-03-08T14:16:02.124Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-13T10:36:07.861Z",
+    "lastEdited": "2026-03-13T14:24:27.740Z",
     "schema_version": "2.0",
     "source": "ueber-uns.html"
   },
@@ -98,7 +98,7 @@
           "id": "item-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Thomas Oeben gründet die Helferportal GmbH & Co. KG mit der Vision, logistische Kompetenz in den sozialen Bereich zu bringen."
+          "value": "Entwicklung eines Versorgungskonzepts für hilfebedürftige Seniorinnen und Senioren aus logistischer Perspektive. \nZiel war es, Unterstützung schnell und passgenau über ehrenamtliche Helfer zu organisieren. \nGründung des Vereins deinNachbar e.V. als Praxislabor für neue Versorgungs- und Engagementkonzepte."
         },
         {
           "id": "item-2-year",
@@ -110,31 +110,31 @@
           "id": "item-2-title",
           "level": "basic",
           "type": "text",
-          "value": "deinNachbar e.V."
+          "value": "Digitalisierung Nachbarschaftshilfe"
         },
         {
           "id": "item-2-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Gründung des Vereins deinNachbar e.V. in München als Praxislabor für neue Versorgungskonzepte."
+          "value": "Digitalisierung der Nachbarschaftshilfe und Einführung mobiler Helfer-Apps zur Koordination von Einsätzen."
         },
         {
           "id": "item-3-year",
           "level": "basic",
           "type": "text",
-          "value": "2020"
+          "value": "2023"
         },
         {
           "id": "item-3-title",
           "level": "basic",
           "type": "text",
-          "value": "Digitalisierung"
+          "value": "Zugang für Hilfesuchende & Katastrophenschutzmodul"
         },
         {
           "id": "item-3-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Entwicklung der digitalen Plattform mit App-basierter Verfügbarkeitsabfrage nach dem UBER-Prinzip."
+          "value": "Entwicklung eines Webzugangs für Hilfesuchende, sodass Unterstützungsbedarfe direkt im System hinterlegt werden können.\nIntegration eines Katastrophenschutzmoduls, um hunderte Engagierte und deren Gerätschaften an verschiedenen Einsatzorten zu koordinieren.\n"
         },
         {
           "id": "item-4-year",
@@ -146,31 +146,31 @@
           "id": "item-4-title",
           "level": "basic",
           "type": "text",
-          "value": "DATI-Förderung"
+          "value": "Öffnung der Plattform für weitere Akteure"
         },
         {
           "id": "item-4-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Start des Pilotprojekts mit der Stadt Dietzenbach, gefördert durch die Deutsche Agentur für Transfer und Innovation."
+          "value": "Integration von Gesundheits- und Sozialdienstleistern in die Plattform.\nÜbertragung des Prinzips schneller, bedarfsgerechter Vermittlung auf den sozialen Bereich und Entwicklung mobiler Apps für Hilfesuchende.\nEinführung einer Kümmererfunktion, über die Beratungs- und Koordinationsstellen Unterstützungsbedarfe für Dritte einstellen und deren Erfüllung verfolgen können.\n"
         },
         {
           "id": "item-5-year",
           "level": "basic",
           "type": "text",
-          "value": "2025"
+          "value": "2026"
         },
         {
           "id": "item-5-title",
           "level": "basic",
           "type": "text",
-          "value": "Expansion"
+          "value": "Sektorenübergreifende und integrative Versorgungsstrukturen digital steuern"
         },
         {
           "id": "item-5-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Ausbau zum integrativen Koordinationsportal mit Kommunikationsmodul und Anbindung weiterer Städte."
+          "value": "Integration von Chat- und Videofunktionen, um eine Kommunikation im geschützten Raum zu ermöglichen, ohne persönliche Kontaktdaten preiszugeben.\nAufbau sektorenübergreifender Versorgungsstrukturen, in denen Unterstützungs- und Versorgungsbedarfe digital erfasst, vermittelt und koordiniert werden.\nÜbertragung des Versorgungsmodells in andere Städte und Landkreise"
         }
       ],
       "id": "b3",
