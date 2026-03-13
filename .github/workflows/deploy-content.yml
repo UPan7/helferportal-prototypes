@@ -31,10 +31,10 @@ jobs:
         run: |
           cd tools
           if [ -n "${{ inputs.page_id }}" ]; then
-            echo "Deploying page: ${{ inputs.page_id }}"
+            echo "::notice::Deploying page: ${{ inputs.page_id }}"
             node deploy.js --page "${{ inputs.page_id }}"
           else
-            echo "Deploying all pages"
+            echo "::notice::Deploying all pages"
             node deploy.js
           fi
 
@@ -44,8 +44,10 @@ jobs:
           git config user.email "cms@helferportal.kamanin.at"
           git add -A
           if git diff --staged --quiet; then
-            echo "No content changes to deploy"
+            echo "::notice::No content changes to deploy"
           else
+            echo "::notice::Content changed — committing and pushing"
+            git diff --staged --name-only
             git commit -m "Content update: ${{ inputs.page_id || 'all pages' }}"
             git push
           fi

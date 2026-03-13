@@ -3203,7 +3203,7 @@ async function publishToLive() {
         const result = await res.json();
 
         if (res.ok && result.ok) {
-            showToast('success', 'Veröffentlichung gestartet \u2014 in ca. 1\u20132 Min auf der Website sichtbar!');
+            showToast('success', 'Veröffentlichung gestartet! Änderungen erscheinen in ca. 1\u20132 Min auf der Website, sofern sich der Inhalt geändert hat.');
         } else {
             throw new Error(result.error || 'Unbekannter Fehler (' + res.status + ')');
         }
