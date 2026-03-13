@@ -9,7 +9,7 @@
     "editedBy": "reg@kamanin.at",
     "extracted": "2026-03-12T18:52:02.332Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-13T09:46:26.643Z",
+    "lastEdited": "2026-03-13T09:55:46.741Z",
     "schema_version": "2.0"
   },
   "blocks": [
@@ -36,13 +36,13 @@
           "id": "hero-title",
           "type": "text",
           "level": "basic",
-          "value": "München!"
+          "value": "München"
         },
         {
           "id": "hero-subtitle",
           "type": "textarea",
           "level": "basic",
-          "value": "München ist der Geburtsort des Helferportals. Hier wurden schon 2017 die ersten Unterstützungsangebote vermittelt und die ersten Helferkreise digital vernetzt. Seitdem bringen wir Menschen zusammen, die Hilfe im Alltag benötigen und Menschen, die sich engagieren möchten."
+          "value": "München ist der Geburtsort des Helferportals. Hier wurden schon 2017 die ersten Unterstützungsangebote vermittelt und die ersten Helferkreise digital vernetzt. Seitdem bringen wir Menschen zusammen, die Hilfe im Alltag benötigen und Menschen, die sich engagieren möchten.\nMünchen ist der Geburtsort des Helferportals. Hier wurden schon 2017 die ersten Unterstützungsangebote vermittelt und die ersten Helferkreise digital vernetzt. Seitdem bringen wir Menschen zusammen, die Hilfe im Alltag benötigen und Menschen, die sich engagieren möchten."
         },
         {
           "id": "hero-tagline",
