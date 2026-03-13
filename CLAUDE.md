@@ -35,11 +35,12 @@ helferportal-prototypes/          ← Git repo root = document root
 │   ├── ueber-uns.json
 │   ├── kontakt.json
 │   └── muenchen.json
+├── content/backups/               ← local JSON backups before overwrite (gitignored)
 ├── tools/
 │   ├── admin.html                ← CMS editor (browser-based)
 │   ├── extract.js                ← HTML → JSON extractor
 │   ├── build.js                  ← JSON → HTML builder
-│   ├── deploy.js                 ← Supabase → JSON → HTML pipeline
+│   ├── deploy.js                 ← Supabase → JSON → HTML pipeline (with backup)
 │   ├── sync-to-supabase.js       ← JSON → Supabase (reverse sync, conflict-safe)
 │   ├── validate.js               ← HTML/JSON integrity checker
 │   ├── test-roundtrip.js         ← round-trip test (extract→build→validate)
@@ -50,6 +51,14 @@ helferportal-prototypes/          ← Git repo root = document root
 │   │   └── field-ops.js          ← shared field application logic
 │   ├── package.json              ← Node deps (cheerio only)
 │   └── .env                      ← Supabase credentials (gitignored)
+├── supabase/
+│   ├── migrations/               ← SQL migration files
+│   │   └── 002_page_versions.sql ← page_versions table + auto-snapshot trigger
+│   └── functions/
+│       └── publish/index.ts      ← Edge Function: CMS publish → GitHub Actions
+├── .github/
+│   └── workflows/
+│       └── deploy-content.yml    ← GitHub Actions: Supabase → JSON → HTML → push
 ├── docs/
 │   ├── PRODUCT-VISION.md         ← business context, audiences
 │   ├── ARCHITECTURE.md           ← system overview, diagrams, tools
@@ -149,7 +158,7 @@ All subpages follow: Mini Hero → Content blocks → FAQ → shared header/foot
 ### Content tools (run from `tools/` directory)
 
 ```bash
-node deploy.js                           # Pull Supabase → JSON → HTML (all pages)
+node deploy.js                           # Pull Supabase → JSON → HTML (all pages, with backup)
 node deploy.js --page fuer-kommunen      # Pull one page
 node deploy.js --local                   # Build from local JSON (no Supabase)
 
@@ -158,6 +167,7 @@ node build.js ../content/page.json ../page.html      # JSON → HTML
 
 node sync-to-supabase.js --page fuer-kommunen        # Push JSON → Supabase (conflict check)
 node sync-to-supabase.js --page fuer-kommunen --force # Push without conflict check
+node sync-to-supabase.js --dry-run                    # Preview what would change (no writes)
 
 node validate.js startseite              # Check HTML/JSON consistency
 node test-roundtrip.js                   # Round-trip test all pages
@@ -178,6 +188,18 @@ cd tools && node deploy.js
 ### Structural changes (nav, footer, CSS)
 
 Edit HTML → `git push`. No Supabase sync needed.
+
+### Publishing from CMS
+
+CMS → Save → "Veröffentlichen" → Edge Function → GitHub Actions → `deploy.js` → git push → GitHub Pages.
+The PAT stays server-side in the Edge Function. Content appears on the live site in ~1–2 min.
+
+### Content safety
+
+Three layers protect against content loss:
+1. **Supabase `page_versions`** — auto-snapshot trigger saves OLD content on every UPDATE
+2. **Local backups** — `deploy.js` copies existing JSON to `content/backups/` before overwriting (10 per page, auto-cleanup)
+3. **Git history** — all JSON changes are committed
 
 For detailed workflows see [docs/CONTENT-PIPELINE.md](docs/CONTENT-PIPELINE.md).
 

@@ -245,6 +245,40 @@ CREATE TABLE pages (
 - **Trigger:** `updated_at` auto-updates on each write
 - **Content column:** Stores the full `blocks[]` + `fields[]` structure as JSONB
 
+### `page_versions` table
+
+```sql
+CREATE TABLE page_versions (
+  id          BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  page_id     TEXT NOT NULL REFERENCES pages(id),
+  content     JSONB NOT NULL,         -- snapshot of OLD content before update
+  updated_by  TEXT,                   -- who made the change that was overwritten
+  created_at  TIMESTAMPTZ DEFAULT now()
+);
+```
+
+- **Trigger:** `BEFORE UPDATE` on `pages` → automatically inserts the OLD row's content into `page_versions`
+- **Purpose:** Automatic content version history — every CMS Save or deploy.js push creates a snapshot
+- **Index:** `(page_id, created_at DESC)` for fast per-page version lookup
+- **Cleanup:** No auto-purge; manual cleanup if needed (recommended: keep last 50 per page)
+
+```sql
+-- Auto-snapshot trigger
+CREATE OR REPLACE FUNCTION snapshot_page_version()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO page_versions (page_id, content, updated_by)
+  VALUES (OLD.id, OLD.content, OLD.updated_by);
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_page_version
+  BEFORE UPDATE ON pages
+  FOR EACH ROW
+  EXECUTE FUNCTION snapshot_page_version();
+```
+
 ### `feedback` table
 
 ```sql

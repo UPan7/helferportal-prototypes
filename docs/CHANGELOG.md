@@ -4,10 +4,35 @@
 
 ---
 
-## 2026-03-13 — Content Updates
+## 2026-03-13 — Content Safety & Publish Restoration
 
-- Content update for München page
-- Restored Publish button in CMS, fixed partner logo centering
+### Content backup system (3-layer protection)
+- **Supabase `page_versions`**: auto-snapshot trigger saves OLD content on every `pages` UPDATE (`supabase/migrations/002_page_versions.sql`)
+- **Local file backups**: `deploy.js` copies existing JSON to `content/backups/` before overwriting (10 per page, auto-cleanup)
+- **Git history**: all JSON changes committed as before
+
+### JSON normalization
+- Added recursive `sortKeys()` to `deploy.js`, `extract.js`, and `sync-to-supabase.js` for stable JSON key ordering
+- Eliminates noisy diffs caused by Supabase returning keys in different order
+
+### CMS Publish restored
+- Re-enabled "Veröffentlichen" button in admin.html (calls Supabase Edge Function → GitHub Actions)
+- Restored `publishToLive()` function (Edge Function proxy pattern — PAT stays server-side)
+- Re-enabled `workflow_dispatch` trigger in `.github/workflows/deploy-content.yml`
+- Added workflow log annotations (`::notice::`) for better visibility
+
+### sync-to-supabase.js improvements
+- Added `--dry-run` flag: preview what would change without writing
+- Improved `--force` UX: shows explicit WARNING with remote editor's name before overwriting
+
+### Content updates
+- Applied client feedback: München + Für Kommunen content changes
+- Fixed partner logo centering on Über uns page (`.partner-logo` margin fix)
+- Synced all 7 JSON files from Supabase with sorted keys
+
+### Documentation restructuring
+- Split monolithic docs into modular files: PRODUCT-VISION, ARCHITECTURE, SPEC, DATA-MODEL, CONTENT-PIPELINE, CONSTRAINTS, DECISIONS, EXECUTION
+- Updated CLAUDE.md project structure tree with new directories
 
 ## 2026-03-12 — Client Feedback Round 2
 

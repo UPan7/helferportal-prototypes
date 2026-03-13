@@ -72,11 +72,28 @@ A **static-HTML CMS pipeline** for [helferportal.kamanin.at](https://www.helferp
                      │ JSON→Supabase    │──────────────────►  Supabase
                      │ (conflict-safe)  │                     (pages table)
                      └──────────────────┘
+
+  CMS Publish Flow:
+  ┌──────────────┐    ┌────────────────┐    ┌──────────────────┐    ┌─────────────┐
+  │ admin.html   │───►│ Edge Function  │───►│ GitHub Actions   │───►│ GitHub Pages│
+  │ Veröffentl.  │    │ /publish       │    │ deploy-content   │    │ (auto-serve)│
+  └──────────────┘    │ (PAT server-   │    │ → deploy.js      │    └─────────────┘
+                      │  side only)    │    │ → git push       │
+                      └────────────────┘    └──────────────────┘
+
+  Content Safety:
+  ┌──────────────┐    ┌────────────────┐    ┌──────────────────┐
+  │ Supabase     │    │ Local backups  │    │ Git history      │
+  │ page_versions│    │ content/       │    │ (committed JSON) │
+  │ (auto-       │    │ backups/       │    │                  │
+  │  snapshot)   │    │ (10 per page)  │    │                  │
+  └──────────────┘    └────────────────┘    └──────────────────┘
 ```
 
 ### Source of truth principles
 
 - **Supabase** = content source of truth (text, images, field values)
+- **Supabase `page_versions`** = content version history (auto-snapshot on every UPDATE)
 - **HTML pages** = structural source of truth (DOM, annotations, layout)
 - **JSON files** = local content cache (synced with Supabase)
 - **Block registry** = schema source of truth (valid block types and field patterns)
@@ -161,6 +178,10 @@ node tools/deploy.js --local            # Build from local JSON only
 
 Uses `lib/config.js` for PAGE_MAP, .env loading, and Supabase config. Fetches via REST API with service_role key.
 
+**Backup:** Before overwriting local JSON, copies existing file to `content/backups/{pageId}_{timestamp}.json` (10 per page, auto-cleanup). Directory is gitignored.
+
+**JSON normalization:** Uses `sortKeys()` for stable key ordering in all JSON output.
+
 ### Reverse Sync (`tools/sync-to-supabase.js`)
 
 **Direction:** Local JSON → Supabase (conflict-safe)
@@ -170,7 +191,7 @@ node tools/sync-to-supabase.js --page fuer-kommunen        # With conflict check
 node tools/sync-to-supabase.js --page fuer-kommunen --force # Skip check
 ```
 
-Conflict detection: compares local `_meta.lastEdited` with Supabase. Skips if remote is newer (unless `--force`).
+Conflict detection: compares local `_meta.lastEdited` with Supabase. Skips if remote is newer (unless `--force`). Supports `--dry-run` to preview changes without writing.
 
 ### Validator (`tools/validate.js`)
 

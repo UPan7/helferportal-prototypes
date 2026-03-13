@@ -76,6 +76,7 @@ Offline-Modus → Auto-discovers pages from `content/manifest.json` → Load JSO
 | Image upload | Supabase Storage → thumbnail preview |
 | Draft autosave | localStorage |
 | Feedback form | Submit page-specific feedback to `feedback` table |
+| Publish | Trigger deploy to GitHub Pages via Edge Function → GitHub Actions |
 
 ---
 
@@ -90,6 +91,10 @@ node deploy.js                           # Pull all pages + build HTML
 node deploy.js --page fuer-kommunen      # Pull + build one page
 node deploy.js --local                   # Build from local JSON only (no Supabase)
 ```
+
+**Backup behavior:** Before overwriting any local JSON file, `deploy.js` copies it to `content/backups/{pageId}_{timestamp}.json`. Auto-cleanup keeps the 10 most recent backups per page. The `content/backups/` directory is gitignored.
+
+**JSON normalization:** All JSON output uses recursive key sorting (`sortKeys()`) for stable output — prevents noisy diffs when key order varies between Supabase and local tools.
 
 ### extract.js — HTML → JSON
 
@@ -111,7 +116,12 @@ node build.js ../content/muenchen.json ../muenchen.html
 node sync-to-supabase.js                                    # All pages (conflict check)
 node sync-to-supabase.js --page fuer-kommunen               # One page
 node sync-to-supabase.js --page fuer-kommunen --force       # Skip conflict check
+node sync-to-supabase.js --dry-run                           # Preview changes (no writes)
 ```
+
+**Conflict detection:** Compares local `_meta.lastEdited` with Supabase. If remote is newer, shows who edited and when, then skips (unless `--force`). With `--force`, prints a WARNING before overwriting.
+
+**Dry run:** `--dry-run` shows which pages would be synced/skipped without making any changes.
 
 ### validate.js — Integrity check
 
@@ -163,6 +173,18 @@ cd tools && node deploy.js
 3. `node extract.js ../page.html ../content/page.json` — regenerate JSON
 4. `node sync-to-supabase.js --page {id}` — push to Supabase (checks for conflicts)
 5. `git push` — deploy to GitHub Pages
+
+### Publishing from CMS
+
+The CMS has a "Veröffentlichen" button that triggers deployment without manual git operations:
+
+1. Editor clicks "Veröffentlichen" in admin.html
+2. CMS calls Supabase Edge Function (`/functions/v1/publish`)
+3. Edge Function triggers GitHub Actions `deploy-content.yml` via `workflow_dispatch`
+4. GitHub Actions runs `deploy.js` → commits changes → GitHub Pages auto-deploys
+5. Content appears on live site in ~1–2 minutes
+
+**Architecture:** The GitHub PAT stays server-side in the Edge Function — never exposed to the browser.
 
 ### Structural HTML changes (nav, footer, CSS)
 
