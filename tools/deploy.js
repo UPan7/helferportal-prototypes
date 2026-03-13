@@ -16,10 +16,45 @@
 
 const fs = require('fs');
 const path = require('path');
-const { loadEnv, getPageMap, getSupabaseConfig } = require('./lib/config');
+const { loadEnv, getPageMap, getSupabaseConfig, CONTENT_DIR } = require('./lib/config');
 
 loadEnv();
 const PAGE_MAP = getPageMap();
+
+const BACKUP_DIR = path.join(CONTENT_DIR, 'backups');
+const MAX_BACKUPS_PER_PAGE = 10;
+
+// Recursively sort object keys for stable JSON output
+function sortKeys(obj) {
+  if (Array.isArray(obj)) return obj.map(sortKeys);
+  if (obj && typeof obj === 'object') {
+    return Object.keys(obj).sort().reduce((acc, key) => {
+      acc[key] = sortKeys(obj[key]);
+      return acc;
+    }, {});
+  }
+  return obj;
+}
+
+// Backup existing JSON before overwriting
+function backupJson(jsonPath, pageId) {
+  if (!fs.existsSync(jsonPath)) return;
+  if (!fs.existsSync(BACKUP_DIR)) fs.mkdirSync(BACKUP_DIR, { recursive: true });
+
+  const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const backupFile = path.join(BACKUP_DIR, `${pageId}_${ts}.json`);
+  fs.copyFileSync(jsonPath, backupFile);
+  console.log(`    ↳ Backup: backups/${pageId}_${ts}.json`);
+
+  // Auto-cleanup: keep only the latest MAX_BACKUPS_PER_PAGE per page
+  const allBackups = fs.readdirSync(BACKUP_DIR)
+    .filter(f => f.startsWith(pageId + '_') && f.endsWith('.json'))
+    .sort();
+  while (allBackups.length > MAX_BACKUPS_PER_PAGE) {
+    const old = allBackups.shift();
+    fs.unlinkSync(path.join(BACKUP_DIR, old));
+  }
+}
 
 // --- CLI args ---
 const args = process.argv.slice(2);
@@ -79,10 +114,11 @@ async function main() {
 
         const content = rows[0].content;
 
-        // Write JSON file
+        // Backup existing JSON, then write new version with sorted keys
         const jsonDir = path.dirname(mapping.json);
         if (!fs.existsSync(jsonDir)) fs.mkdirSync(jsonDir, { recursive: true });
-        fs.writeFileSync(mapping.json, JSON.stringify(content, null, 2), 'utf-8');
+        backupJson(mapping.json, pageId);
+        fs.writeFileSync(mapping.json, JSON.stringify(sortKeys(content), null, 2), 'utf-8');
         console.log(`    ✓ Saved ${path.basename(mapping.json)}`);
 
       } catch (err) {

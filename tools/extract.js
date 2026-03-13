@@ -13,6 +13,18 @@ const path = require('path');
 const cheerio = require('cheerio');
 const { resolveBlockDef } = require('./lib/registry');
 
+// Recursively sort object keys for stable JSON output
+function sortKeys(obj) {
+  if (Array.isArray(obj)) return obj.map(sortKeys);
+  if (obj && typeof obj === 'object') {
+    return Object.keys(obj).sort().reduce((acc, key) => {
+      acc[key] = sortKeys(obj[key]);
+      return acc;
+    }, {});
+  }
+  return obj;
+}
+
 // --- CLI args ---
 const [,, inputPath, outputPath] = process.argv;
 
@@ -154,7 +166,7 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
-fs.writeFileSync(jsonPath, JSON.stringify(output, null, 2), 'utf-8');
+fs.writeFileSync(jsonPath, JSON.stringify(sortKeys(output), null, 2), 'utf-8');
 
 console.log(`✓ Extracted ${blocks.length} blocks, ${blocks.reduce((s, b) => s + b.fields.length, 0)} fields`);
 console.log(`  → ${jsonPath}`);

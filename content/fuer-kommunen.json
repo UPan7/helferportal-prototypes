@@ -1,372 +1,372 @@
 {
   "_meta": {
-    "generator": "helferportal-content-tools/extract.js",
-    "source": "fuer-kommunen.html",
     "extracted": "2026-03-12T18:52:03.384Z",
+    "generator": "helferportal-content-tools/extract.js",
+    "lastEdited": "2026-03-12T18:52:25.351Z",
     "schema_version": "2.0",
-    "lastEdited": "2026-03-12T18:52:25.351Z"
+    "source": "fuer-kommunen.html"
   },
+  "blocks": [
+    {
+      "fields": [
+        {
+          "id": "hero-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Versorgungsnetzwerke digital steuern"
+        },
+        {
+          "id": "hero-subtitle",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Kommunen, Landkreise und soziale Organisationen nutzen das Helferportal als digitale Infrastruktur, um Unterstützungs- und Versorgungsangebote zu koordinieren und bürgerschaftliches Engagement wirksam einzubinden."
+        },
+        {
+          "href": "/kontakt.html",
+          "id": "hero-btn-1",
+          "level": "basic",
+          "type": "button",
+          "value": "Kooperation anfragen"
+        },
+        {
+          "href": "/kontakt.html",
+          "id": "hero-btn-2",
+          "level": "basic",
+          "type": "button",
+          "value": "Demo vereinbaren"
+        },
+        {
+          "id": "hero-stats",
+          "level": "advanced",
+          "type": "textarea",
+          "value": "2000+\nNutzer im Netzwerk\n5\nStädte & Regionen\nSeit 2015\nPraxiserprobt\nDSGVO\nDatenschutzkonform"
+        }
+      ],
+      "id": "b1",
+      "type": "hero"
+    },
+    {
+      "fields": [
+        {
+          "id": "cards-overline",
+          "level": "basic",
+          "type": "text",
+          "value": "Warum das Helferportal?"
+        },
+        {
+          "id": "cards-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Versorgungsstrukturen digital vernetzen und steuern"
+        },
+        {
+          "id": "challenges-intro",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Die öffentliche Hand steht vor der Herausforderung, steigenden Unterstützungs- und Pflegebedarf zu organisieren, während Fachkräfte fehlen und bürgerschaftliches Engagement in diesem Bereich noch nicht ausreichend erschlossen ist. Gleichzeitig arbeiten viele Angebote nebeneinander statt miteinander und eine gemeinsame digitale Infrastruktur zur Vernetzung der Akteure fehlt häufig."
+        },
+        {
+          "id": "card-1-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Steigender Bedarf"
+        },
+        {
+          "id": "card-1-text",
+          "level": "basic",
+          "type": "text",
+          "value": "Die Zahl der Menschen mit Unterstützungs- und Pflegebedarf wächst stetig, während Fachkräfte fehlen. Kommunen, Landkreise und soziale Organisationen stehen vor der Herausforderung, Versorgung trotz begrenzter Ressourcen sicherzustellen."
+        },
+        {
+          "id": "card-2-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Fehlende Vernetzung"
+        },
+        {
+          "id": "card-2-text",
+          "level": "basic",
+          "type": "text",
+          "value": "Pflegedienste, soziale Organisationen, Beratungsstellen und Ehrenamt arbeiten häufig in getrennten Strukturen. Eine gemeinsame Plattform für Zusammenarbeit fehlt."
+        },
+        {
+          "id": "card-3-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Hoher Koordinationsaufwand"
+        },
+        {
+          "id": "card-3-text",
+          "level": "basic",
+          "type": "text",
+          "value": "Pflegestützpunkte, Beratungsstellen und Quartiersmanagement verbringen viel Zeit damit, passende Unterstützung zu finden. Telefonate und Einzelabsprachen ersetzen häufig digitale Prozesse."
+        },
+        {
+          "id": "card-4-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Digitale Infrastruktur für soziale Versorgung, Engagement und Begegnung"
+        },
+        {
+          "id": "card-4-text",
+          "level": "basic",
+          "type": "text",
+          "value": "Das Helferportal schafft eine digitale Infrastruktur für die Vernetzung von Versorgung, Engagement und sozialen Dienstleistungen. Unterstützungs- und Versorgungsbedarfe können digital erfasst, koordiniert und effizient vermittelt werden. Gleichzeitig stärkt das Portal bürgerschaftliches Engagement und bindet es strukturiert in die Versorgung ein."
+        }
+      ],
+      "id": "b2",
+      "type": "problems-section"
+    },
+    {
+      "fields": [
+        {
+          "id": "tabs-overline",
+          "level": "basic",
+          "type": "text",
+          "value": "Ihre Zielgruppe"
+        },
+        {
+          "id": "tab-kommunen-name",
+          "level": "basic",
+          "type": "text",
+          "value": "Öffentliche Hand"
+        },
+        {
+          "id": "tab-organisationen-name",
+          "level": "basic",
+          "type": "text",
+          "value": "Organisationen & Nachbarschaftshilfen"
+        },
+        {
+          "id": "tab-kommunen-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Sektorenübergreifende Versorgungsstrukturen digital aufbauen und steuern"
+        },
+        {
+          "id": "tab-kommunen-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Die öffentliche Hand nutzt das Helferportal als digitale Infrastruktur, um alle an der Versorgung beteiligten Akteure zu vernetzen und Unterstützungs- sowie Versorgungsangebote zu koordinieren – von Ehrenamtlichen über Hilfsorganisationen bis zu sozialen und gesundheitlichen Dienstleistern."
+        },
+        {
+          "id": "tab-kommunen-cards",
+          "level": "advanced",
+          "type": "textarea",
+          "value": "Alle Akteure vernetzen | Pflegedienste, Beratungsstellen, Organisationen, Ehrenamt und Dienstleister arbeiten auf einer gemeinsamen Plattform zusammen.\nUnterstützungs- und Versorgungsbedarfe koordinieren | Bedarfe können digital erfasst, vermittelt und nachverfolgt werden, auch für Dritte, etwa durch Beratungsstellen.\nBürgerschaftliches Engagement stärken | Spontanhelfer, Nachbarschaftshilfen und Organisationen können strukturiert eingebunden und koordiniert werden.\nTransparenz über Versorgungslage | Bedarfe und verfügbare Angebote werden sichtbar.\nSozialplanung unterstützen | Aggregierte Daten ermöglichen eine fundierte Planung von Pflege- und Unterstützungsstrukturen.\nKatastrophenschutz stärken | Spontanhelfer mit Gerätschaften koordinieren, Reservepools verwalten und große Einsätze mit vielen Engagierten digital koordinieren."
+        },
+        {
+          "id": "tab-kommunen-vorteile",
+          "level": "advanced",
+          "type": "textarea",
+          "value": "Versorgung trotz Fachkräftemangel sichern | Durch die Einbindung von Ehrenamt, Nachbarschaftshilfen und Organisationen können Unterstützungsangebote erweitert werden, ohne zusätzliche Fachkräfte zu benötigen.\nKoordinationsaufwand reduzieren | Beratungsstellen und Fachkräfte können Unterstützungsbedarfe digital einstellen und passende Hilfe schneller finden. Aufwendige Telefonketten entfallen.\nBürgerschaftliches Engagement stärken | Das Helferportal schafft attraktive Rahmenbedingungen für Engagement und macht freiwillige Unterstützung sichtbar und koordinierbar.\nSozialplanung verbessern | Aggregierte Daten zu Unterstützungsbedarfen und Angeboten liefern eine fundierte Grundlage für kommunale Sozial- und Pflegeplanung."
+        },
+        {
+          "href": "/kontakt.html",
+          "id": "tab-kommunen-btn-1",
+          "level": "basic",
+          "type": "button",
+          "value": "Kooperation anfragen"
+        },
+        {
+          "href": "",
+          "id": "tab-kommunen-btn-2",
+          "level": "basic",
+          "type": "button",
+          "value": "Kontakt aufnehmen"
+        },
+        {
+          "id": "tab-organisationen-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Engagement und Unterstützung digital koordinieren"
+        },
+        {
+          "id": "tab-organisationen-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Das Helferportal unterstützt Organisationen dabei, Engagement, Einsätze und Unterstützungsangebote digital zu koordinieren – übersichtlich, effizient und entlastend für Koordinatorinnen und Koordinatoren.\nOrganisationen steuern ihre Engagierten dabei über einen eigenen geschützten Bereich.\nSie behalten jederzeit die Hoheit über ihre Engagierten und ihre Einsätze."
+        },
+        {
+          "id": "tab-organisationen-cards",
+          "level": "advanced",
+          "type": "textarea",
+          "value": "Digitale Koordination | Engagierte verwalten, Unterstützungsbedarfe einstellen und passende Einsätze planen. Verfügbarkeiten abfragen und Zeiten digital erfassen.\nPassgenaue Vermittlung | Automatisches Matching nach Tätigkeiten, zeitlicher Verfügbarkeit, Einsatzgebiet, Qualifikationen und persönlichen Präferenzen.\nEntlastung für Koordinationskräfte | Weniger Verwaltungsaufwand durch digitale Prozesse – mehr Zeit für persönliche Begleitung und fachliche Unterstützung.\nAdministration und Abrechnung | Digitale Zeiterfassung, automatische Abrechnung sowie Schnittstellen zu Buchhaltung und Bankprogrammen.\nNeue Engagierte gewinnen | Stärkung des bürgerschaftlichen Engagements durch passgenaue Einsatzmöglichkeiten."
+        },
+        {
+          "id": "tab-organisationen-vorteile",
+          "level": "advanced",
+          "type": "textarea",
+          "value": "Engagierte einfacher koordinieren | Verfügbarkeiten, Einsatzorte und Aufgaben lassen sich digital verwalten und flexibel planen.\nVerwaltungsaufwand reduzieren | Dokumentation, Zeiterfassung und Abrechnung werden digital unterstützt und vereinfachen administrative Prozesse.\nNeue Engagierte gewinnen | Menschen aus der Region können sich direkt über das Portal engagieren und passende Einsatzmöglichkeiten finden.\nTransparenz über Einsätze schaffen | Alle Einsätze und Vereinbarungen bleiben nachvollziehbar dokumentiert und auswertbar."
+        },
+        {
+          "href": "/kontakt.html",
+          "id": "tab-organisationen-btn-1",
+          "level": "basic",
+          "type": "button",
+          "value": "Zusammenarbeit anfragen"
+        },
+        {
+          "href": "",
+          "id": "tab-organisationen-btn-2",
+          "level": "basic",
+          "type": "button",
+          "value": "Kontakt aufnehmen"
+        }
+      ],
+      "id": "b3",
+      "type": "tabs-section"
+    },
+    {
+      "fields": [
+        {
+          "id": "cta-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Zusammenarbeit starten"
+        },
+        {
+          "id": "cta-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Erfahren Sie in einem persönlichen Gespräch, wie das Helferportal Ihre Organisation bei der Koordination von Engagement und Unterstützung unterstützen kann."
+        },
+        {
+          "href": "/kontakt.html",
+          "id": "cta-btn-1",
+          "level": "basic",
+          "type": "button",
+          "value": "Demo vereinbaren"
+        },
+        {
+          "href": "#",
+          "id": "cta-btn-2",
+          "level": "basic",
+          "type": "button",
+          "value": "PDF-Broschüre herunterladen"
+        }
+      ],
+      "id": "b4",
+      "type": "cta-download-section"
+    },
+    {
+      "fields": [
+        {
+          "id": "faq-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Häufige Fragen"
+        },
+        {
+          "id": "faq-subtitle",
+          "level": "basic",
+          "type": "text",
+          "value": "Für die öffentliche Hand und soziale Akteure"
+        },
+        {
+          "id": "faq-1-question",
+          "level": "basic",
+          "type": "text",
+          "value": "Wer kann das Helferportal nutzen?"
+        },
+        {
+          "id": "faq-1-answer",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Das Helferportal richtet sich an Kommunen, Landkreise, soziale Organisationen, Nachbarschaftshilfen und Initiativen. Auch Beratungsstellen wie Pflegestützpunkte, Seniorenberatungen oder Quartiersmanagement können das Portal nutzen, um Unterstützungsbedarfe zu erfassen und zu koordinieren."
+        },
+        {
+          "id": "faq-2-question",
+          "level": "basic",
+          "type": "text",
+          "value": "Behalten Organisationen die Kontrolle über ihre Engagierten?"
+        },
+        {
+          "id": "faq-2-answer",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Ja. Organisationen arbeiten im Helferportal in einem eigenen geschützten Bereich. Sie verwalten ihre Engagierten selbst, planen Einsätze und entscheiden, welche Angebote sichtbar sind."
+        },
+        {
+          "id": "faq-3-question",
+          "level": "basic",
+          "type": "text",
+          "value": "Können auch Beratungsstellen Bedarfe für andere Personen einstellen?"
+        },
+        {
+          "id": "faq-3-answer",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Ja. Fachstellen wie Pflegestützpunkte, Seniorenberatung oder Quartiersmanagement können Unterstützungs- oder Versorgungsbedarfe für Dritte einstellen und nachverfolgen."
+        },
+        {
+          "id": "faq-4-question",
+          "level": "basic",
+          "type": "text",
+          "value": "Wie werden Unterstützungsbedarfe vermittelt?"
+        },
+        {
+          "id": "faq-4-answer",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Bedarfe werden digital erfasst und passende Engagierte oder Anbieter können anhand von Kriterien wie Tätigkeit, Verfügbarkeit, Einsatzgebiet oder Qualifikation vermittelt werden."
+        },
+        {
+          "id": "faq-5-question",
+          "level": "basic",
+          "type": "text",
+          "value": "Wie starten wir mit dem Helferportal?"
+        },
+        {
+          "id": "faq-5-answer",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Wir begleiten Sie beim Einstieg und besprechen gemeinsam, wie das Portal in Ihrer Region oder Organisation eingesetzt werden kann. In einem unverbindlichen Gespräch stellen wir Ihnen die Funktionen und Einsatzmöglichkeiten vor."
+        },
+        {
+          "id": "faq-6-question",
+          "level": "basic",
+          "type": "text",
+          "value": "Ist das Helferportal datenschutzkonform?"
+        },
+        {
+          "id": "faq-6-answer",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Ja. Das Helferportal erfüllt die Anforderungen der DSGVO. Persönliche Daten werden geschützt verarbeitet und der Erstkontakt zwischen Nutzern erfolgt zunächst im geschützten Raum, ohne Kontaktdaten direkt preiszugeben."
+        },
+        {
+          "id": "faq-7-question",
+          "level": "basic",
+          "type": "text",
+          "value": "Kann das Helferportal in bestehende Strukturen integriert werden?"
+        },
+        {
+          "id": "faq-7-answer",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Ja. Das Helferportal schafft keine Doppelstrukturen, sondern vernetzt bestehende Akteure und Angebote in einer gemeinsamen digitalen Infrastruktur. Unterstützungs- und Versorgungsbedarfe können so transparenter und ressourcenschonend koordiniert werden."
+        },
+        {
+          "id": "faq-8-question",
+          "level": "basic",
+          "type": "text",
+          "value": "Kann das Helferportal auch regional oder landkreisweit eingesetzt werden?"
+        },
+        {
+          "id": "faq-8-answer",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Ja. Das Helferportal kann sowohl quartiersbezogen, regional als auch über mehrere Kommunen hinweg eingesetzt werden. Die Plattform lässt sich nahtlos erweitern, ohne dass sich Engagierte oder Hilfesuchende erneut registrieren müssen. So entstehen vernetzte Versorgungsstrukturen über Verwaltungsgrenzen hinweg."
+        }
+      ],
+      "id": "b5",
+      "type": "faq-section"
+    }
+  ],
   "page": {
     "id": "fuer-kommunen",
     "title": "Für die öffentliche Hand und soziale Akteure – Helferportal",
     "url": "/fuer-kommunen.html"
-  },
-  "blocks": [
-    {
-      "id": "b1",
-      "type": "hero",
-      "fields": [
-        {
-          "id": "hero-title",
-          "type": "text",
-          "value": "Versorgungsnetzwerke digital steuern",
-          "level": "basic"
-        },
-        {
-          "id": "hero-subtitle",
-          "type": "textarea",
-          "value": "Kommunen, Landkreise und soziale Organisationen nutzen das Helferportal als digitale Infrastruktur, um Unterstützungs- und Versorgungsangebote zu koordinieren und bürgerschaftliches Engagement wirksam einzubinden.",
-          "level": "basic"
-        },
-        {
-          "id": "hero-btn-1",
-          "type": "button",
-          "href": "/kontakt.html",
-          "value": "Kooperation anfragen",
-          "level": "basic"
-        },
-        {
-          "id": "hero-btn-2",
-          "type": "button",
-          "href": "/kontakt.html",
-          "value": "Demo vereinbaren",
-          "level": "basic"
-        },
-        {
-          "id": "hero-stats",
-          "type": "textarea",
-          "value": "2000+\nNutzer im Netzwerk\n5\nStädte & Regionen\nSeit 2015\nPraxiserprobt\nDSGVO\nDatenschutzkonform",
-          "level": "advanced"
-        }
-      ]
-    },
-    {
-      "id": "b2",
-      "type": "problems-section",
-      "fields": [
-        {
-          "id": "cards-overline",
-          "type": "text",
-          "value": "Warum das Helferportal?",
-          "level": "basic"
-        },
-        {
-          "id": "cards-title",
-          "type": "text",
-          "value": "Versorgungsstrukturen digital vernetzen und steuern",
-          "level": "basic"
-        },
-        {
-          "id": "challenges-intro",
-          "type": "textarea",
-          "value": "Die öffentliche Hand steht vor der Herausforderung, steigenden Unterstützungs- und Pflegebedarf zu organisieren, während Fachkräfte fehlen und bürgerschaftliches Engagement in diesem Bereich noch nicht ausreichend erschlossen ist. Gleichzeitig arbeiten viele Angebote nebeneinander statt miteinander und eine gemeinsame digitale Infrastruktur zur Vernetzung der Akteure fehlt häufig.",
-          "level": "basic"
-        },
-        {
-          "id": "card-1-title",
-          "type": "text",
-          "value": "Steigender Bedarf",
-          "level": "basic"
-        },
-        {
-          "id": "card-1-text",
-          "type": "text",
-          "value": "Die Zahl der Menschen mit Unterstützungs- und Pflegebedarf wächst stetig, während Fachkräfte fehlen. Kommunen, Landkreise und soziale Organisationen stehen vor der Herausforderung, Versorgung trotz begrenzter Ressourcen sicherzustellen.",
-          "level": "basic"
-        },
-        {
-          "id": "card-2-title",
-          "type": "text",
-          "value": "Fehlende Vernetzung",
-          "level": "basic"
-        },
-        {
-          "id": "card-2-text",
-          "type": "text",
-          "value": "Pflegedienste, soziale Organisationen, Beratungsstellen und Ehrenamt arbeiten häufig in getrennten Strukturen. Eine gemeinsame Plattform für Zusammenarbeit fehlt.",
-          "level": "basic"
-        },
-        {
-          "id": "card-3-title",
-          "type": "text",
-          "value": "Hoher Koordinationsaufwand",
-          "level": "basic"
-        },
-        {
-          "id": "card-3-text",
-          "type": "text",
-          "value": "Pflegestützpunkte, Beratungsstellen und Quartiersmanagement verbringen viel Zeit damit, passende Unterstützung zu finden. Telefonate und Einzelabsprachen ersetzen häufig digitale Prozesse.",
-          "level": "basic"
-        },
-        {
-          "id": "card-4-title",
-          "type": "text",
-          "value": "Digitale Infrastruktur für soziale Versorgung, Engagement und Begegnung",
-          "level": "basic"
-        },
-        {
-          "id": "card-4-text",
-          "type": "text",
-          "value": "Das Helferportal schafft eine digitale Infrastruktur für die Vernetzung von Versorgung, Engagement und sozialen Dienstleistungen. Unterstützungs- und Versorgungsbedarfe können digital erfasst, koordiniert und effizient vermittelt werden. Gleichzeitig stärkt das Portal bürgerschaftliches Engagement und bindet es strukturiert in die Versorgung ein.",
-          "level": "basic"
-        }
-      ]
-    },
-    {
-      "id": "b3",
-      "type": "tabs-section",
-      "fields": [
-        {
-          "id": "tabs-overline",
-          "type": "text",
-          "value": "Ihre Zielgruppe",
-          "level": "basic"
-        },
-        {
-          "id": "tab-kommunen-name",
-          "type": "text",
-          "value": "Öffentliche Hand",
-          "level": "basic"
-        },
-        {
-          "id": "tab-organisationen-name",
-          "type": "text",
-          "value": "Organisationen & Nachbarschaftshilfen",
-          "level": "basic"
-        },
-        {
-          "id": "tab-kommunen-title",
-          "type": "text",
-          "value": "Sektorenübergreifende Versorgungsstrukturen digital aufbauen und steuern",
-          "level": "basic"
-        },
-        {
-          "id": "tab-kommunen-text",
-          "type": "textarea",
-          "value": "Die öffentliche Hand nutzt das Helferportal als digitale Infrastruktur, um alle an der Versorgung beteiligten Akteure zu vernetzen und Unterstützungs- sowie Versorgungsangebote zu koordinieren – von Ehrenamtlichen über Hilfsorganisationen bis zu sozialen und gesundheitlichen Dienstleistern.",
-          "level": "basic"
-        },
-        {
-          "id": "tab-kommunen-cards",
-          "type": "textarea",
-          "value": "Alle Akteure vernetzen | Pflegedienste, Beratungsstellen, Organisationen, Ehrenamt und Dienstleister arbeiten auf einer gemeinsamen Plattform zusammen.\nUnterstützungs- und Versorgungsbedarfe koordinieren | Bedarfe können digital erfasst, vermittelt und nachverfolgt werden, auch für Dritte, etwa durch Beratungsstellen.\nBürgerschaftliches Engagement stärken | Spontanhelfer, Nachbarschaftshilfen und Organisationen können strukturiert eingebunden und koordiniert werden.\nTransparenz über Versorgungslage | Bedarfe und verfügbare Angebote werden sichtbar.\nSozialplanung unterstützen | Aggregierte Daten ermöglichen eine fundierte Planung von Pflege- und Unterstützungsstrukturen.\nKatastrophenschutz stärken | Spontanhelfer mit Gerätschaften koordinieren, Reservepools verwalten und große Einsätze mit vielen Engagierten digital koordinieren.",
-          "level": "advanced"
-        },
-        {
-          "id": "tab-kommunen-vorteile",
-          "type": "textarea",
-          "value": "Versorgung trotz Fachkräftemangel sichern | Durch die Einbindung von Ehrenamt, Nachbarschaftshilfen und Organisationen können Unterstützungsangebote erweitert werden, ohne zusätzliche Fachkräfte zu benötigen.\nKoordinationsaufwand reduzieren | Beratungsstellen und Fachkräfte können Unterstützungsbedarfe digital einstellen und passende Hilfe schneller finden. Aufwendige Telefonketten entfallen.\nBürgerschaftliches Engagement stärken | Das Helferportal schafft attraktive Rahmenbedingungen für Engagement und macht freiwillige Unterstützung sichtbar und koordinierbar.\nSozialplanung verbessern | Aggregierte Daten zu Unterstützungsbedarfen und Angeboten liefern eine fundierte Grundlage für kommunale Sozial- und Pflegeplanung.",
-          "level": "advanced"
-        },
-        {
-          "id": "tab-kommunen-btn-1",
-          "type": "button",
-          "href": "/kontakt.html",
-          "value": "Kooperation anfragen",
-          "level": "basic"
-        },
-        {
-          "id": "tab-kommunen-btn-2",
-          "type": "button",
-          "href": "",
-          "value": "Kontakt aufnehmen",
-          "level": "basic"
-        },
-        {
-          "id": "tab-organisationen-title",
-          "type": "text",
-          "value": "Engagement und Unterstützung digital koordinieren",
-          "level": "basic"
-        },
-        {
-          "id": "tab-organisationen-text",
-          "type": "textarea",
-          "value": "Das Helferportal unterstützt Organisationen dabei, Engagement, Einsätze und Unterstützungsangebote digital zu koordinieren – übersichtlich, effizient und entlastend für Koordinatorinnen und Koordinatoren.\nOrganisationen steuern ihre Engagierten dabei über einen eigenen geschützten Bereich.\nSie behalten jederzeit die Hoheit über ihre Engagierten und ihre Einsätze.",
-          "level": "basic"
-        },
-        {
-          "id": "tab-organisationen-cards",
-          "type": "textarea",
-          "value": "Digitale Koordination | Engagierte verwalten, Unterstützungsbedarfe einstellen und passende Einsätze planen. Verfügbarkeiten abfragen und Zeiten digital erfassen.\nPassgenaue Vermittlung | Automatisches Matching nach Tätigkeiten, zeitlicher Verfügbarkeit, Einsatzgebiet, Qualifikationen und persönlichen Präferenzen.\nEntlastung für Koordinationskräfte | Weniger Verwaltungsaufwand durch digitale Prozesse – mehr Zeit für persönliche Begleitung und fachliche Unterstützung.\nAdministration und Abrechnung | Digitale Zeiterfassung, automatische Abrechnung sowie Schnittstellen zu Buchhaltung und Bankprogrammen.\nNeue Engagierte gewinnen | Stärkung des bürgerschaftlichen Engagements durch passgenaue Einsatzmöglichkeiten.",
-          "level": "advanced"
-        },
-        {
-          "id": "tab-organisationen-vorteile",
-          "type": "textarea",
-          "value": "Engagierte einfacher koordinieren | Verfügbarkeiten, Einsatzorte und Aufgaben lassen sich digital verwalten und flexibel planen.\nVerwaltungsaufwand reduzieren | Dokumentation, Zeiterfassung und Abrechnung werden digital unterstützt und vereinfachen administrative Prozesse.\nNeue Engagierte gewinnen | Menschen aus der Region können sich direkt über das Portal engagieren und passende Einsatzmöglichkeiten finden.\nTransparenz über Einsätze schaffen | Alle Einsätze und Vereinbarungen bleiben nachvollziehbar dokumentiert und auswertbar.",
-          "level": "advanced"
-        },
-        {
-          "id": "tab-organisationen-btn-1",
-          "type": "button",
-          "href": "/kontakt.html",
-          "value": "Zusammenarbeit anfragen",
-          "level": "basic"
-        },
-        {
-          "id": "tab-organisationen-btn-2",
-          "type": "button",
-          "href": "",
-          "value": "Kontakt aufnehmen",
-          "level": "basic"
-        }
-      ]
-    },
-    {
-      "id": "b4",
-      "type": "cta-download-section",
-      "fields": [
-        {
-          "id": "cta-title",
-          "type": "text",
-          "value": "Zusammenarbeit starten",
-          "level": "basic"
-        },
-        {
-          "id": "cta-text",
-          "type": "textarea",
-          "value": "Erfahren Sie in einem persönlichen Gespräch, wie das Helferportal Ihre Organisation bei der Koordination von Engagement und Unterstützung unterstützen kann.",
-          "level": "basic"
-        },
-        {
-          "id": "cta-btn-1",
-          "type": "button",
-          "href": "/kontakt.html",
-          "value": "Demo vereinbaren",
-          "level": "basic"
-        },
-        {
-          "id": "cta-btn-2",
-          "type": "button",
-          "href": "#",
-          "value": "PDF-Broschüre herunterladen",
-          "level": "basic"
-        }
-      ]
-    },
-    {
-      "id": "b5",
-      "type": "faq-section",
-      "fields": [
-        {
-          "id": "faq-title",
-          "type": "text",
-          "value": "Häufige Fragen",
-          "level": "basic"
-        },
-        {
-          "id": "faq-subtitle",
-          "type": "text",
-          "value": "Für die öffentliche Hand und soziale Akteure",
-          "level": "basic"
-        },
-        {
-          "id": "faq-1-question",
-          "type": "text",
-          "value": "Wer kann das Helferportal nutzen?",
-          "level": "basic"
-        },
-        {
-          "id": "faq-1-answer",
-          "type": "textarea",
-          "value": "Das Helferportal richtet sich an Kommunen, Landkreise, soziale Organisationen, Nachbarschaftshilfen und Initiativen. Auch Beratungsstellen wie Pflegestützpunkte, Seniorenberatungen oder Quartiersmanagement können das Portal nutzen, um Unterstützungsbedarfe zu erfassen und zu koordinieren.",
-          "level": "basic"
-        },
-        {
-          "id": "faq-2-question",
-          "type": "text",
-          "value": "Behalten Organisationen die Kontrolle über ihre Engagierten?",
-          "level": "basic"
-        },
-        {
-          "id": "faq-2-answer",
-          "type": "textarea",
-          "value": "Ja. Organisationen arbeiten im Helferportal in einem eigenen geschützten Bereich. Sie verwalten ihre Engagierten selbst, planen Einsätze und entscheiden, welche Angebote sichtbar sind.",
-          "level": "basic"
-        },
-        {
-          "id": "faq-3-question",
-          "type": "text",
-          "value": "Können auch Beratungsstellen Bedarfe für andere Personen einstellen?",
-          "level": "basic"
-        },
-        {
-          "id": "faq-3-answer",
-          "type": "textarea",
-          "value": "Ja. Fachstellen wie Pflegestützpunkte, Seniorenberatung oder Quartiersmanagement können Unterstützungs- oder Versorgungsbedarfe für Dritte einstellen und nachverfolgen.",
-          "level": "basic"
-        },
-        {
-          "id": "faq-4-question",
-          "type": "text",
-          "value": "Wie werden Unterstützungsbedarfe vermittelt?",
-          "level": "basic"
-        },
-        {
-          "id": "faq-4-answer",
-          "type": "textarea",
-          "value": "Bedarfe werden digital erfasst und passende Engagierte oder Anbieter können anhand von Kriterien wie Tätigkeit, Verfügbarkeit, Einsatzgebiet oder Qualifikation vermittelt werden.",
-          "level": "basic"
-        },
-        {
-          "id": "faq-5-question",
-          "type": "text",
-          "value": "Wie starten wir mit dem Helferportal?",
-          "level": "basic"
-        },
-        {
-          "id": "faq-5-answer",
-          "type": "textarea",
-          "value": "Wir begleiten Sie beim Einstieg und besprechen gemeinsam, wie das Portal in Ihrer Region oder Organisation eingesetzt werden kann. In einem unverbindlichen Gespräch stellen wir Ihnen die Funktionen und Einsatzmöglichkeiten vor.",
-          "level": "basic"
-        },
-        {
-          "id": "faq-6-question",
-          "type": "text",
-          "value": "Ist das Helferportal datenschutzkonform?",
-          "level": "basic"
-        },
-        {
-          "id": "faq-6-answer",
-          "type": "textarea",
-          "value": "Ja. Das Helferportal erfüllt die Anforderungen der DSGVO. Persönliche Daten werden geschützt verarbeitet und der Erstkontakt zwischen Nutzern erfolgt zunächst im geschützten Raum, ohne Kontaktdaten direkt preiszugeben.",
-          "level": "basic"
-        },
-        {
-          "id": "faq-7-question",
-          "type": "text",
-          "value": "Kann das Helferportal in bestehende Strukturen integriert werden?",
-          "level": "basic"
-        },
-        {
-          "id": "faq-7-answer",
-          "type": "textarea",
-          "value": "Ja. Das Helferportal schafft keine Doppelstrukturen, sondern vernetzt bestehende Akteure und Angebote in einer gemeinsamen digitalen Infrastruktur. Unterstützungs- und Versorgungsbedarfe können so transparenter und ressourcenschonend koordiniert werden.",
-          "level": "basic"
-        },
-        {
-          "id": "faq-8-question",
-          "type": "text",
-          "value": "Kann das Helferportal auch regional oder landkreisweit eingesetzt werden?",
-          "level": "basic"
-        },
-        {
-          "id": "faq-8-answer",
-          "type": "textarea",
-          "value": "Ja. Das Helferportal kann sowohl quartiersbezogen, regional als auch über mehrere Kommunen hinweg eingesetzt werden. Die Plattform lässt sich nahtlos erweitern, ohne dass sich Engagierte oder Hilfesuchende erneut registrieren müssen. So entstehen vernetzte Versorgungsstrukturen über Verwaltungsgrenzen hinweg.",
-          "level": "basic"
-        }
-      ]
-    }
-  ]
+  }
 }

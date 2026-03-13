@@ -11,6 +11,7 @@
  *   node sync-to-supabase.js                      # Sync all pages (with conflict check)
  *   node sync-to-supabase.js --page fuer-kommunen  # Sync one page
  *   node sync-to-supabase.js --page fuer-kommunen --force  # Overwrite even if Supabase is newer
+ *   node sync-to-supabase.js --dry-run                    # Show what would change (no writes)
  *
  * Environment variables (or .env file):
  *   SUPABASE_URL=https://xxxxx.supabase.co
@@ -28,6 +29,19 @@ const args = process.argv.slice(2);
 const pageArgIdx = args.indexOf('--page');
 const targetPage = pageArgIdx >= 0 ? args[pageArgIdx + 1] : null;
 const forceOverwrite = args.includes('--force');
+const dryRun = args.includes('--dry-run');
+
+// Recursively sort object keys for stable JSON output
+function sortKeys(obj) {
+  if (Array.isArray(obj)) return obj.map(sortKeys);
+  if (obj && typeof obj === 'object') {
+    return Object.keys(obj).sort().reduce((acc, key) => {
+      acc[key] = sortKeys(obj[key]);
+      return acc;
+    }, {});
+  }
+  return obj;
+}
 
 // --- Helpers ---
 function supabaseHeaders(key) {
@@ -53,7 +67,8 @@ async function main() {
   console.log('');
   console.log('  Helferportal Sync → Supabase');
   console.log('  ============================');
-  if (forceOverwrite) console.log('  Mode: --force (skip conflict checks)');
+  if (dryRun) console.log('  Mode: --dry-run (no writes)');
+  else if (forceOverwrite) console.log('  Mode: --force (skip conflict checks)');
   console.log('');
 
   const { url, key } = getSupabaseConfig();
@@ -75,33 +90,49 @@ async function main() {
     const localEditedAt = content._meta?.lastEdited || content._meta?.extracted;
 
     // --- Conflict check ---
-    if (!forceOverwrite) {
-      try {
-        const remote = await fetchSupabasePage(url, key, pageId);
+    try {
+      const remote = await fetchSupabasePage(url, key, pageId);
 
-        if (remote) {
-          const remoteEditedAt = remote.content?._meta?.lastEdited;
-          // Compare: if Supabase was edited AFTER our local version was created
-          if (remoteEditedAt && localEditedAt) {
-            const remoteTime = new Date(remoteEditedAt).getTime();
-            const localTime = new Date(localEditedAt).getTime();
+      if (remote) {
+        const remoteEditedAt = remote.content?._meta?.lastEdited;
+        if (remoteEditedAt && localEditedAt) {
+          const remoteTime = new Date(remoteEditedAt).getTime();
+          const localTime = new Date(localEditedAt).getTime();
 
-            if (remoteTime > localTime) {
-              const remoteBy = remote.content?._meta?.editedBy || 'unknown';
-              console.log(`  ⚠ CONFLICT: "${pageId}"`);
-              console.log(`    Supabase edited: ${remoteEditedAt} (by ${remoteBy})`);
-              console.log(`    Local version:   ${localEditedAt}`);
+          if (remoteTime > localTime) {
+            const remoteBy = remote.content?._meta?.editedBy || 'unknown';
+            console.log(`  ⚠ CONFLICT: "${pageId}"`);
+            console.log(`    Supabase edited: ${remoteEditedAt} (by ${remoteBy})`);
+            console.log(`    Local version:   ${localEditedAt}`);
+
+            if (dryRun) {
+              console.log(`    → Would skip (remote is newer)`);
+              console.log('');
+              skipped++;
+              continue;
+            }
+
+            if (!forceOverwrite) {
               console.log(`    → Skipping to protect remote changes. Use --force to overwrite.`);
               console.log('');
               skipped++;
               continue;
             }
+
+            console.log(`    ⚠ WARNING: --force used — overwriting remote changes by ${remoteBy}`);
           }
         }
-      } catch (err) {
-        console.warn(`  ⚠ Could not check remote state for "${pageId}": ${err.message}`);
-        console.warn(`    → Proceeding with sync anyway.`);
       }
+    } catch (err) {
+      console.warn(`  ⚠ Could not check remote state for "${pageId}": ${err.message}`);
+      if (dryRun) { skipped++; continue; }
+      console.warn(`    → Proceeding with sync anyway.`);
+    }
+
+    if (dryRun) {
+      console.log(`  ✓ Would sync "${pageId}" (no conflict)`);
+      synced++;
+      continue;
     }
 
     // --- Sync ---
@@ -130,8 +161,8 @@ async function main() {
         throw new Error(`HTTP ${response.status}: ${text}`);
       }
 
-      // Update local JSON with new lastEdited timestamp
-      fs.writeFileSync(jsonPath, JSON.stringify(content, null, 2), 'utf-8');
+      // Update local JSON with new lastEdited timestamp (sorted keys)
+      fs.writeFileSync(jsonPath, JSON.stringify(sortKeys(content), null, 2), 'utf-8');
 
       console.log(`    ✓ Updated "${pageId}" in Supabase`);
       synced++;

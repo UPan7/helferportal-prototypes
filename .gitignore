@@ -25,3 +25,6 @@ tools/.env
 *.backup
 ~$*
 nul
+
+# Content backups (local safety net, not committed)
+content/backups/
