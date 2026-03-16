@@ -1,9 +1,8 @@
 {
   "_meta": {
-    "editedBy": "thomas.oeben@helferportal.de",
-    "extracted": "2026-03-08T14:16:02.124Z",
+    "extracted": "2026-03-16T09:05:13.501Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-13T14:24:27.740Z",
+    "lastEdited": "2026-03-16T09:05:37.033Z",
     "schema_version": "2.0",
     "source": "ueber-uns.html"
   },
@@ -44,7 +43,13 @@
           "id": "section-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Gemeinsam mit Bürgerinnen und Bürgern, der Sozialwirtschaft und den Kommunen sorgen wir dafür, dass Menschen mit Unterstützungsbedarf und pflegende Angehörige schnell die passende Hilfe und Versorgung erhalten, die sie gerade benötigen.\nDafür vernetzen wir Engagement, soziale Angebote und Dienstleistungen digital und ermöglichen eine schnelle, bedarfsgerechte Koordination von Unterstützung im Alltag.\n"
+          "value": "Gemeinsam mit Bürgerinnen und Bürgern, der Sozialwirtschaft und den Kommunen sorgen wir dafür, dass Menschen mit Unterstützungsbedarf und pflegende Angehörige schnell die passende Hilfe und Versorgung erhalten, die sie gerade benötigen.\nDafür vernetzen wir Engagement, soziale Angebote und Dienstleistungen digital und ermöglichen eine schnelle, bedarfsgerechte Koordination von Unterstützung im Alltag."
+        },
+        {
+          "id": "section-values",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Vernetzt | Alle Akteure der Versorgung auf einer Plattform.\nBedarfsgerecht | Passende Unterstützung statt langer Suche.\nEntlastend | Unterstützung wird auf viele Schultern verteilt.\nDigital koordiniert | Bedarfe erfassen und Hilfe effizient organisieren."
         },
         {
           "id": "item-1-text",
@@ -57,12 +62,6 @@
           "level": "basic",
           "type": "text",
           "value": "— Der C2C-Ansatz des Helferportals"
-        },
-        {
-          "id": "item-1-year",
-          "level": "basic",
-          "type": "text",
-          "value": ""
         }
       ],
       "id": "b2",
@@ -134,7 +133,7 @@
           "id": "item-3-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Entwicklung eines Webzugangs für Hilfesuchende, sodass Unterstützungsbedarfe direkt im System hinterlegt werden können.\nIntegration eines Katastrophenschutzmoduls, um hunderte Engagierte und deren Gerätschaften an verschiedenen Einsatzorten zu koordinieren.\n"
+          "value": "Entwicklung eines Webzugangs für Hilfesuchende, sodass Unterstützungsbedarfe direkt im System hinterlegt werden können.\nIntegration eines Katastrophenschutzmoduls, um hunderte Engagierte und deren Gerätschaften an verschiedenen Einsatzorten zu koordinieren."
         },
         {
           "id": "item-4-year",
@@ -152,7 +151,7 @@
           "id": "item-4-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Integration von Gesundheits- und Sozialdienstleistern in die Plattform.\nÜbertragung des Prinzips schneller, bedarfsgerechter Vermittlung auf den sozialen Bereich und Entwicklung mobiler Apps für Hilfesuchende.\nEinführung einer Kümmererfunktion, über die Beratungs- und Koordinationsstellen Unterstützungsbedarfe für Dritte einstellen und deren Erfüllung verfolgen können.\n"
+          "value": "Integration von Gesundheits- und Sozialdienstleistern in die Plattform.\nÜbertragung des Prinzips schneller, bedarfsgerechter Vermittlung auf den sozialen Bereich und Entwicklung mobiler Apps für Hilfesuchende.\nEinführung einer Kümmererfunktion, über die Beratungs- und Koordinationsstellen Unterstützungsbedarfe für Dritte einstellen und deren Erfüllung verfolgen können."
         },
         {
           "id": "item-5-year",
@@ -210,18 +209,6 @@
           "level": "basic",
           "type": "textarea",
           "value": "Thomas hat jahrelang logistische Netzwerke für renommierte Logistikkonzerne und die produzierende Industrie aufgebaut und gesteuert. Aufgrund der aufkommenden Versorgungslücke beschloss er, logistische Kompetenz und Digitalisierung in den sozialen Bereich einzubringen.\nEr entwickelt soziale Versorgungskonzepte und erprobt diese zunächst im Verein deinNachbar e.V., bevor sie von anderen Hilfsorganisationen oder Kommunen übernommen werden."
-        },
-        {
-          "id": "item-1-badge",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "item-1-role",
-          "level": "basic",
-          "type": "text",
-          "value": ""
         }
       ],
       "id": "b4",
@@ -324,62 +311,6 @@
           "level": "basic",
           "type": "text",
           "value": "Wissenschaftliche Begleitung"
-        },
-        {
-          "href": "",
-          "id": "logo-1-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-1-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-2-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-2-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-3-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-3-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-4-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-4-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
         }
       ],
       "id": "b5",

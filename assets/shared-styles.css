@@ -4442,15 +4442,19 @@ body[class*="page-"] {
 }
 
 .page-ueber-uns .mission-values {
-    display: flex; flex-wrap: wrap; gap: var(--space-sm);
+    display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);
 }
 
-.page-ueber-uns .value-tag {
-    display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); background: var(--gray-100); border-radius: var(--radius-full); font-size: 14px; font-weight: 500; color: var(--gray-700);
+.page-ueber-uns .value-card {
+    background: var(--gray-50); padding: var(--space-md) var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--gray-200);
 }
 
-.page-ueber-uns .value-tag svg {
-    width: 16px; height: 16px; color: var(--green-primary);
+.page-ueber-uns .value-card h4 {
+    font-size: 15px; font-weight: 600; color: var(--blue-primary); margin: 0 0 var(--space-xs) 0;
+}
+
+.page-ueber-uns .value-card p {
+    font-size: 14px; color: var(--gray-600); line-height: 1.5; margin: 0;
 }
 
 .page-ueber-uns .mission-visual {
@@ -4670,6 +4674,10 @@ body[class*="page-"] {
 
     .page-ueber-uns .mission-content h2 {
         font-size: 24px;
+    }
+
+    .page-ueber-uns .mission-values {
+        grid-template-columns: 1fr;
     }
 
     .page-ueber-uns .founder-content {
