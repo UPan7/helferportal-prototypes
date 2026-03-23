@@ -1,0 +1,15 @@
+{
+  "lastUpdated": "2026-03-23T14:15:00.000Z",
+  "status": "active",
+  "currentTask": null,
+  "activeAgents": [],
+  "pipeline": [],
+  "completedTasks": [],
+  "residualItems": [],
+  "ideas": [],
+  "stats": {
+    "totalCommits": 0,
+    "totalFilesChanged": 0,
+    "buildStatus": "unknown"
+  }
+}

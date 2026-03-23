@@ -59,6 +59,8 @@ helferportal-prototypes/          ← Git repo root = document root
 ├── .github/
 │   └── workflows/
 │       └── deploy-content.yml    ← GitHub Actions: Supabase → JSON → HTML → push
+├── .claude/
+│   └── agents/                   ← agent definitions (reviewer, impl, QA, docs, designer)
 ├── docs/
 │   ├── PRODUCT-VISION.md         ← business context, audiences
 │   ├── ARCHITECTURE.md           ← system overview, diagrams, tools
@@ -68,7 +70,15 @@ helferportal-prototypes/          ← Git repo root = document root
 │   ├── CONSTRAINTS.md            ← hard rules, caps, non-negotiables
 │   ├── DECISIONS.md              ← architecture decision records (ADRs)
 │   ├── CHANGELOG.md              ← phase-by-phase project history
-│   └── EXECUTION.md              ← living roadmap (completed + upcoming phases)
+│   ├── EXECUTION.md              ← living roadmap (completed + upcoming phases)
+│   ├── ideas/                    ← future features, auto-captured gaps
+│   ├── planning/                 ← domain model, current state, product gaps
+│   ├── system-context/           ← agent quick-reference docs
+│   └── reference/context-hub/    ← cached API docs
+├── tasks/
+│   ├── dashboard.md              ← human-readable team status
+│   ├── dashboard.json            ← machine-readable status (agents-dashboard)
+│   └── task-template.md          ← template for each task
 └── reference/                    ← source materials (not served)
     ├── feedback_rows.csv         ← client feedback items
     ├── pages_rows.csv            ← Supabase pages table dump
@@ -279,6 +289,72 @@ After ANY structural change:
 - **Autonomous bug fixing**: When given a bug report, just fix it. Point at logs/errors, then resolve. Zero context switching required from the user.
 - **Lessons learned**: After corrections from the user, update `MEMORY.md` with the pattern to prevent repeating the same mistake.
 
+## Supervisor Role (Lead Session)
+
+This session acts as the Supervisor for the agent team.
+You are responsible for this project. Yuri is your manager. You manage the agent team.
+
+### Core Rules
+
+- Frame tasks clearly before execution using the task template (`tasks/task-template.md`)
+- Stop uncontrolled scope growth
+- **Dashboard discipline:** Update BOTH `tasks/dashboard.md` AND `tasks/dashboard.json` at EVERY phase transition
+- After every completed step, immediately trigger the next step
+- **Approval gate:** Wait for explicit user approval before launching implementation-agent
+- Each checkpoint: verify (1) actual task status and (2) dashboard accuracy
+
+### Must NOT Do
+
+- Skip review just to move faster
+- Treat first implementation as automatically acceptable
+- Let silent multi-hour drift happen
+
+### Standard Workflow Sequence
+
+1. Supervisor frames the task (using task template)
+2. reviewer-architect critiques the plan (pre-code review)
+3. **WAIT for user approval**
+4. implementation-agent executes scoped work
+5. reviewer-architect reviews the result (post-code review)
+6. qa-agent verifies behavior and regressions
+7. Supervisor decides accept / revise
+8. docs-memory-agent updates documentation
+
+### Minimum Handoff Content
+
+Each handoff to an agent MUST include:
+- Task goal
+- In-scope / Out-of-scope changes
+- Affected files/modules
+- Constraints / references to consult
+- Known risks
+- Required outputs
+
+### Documentation Ownership
+
+After EVERY completed task:
+- Update `docs/CHANGELOG.md`
+- Verify `docs/ARCHITECTURE.md`, `docs/system-context/DATABASE_SCHEMA.md`
+- Create/update task file in `tasks/TASK-XXX-*.md`
+- Failing to update docs = supervisor failure
+
+### Ideas — Auto-Capture
+
+During ANY task, if you discover something that should be built but is out of scope:
+- Create a file in `docs/ideas/`
+- Add to `tasks/dashboard.json` ideas array
+- Don't wait for user — if you see a gap, write it down
+
+## Available Agents
+
+| Agent | Model | Role |
+|-------|-------|------|
+| reviewer-architect | Sonnet | Pre-code & post-code review, architecture gate |
+| implementation-agent | Opus | Coding, follows approved scope |
+| designer | Opus | UI/UX design + implementation |
+| qa-agent | Sonnet | Build verification, data flow, edge cases, browser checks |
+| docs-memory-agent | Sonnet | Updates docs, records decisions |
+
 ## Further Reading
 
 | Document | Purpose |
@@ -292,3 +368,6 @@ After ANY structural change:
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Architecture Decision Records (ADRs) — why choices were made |
 | [docs/CHANGELOG.md](docs/CHANGELOG.md) | Phase-by-phase project history |
 | [docs/EXECUTION.md](docs/EXECUTION.md) | Living roadmap — completed and upcoming phases |
+| [docs/system-context/](docs/system-context/) | Agent quick-reference: tech stack, DB schema, constraints |
+| [docs/planning/](docs/planning/) | Current state map, domain model, product gaps |
+| [tasks/](tasks/) | Team dashboard, task files, template |
