@@ -1,8 +1,9 @@
 {
   "_meta": {
+    "editedBy": "thomas.oeben@helferportal.de",
     "extracted": "2026-03-16T09:05:13.501Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-16T09:05:37.033Z",
+    "lastEdited": "2026-03-20T12:21:32.634Z",
     "schema_version": "2.0",
     "source": "ueber-uns.html"
   },
@@ -37,13 +38,13 @@
           "id": "section-title",
           "level": "basic",
           "type": "text",
-          "value": "Unterstützung organisieren. Engagement ermöglichen. Versorgung vernetzen."
+          "value": "Unterstützung organisieren. Engagement ermöglichen. Versorgung vernetzen, damit niemand mit Unterstützungsbedarf allein bleibt."
         },
         {
           "id": "section-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Gemeinsam mit Bürgerinnen und Bürgern, der Sozialwirtschaft und den Kommunen sorgen wir dafür, dass Menschen mit Unterstützungsbedarf und pflegende Angehörige schnell die passende Hilfe und Versorgung erhalten, die sie gerade benötigen.\nDafür vernetzen wir Engagement, soziale Angebote und Dienstleistungen digital und ermöglichen eine schnelle, bedarfsgerechte Koordination von Unterstützung im Alltag."
+          "value": "Gemeinsam mit Bürgerinnen und Bürgern, der Sozialwirtschaft, Dienstleistern und den Kommunen sorgen wir dafür, dass Menschen mit Unterstützungsbedarf und pflegende Angehörige schnell die passende Hilfe erhalten.\nDafür vernetzen wir Engagement, soziale Angebote und Dienstleistungen und ermöglichen eine schnelle, bedarfsgerechte Koordination von Unterstützung im Alltag."
         },
         {
           "id": "section-values",
@@ -55,13 +56,19 @@
           "id": "item-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Das Helferportal ist mehr als eine App. \nEs ist eine Infrastruktur für sorgende Gemeinschaften.\n\nWir machen Unterstützung planbar.\nEngagement sichtbar.\nUnd Verantwortung teilbar."
+          "value": "Das Helferportal ist mehr als eine App. \nEs ist eine Infrastruktur für sorgende Gemeinschaften.\n\nWir machen Unterstützung planbar,\nEngagement sichtbar,\nund Verantwortung teilbar."
         },
         {
           "id": "item-1-title",
           "level": "basic",
           "type": "text",
           "value": "— Der C2C-Ansatz des Helferportals"
+        },
+        {
+          "id": "item-1-year",
+          "level": "basic",
+          "type": "text",
+          "value": ""
         }
       ],
       "id": "b2",
@@ -209,6 +216,18 @@
           "level": "basic",
           "type": "textarea",
           "value": "Thomas hat jahrelang logistische Netzwerke für renommierte Logistikkonzerne und die produzierende Industrie aufgebaut und gesteuert. Aufgrund der aufkommenden Versorgungslücke beschloss er, logistische Kompetenz und Digitalisierung in den sozialen Bereich einzubringen.\nEr entwickelt soziale Versorgungskonzepte und erprobt diese zunächst im Verein deinNachbar e.V., bevor sie von anderen Hilfsorganisationen oder Kommunen übernommen werden."
+        },
+        {
+          "id": "item-1-badge",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "id": "item-1-role",
+          "level": "basic",
+          "type": "text",
+          "value": ""
         }
       ],
       "id": "b4",
@@ -311,6 +330,62 @@
           "level": "basic",
           "type": "text",
           "value": "Wissenschaftliche Begleitung"
+        },
+        {
+          "href": "",
+          "id": "logo-1-link",
+          "level": "basic",
+          "type": "link",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-1-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-2-link",
+          "level": "basic",
+          "type": "link",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-2-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-3-link",
+          "level": "basic",
+          "type": "link",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-3-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-4-link",
+          "level": "basic",
+          "type": "link",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-4-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
         }
       ],
       "id": "b5",

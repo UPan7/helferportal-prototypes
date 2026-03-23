@@ -173,11 +173,15 @@ node validate.js startseite              # Check HTML/JSON consistency
 node test-roundtrip.js                   # Round-trip test all pages
 ```
 
-### Before starting local work
+### Before starting local work (MANDATORY)
+
+**ALWAYS run before ANY edits to HTML pages or content JSON:**
 
 ```bash
 cd tools && node deploy.js
 ```
+
+This pulls the latest content from Supabase (source of truth) and applies it to local files. Skipping this step risks silently overwriting content edited via CMS. `deploy.js` creates a backup before overwriting, but prevention is better than recovery.
 
 ### Updating content text
 
@@ -187,7 +191,7 @@ cd tools && node deploy.js
 
 ### Structural changes (nav, footer, CSS)
 
-Edit HTML → `git push`. No Supabase sync needed.
+`deploy.js` → edit HTML → `git push`. Even for structural-only changes, deploy first — CMS field values may have changed and need to be applied to your local HTML.
 
 ### Publishing from CMS
 
@@ -263,7 +267,8 @@ After ANY structural change:
 
 ## Rules
 
-- **Supabase = source of truth**: Never overwrite Supabase content without checking for conflicts first. Use `sync-to-supabase.js` (has built-in conflict detection). Always `node deploy.js` before starting local work.
+- **Supabase = source of truth**: Never overwrite Supabase content without checking for conflicts first. Use `sync-to-supabase.js` (has built-in conflict detection).
+- **Deploy first, always**: `node deploy.js` is MANDATORY before any local work. The full local workflow is: **pull → edit → extract → sync → commit → push**. Never skip the pull step — CMS edits happen asynchronously and your local copy may be stale.
 - **deploy.js textarea handler**: `field-ops.js` textarea handler now uses `applyStructuredText()` for elements with children, preserving nested HTML structure. Plain-text textarea fields still use `.text()`. Round-trip tested across all 7 pages.
 - At the end of every session, when asked to wrap up, update the Session Log section below following the standard format.
 

@@ -3,7 +3,7 @@
     "editedBy": "thomas.oeben@helferportal.de",
     "extracted": "2026-03-08T14:21:11.060Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-16T09:05:37.885Z",
+    "lastEdited": "2026-03-20T12:03:43.175Z",
     "schema_version": "2.0",
     "source": "index.html"
   },
@@ -29,13 +29,13 @@
           "id": "slide-0-title",
           "level": "basic",
           "type": "text",
-          "value": "Hilfe finden. Engagement ermöglichen. Versorgung vernetzen."
+          "value": "Damit niemand im Alltag allein bleibt."
         },
         {
           "id": "slide-0-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Finden Sie Unterstützung im Alltag, organisieren Sie Hilfe für Angehörige oder engagieren Sie sich für andere. \nDas Helferportal verbindet Menschen und Angebote in Ihrer Region."
+          "value": "Hilfe finden. Engagement ermöglichen. Versorgung vernetzen."
         },
         {
           "href": "#video-section",
@@ -63,13 +63,13 @@
           "id": "slide-1-title",
           "level": "basic",
           "type": "text",
-          "value": "Unterstützung, Begleitung und Versorgung finden"
+          "value": "Unterstützung im Alltag finden"
         },
         {
           "id": "slide-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Ob Alltagshilfe, Begleitdienste, gemeinsame Freizeitaktivitäten oder passende Dienstleister, finden Sie Unterstützung in Ihrer Nähe."
+          "value": "Ob im Alltag oder in der Freizeit – finden Sie schnell passende Unterstützung und Begleitung in Ihrer Nähe."
         },
         {
           "href": "/hilfe-finden.html",
@@ -103,7 +103,7 @@
           "id": "slide-2-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Ob spontan helfen, regelmäßig unterstützen oder eigene Leistungen anbieten,\nengagieren Sie sich für Menschen in Ihrer Region und finden Sie passende Anfragen in Ihrer Nähe."
+          "value": "Engagieren Sie sich für Menschen in Ihrer Region oder bieten Sie Ihre Leistungen an – flexibel und passend zu Ihrem Alltag."
         },
         {
           "href": "/engagieren.html",
@@ -131,13 +131,13 @@
           "id": "slide-3-title",
           "level": "basic",
           "type": "text",
-          "value": "Versorgung und Engagement digital vernetzen und koordinieren"
+          "value": "Versorgung und Engagement vernetzen und steuern"
         },
         {
           "id": "slide-3-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Erfassen Sie Unterstützungsbedarfe digital, vernetzen Sie bestehende Akteure und koordinieren Sie Angebote effizient in Ihrer Region."
+          "value": "Erfassen Sie Bedarfe, vernetzen Sie Akteure und koordinieren Sie Angebote effizient in Ihrer Region."
         },
         {
           "href": "/fuer-kommunen.html",
@@ -168,7 +168,7 @@
           "id": "qa-1-text",
           "level": "basic",
           "type": "text",
-          "value": "Passende Hilfe und Angebote in Ihrer Nähe."
+          "value": "Passende Hilfe und Angebote in Ihrer Nähe finden."
         },
         {
           "id": "qa-2-href",
@@ -180,13 +180,13 @@
           "id": "qa-2-title",
           "level": "basic",
           "type": "text",
-          "value": "Jetzt engagieren"
+          "value": "Engagement & Leistungen"
         },
         {
           "id": "qa-2-text",
           "level": "basic",
           "type": "text",
-          "value": "Helfen oder Leistungen anbieten."
+          "value": "Sich engagieren oder Leistungen anbieten."
         },
         {
           "id": "qa-3-href",
@@ -204,7 +204,7 @@
           "id": "qa-3-text",
           "level": "basic",
           "type": "text",
-          "value": "Versorgung und Engagement digital koordinieren."
+          "value": "Versorgung und Engagement koordinieren."
         },
         {
           "id": "qa-4-href",
@@ -222,7 +222,7 @@
           "id": "qa-4-text",
           "level": "basic",
           "type": "text",
-          "value": "In 5 einfachen Schritten Bedarfe oder Angebote einstellen."
+          "value": "In wenigen Schritten Bedarfe oder Angebote einstellen."
         },
         {
           "id": "card-1-icon",
@@ -388,7 +388,7 @@
           "id": "tabs-subtitle",
           "level": "basic",
           "type": "text",
-          "value": "Finden Sie Unterstützung, Engagement oder passende Angebote."
+          "value": "Unterstützung, Engagement und Angebote an einem Ort."
         },
         {
           "id": "tab-hilfe-name",
@@ -430,19 +430,19 @@
           "id": "tab-hilfe-title",
           "level": "basic",
           "type": "text",
-          "value": "Unterstützung im Alltag, in der Freizeit oder passende Angebote finden"
+          "value": "Unterstützung im Alltag und in der Freizeit finden"
         },
         {
           "id": "tab-hilfe-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Sie benötigen Hilfe im Alltag, Begleitung zu Terminen oder Gesellschaft bei Freizeitaktivitäten? \nFinden Sie passende Unterstützung oder Angebote direkt in Ihrer Nähe, sicher und unkompliziert."
+          "value": "Sie benötigen Hilfe im Alltag, Begleitung zu Terminen oder Gesellschaft bei Freizeitaktivitäten? \nFinden Sie passende Unterstützung in Ihrer Nähe – sicher und unkompliziert."
         },
         {
           "id": "tab-hilfe-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Begleitdienste | Begleitung zu Arzt- oder Therapieterminen, Behördengängen oder Freizeitaktivitäten.\nBesuchsdienste | Gesellschaft leisten, Gespräche führen, vorlesen oder gemeinsam Zeit verbringen.\nAlltagshilfe | Unterstützung beim Einkaufen, im Haushalt, bei kleinen technischen Fragen oder bei Terminen mit Dienstleistern."
+          "value": "Begleitdienste | Begleitung zu Arzt- oder Therapieterminen, Behördengängen oder Freizeitaktivitäten.\nBesuchsdienste | Gesellschaft leisten, Gespräche führen, vorlesen oder gemeinsam Zeit verbringen.\nAlltagshilfe | Unterstützung beim Einkaufen, im Haushalt, bei kleinen technischen Fragen oder bei Terminen und kleinen Alltagsaufgaben."
         },
         {
           "href": "",
@@ -462,19 +462,19 @@
           "id": "tab-angehoerige-title",
           "level": "basic",
           "type": "text",
-          "value": "Unterstützung und Entlastung organisieren"
+          "value": "Unterstützung und Entlastung finden"
         },
         {
           "id": "tab-angehoerige-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Sie pflegen einen nahestehenden Menschen und brauchen Unterstützung im Alltag? \nFinden Sie passende Angebote, Beratung und Entlastung direkt in Ihrer Nähe."
+          "value": "Sie pflegen einen nahestehenden Menschen und brauchen Unterstützung im Alltag? \nFinden Sie passende Entlastung, Beratung und Angebote in Ihrer Nähe."
         },
         {
           "id": "tab-angehoerige-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Verhinderungspflege | Zuverlässige Unterstützung für pflegebedürftige Menschen, wenn Sie verhindert sind.\nEntlastungsleistungen | Unterstützung im Alltag, die über den Entlastungsbetrag der Pflegeversicherung genutzt werden kann.\nBeratung & Vermittlung | Beratung zu allen Fragen rund um Pflege, Unterstützungsmöglichkeiten und passende Angebote."
+          "value": "Verhinderungspflege | Zuverlässige Unterstützung, wenn Sie vorübergehend entlastet werden möchten.\nEntlastungsleistungen | Unterstützung im Alltag, die über den Entlastungsbetrag genutzt werden kann.\nBeratung & Vermittlung | Beratung zu Pflege, Unterstützungsmöglichkeiten und passenden Angeboten."
         },
         {
           "href": "",
@@ -500,13 +500,13 @@
           "id": "tab-engagierte-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Ob spontan helfen, regelmäßig unterstützen oder sich über eine Organisation engagieren, finden Sie die passende Form des Engagements."
+          "value": "Ob spontan, regelmäßig oder über eine Organisation – finden Sie die passende Form des Engagements."
         },
         {
           "id": "tab-engagierte-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Spontan helfen | Unterstützen Sie flexibel im Alltag oder begleiten Sie Menschen bei Freizeitaktivitäten, ohne feste Verpflichtung.\nEigenständig unterstützen | Unterstützen Sie regelmäßig als qualifizierte Einzelperson, ehrenamtlich oder selbständig, mit klaren Rahmenbedingungen.\nÜber eine Organisation engagieren | Werden Sie Teil eines Teams und engagieren Sie sich mit fachlicher Begleitung, Versicherungsschutz und festen Ansprechpartnern."
+          "value": "Spontan helfen | Unterstützen Sie flexibel im Alltag oder begleiten Sie Menschen bei Freizeitaktivitäten, ohne feste Verpflichtung.\nEigenständig unterstützen | Unterstützen Sie regelmäßig als Einzelperson, ehrenamtlich oder selbständig, mit klaren Rahmenbedingungen.\nÜber eine Organisation engagieren | Werden Sie Teil eines Teams und engagieren Sie sich mit fachlicher Begleitung und Versicherungsschutz."
         },
         {
           "href": "",
@@ -526,19 +526,19 @@
           "id": "tab-orga-title",
           "level": "basic",
           "type": "text",
-          "value": "Engagement und Unterstützung digital koordinieren"
+          "value": "Engagement und Unterstützung koordinieren"
         },
         {
           "id": "tab-orga-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Das Helferportal unterstützt Organisationen und Nachbarschaftshilfen dabei, Engagierte zu koordinieren, Unterstützungsbedarfe zu vermitteln und Einsätze digital zu steuern. \nOrganisationen behalten dabei jederzeit die Hoheit über ihre Engagierten und ihre Einsätze."
+          "value": "Koordinieren Sie Engagierte, vermitteln Sie Bedarfe und steuern Sie Einsätze effizient.\nDabei behalten Sie jederzeit die Hoheit über Ihre Engagierten und Einsätze."
         },
         {
           "id": "tab-orga-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Engagierte koordinieren | Verfügbarkeiten abfragen, Einsätze planen und Kommunikation zentral organisieren.\nAdministration vereinfachen | Zeiterfassung, Dokumentation und Abrechnung digital verwalten.\nNeue Engagierte gewinnen | Zugang zu motivierten Helferinnen und Helfern über die zentrale Plattform."
+          "value": "Engagierte koordinieren | Verfügbarkeiten abfragen, Einsätze planen und Kommunikation zentral steuern.\nAdministration vereinfachen | Zeiterfassung, Dokumentation und Abrechnung digital verwalten.\nNeue Engagierte gewinnen | Zugang zu motivierten Helferinnen und Helfern über das Portal."
         },
         {
           "href": "",
@@ -558,7 +558,7 @@
           "id": "tab-dienst-title",
           "level": "basic",
           "type": "text",
-          "value": "Leistungen sichtbar machen und neue Anfragen erhalten"
+          "value": "Leistungen anbieten und Anfragen erhalten"
         },
         {
           "id": "tab-dienst-text",
@@ -570,7 +570,7 @@
           "id": "tab-dienst-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Leistungen anbieten | Stellen Sie Ihre Angebote ein und machen Sie Ihre Leistungen für Menschen in Ihrer Region sichtbar.\nAnfragen erhalten | Hilfesuchende und Angehörige finden passende Anbieter und können direkt Kontakt aufnehmen.\nTermine koordinieren | Anfragen, Termine und Kommunikation digital organisieren, einfach und transparent.\n"
+          "value": "Leistungen anbieten | Stellen Sie Ihre Angebote ein und machen Sie Ihre Leistungen für Menschen in Ihrer Region sichtbar.\nAnfragen erhalten | Hilfesuchende und Angehörige finden passende Anbieter und nehmen direkt Kontakt auf.\nTermine koordinieren | Anfragen, Termine und Kommunikation einfach und transparent organisieren.\n"
         },
         {
           "href": "",
@@ -596,13 +596,13 @@
           "id": "tab-kommunen-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Das Helferportal unterstützt Kommunen, Landkreise und Behörden dabei, Unterstützungs- und Versorgungsangebote zu vernetzen, Bedarfe digital zu koordinieren und bürgerschaftliches Engagement strukturiert einzubinden."
+          "value": "Vernetzen Sie Angebote, koordinieren Sie Bedarfe und stärken Sie Engagement in Ihrer Region."
         },
         {
           "id": "tab-kommunen-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Akteure vernetzen | Ehrenamtliche, Organisationen und Dienstleister auf einer gemeinsamen Plattform zusammenbringen.\nBedarfe digital steuern | Unterstützungs- und Versorgungsbedarfe erfassen und effizient an passende Angebote vermitteln.\nTransparenz und Planung | Überblick über Bedarfe, Angebote und Engagement für eine bedarfsgerechte Sozial- und Pflegeplanung.\nBeratungs- und Koordinationsstellen | Pflegestützpunkte, Seniorenberatung und Quartiersmanagement effizient in das digitale Versorgungsnetz einbinden."
+          "value": "Akteure vernetzen | Ehrenamtliche, Organisationen und Dienstleister auf einer gemeinsamen Plattform zusammenbringen.\nBedarfe digital steuern | Unterstützungs- und Versorgungsbedarfe erfassen und effizient an passende Angebote vermitteln.\nTransparenz und Planung | Überblick über Bedarfe, Angebote und Engagement für eine bedarfsgerechte Sozial- und Pflegeplanung.\nBeratungs- und Koordinationsstellen | Pflegestützpunkte, Seniorenberatung und Quartiersmanagement in das Versorgungsnetz integrieren."
         },
         {
           "href": "",
@@ -973,7 +973,7 @@
           "id": "steps-overline",
           "level": "basic",
           "type": "text",
-          "value": "In wenigen Schritten"
+          "value": "In wenigen Schritten zur passenden Unterstützung oder zum passenden Engagement."
         },
         {
           "id": "steps-title",
@@ -1003,7 +1003,7 @@
           "id": "step-2-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Legen Sie fest, welche Unterstützung Sie suchen oder anbieten, z. B. Tätigkeiten, Zeiten, Ort und weitere Wunschkriterien."
+          "value": "Legen Sie fest, welche Unterstützung Sie suchen oder anbieten, z. B. Tätigkeiten, Zeiten und Ort."
         },
         {
           "id": "step-3-title",
@@ -1015,7 +1015,7 @@
           "id": "step-3-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Das Helferportal filtert nach Ihren Kriterien und zeigt Hilfesuchenden nur passende Engagierte oder Anbieter mit verfügbarer Zeit"
+          "value": "Erhalten Sie passende Vorschläge auf Basis Ihrer Angaben – schnell und übersichtlich."
         },
         {
           "id": "step-4-title",
@@ -1027,7 +1027,7 @@
           "id": "step-4-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Lernen Sie sich per Chat, Video oder Telefon kennen – zunächst im geschützten Raum."
+          "value": "Lernen Sie sich per Chat oder Video kennen – zunächst im geschützten Raum."
         },
         {
           "id": "step-5-title",
@@ -1087,13 +1087,13 @@
           "id": "info-title",
           "level": "basic",
           "type": "text",
-          "value": "Transparent, sicher und kostenfrei"
+          "value": "Transparent, sicher und vertrauenswürdig"
         },
         {
           "id": "info-sicherheit-name",
           "level": "basic",
           "type": "text",
-          "value": "Sicherheit"
+          "value": "Sicherheit & Qualität"
         },
         {
           "id": "info-kosten-name",
@@ -1111,55 +1111,55 @@
           "id": "info-sicherheit-title",
           "level": "basic",
           "type": "text",
-          "value": "Sicherheit und Qualität stehen an erster Stelle"
+          "value": "Sicherheit und Qualität stehen an erster Stelle."
         },
         {
           "id": "info-sicherheit-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Verifizierungs- und Freischaltungsprozess | Jedes Nutzerkonto wird vor der Freischaltung geprüft.\nOrganisationszugehörigkeit | Engagierte, die über eine Organisation tätig sind, werden entsprechend gekennzeichnet und tragen das Logo ihrer Organisation im Profil.\nFührungszeugnis und Zertifikate | Führungszeugnis und Qualifikationsnachweise können im Profil hinterlegt werden. Diese sind nur für Hilfesuchende einsehbar, auf deren Anfragen sich Engagierte beworben haben.\nGeschützter Erstkontakt | Der erste Kontakt erfolgt anonymisiert per Chat, Video oder Audio, ohne Kontaktdaten preiszugeben.\nTransparente Dokumentation | Einsätze, Vereinbarungen und Kommunikation werden nachvollziehbar dokumentiert."
+          "value": "Verifizierungs- und Freischaltung | Jedes Nutzerkonto wird vor der Freischaltung geprüft.\nOrganisationszugehörigkeit sichtbar | Engagierte über Organisationen sind gekennzeichnet und tragen das Logo im Profil.\nQualifikation & Nachweise | Führungszeugnisse und Zertifikate können hinterlegt werden und sind nur für relevante Anfragen sichtbar.\nGeschützter Erstkontakt | Der erste Kontakt erfolgt im geschütztem Raum per Chat oder Video ohne Kontaktdaten preiszugeben.\nTransparente Dokumentation | Einsätze, Vereinbarungen und Kommunikation werden nachvollziehbar dokumentiert."
         },
         {
           "id": "info-kosten-title",
           "level": "basic",
           "type": "text",
-          "value": "Kostenfrei für alle, mit freiwilligem Solidaritätsbeitrag"
+          "value": "Die Nutzung des Helferportals ist kostenfrei."
         },
         {
           "id": "info-kosten-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Die Nutzung des Helferportals ist für alle kostenfrei. Viele Menschen mit Unterstützungsbedarf oder Behinderung können sich keinen finanziellen Beitrag leisten. \nDamit Unterstützung für alle zugänglich bleibt, gibt es einen freiwilligen Solidaritätsbeitrag.\nSie entscheiden selbst, welchen Beitrag Sie leisten möchten.\n"
+          "value": "Damit Unterstützung für alle zugänglich bleibt, können Sie freiwillig einen Solidaritätsbeitrag leisten – ganz nach Ihren Möglichkeiten."
         },
         {
           "id": "info-kosten-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "7,90 €/Monat\nEmpfohlener Solidaritätsbeitrag.\n15,80 €/Monat\nFür mich und zusätzlich eine hilfesuchende Person.\nIndividuell\nSie wählen einen eigenen Beitrag.\n0 €\nIch kann aktuell keinen Beitrag leisten.\n"
+          "value": "7,90 €/Monat\nEmpfohlener Solidaritätsbeitrag.\n15,80 €/Monat\nFür sich und zusätzlich eine hilfesuchende Person.\nIndividuell\nSie wählen selbst.\n0 €\nWenn Sie aktuell keinen Beitrag leisten können.\n"
         },
         {
           "id": "info-kosten-note",
           "level": "basic",
           "type": "text",
-          "value": "Alle Optionen sind gleichwertig. Ihre Wahl hat keinen Einfluss auf Umfang oder Qualität der Leistungen. Unterstützung bleibt für alle zugänglich, unabhängig von der finanziellen Situation."
+          "value": "Alle Optionen sind gleichwertig. Ihre Wahl hat keinen Einfluss auf Umfang oder Qualität der Leistungen."
         },
         {
           "id": "info-vernetzen-title",
           "level": "basic",
           "type": "text",
-          "value": "Empfehlen Sie das Helferportal weiter"
+          "value": "Gemeinsam mehr Unterstützung ermöglichen"
         },
         {
           "id": "info-vernetzen-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Wenn pflegende Angehörige, Unternehmen und Engagierte das Helferportal in ihrem Netzwerk teilen, können wir gemeinsam Unterstützung und Versorgung in Ihrer Region stärken."
+          "value": "Laden Sie Menschen aus Ihrem Umfeld ein und stärken Sie gemeinsam Unterstützung und Versorgung in Ihrer Region."
         },
         {
           "id": "info-vernetzen-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Pflegende Angehörige | Laden Sie Ihr persönliches Sorgenetzwerk ein. So können Sie auf Knopfdruck die Verfügbarkeit passender Unterstützung abfragen, ohne einzelne Helfer direkt ansprechen zu müssen.\nEngagierte | Laden Sie Freunde, Bekannte oder Kolleginnen und Kollegen ein, sich ebenfalls zu registrieren, für gemeinsame Aktivitäten, gegenseitige Unterstützung oder bürgerschaftliches Engagement.\nUnternehmen | Unterstützen Sie Ihre Mitarbeitenden als sozial engagierter Arbeitgeber und fördern Sie Gemeinschaft sowie gegenseitige Unterstützung im Alltag."
+          "value": "Pflegende Angehörige | Laden Sie Ihr persönliches Netzwerk ein und fragen Sie Unterstützung einfach und gebündelt an, ohne jeden einzeln kontaktieren zu müssen.\nEngagierte | Laden Sie Freunde, Bekannte oder Kolleginnen und Kollegen ein und engagieren Sie sich gemeinsam.\nUnternehmen | Unterstützen Sie Ihre Mitarbeitenden als sozial engagierter Arbeitgeber und fördern Sie Gemeinschaft und gegenseitige Unterstützung."
         },
         {
           "href": "/kontakt.html",
