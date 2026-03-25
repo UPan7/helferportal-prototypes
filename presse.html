@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presse — Helferportal</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/shared-styles.css">
+</head>
+<body class="page-presse">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="/" class="logo">
+                    <img loading="lazy" src="/assets/images/logos/logo-blue-quer.png" alt="Helferportal" class="logo-img">
+                </a>
+                <nav class="nav-main">
+                    <a href="/hilfe-finden.html" class="nav-link">Hilfe finden</a>
+                    <a href="/engagieren.html" class="nav-link">Engagieren</a>
+                    <a href="/fuer-kommunen.html" class="nav-link">Für Kommunen</a>
+                    <a href="/ueber-uns.html" class="nav-link">Über uns</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <a href="/kontakt.html" class="btn-cta-nav">
+                    App herunterladen
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Menü"><svg aria-hidden="true" class="icon-lg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="/" class="logo">
+                <img loading="lazy" src="/assets/images/logos/logo-blue-quer.png" alt="Helferportal" class="logo-img">
+            </a>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Menü schließen">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu-cta-row">
+            <a href="/hilfe-finden.html" class="mobile-cta-card blue">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span>Hilfe finden</span>
+            </a>
+            <a href="/engagieren.html" class="mobile-cta-card orange">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Engagieren</span>
+            </a>
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="/fuer-kommunen.html" class="mobile-nav-link">
+                <span>Für Kommunen</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
+            </a>
+            <a href="/ueber-uns.html" class="mobile-nav-link">
+                <span>Über uns</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
+            </a>
+            <a href="/kontakt.html" class="mobile-nav-link">
+                <span>Kontakt</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
+            </a>
+            <a href="/kontakt.html#faq" class="mobile-nav-link">
+                <span>FAQ</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
+            </a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="/kontakt.html" class="mobile-start-btn">
+                Jetzt starten
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </a>
+            <p class="mobile-start-hint">Kostenlos &amp; unverbindlich</p>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <main>
+
+    <!-- ========================================
+         HERO (MINI)
+         ======================================== -->
+    <section class="hero-mini" data-block="hero-mini" data-block-id="b1">
+        <div class="hero-mini-content">
+            <nav class="breadcrumb">
+                <a href="/">Startseite</a>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"></path>
+                </svg>
+                <span>Presse</span>
+            </nav>
+            <h1 data-field="hero-title" data-field-type="text">Presse &amp; Medien</h1>
+            <p data-field="hero-subtitle" data-field-type="textarea">Aktuelle Pressemitteilungen, Medienkontakt und Informationen für Journalist:innen.</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PRESS RELEASES
+         ======================================== -->
+    <section class="press-section" data-block="press-releases" data-block-id="b2">
+        <div class="press-section-inner">
+            <div class="section-header">
+                <h2 data-field="section-overline" data-field-type="text">Neuigkeiten</h2>
+                <h3 data-field="section-title" data-field-type="text">Aktuelle Pressemitteilungen</h3>
+            </div>
+            <div class="press-grid">
+                <!-- Press Release 1 -->
+                <article class="press-card">
+                    <div class="press-card-meta">
+                        <time class="press-card-date" data-field="press-1-date" data-field-type="text" datetime="2026-03-15">15. März 2026</time>
+                        <span class="press-card-badge" data-field="press-1-badge" data-field-type="text">Pressemitteilung</span>
+                    </div>
+                    <h4 data-field="press-1-title" data-field-type="text">Helferportal expandiert in drei neue Städte</h4>
+                    <p data-field="press-1-text" data-field-type="textarea">Nach dem erfolgreichen Start in München weitet das Helferportal seine Dienste auf Hamburg, Berlin und Köln aus. Damit erreicht die Plattform erstmals über eine Million potenzielle Nutzer:innen in vier Großstädten.</p>
+                    <a href="#" class="press-card-link" data-field="press-1-link" data-field-type="button">Weiterlesen
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    </a>
+                </article>
+                <!-- Press Release 2 -->
+                <article class="press-card">
+                    <div class="press-card-meta">
+                        <time class="press-card-date" data-field="press-2-date" data-field-type="text" datetime="2026-02-28">28. Februar 2026</time>
+                        <span class="press-card-badge" data-field="press-2-badge" data-field-type="text">Kooperation</span>
+                    </div>
+                    <h4 data-field="press-2-title" data-field-type="text">Partnerschaft mit dem BMBF für Forschungsprojekt</h4>
+                    <p data-field="press-2-text" data-field-type="textarea">Das Bundesministerium für Bildung und Forschung fördert ein dreijähriges Forschungsprojekt zur digitalen Teilhabe. Gemeinsam mit der TU Chemnitz untersucht das Helferportal, wie digitale Plattformen Inklusion im Alltag stärken können.</p>
+                    <a href="#" class="press-card-link" data-field="press-2-link" data-field-type="button">Weiterlesen
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    </a>
+                </article>
+                <!-- Press Release 3 -->
+                <article class="press-card">
+                    <div class="press-card-meta">
+                        <time class="press-card-date" data-field="press-3-date" data-field-type="text" datetime="2026-01-20">20. Januar 2026</time>
+                        <span class="press-card-badge" data-field="press-3-badge" data-field-type="text">Meilenstein</span>
+                    </div>
+                    <h4 data-field="press-3-title" data-field-type="text">10.000 Nutzer:innen – ein Meilenstein für das Helferportal</h4>
+                    <p data-field="press-3-text" data-field-type="textarea">Nur 18 Monate nach dem Launch hat das Helferportal die Marke von 10.000 registrierten Nutzer:innen überschritten. Rund 3.500 aktive Helfende und 120 Dienstleister sind auf der Plattform vernetzt.</p>
+                    <a href="#" class="press-card-link" data-field="press-3-link" data-field-type="button">Weiterlesen
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    </a>
+                </article>
+                <!-- Press Release 4 -->
+                <article class="press-card">
+                    <div class="press-card-meta">
+                        <time class="press-card-date" data-field="press-4-date" data-field-type="text" datetime="2025-11-10">10. November 2025</time>
+                        <span class="press-card-badge" data-field="press-4-badge" data-field-type="text">Auszeichnung</span>
+                    </div>
+                    <h4 data-field="press-4-title" data-field-type="text">Helferportal gewinnt Innovationspreis für digitale Teilhabe</h4>
+                    <p data-field="press-4-text" data-field-type="textarea">Für seinen innovativen Ansatz zur Vernetzung von Hilfesuchenden, Engagierten und Dienstleistern wurde das Helferportal mit dem Deutschen Innovationspreis für digitale Teilhabe ausgezeichnet.</p>
+                    <a href="#" class="press-card-link" data-field="press-4-link" data-field-type="button">Weiterlesen
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         MEDIA CONTACT
+         ======================================== -->
+    <section class="media-contact-section" data-block="media-contact" data-block-id="b3">
+        <div class="media-contact-inner">
+            <div class="section-header">
+                <h2 data-field="contact-overline" data-field-type="text">Medienkontakt</h2>
+                <h3 data-field="contact-title" data-field-type="text">Presseanfragen &amp; Materialien</h3>
+            </div>
+            <div class="media-contact-grid">
+                <!-- Contact Card -->
+                <div class="media-contact-card">
+                    <div class="media-contact-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4 data-field="contact-name" data-field-type="text">Pressestelle Helferportal</h4>
+                    <p class="media-contact-role" data-field="contact-role" data-field-type="text">Kommunikation &amp; Öffentlichkeitsarbeit</p>
+                    <div class="media-contact-details">
+                        <a href="mailto:presse@helferportal.de" class="media-contact-link">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span data-field="contact-email" data-field-type="text">presse@helferportal.de</span>
+                        </a>
+                        <a href="tel:+498912345678" class="media-contact-link">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span data-field="contact-phone" data-field-type="text">+49 89 123 456 78</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Downloads Card -->
+                <div class="media-downloads-card">
+                    <div class="media-contact-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </div>
+                    <h4 data-field="downloads-title" data-field-type="text">Pressematerialien</h4>
+                    <p data-field="downloads-text" data-field-type="textarea">Laden Sie unsere Pressemappe, Logos und Bildmaterial herunter.</p>
+                    <div class="media-download-buttons">
+                        <a href="#" class="btn-primary blue" data-field="download-btn-1" data-field-type="button">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            Pressemappe (PDF)
+                        </a>
+                        <a href="#" class="btn-secondary" data-field="download-btn-2" data-field-type="button">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            Logo-Kit herunterladen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img loading="lazy" src="/assets/images/logos/logo-white-quer.png" alt="Helferportal" class="logo-img">
+                    </a>
+                    <p>Die digitale Vermittlungsplattform für Unterstützungs- und Versorgungsbedarfe. Gemeinsam schaffen wir integrative Versorgungsstrukturen.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Für Sie</h3>
+                    <ul>
+                        <li><a href="/hilfe-finden.html">Hilfe finden</a></li>
+                        <li><a href="/engagieren.html">Engagieren</a></li>
+                        <li><a href="/fuer-kommunen.html">Für Kommunen</a></li>
+                        <li><a href="/fuer-kommunen.html#organisationen">Für Organisationen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Über uns</h3>
+                    <ul>
+                        <li><a href="/ueber-uns.html">Das Konzept</a></li>
+                        <li><a href="/ueber-uns.html#geschichte">So funktioniert's</a></li>
+                        <li><a href="/ueber-uns.html#partner">Unsere Partner</a></li>
+                        <li><a href="/presse.html">Presse</a></li>
+                        <li><a href="/projekte.html">Projekte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Kontakt</h3>
+                    <ul>
+                        <li><a href="/kontakt.html">Kontakt aufnehmen</a></li>
+                        <li><a href="/kontakt.html">Demo vereinbaren</a></li>
+                        <li><a href="/kontakt.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Helferportal GmbH &amp; Co. KG. Alle Rechte vorbehalten.</p>
+                <nav class="footer-legal">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">Nutzungsbedingungen</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/shared-scripts.js" defer></script>
+
+</body>
+</html>

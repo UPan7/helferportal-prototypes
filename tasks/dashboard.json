@@ -1,15 +1,46 @@
 {
-  "lastUpdated": "2026-03-23T14:15:00.000Z",
+  "lastUpdated": "2026-03-25T14:30:00Z",
   "status": "active",
-  "currentTask": null,
+  "currentTask": "TASK-001: Apply client feedback — 9 changes (HTML-only)",
   "activeAgents": [],
-  "pipeline": [],
-  "completedTasks": [],
-  "residualItems": [],
-  "ideas": [],
+  "pipeline": [
+    { "id": "A1", "title": "Navigation: Mega Menu → Horizontal Navbar", "status": "completed" },
+    { "id": "A2", "title": "Color: Purple → Green for Kommunen", "status": "completed" },
+    { "id": "B1", "title": "Slider: 4 → 2 slides", "status": "completed" },
+    { "id": "B2", "title": "Städte → Projekte section", "status": "completed" },
+    { "id": "B3", "title": "Video placeholders", "status": "completed" },
+    { "id": "C1", "title": "App Download CTAs (all pages)", "status": "completed" },
+    { "id": "D1", "title": "New page: presse.html", "status": "completed" },
+    { "id": "D2", "title": "New page: projekte.html", "status": "completed" },
+    { "id": "E0", "title": "Font: Plus Jakarta Sans → Open Sans", "status": "completed" },
+    { "id": "E1", "title": "Wording consistency audit", "status": "completed" },
+    { "id": "E2", "title": "Documentation updates", "status": "in-progress" }
+  ],
+  "completedTasks": [
+    "A1: Nav restructured — mega menu removed, 4-item horizontal nav + App CTA",
+    "A2: Kommunen color purple → green across all pages",
+    "B1: Hero slider reduced 4→2 (Hilfe suchen + Hilfe geben), dot indicators",
+    "B2: Städte section replaced with Projekte (3 cards)",
+    "B3: Video cards enhanced with YouTube-style play button + duration badges",
+    "C1: App download strip on all 9 pages + store badges in CTAs",
+    "D1: presse.html created (hero + 4 press cards + media contact)",
+    "D2: projekte.html created (hero + 3 project detail cards + partners + CTA)",
+    "E0: Font switched to Open Sans across all pages",
+    "E1: Wording audit — Begleitung/Unterstützung → Hilfe in buttons/CTAs"
+  ],
+  "residualItems": [
+    "index.html uses HTML entities (ü) while other pages use UTF-8 — cosmetic inconsistency",
+    "GHOST warnings in validate.js — pre-existing, not a regression",
+    "Content JSON not created for presse/projekte — by design (HTML-only round)"
+  ],
+  "ideas": [
+    "Create content JSON for presse + projekte pages when CMS sync resumes",
+    "Register new block types in block-registry.json",
+    "Normalize HTML entities to UTF-8 across all pages"
+  ],
   "stats": {
     "totalCommits": 0,
-    "totalFilesChanged": 0,
-    "buildStatus": "unknown"
+    "totalFilesChanged": 11,
+    "buildStatus": "passing"
   }
 }

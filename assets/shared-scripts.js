@@ -4,36 +4,6 @@
 // ================================================================
 
 // ========================================
-// MEGA MENU (all pages)
-// ========================================
-const mehrBtn = document.getElementById('mehrBtn');
-const megaMenu = document.getElementById('megaMenu');
-const megaOverlay = document.getElementById('megaOverlay');
-
-if (mehrBtn && megaMenu && megaOverlay) {
-    function openMegaMenu() {
-        mehrBtn.classList.add('active');
-        megaMenu.classList.add('active');
-        megaOverlay.classList.add('active');
-    }
-    function closeMegaMenu() {
-        mehrBtn.classList.remove('active');
-        megaMenu.classList.remove('active');
-        megaOverlay.classList.remove('active');
-    }
-    mehrBtn.addEventListener('click', () => {
-        megaMenu.classList.contains('active') ? closeMegaMenu() : openMegaMenu();
-    });
-    megaOverlay.addEventListener('click', closeMegaMenu);
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeMegaMenu();
-    });
-    megaMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => setTimeout(closeMegaMenu, 100));
-    });
-}
-
-// ========================================
 // MOBILE MENU (all pages, ≤768px)
 // ========================================
 const mobileMenu = document.getElementById('mobileMenu');
@@ -67,12 +37,12 @@ if (mobileMenu && mobileMenuBtn) {
 }
 
 // ========================================
-// HERO SLIDER (index.html)
+// HERO SLIDER (index.html) — dot indicators
 // ========================================
 const slides = document.querySelectorAll('.slide');
-const progressBars = document.querySelectorAll('.progress-bar');
+const sliderDots = document.querySelectorAll('.slider-dot');
 
-if (slides.length > 0 && progressBars.length > 0) {
+if (slides.length > 0 && sliderDots.length > 0) {
     let currentSlide = 0;
     let slideInterval;
     const slideDuration = 6000;
@@ -89,14 +59,9 @@ if (slides.length > 0 && progressBars.length > 0) {
             }
         });
 
-        // Update progress bars
-        progressBars.forEach((bar, i) => {
-            bar.classList.remove('active', 'done');
-            if (i < index) {
-                bar.classList.add('done');
-            } else if (i === index) {
-                bar.classList.add('active');
-            }
+        // Update dot indicators
+        sliderDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
         });
 
         currentSlide = index;
@@ -118,10 +83,11 @@ if (slides.length > 0 && progressBars.length > 0) {
         startSlider();
     }
 
-    // Click on progress bars
-    progressBars.forEach((bar, index) => {
-        bar.addEventListener('click', () => {
-            showSlide(index);
+    // Click on dots to jump to slide
+    sliderDots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+            showSlide(slideIndex);
             resetSlider();
         });
     });
@@ -183,6 +149,7 @@ initTabGroup('.tab-btn', '.tab-panel', 'data-tab', 'data-panel');
         if (btn.classList.contains('blue')) return 'blue';
         if (btn.classList.contains('orange')) return 'orange';
         if (btn.classList.contains('purple')) return 'purple';
+        if (btn.classList.contains('green')) return 'green';
         return 'blue';
     }
 
@@ -430,6 +397,28 @@ if (contactForm) {
 
 // INFO TABS (index.html — "Gut zu wissen")
 initTabGroup('.info-tab-pill', '.info-tab-panel', 'data-info-tab', 'data-info-panel');
+
+// ========================================
+// APP DOWNLOAD STRIP — dismiss with sessionStorage
+// ========================================
+const appStrip = document.querySelector('.app-download-strip');
+const appStripClose = document.querySelector('.app-download-strip-close');
+
+if (appStrip) {
+    // Check if already dismissed this session
+    if (sessionStorage.getItem('app-strip-dismissed') === '1') {
+        appStrip.classList.add('hidden');
+        document.body.classList.add('strip-hidden');
+    }
+
+    if (appStripClose) {
+        appStripClose.addEventListener('click', () => {
+            appStrip.classList.add('hidden');
+            document.body.classList.add('strip-hidden');
+            sessionStorage.setItem('app-strip-dismissed', '1');
+        });
+    }
+}
 
 // ========================================
 // PREVIEW BRIDGE LOADER

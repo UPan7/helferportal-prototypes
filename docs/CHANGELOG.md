@@ -4,6 +4,62 @@
 
 ---
 
+## 2026-03-25 — Client Feedback Round (HTML-only, no Supabase sync)
+
+Applied 9 client feedback items to HTML prototypes. Changes deployed to GitHub Pages for client review. Supabase/CMS intentionally left on previous version as fallback. Restore point: commit `00658db`.
+
+### Navigation restructured (A1)
+- Removed mega menu (HTML, CSS ~300 lines, JS) from all pages
+- Replaced with classic horizontal navbar: Hilfe finden | Engagieren | Für Kommunen | Über uns + "App herunterladen" CTA
+- Mobile hamburger menu updated, München/Städte references removed
+
+### Color change: Kommunen purple → green (A2)
+- `.page-fuer-kommunen` accent switched to `--green-primary`
+- Added `.green` utility classes (tabs, buttons, icons, cards)
+- Updated all purple HTML classes on index.html + fuer-kommunen.html
+- Mobile tab picker updated for green
+
+### Hero slider: 4 → 2 slides (B1)
+- Removed intro slide and Kommunen slide
+- Kept: Hilfesuchende (blue) + Engagierte (orange)
+- Replaced progress bar animation with dot indicators
+- 6-second autoplay retained
+
+### Städte → Projekte section (B2)
+- Removed 7-city grid from Startseite
+- Replaced with "Forschung & Projekte" section (3 project cards)
+
+### Video placeholders enhanced (B3)
+- YouTube-style red/white play button (SVG)
+- Dark frame overlay, duration badges, 16:9 aspect ratio
+
+### App Download CTAs (C1)
+- Added app-download strip below header on all 9 pages (closable, sessionStorage)
+- App Store + Google Play badge placeholders (inline SVG)
+- Updated slider CTAs, tab CTAs, subpage CTA sections
+- fuer-kommunen: kept B2B CTAs (not app download)
+
+### New pages (D1, D2)
+- `presse.html`: hero-mini + 4 press release cards + media contact section
+- `projekte.html`: hero-mini + 3 project detail cards + partners + CTA
+
+### Font: Plus Jakarta Sans → Open Sans (E0)
+- Updated Google Fonts import in all HTML pages
+- Updated CSS font-family variable
+
+### Wording consistency (E1)
+- "Begleitung finden" → "Hilfe finden" on hilfe-finden.html
+- Standardized CTA button labels
+
+### Footer updates
+- Added Presse + Projekte links to footer on all 9 pages
+
+### Agent team infrastructure
+- Created `tasks/dashboard.md` + `tasks/dashboard.json` for agent team tracking
+- Full agent workflow: designer → reviewer-architect → implementation-agent → qa-agent
+
+---
+
 ## 2026-03-13 — Content Safety & Publish Restoration
 
 ### Content backup system (3-layer protection)
