@@ -27,10 +27,10 @@
                 </nav>
             </div>
             <div class="header-right">
-                <a href="/kontakt.html" class="btn-cta-nav">
-                    App herunterladen
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
+                <div class="header-app-btns">
+                    <a href="https://hilfe.helferportal.de" class="btn-app-nav blue">Hilfe finden</a>
+                    <a href="https://helfen.helferportal.de" class="btn-app-nav orange">Helfer werden</a>
+                </div>
                 <button class="mobile-menu-btn" aria-label="Menü"><svg aria-hidden="true" class="icon-lg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></button>
             </div>
         </div>
@@ -49,21 +49,29 @@
             </button>
         </div>
         <div class="mobile-menu-cta-row">
-            <a href="/hilfe-finden.html" class="mobile-cta-card blue">
+            <a href="https://hilfe.helferportal.de" class="mobile-cta-card blue">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
                 </svg>
                 <span>Hilfe finden</span>
             </a>
-            <a href="/engagieren.html" class="mobile-cta-card orange">
+            <a href="https://helfen.helferportal.de" class="mobile-cta-card orange">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                 </svg>
-                <span>Engagieren</span>
+                <span>Helfer werden</span>
             </a>
         </div>
         <nav class="mobile-menu-nav">
+            <a href="/hilfe-finden.html" class="mobile-nav-link">
+                <span>Hilfe finden</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
+            </a>
+            <a href="/engagieren.html" class="mobile-nav-link">
+                <span>Engagieren</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
+            </a>
             <a href="/fuer-kommunen.html" class="mobile-nav-link">
                 <span>Für Kommunen</span>
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
@@ -72,21 +80,12 @@
                 <span>Über uns</span>
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
             </a>
-            <a href="/kontakt.html" class="mobile-nav-link">
-                <span>Kontakt</span>
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
-            </a>
-            <a href="/kontakt.html#faq" class="mobile-nav-link">
-                <span>FAQ</span>
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
-            </a>
         </nav>
         <div class="mobile-menu-footer">
             <a href="/kontakt.html" class="mobile-start-btn">
-                Jetzt starten
+                Kontakt
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
             </a>
-            <p class="mobile-start-hint">Kostenlos &amp; unverbindlich</p>
         </div>
     </div>
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
@@ -129,24 +128,7 @@
                     <div class="projekte-detail-card-body">
                         <h4 data-field="projekt-1-title" data-field-type="text">Inklusion &amp; Teilhabe</h4>
                         <p class="projekte-detail-card-desc" data-field="projekt-1-text" data-field-type="textarea">Forschungsprojekt mit der Universität München zur digitalen Teilhabe von Menschen mit Einschränkungen. Im Fokus steht die Frage, wie digitale Plattformen Barrieren abbauen und soziale Teilhabe im Alltag wirksam stärken können.</p>
-                        <div class="projekte-detail-card-meta">
-                            <div class="projekte-detail-meta-item">
-                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span data-field="projekt-1-duration" data-field-type="text">Laufzeit: 2024–2026</span>
-                            </div>
-                            <div class="projekte-detail-meta-item">
-                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                    <path d="M3 21h18M4 21V10l8-6 8 6v11"></path>
-                                </svg>
-                                <span data-field="projekt-1-partner" data-field-type="text">Gefördert durch BMBF</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn-primary blue" data-field="projekt-1-link" data-field-type="button">Projektdetails
+                        <a href="#" class="btn-primary blue" data-field="projekt-1-link" data-field-type="button">Mehr erfahren
                             <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
                     </div>
@@ -160,25 +142,7 @@
                     <div class="projekte-detail-card-body">
                         <h4 data-field="projekt-2-title" data-field-type="text">Digitale Nachbarschaftshilfe</h4>
                         <p class="projekte-detail-card-desc" data-field="projekt-2-text" data-field-type="textarea">Pilotprojekt in München und Hamburg zur Vernetzung von Nachbarschaftshilfe über die Helferportal-App. Ziel ist es, informelle Hilfsstrukturen sichtbar zu machen und niedrigschwellig mit professionellen Angeboten zu verknüpfen.</p>
-                        <div class="projekte-detail-card-meta">
-                            <div class="projekte-detail-meta-item">
-                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span data-field="projekt-2-duration" data-field-type="text">Laufzeit: 2025–2027</span>
-                            </div>
-                            <div class="projekte-detail-meta-item">
-                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                </svg>
-                                <span data-field="projekt-2-partner" data-field-type="text">In Kooperation mit lokalen Wohlfahrtsverbänden</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn-primary blue" data-field="projekt-2-link" data-field-type="button">Projektdetails
+                        <a href="#" class="btn-primary blue" data-field="projekt-2-link" data-field-type="button">Mehr erfahren
                             <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
                     </div>
@@ -192,25 +156,7 @@
                     <div class="projekte-detail-card-body">
                         <h4 data-field="projekt-3-title" data-field-type="text">Schulungsprogramm für Engagierte</h4>
                         <p class="projekte-detail-card-desc" data-field="projekt-3-text" data-field-type="textarea">Zertifiziertes Schulungsprogramm für ehrenamtliche Helfer:innen. Inhalte umfassen Erste Hilfe, Kommunikation mit Hilfesuchenden, Datenschutz im Ehrenamt und den sicheren Umgang mit der Helferportal-App.</p>
-                        <div class="projekte-detail-card-meta">
-                            <div class="projekte-detail-meta-item">
-                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span data-field="projekt-3-duration" data-field-type="text">Fortlaufend seit 2025</span>
-                            </div>
-                            <div class="projekte-detail-meta-item">
-                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                </svg>
-                                <span data-field="projekt-3-partner" data-field-type="text">Zertifiziert durch deinNachbar e.V.</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn-primary blue" data-field="projekt-3-link" data-field-type="button">Projektdetails
+                        <a href="#" class="btn-primary blue" data-field="projekt-3-link" data-field-type="button">Mehr erfahren
                             <svg aria-hidden="true" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
                     </div>
@@ -219,66 +165,6 @@
         </div>
     </section>
 
-    <!-- ========================================
-         PARTNERS
-         ======================================== -->
-    <section class="partners-section" data-block="partners" data-block-id="b3" id="partner">
-        <div class="partners-section-inner">
-            <div class="section-header">
-                <h2 data-field="logos-title" data-field-type="text">Forschungspartner</h2>
-                <h3 data-field="logos-subtitle" data-field-type="text">Unsere Partner in Forschung und Praxis</h3>
-            </div>
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        <img loading="lazy" data-field="logo-1-image" data-field-type="image" src="" alt="BMBF">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6"></path>
-                            <rect x="9" y="12" width="2" height="2" rx="0.5"></rect>
-                            <rect x="13" y="12" width="2" height="2" rx="0.5"></rect>
-                        </svg>
-                    </div>
-                    <h4 data-field="logo-1-name" data-field-type="text">BMBF</h4>
-                    <p data-field="logo-1-text" data-field-type="text">Bundesministerium für Bildung und Forschung</p>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        <img loading="lazy" data-field="logo-2-image" data-field-type="image" src="" alt="DATI">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="8" r="3"></circle>
-                            <path d="M6 21l3-9h6l3 9"></path>
-                            <path d="M10 12v3M14 12v3"></path>
-                        </svg>
-                    </div>
-                    <h4 data-field="logo-2-name" data-field-type="text">DATI</h4>
-                    <p data-field="logo-2-text" data-field-type="text">Deutsche Agentur für Transfer und Innovation</p>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        <img loading="lazy" data-field="logo-3-image" data-field-type="image" src="" alt="TU Chemnitz">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 10L12 2 2 10"></path>
-                            <path d="M6 10v8h12v-8"></path>
-                            <path d="M12 10v8"></path>
-                            <path d="M9 14h6"></path>
-                        </svg>
-                    </div>
-                    <h4 data-field="logo-3-name" data-field-type="text">TU Chemnitz</h4>
-                    <p data-field="logo-3-text" data-field-type="text">Wissenschaftliche Begleitung und Evaluation</p>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        <img loading="lazy" data-field="logo-4-image" data-field-type="image" src="" alt="deinNachbar e.V.">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </div>
-                    <h4 data-field="logo-4-name" data-field-type="text">deinNachbar e.V.</h4>
-                    <p data-field="logo-4-text" data-field-type="text">Praxislabor und Schulungsträger</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ========================================
          CTA SECTION

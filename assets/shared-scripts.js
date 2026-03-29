@@ -399,28 +399,6 @@ if (contactForm) {
 initTabGroup('.info-tab-pill', '.info-tab-panel', 'data-info-tab', 'data-info-panel');
 
 // ========================================
-// APP DOWNLOAD STRIP — dismiss with sessionStorage
-// ========================================
-const appStrip = document.querySelector('.app-download-strip');
-const appStripClose = document.querySelector('.app-download-strip-close');
-
-if (appStrip) {
-    // Check if already dismissed this session
-    if (sessionStorage.getItem('app-strip-dismissed') === '1') {
-        appStrip.classList.add('hidden');
-        document.body.classList.add('strip-hidden');
-    }
-
-    if (appStripClose) {
-        appStripClose.addEventListener('click', () => {
-            appStrip.classList.add('hidden');
-            document.body.classList.add('strip-hidden');
-            sessionStorage.setItem('app-strip-dismissed', '1');
-        });
-    }
-}
-
-// ========================================
 // PARTNERS TOGGLE (index.html — expandable logos)
 // ========================================
 const partnersToggle = document.querySelector('.partners-toggle-btn');

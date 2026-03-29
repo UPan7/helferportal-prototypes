@@ -27,10 +27,10 @@
                 </nav>
             </div>
             <div class="header-right">
-                <a href="/kontakt.html" class="btn-cta-nav">
-                    App herunterladen
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
+                <div class="header-app-btns">
+                    <a href="https://hilfe.helferportal.de" class="btn-app-nav blue">Hilfe finden</a>
+                    <a href="https://helfen.helferportal.de" class="btn-app-nav orange">Helfer werden</a>
+                </div>
                 <button class="mobile-menu-btn" aria-label="Menü"><svg aria-hidden="true" class="icon-lg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></button>
             </div>
         </div>
@@ -49,21 +49,29 @@
             </button>
         </div>
         <div class="mobile-menu-cta-row">
-            <a href="/hilfe-finden.html" class="mobile-cta-card blue">
+            <a href="https://hilfe.helferportal.de" class="mobile-cta-card blue">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
                 </svg>
                 <span>Hilfe finden</span>
             </a>
-            <a href="/engagieren.html" class="mobile-cta-card orange">
+            <a href="https://helfen.helferportal.de" class="mobile-cta-card orange">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                 </svg>
-                <span>Engagieren</span>
+                <span>Helfer werden</span>
             </a>
         </div>
         <nav class="mobile-menu-nav">
+            <a href="/hilfe-finden.html" class="mobile-nav-link">
+                <span>Hilfe finden</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
+            </a>
+            <a href="/engagieren.html" class="mobile-nav-link">
+                <span>Engagieren</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
+            </a>
             <a href="/fuer-kommunen.html" class="mobile-nav-link">
                 <span>Für Kommunen</span>
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
@@ -72,21 +80,12 @@
                 <span>Über uns</span>
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
             </a>
-            <a href="/kontakt.html" class="mobile-nav-link">
-                <span>Kontakt</span>
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
-            </a>
-            <a href="/kontakt.html#faq" class="mobile-nav-link">
-                <span>FAQ</span>
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"></path></svg>
-            </a>
         </nav>
         <div class="mobile-menu-footer">
             <a href="/kontakt.html" class="mobile-start-btn">
-                Jetzt starten
+                Kontakt
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
             </a>
-            <p class="mobile-start-hint">Kostenlos &amp; unverbindlich</p>
         </div>
     </div>
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
@@ -168,75 +167,6 @@
                         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                     </a>
                 </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         MEDIA CONTACT
-         ======================================== -->
-    <section class="media-contact-section" data-block="media-contact" data-block-id="b3">
-        <div class="media-contact-inner">
-            <div class="section-header">
-                <h2 data-field="contact-overline" data-field-type="text">Medienkontakt</h2>
-                <h3 data-field="contact-title" data-field-type="text">Presseanfragen &amp; Materialien</h3>
-            </div>
-            <div class="media-contact-grid">
-                <!-- Contact Card -->
-                <div class="media-contact-card">
-                    <div class="media-contact-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <h4 data-field="contact-name" data-field-type="text">Pressestelle Helferportal</h4>
-                    <p class="media-contact-role" data-field="contact-role" data-field-type="text">Kommunikation &amp; Öffentlichkeitsarbeit</p>
-                    <div class="media-contact-details">
-                        <a href="mailto:presse@helferportal.de" class="media-contact-link">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <span data-field="contact-email" data-field-type="text">presse@helferportal.de</span>
-                        </a>
-                        <a href="tel:+498912345678" class="media-contact-link">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <span data-field="contact-phone" data-field-type="text">+49 89 123 456 78</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Downloads Card -->
-                <div class="media-downloads-card">
-                    <div class="media-contact-icon">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                    </div>
-                    <h4 data-field="downloads-title" data-field-type="text">Pressematerialien</h4>
-                    <p data-field="downloads-text" data-field-type="textarea">Laden Sie unsere Pressemappe, Logos und Bildmaterial herunter.</p>
-                    <div class="media-download-buttons">
-                        <a href="#" class="btn-primary blue" data-field="download-btn-1" data-field-type="button">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                            </svg>
-                            Pressemappe (PDF)
-                        </a>
-                        <a href="#" class="btn-secondary" data-field="download-btn-2" data-field-type="button">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                            Logo-Kit herunterladen
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

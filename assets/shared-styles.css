@@ -259,6 +259,16 @@ body[class*="page-"] {
     overflow: hidden;
 }
 
+/* Blue hero-mini for hilfe-finden page */
+.page-hilfe-finden .hero-mini {
+    background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-dark) 100%);
+}
+
+/* Blue hero-mini for presse page */
+.page-presse .hero-mini {
+    background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-dark) 100%);
+}
+
 /* Hero background image (CMS-editable, replaces ::before background) */
 .hero-bg-image {
     position: absolute;
@@ -833,18 +843,23 @@ body[class*="page-"] {
     transform: scaleX(1);
 }
 
-/* CTA button in header */
-.btn-cta-nav {
+/* Header app buttons — two compact pills side by side */
+.header-app-btns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-app-nav {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-sm);
-    padding: 10px 20px;
-    background: var(--blue-primary);
+    gap: 6px;
+    padding: 8px 14px;
     color: var(--white);
     border-radius: var(--radius-full);
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     text-decoration: none;
     transition: all var(--transition-fast);
     border: none;
@@ -852,15 +867,29 @@ body[class*="page-"] {
     white-space: nowrap;
 }
 
-.btn-cta-nav:hover {
+.btn-app-nav.blue {
+    background: var(--blue-primary);
+}
+
+.btn-app-nav.blue:hover {
     background: var(--blue-dark);
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
 
-.btn-cta-nav svg {
-    width: 16px;
-    height: 16px;
+.btn-app-nav.orange {
+    background: var(--orange-primary);
+}
+
+.btn-app-nav.orange:hover {
+    background: var(--orange-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-app-nav svg {
+    width: 14px;
+    height: 14px;
 }
 
 /* Tablet: smaller nav text */
@@ -870,9 +899,9 @@ body[class*="page-"] {
         font-size: 13px;
     }
 
-    .btn-cta-nav {
-        padding: 8px 14px;
-        font-size: 13px;
+    .btn-app-nav {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
 
@@ -1374,7 +1403,7 @@ body[class*="page-"] {
 }
 
 @media (max-width: 768px) {
-    .nav-main, .btn-cta-nav {
+    .nav-main, .header-app-btns {
         display: none;
     }
 
@@ -3337,6 +3366,23 @@ body[class*="page-"] {
    Scoped to body.page-hilfe-finden
    ================================================================ */
 
+/* Tab buttons: always blue on hilfe-finden */
+.page-hilfe-finden .tab-btn.active {
+    background: var(--blue-primary);
+}
+.page-hilfe-finden .tab-btn.active .tab-icon {
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+}
+
+/* CTA buttons: always blue on hilfe-finden */
+.page-hilfe-finden .btn-primary {
+    background: var(--blue-primary);
+}
+.page-hilfe-finden .btn-primary:hover {
+    background: var(--blue-dark);
+}
+
 /* Was möglich ist - Liste */
 .page-hilfe-finden .possibilities-box {
     background: var(--blue-lighter);
@@ -4130,7 +4176,7 @@ body[class*="page-"] {
 
 /* HERO */
 .page-ueber-uns .hero {
-    margin-top: 64px; background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%); padding: var(--space-3xl) var(--space-lg); position: relative; overflow: hidden;
+    margin-top: 64px; background: linear-gradient(135deg, #0D2137 0%, #1A365D 100%); padding: var(--space-3xl) var(--space-lg); position: relative; overflow: hidden;
 }
 
 .page-ueber-uns .hero .hero-bg-image { opacity: 0.2; }
@@ -5035,6 +5081,88 @@ body[class*="page-"] {
 
 }
 
+/* Dual App CTA (kontakt page) */
+.dual-app-cta {
+    padding: var(--space-2xl) var(--space-lg);
+    background: var(--gray-50);
+}
+
+.dual-app-cta-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+}
+
+.dual-app-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.dual-app-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.dual-app-card.blue {
+    border-top: 4px solid var(--blue-primary);
+}
+
+.dual-app-card.orange {
+    border-top: 4px solid var(--orange-primary);
+}
+
+.dual-app-card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+}
+
+.dual-app-card.blue .dual-app-card-icon {
+    background: var(--blue-lighter);
+    color: var(--blue-primary);
+}
+
+.dual-app-card.orange .dual-app-card-icon {
+    background: var(--orange-lighter);
+    color: var(--orange-primary);
+}
+
+.dual-app-card h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-sm);
+}
+
+.dual-app-card p {
+    font-size: 14px;
+    color: var(--gray-600);
+    margin-bottom: var(--space-lg);
+    line-height: 1.5;
+}
+
+.dual-app-card .btn-primary {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .dual-app-cta-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* ================================================================
    PAGE-SPECIFIC: Stadtseite Muenchen
@@ -5906,72 +6034,7 @@ body[class*="page-"] {
 .page-fuer-kommunen .tabs-picker-item.active .check-icon { color: var(--green-primary); }
 
 
-/* ================================================================
-   APP DOWNLOAD STRIP — sticky banner below header on all pages
-   ================================================================ */
-.app-download-strip {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background: linear-gradient(135deg, var(--blue-primary) 0%, #1976D2 50%, #0D47A1 100%);
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    transition: transform var(--transition-normal), opacity var(--transition-normal);
-}
-
-.app-download-strip.hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.app-download-strip-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 8px var(--space-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-lg);
-}
-
-.app-download-strip-text {
-    color: var(--white);
-    font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    white-space: nowrap;
-}
-
-.app-download-badges {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.app-download-strip-close {
-    position: absolute;
-    right: var(--space-md);
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: rgba(255,255,255,0.6);
-    cursor: pointer;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color var(--transition-fast);
-    border-radius: var(--radius-sm);
-}
-
-.app-download-strip-close:hover {
-    color: var(--white);
-    background: rgba(255,255,255,0.1);
-}
+/* (App download strip removed — replaced by header app buttons) */
 
 /* Store Badge — reusable component (used in strip, CTAs, hero) */
 .store-badge {
@@ -6043,59 +6106,33 @@ body[class*="page-"] {
     margin-top: var(--space-lg);
 }
 
-/* Adjust margin-top of hero/hero-mini to account for strip */
+/* Hero margin-top = header height */
 .hero-mini {
-    margin-top: 104px;
-}
-
-.page-startseite .hero {
-    margin-top: 104px;
-}
-
-.page-fuer-kommunen .hero {
-    margin-top: 104px;
-}
-
-.page-ueber-uns .hero {
-    margin-top: 104px;
-}
-
-.page-kontakt .hero {
-    margin-top: 104px;
-}
-
-.page-muenchen .hero-city {
-    margin-top: 104px;
-}
-
-/* When strip is dismissed, revert margin-top to header-only offset */
-.strip-hidden .hero-mini,
-.strip-hidden.page-startseite .hero,
-.strip-hidden.page-fuer-kommunen .hero,
-.strip-hidden.page-ueber-uns .hero,
-.strip-hidden.page-kontakt .hero,
-.strip-hidden.page-muenchen .hero-city {
     margin-top: 64px;
 }
 
-/* Mobile: app download strip */
+.page-startseite .hero {
+    margin-top: 64px;
+}
+
+.page-fuer-kommunen .hero {
+    margin-top: 64px;
+}
+
+.page-ueber-uns .hero {
+    margin-top: 64px;
+}
+
+.page-kontakt .hero {
+    margin-top: 64px;
+}
+
+.page-muenchen .hero-city {
+    margin-top: 64px;
+}
+
+/* Mobile: store badges */
 @media (max-width: 768px) {
-    .app-download-strip-inner {
-        flex-direction: column;
-        gap: var(--space-sm);
-        padding: 10px var(--space-xl) 10px var(--space-lg);
-    }
-
-    .app-download-strip-text {
-        font-size: 13px;
-        white-space: normal;
-        text-align: center;
-    }
-
-    .app-download-badges {
-        gap: var(--space-sm);
-    }
-
     .store-badge {
         padding: 5px 10px;
         font-size: 11px;
@@ -6109,45 +6146,10 @@ body[class*="page-"] {
         font-size: 7px;
     }
 
-    /* More top offset on mobile (strip is taller due to stacking) */
-    .hero-mini {
-        margin-top: 120px;
-    }
-
-    .page-startseite .hero {
-        margin-top: 120px;
-    }
-
-    .page-fuer-kommunen .hero {
-        margin-top: 120px;
-    }
-
-    .page-ueber-uns .hero {
-        margin-top: 120px;
-    }
-
-    .page-kontakt .hero {
-        margin-top: 120px;
-    }
-
-    .page-muenchen .hero-city {
-        margin-top: 120px;
-    }
-
     .store-badges-row {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--space-sm);
-    }
-
-    /* Strip dismissed on mobile: revert to 64px */
-    .strip-hidden .hero-mini,
-    .strip-hidden.page-startseite .hero,
-    .strip-hidden.page-fuer-kommunen .hero,
-    .strip-hidden.page-ueber-uns .hero,
-    .strip-hidden.page-kontakt .hero,
-    .strip-hidden.page-muenchen .hero-city {
-        margin-top: 64px;
     }
 }
 
@@ -6213,78 +6215,10 @@ body[class*="page-"] {
     text-align: center;
 }
 
-/* App Download Prompt — inline card (kontakt page, etc.) */
-.app-download-prompt {
-    max-width: 1280px;
-    margin: 0 auto var(--space-3xl);
-    padding: 0 var(--space-lg);
-}
-
-.app-download-prompt-inner {
-    background: linear-gradient(135deg, var(--blue-primary) 0%, #0D47A1 100%);
-    border-radius: var(--radius-lg);
-    padding: var(--space-xl) var(--space-2xl);
-    display: flex;
-    align-items: center;
-    gap: var(--space-xl);
-    color: var(--white);
-}
-
-.app-download-prompt-icon {
-    flex-shrink: 0;
-    width: 56px;
-    height: 56px;
-    background: rgba(255,255,255,0.15);
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-}
-
-.app-download-prompt-content {
-    flex: 1;
-}
-
-.app-download-prompt-content h3 {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: var(--space-xs);
-}
-
-.app-download-prompt-content p {
-    font-size: 15px;
-    opacity: 0.85;
-    margin: 0;
-}
-
-.app-download-prompt-badges {
-    display: flex;
-    gap: var(--space-sm);
-    flex-shrink: 0;
-}
-
-@media (max-width: 768px) {
-    .app-download-prompt-inner {
-        flex-direction: column;
-        text-align: center;
-        padding: var(--space-xl) var(--space-lg);
-        gap: var(--space-md);
-    }
-
-    .app-download-prompt-badges {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+/* (Old app-download-prompt CSS removed — kontakt uses dual-app-cta) */
 
 /* Tablet adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .app-download-strip-text {
-        font-size: 13px;
-    }
-
     .store-badge {
         padding: 5px 10px;
     }
@@ -6822,41 +6756,7 @@ body[class*="page-"] {
     }
 }
 
-/* ================================================================
-   S1: HERO OVERLINE — static heading above slider
-   ================================================================ */
-
-.page-startseite .hero-overline {
-    max-width: 1280px;
-    margin: 0 auto var(--space-lg);
-    text-align: center;
-    padding: var(--space-2xl) var(--space-lg) 0;
-}
-
-.page-startseite .hero-overline h2 {
-    font-family: var(--font-display);
-    font-size: clamp(26px, 3.5vw, 42px);
-    font-weight: 800;
-    color: var(--gray-900);
-    line-height: 1.2;
-    margin-bottom: var(--space-sm);
-}
-
-.page-startseite .hero-overline p {
-    font-family: var(--font-body);
-    font-size: clamp(15px, 2vw, 18px);
-    color: var(--gray-600);
-    line-height: 1.5;
-    max-width: 640px;
-    margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-    .page-startseite .hero-overline {
-        padding: var(--space-lg) var(--space-md) 0;
-        margin-bottom: var(--space-md);
-    }
-}
+/* (Hero overline removed — slider starts directly) */
 
 /* ================================================================
    S3: TABS OVERLINE — small uppercase text above tabs title
@@ -6873,18 +6773,7 @@ body[class*="page-"] {
     margin-bottom: var(--space-sm);
 }
 
-/* ================================================================
-   S4: PROJEKTE SUBTITLE
-   ================================================================ */
-
-.page-startseite .projekte-subtitle {
-    font-family: var(--font-body);
-    font-size: 16px;
-    color: var(--gray-600);
-    line-height: 1.6;
-    max-width: 720px;
-    margin: var(--space-md) auto 0;
-}
+/* (Projekte subtitle removed) */
 
 /* ================================================================
    S5: PRICING SECTION — Kosten tab redesign
