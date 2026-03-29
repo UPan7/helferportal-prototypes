@@ -8,7 +8,7 @@
 
 ### Phase 0 — Page Annotation [DONE 2026-03-08]
 
-All 7 pages annotated with `data-block`/`data-field` attributes. JSON content files generated. Block registry frozen at v1.1. Round-trip verified for all pages.
+All 8 pages annotated with `data-block`/`data-field` attributes. JSON content files generated. Block registry at v1.2. Round-trip verified for all pages.
 
 See [CHANGELOG.md](./CHANGELOG.md) for details.
 
@@ -20,7 +20,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for details.
 
 ### Phase 2 — Architecture Refactor [DONE 2026-03-08]
 
-Shared libraries (`lib/config.js`, `lib/registry.js`, `lib/field-ops.js`). Round-trip test (`test-roundtrip.js`) — all 7 pages pass. CSS/JS cleanup, admin.html dead code removal.
+Shared libraries (`lib/config.js`, `lib/registry.js`, `lib/field-ops.js`). Round-trip test (`test-roundtrip.js`) — all 8 pages pass. CSS/JS cleanup, admin.html dead code removal.
 
 See [CHANGELOG.md](./CHANGELOG.md) for details.
 
@@ -81,8 +81,7 @@ P3-10  Test full cycle: edit → snapshot → edit more → restore → verify
 
 Items that improve quality but aren't blocking:
 
-- [ ] **Header/footer templating** — eliminate 7-file duplication (HTML includes or build-time injection)
-- [ ] **München CSS variables** — replace hardcoded hex colors with `var(--*)` references
+- [ ] **Header/footer templating** — eliminate 8-file duplication (HTML includes or build-time injection)
 - [ ] **deploy.js build extraction** — extract shared build function or have deploy.js call build.js
 - [ ] **admin.html modularization** — split 3400-line monolith if/when maintenance becomes painful
 
@@ -108,6 +107,6 @@ Items that improve quality but aren't blocking:
 ### Quality Bar
 
 - `validate.js` passes with 0 errors, 0 warnings for all affected pages
-- `test-roundtrip.js` passes for all 7 pages
+- `test-roundtrip.js` passes for all 8 pages
 - No broken root-relative links
 - No inline styles in HTML pages

@@ -20,7 +20,8 @@ helferportal-prototypes/          ← Git repo root = document root
 ├── fuer-kommunen.html
 ├── ueber-uns.html
 ├── kontakt.html
-├── muenchen.html
+├── presse.html
+├── projekte.html
 ├── assets/
 │   ├── shared-styles.css         ← all CSS
 │   ├── shared-scripts.js         ← all JS
@@ -34,7 +35,8 @@ helferportal-prototypes/          ← Git repo root = document root
 │   ├── fuer-kommunen.json
 │   ├── ueber-uns.json
 │   ├── kontakt.json
-│   └── muenchen.json
+│   ├── presse.json
+│   └── projekte.json
 ├── content/backups/               ← local JSON backups before overwrite (gitignored)
 ├── tools/
 │   ├── admin.html                ← CMS editor (browser-based)
@@ -157,7 +159,8 @@ Blocks are numbered sequentially per page: b1, b2, b3... The `data-block` value 
 | 4 | Für die öffentliche Hand & soziale Akteure | `/fuer-kommunen` | 5 | Purple |
 | 5 | Über uns | `/ueber-uns` | 6 | Blue |
 | 6 | Anmelden / Kontakt | `/kontakt` | 3 | Blue |
-| 7 | München (Stadtseite) | `/muenchen` | 7 | Orange |
+| 7 | Presse | `/presse` | 2 | Blue |
+| 8 | Projekte | `/projekte` | 3 | Blue |
 
 All subpages follow: Mini Hero → Content blocks → FAQ → shared header/footer.
 
@@ -279,7 +282,7 @@ After ANY structural change:
 
 - **Supabase = source of truth**: Never overwrite Supabase content without checking for conflicts first. Use `sync-to-supabase.js` (has built-in conflict detection).
 - **Deploy first, always**: `node deploy.js` is MANDATORY before any local work. The full local workflow is: **pull → edit → extract → sync → commit → push**. Never skip the pull step — CMS edits happen asynchronously and your local copy may be stale.
-- **deploy.js textarea handler**: `field-ops.js` textarea handler now uses `applyStructuredText()` for elements with children, preserving nested HTML structure. Plain-text textarea fields still use `.text()`. Round-trip tested across all 7 pages.
+- **deploy.js textarea handler**: `field-ops.js` textarea handler now uses `applyStructuredText()` for elements with children, preserving nested HTML structure. Plain-text textarea fields still use `.text()`. Round-trip tested across all 8 pages.
 - At the end of every session, when asked to wrap up, update the Session Log section below following the standard format.
 
 ## Workflow Rules

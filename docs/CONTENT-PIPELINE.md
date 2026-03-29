@@ -107,7 +107,7 @@ node extract.js ../hilfe-finden.html ../content/hilfe-finden.json
 
 ```bash
 node build.js ../content/startseite.json ../index.html
-node build.js ../content/muenchen.json ../muenchen.html
+node build.js ../content/presse.json ../presse.html
 ```
 
 ### sync-to-supabase.js — JSON → Supabase
@@ -133,14 +133,14 @@ node validate.js startseite --strict     # Strict mode (ghosts = errors, prefix 
 ### test-roundtrip.js — Round-trip test
 
 ```bash
-node test-roundtrip.js                   # All 7 pages
+node test-roundtrip.js                   # All 8 pages
 node test-roundtrip.js startseite        # One page
 ```
 
 ### Validate all pages (batch)
 
 ```bash
-for page in startseite hilfe-finden engagieren fuer-kommunen ueber-uns kontakt muenchen; do
+for page in startseite hilfe-finden engagieren fuer-kommunen ueber-uns kontakt presse projekte; do
   node validate.js "$page" || exit 1
 done
 ```
@@ -233,7 +233,7 @@ No Supabase sync needed.
 ### Smoke test checklist
 
 **Browser (GitHub Pages or local `npx serve .`):**
-- [ ] All 7 pages load without console errors
+- [ ] All 8 pages load without console errors
 - [ ] Navigation links work across all pages (root-relative)
 - [ ] Mega menu opens/closes correctly
 - [ ] Active nav state highlights current page
@@ -256,7 +256,7 @@ No Supabase sync needed.
 cd tools
 
 # 1. Validate all pages
-for page in startseite hilfe-finden engagieren fuer-kommunen ueber-uns kontakt muenchen; do
+for page in startseite hilfe-finden engagieren fuer-kommunen ueber-uns kontakt presse projekte; do
   node validate.js "$page" || exit 1
 done
 

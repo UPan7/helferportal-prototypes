@@ -4,6 +4,28 @@
 
 ---
 
+## 2026-03-29 — CMS Editor Cleanup + München Removed
+
+### Content editor sync (Round 3)
+- Re-extracted all 9 pages from current HTML structure; synced to Supabase with `--force`
+- `presse.html` and `projekte.html` registered in `tools/lib/config.js`, `content/manifest.json`, block-registry.json
+- `sync-to-supabase.js` fixed: now does POST (INSERT) for new pages instead of silently failing with PATCH
+
+### Block registry audit (v1.2)
+- `info-tabs` extracted as standalone block type (was alias of `tabs` → scaffolded 18 empty `tab-{key}-*` stubs)
+- `quick-actions` registered as standalone block type
+- Removed 8 unused field patterns that scaffolded empty stubs in admin.html:
+  `tabs-title`, `card-{N}-icon`, `card-{N}-href`, `_quick_actions_variant` (cards), `video-overline`, `video-{key}-file`, `section-image`, `section-btn`, `cta-image`, `logo-{N}-link`
+- Removed `tab-{key}-vorteile` and `step-{N}-icon` (previous session)
+- `projekte` block: `section-overline/title` moved to `_section_header_variant` group to prevent scaffolding on startseite's projekte-section
+
+### München page removed
+- Deleted `muenchen.html`, `content/muenchen.json`
+- Removed from Supabase (`page_versions` + `pages` tables), `config.js`, `manifest.json`
+- Pre-commit hook updated: muenchen → presse + projekte
+
+---
+
 ## 2026-03-25 — Client Feedback Round (HTML-only, no Supabase sync)
 
 Applied 9 client feedback items to HTML prototypes. Changes deployed to GitHub Pages for client review. Supabase/CMS intentionally left on previous version as fallback. Restore point: commit `00658db`.

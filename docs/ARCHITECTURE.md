@@ -10,7 +10,7 @@
 
 A **static-HTML CMS pipeline** for [helferportal.kamanin.at](https://www.helferportal.kamanin.at/). The project consists of:
 
-- **7 HTML prototype pages** — clickable, responsive wireframes (~80% design fidelity) for client review
+- **8 HTML prototype pages** — clickable, responsive wireframes (~80% design fidelity) for client review
 - **A content extraction/build pipeline** — bidirectional sync between annotated HTML and structured JSON
 - **A browser-based editor** (`tools/admin.html`) — with Supabase backend, live preview, image upload, and draft autosave
 - **A block registry** (`tools/block-registry.json`) — frozen schema defining all valid block types, field patterns, and aliases
@@ -24,8 +24,8 @@ A **static-HTML CMS pipeline** for [helferportal.kamanin.at](https://www.helferp
 
 ### Current status
 
-- **Pages**: 7/7 converted (100%)
-- **Block registry**: frozen at v1.1 (15 block types, 24 aliases)
+- **Pages**: 8/8 converted (100%)
+- **Block registry**: v1.2 — info-tabs + quick-actions as standalone types; unused field patterns removed
 - **Content schema**: v2.0 with basic/advanced field levels
 - **MVP feedback**: working (Supabase insert, anon-safe RLS)
 - **Deployment**: GitHub Pages auto-deploy on push to `main`
@@ -204,7 +204,7 @@ node tools/validate.js startseite --strict # Strict mode (ghosts = errors)
 
 ### Round-trip Test (`tools/test-roundtrip.js`)
 
-Runs extract → build → validate for all 7 pages. Verifies pipeline integrity.
+Runs extract → build → validate for all 8 pages. Verifies pipeline integrity.
 
 ```bash
 node tools/test-roundtrip.js             # All pages
@@ -222,7 +222,7 @@ Centralizes configuration for CLI tools:
 | Export | Purpose |
 |--------|---------|
 | `loadEnv()` | Parse `tools/.env` into `process.env` |
-| `PAGE_IDS` | Array of all 7 page identifiers |
+| `PAGE_IDS` | Array of all 8 page identifiers |
 | `getPageMap()` | Build `{ pageId: { html, json } }` mapping |
 | `getSupabaseConfig()` | Validate and return `{ url, key }` from env vars |
 | `CONTENT_DIR`, `ROOT_DIR`, `TOOLS_DIR` | Resolved path constants |
@@ -312,8 +312,7 @@ The preview uses an iframe + postMessage bridge pattern:
 
 | Issue | Impact | Future fix |
 |-------|--------|------------|
-| Header/footer duplicated in all 7 pages | Manual updates across all files | HTML includes or build-time injection |
-| München page uses hardcoded hex colors | Inconsistent with CSS variable system | Replace with `var(--*)` references |
+| Header/footer duplicated in all 8 pages | Manual updates across all files | HTML includes or build-time injection |
 | `deploy.js` inlines `build.js` iteration loop | Code duplication (shared `field-ops.js` mitigates) | Extract shared build function |
 | `admin.html` is a 3400-line monolith | Hard to navigate | No immediate plans to split |
 | Cheerio serialization artifacts | False diffs after build round-trip | Use `git checkout` after testing |
