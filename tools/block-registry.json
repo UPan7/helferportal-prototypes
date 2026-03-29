@@ -92,8 +92,19 @@
         "qa-{N}-href":      { "type": "text",     "required": false, "level": "advanced",  "repeatable": true }
       }
     },
-    "notes": "Unifies quick-actions, vorteile, schulungen, problems. Variant determines which optional fields are used.",
-    "aliases": { "quick-actions": "cards", "schulungen-section": "cards", "schulungen": "cards", "problems-section": "cards", "support-section": "cards" }
+    "notes": "Unifies vorteile, schulungen, problems. Variant determines which optional fields are used.",
+    "aliases": { "schulungen-section": "cards", "schulungen": "cards", "problems-section": "cards", "support-section": "cards" }
+  },
+
+  "quick-actions": {
+    "label": "Quick Actions",
+    "purpose": "4 navigation shortcut cards with title and link",
+    "variants": ["grid"],
+    "pages": ["startseite"],
+    "fields": {
+      "qa-{N}-title": { "type": "text", "required": true,  "level": "basic",    "repeatable": true },
+      "qa-{N}-href":  { "type": "link", "required": true,  "level": "basic",    "repeatable": true }
+    }
   },
 
   "vorteile": {

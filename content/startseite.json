@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "extracted": "2026-03-29T19:33:28.264Z",
+    "extracted": "2026-03-29T19:56:19.164Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T19:40:17.342Z",
+    "lastEdited": "2026-03-29T19:57:04.585Z",
     "schema_version": "2.0",
     "source": "index.html"
   },
@@ -84,10 +84,11 @@
     {
       "fields": [
         {
+          "href": "/hilfe-finden.html",
           "id": "qa-1-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "Unterstützung finden"
+          "level": "basic",
+          "type": "link",
+          "value": ""
         },
         {
           "id": "qa-1-title",
@@ -96,10 +97,11 @@
           "value": "Unterstützung finden"
         },
         {
+          "href": "/engagieren.html",
           "id": "qa-2-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "Engagement & Leistungen"
+          "level": "basic",
+          "type": "link",
+          "value": ""
         },
         {
           "id": "qa-2-title",
@@ -108,10 +110,11 @@
           "value": "Engagement & Leistungen"
         },
         {
+          "href": "/fuer-kommunen.html",
           "id": "qa-3-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "Für die öffentliche Hand & Organisationen"
+          "level": "basic",
+          "type": "link",
+          "value": ""
         },
         {
           "id": "qa-3-title",
@@ -120,10 +123,11 @@
           "value": "Für die öffentliche Hand & Organisationen"
         },
         {
+          "href": "/ueber-uns.html",
           "id": "qa-4-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "So funktioniert's"
+          "level": "basic",
+          "type": "link",
+          "value": ""
         },
         {
           "id": "qa-4-title",
