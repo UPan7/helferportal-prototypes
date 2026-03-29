@@ -119,7 +119,13 @@ if (registry) {
   for (const block of blocks) {
     // Resolve block definition (direct or alias)
     const blockDef = resolveBlockDef(block.type, registry);
-    if (!blockDef?.fields) continue;
+    if (!blockDef?.fields) {
+      // Unknown block type — default all fields to 'basic'
+      for (const field of block.fields) {
+        if (!field.level) field.level = 'basic';
+      }
+      continue;
+    }
 
     // Flatten variant field maps
     const allPatterns = {};

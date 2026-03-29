@@ -1,9 +1,8 @@
 {
   "_meta": {
-    "editedBy": "thomas.oeben@helferportal.de",
-    "extracted": "2026-03-08T14:05:52.870Z",
+    "extracted": "2026-03-29T19:33:29.871Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-28T18:27:11.768Z",
+    "lastEdited": "2026-03-29T19:40:18.509Z",
     "schema_version": "2.0",
     "source": "engagieren.html"
   },
@@ -68,7 +67,7 @@
           "id": "tab-spontan-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "So können Sie unterstützen:\nGemeinsame Freizeitaktivitäten\nSpaziergänge begleiten\nBeim Einkaufen helfen\nZu Terminen begleiten\nZeit schenken und Gespräche führen\nBei digitalen Fragen helfen\n"
+          "value": "So können Sie unterstützen:\nGemeinsame Freizeitaktivitäten\nSpaziergänge begleiten\nBeim Einkaufen helfen\nZu Terminen begleiten\nZeit schenken und Gespräche führen\nBei digitalen Fragen helfen"
         },
         {
           "id": "tab-spontan-benefits",
@@ -150,7 +149,7 @@
           "id": "tab-organisation-benefits",
           "level": "advanced",
           "type": "textarea",
-          "value": "Was Ihnen eine Organisation bietet:\nTeil einer sorgenden Gemeinschaft\nFachliche Begleitung und Austausch\nSchulungen und Weiterbildung\nVersicherungsschutz\nOrganisation, Abrechnung und Dokumentation übernimmt die Einrichtung\n"
+          "value": "Was Ihnen eine Organisation bietet:\nTeil einer sorgenden Gemeinschaft\nFachliche Begleitung und Austausch\nSchulungen und Weiterbildung\nVersicherungsschutz\nOrganisation, Abrechnung und Dokumentation übernimmt die Einrichtung"
         },
         {
           "id": "tab-organisation-roles",
@@ -177,48 +176,6 @@
           "level": "basic",
           "type": "button",
           "value": "Mehr erfahren"
-        },
-        {
-          "id": "tab-spontan-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-spontan-info",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-spontan-roles",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-eigenstaendig-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-eigenstaendig-roles",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-organisation-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-organisation-info",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
         }
       ],
       "id": "b2",
@@ -286,81 +243,6 @@
           "level": "basic",
           "type": "button",
           "value": "Mehr zu den Schulungen"
-        },
-        {
-          "id": "card-1-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-1-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-2-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-2-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-3-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-3-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-3-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-3-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
         }
       ],
       "id": "b3",

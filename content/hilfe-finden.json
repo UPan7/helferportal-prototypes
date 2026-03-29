@@ -1,9 +1,8 @@
 {
   "_meta": {
-    "editedBy": "thomas.oeben@helferportal.de",
-    "extracted": "2026-03-08T14:05:52.062Z",
+    "extracted": "2026-03-29T19:33:29.058Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T09:58:18.614Z",
+    "lastEdited": "2026-03-29T19:40:17.923Z",
     "schema_version": "2.0",
     "source": "hilfe-finden.html"
   },
@@ -112,7 +111,7 @@
           "id": "tab-alltag-benefits",
           "level": "advanced",
           "type": "textarea",
-          "value": "Passende Unterstützung | Finden Sie Helfende und Dienstleister für Alltag, Betreuung und Versorgung.\nEinfach organisiert | Unterstützung in Ihrer Nähe – ohne lange Suche oder viele Telefonate.\nGeschützter Kontakt | Erstkontakt per Chat oder Video – ohne Weitergabe Ihrer Kontaktdaten.\n"
+          "value": "Passende Unterstützung | Finden Sie Helfende und Dienstleister für Alltag, Betreuung und Versorgung.\nEinfach organisiert | Unterstützung in Ihrer Nähe – ohne lange Suche oder viele Telefonate.\nGeschützter Kontakt | Erstkontakt per Chat oder Video – ohne Weitergabe Ihrer Kontaktdaten."
         },
         {
           "href": "https://hilfe.helferportal.de",
@@ -150,7 +149,7 @@
           "id": "tab-angehoerige-benefits",
           "level": "advanced",
           "type": "textarea",
-          "value": "Entlastung finden | Organisieren Sie Unterstützung, damit Pflege und Betreuung nicht allein getragen werden müssen.\nBeratung & Orientierung | Finden Sie passende Angebote und erhalten Sie Unterstützung bei Fragen rund um Pflege und Alltag.\nHilfe koordinieren | Stellen Sie Unterstützungsbedarfe ein und organisieren Sie passende Hilfe.\n"
+          "value": "Entlastung finden | Organisieren Sie Unterstützung, damit Pflege und Betreuung nicht allein getragen werden müssen.\nBeratung & Orientierung | Finden Sie passende Angebote und erhalten Sie Unterstützung bei Fragen rund um Pflege und Alltag.\nHilfe koordinieren | Stellen Sie Unterstützungsbedarfe ein und organisieren Sie passende Hilfe."
         },
         {
           "href": "https://hilfe.helferportal.de",
@@ -165,171 +164,6 @@
           "level": "basic",
           "type": "button",
           "value": "Mehr erfahren"
-        },
-        {
-          "id": "tab-freizeit-info",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-freizeit-roles",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-freizeit-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "info-freizeit-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "info-freizeit-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-freizeit-cards",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-freizeit-note",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "info-freizeit-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "tab-alltag-info",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-alltag-roles",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-alltag-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "info-alltag-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "info-alltag-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-alltag-cards",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-alltag-note",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "info-alltag-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "tab-angehoerige-info",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-angehoerige-roles",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-angehoerige-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "info-angehoerige-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "info-angehoerige-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-angehoerige-cards",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-angehoerige-note",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "info-angehoerige-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "tab-freizeit-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-alltag-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-angehoerige-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
         }
       ],
       "id": "b2",

@@ -1,9 +1,8 @@
 {
   "_meta": {
-    "editedBy": "reg@kamanin.at",
-    "extracted": "2026-03-12T18:52:02.332Z",
+    "extracted": "2026-03-29T19:33:33.028Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-13T09:58:23.573Z",
+    "lastEdited": "2026-03-29T19:40:20.386Z",
     "schema_version": "2.0",
     "source": "muenchen.html"
   },
@@ -146,82 +145,6 @@
           "level": "advanced",
           "type": "textarea",
           "value": "Pflegedienste\nPodologie und therapeutische Angebote\nBetreuungs- und Entlastungsleistungen\nWeitere Gesundheitsdienstleistungen"
-        },
-        {
-          "id": "card-1-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-1-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-2-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-2-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-3-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-3-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-3-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-4-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-4-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-4-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
         }
       ],
       "id": "b2",
@@ -300,36 +223,6 @@
           "level": "basic",
           "type": "textarea",
           "value": "Wenn alles passt, vereinbaren Sie Ihren ersten Termin, persönlich, sicher und unkompliziert."
-        },
-        {
-          "id": "step-1-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "step-2-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "step-3-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "step-4-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "step-5-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
         }
       ],
       "id": "b3",
@@ -438,27 +331,6 @@
           "level": "basic",
           "type": "button",
           "value": "Zu den Kursen"
-        },
-        {
-          "href": "",
-          "id": "logo-1-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-2-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-3-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
         }
       ],
       "id": "b4",
@@ -542,42 +414,6 @@
           "level": "basic",
           "type": "button",
           "value": "Jetzt engagieren"
-        },
-        {
-          "id": "card-1-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "card-2-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
         }
       ],
       "id": "b6",

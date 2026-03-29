@@ -241,7 +241,7 @@
       "item-{N}-text":      { "type": "textarea", "required": false, "level": "basic",    "repeatable": true }
     },
     "notes": "Catch-all for content blocks. Timeline variant uses item-{N}-year + item-{N}-title + item-{N}-text.",
-    "aliases": { "mission-section": "text-section", "timeline-section": "text-section" }
+    "aliases": { "mission-section": "text-section", "timeline-section": "text-section", "values-section": "text-section", "awards-section": "text-section" }
   },
 
   "team-section": {
@@ -282,7 +282,7 @@
     "label": "Call-to-Action",
     "purpose": "Call-to-action section, typically at page bottom",
     "variants": ["simple", "with-image"],
-    "pages": ["hilfe-finden", "engagieren", "fuer-kommunen", "ueber-uns"],
+    "pages": ["hilfe-finden", "engagieren", "fuer-kommunen", "ueber-uns", "projekte"],
     "fields": {
       "cta-title":          { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
       "cta-text":           { "type": "textarea", "required": false, "level": "basic",    "repeatable": false },
@@ -291,5 +291,42 @@
       "cta-image":          { "type": "image",    "required": false, "level": "advanced",  "repeatable": false }
     },
     "aliases": { "cta-section": "cta-banner", "cta-download-section": "cta-banner" }
+  },
+
+  "projekte": {
+    "label": "Projekte",
+    "purpose": "Research projects / initiatives grid with image, badge, title, description",
+    "variants": ["grid"],
+    "pages": ["startseite", "ueber-uns", "projekte"],
+    "fields": {
+      "projekte-overline":    { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "projekte-title":       { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "projekte-btn":         { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
+      "section-overline":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "section-title":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "projekt-{N}-image":    { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
+      "projekt-{N}-badge":    { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "projekt-{N}-title":    { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "projekt-{N}-text":     { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true },
+      "projekt-{N}-link":     { "type": "button",   "required": false, "level": "basic",    "repeatable": true }
+    },
+    "aliases": { "projekte-section": "projekte", "projekte-grid": "projekte" }
+  },
+
+  "presse": {
+    "label": "Pressemitteilungen",
+    "purpose": "Press releases grid with date, badge, title, description",
+    "variants": ["grid"],
+    "pages": ["presse"],
+    "fields": {
+      "section-overline":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "section-title":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "press-{N}-date":       { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "press-{N}-badge":      { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+      "press-{N}-title":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "press-{N}-text":       { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true },
+      "press-{N}-link":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true }
+    },
+    "aliases": { "press-releases": "presse" }
   }
 }

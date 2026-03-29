@@ -1,9 +1,8 @@
 {
   "_meta": {
-    "editedBy": "thomas.oeben@helferportal.de",
-    "extracted": "2026-03-16T09:05:13.501Z",
+    "extracted": "2026-03-29T19:33:31.460Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T11:10:28.643Z",
+    "lastEdited": "2026-03-29T19:40:19.520Z",
     "schema_version": "2.0",
     "source": "ueber-uns.html"
   },
@@ -50,7 +49,7 @@
           "id": "section-values",
           "level": "basic",
           "type": "textarea",
-          "value": "Vernetzt | Alle Akteure der Versorgung auf einer Plattform.\nBedarfsgerecht | Passende Unterstützung statt langer Suche.\nEntlastend | Unterstützung wird auf viele Schultern verteilt.\nDigital koordiniert | Bedarfe erfassen und Unterstützung organisieren."
+          "value": "Vernetzt\nBedarfsgerecht\nEntlastend\nDigital koordiniert"
         },
         {
           "id": "item-1-text",
@@ -63,16 +62,58 @@
           "level": "basic",
           "type": "text",
           "value": "— Der C2C-Ansatz des Helferportals"
-        },
-        {
-          "id": "item-1-year",
-          "level": "basic",
-          "type": "text",
-          "value": ""
         }
       ],
       "id": "b2",
       "type": "mission-section"
+    },
+    {
+      "fields": [
+        {
+          "id": "section-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Unsere Arbeit basiert auf klaren Werten"
+        },
+        {
+          "id": "item-1-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Gemeinschaft"
+        },
+        {
+          "id": "item-1-text",
+          "level": "basic",
+          "type": "text",
+          "value": "Gemeinsam tragen, was alleine zu schwer ist"
+        },
+        {
+          "id": "item-2-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Offenheit"
+        },
+        {
+          "id": "item-2-text",
+          "level": "basic",
+          "type": "text",
+          "value": "Hilfe für jeden, ohne Hürden"
+        },
+        {
+          "id": "item-3-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Fürsorge"
+        },
+        {
+          "id": "item-3-text",
+          "level": "basic",
+          "type": "text",
+          "value": "Wir kümmern uns – füreinander"
+        }
+      ],
+      "id": "b2a",
+      "type": "values-section"
     },
     {
       "fields": [
@@ -188,13 +229,13 @@
           "id": "section-title",
           "level": "basic",
           "type": "text",
-          "value": "Das Team"
+          "value": "Unser Gründer"
         },
         {
           "id": "section-text",
           "level": "basic",
           "type": "text",
-          "value": "Menschen hinter Helferportal"
+          "value": "Die treibende Kraft hinter dem Helferportal"
         },
         {
           "id": "item-1-image",
@@ -216,18 +257,6 @@
           "level": "basic",
           "type": "textarea",
           "value": "Thomas hat jahrelang logistische Netzwerke für renommierte Logistikkonzerne und die produzierende Industrie aufgebaut und gesteuert. Aufgrund der aufkommenden Versorgungslücke beschloss er, logistische Kompetenz und Digitalisierung in den sozialen Bereich einzubringen.\nEr entwickelt soziale Versorgungskonzepte und erprobt diese zunächst im Verein deinNachbar e.V., bevor sie von anderen Hilfsorganisationen oder Kommunen übernommen werden."
-        },
-        {
-          "id": "item-1-badge",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "item-1-role",
-          "level": "basic",
-          "type": "text",
-          "value": ""
         }
       ],
       "id": "b4",
@@ -239,157 +268,53 @@
           "id": "logos-title",
           "level": "basic",
           "type": "text",
-          "value": "Auszeichnungen & Presse"
+          "value": "Forschung & Projekte"
         },
         {
           "id": "logos-subtitle",
           "level": "basic",
           "type": "text",
-          "value": "Gemeinsam für bessere Versorgung"
-        },
-        {
-          "id": "logo-1-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "BMBF",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-1-name",
-          "level": "basic",
-          "type": "text",
-          "value": "BMBF"
-        },
-        {
-          "id": "logo-1-text",
-          "level": "basic",
-          "type": "text",
-          "value": "Bundesministerium für Bildung und Forschung"
-        },
-        {
-          "id": "logo-2-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "DATI",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-2-name",
-          "level": "basic",
-          "type": "text",
-          "value": "DATI"
-        },
-        {
-          "id": "logo-2-text",
-          "level": "basic",
-          "type": "text",
-          "value": "Deutsche Agentur für Transfer und Innovation"
-        },
-        {
-          "id": "logo-3-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "Stadt Dietzenbach",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-3-name",
-          "level": "basic",
-          "type": "text",
-          "value": "Stadt Dietzenbach"
-        },
-        {
-          "id": "logo-3-text",
-          "level": "basic",
-          "type": "text",
-          "value": "Pilotkommune für integratives Koordinationsportal"
-        },
-        {
-          "id": "logo-4-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "TU Chemnitz",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-4-name",
-          "level": "basic",
-          "type": "text",
-          "value": "TU Chemnitz"
-        },
-        {
-          "id": "logo-4-text",
-          "level": "basic",
-          "type": "text",
-          "value": "Wissenschaftliche Begleitung"
-        },
-        {
-          "href": "",
-          "id": "logo-1-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-1-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-2-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-2-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-3-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-3-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-4-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-4-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
+          "value": "Erfahren Sie mehr über unsere aktuellen Initiativen und Kooperationen"
         }
       ],
       "id": "b5",
-      "type": "partners"
+      "type": "projekte-section"
+    },
+    {
+      "fields": [
+        {
+          "id": "section-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Auszeichnungen und Presse"
+        },
+        {
+          "id": "item-1-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Deutscher Award für Nachhaltigkeitsprojekte"
+        },
+        {
+          "id": "item-1-text",
+          "level": "basic",
+          "type": "text",
+          "value": "2022 & 2025"
+        },
+        {
+          "id": "item-2-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Sat.1 Bericht"
+        },
+        {
+          "id": "item-2-text",
+          "level": "basic",
+          "type": "text",
+          "value": "Spontane Hilfe für Menschen mit Hilfebedarf über die Helferportal App"
+        }
+      ],
+      "id": "b5a",
+      "type": "awards-section"
     },
     {
       "fields": [

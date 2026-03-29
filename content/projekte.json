@@ -1,0 +1,186 @@
+{
+  "_meta": {
+    "extracted": "2026-03-29T19:33:34.477Z",
+    "generator": "helferportal-content-tools/extract.js",
+    "lastEdited": "2026-03-29T19:40:21.330Z",
+    "schema_version": "2.0",
+    "source": "projekte.html"
+  },
+  "blocks": [
+    {
+      "fields": [
+        {
+          "id": "hero-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Unsere Projekte"
+        },
+        {
+          "id": "hero-subtitle",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Forschung, Pilotprojekte und Kooperationen für eine bessere Versorgung."
+        }
+      ],
+      "id": "b1",
+      "type": "hero-mini"
+    },
+    {
+      "fields": [
+        {
+          "id": "section-overline",
+          "level": "basic",
+          "type": "text",
+          "value": "Forschung & Initiativen"
+        },
+        {
+          "id": "section-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Aktuelle Projekte und Kooperationen"
+        },
+        {
+          "id": "projekt-1-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "Inklusion & Teilhabe",
+            "src": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800"
+          }
+        },
+        {
+          "id": "projekt-1-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Forschung"
+        },
+        {
+          "id": "projekt-1-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Inklusion & Teilhabe"
+        },
+        {
+          "id": "projekt-1-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Forschungsprojekt mit der Universität München zur digitalen Teilhabe von Menschen mit Einschränkungen. Im Fokus steht die Frage, wie digitale Plattformen Barrieren abbauen und soziale Teilhabe im Alltag wirksam stärken können."
+        },
+        {
+          "href": "#",
+          "id": "projekt-1-link",
+          "level": "basic",
+          "type": "button",
+          "value": "Mehr erfahren"
+        },
+        {
+          "id": "projekt-2-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "Digitale Nachbarschaftshilfe",
+            "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+          }
+        },
+        {
+          "id": "projekt-2-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Pilotprojekt"
+        },
+        {
+          "id": "projekt-2-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Digitale Nachbarschaftshilfe"
+        },
+        {
+          "id": "projekt-2-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Pilotprojekt in München und Hamburg zur Vernetzung von Nachbarschaftshilfe über die Helferportal-App. Ziel ist es, informelle Hilfsstrukturen sichtbar zu machen und niedrigschwellig mit professionellen Angeboten zu verknüpfen."
+        },
+        {
+          "href": "#",
+          "id": "projekt-2-link",
+          "level": "basic",
+          "type": "button",
+          "value": "Mehr erfahren"
+        },
+        {
+          "id": "projekt-3-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "Schulungsprogramm für Engagierte",
+            "src": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"
+          }
+        },
+        {
+          "id": "projekt-3-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Schulung"
+        },
+        {
+          "id": "projekt-3-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Schulungsprogramm für Engagierte"
+        },
+        {
+          "id": "projekt-3-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Zertifiziertes Schulungsprogramm für ehrenamtliche Helfer:innen. Inhalte umfassen Erste Hilfe, Kommunikation mit Hilfesuchenden, Datenschutz im Ehrenamt und den sicheren Umgang mit der Helferportal-App."
+        },
+        {
+          "href": "#",
+          "id": "projekt-3-link",
+          "level": "basic",
+          "type": "button",
+          "value": "Mehr erfahren"
+        }
+      ],
+      "id": "b2",
+      "type": "projekte-grid"
+    },
+    {
+      "fields": [
+        {
+          "id": "cta-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Interessiert an einer Kooperation?"
+        },
+        {
+          "id": "cta-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Ob Forschungseinrichtung, Kommune oder soziale Organisation – wir freuen uns auf den Austausch."
+        },
+        {
+          "href": "/kontakt.html",
+          "id": "cta-btn-1",
+          "level": "basic",
+          "type": "button",
+          "value": "Kontakt aufnehmen"
+        },
+        {
+          "href": "/ueber-uns.html",
+          "id": "cta-btn-2",
+          "level": "basic",
+          "type": "button",
+          "value": "Über uns erfahren"
+        }
+      ],
+      "id": "b4",
+      "type": "cta-section"
+    }
+  ],
+  "page": {
+    "id": "projekte",
+    "title": "Projekte — Helferportal",
+    "url": "/projekte.html"
+  }
+}

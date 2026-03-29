@@ -1,9 +1,8 @@
 {
   "_meta": {
-    "editedBy": "thomas.oeben@helferportal.de",
-    "extracted": "2026-03-12T18:52:03.384Z",
+    "extracted": "2026-03-29T19:33:30.670Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T10:24:55.779Z",
+    "lastEdited": "2026-03-29T19:40:19.087Z",
     "schema_version": "2.0",
     "source": "fuer-kommunen.html"
   },
@@ -40,7 +39,7 @@
           "id": "hero-stats",
           "level": "advanced",
           "type": "textarea",
-          "value": "Akteure vernetzen\nAlle Beteiligten digital verbinden\nBedarfe steuern\nBedarfe erfassen und gezielt vermitteln\nEngagement einbinden\nEngagement wirksam integrieren\nDSGVO\nDatenschutzkonform\n"
+          "value": "Akteure vernetzen\nAlle Beteiligten digital verbinden\nBedarfe steuern\nBedarfe erfassen und gezielt vermitteln\nEngagement einbinden\nEngagement wirksam integrieren\nDSGVO\nDatenschutzkonform"
         }
       ],
       "id": "b1",
@@ -112,107 +111,7 @@
           "id": "card-4-text",
           "level": "basic",
           "type": "text",
-          "value": "Das Helferportal vernetzt alle an der Versorgung beteiligten Akteure und schafft die Grundlage für eine bedarfsgerechte Versorgung. Bedarfe werden erfasst, koordiniert und gezielt vermittelt.  Gleichzeitig wird bürgerschaftliches Engagement gestärkt und strukturiert eingebunden. "
-        },
-        {
-          "id": "card-1-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-1-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-2-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-2-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-3-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-3-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-3-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-3-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-4-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-4-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-4-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-4-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
+          "value": "Das Helferportal vernetzt alle an der Versorgung beteiligten Akteure und schafft die Grundlage für eine bedarfsgerechte Versorgung. Bedarfe werden erfasst, koordiniert und gezielt vermittelt.  Gleichzeitig wird bürgerschaftliches Engagement gestärkt und strukturiert eingebunden."
         }
       ],
       "id": "b2",
@@ -257,12 +156,6 @@
           "value": "Akteure vernetzen | Alle Beteiligten arbeiten auf einer gemeinsamen Plattform.\nBedarfe koordinieren | Unterstützungs- und Versorgungsbedarfe erfassen, vermitteln und nachverfolgen.\nEngagement stärken und einbinden | Spontanhelfer, Nachbarschaftshilfen und Organisationen integrieren\nTransparenz schaffen | Bedarfe und verfügbare Angebote sichtbar machen, Versorgungslücken analysieren.\nSozialplanung unterstützen | Datenbasierte Planung von Pflege- und Unterstützungsstrukturen.\nKatastrophenschutz stärken | Spontanhelfer und große Einsätze digital koordinieren."
         },
         {
-          "id": "tab-kommunen-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": "Versorgung sichern | Unterstützungsangebote erweitern – auch ohne zusätzliche Fachkräfte.\nKoordinationsaufwand reduzieren | Bedarfe digital erfassen und passende Hilfe schneller finden.\nEngagement stärken | Freiwillige Unterstützung sichtbar und koordinierbar machen.\nSozialplanung verbessern | Fundierte Grundlage für Sozial- und Pflegeplanung."
-        },
-        {
           "href": "/kontakt.html",
           "id": "tab-kommunen-btn-1",
           "level": "basic",
@@ -292,13 +185,7 @@
           "id": "tab-organisationen-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Digitale Koordination | Engagierte verwalten und Einsätze planen.\nPassgenaue Vermittlung | Matching nach Tätigkeit, Verfügbarkeit und Qualifikation.\nEntlastung für Koordination | Weniger Verwaltung, mehr Zeit für Begleitung.\nAdministration & Abrechnung | Zeiterfassung, Abrechnung und Schnittstellen integriert.\nEngagement stärken | Neue Engagierte gewinnen und gezielt einsetzen."
-        },
-        {
-          "id": "tab-organisationen-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": "Einfach koordinieren | Einsätze und Verfügbarkeiten digital steuern.\nVerwaltungsaufwand reduzieren | Dokumentation und Abrechnung effizient abwickeln.\nEngagierte gewinnen | Menschen aus der Region gezielt einbinden.\nTransparenz schaffen | Einsätze und Vereinbarungen nachvollziehbar dokumentieren."
+          "value": "Digitale Koordination | Engagierte verwalten und Einsätze planen.\nPassgenaue Vermittlung | Matching nach Tätigkeit, Verfügbarkeit und Qualifikation.\nEntlastung für Koordination | Weniger Verwaltung, mehr Zeit für Begleitung.\nAdministration & Abrechnung | Zeiterfassung, Abrechnung und Schnittstellen integriert.\nEngagement stärken | Neue Engagierte gewinnen und gezielt einsetzen.\nDatenschutz & Compliance | DSGVO-konforme Verwaltung sensibler Personen- und Einsatzdaten."
         },
         {
           "href": "/kontakt.html",

@@ -1,9 +1,8 @@
 {
   "_meta": {
-    "editedBy": "thomas.oeben@helferportal.de",
-    "extracted": "2026-03-08T14:21:11.060Z",
+    "extracted": "2026-03-29T19:33:28.264Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T12:09:55.641Z",
+    "lastEdited": "2026-03-29T19:40:17.342Z",
     "schema_version": "2.0",
     "source": "index.html"
   },
@@ -23,33 +22,33 @@
           "id": "slide-0-tag",
           "level": "advanced",
           "type": "text",
-          "value": "Das Helferportal"
+          "value": "Für Hilfesuchende"
         },
         {
           "id": "slide-0-title",
           "level": "basic",
           "type": "text",
-          "value": "Wo Hilfe gesucht wird, findet sich eine helfende Hand."
+          "value": "Unterstützung finden"
         },
         {
           "id": "slide-0-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Wir verbinden Menschen, damit Hilfe immer einen Weg findet."
+          "value": "Ob im Alltag oder in der Freizeit – finden Sie passende Unterstützung und Begleitung in Ihrer Nähe."
         },
         {
-          "href": "#video-section",
+          "href": "/hilfe-finden.html",
           "id": "slide-0-btn",
           "level": "basic",
           "type": "button",
-          "value": "Video ansehen"
+          "value": "Unterstützung finden"
         },
         {
           "id": "slide-1-image",
           "level": "basic",
           "type": "image",
           "value": {
-            "alt": "Hilfesuchende Person",
+            "alt": "Engagierte Person",
             "src": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1400"
           }
         },
@@ -57,94 +56,26 @@
           "id": "slide-1-tag",
           "level": "advanced",
           "type": "text",
-          "value": "Für Hilfesuchende"
+          "value": "Für Engagierte und Dienstleister"
         },
         {
           "id": "slide-1-title",
           "level": "basic",
           "type": "text",
-          "value": "Unterstützung finden"
+          "value": "Unterstützung oder Leistungen anbieten"
         },
         {
           "id": "slide-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Ob im Alltag oder in der Freizeit – \nfinden Sie passende Unterstützung und Begleitung in Ihrer Nähe."
-        },
-        {
-          "href": "/hilfe-finden.html",
-          "id": "slide-1-btn",
-          "level": "basic",
-          "type": "button",
-          "value": "Unterstützung finden"
-        },
-        {
-          "id": "slide-2-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "Engagierte Helfer",
-            "src": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1400"
-          }
-        },
-        {
-          "id": "slide-2-tag",
-          "level": "advanced",
-          "type": "text",
-          "value": "Für Engagierte und Dienstleister"
-        },
-        {
-          "id": "slide-2-title",
-          "level": "basic",
-          "type": "text",
-          "value": "Unterstützung oder Leistungen anbieten"
-        },
-        {
-          "id": "slide-2-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": "Engagieren Sie sich für Menschen in Ihrer Region oder bieten Sie Ihre Leistungen an – \nflexibel und passend zu Ihrem Alltag."
+          "value": "Engagieren Sie sich für Menschen in Ihrer Region oder bieten Sie Ihre Leistungen an – flexibel und passend zu Ihrem Alltag."
         },
         {
           "href": "/engagieren.html",
-          "id": "slide-2-btn",
+          "id": "slide-1-btn",
           "level": "basic",
           "type": "button",
           "value": "Unterstützung anbieten"
-        },
-        {
-          "id": "slide-3-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "Kommune und Organisation",
-            "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1400"
-          }
-        },
-        {
-          "id": "slide-3-tag",
-          "level": "advanced",
-          "type": "text",
-          "value": "Für die öffentliche Hand, Organisationen & Nachbarschaftshilfen"
-        },
-        {
-          "id": "slide-3-title",
-          "level": "basic",
-          "type": "text",
-          "value": "Versorgung und Engagement vernetzen und steuern"
-        },
-        {
-          "id": "slide-3-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": "Erfassen Sie Bedarfe, vernetzen Sie Akteure und koordinieren Sie Angebote effizient in Ihrer Region."
-        },
-        {
-          "href": "/fuer-kommunen.html",
-          "id": "slide-3-btn",
-          "level": "basic",
-          "type": "button",
-          "value": "Kooperation anfragen"
         }
       ],
       "id": "b1",
@@ -156,7 +87,7 @@
           "id": "qa-1-href",
           "level": "advanced",
           "type": "text",
-          "value": "Unterstützung finden                   Passende Hilfe in Ihrer Nähe"
+          "value": "Unterstützung finden"
         },
         {
           "id": "qa-1-title",
@@ -165,16 +96,10 @@
           "value": "Unterstützung finden"
         },
         {
-          "id": "qa-1-text",
-          "level": "basic",
-          "type": "text",
-          "value": "Unterstützung und Angebote in Ihrer Nähe finden."
-        },
-        {
           "id": "qa-2-href",
           "level": "advanced",
           "type": "text",
-          "value": "Jetzt engagieren                    Helfen oder Leistungen anbieten"
+          "value": "Engagement & Leistungen"
         },
         {
           "id": "qa-2-title",
@@ -183,16 +108,10 @@
           "value": "Engagement & Leistungen"
         },
         {
-          "id": "qa-2-text",
-          "level": "basic",
-          "type": "text",
-          "value": "Sich engagieren oder Leistungen anbieten."
-        },
-        {
           "id": "qa-3-href",
           "level": "advanced",
           "type": "text",
-          "value": "Für die öffentliche Hand & Organisationen                    Versorgung und Engagement digital koordinieren"
+          "value": "Für die öffentliche Hand & Organisationen"
         },
         {
           "id": "qa-3-title",
@@ -201,176 +120,16 @@
           "value": "Für die öffentliche Hand & Organisationen"
         },
         {
-          "id": "qa-3-text",
-          "level": "basic",
-          "type": "text",
-          "value": "Versorgung und Engagement koordinieren."
-        },
-        {
           "id": "qa-4-href",
           "level": "advanced",
           "type": "text",
-          "value": ""
+          "value": "So funktioniert's"
         },
         {
           "id": "qa-4-title",
           "level": "basic",
           "type": "text",
           "value": "So funktioniert's"
-        },
-        {
-          "id": "qa-4-text",
-          "level": "basic",
-          "type": "text",
-          "value": "In wenigen Schritten Unterstützung finden oder anbieten."
-        },
-        {
-          "id": "card-1-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-1-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-1-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-2-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-2-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-2-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-3-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-3-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-3-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-3-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-3-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-3-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "card-4-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-4-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-4-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-4-href",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "card-4-items",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "card-4-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
         }
       ],
       "id": "b2",
@@ -378,18 +137,6 @@
     },
     {
       "fields": [
-        {
-          "id": "tabs-title",
-          "level": "basic",
-          "type": "text",
-          "value": "Helferportal für alle"
-        },
-        {
-          "id": "tabs-subtitle",
-          "level": "basic",
-          "type": "text",
-          "value": "Das Helferportal ist das digitale Herz der Sorgegemeinschaft."
-        },
         {
           "id": "tab-hilfe-name",
           "level": "basic",
@@ -570,7 +317,7 @@
           "id": "tab-dienst-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Leistungen anbieten | Stellen Sie Ihre Angebote ein und machen Sie Ihre Leistungen für Menschen in Ihrer Region sichtbar.\nAnfragen erhalten | Hilfesuchende und Angehörige finden passende Anbieter und nehmen direkt Kontakt auf.\nTermine koordinieren | Anfragen, Termine und Kommunikation einfach und transparent organisieren.\n"
+          "value": "Leistungen anbieten | Stellen Sie Ihre Angebote ein und machen Sie Ihre Leistungen für Menschen in Ihrer Region sichtbar.\nAnfragen erhalten | Hilfesuchende und Angehörige finden passende Anbieter und nehmen direkt Kontakt auf.\nTermine koordinieren | Anfragen, Termine und Kommunikation einfach und transparent organisieren."
         },
         {
           "href": "",
@@ -617,42 +364,6 @@
           "level": "basic",
           "type": "button",
           "value": "Kontakt aufnehmen"
-        },
-        {
-          "id": "tab-hilfe-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-angehoerige-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-engagierte-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-orga-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-dienst-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-kommunen-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
         }
       ],
       "id": "b3",
@@ -661,16 +372,10 @@
     {
       "fields": [
         {
-          "id": "video-overline",
-          "level": "basic",
-          "type": "text",
-          "value": "Das Helferportal in Aktion"
-        },
-        {
           "id": "video-heading",
           "level": "basic",
           "type": "text",
-          "value": "Sehen Sie, wie Unterstützung, Engagement und Versorgung einfach zusammenfinden."
+          "value": "Das Helferportal in Aktion"
         },
         {
           "id": "video-vorstellung-thumbnail",
@@ -680,6 +385,12 @@
             "alt": "Video: Vorstellung Helferportal",
             "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
           }
+        },
+        {
+          "id": "video-vorstellung-duration",
+          "level": "basic",
+          "type": "text",
+          "value": "4:32"
         },
         {
           "id": "video-vorstellung-title",
@@ -697,6 +408,12 @@
           }
         },
         {
+          "id": "video-helfer-duration",
+          "level": "basic",
+          "type": "text",
+          "value": "3:15"
+        },
+        {
           "id": "video-helfer-title",
           "level": "basic",
           "type": "text",
@@ -710,6 +427,12 @@
             "alt": "Video: Für Hilfesuchende",
             "src": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600"
           }
+        },
+        {
+          "id": "video-hilfesuchende-duration",
+          "level": "basic",
+          "type": "text",
+          "value": "2:48"
         },
         {
           "id": "video-hilfesuchende-title",
@@ -727,34 +450,16 @@
           }
         },
         {
+          "id": "video-funktioniert-duration",
+          "level": "basic",
+          "type": "text",
+          "value": "5:10"
+        },
+        {
           "id": "video-funktioniert-title",
           "level": "basic",
           "type": "text",
           "value": "So funktioniert's"
-        },
-        {
-          "id": "video-vorstellung-file",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "video-helfer-file",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "video-hilfesuchende-file",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "video-funktioniert-file",
-          "level": "basic",
-          "type": "text",
-          "value": ""
         }
       ],
       "id": "b4",
@@ -763,209 +468,129 @@
     {
       "fields": [
         {
-          "id": "staedte-title",
+          "id": "projekte-overline",
           "level": "basic",
           "type": "text",
-          "value": "Unsere Städte"
+          "value": "FORSCHUNG & KOOPERATIONEN"
         },
         {
-          "id": "staedte-subtitle",
+          "id": "projekte-title",
           "level": "basic",
           "type": "text",
-          "value": "Wo wir bereits aktiv sind"
+          "value": "Forschung, Entwicklung & Kooperationen"
         },
         {
-          "id": "stadt-1-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "München\n                        Aktiv\n                    \n                \n                Aktiv"
-        },
-        {
-          "id": "stadt-1-image",
+          "id": "projekt-1-image",
           "level": "basic",
           "type": "image",
           "value": {
-            "alt": "München",
-            "src": "https://images.unsplash.com/photo-1595867818082-083862f3d630?w=400"
+            "alt": "CareCollApp",
+            "src": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600"
           }
         },
         {
-          "id": "stadt-1-name",
+          "id": "projekt-1-badge",
           "level": "basic",
           "type": "text",
-          "value": "München"
+          "value": "Forschung"
         },
         {
-          "id": "stadt-1-status",
+          "id": "projekt-1-title",
           "level": "basic",
           "type": "text",
-          "value": "Aktiv"
+          "value": "Sektorenübergreifende und integrative Versorgungsstrukturen (CareCollApp)"
         },
         {
-          "id": "stadt-2-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "Wiesbaden                       Startet bald"
+          "id": "projekt-1-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Im Forschungsprojekt CareCollApp wurde das Helferportal zu einer digitalen Infrastruktur weiterentwickelt, die Versorgungs- und Unterstützungsbedarfe erfasst, koordiniert und mit passenden Angeboten verknüpft."
         },
         {
-          "id": "stadt-2-image",
+          "href": "/projekte.html",
+          "id": "projekt-1-link",
+          "level": "basic",
+          "type": "button",
+          "value": "Mehr erfahren"
+        },
+        {
+          "id": "projekt-2-image",
           "level": "basic",
           "type": "image",
           "value": {
-            "alt": "Wiesbaden",
-            "src": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400"
+            "alt": "MEAPP",
+            "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
           }
         },
         {
-          "id": "stadt-2-name",
+          "id": "projekt-2-badge",
           "level": "basic",
           "type": "text",
-          "value": "Wiesbaden"
+          "value": "Forschung"
         },
         {
-          "id": "stadt-2-status",
+          "id": "projekt-2-title",
           "level": "basic",
           "type": "text",
-          "value": "Startet bald"
+          "value": "Assistenzportal (MEAPP)"
         },
         {
-          "id": "stadt-3-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "Dietzenbach                       "
+          "id": "projekt-2-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Im Forschungsprojekt MEAPP wurde das Helferportal zu einem mehrsprachigen, barrierearmen Assistenzportal weiterentwickelt, das Sorgegemeinschaften gezielt unterstützt."
         },
         {
-          "id": "stadt-3-image",
+          "href": "/projekte.html",
+          "id": "projekt-2-link",
+          "level": "basic",
+          "type": "button",
+          "value": "Mehr erfahren"
+        },
+        {
+          "id": "projekt-3-image",
           "level": "basic",
           "type": "image",
           "value": {
-            "alt": "Dietzenbach",
-            "src": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400"
+            "alt": "Schulungsprogramm für Engagierte",
+            "src": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600"
           }
         },
         {
-          "id": "stadt-3-name",
+          "id": "projekt-3-badge",
           "level": "basic",
           "type": "text",
-          "value": "Dietzenbach"
+          "value": "Schulung"
         },
         {
-          "id": "stadt-3-status",
+          "id": "projekt-3-title",
           "level": "basic",
           "type": "text",
-          "value": "läuft"
+          "value": "Schulungsprogramm für Engagierte"
         },
         {
-          "id": "stadt-4-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "Solingen\n                        In Planung"
-        },
-        {
-          "id": "stadt-4-image",
+          "id": "projekt-3-text",
           "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "Solingen",
-            "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400"
-          }
+          "type": "textarea",
+          "value": "Gemeinsam mit unserem Partner deinNachbar e.V. bereiten wir engagierte Bürger gezielt auf ihr Engagement vor. Die Schulung zum Alltagsbegleiter wird regelmäßig live online angeboten oder kann flexibel im Selbststudium über eine E-Learning-Plattform absolviert werden."
         },
         {
-          "id": "stadt-4-name",
+          "href": "/projekte.html",
+          "id": "projekt-3-link",
           "level": "basic",
-          "type": "text",
-          "value": "Solingen"
+          "type": "button",
+          "value": "Mehr erfahren"
         },
         {
-          "id": "stadt-4-status",
+          "href": "/projekte.html",
+          "id": "projekte-btn",
           "level": "basic",
-          "type": "text",
-          "value": "In Planung"
-        },
-        {
-          "id": "stadt-5-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "Hildburghausen\n                        Startet bald"
-        },
-        {
-          "id": "stadt-5-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "Hildburghausen",
-            "src": "https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?w=400"
-          }
-        },
-        {
-          "id": "stadt-5-name",
-          "level": "basic",
-          "type": "text",
-          "value": "Hildburghausen"
-        },
-        {
-          "id": "stadt-5-status",
-          "level": "basic",
-          "type": "text",
-          "value": "Startet bald"
-        },
-        {
-          "id": "stadt-6-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "Usingen\n                        In Planung"
-        },
-        {
-          "id": "stadt-6-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "Usingen",
-            "src": "https://images.unsplash.com/photo-1590070780329-1b17a23e51a0?w=400"
-          }
-        },
-        {
-          "id": "stadt-6-name",
-          "level": "basic",
-          "type": "text",
-          "value": "Usingen"
-        },
-        {
-          "id": "stadt-6-status",
-          "level": "basic",
-          "type": "text",
-          "value": "In Planung"
-        },
-        {
-          "id": "stadt-7-href",
-          "level": "advanced",
-          "type": "text",
-          "value": "Stuttgart\n                        In Planung"
-        },
-        {
-          "id": "stadt-7-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "Stuttgart",
-            "src": "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=400"
-          }
-        },
-        {
-          "id": "stadt-7-name",
-          "level": "basic",
-          "type": "text",
-          "value": "Stuttgart"
-        },
-        {
-          "id": "stadt-7-status",
-          "level": "basic",
-          "type": "text",
-          "value": "In Planung"
+          "type": "button",
+          "value": "Alle Projekte ansehen"
         }
       ],
       "id": "b5",
-      "type": "staedte-section"
+      "type": "projekte-section"
     },
     {
       "fields": [
@@ -1040,36 +665,6 @@
           "level": "basic",
           "type": "textarea",
           "value": "Termine vereinbaren und Unterstützung einfach koordinieren"
-        },
-        {
-          "id": "step-1-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": "Profil erstellen, kostenlos und in wenigen Minuten"
-        },
-        {
-          "id": "step-2-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "step-3-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "step-4-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "step-5-icon",
-          "level": "advanced",
-          "type": "text",
-          "value": ""
         }
       ],
       "id": "b6",
@@ -1123,25 +718,19 @@
           "id": "info-kosten-title",
           "level": "basic",
           "type": "text",
-          "value": "Die Nutzung des Helferportals ist kostenfrei."
-        },
-        {
-          "id": "info-kosten-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": "Damit Unterstützung für alle zugänglich bleibt, können Sie freiwillig einen Solidaritätsbeitrag leisten – ganz nach Ihren Möglichkeiten."
+          "value": "Ihr freiwilliger Beitrag"
         },
         {
           "id": "info-kosten-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "7,90 €/Monat\nEmpfohlener Solidaritätsbeitrag.\n15,80 €/Monat\nFür sich und zusätzlich eine hilfesuchende Person.\nIndividuell\nSie wählen selbst.\n0 €\nWenn Sie aktuell keinen Beitrag leisten können.\n"
+          "value": "Empfohlen\n7,90 €\n/ Monat\nEmpfohlener Solidaritätsbeitrag\n15,80 €\n/ Monat\nFür Sie und zusätzlich eine hilfesuchende Person\nIndividuell\nSie wählen Ihren Beitrag selbst\n0 €\nAuch ohne Beitrag voll nutzbar"
         },
         {
           "id": "info-kosten-note",
           "level": "basic",
           "type": "text",
-          "value": "Alle Optionen sind gleichwertig. Ihre Wahl hat keinen Einfluss auf Umfang oder Qualität der Leistungen."
+          "value": "Alle Optionen sind gleichwertig – Ihre Wahl hat keinen Einfluss auf Umfang oder Qualität der Leistungen."
         },
         {
           "id": "info-vernetzen-title",
@@ -1167,170 +756,6 @@
           "level": "basic",
           "type": "button",
           "value": "Jetzt empfehlen & vernetzen"
-        },
-        {
-          "id": "tab-sicherheit-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "tab-sicherheit-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "tab-sicherheit-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-sicherheit-cards",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-sicherheit-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "tab-sicherheit-btn-1",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "tab-sicherheit-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "info-sicherheit-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "info-sicherheit-note",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "info-sicherheit-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "tab-kosten-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "tab-kosten-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "tab-kosten-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-kosten-cards",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-kosten-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "tab-kosten-btn-1",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "tab-kosten-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "info-kosten-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "tab-vernetzen-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "tab-vernetzen-title",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "tab-vernetzen-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-vernetzen-cards",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "id": "tab-vernetzen-vorteile",
-          "level": "advanced",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "tab-vernetzen-btn-1",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "tab-vernetzen-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "info-vernetzen-note",
-          "level": "basic",
-          "type": "text",
-          "value": ""
         }
       ],
       "id": "b7",
@@ -1342,7 +767,10 @@
           "id": "testimonial-1-image",
           "level": "basic",
           "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/testimonial-1-image.jpg"
+          "value": {
+            "alt": "Alia Tagba",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/testimonial-1-image.jpg"
+          }
         },
         {
           "id": "testimonial-1-quote",
@@ -1372,13 +800,16 @@
           "id": "testimonial-2-image",
           "level": "basic",
           "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/testimonial-2-image.jpg"
+          "value": {
+            "alt": "Placeholder",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/testimonial-2-image.jpg"
+          }
         },
         {
           "id": "testimonial-2-quote",
           "level": "basic",
           "type": "textarea",
-          "value": "Unsere gemeinsame Mission , Versorgungsstrukturen in unserer Kommune zukunftsfähig zu gestalten, hat uns als städtische Seniorenarbeit motiviert, das Forschungsprojekt mit dem Helferportal zu unterstützen. Wir sind stolz, zur Weiterentwicklung dieses wichtigen digitalen Angebots beigetragen zu haben. "
+          "value": "Unsere gemeinsame Mission , Versorgungsstrukturen in unserer Kommune zukunftsfähig zu gestalten, hat uns als städtische Seniorenarbeit motiviert, das Forschungsprojekt mit dem Helferportal zu unterstützen. Wir sind stolz, zur Weiterentwicklung dieses wichtigen digitalen Angebots beigetragen zu haben."
         },
         {
           "id": "testimonial-2-name",
@@ -1447,7 +878,7 @@
           "id": "partners-subtitle",
           "level": "basic",
           "type": "text",
-          "value": "Unsere Förder- und Kooperationspartner"
+          "value": "Unsere Förderer – und Kooperationspartner"
         },
         {
           "id": "partner-1-logo",
@@ -1474,7 +905,10 @@
           "id": "partner-2-logo",
           "level": "basic",
           "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-2-logo.jpg"
+          "value": {
+            "alt": "",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-2-logo.jpg"
+          }
         },
         {
           "id": "partner-2-name",
@@ -1492,7 +926,10 @@
           "id": "partner-3-logo",
           "level": "basic",
           "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-3-logo.jpg"
+          "value": {
+            "alt": "",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-3-logo.jpg"
+          }
         },
         {
           "id": "partner-3-name",
@@ -1510,7 +947,10 @@
           "id": "partner-4-logo",
           "level": "basic",
           "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-4-logo.png"
+          "value": {
+            "alt": "",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-4-logo.png"
+          }
         },
         {
           "id": "partner-4-name",
@@ -1528,7 +968,10 @@
           "id": "partner-5-logo",
           "level": "basic",
           "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-5-logo.png"
+          "value": {
+            "alt": "",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-5-logo.png"
+          }
         },
         {
           "id": "partner-5-name",
@@ -1541,213 +984,6 @@
           "level": "basic",
           "type": "textarea",
           "value": "Die Helmut-Schmidt-Universität Hamburg hat das Projekt MEAPP – ein Assistenzportal für Menschen mit Unterstützungsbedarf – wissenschaftlich begleitet."
-        },
-        {
-          "id": "logo-1-image",
-          "level": "basic",
-          "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/logo-1-image.jpg"
-        },
-        {
-          "id": "logo-1-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-1-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "https://www.bmftr.bund.de",
-          "id": "logo-1-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-1-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-1-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "id": "logo-2-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-2-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-2-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "https://www.tu-chemnitz.de/hsw/psychologie/professuren/geropsy/CareCollApp.html",
-          "id": "logo-2-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-2-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-2-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "id": "logo-3-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-3-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-3-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "https://www.dietzenbach.de/helferportal",
-          "id": "logo-3-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-3-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-3-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "id": "logo-4-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-4-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-4-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "https://proinklusion-northeim.de/",
-          "id": "logo-4-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-4-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-4-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "id": "logo-5-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-5-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-5-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "https://www.hsu-hh.de/mikrosoz/mitarbeiter/prof-dr-katharina-liebsch/",
-          "id": "logo-5-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-5-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-5-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
         }
       ],
       "id": "b9",

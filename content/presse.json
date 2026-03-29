@@ -1,0 +1,176 @@
+{
+  "_meta": {
+    "extracted": "2026-03-29T19:33:33.749Z",
+    "generator": "helferportal-content-tools/extract.js",
+    "lastEdited": "2026-03-29T19:40:20.875Z",
+    "schema_version": "2.0",
+    "source": "presse.html"
+  },
+  "blocks": [
+    {
+      "fields": [
+        {
+          "id": "hero-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Presse & Medien"
+        },
+        {
+          "id": "hero-subtitle",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Aktuelle Pressemitteilungen, Medienkontakt und Informationen für Journalist:innen."
+        }
+      ],
+      "id": "b1",
+      "type": "hero-mini"
+    },
+    {
+      "fields": [
+        {
+          "id": "section-overline",
+          "level": "basic",
+          "type": "text",
+          "value": "Neuigkeiten"
+        },
+        {
+          "id": "section-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Aktuelle Pressemitteilungen"
+        },
+        {
+          "id": "press-1-date",
+          "level": "basic",
+          "type": "text",
+          "value": "15. März 2026"
+        },
+        {
+          "id": "press-1-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Pressemitteilung"
+        },
+        {
+          "id": "press-1-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Helferportal expandiert in drei neue Städte"
+        },
+        {
+          "id": "press-1-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Nach dem erfolgreichen Start in München weitet das Helferportal seine Dienste auf Hamburg, Berlin und Köln aus. Damit erreicht die Plattform erstmals über eine Million potenzielle Nutzer:innen in vier Großstädten."
+        },
+        {
+          "href": "#",
+          "id": "press-1-link",
+          "level": "basic",
+          "type": "button",
+          "value": "Weiterlesen"
+        },
+        {
+          "id": "press-2-date",
+          "level": "basic",
+          "type": "text",
+          "value": "28. Februar 2026"
+        },
+        {
+          "id": "press-2-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Kooperation"
+        },
+        {
+          "id": "press-2-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Partnerschaft mit dem BMBF für Forschungsprojekt"
+        },
+        {
+          "id": "press-2-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Das Bundesministerium für Bildung und Forschung fördert ein dreijähriges Forschungsprojekt zur digitalen Teilhabe. Gemeinsam mit der TU Chemnitz untersucht das Helferportal, wie digitale Plattformen Inklusion im Alltag stärken können."
+        },
+        {
+          "href": "#",
+          "id": "press-2-link",
+          "level": "basic",
+          "type": "button",
+          "value": "Weiterlesen"
+        },
+        {
+          "id": "press-3-date",
+          "level": "basic",
+          "type": "text",
+          "value": "20. Januar 2026"
+        },
+        {
+          "id": "press-3-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Meilenstein"
+        },
+        {
+          "id": "press-3-title",
+          "level": "basic",
+          "type": "text",
+          "value": "10.000 Nutzer:innen – ein Meilenstein für das Helferportal"
+        },
+        {
+          "id": "press-3-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Nur 18 Monate nach dem Launch hat das Helferportal die Marke von 10.000 registrierten Nutzer:innen überschritten. Rund 3.500 aktive Helfende und 120 Dienstleister sind auf der Plattform vernetzt."
+        },
+        {
+          "href": "#",
+          "id": "press-3-link",
+          "level": "basic",
+          "type": "button",
+          "value": "Weiterlesen"
+        },
+        {
+          "id": "press-4-date",
+          "level": "basic",
+          "type": "text",
+          "value": "10. November 2025"
+        },
+        {
+          "id": "press-4-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Auszeichnung"
+        },
+        {
+          "id": "press-4-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Helferportal gewinnt Innovationspreis für digitale Teilhabe"
+        },
+        {
+          "id": "press-4-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Für seinen innovativen Ansatz zur Vernetzung von Hilfesuchenden, Engagierten und Dienstleistern wurde das Helferportal mit dem Deutschen Innovationspreis für digitale Teilhabe ausgezeichnet."
+        },
+        {
+          "href": "#",
+          "id": "press-4-link",
+          "level": "basic",
+          "type": "button",
+          "value": "Weiterlesen"
+        }
+      ],
+      "id": "b2",
+      "type": "press-releases"
+    }
+  ],
+  "page": {
+    "id": "presse",
+    "title": "Presse — Helferportal",
+    "url": "/presse.html"
+  }
+}
