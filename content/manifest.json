@@ -31,11 +31,6 @@
       "file": "fuer-kommunen.json"
     },
     {
-      "id": "muenchen",
-      "title": "München",
-      "file": "muenchen.json"
-    },
-    {
       "id": "presse",
       "title": "Presse",
       "file": "presse.json"

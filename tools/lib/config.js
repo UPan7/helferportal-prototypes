@@ -33,7 +33,7 @@ function loadEnv() {
 // --- Page registry ---
 const PAGE_IDS = [
   'startseite', 'engagieren', 'kontakt',
-  'ueber-uns', 'hilfe-finden', 'fuer-kommunen', 'muenchen',
+  'ueber-uns', 'hilfe-finden', 'fuer-kommunen',
   'presse', 'projekte'
 ];
 
