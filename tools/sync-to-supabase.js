@@ -90,8 +90,9 @@ async function main() {
     const localEditedAt = content._meta?.lastEdited || content._meta?.extracted;
 
     // --- Conflict check ---
+    let remote = null;
     try {
-      const remote = await fetchSupabasePage(url, key, pageId);
+      remote = await fetchSupabasePage(url, key, pageId);
 
       if (remote) {
         const remoteEditedAt = remote.content?._meta?.lastEdited;
@@ -142,19 +143,39 @@ async function main() {
     content._meta.lastEdited = new Date().toISOString();
 
     try {
-      const response = await fetch(
-        `${url}/rest/v1/pages?id=eq.${pageId}`,
-        {
-          method: 'PATCH',
-          headers: { ...supabaseHeaders(key), 'Prefer': 'return=minimal' },
-          body: JSON.stringify({
-            content: content,
-            title: content.page?.title || pageId,
-            url: content.page?.url || '/',
-            updated_by: 'sync-script'
-          })
-        }
-      );
+      let response;
+      if (!remote) {
+        // Page doesn't exist in Supabase yet — INSERT
+        response = await fetch(
+          `${url}/rest/v1/pages`,
+          {
+            method: 'POST',
+            headers: { ...supabaseHeaders(key), 'Prefer': 'return=minimal' },
+            body: JSON.stringify({
+              id: pageId,
+              content: content,
+              title: content.page?.title || pageId,
+              url: content.page?.url || '/',
+              updated_by: 'sync-script'
+            })
+          }
+        );
+      } else {
+        // Page exists — UPDATE
+        response = await fetch(
+          `${url}/rest/v1/pages?id=eq.${pageId}`,
+          {
+            method: 'PATCH',
+            headers: { ...supabaseHeaders(key), 'Prefer': 'return=minimal' },
+            body: JSON.stringify({
+              content: content,
+              title: content.page?.title || pageId,
+              url: content.page?.url || '/',
+              updated_by: 'sync-script'
+            })
+          }
+        );
+      }
 
       if (!response.ok) {
         const text = await response.text();
@@ -164,7 +185,11 @@ async function main() {
       // Update local JSON with new lastEdited timestamp (sorted keys)
       fs.writeFileSync(jsonPath, JSON.stringify(sortKeys(content), null, 2), 'utf-8');
 
-      console.log(`    ✓ Updated "${pageId}" in Supabase`);
+      if (!remote) {
+        console.log(`    ✓ Inserted "${pageId}" into Supabase (new page)`);
+      } else {
+        console.log(`    ✓ Updated "${pageId}" in Supabase`);
+      }
       synced++;
     } catch (err) {
       console.error(`    ✗ Failed to sync "${pageId}": ${err.message}`);

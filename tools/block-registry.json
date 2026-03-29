@@ -42,7 +42,6 @@
     "pages": ["startseite", "hilfe-finden", "engagieren", "fuer-kommunen"],
     "fields": {
       "tabs-overline":      { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
-      "tabs-title":         { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
       "tab-{key}-name":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
       "tab-{key}-title":    { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
       "tab-{key}-text":     { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true },
@@ -88,17 +87,10 @@
       "cards-title":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
       "cards-text":         { "type": "textarea", "required": false, "level": "basic",    "repeatable": false },
       "cards-btn":          { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
-      "card-{N}-icon":      { "type": "text",     "required": false, "level": "advanced",  "repeatable": true },
       "card-{N}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
       "card-{N}-text":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
-      "card-{N}-href":      { "type": "text",     "required": false, "level": "advanced",  "repeatable": true },
       "card-{N}-items":     { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
-      "card-{N}-btn":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true },
-      "_quick_actions_variant": {
-        "qa-{N}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
-        "qa-{N}-text":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
-        "qa-{N}-href":      { "type": "text",     "required": false, "level": "advanced",  "repeatable": true }
-      }
+      "card-{N}-btn":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true }
     },
     "notes": "Unifies vorteile, schulungen, problems. Variant determines which optional fields are used.",
     "aliases": { "schulungen-section": "cards", "schulungen": "cards", "problems-section": "cards", "support-section": "cards" }
@@ -135,11 +127,9 @@
     "variants": ["grid"],
     "pages": ["startseite"],
     "fields": {
-      "video-overline":          { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
       "video-heading":           { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
       "video-{key}-title":       { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
-      "video-{key}-thumbnail":   { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
-      "video-{key}-file":        { "type": "text",     "required": false, "level": "basic",     "repeatable": true }
+      "video-{key}-thumbnail":   { "type": "image",    "required": true,  "level": "basic",    "repeatable": true }
     },
     "notes": "{key} is a semantic slug (vorstellung, helfer). File field is CMS-internal reference.",
     "aliases": { "video-section": "video" }
@@ -228,7 +218,6 @@
       "logo-{N}-image":     { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
       "logo-{N}-name":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
       "logo-{N}-text":      { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
-      "logo-{N}-link":      { "type": "link",     "required": false, "level": "basic",    "repeatable": true },
       "logo-{N}-btn":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true },
       "_legacy_partner_variant": {
         "partners-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
@@ -252,8 +241,6 @@
       "section-overline":   { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
       "section-title":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
       "section-text":       { "type": "textarea", "required": true,  "level": "basic",    "repeatable": false },
-      "section-image":      { "type": "image",    "required": false, "level": "basic",    "repeatable": false },
-      "section-btn":        { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
       "item-{N}-year":      { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
       "item-{N}-title":     { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
       "item-{N}-text":      { "type": "textarea", "required": false, "level": "basic",    "repeatable": true }
@@ -305,8 +292,7 @@
       "cta-title":          { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
       "cta-text":           { "type": "textarea", "required": false, "level": "basic",    "repeatable": false },
       "cta-btn-1":          { "type": "button",   "required": true,  "level": "basic",    "repeatable": false },
-      "cta-btn-2":          { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
-      "cta-image":          { "type": "image",    "required": false, "level": "advanced",  "repeatable": false }
+      "cta-btn-2":          { "type": "button",   "required": false, "level": "basic",    "repeatable": false }
     },
     "aliases": { "cta-section": "cta-banner", "cta-download-section": "cta-banner" }
   },
@@ -317,11 +303,10 @@
     "variants": ["grid"],
     "pages": ["startseite", "ueber-uns", "projekte"],
     "fields": {
-      "projekte-overline":    { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
-      "projekte-title":       { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
-      "projekte-btn":         { "type": "button",   "required": false, "level": "basic",    "repeatable": false },
-      "section-overline":     { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
-      "section-title":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "_section_header_variant": {
+        "section-overline":   { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+        "section-title":      { "type": "text",     "required": false, "level": "basic",    "repeatable": false }
+      },
       "projekt-{N}-image":    { "type": "image",    "required": true,  "level": "basic",    "repeatable": true },
       "projekt-{N}-badge":    { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
       "projekt-{N}-title":    { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
