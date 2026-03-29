@@ -1136,10 +1136,6 @@ body[class*="page-"] {
     gap: var(--space-md);
 }
 
-.testimonial-card.placeholder {
-    opacity: 0.6;
-    border: 2px dashed rgba(255,255,255,0.25);
-}
 
 .testimonial-image {
     width: 88px;
