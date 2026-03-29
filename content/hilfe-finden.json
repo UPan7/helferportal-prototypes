@@ -3,7 +3,7 @@
     "editedBy": "thomas.oeben@helferportal.de",
     "extracted": "2026-03-08T14:05:52.062Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-12T10:09:01.925Z",
+    "lastEdited": "2026-03-29T09:58:18.614Z",
     "schema_version": "2.0",
     "source": "hilfe-finden.html"
   },
@@ -20,7 +20,7 @@
           "id": "hero-subtitle",
           "level": "basic",
           "type": "textarea",
-          "value": "Ob im Alltag, bei Freizeitaktivitäten oder bei Pflege und Versorgung, hier finden Sie Unterstützung in Ihrer Nähe. Sicher und unkompliziert."
+          "value": "Ob im Alltag, in der Freizeit oder bei Pflege und Versorgung,\nfinden Sie Unterstützung in Ihrer Nähe. Sicher und unkompliziert."
         }
       ],
       "id": "b1",
@@ -62,19 +62,19 @@
           "id": "tab-freizeit-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Sie möchten Zeit mit anderen Menschen verbringen oder gemeinsam etwas unternehmen?\nÜber das Helferportal finden Sie Begleitung für Freizeitaktivitäten und Begegnungen in Ihrer Nähe."
+          "value": "Sie möchten Zeit mit anderen Menschen verbringen oder gemeinsam etwas unternehmen?\nFinden Sie Begleitung für Freizeitaktivitäten und Begegnungen in Ihrer Nähe."
         },
         {
           "id": "tab-freizeit-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Wie wir unterstützen können\nFreizeit gemeinsam gestalten\nSpaziergänge und gemeinsame Aktivitäten\nGespräche und Gesellschaft\nBegleitung zu Veranstaltungen oder Ausflügen\nUnterstützung bei digitalen Angeboten"
+          "value": "So können wir unterstützen\nFreizeit gemeinsam gestalten\nSpaziergänge und gemeinsame Aktivitäten\nGespräche und Gesellschaft\nBegleitung zu Veranstaltungen oder Ausflügen\nUnterstützung bei digitalen Angeboten"
         },
         {
           "id": "tab-freizeit-benefits",
           "level": "advanced",
           "type": "textarea",
-          "value": "Flexibel | Spontan oder regelmäßig – ganz so, wie es zu Ihnen passt.\nAnonym | Lernen Sie Helfende zuerst im geschützten Raum kennen.\nKostenfrei | Für Hilfesuchende entstehen keine Gebühren."
+          "value": "Flexibel | Spontan oder regelmäßig – ganz so, wie es zu Ihnen passt.\nGeschützter Erstkontakt | Erstkontakt per Chat oder Video – ohne Weitergabe Ihrer Kontaktdaten.\nKostenfrei | Für Hilfesuchende ist die Nutzung kostenlos."
         },
         {
           "href": "https://hilfe.helferportal.de",
@@ -100,19 +100,19 @@
           "id": "tab-alltag-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Sie benötigen Unterstützung im Alltag oder suchen passende Versorgungsangebote?\nÜber das Helferportal finden Sie Hilfe in Ihrer Nähe, von Alltagshilfe bis zu professionellen Dienstleistungen."
+          "value": "Sie benötigen Unterstützung im Alltag oder suchen passende Versorgungsangebote?\nFinden Sie Unterstützung in Ihrer Nähe – von Alltagshilfe bis zu professionellen Dienstleistungen."
         },
         {
           "id": "tab-alltag-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Wie wir unterstützen können \nEinkaufshilfe\nBegleitung zu Arzt- oder Behördenterminen\nHilfe bei technischen oder digitalen Themen\nPflege- und Betreuungsangebote\nDienstleistungen wie Therapie, Podologie oder Betreuung\nUnterstützung im Haushalt"
+          "value": "So können wir unterstützen\nEinkaufshilfe\nBegleitung zu Arzt- oder Behördenterminen\nHilfe bei technischen oder digitalen Themen\nPflege- und Betreuungsangebote\nDienstleistungen wie Therapie, Podologie oder Betreuung\nUnterstützung im Haushalt"
         },
         {
           "id": "tab-alltag-benefits",
           "level": "advanced",
           "type": "textarea",
-          "value": "Passende Unterstützung | Finden Sie verfügbare Helfende und Dienstleister für Alltag, Betreuung und Versorgung.\nEinfach organisiert | Unterstützung in Ihrer Nähe – ohne lange Suche oder viele Telefonate.\nGeschützter Kontakt | Lernen Sie Helfende oder Anbieter zuerst im geschützten Raum kennen.\n"
+          "value": "Passende Unterstützung | Finden Sie Helfende und Dienstleister für Alltag, Betreuung und Versorgung.\nEinfach organisiert | Unterstützung in Ihrer Nähe – ohne lange Suche oder viele Telefonate.\nGeschützter Kontakt | Erstkontakt per Chat oder Video – ohne Weitergabe Ihrer Kontaktdaten.\n"
         },
         {
           "href": "https://hilfe.helferportal.de",
@@ -138,13 +138,13 @@
           "id": "tab-angehoerige-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Sie kümmern sich um einen nahestehenden Menschen und wünschen sich Unterstützung?\nÜber das Helferportal finden Sie passende Hilfe im Alltag, Entlastungsangebote und Pflegeberatung.ekasse."
+          "value": "Sie kümmern sich um einen nahestehenden Menschen und wünschen sich Unterstützung?\nFinden Sie passende Entlastung im Alltag, Unterstützungsangebote und Pflegeberatung."
         },
         {
           "id": "tab-angehoerige-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Wie wir unterstützen können\nVerhinderungspflege und Entlastungsangebote\nUnterstützung im Alltag\nBegleitung zu Terminen oder Aktivitäten\nBesuchs- und Gesellschaftsdienste\nBeratung zu Pflege und Unterstützungsangeboten\nVermittlung von passenden Dienstleistern"
+          "value": "So können wir unterstützen\nVerhinderungspflege und Entlastungsangebote\nUnterstützung im Alltag\nBegleitung zu Terminen oder Aktivitäten\nBesuchs- und Gesellschaftsdienste\nBeratung zu Pflege und Unterstützungsangeboten\nVermittlung passender Dienstleister"
         },
         {
           "id": "tab-angehoerige-benefits",
@@ -312,6 +312,24 @@
           "level": "basic",
           "type": "button",
           "value": ""
+        },
+        {
+          "id": "tab-freizeit-vorteile",
+          "level": "advanced",
+          "type": "textarea",
+          "value": ""
+        },
+        {
+          "id": "tab-alltag-vorteile",
+          "level": "advanced",
+          "type": "textarea",
+          "value": ""
+        },
+        {
+          "id": "tab-angehoerige-vorteile",
+          "level": "advanced",
+          "type": "textarea",
+          "value": ""
         }
       ],
       "id": "b2",
@@ -341,7 +359,7 @@
           "id": "vorteile-1-text",
           "level": "basic",
           "type": "text",
-          "value": "Finden Sie Helfende und Dienstleister, die zu Ihrem Bedarf und Ihrer Situation passen."
+          "value": "Finden Sie Helfende und Anbieter, die zu Ihrem Bedarf passen."
         },
         {
           "id": "vorteile-2-title",
@@ -353,7 +371,7 @@
           "id": "vorteile-2-text",
           "level": "basic",
           "type": "text",
-          "value": "Lernen Sie Helfende zunächst anonym im geschützten Raum per Chat, Audio oder Video kennen."
+          "value": "Per Chat oder Video, ohne Weitergabe Ihrer Kontaktdaten."
         },
         {
           "id": "vorteile-3-title",
@@ -365,7 +383,7 @@
           "id": "vorteile-3-text",
           "level": "basic",
           "type": "text",
-          "value": "Termine, Kommunikation und Absprachen lassen sich unkompliziert koordinieren."
+          "value": "Termine und Absprachen einfach koordinieren."
         },
         {
           "id": "vorteile-4-title",

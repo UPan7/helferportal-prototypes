@@ -3,7 +3,7 @@
     "editedBy": "thomas.oeben@helferportal.de",
     "extracted": "2026-03-16T09:05:13.501Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-20T12:21:32.634Z",
+    "lastEdited": "2026-03-29T11:10:28.643Z",
     "schema_version": "2.0",
     "source": "ueber-uns.html"
   },
@@ -14,13 +14,13 @@
           "id": "hero-title",
           "level": "basic",
           "type": "text",
-          "value": "Gemeinsam für bessere Versorgung"
+          "value": "Gemeinsam für eine bessere Versorgung"
         },
         {
           "id": "hero-subtitle",
           "level": "basic",
           "type": "text",
-          "value": "Seit 2015 entwickeln wir digitale Lösungen, die Unterstützung, Engagement und Versorgung miteinander verbinden – einfach, sicher und nah."
+          "value": "Seit 2015 entwickeln wir digitale Lösungen, die Unterstützung, Engagement und Versorgung miteinander verbinden, einfach, sicher und nah."
         }
       ],
       "id": "b1",
@@ -38,25 +38,25 @@
           "id": "section-title",
           "level": "basic",
           "type": "text",
-          "value": "Unterstützung organisieren. Engagement ermöglichen. Versorgung vernetzen, damit niemand mit Unterstützungsbedarf allein bleibt."
+          "value": "Wir verbinden Menschen, damit Hilfe immer einen Weg findet."
         },
         {
           "id": "section-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Gemeinsam mit Bürgerinnen und Bürgern, der Sozialwirtschaft, Dienstleistern und den Kommunen sorgen wir dafür, dass Menschen mit Unterstützungsbedarf und pflegende Angehörige schnell die passende Hilfe erhalten.\nDafür vernetzen wir Engagement, soziale Angebote und Dienstleistungen und ermöglichen eine schnelle, bedarfsgerechte Koordination von Unterstützung im Alltag."
+          "value": "Gemeinsam mit Bürgerinnen und Bürgern, der Sozialwirtschaft, Dienstleistern und Kommunen sorgen wir dafür, dass Menschen mit Unterstützungsbedarf und pflegende Angehörige schnell passende Unterstützung finden."
         },
         {
           "id": "section-values",
           "level": "basic",
           "type": "textarea",
-          "value": "Vernetzt | Alle Akteure der Versorgung auf einer Plattform.\nBedarfsgerecht | Passende Unterstützung statt langer Suche.\nEntlastend | Unterstützung wird auf viele Schultern verteilt.\nDigital koordiniert | Bedarfe erfassen und Hilfe effizient organisieren."
+          "value": "Vernetzt | Alle Akteure der Versorgung auf einer Plattform.\nBedarfsgerecht | Passende Unterstützung statt langer Suche.\nEntlastend | Unterstützung wird auf viele Schultern verteilt.\nDigital koordiniert | Bedarfe erfassen und Unterstützung organisieren."
         },
         {
           "id": "item-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Das Helferportal ist mehr als eine App. \nEs ist eine Infrastruktur für sorgende Gemeinschaften.\n\nWir machen Unterstützung planbar,\nEngagement sichtbar,\nund Verantwortung teilbar."
+          "value": "Das Helferportal ist das digitale Herz der Sorgegemeinschaft."
         },
         {
           "id": "item-1-title",
@@ -104,7 +104,7 @@
           "id": "item-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Entwicklung eines Versorgungskonzepts für hilfebedürftige Seniorinnen und Senioren aus logistischer Perspektive. \nZiel war es, Unterstützung schnell und passgenau über ehrenamtliche Helfer zu organisieren. \nGründung des Vereins deinNachbar e.V. als Praxislabor für neue Versorgungs- und Engagementkonzepte."
+          "value": "Entwicklung eines Versorgungskonzepts für Seniorinnen und Senioren.\nGründung des Vereins deinNachbar e.V. als Praxislabor für neue Versorgungs- und Engagementkonzepte."
         },
         {
           "id": "item-2-year",
@@ -122,13 +122,13 @@
           "id": "item-2-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Digitalisierung der Nachbarschaftshilfe und Einführung mobiler Helfer-Apps zur Koordination von Einsätzen."
+          "value": "Einführung digitaler Prozesse und mobiler Apps zur Koordination von Einsätzen."
         },
         {
           "id": "item-3-year",
           "level": "basic",
           "type": "text",
-          "value": "2023"
+          "value": "2024"
         },
         {
           "id": "item-3-title",
@@ -140,25 +140,25 @@
           "id": "item-3-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Entwicklung eines Webzugangs für Hilfesuchende, sodass Unterstützungsbedarfe direkt im System hinterlegt werden können.\nIntegration eines Katastrophenschutzmoduls, um hunderte Engagierte und deren Gerätschaften an verschiedenen Einsatzorten zu koordinieren."
+          "value": "Webzugang für Hilfesuchende und Integration eines Moduls zur Koordination großer Einsätze im Katastrophenschutz."
         },
         {
           "id": "item-4-year",
           "level": "basic",
           "type": "text",
-          "value": "2024"
+          "value": "2025"
         },
         {
           "id": "item-4-title",
           "level": "basic",
           "type": "text",
-          "value": "Öffnung der Plattform für weitere Akteure"
+          "value": "Öffnung der Plattform"
         },
         {
           "id": "item-4-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Integration von Gesundheits- und Sozialdienstleistern in die Plattform.\nÜbertragung des Prinzips schneller, bedarfsgerechter Vermittlung auf den sozialen Bereich und Entwicklung mobiler Apps für Hilfesuchende.\nEinführung einer Kümmererfunktion, über die Beratungs- und Koordinationsstellen Unterstützungsbedarfe für Dritte einstellen und deren Erfüllung verfolgen können."
+          "value": "Integration von Gesundheits- und Sozialdienstleistern sowie Einführung der Kümmererfunktion für Beratungsstellen."
         },
         {
           "id": "item-5-year",
@@ -176,7 +176,7 @@
           "id": "item-5-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Integration von Chat- und Videofunktionen, um eine Kommunikation im geschützten Raum zu ermöglichen, ohne persönliche Kontaktdaten preiszugeben.\nAufbau sektorenübergreifender Versorgungsstrukturen, in denen Unterstützungs- und Versorgungsbedarfe digital erfasst, vermittelt und koordiniert werden.\nÜbertragung des Versorgungsmodells in andere Städte und Landkreise"
+          "value": "Aufbau sektorenübergreifender und integrativer Versorgungsstrukturen mit digitaler Bedarfserfassung, Vermittlung und Koordination.\nEinführung geschützter Kommunikation per Chat und Video.\nÜbertragung des Versorgungsmodells in andere Städte und Landkreise."
         }
       ],
       "id": "b3",
@@ -239,7 +239,7 @@
           "id": "logos-title",
           "level": "basic",
           "type": "text",
-          "value": "Partner & Förderung"
+          "value": "Auszeichnungen & Presse"
         },
         {
           "id": "logos-subtitle",

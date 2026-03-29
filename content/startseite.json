@@ -3,7 +3,7 @@
     "editedBy": "thomas.oeben@helferportal.de",
     "extracted": "2026-03-08T14:21:11.060Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-25T08:30:42.612Z",
+    "lastEdited": "2026-03-29T12:09:55.641Z",
     "schema_version": "2.0",
     "source": "index.html"
   },
@@ -29,13 +29,13 @@
           "id": "slide-0-title",
           "level": "basic",
           "type": "text",
-          "value": "Damit niemand im Alltag allein bleibt."
+          "value": "Wo Hilfe gesucht wird, findet sich eine helfende Hand."
         },
         {
           "id": "slide-0-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Hilfe finden. Engagement ermöglichen. Versorgung vernetzen."
+          "value": "Wir verbinden Menschen, damit Hilfe immer einen Weg findet."
         },
         {
           "href": "#video-section",
@@ -63,13 +63,13 @@
           "id": "slide-1-title",
           "level": "basic",
           "type": "text",
-          "value": "Unterstützung im Alltag finden"
+          "value": "Unterstützung finden"
         },
         {
           "id": "slide-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Ob im Alltag oder in der Freizeit – finden Sie schnell passende Unterstützung und Begleitung in Ihrer Nähe."
+          "value": "Ob im Alltag oder in der Freizeit – \nfinden Sie passende Unterstützung und Begleitung in Ihrer Nähe."
         },
         {
           "href": "/hilfe-finden.html",
@@ -103,7 +103,7 @@
           "id": "slide-2-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Engagieren Sie sich für Menschen in Ihrer Region oder bieten Sie Ihre Leistungen an – flexibel und passend zu Ihrem Alltag."
+          "value": "Engagieren Sie sich für Menschen in Ihrer Region oder bieten Sie Ihre Leistungen an – \nflexibel und passend zu Ihrem Alltag."
         },
         {
           "href": "/engagieren.html",
@@ -168,7 +168,7 @@
           "id": "qa-1-text",
           "level": "basic",
           "type": "text",
-          "value": "Passende Hilfe und Angebote in Ihrer Nähe finden."
+          "value": "Unterstützung und Angebote in Ihrer Nähe finden."
         },
         {
           "id": "qa-2-href",
@@ -222,7 +222,7 @@
           "id": "qa-4-text",
           "level": "basic",
           "type": "text",
-          "value": "In wenigen Schritten Bedarfe oder Angebote einstellen."
+          "value": "In wenigen Schritten Unterstützung finden oder anbieten."
         },
         {
           "id": "card-1-icon",
@@ -388,7 +388,7 @@
           "id": "tabs-subtitle",
           "level": "basic",
           "type": "text",
-          "value": "Unterstützung, Engagement und Angebote an einem Ort."
+          "value": "Das Helferportal ist das digitale Herz der Sorgegemeinschaft."
         },
         {
           "id": "tab-hilfe-name",
@@ -436,13 +436,13 @@
           "id": "tab-hilfe-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Sie benötigen Hilfe im Alltag, Begleitung zu Terminen oder Gesellschaft bei Freizeitaktivitäten? \nFinden Sie passende Unterstützung in Ihrer Nähe – sicher und unkompliziert."
+          "value": "Sie benötigen Hilfe im Alltag, Begleitung zu Terminen oder Gesellschaft bei Freizeitaktivitäten? \nFinden Sie passende Unterstützung in Ihrer Nähe, sicher und unkompliziert."
         },
         {
           "id": "tab-hilfe-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Begleitdienste | Begleitung zu Arzt- oder Therapieterminen, Behördengängen oder Freizeitaktivitäten.\nBesuchsdienste | Gesellschaft leisten, Gespräche führen, vorlesen oder gemeinsam Zeit verbringen.\nAlltagshilfe | Unterstützung beim Einkaufen, im Haushalt, bei kleinen technischen Fragen oder bei Terminen und kleinen Alltagsaufgaben."
+          "value": "Begleitdienste | Begleitung zu Terminen, Behördengängen oder Freizeitaktivitäten.\nBesuchsdienste | Gesellschaft leisten, Gespräche führen oder Zeit miteinander verbringen.\nAlltagshilfe | Unterstützung beim Einkaufen, im Haushalt oder bei kleinen Aufgaben."
         },
         {
           "href": "",
@@ -462,19 +462,19 @@
           "id": "tab-angehoerige-title",
           "level": "basic",
           "type": "text",
-          "value": "Unterstützung und Entlastung finden"
+          "value": "Entlastung im Alltag finden"
         },
         {
           "id": "tab-angehoerige-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Sie pflegen einen nahestehenden Menschen und brauchen Unterstützung im Alltag? \nFinden Sie passende Entlastung, Beratung und Angebote in Ihrer Nähe."
+          "value": "Sie kümmern sich um einen nahestehenden Menschen und brauchen Unterstützung?\nFinden Sie passende Entlastung, Beratung und Angebote in Ihrer Nähe."
         },
         {
           "id": "tab-angehoerige-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Verhinderungspflege | Zuverlässige Unterstützung, wenn Sie vorübergehend entlastet werden möchten.\nEntlastungsleistungen | Unterstützung im Alltag, die über den Entlastungsbetrag genutzt werden kann.\nBeratung & Vermittlung | Beratung zu Pflege, Unterstützungsmöglichkeiten und passenden Angeboten."
+          "value": "Verhinderungspflege | Zuverlässige Unterstützung, wenn Sie vorübergehend entlastet werden möchten.\nEntlastungsleistungen | Unterstützung im Alltag, nutzbar über den Entlastungsbetrag.\nBeratung & Vermittlung | Beratung zu Pflege, Unterstützungsmöglichkeiten und passenden Angeboten."
         },
         {
           "href": "",
@@ -538,7 +538,7 @@
           "id": "tab-orga-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Engagierte koordinieren | Verfügbarkeiten abfragen, Einsätze planen und Kommunikation zentral steuern.\nAdministration vereinfachen | Zeiterfassung, Dokumentation und Abrechnung digital verwalten.\nNeue Engagierte gewinnen | Zugang zu motivierten Helferinnen und Helfern über das Portal."
+          "value": "Engagement organisieren | Koordinieren Sie Helfende und Einsätze in Ihrer Organisation oder Nachbarschaft.\nAdministration vereinfachen | Zeiterfassung, Dokumentation und Abrechnung digital verwalten.\nNeue Engagierte gewinnen | Zugang zu motivierten Helferinnen und Helfern über das Portal."
         },
         {
           "href": "",
@@ -602,7 +602,7 @@
           "id": "tab-kommunen-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Akteure vernetzen | Ehrenamtliche, Organisationen und Dienstleister auf einer gemeinsamen Plattform zusammenbringen.\nBedarfe digital steuern | Unterstützungs- und Versorgungsbedarfe erfassen und effizient an passende Angebote vermitteln.\nTransparenz und Planung | Überblick über Bedarfe, Angebote und Engagement für eine bedarfsgerechte Sozial- und Pflegeplanung.\nBeratungs- und Koordinationsstellen | Pflegestützpunkte, Seniorenberatung und Quartiersmanagement in das Versorgungsnetz integrieren."
+          "value": "Akteure vernetzen | Ehrenamtliche, Organisationen und Dienstleister auf einer gemeinsamen Plattform zusammenbringen.\nBedarfe digital steuern | Unterstützungs- und Versorgungsbedarfe erfassen und passend vermitteln.\nTransparenz und Planung | Überblick über Bedarfe, Angebote und Engagement für eine bedarfsgerechte Sozial- und Pflegeplanung.\nBeratungs- und Koordinationsstellen | Pflegestützpunkte, Seniorenberatung und Quartiersmanagement in das Versorgungsnetz integrieren."
         },
         {
           "href": "",
@@ -991,7 +991,7 @@
           "id": "step-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Erstellen Sie Ihr Profil. Kostenlos und in wenigen Minuten."
+          "value": "Profil erstellen – kostenlos und in wenigen Minuten"
         },
         {
           "id": "step-2-title",
@@ -1003,19 +1003,19 @@
           "id": "step-2-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Legen Sie fest, welche Unterstützung Sie suchen oder anbieten, z. B. Tätigkeiten, Zeiten und Ort."
+          "value": "Unterstützung suchen oder anbieten – mit Angaben zu Tätigkeit, Zeit und Ort"
         },
         {
           "id": "step-3-title",
           "level": "basic",
           "type": "text",
-          "value": "Passende Unterstützung finden"
+          "value": "Passende Vorschläge erhalten"
         },
         {
           "id": "step-3-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Erhalten Sie passende Vorschläge auf Basis Ihrer Angaben – schnell und übersichtlich."
+          "value": "Verfügbare Angebote auf Basis Ihrer Angaben finden"
         },
         {
           "id": "step-4-title",
@@ -1027,7 +1027,7 @@
           "id": "step-4-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Lernen Sie sich per Chat oder Video kennen – zunächst im geschützten Raum."
+          "value": "Per Chat oder Video kennenlernen – ohne Weitergabe Ihrer Kontaktdaten"
         },
         {
           "id": "step-5-title",
@@ -1039,13 +1039,13 @@
           "id": "step-5-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Vereinbaren Sie Termine und koordinieren Sie Unterstützung einfach und transparent."
+          "value": "Termine vereinbaren und Unterstützung einfach koordinieren"
         },
         {
           "id": "step-1-icon",
           "level": "advanced",
           "type": "text",
-          "value": ""
+          "value": "Profil erstellen, kostenlos und in wenigen Minuten"
         },
         {
           "id": "step-2-icon",
@@ -1378,25 +1378,25 @@
           "id": "testimonial-2-quote",
           "level": "basic",
           "type": "textarea",
-          "value": "Weitere Referenz folgt in Kürze."
+          "value": "Unsere gemeinsame Mission , Versorgungsstrukturen in unserer Kommune zukunftsfähig zu gestalten, hat uns als städtische Seniorenarbeit motiviert, das Forschungsprojekt mit dem Helferportal zu unterstützen. Wir sind stolz, zur Weiterentwicklung dieses wichtigen digitalen Angebots beigetragen zu haben. "
         },
         {
           "id": "testimonial-2-name",
           "level": "basic",
           "type": "text",
-          "value": "Name"
+          "value": "Kirsten Wolf"
         },
         {
           "id": "testimonial-2-role",
           "level": "basic",
           "type": "text",
-          "value": "Rolle"
+          "value": "Sachgebietsleiterin Seniorenarbeit"
         },
         {
           "id": "testimonial-2-org",
           "level": "basic",
           "type": "text",
-          "value": "Organisation"
+          "value": "Kreisstadt Dietzenbach"
         },
         {
           "id": "testimonial-3-image",
@@ -1468,16 +1468,13 @@
           "id": "partner-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Muster Text"
+          "value": "Wir danken dem BMFTR für die Unterstützung bei der Weiterentwicklung des Helferportals im Rahmen der Projekte CareCollApp und MEAPP."
         },
         {
           "id": "partner-2-logo",
           "level": "basic",
           "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
+          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-2-logo.jpg"
         },
         {
           "id": "partner-2-name",
@@ -1489,16 +1486,13 @@
           "id": "partner-2-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Gemeinsam mit der Professur für Angewandte Gerontopsychologie und Kognition der Technischen Universität Chemnitz haben wir das Projekt CareCollaborationApp in Dietzenbach umgesetzt. Im Rahmen des Projekts wurde eine digitale Infrastruktur erprobt, die Akteure aus Versorgung, Engagement und Beratung miteinander vernetzt und Unterstützungs- sowie Versorgungsbedarfe sektorenübergreifend koordiniert."
+          "value": "Gemeinsam mit der TU Chemnitz haben wir CareCollaborationApp umgesetzt und eine digitale Infrastruktur zur Vernetzung und Koordination von Bedarfen erprobt."
         },
         {
           "id": "partner-3-logo",
           "level": "basic",
           "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
+          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-3-logo.jpg"
         },
         {
           "id": "partner-3-name",
@@ -1510,16 +1504,13 @@
           "id": "partner-3-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Gemeinsam mit der Professur für Angewandte Gerontopsychologie und Kognition der Technischen Universität Chemnitz und der Städtischen Seniorenarbeit Dietzenbach haben wir das Projekt CareCollaborationApp umgesetzt. Ziel des Projekts war es, eine digitale Infrastruktur zu erproben, die alle an der Versorgung beteiligten Akteure miteinander vernetzt und Unterstützungs- sowie Versorgungsbedarfe sektorenübergreifend koordiniert.\nDie Städtische Seniorenarbeit Dietzenbach nutzt das Helferportal inzwischen auch im Alltag, um den kommunalen Helferkreis digital zu koordinieren, Unterstützungsbedarfe zu erfassen und passende Engagierte schnell zu vermitteln. So können Unterstützungsangebote effizient organisiert und ältere Menschen im Alltag besser begleitet werden."
+          "value": "Die Städtische Seniorenarbeit Dietzenbach hat die Entwicklung sektorenübergreifender Versorgungsstrukturen unterstützt und nutzt das Helferportal im Alltag."
         },
         {
           "id": "partner-4-logo",
           "level": "basic",
           "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
+          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-4-logo.png"
         },
         {
           "id": "partner-4-name",
@@ -1531,16 +1522,13 @@
           "id": "partner-4-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Muster Text"
+          "value": "Mit Pro Inklusion e.V. haben wir im Projekt MEAPP das Helferportal gezielt an die Anforderungen der Behindertenhilfe weiterentwickelt."
         },
         {
           "id": "partner-5-logo",
           "level": "basic",
           "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
+          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-5-logo.png"
         },
         {
           "id": "partner-5-name",
@@ -1552,16 +1540,13 @@
           "id": "partner-5-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Muster Text"
+          "value": "Die Helmut-Schmidt-Universität Hamburg hat das Projekt MEAPP – ein Assistenzportal für Menschen mit Unterstützungsbedarf – wissenschaftlich begleitet."
         },
         {
           "id": "logo-1-image",
           "level": "basic",
           "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
+          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/logo-1-image.jpg"
         },
         {
           "id": "logo-1-name",
@@ -1576,7 +1561,7 @@
           "value": ""
         },
         {
-          "href": "",
+          "href": "https://www.bmftr.bund.de",
           "id": "logo-1-link",
           "level": "basic",
           "type": "link",
@@ -1618,7 +1603,7 @@
           "value": ""
         },
         {
-          "href": "",
+          "href": "https://www.tu-chemnitz.de/hsw/psychologie/professuren/geropsy/CareCollApp.html",
           "id": "logo-2-link",
           "level": "basic",
           "type": "link",
@@ -1660,7 +1645,7 @@
           "value": ""
         },
         {
-          "href": "",
+          "href": "https://www.dietzenbach.de/helferportal",
           "id": "logo-3-link",
           "level": "basic",
           "type": "link",
@@ -1702,7 +1687,7 @@
           "value": ""
         },
         {
-          "href": "",
+          "href": "https://proinklusion-northeim.de/",
           "id": "logo-4-link",
           "level": "basic",
           "type": "link",
@@ -1744,7 +1729,7 @@
           "value": ""
         },
         {
-          "href": "",
+          "href": "https://www.hsu-hh.de/mikrosoz/mitarbeiter/prof-dr-katharina-liebsch/",
           "id": "logo-5-link",
           "level": "basic",
           "type": "link",

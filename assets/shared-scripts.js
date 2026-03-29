@@ -421,6 +421,23 @@ if (appStrip) {
 }
 
 // ========================================
+// PARTNERS TOGGLE (index.html — expandable logos)
+// ========================================
+const partnersToggle = document.querySelector('.partners-toggle-btn');
+const partnersLogos = document.querySelector('.partners-logos.partners-collapsible');
+
+if (partnersToggle && partnersLogos) {
+    partnersToggle.addEventListener('click', () => {
+        const isExpanded = partnersLogos.classList.toggle('expanded');
+        partnersToggle.classList.toggle('expanded', isExpanded);
+        const textEl = partnersToggle.querySelector('.partners-toggle-text');
+        if (textEl) {
+            textEl.textContent = isExpanded ? 'Weniger anzeigen' : 'Alle Partner anzeigen';
+        }
+    });
+}
+
+// ========================================
 // PREVIEW BRIDGE LOADER
 // Dynamically loads preview-bridge.js which
 // self-activates only inside an iframe (CMS).

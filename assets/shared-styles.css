@@ -2301,16 +2301,6 @@ body[class*="page-"] {
 
 .page-startseite .tabs-header h2 {
     font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: var(--space-sm);
-}
-
-.page-startseite .tabs-header h3 {
-    font-family: var(--font-display);
     font-size: 32px;
     font-weight: 800;
     color: var(--gray-900);
@@ -4360,6 +4350,353 @@ body[class*="page-"] {
     display: flex; justify-content: center; gap: var(--space-md); position: relative;
 }
 
+/* VALUES SECTION */
+.page-ueber-uns .values-section {
+    background: var(--white);
+    padding: var(--space-3xl) var(--space-lg);
+}
+
+.page-ueber-uns .values-section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.page-ueber-uns .values-section .section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.page-ueber-uns .values-section .section-header h2 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.2;
+}
+
+.page-ueber-uns .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.page-ueber-uns .value-highlight-card {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl) var(--space-xl);
+    text-align: center;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.page-ueber-uns .value-highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.page-ueber-uns .value-highlight-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--blue-lighter);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-lg);
+    color: var(--blue-primary);
+}
+
+.page-ueber-uns .value-highlight-card h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-sm);
+}
+
+.page-ueber-uns .value-highlight-card p {
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* PROJEKTE on ueber-uns (reuse Startseite patterns) */
+.page-ueber-uns .projekte-section {
+    padding: var(--space-3xl) var(--space-lg);
+    background: var(--white);
+}
+
+.page-ueber-uns .projekte-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.page-ueber-uns .projekte-section .section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.page-ueber-uns .projekte-section .section-header h2 {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--blue-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.page-ueber-uns .projekte-section .section-header h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.2;
+}
+
+.page-ueber-uns .projekte-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.page-ueber-uns .projekt-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.page-ueber-uns .projekt-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.page-ueber-uns .projekt-card-image {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.page-ueber-uns .projekt-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.page-ueber-uns .projekt-card:hover .projekt-card-image img {
+    transform: scale(1.05);
+}
+
+.page-ueber-uns .projekt-card-badge {
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.page-ueber-uns .projekt-card-badge.blue { background: var(--blue-primary); }
+.page-ueber-uns .projekt-card-badge.orange { background: var(--orange-primary); }
+.page-ueber-uns .projekt-card-badge.green { background: var(--green-primary); }
+
+.page-ueber-uns .projekt-card-body {
+    padding: var(--space-lg);
+}
+
+.page-ueber-uns .projekt-card-body h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-sm);
+}
+
+.page-ueber-uns .projekt-card-body p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.page-ueber-uns .projekt-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue-primary);
+    text-decoration: none;
+    transition: gap var(--transition-fast);
+}
+
+.page-ueber-uns .projekt-card-link:hover {
+    gap: var(--space-sm);
+}
+
+.page-ueber-uns .partners-logos {
+    border-top: 1px solid var(--gray-200);
+    padding-top: var(--space-2xl);
+    margin-bottom: var(--space-xl);
+}
+
+.page-ueber-uns .partners-logos-title {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.page-ueber-uns .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.page-ueber-uns .partner-card {
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+}
+
+.page-ueber-uns .partner-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-100);
+    border-radius: var(--radius-md);
+    color: var(--gray-400);
+}
+
+.page-ueber-uns .partner-logo img {
+    max-width: 60px;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+.page-ueber-uns .partner-logo img[src=""] {
+    display: none;
+}
+
+.page-ueber-uns .partner-card h4 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-xs);
+}
+
+.page-ueber-uns .partner-card p {
+    font-size: 13px;
+    color: var(--gray-500);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.page-ueber-uns .projekte-cta {
+    text-align: center;
+}
+
+/* AWARDS SECTION */
+.page-ueber-uns .awards-section {
+    background: var(--gray-100);
+    padding: var(--space-3xl) var(--space-lg);
+}
+
+.page-ueber-uns .awards-section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.page-ueber-uns .awards-section .section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.page-ueber-uns .awards-section .section-header h2 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.2;
+}
+
+.page-ueber-uns .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    max-width: 800px;
+    margin: 0 auto var(--space-xl);
+}
+
+.page-ueber-uns .award-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+}
+
+.page-ueber-uns .award-card-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--yellow-lighter);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-lg);
+    color: var(--yellow-primary);
+}
+
+.page-ueber-uns .award-card h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--space-sm);
+}
+
+.page-ueber-uns .award-card .award-year {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background: var(--yellow-lighter);
+    color: var(--gray-800);
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.page-ueber-uns .award-card p {
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.page-ueber-uns .awards-cta {
+    text-align: center;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
     .page-ueber-uns .mission-card {
@@ -4398,6 +4735,14 @@ body[class*="page-"] {
         min-height: 250px;
     }
 
+    .page-ueber-uns .projekte-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .page-ueber-uns .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -4426,6 +4771,30 @@ body[class*="page-"] {
     }
 
     .page-ueber-uns .founder-content h4 {
+        font-size: 24px;
+    }
+
+    .page-ueber-uns .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-ueber-uns .values-section .section-header h2 {
+        font-size: 24px;
+    }
+
+    .page-ueber-uns .projekte-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-ueber-uns .partners-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .page-ueber-uns .awards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-ueber-uns .awards-section .section-header h2 {
         font-size: 24px;
     }
 
@@ -6450,5 +6819,252 @@ body[class*="page-"] {
     .page-projekte .cta-buttons {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+/* ================================================================
+   S1: HERO OVERLINE — static heading above slider
+   ================================================================ */
+
+.page-startseite .hero-overline {
+    max-width: 1280px;
+    margin: 0 auto var(--space-lg);
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg) 0;
+}
+
+.page-startseite .hero-overline h2 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3.5vw, 42px);
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+}
+
+.page-startseite .hero-overline p {
+    font-family: var(--font-body);
+    font-size: clamp(15px, 2vw, 18px);
+    color: var(--gray-600);
+    line-height: 1.5;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .page-startseite .hero-overline {
+        padding: var(--space-lg) var(--space-md) 0;
+        margin-bottom: var(--space-md);
+    }
+}
+
+/* ================================================================
+   S3: TABS OVERLINE — small uppercase text above tabs title
+   ================================================================ */
+
+.page-startseite .tabs-overline {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-sm);
+}
+
+/* ================================================================
+   S4: PROJEKTE SUBTITLE
+   ================================================================ */
+
+.page-startseite .projekte-subtitle {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    max-width: 720px;
+    margin: var(--space-md) auto 0;
+}
+
+/* ================================================================
+   S5: PRICING SECTION — Kosten tab redesign
+   ================================================================ */
+
+.page-startseite .pricing-section {
+    text-align: center;
+}
+
+.page-startseite .pricing-section h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: var(--space-xl);
+}
+
+.page-startseite .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.page-startseite .pricing-card {
+    position: relative;
+    padding: var(--space-xl) var(--space-md);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    text-align: center;
+    transition: all var(--transition-fast);
+}
+
+.page-startseite .pricing-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.page-startseite .pricing-card.recommended {
+    border-color: var(--blue-primary);
+    background: var(--blue-lighter);
+}
+
+.page-startseite .pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 14px;
+    background: var(--blue-primary);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.page-startseite .pricing-amount {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--blue-primary);
+    line-height: 1.2;
+}
+
+.page-startseite .pricing-card.recommended .pricing-amount {
+    color: var(--blue-dark);
+}
+
+.page-startseite .pricing-period {
+    display: block;
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-bottom: var(--space-sm);
+}
+
+.page-startseite .pricing-label {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.4;
+    margin: var(--space-sm) 0 0;
+}
+
+.page-startseite .pricing-note {
+    font-size: 14px;
+    color: var(--gray-500);
+    text-align: center;
+    margin-bottom: var(--space-md);
+    line-height: 1.5;
+}
+
+.page-startseite .pricing-quote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gray-700);
+    border: none;
+    padding: var(--space-md) 0 0;
+    margin: var(--space-md) 0 0;
+    border-top: 1px solid var(--gray-200);
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .page-startseite .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-startseite .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-startseite .pricing-section h3 {
+        font-size: 20px;
+    }
+
+    .page-startseite .pricing-amount {
+        font-size: 24px;
+    }
+}
+
+/* ================================================================
+   S6: PARTNERS — expandable / collapsible
+   ================================================================ */
+
+.page-startseite .partners-logos.partners-collapsible {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-lg);
+    justify-items: center;
+    overflow: hidden;
+    max-height: 280px;
+    position: relative;
+    transition: max-height 0.4s ease;
+}
+
+.page-startseite .partners-logos.partners-collapsible.expanded {
+    max-height: 2000px;
+}
+
+/* Fade-out gradient at the bottom when collapsed */
+.page-startseite .partners-logos.partners-collapsible:not(.expanded)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--white));
+    pointer-events: none;
+}
+
+.page-startseite .partners-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-lg);
+    cursor: pointer;
+}
+
+.page-startseite .partners-toggle-chevron {
+    transition: transform var(--transition-normal);
+}
+
+.page-startseite .partners-toggle-btn.expanded .partners-toggle-chevron {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .page-startseite .partners-logos.partners-collapsible {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        max-height: 220px;
     }
 }

@@ -3,7 +3,7 @@
     "editedBy": "thomas.oeben@helferportal.de",
     "extracted": "2026-03-08T14:05:52.870Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-13T10:14:15.296Z",
+    "lastEdited": "2026-03-28T18:27:11.768Z",
     "schema_version": "2.0",
     "source": "engagieren.html"
   },
@@ -14,13 +14,13 @@
           "id": "hero-title",
           "level": "basic",
           "type": "text",
-          "value": "Engagieren Sie sich so, wie es zu Ihnen passt"
+          "value": "Engagieren Sie sich, wie es zu Ihnen passt"
         },
         {
           "id": "hero-subtitle",
           "level": "basic",
           "type": "textarea",
-          "value": "Spontan helfen, eigenständig unterstützen oder Teil eines Teams werden – im Helferportal finden Sie die passende Form des Engagements."
+          "value": "Spontan helfen, eigenständig unterstützen oder Teil eines Teams werden."
         }
       ],
       "id": "b1",
@@ -62,13 +62,13 @@
           "id": "tab-spontan-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Sie möchten helfen, wenn Sie Zeit haben, ohne feste Verpflichtung? Als Spontanhelfer unterstützten Sie Menschen flexibel im Alltag oder in der Freizeit."
+          "value": "Sie möchten helfen, wenn Sie Zeit haben, ohne feste Verpflichtung? \nAls Spontanhelfer unterstützten Sie Menschen flexibel im Alltag oder in der Freizeit."
         },
         {
           "id": "tab-spontan-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Wie Sie unterstützen können:\nGemeinsame Freizeitaktivitäten unternehmen\nSpaziergänge begleiten\nBeim Einkaufen helfen\nZu Terminen begleiten\nZeit schenken und Gespräche führen\nBei digitalen Fragen helfen\n"
+          "value": "So können Sie unterstützen:\nGemeinsame Freizeitaktivitäten\nSpaziergänge begleiten\nBeim Einkaufen helfen\nZu Terminen begleiten\nZeit schenken und Gespräche führen\nBei digitalen Fragen helfen\n"
         },
         {
           "id": "tab-spontan-benefits",
@@ -106,19 +106,19 @@
           "id": "tab-eigenstaendig-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Ehrenamtlich | Ohne Gewerbeanmeldung – häufig mit Aufwandsentschädigung im Rahmen der Übungsleiterpauschale (bis zu 3.300 € pro Jahr steuerfrei).\nSelbständig | Mit Gewerbeanmeldung, Vergütung frei vereinbar, als Neben- oder Haupterwerb möglich. Sie bestimmen Ihre Konditionen selbst."
+          "value": "Ehrenamtlich | Ohne Gewerbeanmeldung – häufig mit Aufwandsentschädigung im Rahmen der Übungsleiterpauschale (bis zu 3.300 € pro Jahr steuerfrei).\nSelbständig | Mit Gewerbeanmeldung, Vergütung frei vereinbar, als Neben- oder Haupterwerb möglich."
         },
         {
           "id": "tab-eigenstaendig-info",
           "level": "advanced",
           "type": "textarea",
-          "value": "Je nach Bundesland können eine Registrierung, kurze Schulungen oder Qualifikationsnachweise erforderlich sein. Informationen zu den jeweiligen Vorgaben finden Sie auf der Website des zuständigen Ministeriums für Gesundheit und Pflege in Ihrem Bundesland."
+          "value": "Je nach Bundesland können Registrierung, Schulungen oder Qualifikationsnachweise erforderlich sein.\nInformationen finden Sie beim zuständigen Ministerium für Gesundheit und Pflege."
         },
         {
           "id": "tab-eigenstaendig-benefits",
           "level": "advanced",
           "type": "textarea",
-          "value": "Qualifiziert | Mit anerkannter Qualifikation als Nachbarschaftshelfer oder selbständige Einzelperson.\nRechtssicher | Klare gesetzliche Rahmenbedingungen für Ihr Engagement.\nEigenständig | Sie gestalten Ihre Einsätze und Konditionen selbst."
+          "value": "Qualifiziert | Mit anerkannter Qualifikation tätig.\nRechtssicher | Klare gesetzliche Rahmenbedingungen.\nEigenständig | Sie gestalten Ihre Einsätze und Konditionen selbst."
         },
         {
           "href": "https://helfen.helferportal.de",
@@ -144,7 +144,7 @@
           "id": "tab-organisation-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Sie möchten sich engagieren, aber die Verantwortung nicht allein tragen?\nÜber eine Organisation stehen Ihnen Fachkräfte zur Seite. Sie erhalten Begleitung, Schulungen und Versicherungsschutz, und sind Teil eines Teams."
+          "value": "Sie möchten sich engagieren, aber die Verantwortung nicht allein tragen?\nÜber eine Organisation werden Sie begleitet, geschult, versichert und sind Teil eines Teams."
         },
         {
           "id": "tab-organisation-benefits",
@@ -156,7 +156,7 @@
           "id": "tab-organisation-roles",
           "level": "advanced",
           "type": "textarea",
-          "value": "Alltagsbegleiter\nAssistent\nBetreuer\nKommunales Engagement\nKatastrophenschutz"
+          "value": "Alltagsbegleiter\nAssistent\nKatastrophenschutz"
         },
         {
           "id": "tab-organisation-cards",
@@ -242,7 +242,7 @@
           "id": "cards-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Unser Partner, der Verein \"deinNachbar e.V.\" bietet Ihnen umfassende Qualifizierungsmöglichkeiten, damit Sie sicher und kompetent helfen können."
+          "value": "Gemeinsam mit unserem Partner deinNachbar e.V. bieten wir Ihnen Qualifizierungsmöglichkeiten, damit Sie sicher und kompetent unterstützen können."
         },
         {
           "id": "card-1-title",
@@ -254,7 +254,7 @@
           "id": "card-1-text",
           "level": "basic",
           "type": "text",
-          "value": "Präsenzeinheiten über Zoom mit erfahrenen Dozentinnen. Interaktiv, praxisnah und in kleinen Gruppen."
+          "value": "Interaktive Online-Schulungen über Zoom – praxisnah und in kleinen Gruppen."
         },
         {
           "id": "card-2-title",
@@ -266,7 +266,7 @@
           "id": "card-2-text",
           "level": "basic",
           "type": "text",
-          "value": "Flexibles Einzelstudium über unsere digitale Lernplattform. Lernen in Ihrem Tempo. Wann und wo es Ihnen passt."
+          "value": "Flexibles Selbststudium über die digitale Lernplattform – wann und wo es Ihnen passt."
         },
         {
           "id": "card-3-title",
@@ -390,7 +390,7 @@
           "id": "vorteile-1-text",
           "level": "basic",
           "type": "text",
-          "value": "Sie erhalten nur Anfragen, die zu Ihrem Profil und Ihren Präferenzen passen."
+          "value": "Sie erhalten nur Anfragen, die zu Ihrem Profil passen."
         },
         {
           "id": "vorteile-2-title",
@@ -402,7 +402,7 @@
           "id": "vorteile-2-text",
           "level": "basic",
           "type": "text",
-          "value": "Sie bestimmen Zeit, Umfang und Einsatzort Ihrer Unterstützung."
+          "value": "Sie bestimmen Zeit, Umfang und Einsatzort."
         },
         {
           "id": "vorteile-3-title",
@@ -414,7 +414,7 @@
           "id": "vorteile-3-text",
           "level": "basic",
           "type": "text",
-          "value": "Der erste Kontakt erfolgt anonym per Chat, Audio oder Video."
+          "value": "Erstkontakt ohne Weitergabe Ihrer Kontaktdaten"
         },
         {
           "id": "vorteile-4-title",
@@ -426,7 +426,7 @@
           "id": "vorteile-4-text",
           "level": "basic",
           "type": "text",
-          "value": "Einsätze werden klar koordiniert und nachvollziehbar dokumentiert."
+          "value": "Einsätze werden klar koordiniert und dokumentiert."
         }
       ],
       "id": "b4",
