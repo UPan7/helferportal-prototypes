@@ -53,20 +53,29 @@
         "tab-{key}-benefits": { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
         "tab-{key}-info":     { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
         "tab-{key}-roles":    { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true }
-      },
-      "_info_tabs_variant": {
-        "info-overline":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
-        "info-title":           { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
-        "info-{key}-name":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
-        "info-{key}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
-        "info-{key}-text":      { "type": "textarea", "required": false, "level": "basic",    "repeatable": true },
-        "info-{key}-cards":     { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
-        "info-{key}-note":      { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
-        "info-{key}-btn":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true }
       }
     },
     "notes": "{key} is a semantic slug (hilfe, engagierte, kommunen), not a number. Cards use pipe-delimited 'Title | Description' per line.",
-    "aliases": { "tabs-section": "tabs", "info-tabs": "tabs" }
+    "aliases": { "tabs-section": "tabs" }
+  },
+
+  "info-tabs": {
+    "label": "Info Tabs",
+    "purpose": "Tabbed trust/pricing/network section with info-prefixed fields",
+    "variants": ["trust"],
+    "pages": ["startseite"],
+    "fields": {
+      "info-overline":        { "type": "text",     "required": false, "level": "basic",    "repeatable": false },
+      "info-title":           { "type": "text",     "required": true,  "level": "basic",    "repeatable": false },
+      "info-{key}-name":      { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "info-{key}-title":     { "type": "text",     "required": true,  "level": "basic",    "repeatable": true },
+      "info-{key}-cards":     { "type": "textarea", "required": false, "level": "advanced",  "repeatable": true },
+      "_optional_variant": {
+        "info-{key}-text":    { "type": "textarea", "required": false, "level": "basic",    "repeatable": true },
+        "info-{key}-note":    { "type": "text",     "required": false, "level": "basic",    "repeatable": true },
+        "info-{key}-btn":     { "type": "button",   "required": false, "level": "basic",    "repeatable": true }
+      }
+    }
   },
 
   "cards": {
