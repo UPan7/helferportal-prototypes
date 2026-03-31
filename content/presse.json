@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "extracted": "2026-03-29T19:33:33.749Z",
+    "extracted": "2026-03-31T13:48:49.541Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T20:50:00.202Z",
+    "lastEdited": "2026-03-31T13:48:57.293Z",
     "schema_version": "2.0",
     "source": "presse.html"
   },
@@ -28,144 +28,258 @@
     {
       "fields": [
         {
-          "id": "section-overline",
+          "id": "press-overline",
           "level": "basic",
           "type": "text",
-          "value": "Neuigkeiten"
+          "value": "In den Medien"
         },
         {
-          "id": "section-title",
+          "id": "press-title",
           "level": "basic",
           "type": "text",
-          "value": "Aktuelle Pressemitteilungen"
+          "value": "Das Helferportal in der Presse"
         },
         {
-          "id": "press-1-date",
+          "id": "press-1-image",
           "level": "basic",
-          "type": "text",
-          "value": "15. März 2026"
+          "type": "image",
+          "value": {
+            "alt": "Deutscher Award für Nachhaltigkeits-Projekte 2025",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-1-image.jpg"
+          }
         },
         {
           "id": "press-1-badge",
           "level": "basic",
           "type": "text",
-          "value": "Pressemitteilung"
+          "value": "Auszeichnung"
         },
         {
           "id": "press-1-title",
           "level": "basic",
           "type": "text",
-          "value": "Helferportal expandiert in drei neue Städte"
+          "value": "Deutscher Award für Nachhaltigkeits-Projekte 2025"
         },
         {
           "id": "press-1-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Nach dem erfolgreichen Start in München weitet das Helferportal seine Dienste auf Hamburg, Berlin und Köln aus. Damit erreicht die Plattform erstmals über eine Million potenzielle Nutzer:innen in vier Großstädten."
+          "value": "Die Helferportal GmbH wurde in Berlin mit dem Deutschen Award für Nachhaltigkeitsprojekte 2025 ausgezeichnet. Das sektorenübergreifende Versorgungskonzept überzeugte die Jury."
         },
         {
-          "href": "#",
+          "href": "https://helferportal.de/2025/09/30/helferportal-gmbh-erhaelt-den-deutschen-award/",
           "id": "press-1-link",
           "level": "basic",
-          "type": "button",
-          "value": "Weiterlesen"
+          "type": "link",
+          "value": "Zum Artikel"
         },
         {
-          "id": "press-2-date",
+          "id": "press-2-image",
           "level": "basic",
-          "type": "text",
-          "value": "28. Februar 2026"
+          "type": "image",
+          "value": {
+            "alt": "Stadt Dietzenbach × Helferportal",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-2-image.png"
+          }
         },
         {
           "id": "press-2-badge",
           "level": "basic",
           "type": "text",
-          "value": "Kooperation"
+          "value": "Pilotprojekt"
         },
         {
           "id": "press-2-title",
           "level": "basic",
           "type": "text",
-          "value": "Partnerschaft mit dem BMBF für Forschungsprojekt"
+          "value": "Stadt Dietzenbach × Helferportal"
         },
         {
           "id": "press-2-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Das Bundesministerium für Bildung und Forschung fördert ein dreijähriges Forschungsprojekt zur digitalen Teilhabe. Gemeinsam mit der TU Chemnitz untersucht das Helferportal, wie digitale Plattformen Inklusion im Alltag stärken können."
+          "value": "In Dietzenbach startete ein Pilotprojekt zur digitalen Vernetzung von Pflegebedürftigen und Unterstützungspersonen. Das System gleicht automatisch Bedarfe mit verfügbaren Angeboten ab."
         },
         {
-          "href": "#",
+          "href": "https://helferportal.de/2025/07/25/stadt-dietzenbach-x-helferportal/",
           "id": "press-2-link",
           "level": "basic",
-          "type": "button",
-          "value": "Weiterlesen"
+          "type": "link",
+          "value": "Zum Artikel"
         },
         {
-          "id": "press-3-date",
+          "id": "press-3-image",
           "level": "basic",
-          "type": "text",
-          "value": "20. Januar 2026"
+          "type": "image",
+          "value": {
+            "alt": "HNA berichtet über das Assistenz-Portal",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-3-image.jpg"
+          }
         },
         {
           "id": "press-3-badge",
           "level": "basic",
           "type": "text",
-          "value": "Meilenstein"
+          "value": "Presse"
         },
         {
           "id": "press-3-title",
           "level": "basic",
           "type": "text",
-          "value": "10.000 Nutzer:innen – ein Meilenstein für das Helferportal"
+          "value": "Hessische/Niedersächsische Allgemeine berichtet über das Assistenz-Portal"
         },
         {
           "id": "press-3-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Nur 18 Monate nach dem Launch hat das Helferportal die Marke von 10.000 registrierten Nutzer:innen überschritten. Rund 3.500 aktive Helfende und 120 Dienstleister sind auf der Plattform vernetzt."
+          "value": "Die HNA veröffentlichte einen ausführlichen Artikel über den Start des digitalen Assistenz-Portals. Das Projekt „Meapp\" erleichtert Menschen mit Unterstützungsbedarf den Zugang zu passenden Assistenzleistungen."
         },
         {
-          "href": "#",
+          "href": "https://helferportal.de/2025/06/27/hessische-niedersaechsische-allgemeine-berichtet-ueber-das-assistenz-portal/",
           "id": "press-3-link",
           "level": "basic",
-          "type": "button",
-          "value": "Weiterlesen"
+          "type": "link",
+          "value": "Zum Artikel"
         },
         {
-          "id": "press-4-date",
+          "id": "press-4-image",
           "level": "basic",
-          "type": "text",
-          "value": "10. November 2025"
+          "type": "image",
+          "value": {
+            "alt": "Radio Göttingen über das Assistenz-Portal",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-4-image.jpg"
+          }
         },
         {
           "id": "press-4-badge",
           "level": "basic",
           "type": "text",
-          "value": "Auszeichnung"
+          "value": "Presse"
         },
         {
           "id": "press-4-title",
           "level": "basic",
           "type": "text",
-          "value": "Helferportal gewinnt Innovationspreis für digitale Teilhabe"
+          "value": "Radio Göttingen über das Assistenz-Portal"
         },
         {
           "id": "press-4-text",
           "level": "basic",
           "type": "textarea",
-          "value": "Für seinen innovativen Ansatz zur Vernetzung von Hilfesuchenden, Engagierten und Dienstleistern wurde das Helferportal mit dem Deutschen Innovationspreis für digitale Teilhabe ausgezeichnet."
+          "value": "Das Stadtradio Göttingen berichtete über den Start des digitalen Assistenz-Portals im Landkreis Northeim. 5 Leistungsanbieter ermöglichen es, organisationsübergreifend passende Helfer digital zu buchen."
         },
         {
-          "href": "#",
+          "href": "https://helferportal.de/2025/06/24/radio-goettingen-ueber-das-assistenzportal/",
           "id": "press-4-link",
           "level": "basic",
-          "type": "button",
-          "value": "Weiterlesen"
+          "type": "link",
+          "value": "Zum Artikel"
+        },
+        {
+          "id": "press-5-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "Peer-reviewed Research: Enhancing Community Care",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-5-image.jpg"
+          }
+        },
+        {
+          "id": "press-5-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Forschung"
+        },
+        {
+          "id": "press-5-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Enhancing Community Care Through Digital Coordination"
+        },
+        {
+          "id": "press-5-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Eine peer-reviewed Studie mit nutzerzentriertem Designansatz zur Weiterentwicklung des Helferportals. Interviews mit 23 Pflegeberaterinnen identifizierten ein digitales Buchungssystem als zentralen Bedarf."
+        },
+        {
+          "href": "https://helferportal.de/2025/06/06/enhancing-community-care-through-digital-coordination-a-user-centered-approach-to-expanding-the-helferportal/",
+          "id": "press-5-link",
+          "level": "basic",
+          "type": "link",
+          "value": "Zum Artikel"
+        },
+        {
+          "id": "press-6-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "Sat1 berichtet über das Helferportal",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-6-image.png"
+          }
+        },
+        {
+          "id": "press-6-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "TV-Bericht"
+        },
+        {
+          "id": "press-6-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Sat1 berichtet über das Helferportal"
+        },
+        {
+          "id": "press-6-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Sat1 berichtete über spontane Hilfe für Menschen mit Hilfebedarf über die Helferportal App. Der TV-Bericht zeigt, wie die Plattform schnelle, unkomplizierte Unterstützung im Alltag ermöglicht."
+        },
+        {
+          "href": "https://helferportal.de/2025/02/11/sat1-spontane-hilfe-fuer-menschen-mit-hilfebedarf-ueber-die-helferportal-app-moeglich/",
+          "id": "press-6-link",
+          "level": "basic",
+          "type": "link",
+          "value": "Zum Artikel"
+        },
+        {
+          "id": "press-7-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "Artikel im carekonkret Magazin",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-7-image.png"
+          }
+        },
+        {
+          "id": "press-7-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Fachmedien"
+        },
+        {
+          "id": "press-7-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Artikel über das Helferportal im carekonkret Magazin"
+        },
+        {
+          "id": "press-7-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "CAREkonkret veröffentlichte am 17. Januar 2025 einen Artikel über das Helferportal und seinen innovativen Ansatz zur digitalen Vernetzung von Pflegebedürftigen und Unterstützungsangeboten."
+        },
+        {
+          "href": "https://helferportal.de/2025/01/24/hello-world/",
+          "id": "press-7-link",
+          "level": "basic",
+          "type": "link",
+          "value": "Zum Artikel"
         }
       ],
       "id": "b2",
-      "type": "press-releases"
+      "type": "projekte-section"
     }
   ],
   "page": {

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "extracted": "2026-03-29T19:33:31.460Z",
+    "extracted": "2026-03-31T13:48:50.255Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T19:40:19.520Z",
+    "lastEdited": "2026-03-31T13:48:57.776Z",
     "schema_version": "2.0",
     "source": "ueber-uns.html"
   },
@@ -265,16 +265,118 @@
     {
       "fields": [
         {
-          "id": "logos-title",
+          "id": "press-overline",
           "level": "basic",
           "type": "text",
-          "value": "Forschung & Projekte"
+          "value": "In der Presse"
         },
         {
-          "id": "logos-subtitle",
+          "id": "press-subtitle",
           "level": "basic",
           "type": "text",
-          "value": "Erfahren Sie mehr über unsere aktuellen Initiativen und Kooperationen"
+          "value": "Das Helferportal in den Medien"
+        },
+        {
+          "id": "press-1-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "Deutscher Award für Nachhaltigkeits-Projekte 2025",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-1-image.jpg"
+          }
+        },
+        {
+          "id": "press-1-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Auszeichnung"
+        },
+        {
+          "id": "press-1-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Deutscher Award für Nachhaltigkeits-Projekte 2025"
+        },
+        {
+          "id": "press-1-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Die Helferportal GmbH wurde in Berlin mit dem Deutschen Award für Nachhaltigkeitsprojekte 2025 ausgezeichnet. Das sektorenübergreifende Versorgungskonzept überzeugte die Jury."
+        },
+        {
+          "href": "/presse.html",
+          "id": "press-1-link",
+          "level": "basic",
+          "type": "link",
+          "value": "Mehr erfahren"
+        },
+        {
+          "id": "press-6-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "Sat1 berichtet über das Helferportal",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-6-image.png"
+          }
+        },
+        {
+          "id": "press-6-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "TV-Bericht"
+        },
+        {
+          "id": "press-6-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Sat1 berichtet über das Helferportal"
+        },
+        {
+          "id": "press-6-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "Sat1 berichtete über spontane Hilfe für Menschen mit Hilfebedarf über die Helferportal App. Der TV-Bericht zeigt, wie die Plattform schnelle, unkomplizierte Unterstützung im Alltag ermöglicht."
+        },
+        {
+          "href": "/presse.html",
+          "id": "press-6-link",
+          "level": "basic",
+          "type": "link",
+          "value": "Mehr erfahren"
+        },
+        {
+          "id": "press-2-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "Stadt Dietzenbach × Helferportal",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/presse/press-2-image.png"
+          }
+        },
+        {
+          "id": "press-2-badge",
+          "level": "basic",
+          "type": "text",
+          "value": "Pilotprojekt"
+        },
+        {
+          "id": "press-2-title",
+          "level": "basic",
+          "type": "text",
+          "value": "Stadt Dietzenbach × Helferportal"
+        },
+        {
+          "id": "press-2-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": "In Dietzenbach startete ein Pilotprojekt zur digitalen Vernetzung von Pflegebedürftigen und Unterstützungspersonen. Das System gleicht automatisch Bedarfe mit verfügbaren Angeboten ab."
+        },
+        {
+          "href": "/presse.html",
+          "id": "press-2-link",
+          "level": "basic",
+          "type": "link",
+          "value": "Mehr erfahren"
         }
       ],
       "id": "b5",
