@@ -2585,7 +2585,11 @@ async function savePage() {
                     const finalUrl = sbClient.storage.from('images').getPublicUrl(finalPath).data.publicUrl;
                     for (const block of contentData.blocks) {
                         for (const field of block.fields) {
-                            if (field.id === fieldId) { field.value = finalUrl; break; }
+                            if (field.id === fieldId) {
+                                const existingAlt = typeof field.value === 'string' ? (field.alt || '') : field.value?.alt || '';
+                                field.value = { src: finalUrl, alt: existingAlt };
+                                break;
+                            }
                         }
                     }
                 }

@@ -1,8 +1,9 @@
 {
   "_meta": {
+    "editedBy": "thomas.oeben@helferportal.de",
     "extracted": "2026-03-29T19:56:19.164Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T19:57:04.585Z",
+    "lastEdited": "2026-03-31T07:56:03.294Z",
     "schema_version": "2.0",
     "source": "index.html"
   },
@@ -487,10 +488,7 @@
           "id": "projekt-1-image",
           "level": "basic",
           "type": "image",
-          "value": {
-            "alt": "CareCollApp",
-            "src": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600"
-          }
+          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/projekt-1-image.jpg"
         },
         {
           "id": "projekt-1-badge",
@@ -521,10 +519,7 @@
           "id": "projekt-2-image",
           "level": "basic",
           "type": "image",
-          "value": {
-            "alt": "MEAPP",
-            "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
-          }
+          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/projekt-2-image.jpg"
         },
         {
           "id": "projekt-2-badge",
@@ -760,6 +755,25 @@
           "level": "basic",
           "type": "button",
           "value": "Jetzt empfehlen & vernetzen"
+        },
+        {
+          "id": "info-kosten-text",
+          "level": "basic",
+          "type": "textarea",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "info-kosten-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
+        },
+        {
+          "id": "info-vernetzen-note",
+          "level": "basic",
+          "type": "text",
+          "value": ""
         }
       ],
       "id": "b7",
@@ -837,34 +851,31 @@
           "id": "testimonial-3-image",
           "level": "basic",
           "type": "image",
-          "value": {
-            "alt": "Placeholder",
-            "src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200"
-          }
+          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/testimonial-3-image.jpg"
         },
         {
           "id": "testimonial-3-quote",
           "level": "basic",
           "type": "textarea",
-          "value": "Weitere Referenz folgt in Kürze."
+          "value": "Ich bin von Geburt an durch Contergan geschädigt. Ich bin aktiv und mobil, brauche im Alltag aber Unterstützung – besonders spontan außerhalb der festen Pflege.\nDas Helferportal ermöglicht mir genau das: schnelle Hilfe im richtigen Moment.\nMehr Teilhabe, mehr Flexibilität, mehr Freiheit."
         },
         {
           "id": "testimonial-3-name",
           "level": "basic",
           "type": "text",
-          "value": "Name"
+          "value": "Gernot Stracke"
         },
         {
           "id": "testimonial-3-role",
           "level": "basic",
           "type": "text",
-          "value": "Rolle"
+          "value": "Vorsitzender des Vorstandes"
         },
         {
           "id": "testimonial-3-org",
           "level": "basic",
           "type": "text",
-          "value": "Organisation"
+          "value": "Bundesverband Contergangeschädigter e.V."
         }
       ],
       "id": "b8",
@@ -988,6 +999,181 @@
           "level": "basic",
           "type": "textarea",
           "value": "Die Helmut-Schmidt-Universität Hamburg hat das Projekt MEAPP – ein Assistenzportal für Menschen mit Unterstützungsbedarf – wissenschaftlich begleitet."
+        },
+        {
+          "id": "logo-1-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "",
+            "src": ""
+          }
+        },
+        {
+          "id": "logo-1-name",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "id": "logo-1-text",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-1-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "partner-1-link",
+          "level": "basic",
+          "type": "link",
+          "value": ""
+        },
+        {
+          "id": "logo-2-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "",
+            "src": ""
+          }
+        },
+        {
+          "id": "logo-2-name",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "id": "logo-2-text",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-2-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "partner-2-link",
+          "level": "basic",
+          "type": "link",
+          "value": ""
+        },
+        {
+          "id": "logo-3-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "",
+            "src": ""
+          }
+        },
+        {
+          "id": "logo-3-name",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "id": "logo-3-text",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-3-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "partner-3-link",
+          "level": "basic",
+          "type": "link",
+          "value": ""
+        },
+        {
+          "id": "logo-4-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "",
+            "src": ""
+          }
+        },
+        {
+          "id": "logo-4-name",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "id": "logo-4-text",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-4-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "partner-4-link",
+          "level": "basic",
+          "type": "link",
+          "value": ""
+        },
+        {
+          "id": "logo-5-image",
+          "level": "basic",
+          "type": "image",
+          "value": {
+            "alt": "",
+            "src": ""
+          }
+        },
+        {
+          "id": "logo-5-name",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "id": "logo-5-text",
+          "level": "basic",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "logo-5-btn",
+          "level": "basic",
+          "type": "button",
+          "value": ""
+        },
+        {
+          "href": "",
+          "id": "partner-5-link",
+          "level": "basic",
+          "type": "link",
+          "value": ""
         }
       ],
       "id": "b9",
