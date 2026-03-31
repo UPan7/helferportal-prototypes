@@ -39,8 +39,11 @@ function applyField($, $el, fieldType, field) {
   switch (fieldType) {
     case 'image': {
       const img = resolveImage(field);
-      if (img.src) $el.attr('src', img.src);
-      if (img.alt) $el.attr('alt', img.alt);
+      // If the element is not an <img> itself, look for a nested <img> child
+      // (e.g. partner-logo divs where the img is inside the wrapper)
+      const $target = $el.is('img') ? $el : ($el.find('img').first().length ? $el.find('img').first() : $el);
+      if (img.src) $target.attr('src', img.src);
+      if (img.alt) $target.attr('alt', img.alt);
       return true;
     }
 
