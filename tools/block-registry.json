@@ -330,6 +330,6 @@
       "press-{N}-text":       { "type": "textarea", "required": true,  "level": "basic",    "repeatable": true },
       "press-{N}-link":       { "type": "button",   "required": false, "level": "basic",    "repeatable": true }
     },
-    "aliases": { "press-releases": "presse" }
+    "aliases": { "press-releases": "presse", "presse-grid": "presse" }
   }
 }

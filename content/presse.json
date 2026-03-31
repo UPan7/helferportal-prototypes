@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "extracted": "2026-03-31T13:48:49.541Z",
+    "extracted": "2026-03-31T14:13:21.724Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-31T13:48:57.293Z",
+    "lastEdited": "2026-03-31T14:13:28.207Z",
     "schema_version": "2.0",
     "source": "presse.html"
   },
@@ -279,7 +279,7 @@
         }
       ],
       "id": "b2",
-      "type": "projekte-section"
+      "type": "presse-grid"
     }
   ],
   "page": {
