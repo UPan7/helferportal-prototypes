@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "extracted": "2026-03-29T19:33:29.871Z",
+    "extracted": "2026-04-02T14:29:25.558Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T19:40:18.509Z",
+    "lastEdited": "2026-04-02T14:29:54.674Z",
     "schema_version": "2.0",
     "source": "engagieren.html"
   },
@@ -83,7 +83,7 @@
           "value": "Als Spontanhelfer starten"
         },
         {
-          "href": "",
+          "href": "/kontakt.html",
           "id": "tab-spontan-btn-2",
           "level": "basic",
           "type": "button",
@@ -127,7 +127,7 @@
           "value": "Als Alltagsbegleiter registrieren"
         },
         {
-          "href": "",
+          "href": "/kontakt.html",
           "id": "tab-eigenstaendig-btn-2",
           "level": "basic",
           "type": "button",
@@ -171,7 +171,7 @@
           "value": "Organisation finden"
         },
         {
-          "href": "",
+          "href": "/kontakt.html",
           "id": "tab-organisation-btn-2",
           "level": "basic",
           "type": "button",
