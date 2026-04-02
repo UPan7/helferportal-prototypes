@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "extracted": "2026-04-02T14:52:24.909Z",
+    "extracted": "2026-04-02T20:07:39.264Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-04-02T14:52:59.511Z",
+    "lastEdited": "2026-04-02T20:07:45.588Z",
     "schema_version": "2.0",
     "source": "index.html"
   },
@@ -686,7 +686,7 @@
           "id": "info-kosten-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Empfohlen\n7,90 €\n/ Monat\nEmpfohlener Solidaritätsbeitrag\n15,80 €\n/ Monat\nFür Sie und zusätzlich eine hilfesuchende Person\nIndividuell\nSie wählen Ihren Beitrag selbst\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar"
+          "value": "Empfohlen\n7,90 €\n/ Monat\nEmpfohlener Solidaritätsbeitrag\n15,80 €\n/ Monat\nFür Sie und zusätzlich eine hilfesuchende Person\nIndividuell\nSie wählen Ihren Beitrag selbst\n0 €\nAuch ohne Beitrag voll nutzbar"
         },
         {
           "id": "info-kosten-note",
