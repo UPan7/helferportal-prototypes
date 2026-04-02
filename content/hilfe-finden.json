@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "extracted": "2026-03-29T19:33:29.058Z",
+    "extracted": "2026-04-02T14:52:42.844Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T19:40:17.923Z",
+    "lastEdited": "2026-04-02T14:53:18.294Z",
     "schema_version": "2.0",
     "source": "hilfe-finden.html"
   },
@@ -83,13 +83,6 @@
           "value": "Begleitung finden"
         },
         {
-          "href": "",
-          "id": "tab-freizeit-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Mehr erfahren"
-        },
-        {
           "id": "tab-alltag-title",
           "level": "basic",
           "type": "text",
@@ -121,13 +114,6 @@
           "value": "Hilfe finden"
         },
         {
-          "href": "",
-          "id": "tab-alltag-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Mehr erfahren"
-        },
-        {
           "id": "tab-angehoerige-title",
           "level": "basic",
           "type": "text",
@@ -157,13 +143,6 @@
           "level": "basic",
           "type": "button",
           "value": "Entlastung finden"
-        },
-        {
-          "href": "",
-          "id": "tab-angehoerige-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Mehr erfahren"
         }
       ],
       "id": "b2",

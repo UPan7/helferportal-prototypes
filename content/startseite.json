@@ -1,9 +1,8 @@
 {
   "_meta": {
-    "editedBy": "thomas.oeben@helferportal.de",
-    "extracted": "2026-03-29T19:56:19.164Z",
+    "extracted": "2026-04-02T14:52:24.909Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-31T07:56:03.294Z",
+    "lastEdited": "2026-04-02T14:52:59.511Z",
     "schema_version": "2.0",
     "source": "index.html"
   },
@@ -197,18 +196,11 @@
           "value": "Begleitdienste | Begleitung zu Terminen, Behördengängen oder Freizeitaktivitäten.\nBesuchsdienste | Gesellschaft leisten, Gespräche führen oder Zeit miteinander verbringen.\nAlltagshilfe | Unterstützung beim Einkaufen, im Haushalt oder bei kleinen Aufgaben."
         },
         {
-          "href": "",
+          "href": "/hilfe-finden.html",
           "id": "tab-hilfe-btn-1",
           "level": "basic",
           "type": "button",
           "value": "Unterstützung finden"
-        },
-        {
-          "href": "",
-          "id": "tab-hilfe-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Mehr erfahren"
         },
         {
           "id": "tab-angehoerige-title",
@@ -229,18 +221,11 @@
           "value": "Verhinderungspflege | Zuverlässige Unterstützung, wenn Sie vorübergehend entlastet werden möchten.\nEntlastungsleistungen | Unterstützung im Alltag, nutzbar über den Entlastungsbetrag.\nBeratung & Vermittlung | Beratung zu Pflege, Unterstützungsmöglichkeiten und passenden Angeboten."
         },
         {
-          "href": "",
+          "href": "/hilfe-finden.html",
           "id": "tab-angehoerige-btn-1",
           "level": "basic",
           "type": "button",
           "value": "Entlastung finden"
-        },
-        {
-          "href": "",
-          "id": "tab-angehoerige-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Mehr erfahren"
         },
         {
           "id": "tab-engagierte-title",
@@ -261,18 +246,11 @@
           "value": "Spontan helfen | Unterstützen Sie flexibel im Alltag oder begleiten Sie Menschen bei Freizeitaktivitäten, ohne feste Verpflichtung.\nEigenständig unterstützen | Unterstützen Sie regelmäßig als Einzelperson, ehrenamtlich oder selbständig, mit klaren Rahmenbedingungen.\nÜber eine Organisation engagieren | Werden Sie Teil eines Teams und engagieren Sie sich mit fachlicher Begleitung und Versicherungsschutz."
         },
         {
-          "href": "",
+          "href": "/engagieren.html",
           "id": "tab-engagierte-btn-1",
           "level": "basic",
           "type": "button",
           "value": "Jetzt engagieren"
-        },
-        {
-          "href": "",
-          "id": "tab-engagierte-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Mehr erfahren"
         },
         {
           "id": "tab-orga-title",
@@ -293,18 +271,11 @@
           "value": "Engagement organisieren | Koordinieren Sie Helfende und Einsätze in Ihrer Organisation oder Nachbarschaft.\nAdministration vereinfachen | Zeiterfassung, Dokumentation und Abrechnung digital verwalten.\nNeue Engagierte gewinnen | Zugang zu motivierten Helferinnen und Helfern über das Portal."
         },
         {
-          "href": "",
+          "href": "/kontakt.html",
           "id": "tab-orga-btn-1",
           "level": "basic",
           "type": "button",
           "value": "Demo vereinbaren"
-        },
-        {
-          "href": "",
-          "id": "tab-orga-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Kontakt aufnehmen"
         },
         {
           "id": "tab-dienst-title",
@@ -325,18 +296,11 @@
           "value": "Leistungen anbieten | Stellen Sie Ihre Angebote ein und machen Sie Ihre Leistungen für Menschen in Ihrer Region sichtbar.\nAnfragen erhalten | Hilfesuchende und Angehörige finden passende Anbieter und nehmen direkt Kontakt auf.\nTermine koordinieren | Anfragen, Termine und Kommunikation einfach und transparent organisieren."
         },
         {
-          "href": "",
+          "href": "https://helfen.helferportal.de",
           "id": "tab-dienst-btn-1",
           "level": "basic",
           "type": "button",
           "value": "Kostenlos registrieren"
-        },
-        {
-          "href": "",
-          "id": "tab-dienst-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Mehr erfahren"
         },
         {
           "id": "tab-kommunen-title",
@@ -357,18 +321,11 @@
           "value": "Akteure vernetzen | Ehrenamtliche, Organisationen und Dienstleister auf einer gemeinsamen Plattform zusammenbringen.\nBedarfe digital steuern | Unterstützungs- und Versorgungsbedarfe erfassen und passend vermitteln.\nTransparenz und Planung | Überblick über Bedarfe, Angebote und Engagement für eine bedarfsgerechte Sozial- und Pflegeplanung.\nBeratungs- und Koordinationsstellen | Pflegestützpunkte, Seniorenberatung und Quartiersmanagement in das Versorgungsnetz integrieren."
         },
         {
-          "href": "",
+          "href": "/kontakt.html",
           "id": "tab-kommunen-btn-1",
           "level": "basic",
           "type": "button",
           "value": "Demo vereinbaren"
-        },
-        {
-          "href": "",
-          "id": "tab-kommunen-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Kontakt aufnehmen"
         }
       ],
       "id": "b3",
@@ -488,7 +445,10 @@
           "id": "projekt-1-image",
           "level": "basic",
           "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/projekt-1-image.jpg"
+          "value": {
+            "alt": "CareCollApp",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/projekt-1-image.jpg"
+          }
         },
         {
           "id": "projekt-1-badge",
@@ -519,7 +479,10 @@
           "id": "projekt-2-image",
           "level": "basic",
           "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/projekt-2-image.jpg"
+          "value": {
+            "alt": "MEAPP",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/projekt-2-image.jpg"
+          }
         },
         {
           "id": "projekt-2-badge",
@@ -723,7 +686,7 @@
           "id": "info-kosten-cards",
           "level": "advanced",
           "type": "textarea",
-          "value": "Empfohlen\n7,90 €\n/ Monat\nEmpfohlener Solidaritätsbeitrag\n15,80 €\n/ Monat\nFür Sie und zusätzlich eine hilfesuchende Person\nIndividuell\nSie wählen Ihren Beitrag selbst\n0 €\nAuch ohne Beitrag voll nutzbar"
+          "value": "Empfohlen\n7,90 €\n/ Monat\nEmpfohlener Solidaritätsbeitrag\n15,80 €\n/ Monat\nFür Sie und zusätzlich eine hilfesuchende Person\nIndividuell\nSie wählen Ihren Beitrag selbst\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar\n0 €\nAuch ohne Beitrag voll nutzbar"
         },
         {
           "id": "info-kosten-note",
@@ -755,25 +718,6 @@
           "level": "basic",
           "type": "button",
           "value": "Jetzt empfehlen & vernetzen"
-        },
-        {
-          "id": "info-kosten-text",
-          "level": "basic",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "info-kosten-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "id": "info-vernetzen-note",
-          "level": "basic",
-          "type": "text",
-          "value": ""
         }
       ],
       "id": "b7",
@@ -851,7 +795,10 @@
           "id": "testimonial-3-image",
           "level": "basic",
           "type": "image",
-          "value": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/testimonial-3-image.jpg"
+          "value": {
+            "alt": "Placeholder",
+            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/testimonial-3-image.jpg"
+          }
         },
         {
           "id": "testimonial-3-quote",
@@ -901,7 +848,7 @@
           "type": "image",
           "value": {
             "alt": "",
-            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-1-logo.jpg"
+            "src": ""
           }
         },
         {
@@ -922,7 +869,7 @@
           "type": "image",
           "value": {
             "alt": "",
-            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-2-logo.jpg"
+            "src": ""
           }
         },
         {
@@ -943,7 +890,7 @@
           "type": "image",
           "value": {
             "alt": "",
-            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-3-logo.jpg"
+            "src": ""
           }
         },
         {
@@ -964,7 +911,7 @@
           "type": "image",
           "value": {
             "alt": "",
-            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-4-logo.png"
+            "src": ""
           }
         },
         {
@@ -985,7 +932,7 @@
           "type": "image",
           "value": {
             "alt": "",
-            "src": "https://gbnxeuxwgkkxurnunjfw.supabase.co/storage/v1/object/public/images/startseite/partner-5-logo.png"
+            "src": ""
           }
         },
         {
@@ -999,181 +946,6 @@
           "level": "basic",
           "type": "textarea",
           "value": "Die Helmut-Schmidt-Universität Hamburg hat das Projekt MEAPP – ein Assistenzportal für Menschen mit Unterstützungsbedarf – wissenschaftlich begleitet."
-        },
-        {
-          "id": "logo-1-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-1-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-1-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-1-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-1-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "id": "logo-2-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-2-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-2-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-2-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-2-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "id": "logo-3-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-3-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-3-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-3-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-3-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "id": "logo-4-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-4-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-4-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-4-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-4-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
-        },
-        {
-          "id": "logo-5-image",
-          "level": "basic",
-          "type": "image",
-          "value": {
-            "alt": "",
-            "src": ""
-          }
-        },
-        {
-          "id": "logo-5-name",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "id": "logo-5-text",
-          "level": "basic",
-          "type": "text",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "logo-5-btn",
-          "level": "basic",
-          "type": "button",
-          "value": ""
-        },
-        {
-          "href": "",
-          "id": "partner-5-link",
-          "level": "basic",
-          "type": "link",
-          "value": ""
         }
       ],
       "id": "b9",

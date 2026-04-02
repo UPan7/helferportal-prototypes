@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "extracted": "2026-03-29T19:33:30.670Z",
+    "extracted": "2026-04-02T14:52:45.071Z",
     "generator": "helferportal-content-tools/extract.js",
-    "lastEdited": "2026-03-29T19:40:19.087Z",
+    "lastEdited": "2026-04-02T14:53:18.742Z",
     "schema_version": "2.0",
     "source": "fuer-kommunen.html"
   },
@@ -163,13 +163,6 @@
           "value": "Kooperation anfragen"
         },
         {
-          "href": "",
-          "id": "tab-kommunen-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Kontakt aufnehmen"
-        },
-        {
           "id": "tab-organisationen-title",
           "level": "basic",
           "type": "text",
@@ -193,13 +186,6 @@
           "level": "basic",
           "type": "button",
           "value": "Zusammenarbeit anfragen"
-        },
-        {
-          "href": "",
-          "id": "tab-organisationen-btn-2",
-          "level": "basic",
-          "type": "button",
-          "value": "Kontakt aufnehmen"
         }
       ],
       "id": "b3",
